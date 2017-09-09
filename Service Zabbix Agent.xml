@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+  <version>3.4</version>
+  <date>2017-09-09T13:05:50Z</date>
+  <groups>
+    <group>
+      <name>Templates</name>
+    </group>
+  </groups>
+  <templates>
+    <template>
+      <template>Service Zabbix Agent</template>
+      <name>Service Zabbix Agent</name>
+      <description>Base zabbix active agent monitoring.&#13;
+&#13;
+Current version : 1.0&#13;
+Date:                   2017-09-09&#13;
+Changelog:&#13;
+1.0:&#13;
+- initial version.&#13;
+&#13;
+Notes:</description>
+      <groups>
+        <group>
+          <name>Templates</name>
+        </group>
+      </groups>
+      <applications>
+        <application>
+          <name>SVC::Zabbix Agent</name>
+        </application>
+      </applications>
+      <items>
+        <item>
+          <name>ping</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>agent.ping</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>The agent always returns 1 for this item. It could be used in combination with nodata() for availability check.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::Zabbix Agent</name>
+            </application>
+          </applications>
+          <valuemap>
+            <name>Service state</name>
+          </valuemap>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>version</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>agent.version</key>
+          <delay>5m</delay>
+          <history>15d</history>
+          <trends>0</trends>
+          <status>0</status>
+          <value_type>1</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Version of the zabbix agent.</description>
+          <inventory_link>18</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::Zabbix Agent</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>items_unsupported]</name>
+          <type>5</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>zabbix[host,,items_unsupported]</key>
+          <delay>30s</delay>
+          <history>90d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>items</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Number of enabled unsupported items on the host.</description>
+          <inventory_link>56</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::Zabbix Agent</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+      </items>
+      <discovery_rules/>
+      <httptests/>
+      <macros/>
+      <templates/>
+      <screens/>
+    </template>
+  </templates>
+  <triggers>
+    <trigger>
+      <expression>{Service Zabbix Agent:agent.ping.nodata(1h)}=1</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::zabbix_agent::Unreachable &gt;=1h</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description>There is no monitoring data from zabbix agent longer than 1h.</description>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{Service Zabbix Agent:agent.ping.nodata(5m)}=1</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::zabbix_agent::Unreachable &gt;=5min</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description>There is no monitoring data from zabbix agent longer than 5 min.</description>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies>
+        <dependency>
+          <name>SVC::zabbix_agent::Unreachable &gt;=1h</name>
+          <expression>{Service Zabbix Agent:agent.ping.nodata(1h)}=1</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{Service Zabbix Agent:agent.version.diff(0)}&gt;0</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::zabbix_agent::Version has changed to {ITEM.LASTVALUE}</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>1</priority>
+      <description>Version of the zabbix agen has been changed.</description>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+  </triggers>
+  <value_maps>
+    <value_map>
+      <name>Service state</name>
+      <mappings>
+        <mapping>
+          <value>0</value>
+          <newvalue>Down</newvalue>
+        </mapping>
+        <mapping>
+          <value>1</value>
+          <newvalue>Up</newvalue>
+        </mapping>
+      </mappings>
+    </value_map>
+  </value_maps>
+</zabbix_export>
