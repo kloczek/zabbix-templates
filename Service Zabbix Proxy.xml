@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-09-09T13:05:50Z</date>
+  <date>2017-09-12T22:20:12Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -2066,55 +2066,11 @@ It is calculated for last minute only.</description>
               <application/>
             </screen_item>
             <screen_item>
-              <resourcetype>1</resourcetype>
-              <width>500</width>
-              <height>100</height>
-              <x>0</x>
-              <y>1</y>
-              <colspan>1</colspan>
-              <rowspan>1</rowspan>
-              <elements>0</elements>
-              <valign>1</valign>
-              <halign>1</halign>
-              <style>0</style>
-              <url/>
-              <dynamic>0</dynamic>
-              <sort_triggers>0</sort_triggers>
-              <resource>
-                <key>zabbix[hosts]</key>
-                <host>Service Zabbix Proxy</host>
-              </resource>
-              <max_columns>3</max_columns>
-              <application/>
-            </screen_item>
-            <screen_item>
-              <resourcetype>1</resourcetype>
-              <width>500</width>
-              <height>100</height>
-              <x>1</x>
-              <y>1</y>
-              <colspan>1</colspan>
-              <rowspan>1</rowspan>
-              <elements>0</elements>
-              <valign>1</valign>
-              <halign>1</halign>
-              <style>0</style>
-              <url/>
-              <dynamic>0</dynamic>
-              <sort_triggers>0</sort_triggers>
-              <resource>
-                <key>zabbix[items_unsupported]</key>
-                <host>Service Zabbix Proxy</host>
-              </resource>
-              <max_columns>3</max_columns>
-              <application/>
-            </screen_item>
-            <screen_item>
               <resourcetype>0</resourcetype>
               <width>500</width>
               <height>100</height>
               <x>0</x>
-              <y>2</y>
+              <y>1</y>
               <colspan>1</colspan>
               <rowspan>1</rowspan>
               <elements>0</elements>
@@ -2136,7 +2092,7 @@ It is calculated for last minute only.</description>
               <width>500</width>
               <height>100</height>
               <x>1</x>
-              <y>2</y>
+              <y>1</y>
               <colspan>1</colspan>
               <rowspan>1</rowspan>
               <elements>0</elements>
@@ -2148,6 +2104,50 @@ It is calculated for last minute only.</description>
               <sort_triggers>0</sort_triggers>
               <resource>
                 <name>SVC::zabbix_proxy::items queued</name>
+                <host>Service Zabbix Proxy</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>1</resourcetype>
+              <width>500</width>
+              <height>100</height>
+              <x>0</x>
+              <y>2</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <key>zabbix[hosts]</key>
+                <host>Service Zabbix Proxy</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>1</resourcetype>
+              <width>500</width>
+              <height>100</height>
+              <x>1</x>
+              <y>2</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <key>zabbix[items_unsupported]</key>
                 <host>Service Zabbix Proxy</host>
               </resource>
               <max_columns>3</max_columns>
@@ -2609,7 +2609,7 @@ Possible:&#13;
           <sortorder>0</sortorder>
           <drawtype>2</drawtype>
           <color>DD0000</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2621,7 +2621,7 @@ Possible:&#13;
           <sortorder>1</sortorder>
           <drawtype>2</drawtype>
           <color>00DDDD</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2633,7 +2633,7 @@ Possible:&#13;
           <sortorder>2</sortorder>
           <drawtype>2</drawtype>
           <color>3333FF</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2665,7 +2665,7 @@ Possible:&#13;
           <sortorder>0</sortorder>
           <drawtype>1</drawtype>
           <color>009900</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2677,7 +2677,7 @@ Possible:&#13;
           <sortorder>1</sortorder>
           <drawtype>1</drawtype>
           <color>990000</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2709,7 +2709,7 @@ Possible:&#13;
           <sortorder>0</sortorder>
           <drawtype>0</drawtype>
           <color>990099</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2721,7 +2721,7 @@ Possible:&#13;
           <sortorder>1</sortorder>
           <drawtype>2</drawtype>
           <color>990000</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2733,7 +2733,7 @@ Possible:&#13;
           <sortorder>2</sortorder>
           <drawtype>0</drawtype>
           <color>FF33FF</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2745,7 +2745,7 @@ Possible:&#13;
           <sortorder>3</sortorder>
           <drawtype>0</drawtype>
           <color>00EE00</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2757,7 +2757,7 @@ Possible:&#13;
           <sortorder>4</sortorder>
           <drawtype>0</drawtype>
           <color>003300</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2769,7 +2769,7 @@ Possible:&#13;
           <sortorder>5</sortorder>
           <drawtype>0</drawtype>
           <color>33FFFF</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2801,7 +2801,7 @@ Possible:&#13;
           <sortorder>0</sortorder>
           <drawtype>1</drawtype>
           <color>009900</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2833,7 +2833,7 @@ Possible:&#13;
           <sortorder>0</sortorder>
           <drawtype>2</drawtype>
           <color>FFAA00</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2845,7 +2845,7 @@ Possible:&#13;
           <sortorder>1</sortorder>
           <drawtype>2</drawtype>
           <color>EE0000</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2857,7 +2857,7 @@ Possible:&#13;
           <sortorder>2</sortorder>
           <drawtype>2</drawtype>
           <color>FF66FF</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2869,7 +2869,7 @@ Possible:&#13;
           <sortorder>3</sortorder>
           <drawtype>2</drawtype>
           <color>0000CC</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2901,7 +2901,7 @@ Possible:&#13;
           <sortorder>0</sortorder>
           <drawtype>2</drawtype>
           <color>FFCCCC</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2913,7 +2913,7 @@ Possible:&#13;
           <sortorder>1</sortorder>
           <drawtype>2</drawtype>
           <color>FF9999</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2925,7 +2925,7 @@ Possible:&#13;
           <sortorder>2</sortorder>
           <drawtype>2</drawtype>
           <color>FF3333</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2937,7 +2937,7 @@ Possible:&#13;
           <sortorder>3</sortorder>
           <drawtype>2</drawtype>
           <color>CC0000</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2949,7 +2949,7 @@ Possible:&#13;
           <sortorder>4</sortorder>
           <drawtype>2</drawtype>
           <color>550000</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2984,7 +2984,7 @@ Possible:&#13;
           <sortorder>0</sortorder>
           <drawtype>0</drawtype>
           <color>00DD00</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>1</calc_fnc>
           <type>0</type>
           <item>
@@ -2996,7 +2996,7 @@ Possible:&#13;
           <sortorder>1</sortorder>
           <drawtype>0</drawtype>
           <color>CC0000</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>4</calc_fnc>
           <type>0</type>
           <item>
@@ -3008,7 +3008,7 @@ Possible:&#13;
           <sortorder>2</sortorder>
           <drawtype>0</drawtype>
           <color>FFFFFF</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>1</calc_fnc>
           <type>0</type>
           <item>

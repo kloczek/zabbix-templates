@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-09-09T13:05:47Z</date>
+  <date>2017-09-12T22:20:09Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -249,7 +249,7 @@ Notes:</description>
           <sortorder>0</sortorder>
           <drawtype>0</drawtype>
           <color>1A7C11</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
@@ -261,7 +261,7 @@ Notes:</description>
           <sortorder>1</sortorder>
           <drawtype>0</drawtype>
           <color>F63100</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
@@ -293,7 +293,7 @@ Notes:</description>
           <sortorder>0</sortorder>
           <drawtype>0</drawtype>
           <color>DD0000</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>

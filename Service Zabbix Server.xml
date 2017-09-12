@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-09-09T13:05:50Z</date>
+  <date>2017-09-12T22:20:13Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -2512,7 +2512,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>0</sortorder>
           <drawtype>2</drawtype>
           <color>DD0000</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2521,10 +2521,10 @@ A high number indicates performance problems on the database side.</description>
           </item>
         </graph_item>
         <graph_item>
-          <sortorder>2</sortorder>
+          <sortorder>1</sortorder>
           <drawtype>2</drawtype>
           <color>3333FF</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2533,10 +2533,10 @@ A high number indicates performance problems on the database side.</description>
           </item>
         </graph_item>
         <graph_item>
-          <sortorder>3</sortorder>
+          <sortorder>2</sortorder>
           <drawtype>2</drawtype>
           <color>00DD00</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2545,10 +2545,10 @@ A high number indicates performance problems on the database side.</description>
           </item>
         </graph_item>
         <graph_item>
-          <sortorder>4</sortorder>
+          <sortorder>3</sortorder>
           <drawtype>0</drawtype>
           <color>FFFF33</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2580,7 +2580,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>0</sortorder>
           <drawtype>2</drawtype>
           <color>FFAA00</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2592,7 +2592,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>1</sortorder>
           <drawtype>0</drawtype>
           <color>00EEEE</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2604,7 +2604,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>2</sortorder>
           <drawtype>2</drawtype>
           <color>990099</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2616,7 +2616,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>3</sortorder>
           <drawtype>0</drawtype>
           <color>666600</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2628,7 +2628,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>4</sortorder>
           <drawtype>2</drawtype>
           <color>EE0000</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2640,7 +2640,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>5</sortorder>
           <drawtype>2</drawtype>
           <color>FF66FF</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2672,7 +2672,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>0</sortorder>
           <drawtype>0</drawtype>
           <color>00BB00</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2716,7 +2716,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>0</sortorder>
           <drawtype>2</drawtype>
           <color>FFCCCC</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2728,7 +2728,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>1</sortorder>
           <drawtype>2</drawtype>
           <color>FF9999</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2740,7 +2740,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>2</sortorder>
           <drawtype>2</drawtype>
           <color>FF3333</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2752,7 +2752,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>3</sortorder>
           <drawtype>2</drawtype>
           <color>CC0000</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2764,7 +2764,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>4</sortorder>
           <drawtype>2</drawtype>
           <color>550000</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2796,7 +2796,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>0</sortorder>
           <drawtype>2</drawtype>
           <color>00BB00</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
@@ -2808,7 +2808,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>1</sortorder>
           <drawtype>2</drawtype>
           <color>960000</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
@@ -2840,7 +2840,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>0</sortorder>
           <drawtype>0</drawtype>
           <color>990099</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2852,7 +2852,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>1</sortorder>
           <drawtype>2</drawtype>
           <color>990000</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2864,7 +2864,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>2</sortorder>
           <drawtype>0</drawtype>
           <color>FF33FF</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2876,7 +2876,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>3</sortorder>
           <drawtype>0</drawtype>
           <color>00EE00</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2888,7 +2888,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>4</sortorder>
           <drawtype>0</drawtype>
           <color>003300</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2900,7 +2900,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>5</sortorder>
           <drawtype>0</drawtype>
           <color>33FFFF</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2912,7 +2912,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>6</sortorder>
           <drawtype>0</drawtype>
           <color>C8C8C8</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -2944,7 +2944,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>0</sortorder>
           <drawtype>0</drawtype>
           <color>00C800</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
@@ -2956,7 +2956,7 @@ A high number indicates performance problems on the database side.</description>
           <sortorder>1</sortorder>
           <drawtype>0</drawtype>
           <color>C80000</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>

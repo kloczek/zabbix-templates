@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-09-09T13:05:48Z</date>
+  <date>2017-09-12T22:20:10Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -3234,7 +3234,7 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
                   <sortorder>0</sortorder>
                   <drawtype>1</drawtype>
                   <color>00C800</color>
-                  <yaxisside>1</yaxisside>
+                  <yaxisside>0</yaxisside>
                   <calc_fnc>2</calc_fnc>
                   <type>0</type>
                   <item>
@@ -3246,7 +3246,7 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
                   <sortorder>1</sortorder>
                   <drawtype>1</drawtype>
                   <color>C80000</color>
-                  <yaxisside>1</yaxisside>
+                  <yaxisside>0</yaxisside>
                   <calc_fnc>2</calc_fnc>
                   <type>0</type>
                   <item>

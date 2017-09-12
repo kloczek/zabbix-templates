@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-09-09T13:05:47Z</date>
+  <date>2017-09-12T19:37:11Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -505,7 +505,7 @@ ExtendedStatus On&#13;
           <sortorder>0</sortorder>
           <drawtype>5</drawtype>
           <color>00C800</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
@@ -537,7 +537,7 @@ ExtendedStatus On&#13;
           <sortorder>0</sortorder>
           <drawtype>2</drawtype>
           <color>00C800</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
@@ -569,7 +569,7 @@ ExtendedStatus On&#13;
           <sortorder>0</sortorder>
           <drawtype>1</drawtype>
           <color>009900</color>
-          <yaxisside>1</yaxisside>
+          <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
@@ -581,8 +581,8 @@ ExtendedStatus On&#13;
           <sortorder>1</sortorder>
           <drawtype>0</drawtype>
           <color>FFFF33</color>
-          <yaxisside>1</yaxisside>
-          <calc_fnc>7</calc_fnc>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
             <host>Service Apache</host>
