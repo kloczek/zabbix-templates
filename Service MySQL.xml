@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-09-12T22:20:10Z</date>
+  <date>2017-09-13T18:26:30Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -3573,6 +3573,388 @@ Possible restart has been done.</description>
       <tags/>
     </trigger>
   </triggers>
+  <graphs>
+    <graph>
+      <name>SVC::MySQL::bytes:in/out</name>
+      <width>900</width>
+      <height>400</height>
+      <yaxismin>0.0000</yaxismin>
+      <yaxismax>100.0000</yaxismax>
+      <show_work_period>1</show_work_period>
+      <show_triggers>1</show_triggers>
+      <type>0</type>
+      <show_legend>1</show_legend>
+      <show_3d>0</show_3d>
+      <percent_left>0.0000</percent_left>
+      <percent_right>0.0000</percent_right>
+      <ymin_type_1>0</ymin_type_1>
+      <ymax_type_1>0</ymax_type_1>
+      <ymin_item_1>0</ymin_item_1>
+      <ymax_item_1>0</ymax_item_1>
+      <graph_items>
+        <graph_item>
+          <sortorder>0</sortorder>
+          <drawtype>2</drawtype>
+          <color>CC0000</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "SELECT variable_value FROM performance_schema.global_status WHERE variable_name='Bytes_sent'",]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>1</sortorder>
+          <drawtype>2</drawtype>
+          <color>00BB00</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "SELECT variable_value FROM performance_schema.global_status WHERE variable_name='Bytes_received'",]</key>
+          </item>
+        </graph_item>
+      </graph_items>
+    </graph>
+    <graph>
+      <name>SVC::MySQL::Com</name>
+      <width>900</width>
+      <height>400</height>
+      <yaxismin>0.0000</yaxismin>
+      <yaxismax>100.0000</yaxismax>
+      <show_work_period>1</show_work_period>
+      <show_triggers>0</show_triggers>
+      <type>1</type>
+      <show_legend>1</show_legend>
+      <show_3d>0</show_3d>
+      <percent_left>0.0000</percent_left>
+      <percent_right>0.0000</percent_right>
+      <ymin_type_1>0</ymin_type_1>
+      <ymax_type_1>0</ymax_type_1>
+      <ymin_item_1>0</ymin_item_1>
+      <ymax_item_1>0</ymax_item_1>
+      <graph_items>
+        <graph_item>
+          <sortorder>0</sortorder>
+          <drawtype>0</drawtype>
+          <color>DDDD00</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "SELECT count_star FROM performance_schema.events_statements_summary_global_by_event_name WHERE event_name='statement/sql/select'",]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>1</sortorder>
+          <drawtype>0</drawtype>
+          <color>00CC00</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "SELECT count_star FROM performance_schema.events_statements_summary_global_by_event_name WHERE event_name='statement/sql/insert'",]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>2</sortorder>
+          <drawtype>0</drawtype>
+          <color>0000CC</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "SELECT count_star FROM performance_schema.events_statements_summary_global_by_event_name WHERE event_name='statement/sql/update'",]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>3</sortorder>
+          <drawtype>0</drawtype>
+          <color>CC0000</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "SELECT count_star FROM performance_schema.events_statements_summary_global_by_event_name WHERE event_name='statement/sql/delete'",]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>4</sortorder>
+          <drawtype>0</drawtype>
+          <color>33FFFF</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "SELECT count_star FROM performance_schema.events_statements_summary_global_by_event_name WHERE event_name='statement/sql/begin'",]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>5</sortorder>
+          <drawtype>0</drawtype>
+          <color>DD00DD</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "SELECT count_star FROM performance_schema.events_statements_summary_global_by_event_name WHERE event_name='statement/sql/commit'",]</key>
+          </item>
+        </graph_item>
+      </graph_items>
+    </graph>
+    <graph>
+      <name>SVC::MySQL::Connections</name>
+      <width>900</width>
+      <height>400</height>
+      <yaxismin>0.0000</yaxismin>
+      <yaxismax>100.0000</yaxismax>
+      <show_work_period>1</show_work_period>
+      <show_triggers>1</show_triggers>
+      <type>0</type>
+      <show_legend>1</show_legend>
+      <show_3d>0</show_3d>
+      <percent_left>0.0000</percent_left>
+      <percent_right>0.0000</percent_right>
+      <ymin_type_1>1</ymin_type_1>
+      <ymax_type_1>0</ymax_type_1>
+      <ymin_item_1>0</ymin_item_1>
+      <ymax_item_1>0</ymax_item_1>
+      <graph_items>
+        <graph_item>
+          <sortorder>0</sortorder>
+          <drawtype>0</drawtype>
+          <color>00CC00</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Threads_connected';",]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>1</sortorder>
+          <drawtype>0</drawtype>
+          <color>DD0000</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='max_connections';",]</key>
+          </item>
+        </graph_item>
+      </graph_items>
+    </graph>
+    <graph>
+      <name>SVC::MySQL::pages</name>
+      <width>900</width>
+      <height>400</height>
+      <yaxismin>0.0000</yaxismin>
+      <yaxismax>100.0000</yaxismax>
+      <show_work_period>1</show_work_period>
+      <show_triggers>0</show_triggers>
+      <type>1</type>
+      <show_legend>1</show_legend>
+      <show_3d>0</show_3d>
+      <percent_left>0.0000</percent_left>
+      <percent_right>0.0000</percent_right>
+      <ymin_type_1>0</ymin_type_1>
+      <ymax_type_1>0</ymax_type_1>
+      <ymin_item_1>0</ymin_item_1>
+      <ymax_item_1>0</ymax_item_1>
+      <graph_items>
+        <graph_item>
+          <sortorder>0</sortorder>
+          <drawtype>0</drawtype>
+          <color>1A7C11</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_buffer_pool_pages_data';",]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>1</sortorder>
+          <drawtype>0</drawtype>
+          <color>999999</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_buffer_pool_pages_free';",]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>2</sortorder>
+          <drawtype>0</drawtype>
+          <color>F63100</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_buffer_pool_pages_dirty';",]</key>
+          </item>
+        </graph_item>
+      </graph_items>
+    </graph>
+    <graph>
+      <name>SVC::MySQL::QChache:hits/misses</name>
+      <width>900</width>
+      <height>400</height>
+      <yaxismin>0.0000</yaxismin>
+      <yaxismax>100.0000</yaxismax>
+      <show_work_period>1</show_work_period>
+      <show_triggers>1</show_triggers>
+      <type>1</type>
+      <show_legend>1</show_legend>
+      <show_3d>0</show_3d>
+      <percent_left>0.0000</percent_left>
+      <percent_right>0.0000</percent_right>
+      <ymin_type_1>0</ymin_type_1>
+      <ymax_type_1>0</ymax_type_1>
+      <ymin_item_1>0</ymin_item_1>
+      <ymax_item_1>0</ymax_item_1>
+      <graph_items>
+        <graph_item>
+          <sortorder>0</sortorder>
+          <drawtype>0</drawtype>
+          <color>00CC00</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Qcache_hits'",]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>1</sortorder>
+          <drawtype>0</drawtype>
+          <color>F63100</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Qcache_queries_in_cache'",]</key>
+          </item>
+        </graph_item>
+      </graph_items>
+    </graph>
+    <graph>
+      <name>SVC::MySQL::Queries</name>
+      <width>900</width>
+      <height>400</height>
+      <yaxismin>0.0000</yaxismin>
+      <yaxismax>100.0000</yaxismax>
+      <show_work_period>1</show_work_period>
+      <show_triggers>1</show_triggers>
+      <type>0</type>
+      <show_legend>1</show_legend>
+      <show_3d>0</show_3d>
+      <percent_left>0.0000</percent_left>
+      <percent_right>0.0000</percent_right>
+      <ymin_type_1>0</ymin_type_1>
+      <ymax_type_1>0</ymax_type_1>
+      <ymin_item_1>0</ymin_item_1>
+      <ymax_item_1>0</ymax_item_1>
+      <graph_items>
+        <graph_item>
+          <sortorder>0</sortorder>
+          <drawtype>0</drawtype>
+          <color>00CC00</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Queries';",]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>1</sortorder>
+          <drawtype>0</drawtype>
+          <color>F63100</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Slow_queries';",]</key>
+          </item>
+        </graph_item>
+      </graph_items>
+    </graph>
+    <graph>
+      <name>SVC::MySQL::tmp tables</name>
+      <width>900</width>
+      <height>400</height>
+      <yaxismin>0.0000</yaxismin>
+      <yaxismax>100.0000</yaxismax>
+      <show_work_period>1</show_work_period>
+      <show_triggers>1</show_triggers>
+      <type>0</type>
+      <show_legend>1</show_legend>
+      <show_3d>0</show_3d>
+      <percent_left>0.0000</percent_left>
+      <percent_right>0.0000</percent_right>
+      <ymin_type_1>0</ymin_type_1>
+      <ymax_type_1>0</ymax_type_1>
+      <ymin_item_1>0</ymin_item_1>
+      <ymax_item_1>0</ymax_item_1>
+      <graph_items>
+        <graph_item>
+          <sortorder>0</sortorder>
+          <drawtype>0</drawtype>
+          <color>00CC00</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Created_tmp_disk_tables';",]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>1</sortorder>
+          <drawtype>0</drawtype>
+          <color>F63100</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Created_tmp_files';",]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>2</sortorder>
+          <drawtype>0</drawtype>
+          <color>0000CC</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Created_tmp_tables';",]</key>
+          </item>
+        </graph_item>
+      </graph_items>
+    </graph>
+  </graphs>
   <value_maps>
     <value_map>
       <name>Service state</name>
