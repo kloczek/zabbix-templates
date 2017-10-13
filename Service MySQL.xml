@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-09-13T18:26:30Z</date>
+  <date>2017-10-13T03:39:54Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,9 +13,12 @@
       <name>Service MySQL</name>
       <description>Active agent monitoring of the MySQL engine.&#13;
 &#13;
-Current version : 1.0&#13;
-Date:                   2017-09-09&#13;
+Current version : 1.0.1&#13;
+Date:                   2017-10-13&#13;
 Changelog:&#13;
+1.0.1:&#13;
+- added missing entries in SVC::MySQL::Queries screen&#13;
+&#13;
 1.0:&#13;
 - initial version.&#13;
 &#13;
@@ -3485,7 +3488,96 @@ SELECT variable_value FROM information_schema.global_status WHERE variable_name 
           <name>SVC::MySQL::Queries</name>
           <hsize>1</hsize>
           <vsize>4</vsize>
-          <screen_items/>
+          <screen_items>
+            <screen_item>
+              <resourcetype>1</resourcetype>
+              <width>900</width>
+              <height>100</height>
+              <x>0</x>
+              <y>0</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <key>system.run[{$MYSQL_CMD} "SELECT count_star FROM performance_schema.events_statements_summary_global_by_event_name WHERE event_name='statement/sql/select'",]</key>
+                <host>Service MySQL</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>1</resourcetype>
+              <width>900</width>
+              <height>100</height>
+              <x>0</x>
+              <y>1</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <key>system.run[{$MYSQL_CMD} "SELECT count_star FROM performance_schema.events_statements_summary_global_by_event_name WHERE event_name='statement/sql/insert'",]</key>
+                <host>Service MySQL</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>1</resourcetype>
+              <width>900</width>
+              <height>100</height>
+              <x>0</x>
+              <y>2</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <key>system.run[{$MYSQL_CMD} "SELECT count_star FROM performance_schema.events_statements_summary_global_by_event_name WHERE event_name='statement/sql/update'",]</key>
+                <host>Service MySQL</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>1</resourcetype>
+              <width>900</width>
+              <height>100</height>
+              <x>0</x>
+              <y>3</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <key>system.run[{$MYSQL_CMD} "SELECT count_star FROM performance_schema.events_statements_summary_global_by_event_name WHERE event_name='statement/sql/delete'",]</key>
+                <host>Service MySQL</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+          </screen_items>
         </screen>
       </screens>
     </template>
