@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-09-12T22:20:12Z</date>
+  <date>2017-10-14T22:59:23Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -116,7 +116,7 @@ Notes:</description>
           <master_item/>
         </item>
         <item>
-          <name>items_unsupported]</name>
+          <name>items unsupported</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
