@@ -1,8 +1,15 @@
-Zabbix templates
-----------------
+## Zabbix templates
 
 List of templates:
-
+- ICMP
+- OS Linux
+- OS Solaris
+- OS Windows
+- Service Apache
+- Service MySQL
+- Service Zabbix Agent
+- Service Zabbix Proxy
+- Service Zabbix Server
 
 Notes:
 * If it is something which nees to be done do use those teplates it is described in each template description notes
@@ -19,8 +26,6 @@ Such pattern is possible to use part of the general interface on communcation wi
 
 * Do not use {HOSTNAME} macros in triggers as web frontnd in teriger list in other colum is name of the host on which trigger is active (it is waste of space on web page)
  
-# Copyright (C) 2017 Tomasz Kłoczko <kloczek@fedoraproject.org>
-#
-# This program is free software, distributed under the terms of
-# the GNU General Public License Version 2.
-#
+## Copyright (C) 2017 Tomasz Kłoczko <kloczek@fedoraproject.org>
+
+## This program is free software, distributed under the terms of the GNU General Public License Version 2.
