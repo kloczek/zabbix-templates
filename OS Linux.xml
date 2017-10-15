@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-09-12T22:20:13Z</date>
+  <date>2017-10-15T17:48:56Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,9 +13,23 @@
       <name>OS Linux</name>
       <description>Base Linux monitoring template compliant with EL7 and compatible.&#13;
 &#13;
-Current version : 1.0&#13;
-Date:                   2017-09-09&#13;
+Current version : 1.0.1&#13;
+Date:                   2017-10-15&#13;
+Notes:&#13;
+&#13;
 Changelog:&#13;
+1.0.1:&#13;
+- added HW applicatiom&#13;
+- added items in HW application:&#13;
+ - SYS::CPU - monitor CPUs description data using system.hw.cpu[]&#13;
+ - SYS::devices - monitor list of the devices using system.hw.devices[]&#13;
+- renamed item:&#13;
+ - SYS::CPU::cores to HW::CPU::cores and moved to HW application&#13;
+- added triggers &#13;
+ - HW::CPU has changed&#13;
+ - HW::devices has changed&#13;
+- remove using @OS Linux::NET regexp network interfaces filter and replace by regexp (?!(lo)) (no global regexp needed now)&#13;
+&#13;
 1.0:&#13;
 - initial version.</description>
       <groups>
@@ -35,6 +49,9 @@ Changelog:&#13;
         </application>
         <application>
           <name>DSK</name>
+        </application>
+        <application>
+          <name>HW</name>
         </application>
         <application>
           <name>MEM</name>
@@ -565,7 +582,7 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>CPU::cores</name>
+          <name>HW::CPU::cores</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -592,11 +609,11 @@ Changelog:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Number of CPU cores has been changed.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>CPU</name>
+              <name>HW</name>
             </application>
           </applications>
           <valuemap/>
@@ -1014,6 +1031,88 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <applications>
             <application>
               <name>SYS</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>HW::CPU</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>system.hw.cpu</key>
+          <delay>1d</delay>
+          <history>15d</history>
+          <trends>0</trends>
+          <status>0</status>
+          <value_type>4</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>All CPUs information.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>HW</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>HW::devices</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>system.hw.devices</key>
+          <delay>1d</delay>
+          <history>15d</history>
+          <trends>0</trends>
+          <status>0</status>
+          <value_type>4</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>List hardware devices used by the system.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>HW</name>
             </application>
           </applications>
           <valuemap/>
@@ -1894,7 +1993,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
             <conditions>
               <condition>
                 <macro>{#IFNAME}</macro>
-                <value>@OS Linux::NET</value>
+                <value>(?!(lo))</value>
                 <operator>8</operator>
                 <formulaid>A</formulaid>
               </condition>
@@ -2853,7 +2952,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
             </conditions>
           </filter>
           <lifetime>0</lifetime>
-          <description>Discovery of file systems of different types as defined in global regular expression "OS Linux::FS".</description>
+          <description>Discovery of file systems.</description>
           <item_prototypes>
             <item_prototype>
               <name>$1::inodes::$2</name>
@@ -3233,6 +3332,22 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <status>0</status>
               <priority>2</priority>
               <description>FS volume free space is between 90% and 95%.</description>
+              <type>0</type>
+              <manual_close>0</manual_close>
+              <dependencies/>
+              <tags/>
+            </trigger_prototype>
+            <trigger_prototype>
+              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=15</expression>
+              <recovery_mode>0</recovery_mode>
+              <recovery_expression/>
+              <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
+              <correlation_mode>0</correlation_mode>
+              <correlation_tag/>
+              <url/>
+              <status>0</status>
+              <priority>1</priority>
+              <description>FS volume free space is &lt;=15%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
               <dependencies/>
@@ -3931,6 +4046,38 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <priority>3</priority>
       <description/>
       <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{OS Linux:system.hw.cpu.change()}&lt;&gt;0</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>HW::CPU info has changed</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>1</priority>
+      <description>CPUs information has change.</description>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{OS Linux:system.hw.devices.str()}&lt;&gt;0</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>HW::devices has changed</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>1</priority>
+      <description>List of devices has been changed.</description>
+      <type>1</type>
       <manual_close>0</manual_close>
       <dependencies/>
       <tags/>
