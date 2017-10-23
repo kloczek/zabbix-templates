@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-10-13T03:39:54Z</date>
+  <date>2017-10-23T10:55:55Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,9 +13,13 @@
       <name>Service MySQL</name>
       <description>Active agent monitoring of the MySQL engine.&#13;
 &#13;
-Current version : 1.0.1&#13;
-Date:                   2017-10-13&#13;
+Current version : 1.0.2&#13;
+Date:                   2017-10-23&#13;
 Changelog:&#13;
+1.0.2&#13;
+- replace use @MySQL::DB global regexp in MySQL::DB LLD by in place regexp (remove global regexp dependency)&#13;
+- change LLDs update interval from 1 to 30min&#13;
+&#13;
 1.0.1:&#13;
 - added missing entries in SVC::MySQL::Queries screen&#13;
 &#13;
@@ -3095,7 +3099,7 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
           <snmp_community/>
           <snmp_oid/>
           <key>system.run["{$MYSQL_CMD} 'show databases'|awk 'BEGIN {print \"{\\"data\\":[\"; ORS=\"\"} {if (NR&gt;1) {print \",\n\"}; print \"{\\"{#DB}\\":\\"\" $1 \"\\"}\"} END {print \"]}\"}'"]</key>
-          <delay>1m</delay>
+          <delay>30m</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -3119,7 +3123,7 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
             <conditions>
               <condition>
                 <macro>{#DB}</macro>
-                <value>@MySQL::DB</value>
+                <value>(?!(information_schema|mysqlperformance_schema|sys))</value>
                 <operator>8</operator>
                 <formulaid>A</formulaid>
               </condition>
@@ -3269,7 +3273,7 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
           <snmp_community/>
           <snmp_oid/>
           <key>system.run[mysql -sNe  "",]</key>
-          <delay>1m</delay>
+          <delay>30m</delay>
           <status>1</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
