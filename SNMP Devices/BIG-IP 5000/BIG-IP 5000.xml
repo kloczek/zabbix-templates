@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+  <version>3.4</version>
+  <date>2017-10-23T10:40:08Z</date>
+  <groups>
+    <group>
+      <name>Templates SNMP Devices</name>
+    </group>
+  </groups>
+  <templates>
+    <template>
+      <template>BIG-IP 5000</template>
+      <name>BIG-IP 5000</name>
+      <description/>
+      <groups>
+        <group>
+          <name>Templates SNMP Devices</name>
+        </group>
+      </groups>
+      <applications/>
+      <items/>
+      <discovery_rules/>
+      <httptests/>
+      <macros/>
+      <templates>
+        <template>
+          <name>F5-BIGIP-LOCAL-MIB</name>
+        </template>
+        <template>
+          <name>F5-BIGIP-SYSTEM-MIB</name>
+        </template>
+        <template>
+          <name>IF-MIB</name>
+        </template>
+        <template>
+          <name>SNMPv2-MIB</name>
+        </template>
+      </templates>
+      <screens/>
+    </template>
+  </templates>
+</zabbix_export>
