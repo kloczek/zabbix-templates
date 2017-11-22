@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-10-23T10:40:08Z</date>
+  <date>2017-11-22T21:04:21Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -11,7 +11,22 @@
     <template>
       <template>IF-MIB</template>
       <name>IF-MIB</name>
-      <description/>
+      <description>http://support.ipmonitor.com/mibs/IF-MIB/tree.aspx&#13;
+&#13;
+IF-MIB module to describe generic objects for network interface sub-layers. This MIB is an updated version of MIB-II's ifTable, and incorporates the extensions defined in RFC 1229.&#13;
+&#13;
+Current version : 1.0.1&#13;
+Date:                   2017-11-22&#13;
+Notes:&#13;
+&#13;
+Changelog:&#13;
+1.0.1:&#13;
+- channge default hiory perid to 2w&#13;
+- better temlate description&#13;
+- added more descriptions for LLD items&#13;
+&#13;
+1.0.0:&#13;
+- initial version.</description>
       <groups>
         <group>
           <name>Templates SNMP MIB</name>
@@ -36,7 +51,7 @@
           <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
           <snmp_oid>discovery[{#SNMPVALUE},IF-MIB::ifDescr]</snmp_oid>
           <key>ifDescr</key>
-          <delay>600</delay>
+          <delay>10m</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -68,7 +83,7 @@
               <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
               <snmp_oid>IF-MIB::ifAdminStatus.{#SNMPINDEX}</snmp_oid>
               <key>ifAdminStatus.["{#SNMPVALUE}"]</key>
-              <delay>300</delay>
+              <delay>5m</delay>
               <history>90d</history>
               <trends>365d</trends>
               <status>0</status>
@@ -112,12 +127,60 @@ Testing(3)  state indicates that no operational packets can be passed.  When a m
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
+              <name>ifAlias.$1</name>
+              <type>4</type>
+              <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+              <snmp_oid>IF-MIB::ifAlias.{#SNMPINDEX}</snmp_oid>
+              <key>ifAlias.["{#SNMPVALUE}"]</key>
+              <delay>5m</delay>
+              <history>90d</history>
+              <trends>0</trends>
+              <status>0</status>
+              <value_type>1</value_type>
+              <allowed_hosts/>
+              <units/>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port>161</port>
+              <description>This object is an 'alias' name for the interface as specified by a network manager, and provides a non-volatile 'handle' for the interface.&#13;
+&#13;
+On the first instantiation of an interface, the value of ifAlias associated with that interface is the zero-length string.  As and when a value is written into an instance of ifAlias through a network management set operation, then the agent must retain the supplied value in the ifAlias instance associated with the same interface for as long as that interface remains instantiated, including across all re- initializations/reboots of the network management system, including those which result in a change of the interface's ifIndex value.&#13;
+&#13;
+An example of the value which a network manager might store in this object for a WAN interface is the (Telco's) circuit number/identifier of the interface.&#13;
+&#13;
+Some agents may support write-access only for interfaces having particular values of ifType.  An agent which supports write access to this object is required to keep the value in non-volatile storage, but it may limit the length of new values depending on how much storage is already occupied by the current values for other interfaces.</description>
+              <inventory_link>0</inventory_link>
+              <applications>
+                <application>
+                  <name>Interface</name>
+                </application>
+              </applications>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing/>
+              <jmx_endpoint/>
+              <application_prototypes/>
+              <master_item_prototype/>
+            </item_prototype>
+            <item_prototype>
               <name>ifHCInOctets.$1</name>
               <type>4</type>
               <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
               <snmp_oid>IF-MIB::ifHCInOctets.{#SNMPINDEX}</snmp_oid>
               <key>ifHCInOctets.["{#SNMPVALUE}"]</key>
-              <delay>300</delay>
+              <delay>5m</delay>
               <history>90d</history>
               <trends>365d</trends>
               <status>0</status>
@@ -154,12 +217,12 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
               <logtimefmt/>
               <preprocessing>
                 <step>
-                  <type>10</type>
-                  <params/>
-                </step>
-                <step>
                   <type>1</type>
                   <params>8</params>
+                </step>
+                <step>
+                  <type>10</type>
+                  <params/>
                 </step>
               </preprocessing>
               <jmx_endpoint/>
@@ -172,7 +235,7 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
               <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
               <snmp_oid>IF-MIB::ifHCOutOctets.{#SNMPINDEX}</snmp_oid>
               <key>ifHCOutOctets.["{#SNMPVALUE}"]</key>
-              <delay>300</delay>
+              <delay>5m</delay>
               <history>90d</history>
               <trends>365d</trends>
               <status>0</status>
@@ -210,12 +273,12 @@ If LLD items with ifHCOutOctets will be in unsupported on exact device ifHCOutOc
               <logtimefmt/>
               <preprocessing>
                 <step>
-                  <type>10</type>
-                  <params/>
-                </step>
-                <step>
                   <type>1</type>
                   <params>8</params>
+                </step>
+                <step>
+                  <type>10</type>
+                  <params/>
                 </step>
               </preprocessing>
               <jmx_endpoint/>
@@ -228,7 +291,7 @@ If LLD items with ifHCOutOctets will be in unsupported on exact device ifHCOutOc
               <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
               <snmp_oid>IF-MIB::ifInOctets.{#SNMPINDEX}</snmp_oid>
               <key>ifInOctets.["{#SNMPVALUE}"]</key>
-              <delay>300</delay>
+              <delay>5m</delay>
               <history>90d</history>
               <trends>365d</trends>
               <status>0</status>
@@ -284,7 +347,7 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
               <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
               <snmp_oid>IF-MIB::ifLastChange.{#SNMPINDEX}</snmp_oid>
               <key>ifLastChange.["{#SNMPVALUE}"]</key>
-              <delay>600</delay>
+              <delay>10m</delay>
               <history>90d</history>
               <trends>365d</trends>
               <status>0</status>
@@ -331,7 +394,7 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
               <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
               <snmp_oid>IF-MIB::ifOperStatus.{#SNMPINDEX}</snmp_oid>
               <key>ifOperStatus.["{#SNMPVALUE}"]</key>
-              <delay>300</delay>
+              <delay>5m</delay>
               <history>90d</history>
               <trends>365d</trends>
               <status>0</status>
@@ -353,11 +416,12 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
               <publickey/>
               <privatekey/>
               <port>161</port>
-              <description/>
+              <description>The current operational state of the interface.&#13;
+The testing(3) state indicates that no operational packets can be passed.  If ifAdminStatus is down(2) then ifOperStatus should be down(2).  If ifAdminStatus is changed to up(1) then ifOperStatus should change to up(1) if the interface is ready to transmit and receive network traffic; it should change to dormant(5) if the interface is waiting for external actions (such as a serial line waiting for an incoming connection); it should remain in the down(2) state if and only if there is a fault that prevents it from going to the up(1) state; it should remain in the notPresent(6) state if the interface has missing (typically, hardware) components.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>Interface</name>
+                  <name>Interface::State</name>
                 </application>
               </applications>
               <valuemap>
@@ -375,7 +439,7 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
               <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
               <snmp_oid>IF-MIB::ifOutOctets.{#SNMPINDEX}</snmp_oid>
               <key>ifOutOctets.["{#SNMPVALUE}"]</key>
-              <delay>300</delay>
+              <delay>5m</delay>
               <history>90d</history>
               <trends>365d</trends>
               <status>0</status>
