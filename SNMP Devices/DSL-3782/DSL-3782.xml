@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+  <version>3.4</version>
+  <date>2017-11-22T21:04:22Z</date>
+  <groups>
+    <group>
+      <name>Templates SNMP Devices</name>
+    </group>
+  </groups>
+  <templates>
+    <template>
+      <template>DSL-3782</template>
+      <name>DSL-3782</name>
+      <description>D-link DSL-3782</description>
+      <groups>
+        <group>
+          <name>Templates SNMP Devices</name>
+        </group>
+      </groups>
+      <applications/>
+      <items/>
+      <discovery_rules/>
+      <httptests/>
+      <macros/>
+      <templates>
+        <template>
+          <name>ICMP</name>
+        </template>
+        <template>
+          <name>IF-MIB</name>
+        </template>
+        <template>
+          <name>SNMPv2-MIB</name>
+        </template>
+      </templates>
+      <screens/>
+    </template>
+  </templates>
+</zabbix_export>
