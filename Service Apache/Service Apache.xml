@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-09-12T19:37:11Z</date>
+  <date>2017-11-23T20:10:27Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -49,7 +49,7 @@ ExtendedStatus On&#13;
           <snmp_oid/>
           <key>net.tcp.service[http,,{$HTTP_SERVICE_PORT}]</key>
           <delay>1m</delay>
-          <history>365d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -92,7 +92,7 @@ ExtendedStatus On&#13;
           <snmp_oid/>
           <key>proc.num[httpd]</key>
           <delay>30s</delay>
-          <history>365d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -133,7 +133,7 @@ ExtendedStatus On&#13;
           <snmp_oid/>
           <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"BusyWorkers: ([0-9]+)",,\1]</key>
           <delay>30s</delay>
-          <history>365d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -174,7 +174,7 @@ ExtendedStatus On&#13;
           <snmp_oid/>
           <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"IdleWorkers: ([0-9]+)",,\1]</key>
           <delay>30s</delay>
-          <history>365d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -209,13 +209,140 @@ ExtendedStatus On&#13;
           <master_item/>
         </item>
         <item>
+          <name>ServerMPM</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"ServerMPM: (.+)",,\1]</key>
+          <delay>30s</delay>
+          <history>2w</history>
+          <trends>0</trends>
+          <status>0</status>
+          <value_type>1</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Apache httpd MPM type.&#13;
+Possible values:&#13;
+* event&#13;
+* prefork&#13;
+* worker</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::Apache</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Uptime</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"ServerUptimeSeconds: ([0-9]+)",,\1]</key>
+          <delay>5m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>uptime</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>The Apache server uptime.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::Apache</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>ServerVersion</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"ServerVersion: (.+)",,\1]</key>
+          <delay>30s</delay>
+          <history>2w</history>
+          <trends>0</trends>
+          <status>0</status>
+          <value_type>1</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Apache server version string.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::Apache</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
           <name>Requests</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
           <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"Total Accesses: ([0-9]+)",,\1]</key>
           <delay>30s</delay>
-          <history>365d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -261,7 +388,7 @@ ExtendedStatus On&#13;
           <snmp_oid/>
           <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"Total kBytes: ([0-9]+)",,\1]</key>
           <delay>30s</delay>
-          <history>365d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -301,47 +428,6 @@ ExtendedStatus On&#13;
               <params>1024</params>
             </step>
           </preprocessing>
-          <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>Uptime</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"Uptime: ([0-9]+)",,\1]</key>
-          <delay>5m</delay>
-          <history>365d</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>uptime</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>The Apache httpserver uptime.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::Apache</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
           <jmx_endpoint/>
           <master_item/>
         </item>
