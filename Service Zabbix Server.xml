@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-09-12T22:20:13Z</date>
+  <date>2017-11-22T21:04:15Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,9 +13,15 @@
       <name>Service Zabbix Server</name>
       <description>Base Zabbix server monitoring template.&#13;
 &#13;
-Current version : 1.0&#13;
+Current version : 1.0.1&#13;
 Date:                   2017-09-09&#13;
 Changelog:&#13;
+1.0.1:&#13;
+- removed monitoring zabbix,process,"db watchdog"] as it is no longer supported&#13;
+- add more desctiptions of the zabbix[process,] items&#13;
+- move all zabbix[process,] items to new application SVC::Zabbix Server::process::busy&#13;
+- change default history period to 2w&#13;
+ &#13;
 1.0:&#13;
 - initial version.&#13;
 &#13;
@@ -30,6 +36,12 @@ Notes:&#13;
         <application>
           <name>SVC::Zabbix Server</name>
         </application>
+        <application>
+          <name>SVC::Zabbix Server::process::busy</name>
+        </application>
+        <application>
+          <name>SVC::Zabbix Server::queue</name>
+        </application>
       </applications>
       <items>
         <item>
@@ -39,7 +51,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[hosts]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -80,7 +92,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[items]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -121,7 +133,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[items_unsupported]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -162,7 +174,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[process,"alerter",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -183,11 +195,12 @@ Notes:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Average percent of the time of the "alerter" processes process sending notifications (during the last minute).</description>
+          <description>Average percent of the time of the "alerter" processes  is busy during the last minute.&#13;
+"alerter" process is sending alarms notifications.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::process::busy</name>
             </application>
           </applications>
           <valuemap/>
@@ -203,7 +216,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[process,"configuration syncer",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -224,52 +237,12 @@ Notes:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "configuration syncer" processes is busy during the last minute.&#13;
+"configuration syncer" process is for managing in-memory cache of configuration data.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>process::$4::$2 %</name>
-          <type>5</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>zabbix[process,"db watchdog",avg,busy]</key>
-          <delay>30s</delay>
-          <history>15d</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>0</value_type>
-          <allowed_hosts/>
-          <units>%</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::process::busy</name>
             </application>
           </applications>
           <valuemap/>
@@ -285,7 +258,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[process,"discoverer",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -310,7 +283,7 @@ Notes:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::process::busy</name>
             </application>
           </applications>
           <valuemap/>
@@ -326,7 +299,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[process,"history syncer",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -351,7 +324,7 @@ Notes:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::process::busy</name>
             </application>
           </applications>
           <valuemap/>
@@ -367,7 +340,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[process,"housekeeper",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -393,7 +366,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::process::busy</name>
             </application>
           </applications>
           <valuemap/>
@@ -409,7 +382,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[process,"http poller",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -434,7 +407,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::process::busy</name>
             </application>
           </applications>
           <valuemap/>
@@ -450,7 +423,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[process,"icmp pinger",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -475,7 +448,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::process::busy</name>
             </application>
           </applications>
           <valuemap/>
@@ -491,7 +464,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[process,"poller",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -516,7 +489,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::process::busy</name>
             </application>
           </applications>
           <valuemap/>
@@ -532,7 +505,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[process,"proxy poller",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -557,7 +530,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::process::busy</name>
             </application>
           </applications>
           <valuemap/>
@@ -573,7 +546,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[process,"self-monitoring",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -598,7 +571,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::process::busy</name>
             </application>
           </applications>
           <valuemap/>
@@ -614,7 +587,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[process,"trapper",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -639,7 +612,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::process::busy</name>
             </application>
           </applications>
           <valuemap/>
@@ -655,7 +628,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[process,"unreachable poller",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -680,7 +653,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::process::busy</name>
             </application>
           </applications>
           <valuemap/>
@@ -695,8 +668,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_community/>
           <snmp_oid/>
           <key>zabbix[queue,1m]</key>
-          <delay>30s</delay>
-          <history>15d</history>
+          <delay>10s</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -721,7 +694,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::queue</name>
             </application>
           </applications>
           <valuemap/>
@@ -736,8 +709,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_community/>
           <snmp_oid/>
           <key>zabbix[queue,5m]</key>
-          <delay>30s</delay>
-          <history>15d</history>
+          <delay>10s</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -762,7 +735,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::queue</name>
             </application>
           </applications>
           <valuemap/>
@@ -777,8 +750,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_community/>
           <snmp_oid/>
           <key>zabbix[queue,10m]</key>
-          <delay>30s</delay>
-          <history>15d</history>
+          <delay>10s</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -803,7 +776,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::queue</name>
             </application>
           </applications>
           <valuemap/>
@@ -818,8 +791,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_community/>
           <snmp_oid/>
           <key>zabbix[queue,10s]</key>
-          <delay>30s</delay>
-          <history>15d</history>
+          <delay>10s</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -844,7 +817,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::queue</name>
             </application>
           </applications>
           <valuemap/>
@@ -859,8 +832,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_community/>
           <snmp_oid/>
           <key>zabbix[queue,30s]</key>
-          <delay>30s</delay>
-          <history>15d</history>
+          <delay>10s</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -885,7 +858,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::queue</name>
             </application>
           </applications>
           <valuemap/>
@@ -901,7 +874,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[queue]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -942,7 +915,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[rcache,buffer,free]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -983,7 +956,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[rcache,buffer,pfree]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1024,7 +997,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[rcache,buffer,used]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1065,7 +1038,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[requiredperformance]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1106,7 +1079,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[uptime]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1147,7 +1120,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[vcache,buffer,pfree]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1188,7 +1161,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[vcache,cache,hits]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1234,7 +1207,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[vcache,cache,misses]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1280,7 +1253,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[vcache,cache,requests]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1326,7 +1299,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[wcache,history,free]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1369,7 +1342,7 @@ A low number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,history,pfree]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1412,7 +1385,7 @@ A low number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,history,total]</key>
           <delay>1h</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1453,7 +1426,7 @@ A low number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,history,used]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1496,7 +1469,7 @@ A high number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,trend,free]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1539,7 +1512,7 @@ A low number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,trend,pfree]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1582,7 +1555,7 @@ A low number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,trend,total]</key>
           <delay>1h</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1623,7 +1596,7 @@ A low number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,trend,used]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1666,7 +1639,7 @@ A high number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,all]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1712,7 +1685,7 @@ A high number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,float]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1758,7 +1731,7 @@ A high number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,log]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1804,7 +1777,7 @@ A high number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,not supported]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1850,7 +1823,7 @@ A high number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,str]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1896,7 +1869,7 @@ A high number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,text]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1942,7 +1915,7 @@ A high number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,uint]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2199,22 +2172,6 @@ A high number indicates performance problems on the database side.</description>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::zabbix_server::configuration syncer processes &gt;=75% busy</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{Service Zabbix Server:zabbix[process,"db watchdog",avg,busy].avg(1m)}&gt;75</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SVC::zabbix_server::db watchdog process &gt;=75% busy</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
@@ -2610,18 +2567,6 @@ A high number indicates performance problems on the database side.</description>
           <item>
             <host>Service Zabbix Server</host>
             <key>zabbix[process,"configuration syncer",avg,busy]</key>
-          </item>
-        </graph_item>
-        <graph_item>
-          <sortorder>3</sortorder>
-          <drawtype>0</drawtype>
-          <color>666600</color>
-          <yaxisside>0</yaxisside>
-          <calc_fnc>2</calc_fnc>
-          <type>0</type>
-          <item>
-            <host>Service Zabbix Server</host>
-            <key>zabbix[process,"db watchdog",avg,busy]</key>
           </item>
         </graph_item>
         <graph_item>

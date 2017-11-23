@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-10-23T10:40:07Z</date>
+  <date>2017-11-22T21:04:20Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -30,7 +30,7 @@
           <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
           <snmp_oid>discovery[{#SNMPVALUE},F5-BIGIP-LOCAL-MIB::ltmPoolName]</snmp_oid>
           <key>ltmPoolName</key>
-          <delay>600</delay>
+          <delay>10m</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -63,7 +63,7 @@
               <snmp_oid/>
               <key>ltmPoolMemberCnt.max1h.["{#SNMPVALUE}"]</key>
               <delay>3600</delay>
-              <history>15d</history>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -105,7 +105,7 @@
               <snmp_oid>F5-BIGIP-LOCAL-MIB::ltmPoolMemberCnt.{#SNMPINDEX}</snmp_oid>
               <key>ltmPoolMemberCnt.["{#SNMPVALUE}"]</key>
               <delay>60</delay>
-              <history>15d</history>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>

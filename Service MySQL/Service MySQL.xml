@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-10-23T10:55:55Z</date>
+  <date>2017-11-22T21:04:12Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -14,8 +14,11 @@
       <description>Active agent monitoring of the MySQL engine.&#13;
 &#13;
 Current version : 1.0.2&#13;
+&#13;
 Date:                   2017-10-23&#13;
+&#13;
 Changelog:&#13;
+&#13;
 1.0.2&#13;
 - replace use @MySQL::DB global regexp in MySQL::DB LLD by in place regexp (remove global regexp dependency)&#13;
 - change LLDs update interval from 1 to 30min&#13;
@@ -73,7 +76,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <snmp_oid/>
           <key>proc.num[mysqld]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -116,7 +119,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "SELECT count_star FROM performance_schema.events_statements_summary_global_by_event_name WHERE event_name='statement/sql/begin'",]</key>
           <delay>10s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -162,7 +165,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "SELECT count_star FROM performance_schema.events_statements_summary_global_by_event_name WHERE event_name='statement/sql/commit'",]</key>
           <delay>10s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -208,7 +211,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "SELECT count_star FROM performance_schema.events_statements_summary_global_by_event_name WHERE event_name='statement/sql/delete'",]</key>
           <delay>10s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -254,7 +257,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "SELECT count_star FROM performance_schema.events_statements_summary_global_by_event_name WHERE event_name='statement/sql/insert'",]</key>
           <delay>10s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -300,7 +303,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "SELECT count_star FROM performance_schema.events_statements_summary_global_by_event_name WHERE event_name='statement/sql/rollback'",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -346,7 +349,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "SELECT count_star FROM performance_schema.events_statements_summary_global_by_event_name WHERE event_name='statement/sql/select'",]</key>
           <delay>10s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -392,7 +395,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "SELECT count_star FROM performance_schema.events_statements_summary_global_by_event_name WHERE event_name='statement/sql/update'",]</key>
           <delay>10s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -438,7 +441,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "SELECT variable_value FROM performance_schema.global_status WHERE variable_name='binlog_format'",]</key>
           <delay>1h</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
@@ -485,7 +488,7 @@ This variable sets the binary logging format, and can be any one of STATEMENT, R
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "SELECT variable_value FROM performance_schema.global_status WHERE variable_name='Bytes_received'",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -531,7 +534,7 @@ This variable sets the binary logging format, and can be any one of STATEMENT, R
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "SELECT variable_value FROM performance_schema.global_status WHERE variable_name='Bytes_sent'",]</key>
           <delay>10s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -577,7 +580,7 @@ This variable sets the binary logging format, and can be any one of STATEMENT, R
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Connections';",]</key>
           <delay>20s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -623,7 +626,7 @@ This variable sets the binary logging format, and can be any one of STATEMENT, R
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Created_tmp_disk_tables';",]</key>
           <delay>20s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -673,7 +676,7 @@ You can compare the number of internal on-disk temporary tables created to the t
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Created_tmp_files';",]</key>
           <delay>20s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -719,7 +722,7 @@ You can compare the number of internal on-disk temporary tables created to the t
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Created_tmp_tables';",]</key>
           <delay>20s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -769,7 +772,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_buffer_pool_bytes_data';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -810,7 +813,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_buffer_pool_bytes_dirty';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -851,7 +854,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_buffer_pool_pages_data';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -892,7 +895,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_buffer_pool_pages_dirty';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -933,7 +936,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_buffer_pool_pages_flushed';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -979,7 +982,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_buffer_pool_pages_free';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1020,7 +1023,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_buffer_pool_pages_misc';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1061,7 +1064,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_buffer_pool_pages_total';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1102,7 +1105,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_buffer_pool_reads';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1148,7 +1151,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_buffer_pool_read_requests';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1194,7 +1197,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_buffer_pool_write_requests';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1240,7 +1243,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_data_fsyncs';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1286,7 +1289,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_data_pending_fsyncs';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1327,7 +1330,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_data_pending_reads';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1368,7 +1371,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_data_pending_writes';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1409,7 +1412,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_data_read';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1455,7 +1458,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_data_writes';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1496,7 +1499,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_log_waits';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1542,7 +1545,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_log_write_requests';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1588,7 +1591,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_os_log_written';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1634,7 +1637,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_rows_inserted';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1680,7 +1683,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_rows_read';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1726,7 +1729,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_rows_updated';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1772,7 +1775,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_row_lock_time_avg';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1818,7 +1821,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Innodb_row_lock_waits';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1864,7 +1867,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Qcache_free_blocks'",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1905,7 +1908,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Qcache_free_memory'",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1946,7 +1949,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Qcache_hits'",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1992,7 +1995,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Qcache_inserts'",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -2038,7 +2041,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Qcache_lowmem_prunes'",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -2084,7 +2087,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Qcache_not_cached'",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -2130,7 +2133,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Qcache_queries_in_cache'",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2171,7 +2174,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Qcache_total_blocks'",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2212,7 +2215,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Queries';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -2260,7 +2263,7 @@ It does not count COM_PING or COM_STATISTICS commands.</description>
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Select_scan';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2306,7 +2309,7 @@ It does not count COM_PING or COM_STATISTICS commands.</description>
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Slow_queries';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -2352,7 +2355,7 @@ It does not count COM_PING or COM_STATISTICS commands.</description>
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Threads_connected';",]</key>
           <delay>20s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2393,7 +2396,7 @@ It does not count COM_PING or COM_STATISTICS commands.</description>
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Threads_created';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2434,7 +2437,7 @@ It does not count COM_PING or COM_STATISTICS commands.</description>
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Uptime';",]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2475,7 +2478,7 @@ It does not count COM_PING or COM_STATISTICS commands.</description>
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='event_scheduler';",]</key>
           <delay>1h</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
@@ -2522,7 +2525,7 @@ It does not count COM_PING or COM_STATISTICS commands.</description>
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='innodb_max_dirty_pages_pct';",]</key>
           <delay>1h</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2563,7 +2566,7 @@ It does not count COM_PING or COM_STATISTICS commands.</description>
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='innodb_open_files';",]</key>
           <delay>1h</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2604,7 +2607,7 @@ It does not count COM_PING or COM_STATISTICS commands.</description>
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='innodb_page_size';",]</key>
           <delay>1h</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2647,7 +2650,7 @@ The default, with the largest page size, is appropriate for a wide range of work
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='innodb_support_xa';",]</key>
           <delay>1h</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
@@ -2692,7 +2695,7 @@ You can also turn off this option if you do not need it for safe binary logging 
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='long_query_time';",]</key>
           <delay>1h</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2733,7 +2736,7 @@ You can also turn off this option if you do not need it for safe binary logging 
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='max_connections';",]</key>
           <delay>1h</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2774,7 +2777,7 @@ You can also turn off this option if you do not need it for safe binary logging 
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='max_heap_table_size';",]</key>
           <delay>1h</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2817,7 +2820,7 @@ This variable is also used in conjunction with tmp_table_size to limit the size 
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='open_files_limit';",]</key>
           <delay>1h</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2858,7 +2861,7 @@ This variable is also used in conjunction with tmp_table_size to limit the size 
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='query_cache_size';",]</key>
           <delay>1h</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2903,7 +2906,7 @@ The query cache needs a minimum size of about 40KB to allocate its structures. (
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='query_cache_type';",]</key>
           <delay>1h</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
@@ -2949,7 +2952,7 @@ Possible values:&#13;
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='tmp_table_size';",]</key>
           <delay>1h</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2992,7 +2995,7 @@ You can compare the number of internal on-disk temporary tables created to the t
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='tx_isolation';",]</key>
           <delay>1h</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
@@ -3057,7 +3060,7 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='version';",]</key>
           <delay>1d</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
@@ -3099,7 +3102,7 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
           <snmp_community/>
           <snmp_oid/>
           <key>system.run["{$MYSQL_CMD} 'show databases'|awk 'BEGIN {print \"{\\"data\\":[\"; ORS=\"\"} {if (NR&gt;1) {print \",\n\"}; print \"{\\"{#DB}\\":\\"\" $1 \"\\"}\"} END {print \"]}\"}'"]</key>
-          <delay>30m</delay>
+          <delay>10m</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -3129,7 +3132,7 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
               </condition>
             </conditions>
           </filter>
-          <lifetime>0d</lifetime>
+          <lifetime>1d</lifetime>
           <description>Discover list of available databases.</description>
           <item_prototypes>
             <item_prototype>
@@ -3139,7 +3142,7 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
               <snmp_oid/>
               <key>system.run[{$MYSQL_CMD} "select SUM(DATA_LENGTH) from information_schema.TABLES where TABLE_SCHEMA='{#DB}';",]</key>
               <delay>1m</delay>
-              <history>15d</history>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3181,7 +3184,7 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
               <snmp_oid/>
               <key>system.run[{$MYSQL_CMD} "select SUM(INDEX_LENGTH) from information_schema.TABLES where TABLE_SCHEMA='{#DB}';",]</key>
               <delay>1m</delay>
-              <history>15d</history>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3273,7 +3276,7 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
           <snmp_community/>
           <snmp_oid/>
           <key>system.run[mysql -sNe  "",]</key>
-          <delay>30m</delay>
+          <delay>10m</delay>
           <status>1</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -3296,7 +3299,7 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
             <formula/>
             <conditions/>
           </filter>
-          <lifetime>31d</lifetime>
+          <lifetime>1d</lifetime>
           <description>Slave process monitoring.&#13;
 &#13;
 Detection is slave running bases on query:&#13;
