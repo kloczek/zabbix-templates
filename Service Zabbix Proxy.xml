@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-11-22T21:04:14Z</date>
+  <date>2017-09-12T22:20:12Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -45,7 +45,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>logrt[/var/log/zabbix/zabbix_proxy.log,"cannot send list of active checks to \[.*\] failed: host \[.*\] not found",,]</key>
           <delay>5m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>2</value_type>
@@ -86,7 +86,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>proc.num[zabbix_proxy]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -127,7 +127,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[hosts]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -168,7 +168,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[items]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -209,7 +209,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[items_unsupported]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -250,7 +250,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[process,"discoverer",avg,busy]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -292,7 +292,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[process,"history syncer",avg,busy]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -334,7 +334,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[process,"housekeeper",avg,busy]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -376,7 +376,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[process,"http poller",avg,busy]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -418,7 +418,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[process,"icmp pinger",avg,busy]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -460,7 +460,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[process,"poller",avg,busy]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -502,7 +502,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[process,"self-monitoring",avg,busy]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -544,7 +544,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[process,"trapper",avg,busy]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -586,7 +586,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[process,"unreachable poller",avg,busy]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -628,7 +628,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[process,"vmware collector",avg,busy]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -670,7 +670,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[proxy,{HOSTNAME},lastaccess]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -711,7 +711,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[proxy_history]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -752,7 +752,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[queue,1m]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -793,7 +793,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[queue,5m]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -834,7 +834,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[queue,10m]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -875,7 +875,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[queue,10s]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -916,7 +916,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[queue,30s]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -957,7 +957,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[rcache,buffer,free]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -998,7 +998,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[rcache,buffer,pfree]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1039,7 +1039,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[rcache,buffer,total]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1080,7 +1080,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[rcache,buffer,used]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1121,7 +1121,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[requiredperformance]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1162,7 +1162,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[uptime]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1203,7 +1203,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[vmware,buffer,free]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1244,7 +1244,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[vmware,buffer,pfree]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1285,7 +1285,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[vmware,buffer,total]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1326,7 +1326,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[vmware,buffer,used]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1367,7 +1367,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[wcache,history,free]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1408,7 +1408,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[wcache,history,pfree]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1449,7 +1449,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[wcache,history,total]</key>
           <delay>1h</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1490,7 +1490,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[wcache,history,used]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1531,7 +1531,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[wcache,text,free]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1572,7 +1572,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[wcache,text,pfree]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1613,7 +1613,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[wcache,text,total]</key>
           <delay>1h</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1654,7 +1654,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[wcache,text,used]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1695,7 +1695,7 @@ It is calculated for last minute only.</description>
           <snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
           <key>zabbix[wcache,values,all]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1741,7 +1741,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,float]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1787,7 +1787,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,log]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1833,7 +1833,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,not supported]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1879,7 +1879,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,str]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1925,7 +1925,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,text]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1971,7 +1971,7 @@ It is calculated for last minute only.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,uint]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>

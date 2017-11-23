@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-11-22T21:04:15Z</date>
+  <date>2017-10-15T17:48:56Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -28,7 +28,7 @@ Changelog:&#13;
 - added triggers &#13;
  - HW::CPU has changed&#13;
  - HW::devices has changed&#13;
-- remove using @OS Linux::NET regexp network interfaces filter and replace by regexp "^(?!(lo))" (removed global regexp dependency)&#13;
+- remove using @OS Linux::NET regexp network interfaces filter and replace by regexp (?!(lo)) (no global regexp needed now)&#13;
 &#13;
 1.0:&#13;
 - initial version.</description>
@@ -77,7 +77,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>net.if.in[lo,bytes]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -123,7 +123,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>net.if.out[lo,bytes]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -169,7 +169,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>net.tcp.port[,22]</key>
           <delay>5m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -212,7 +212,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>net.tcp.service[ssh]</key>
           <delay>5m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -255,7 +255,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>proc.num[,,run]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -296,7 +296,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>proc.num[crond]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -337,7 +337,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>proc.num[rsyslogd]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -378,7 +378,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>proc.num[sshd]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -419,7 +419,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>proc.num[]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -460,7 +460,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>system.boottime</key>
           <delay>1h</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -501,7 +501,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>system.cpu.intr</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -547,7 +547,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>system.cpu.load[,avg1]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -588,7 +588,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>system.cpu.num[max]</key>
           <delay>1d</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -629,7 +629,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>system.cpu.switches</key>
           <delay>5s</delay>
-          <history>2w</history>
+          <history>365d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -677,7 +677,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.cpu.util[,idle,avg1]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -718,7 +718,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.cpu.util[,interrupt,avg1]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -759,7 +759,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.cpu.util[,iowait,avg1]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -800,7 +800,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.cpu.util[,nice,avg1]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -841,7 +841,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.cpu.util[,softirq,avg1]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -882,7 +882,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.cpu.util[,steal,avg1]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -923,7 +923,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.cpu.util[,system,avg1]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -964,7 +964,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.cpu.util[,user,avg1]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1004,8 +1004,8 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_community/>
           <snmp_oid/>
           <key>system.hostname</key>
-          <delay>6h</delay>
-          <history>2w</history>
+          <delay>5h</delay>
+          <history>15d</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
@@ -1046,7 +1046,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.hw.cpu</key>
           <delay>1d</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>4</value_type>
@@ -1087,7 +1087,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.hw.devices</key>
           <delay>1d</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>4</value_type>
@@ -1128,7 +1128,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.localtime</key>
           <delay>15m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1169,7 +1169,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)connections aborted due to timeout/\1/ p'"]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1215,7 +1215,53 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)failed connection attempts/\1/ p'"]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units>events/s</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NET</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing>
+            <step>
+              <type>10</type>
+              <params/>
+            </step>
+          </preprocessing>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NET::Other TCP timeouts</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)other TCP timeouts/\1/ p'"]</key>
+          <delay>1m</delay>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1259,9 +1305,9 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\) segments retransmitted*/\1/ p'"]</key>
+          <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)segments retransmited.*/\1/ p'"]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1306,8 +1352,8 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_community/>
           <snmp_oid/>
           <key>system.run["cat /etc/redhat-release"]</key>
-          <delay>6h</delay>
-          <history>2w</history>
+          <delay>5h</delay>
+          <history>15d</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
@@ -1347,8 +1393,8 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_community/>
           <snmp_oid/>
           <key>system.sw.os[full]</key>
-          <delay>6h</delay>
-          <history>2w</history>
+          <delay>5h</delay>
+          <history>15d</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
@@ -1389,7 +1435,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.sw.packages</key>
           <delay>6h</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>4</value_type>
@@ -1429,8 +1475,8 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_community/>
           <snmp_oid/>
           <key>system.uname</key>
-          <delay>6h</delay>
-          <history>2w</history>
+          <delay>5h</delay>
+          <history>15d</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
@@ -1471,7 +1517,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.uptime</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1512,7 +1558,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.users.num</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1553,7 +1599,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>vfs.file.cksum[/etc/passwd]</key>
           <delay>1h</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1594,7 +1640,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>vfs.file.cksum[/usr/bin/ssh]</key>
           <delay>1h</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1635,7 +1681,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>vfs.file.cksum[/usr/sbin/sshd]</key>
           <delay>1h</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1676,7 +1722,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>vm.memory.size[available]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1717,7 +1763,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>vm.memory.size[buffers]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1758,7 +1804,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>vm.memory.size[cached]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1799,7 +1845,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>vm.memory.size[free]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1840,7 +1886,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>vm.memory.size[total]</key>
           <delay>1d</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1881,7 +1927,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>vm.memory.size[used]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1923,7 +1969,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_community/>
           <snmp_oid/>
           <key>net.if.discovery</key>
-          <delay>10m</delay>
+          <delay>5m</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -1953,7 +1999,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               </condition>
             </conditions>
           </filter>
-          <lifetime>1d</lifetime>
+          <lifetime>1w</lifetime>
           <description>Discovery of network interfaces.</description>
           <item_prototypes>
             <item_prototype>
@@ -1963,7 +2009,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <snmp_oid/>
               <key>net.if.in[{#IFNAME},bytes]</key>
               <delay>15s</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -2010,7 +2056,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <snmp_oid/>
               <key>net.if.in[{#IFNAME},packets]</key>
               <delay>15s</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -2057,7 +2103,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <snmp_oid/>
               <key>net.if.out[{#IFNAME},bytes]</key>
               <delay>15s</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -2104,7 +2150,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <snmp_oid/>
               <key>net.if.out[{#IFNAME},packets]</key>
               <delay>15s</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -2151,7 +2197,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <snmp_oid/>
               <key>net.if.total[{#IFNAME},dropped]</key>
               <delay>1m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -2198,7 +2244,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <snmp_oid/>
               <key>net.if.total[{#IFNAME},errors]</key>
               <delay>1m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -2417,6 +2463,18 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
                   </item>
                 </graph_item>
                 <graph_item>
+                  <sortorder>3</sortorder>
+                  <drawtype>0</drawtype>
+                  <color>C800C8</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>7</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>OS Linux</host>
+                    <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)other TCP timeouts/\1/ p'"]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
                   <sortorder>4</sortorder>
                   <drawtype>0</drawtype>
                   <color>999999</color>
@@ -2425,7 +2483,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
                   <type>0</type>
                   <item>
                     <host>OS Linux</host>
-                    <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\) segments retransmitted*/\1/ p'"]</key>
+                    <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)segments retransmited.*/\1/ p'"]</key>
                   </item>
                 </graph_item>
               </graph_items>
@@ -2528,7 +2586,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_community/>
           <snmp_oid/>
           <key>system.run["awk 'BEGIN {print \"{\\"data\\":[\"; ORS=\"\"} {if (NR!=1) {print \",\n\"}; print \"{\\"{#DISK}\\":\\"\" $3 \"\\"}\"} END {print \"\n]}\"}' /proc/diskstats"]</key>
-          <delay>10m</delay>
+          <delay>1h</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -2558,7 +2616,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               </condition>
             </conditions>
           </filter>
-          <lifetime>1d</lifetime>
+          <lifetime>31d</lifetime>
           <description>List of Linux SCSI, ATA, XEN and Device Mapper storage devices without partitions.&#13;
 Discovery of storage devices is filtered over global regular expression "OS Linux::BlkDev" regexp.&#13;
 &#13;
@@ -2571,7 +2629,7 @@ Discovery of storage devices is filtered over global regular expression "OS Linu
               <snmp_oid/>
               <key>vfs.dev.read[{#DISK},operations]</key>
               <delay>30s</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -2618,7 +2676,7 @@ Discovery of storage devices is filtered over global regular expression "OS Linu
               <snmp_oid/>
               <key>vfs.dev.read[{#DISK},sectors]</key>
               <delay>30s</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -2670,7 +2728,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <snmp_oid/>
               <key>vfs.dev.write[{#DISK},operations]</key>
               <delay>30s</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -2717,7 +2775,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <snmp_oid/>
               <key>vfs.dev.write[{#DISK},sectors]</key>
               <delay>30s</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -2863,7 +2921,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>vfs.fs.discovery</key>
-          <delay>10m</delay>
+          <delay>1h</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -2882,24 +2940,18 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           <privatekey/>
           <port/>
           <filter>
-            <evaltype>1</evaltype>
+            <evaltype>0</evaltype>
             <formula/>
             <conditions>
               <condition>
                 <macro>{#FSTYPE}</macro>
                 <value>^(btrfs|ext2|ext3|ext4|jfs|reiser|xfs|ffs|ufs|jfs|jfs2|vxfs|hfs|refs|ntfs|fat32|zfs)$</value>
                 <operator>8</operator>
-                <formulaid>B</formulaid>
-              </condition>
-              <condition>
-                <macro>{#FSNAME}</macro>
-                <value>(?!(^/run/media))</value>
-                <operator>8</operator>
                 <formulaid>A</formulaid>
               </condition>
             </conditions>
           </filter>
-          <lifetime>1d</lifetime>
+          <lifetime>0</lifetime>
           <description>Discovery of file systems.</description>
           <item_prototypes>
             <item_prototype>
@@ -2909,7 +2961,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <snmp_oid/>
               <key>vfs.fs.inode[{#FSNAME},pfree]</key>
               <delay>1m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2951,7 +3003,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <snmp_oid/>
               <key>vfs.fs.inode[{#FSNAME},total]</key>
               <delay>1d</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -2993,7 +3045,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <snmp_oid/>
               <key>vfs.fs.inode[{#FSNAME},used]</key>
               <delay>1m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3035,7 +3087,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <snmp_oid/>
               <key>vfs.fs.size[{#FSNAME},pfree]</key>
               <delay>1m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3056,7 +3108,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description>Percent used volume space.</description>
+              <description/>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
@@ -3077,7 +3129,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <snmp_oid/>
               <key>vfs.fs.size[{#FSNAME},total]</key>
               <delay>1d</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3098,7 +3150,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description>Volume total space.</description>
+              <description/>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
@@ -3119,7 +3171,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <snmp_oid/>
               <key>vfs.fs.size[{#FSNAME},used]</key>
               <delay>1m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3140,7 +3192,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description>Volume used space.</description>
+              <description/>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
@@ -4018,13 +4070,13 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <expression>{OS Linux:system.hw.devices.str()}&lt;&gt;0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>HW::devices list has been changed</name>
+      <name>HW::devices has changed</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
       <status>0</status>
       <priority>1</priority>
-      <description>Hardware devices list has been changed.</description>
+      <description>List of devices has been changed.</description>
       <type>1</type>
       <manual_close>0</manual_close>
       <dependencies/>
@@ -4591,6 +4643,18 @@ s3-dump hosts delete</description>
           <item>
             <host>OS Linux</host>
             <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)connections aborted due to timeout/\1/ p'"]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>1</sortorder>
+          <drawtype>4</drawtype>
+          <color>00C800</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>OS Linux</host>
+            <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)other TCP timeouts/\1/ p'"]</key>
           </item>
         </graph_item>
         <graph_item>

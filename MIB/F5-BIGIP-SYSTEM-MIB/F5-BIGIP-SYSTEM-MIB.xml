@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-11-22T21:04:20Z</date>
+  <date>2017-10-23T10:40:08Z</date>
   <groups>
+    <group>
+      <name>Templates</name>
+    </group>
     <group>
       <name>Templates SNMP MIB</name>
     </group>
@@ -13,6 +16,9 @@
       <name>F5-BIGIP-SYSTEM-MIB</name>
       <description/>
       <groups>
+        <group>
+          <name>Templates</name>
+        </group>
         <group>
           <name>Templates SNMP MIB</name>
         </group>
@@ -41,8 +47,8 @@
           <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
           <snmp_oid>F5-BIGIP-SYSTEM-MIB::sysGeneralHwName.0</snmp_oid>
           <key>sysGeneralHwName</key>
-          <delay>1d</delay>
-          <history>2w</history>
+          <delay>86400</delay>
+          <history>15d</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
@@ -82,8 +88,8 @@
           <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
           <snmp_oid>F5-BIGIP-SYSTEM-MIB::sysGlobalTmmStatMemoryTotal.0</snmp_oid>
           <key>sysGlobalTmmStatMemoryTotal</key>
-          <delay>1m</delay>
-          <history>2w</history>
+          <delay>60</delay>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -126,8 +132,8 @@
           <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
           <snmp_oid>F5-BIGIP-SYSTEM-MIB::sysGlobalTmmStatMemoryUsed.0</snmp_oid>
           <key>sysGlobalTmmStatMemoryUsed</key>
-          <delay>1m</delay>
-          <history>2w</history>
+          <delay>60</delay>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -170,8 +176,8 @@
           <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
           <snmp_oid>F5-BIGIP-SYSTEM-MIB::sysStatMemoryTotal.0</snmp_oid>
           <key>sysStatMemoryTotal</key>
-          <delay>1d</delay>
-          <history>2w</history>
+          <delay>86400</delay>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -214,8 +220,8 @@
           <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
           <snmp_oid>F5-BIGIP-SYSTEM-MIB::sysStatMemoryUsed.0</snmp_oid>
           <key>sysStatMemoryUsed</key>
-          <delay>1m</delay>
-          <history>2w</history>
+          <delay>60</delay>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -258,8 +264,8 @@
           <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
           <snmp_oid>F5-BIGIP-SYSTEM-MIB::sysTcpStatCloseWait.0</snmp_oid>
           <key>sysTcpStatCloseWait</key>
-          <delay>1m</delay>
-          <history>2w</history>
+          <delay>60</delay>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -299,8 +305,8 @@
           <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
           <snmp_oid>F5-BIGIP-SYSTEM-MIB::sysTcpStatOpen.0</snmp_oid>
           <key>sysTcpStatOpen</key>
-          <delay>1m</delay>
-          <history>2w</history>
+          <delay>60</delay>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>

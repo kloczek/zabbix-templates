@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-11-22T21:04:21Z</date>
+  <date>2017-10-23T10:56:05Z</date>
   <groups>
     <group>
       <name>Templates SNMP Devices</name>

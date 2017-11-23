@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-11-22T21:04:21Z</date>
+  <date>2017-10-23T10:40:08Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -33,7 +33,7 @@
           <snmp_oid>SNMPv2-MIB::snmpInPkts.0</snmp_oid>
           <key>snmpInPkts</key>
           <delay>60</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -79,7 +79,7 @@
           <snmp_oid>SNMPv2-MIB::snmpOutPkts.0</snmp_oid>
           <key>snmpOutPkts</key>
           <delay>60</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -125,7 +125,7 @@
           <snmp_oid>SNMPv2-MIB::sysContact.0</snmp_oid>
           <key>sysContact</key>
           <delay>3600</delay>
-          <history>2w</history>
+          <history>90d</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
@@ -166,7 +166,7 @@
           <snmp_oid>SNMPv2-MIB::sysDescr.0</snmp_oid>
           <key>sysDescr</key>
           <delay>3600</delay>
-          <history>2w</history>
+          <history>90d</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
@@ -207,7 +207,7 @@
           <snmp_oid>SNMPv2-MIB::sysLocation.0</snmp_oid>
           <key>sysLocation</key>
           <delay>3600</delay>
-          <history>2w</history>
+          <history>90d</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
@@ -248,7 +248,7 @@
           <snmp_oid>SNMPv2-MIB::sysName.0</snmp_oid>
           <key>sysName</key>
           <delay>3600</delay>
-          <history>2w</history>
+          <history>90d</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
@@ -289,7 +289,7 @@
           <snmp_oid>SNMPv2-MIB::sysObjectID.0</snmp_oid>
           <key>sysObjectID</key>
           <delay>3600</delay>
-          <history>2w</history>
+          <history>90d</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>4</value_type>
@@ -331,7 +331,7 @@ This value is allocated within the SMI enterprises subtree (1.3.6.1.4.1) and pro
           <snmp_oid>SNMPv2-MIB::sysUpTime.0</snmp_oid>
           <key>sysUpTime</key>
           <delay>300</delay>
-          <history>2w</history>
+          <history>90d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-11-22T21:04:16Z</date>
+  <date>2017-09-12T22:20:14Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -51,7 +51,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>eventlog[Application,,"Error"]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>2</value_type>
@@ -92,7 +92,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>eventlog[Application,,,"Zabbix Agent"]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>0</trends>
           <status>1</status>
           <value_type>2</value_type>
@@ -133,7 +133,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>eventlog[System,,"Error"]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>2</value_type>
@@ -174,7 +174,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>icmpping[]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -217,7 +217,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\LogicalDisk(_Total)\Avg. Disk sec/Read]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -258,7 +258,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\LogicalDisk(_Total)\Avg. Disk sec/Transfer]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -299,7 +299,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\LogicalDisk(_Total)\Avg. Disk sec/Write]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -340,7 +340,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Memory\Available Bytes]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -381,7 +381,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Memory\Commit Limit]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -422,7 +422,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Memory\Committed Bytes]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -463,7 +463,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Memory\Free System Page Table Entries]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -504,7 +504,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Memory\Pages/sec]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -545,7 +545,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Memory\Pages Input/sec]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -586,7 +586,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Objects\Events]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -627,7 +627,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Objects\Mutexes]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -668,7 +668,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Objects\Processes]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -709,7 +709,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Objects\Sections]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -750,7 +750,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Objects\Semaphores]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -791,7 +791,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Objects\Threads]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -832,7 +832,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\PhysicalDisk(_Total)\Avg. Disk Read Queue Length]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -873,7 +873,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\PhysicalDisk(_Total)\Avg. Disk sec/Read]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -914,7 +914,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\PhysicalDisk(_Total)\Avg. Disk sec/Transfer]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -955,7 +955,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\PhysicalDisk(_Total)\Avg. Disk sec/Write]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -996,7 +996,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\PhysicalDisk(_Total)\Avg. Disk Write Queue Length]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1037,7 +1037,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Process(_Total)\% Privileged Time]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1078,7 +1078,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Process(_Total)\% Processor Time]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1119,7 +1119,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Process(_Total)\% User Time]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1160,7 +1160,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Process(_Total)\Handle Count]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1201,7 +1201,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Process(_Total)\IO Data Operations/sec]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1242,7 +1242,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Process(_Total)\IO Other Operations/sec]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1283,7 +1283,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Process(_Total)\Page File Bytes]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1324,7 +1324,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Process(_Total)\Private Bytes]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1365,7 +1365,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Process(_Total)\Thread Count]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1406,7 +1406,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Process(_Total)\Working Set]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1447,7 +1447,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Processor(_Total)\% Interrupt Time]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1488,7 +1488,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Processor(_Total)\% Privileged Time]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1529,7 +1529,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Processor(_Total)\% Processor Time]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1570,7 +1570,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Processor(_Total)\% User Time]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1611,7 +1611,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\Server\Bytes Total/sec]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1652,7 +1652,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>perf_counter[\System\Context Switches/sec]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1695,7 +1695,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>perf_counter[\System\Processor Queue Length]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1736,7 +1736,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>perf_counter[\System\threads]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1777,7 +1777,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>proc.num[]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1823,7 +1823,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.cpu.load[,avg1]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1864,7 +1864,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.cpu.load[,avg5]</key>
           <delay>2m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1905,7 +1905,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.cpu.load[,avg15]</key>
           <delay>2m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1946,7 +1946,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.cpu.util[,system,avg1]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1987,7 +1987,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.localtime</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2028,7 +2028,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.uname</key>
           <delay>30m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
@@ -2069,7 +2069,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.uptime</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -2110,7 +2110,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>vm.memory.size[cached]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2151,7 +2151,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>vm.memory.size[free]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2192,7 +2192,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>vm.memory.size[total]</key>
           <delay>30m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2234,7 +2234,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_community/>
           <snmp_oid/>
           <key>net.if.discovery</key>
-          <delay>10m</delay>
+          <delay>2h</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -2276,7 +2276,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>net.if.in[{#IFNAME},bytes]</key>
               <delay>1m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2323,7 +2323,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>net.if.in[{#IFNAME},dropped]</key>
               <delay>1m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2370,7 +2370,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>net.if.in[{#IFNAME},errors]</key>
               <delay>1m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2417,7 +2417,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>net.if.out[{#IFNAME},bytes]</key>
               <delay>1m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2464,7 +2464,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>net.if.out[{#IFNAME},dropped]</key>
               <delay>1m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2511,7 +2511,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>net.if.out[{#IFNAME},errors]</key>
               <delay>1m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2753,7 +2753,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
           <snmp_community/>
           <snmp_oid/>
           <key>vfs.fs.discovery</key>
-          <delay>10m</delay>
+          <delay>2h</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -2793,7 +2793,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\% Disk Read Time]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2835,7 +2835,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\% Disk Time]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2877,7 +2877,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\% Disk Write Time]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2919,7 +2919,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\% Free Space]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2961,7 +2961,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\% Idle Time]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3003,7 +3003,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\Avg. Disk Bytes/Read]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3045,7 +3045,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\Avg. Disk Bytes/Transfer]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3087,7 +3087,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\Avg. Disk Bytes/Write]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3129,7 +3129,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\Avg. Disk Queue Length]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3171,7 +3171,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\Avg. Disk Read Queue Length]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3213,7 +3213,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\Avg. Disk sec/Read]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3255,7 +3255,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\Avg. Disk sec/Transfer]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3297,7 +3297,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\Avg. Disk sec/Write]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3339,7 +3339,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\Avg. Disk Write Queue Length]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3381,7 +3381,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\Current Disk Queue Length]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3423,7 +3423,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\Disk Bytes/sec]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3465,7 +3465,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\Disk Read Bytes/sec]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3507,7 +3507,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\Disk Reads/sec]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3549,7 +3549,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\Disk Transfers/sec]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3591,7 +3591,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\Disk Write Bytes/sec]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3633,7 +3633,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\Disk Writes/sec]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3675,7 +3675,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\Free Megabytes]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3722,7 +3722,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <snmp_oid/>
               <key>perf_counter[\LogicalDisk({#FSNAME})\Split IO/Sec]</key>
               <delay>2m</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
