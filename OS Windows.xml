@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-09-12T22:20:14Z</date>
+  <date>2017-11-29T22:12:07Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,9 +13,13 @@
       <name>OS Windows</name>
       <description>Base OS Windows template.&#13;
 &#13;
-Current version : 1.0&#13;
-Date:                   2017-09-09&#13;
+Current version : 1.2&#13;
+Date:                   2017-11-29&#13;
 Changelog:&#13;
+1.2:&#13;
+- added more applications&#13;
+- added items across the board&#13;
+- moved some items  &#13;
 1.0:&#13;
 - initial version.</description>
       <groups>
@@ -25,10 +29,28 @@ Changelog:&#13;
       </groups>
       <applications>
         <application>
+          <name>BITL</name>
+        </application>
+        <application>
           <name>CPU</name>
         </application>
         <application>
+          <name>CSC</name>
+        </application>
+        <application>
           <name>DSK</name>
+        </application>
+        <application>
+          <name>GPU</name>
+        </application>
+        <application>
+          <name>HW</name>
+        </application>
+        <application>
+          <name>HW::CPU</name>
+        </application>
+        <application>
+          <name>LOG</name>
         </application>
         <application>
           <name>MEM</name>
@@ -37,10 +59,46 @@ Changelog:&#13;
           <name>NET</name>
         </application>
         <application>
+          <name>NET::DRT</name>
+        </application>
+        <application>
+          <name>NET::PNR</name>
+        </application>
+        <application>
+          <name>NLOG</name>
+        </application>
+        <application>
+          <name>NTP</name>
+        </application>
+        <application>
+          <name>OBJ</name>
+        </application>
+        <application>
+          <name>PROC</name>
+        </application>
+        <application>
+          <name>RBC</name>
+        </application>
+        <application>
+          <name>SEC</name>
+        </application>
+        <application>
+          <name>SIND</name>
+        </application>
+        <application>
+          <name>SMB</name>
+        </application>
+        <application>
+          <name>SS</name>
+        </application>
+        <application>
           <name>SVC</name>
         </application>
         <application>
           <name>SYS</name>
+        </application>
+        <application>
+          <name>TSS</name>
         </application>
       </applications>
       <items>
@@ -76,7 +134,7 @@ Changelog:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SYS</name>
+              <name>LOG</name>
             </application>
           </applications>
           <valuemap/>
@@ -94,7 +152,7 @@ Changelog:&#13;
           <delay>1m</delay>
           <history>15d</history>
           <trends>0</trends>
-          <status>1</status>
+          <status>0</status>
           <value_type>2</value_type>
           <allowed_hosts/>
           <units/>
@@ -117,7 +175,7 @@ Changelog:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Agent</name>
+              <name>LOG</name>
             </application>
           </applications>
           <valuemap/>
@@ -158,7 +216,7 @@ Changelog:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SYS</name>
+              <name>LOG</name>
             </application>
           </applications>
           <valuemap/>
@@ -211,7 +269,53 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>Logical Disk Average Read</name>
+          <name>GPU::Local Adapter Memory Usage</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\GPU Local Adapter Memory(*)\Local Usage]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>1</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units>%</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>WIP, as (*) expands to something which does not have total values like processor.&#13;
+&#13;
+TypePerf.exe -qx on cmd prompt&#13;
+&#13;
+\GPU Local Adapter Memory(luid_0x00000000_0x00007E53_phys_0_part_0)\Local Usage&#13;
+\GPU Local Adapter Memory(luid_0x00000000_0x000073F5_phys_0)\Local Usage</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>GPU</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>DSK::Logical Disk Average Read</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -221,7 +325,7 @@ Changelog:&#13;
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units>Bps</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -252,7 +356,7 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>Logical Disk Average Transfer</name>
+          <name>DSK::Logical Disk Average Transfer</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -262,7 +366,7 @@ Changelog:&#13;
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units>Bps</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -293,7 +397,7 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>Logical Disk Average Write</name>
+          <name>DSK::Logical Disk Average Write</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -303,7 +407,7 @@ Changelog:&#13;
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units>Bps</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -375,7 +479,7 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>MEM::commite::limit</name>
+          <name>MEM::commit::limit</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -580,7 +684,7 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>Object Events</name>
+          <name>OBJ::Object Events</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -590,7 +694,7 @@ Changelog:&#13;
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units/>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -611,7 +715,7 @@ Changelog:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SYS</name>
+              <name>OBJ</name>
             </application>
           </applications>
           <valuemap/>
@@ -621,7 +725,7 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>Object Mutexes</name>
+          <name>OBJ::Object Mutexes</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -631,7 +735,7 @@ Changelog:&#13;
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units/>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -652,7 +756,7 @@ Changelog:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SYS</name>
+              <name>OBJ</name>
             </application>
           </applications>
           <valuemap/>
@@ -662,7 +766,7 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>Object Processes</name>
+          <name>OBJ::Object Processes</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -672,7 +776,7 @@ Changelog:&#13;
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units/>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -693,7 +797,7 @@ Changelog:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SYS</name>
+              <name>OBJ</name>
             </application>
           </applications>
           <valuemap/>
@@ -703,7 +807,7 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>Object Sections</name>
+          <name>OBJ::Object Sections</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -713,7 +817,7 @@ Changelog:&#13;
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units/>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -734,7 +838,7 @@ Changelog:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SYS</name>
+              <name>OBJ</name>
             </application>
           </applications>
           <valuemap/>
@@ -744,7 +848,7 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>Object Semaphores</name>
+          <name>OBJ::Object Semaphores</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -754,7 +858,7 @@ Changelog:&#13;
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units/>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -775,7 +879,7 @@ Changelog:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SYS</name>
+              <name>OBJ</name>
             </application>
           </applications>
           <valuemap/>
@@ -785,7 +889,7 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>Object Threads</name>
+          <name>OBJ::Object Threads</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -795,7 +899,7 @@ Changelog:&#13;
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units/>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -816,7 +920,7 @@ Changelog:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SYS</name>
+              <name>OBJ</name>
             </application>
           </applications>
           <valuemap/>
@@ -826,7 +930,7 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>Average disk read queue length</name>
+          <name>DSK::Average disk read queue length</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -867,7 +971,7 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>Physical Disk Average Read</name>
+          <name>DSK::Physical Disk Average Read</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -877,7 +981,7 @@ Changelog:&#13;
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units>Bps</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -908,7 +1012,7 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>Physical Disk Average Transfer</name>
+          <name>DSK::Physical Disk Average Transfer</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -918,7 +1022,7 @@ Changelog:&#13;
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units>Bps</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -949,7 +1053,7 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>Physical Disk Average Write</name>
+          <name>DSK::Physical Disk Average Write</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -959,7 +1063,7 @@ Changelog:&#13;
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units>Bps</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -990,7 +1094,7 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>Average disk write queue length</name>
+          <name>DSK::Average disk write queue length</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1062,7 +1166,7 @@ Changelog:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>CPU</name>
+              <name>PROC</name>
             </application>
           </applications>
           <valuemap/>
@@ -1103,7 +1207,7 @@ Changelog:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>CPU</name>
+              <name>PROC</name>
             </application>
           </applications>
           <valuemap/>
@@ -1144,7 +1248,7 @@ Changelog:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>CPU</name>
+              <name>PROC</name>
             </application>
           </applications>
           <valuemap/>
@@ -1185,7 +1289,7 @@ Changelog:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>CPU</name>
+              <name>PROC</name>
             </application>
           </applications>
           <valuemap/>
@@ -1226,7 +1330,7 @@ Changelog:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>CPU</name>
+              <name>PROC</name>
             </application>
           </applications>
           <valuemap/>
@@ -1267,7 +1371,7 @@ Changelog:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>CPU</name>
+              <name>PROC</name>
             </application>
           </applications>
           <valuemap/>
@@ -1277,7 +1381,7 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>Page File Bytes Total</name>
+          <name>SYS::Page File Bytes Total</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1287,7 +1391,7 @@ Changelog:&#13;
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units/>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -1308,7 +1412,7 @@ Changelog:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>CPU</name>
+              <name>SYS</name>
             </application>
           </applications>
           <valuemap/>
@@ -1349,7 +1453,7 @@ Changelog:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>CPU</name>
+              <name>PROC</name>
             </application>
           </applications>
           <valuemap/>
@@ -1390,7 +1494,7 @@ Changelog:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>CPU</name>
+              <name>PROC</name>
             </application>
           </applications>
           <valuemap/>
@@ -1431,7 +1535,7 @@ Changelog:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>CPU</name>
+              <name>PROC</name>
             </application>
           </applications>
           <valuemap/>
@@ -1441,7 +1545,130 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>SYS::ints</name>
+          <name>CPU::Processor::C1 Time</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Processor(_Total)\% C1 Time]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units>%</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>%C1 Time – C1 is a power saving mode in a CPU. This counter keeps track of how often the process is able to enter a power saving state when idle. So %C1 Time is the percentage of time the LP is in the C1 state and for _Total the average percentage across all LP.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>HW::CPU</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>CPU::Processor::C2 Time</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Processor(_Total)\% C2 Time]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units>%</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>%C2 Time – C2 is a power saving mode in a CPU. This counter keeps track of how often the process is able to enter a power saving state when idle. So %C2 Time is the percentage of time the LP is in the C1 state and for _Total the average percentage across all LP. C2 is a deeper power state than C1</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>HW::CPU</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>CPU::Processor::C3 Time</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Processor(_Total)\% C3 Time]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units>%</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>%C3 Time – C3 is a power saving mode in a CPU. This counter keeps track of how often the process is able to enter a power saving state when idle. So %C3 Time is the percentage of time the LP is in the C1 state and for _Total the average percentage across all LP. C3 is a deeper power state than C2</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>HW::CPU</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::Interrupt Time</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1468,7 +1695,7 @@ Changelog:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description>System interrupts per secon.</description>
+          <description>System interrupts per second</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1482,7 +1709,7 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>CPU::privileged</name>
+          <name>CPU::privileged time</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1523,7 +1750,7 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>Processor Time</name>
+          <name>CPU::Processor Time</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1533,7 +1760,7 @@ Changelog:&#13;
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units>%</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -1564,7 +1791,7 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>Processor User Time</name>
+          <name>CPU::Processor User Time</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1574,7 +1801,7 @@ Changelog:&#13;
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units>%</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -1605,7 +1832,634 @@ Changelog:&#13;
           <master_item/>
         </item>
         <item>
-          <name>Server Bytes Total</name>
+          <name>CPU::Processor::C1 Transitions</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Processor(_Total)\C1 Transitions/sec]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>C1 Transitions / Sec – Number of times the LP has entered the C1 state in one second or for _Total the number of C1 transitions across all LP.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>HW::CPU</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>CPU::Processor::C2 Transitions</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Processor(_Total)\C2 Transitions/sec]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>C2 Transitions / Sec – Number of times the LP has entered the C2 state in one second or for _Total the number of C2 transitions across all LP. Deeper power state than C1.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>HW::CPU</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>CPU::Processor::C3 Transitions</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Processor(_Total)\C3 Transitions/sec]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>C3 Transitions / Sec – Number of times the LP has entered the C3 state in one second or for _Total the number of C3 transitions across all LP. Deeper power state than C2.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>HW::CPU</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>CPU::Processor::DPC Time</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Processor Information(_Total)\% DPC Time]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units>%</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Deferred Procedure Call (DPC) is a Windows OS mechanism which allows high-priority tasks (e.g. an interrupt handler) to defer required but lower-priority tasks for later execution. This permits device drivers and other low-level event consumers to perform the high-priority part of their processing quickly, and schedule non-critical additional processing for execution at a lower priority.&#13;
+&#13;
+https://en.wikipedia.org/wiki/Deferred_Procedure_Call&#13;
+https://technet.microsoft.com/en-us/library/cc938646.aspx&#13;
+http://www.osronline.com/article.cfm?article=529</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>HW::CPU</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>CPU::Processor::Performance Limit</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Processor Information(_Total)\% Performance Limit]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units>%</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>HW::CPU</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>CPU::Processor::DPC Rate</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Processor Information(_Total)\DPC Rate]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Deferred Procedure Call (DPC) is a Windows OS mechanism which allows high-priority tasks (e.g. an interrupt handler) to defer required but lower-priority tasks for later execution. This permits device drivers and other low-level event consumers to perform the high-priority part of their processing quickly, and schedule non-critical additional processing for execution at a lower priority.&#13;
+&#13;
+https://en.wikipedia.org/wiki/Deferred_Procedure_Call&#13;
+https://technet.microsoft.com/en-us/library/cc938646.aspx&#13;
+http://www.osronline.com/article.cfm?article=529</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>HW::CPU</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>CPU::Processor::DPCs Queued</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Processor Information(_Total)\DPCs Queued/sec]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Deferred Procedure Call (DPC) is a Windows OS mechanism which allows high-priority tasks (e.g. an interrupt handler) to defer required but lower-priority tasks for later execution. This permits device drivers and other low-level event consumers to perform the high-priority part of their processing quickly, and schedule non-critical additional processing for execution at a lower priority.&#13;
+&#13;
+https://en.wikipedia.org/wiki/Deferred_Procedure_Call&#13;
+https://technet.microsoft.com/en-us/library/cc938646.aspx&#13;
+http://www.osronline.com/article.cfm?article=529</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>HW::CPU</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>CPU::Processor::Performance Limit Flags</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Processor Information(_Total)\Performance Limit Flags]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>HW::CPU</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>CPU::Processor::State Flags</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Processor Information(_Total)\Processor State Flags]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>HW::CPU</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SIND::SystemIndex::Index Active Connections</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Search Indexer(SystemIndex)\Active Connections]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SIND</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SIND::SystemIndex::Index Size</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Search Indexer(SystemIndex)\Index Size]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SIND</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SIND::SystemIndex::Index Master Merge Progress</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Search Indexer(SystemIndex)\Master Merge Progress]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SIND</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SIND::SystemIndex::Index Queries Failed</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Search Indexer(SystemIndex)\Queries Failed]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SIND</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SIND::SystemIndex::Index Queries Succeeded</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Search Indexer(SystemIndex)\Queries Succeeded]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SIND</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SIND::SystemIndex::Index Queries</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Search Indexer(SystemIndex)\Queries]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SIND</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::Server Bytes Total</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1615,7 +2469,7 @@ Changelog:&#13;
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units>Bps</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -1679,7 +2533,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>CPU</name>
+              <name>SYS</name>
             </application>
           </applications>
           <valuemap/>
@@ -1689,7 +2543,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>Processor Queue Length</name>
+          <name>CPU::Processor Queue Length</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1699,7 +2553,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units/>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -1721,6 +2575,49 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <applications>
             <application>
               <name>CPU</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::calls</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\System\System Calls/sec]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>System (all CPUs) calls per second.&#13;
+&#13;
+lowered from 10 -&gt; 5 second updates as characteristics observed are very different</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS</name>
             </application>
           </applications>
           <valuemap/>
@@ -1761,7 +2658,253 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>CPU</name>
+              <name>SYS</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NTP::WTS::Clock Frequency Adjustment</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Windows Time Service\Clock Frequency Adjustment]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NTP</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NTP::WTS::Computed Time Offset</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Windows Time Service\Computed Time Offset]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NTP</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NTP::WTS::Client Time Source Count</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Windows Time Service\NTP Client Time Source Count]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NTP</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NTP::WTS::Roundtrip Delay</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Windows Time Service\NTP Roundtrip Delay]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NTP</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NTP::WTS::Incoming Requests</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Windows Time Service\NTP Server Incoming Requests]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NTP</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NTP::WTS::Outgoing Responses</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Windows Time Service\NTP Server Outgoing Responses]</key>
+          <delay>1m</delay>
+          <history>15d</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NTP</name>
             </application>
           </applications>
           <valuemap/>
@@ -1848,7 +2991,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>CPU</name>
+              <name>SYS</name>
             </application>
           </applications>
           <valuemap/>
@@ -1858,7 +3001,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>Processor load5</name>
+          <name>CPU::Processor load5</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1899,7 +3042,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>Processor load15</name>
+          <name>CPU::Processor load15</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2063,7 +3206,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>Uptime</name>
+          <name>SYS::Uptime</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2186,7 +3329,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>Total memory</name>
+          <name>MEM::Total memory</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
