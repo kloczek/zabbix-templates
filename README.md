@@ -12,19 +12,17 @@ List of templates:
 - Service Zabbix Server
 
 Notes:
-* If it is something which nees to be done do use those teplates it is described in each template description notes
-* Each template in description has last modyfication date and internal version
+* If it is something which needs to be done to use those templates it is described in each template within description notes
+* Each template in the description field has the last modification date and internal version
 
+Templated items, applications and triggers adhere to this naming convention:
+CLASS::SUBCLASS::Name
 
-Template iitems, applications and triggers naming convention:
-* Each item, application and trigger name has ecact patter in name like
-  <CLASS>{::<suclass]::Name
-  
-This is to provide parseable name allowing to distingwush and categorise those object.
-Such convension is quite easy to handle as pattern in allarming layer allowing for example send all tigger with SYS:: in the beginning name of the template to exact team.
-Such pattern is possible to use part of the general interface on communcation with exaternal services.
+This is to provide a parseable name, allowing us to distinguish between and categorise those objects.
+Such convention is quite easy to handle as pattern in alarming layer allowing for example send all tigger with SYS:: in the beginning name of the template to exact team.
+Such pattern is possible to use part of the general interface on communication with external services.
 
-* Do not use {HOSTNAME} macros in triggers as web frontnd in teriger list in other colum is name of the host on which trigger is active (it is waste of space on web page)
+* Do not use {HOSTNAME} macros in triggers as web frontend in trigger list in other column is name of the host on which trigger is active (it is waste of space on web page)
  
 ## Copyright (C) 2017 Tomasz Kłoczko <kloczek@fedoraproject.org>
 
