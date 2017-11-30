@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-10-15T17:48:56Z</date>
+  <date>2017-11-30T14:23:30Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,25 +13,9 @@
       <name>OS Linux</name>
       <description>Base Linux monitoring template compliant with EL7 and compatible.&#13;
 &#13;
-Current version : 1.0.1&#13;
-Date:                   2017-10-15&#13;
-Notes:&#13;
-&#13;
-Changelog:&#13;
-1.0.1:&#13;
-- added HW applicatiom&#13;
-- added items in HW application:&#13;
- - SYS::CPU - monitor CPUs description data using system.hw.cpu[]&#13;
- - SYS::devices - monitor list of the devices using system.hw.devices[]&#13;
-- renamed item:&#13;
- - SYS::CPU::cores to HW::CPU::cores and moved to HW application&#13;
-- added triggers &#13;
- - HW::CPU has changed&#13;
- - HW::devices has changed&#13;
-- remove using @OS Linux::NET regexp network interfaces filter and replace by regexp (?!(lo)) (no global regexp needed now)&#13;
-&#13;
-1.0:&#13;
-- initial version.</description>
+Version: 1.0.2 (2017-11-30)&#13;
+URL: https://github.com/kloczek/zabbix-templates/tree/master/OS%20Linux&#13;
+Notes:</description>
       <groups>
         <group>
           <name>Templates</name>
@@ -629,7 +613,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>system.cpu.switches</key>
           <delay>5s</delay>
-          <history>365d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1004,7 +988,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_community/>
           <snmp_oid/>
           <key>system.hostname</key>
-          <delay>5h</delay>
+          <delay>6h</delay>
           <history>2w</history>
           <trends>0</trends>
           <status>0</status>
@@ -1255,57 +1239,11 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>NET::Other TCP timeouts</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)other TCP timeouts/\1/ p'"]</key>
-          <delay>1m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>0</value_type>
-          <allowed_hosts/>
-          <units>events/s</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>NET</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing>
-            <step>
-              <type>10</type>
-              <params/>
-            </step>
-          </preprocessing>
-          <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
           <name>NET::segments retransmitted</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)segments retransmited.*/\1/ p'"]</key>
+          <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\) segments retransmitted*/\1/ p'"]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -1352,7 +1290,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_community/>
           <snmp_oid/>
           <key>system.run["cat /etc/redhat-release"]</key>
-          <delay>5h</delay>
+          <delay>6h</delay>
           <history>2w</history>
           <trends>0</trends>
           <status>0</status>
@@ -1393,7 +1331,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_community/>
           <snmp_oid/>
           <key>system.sw.os[full]</key>
-          <delay>5h</delay>
+          <delay>6h</delay>
           <history>2w</history>
           <trends>0</trends>
           <status>0</status>
@@ -1475,7 +1413,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_community/>
           <snmp_oid/>
           <key>system.uname</key>
-          <delay>5h</delay>
+          <delay>6h</delay>
           <history>2w</history>
           <trends>0</trends>
           <status>0</status>
@@ -1969,7 +1907,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_community/>
           <snmp_oid/>
           <key>net.if.discovery</key>
-          <delay>5m</delay>
+          <delay>10m</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -1993,13 +1931,13 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
             <conditions>
               <condition>
                 <macro>{#IFNAME}</macro>
-                <value>(?!(lo))</value>
+                <value>^(?!(lo))</value>
                 <operator>8</operator>
                 <formulaid>A</formulaid>
               </condition>
             </conditions>
           </filter>
-          <lifetime>1w</lifetime>
+          <lifetime>1d</lifetime>
           <description>Discovery of network interfaces.</description>
           <item_prototypes>
             <item_prototype>
@@ -2463,18 +2401,6 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
                   </item>
                 </graph_item>
                 <graph_item>
-                  <sortorder>3</sortorder>
-                  <drawtype>0</drawtype>
-                  <color>C800C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>7</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>OS Linux</host>
-                    <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)other TCP timeouts/\1/ p'"]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
                   <sortorder>4</sortorder>
                   <drawtype>0</drawtype>
                   <color>999999</color>
@@ -2483,7 +2409,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
                   <type>0</type>
                   <item>
                     <host>OS Linux</host>
-                    <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)segments retransmited.*/\1/ p'"]</key>
+                    <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\) segments retransmitted*/\1/ p'"]</key>
                   </item>
                 </graph_item>
               </graph_items>
@@ -2586,7 +2512,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_community/>
           <snmp_oid/>
           <key>system.run["awk 'BEGIN {print \"{\\"data\\":[\"; ORS=\"\"} {if (NR!=1) {print \",\n\"}; print \"{\\"{#DISK}\\":\\"\" $3 \"\\"}\"} END {print \"\n]}\"}' /proc/diskstats"]</key>
-          <delay>1h</delay>
+          <delay>10m</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -2616,7 +2542,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               </condition>
             </conditions>
           </filter>
-          <lifetime>31d</lifetime>
+          <lifetime>1d</lifetime>
           <description>List of Linux SCSI, ATA, XEN and Device Mapper storage devices without partitions.&#13;
 Discovery of storage devices is filtered over global regular expression "OS Linux::BlkDev" regexp.&#13;
 &#13;
@@ -2921,7 +2847,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>vfs.fs.discovery</key>
-          <delay>1h</delay>
+          <delay>10m</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -2940,18 +2866,24 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           <privatekey/>
           <port/>
           <filter>
-            <evaltype>0</evaltype>
+            <evaltype>1</evaltype>
             <formula/>
             <conditions>
               <condition>
                 <macro>{#FSTYPE}</macro>
                 <value>^(btrfs|ext2|ext3|ext4|jfs|reiser|xfs|ffs|ufs|jfs|jfs2|vxfs|hfs|refs|ntfs|fat32|zfs)$</value>
                 <operator>8</operator>
+                <formulaid>B</formulaid>
+              </condition>
+              <condition>
+                <macro>{#FSNAME}</macro>
+                <value>(?!(^/run/media))</value>
+                <operator>8</operator>
                 <formulaid>A</formulaid>
               </condition>
             </conditions>
           </filter>
-          <lifetime>0</lifetime>
+          <lifetime>1d</lifetime>
           <description>Discovery of file systems.</description>
           <item_prototypes>
             <item_prototype>
@@ -3108,7 +3040,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description/>
+              <description>Percent used volume space.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
@@ -3150,7 +3082,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description/>
+              <description>Volume total space.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
@@ -3192,7 +3124,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description/>
+              <description>Volume used space.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
@@ -4070,13 +4002,13 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <expression>{OS Linux:system.hw.devices.str()}&lt;&gt;0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>HW::devices has changed</name>
+      <name>HW::devices list has been changed</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
       <status>0</status>
       <priority>1</priority>
-      <description>List of devices has been changed.</description>
+      <description>Hardware devices list has been changed.</description>
       <type>1</type>
       <manual_close>0</manual_close>
       <dependencies/>
@@ -4643,18 +4575,6 @@ s3-dump hosts delete</description>
           <item>
             <host>OS Linux</host>
             <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)connections aborted due to timeout/\1/ p'"]</key>
-          </item>
-        </graph_item>
-        <graph_item>
-          <sortorder>1</sortorder>
-          <drawtype>4</drawtype>
-          <color>00C800</color>
-          <yaxisside>0</yaxisside>
-          <calc_fnc>2</calc_fnc>
-          <type>0</type>
-          <item>
-            <host>OS Linux</host>
-            <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)other TCP timeouts/\1/ p'"]</key>
           </item>
         </graph_item>
         <graph_item>
