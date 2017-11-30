@@ -1,13 +1,17 @@
 Active agent monitoring of the MySQL engine.
 
-Current version : 1.0.2
-
-Date:             2017-10-23
+Version: 1.0.3 (2017-11-30)
 
 Changelog:
+1.0.3 (2017-11-30):
+- fix: added missing "^" in MySQL::DB filter which has been causing not filter off information_schema, mysql, performance_schema and sys databases
+- template Changelog no longer maintained in template description
+- changed width of graphs in MySQL::DB screen to 900 and remove unused screen cells
+- channge default history perid to 2w
+
 1.0.2
 - replace use @MySQL::DB global regexp in MySQL::DB LLD by in place regexp (remove global regexp dependency)
-- change LLDs update interval from 1 to 30min
+- change LLDs update interval from 1 to 10min
 
 1.0.1:
 - added missing entries in SVC::MySQL::Queries screen
