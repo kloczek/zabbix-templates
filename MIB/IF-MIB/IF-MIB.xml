@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-11-30T04:14:45Z</date>
+  <date>2017-11-30T04:23:40Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -23,7 +23,7 @@ Changelog:&#13;
 1.0.1:&#13;
 - channge default hiory perid to 2w&#13;
 - better temlate description&#13;
-- added more descriptions for LLD items&#13;
+- added more descriptions of the LLD items&#13;
 &#13;
 1.0.0:&#13;
 - initial version.</description>

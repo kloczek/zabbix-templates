@@ -12,7 +12,7 @@ Changelog:
 1.0.1 (2017-11-22):
 - channge default hiory perid to 2w
 - better temlate description
-- added more descriptions for LLD items
+- added more descriptions of the LLD items
 
 1.0.0:
 - initial version.
