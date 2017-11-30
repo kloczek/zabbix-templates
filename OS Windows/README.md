@@ -14,5 +14,5 @@ Changelog:
 - initial version.
 
 Contributors:
-- ss: Simon Scott
+- ss: Scott Simmons 
 - tk: Tomasz Kłoczko
