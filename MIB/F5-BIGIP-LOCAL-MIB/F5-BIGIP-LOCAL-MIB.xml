@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-10-23T10:40:07Z</date>
+  <date>2017-11-30T14:08:03Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -11,7 +11,10 @@
     <template>
       <template>F5-BIGIP-LOCAL-MIB</template>
       <name>F5-BIGIP-LOCAL-MIB</name>
-      <description/>
+      <description>Version: 1.0.1 (2017-11-22)&#13;
+OIDs tree: http://support.ipmonitor.com/mibs/F5-BIGIP-LOCAL-MIB/tree.aspx&#13;
+&#13;
+Notes:</description>
       <groups>
         <group>
           <name>Templates SNMP MIB</name>
@@ -30,7 +33,7 @@
           <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
           <snmp_oid>discovery[{#SNMPVALUE},F5-BIGIP-LOCAL-MIB::ltmPoolName]</snmp_oid>
           <key>ltmPoolName</key>
-          <delay>600</delay>
+          <delay>10m</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
