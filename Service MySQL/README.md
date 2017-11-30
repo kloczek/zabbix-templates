@@ -3,6 +3,7 @@ Active agent monitoring of the MySQL engine.
 Version: 1.0.3 (2017-11-30)
 
 Changelog:
+
 1.0.3 (2017-11-30):
 - fix: added missing "^" in MySQL::DB filter which has been causing not filter off information_schema, mysql, performance_schema and sys databases
 - template Changelog no longer maintained in template description
