@@ -1,6 +1,6 @@
 Base Linux monitoring template compliant with EL7 and compatible.
 
-Version: 1.0.1 (2017-11-30)
+Version: 1.0.2 (2017-11-30)
 
 Notes:
 
