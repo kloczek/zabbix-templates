@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-10-14T13:28:48Z</date>
+  <date>2017-11-30T13:43:58Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -42,7 +42,7 @@ Changelog:&#13;
           <snmp_oid/>
           <key>icmpping</key>
           <delay>30s</delay>
-          <history>1w</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
