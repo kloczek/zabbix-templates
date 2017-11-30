@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-11-29T22:12:07Z</date>
+  <date>2017-11-30T14:54:47Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,15 +13,9 @@
       <name>OS Windows</name>
       <description>Base OS Windows template.&#13;
 &#13;
-Current version : 1.2&#13;
-Date:                   2017-11-29&#13;
-Changelog:&#13;
-1.2:&#13;
-- added more applications&#13;
-- added items across the board&#13;
-- moved some items  &#13;
-1.0:&#13;
-- initial version.</description>
+Version: 1.0.1 (2017-11-29)&#13;
+URL: https://github.com/kloczek/zabbix-templates/tree/master/OS%20Windows&#13;
+Notes:</description>
       <groups>
         <group>
           <name>Templates</name>
@@ -220,49 +214,6 @@ Changelog:&#13;
             </application>
           </applications>
           <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>Network::ICMP</name>
-          <type>3</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>icmpping[]</key>
-          <delay>1m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>NET</name>
-            </application>
-          </applications>
-          <valuemap>
-            <name>Service state</name>
-          </valuemap>
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
@@ -5233,29 +5184,6 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
       <tags/>
     </trigger>
     <trigger>
-      <expression>{OS Windows:icmpping[].count(#10,0,"eq")}&gt;9 and {OS Windows:agent.ping.nodata(1h)}=1</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SYS::Host is down</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>2</priority>
-      <description>Instructions on how to handle this trigger if is active:&#13;
-* with daily autoscaling like sonypas-PERF -&gt; delete box&#13;
-* if it is PROD or STAGE box:&#13;
-** remove all groups and assign box to "Terminated instances" group&#13;
-** change Name to "term YYYY-MM-DD &lt;orig_Name&gt;"&#13;
-** set host Monitored by proxy -&gt; (no proxy)&#13;
-** change state to "not monitored"&#13;
-* anything else -&gt; investigate -&gt; acknowledge and raise jira ticket if it is something unusual</description>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
       <expression>{OS Windows:system.uptime.last(0)}&lt;10m</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
@@ -5994,19 +5922,4 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
       </graph_items>
     </graph>
   </graphs>
-  <value_maps>
-    <value_map>
-      <name>Service state</name>
-      <mappings>
-        <mapping>
-          <value>0</value>
-          <newvalue>Down</newvalue>
-        </mapping>
-        <mapping>
-          <value>1</value>
-          <newvalue>Up</newvalue>
-        </mapping>
-      </mappings>
-    </value_map>
-  </value_maps>
 </zabbix_export>
