@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-11-22T21:04:22Z</date>
+  <date>2017-11-30T13:00:06Z</date>
   <groups>
     <group>
       <name>Templates SNMP Devices</name>
@@ -11,14 +11,58 @@
     <template>
       <template>DSL-3782</template>
       <name>DSL-3782</name>
-      <description>D-link DSL-3782</description>
+      <description>Device: D-link DSL-3782&#13;
+&#13;
+Product page: http://www.dlink.com/mk/mk/products/dsl-3782-wireless-ac1200-dual-band-vdsl-adsl-modem-router&#13;
+&#13;
+Version: 1.0.0 (2017-11-24)&#13;
+&#13;
+Notes:</description>
       <groups>
         <group>
           <name>Templates SNMP Devices</name>
         </group>
       </groups>
       <applications/>
-      <items/>
+      <items>
+        <item>
+          <name>items unsupported</name>
+          <type>5</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>zabbix[host,,items_unsupported]</key>
+          <delay>30s</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>items</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Number of enabled unsupported items on the host.</description>
+          <inventory_link>56</inventory_link>
+          <applications/>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+      </items>
       <discovery_rules/>
       <httptests/>
       <macros/>
@@ -30,7 +74,28 @@
           <name>IF-MIB</name>
         </template>
         <template>
+          <name>IP-MIB</name>
+        </template>
+        <template>
+          <name>SNMP-FRAMEWORK-MIB</name>
+        </template>
+        <template>
+          <name>SNMP-MPD-MIB</name>
+        </template>
+        <template>
+          <name>SNMP-USER-BASED-SM-MIB</name>
+        </template>
+        <template>
+          <name>SNMP-VIEW-BASED-ACM-MIB</name>
+        </template>
+        <template>
           <name>SNMPv2-MIB</name>
+        </template>
+        <template>
+          <name>TCP-MIB</name>
+        </template>
+        <template>
+          <name>UDP-MIB</name>
         </template>
       </templates>
       <screens/>
