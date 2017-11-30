@@ -38,7 +38,7 @@ Notes:</description>
           <snmp_oid/>
           <key>agent.ping</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -81,7 +81,7 @@ Notes:</description>
           <snmp_oid/>
           <key>agent.version</key>
           <delay>5m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>

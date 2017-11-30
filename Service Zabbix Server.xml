@@ -39,7 +39,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[hosts]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -80,7 +80,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[items]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -121,7 +121,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[items_unsupported]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -162,7 +162,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[process,"alerter",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -203,7 +203,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[process,"configuration syncer",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -244,7 +244,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[process,"db watchdog",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -285,7 +285,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[process,"discoverer",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -326,7 +326,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[process,"history syncer",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -367,7 +367,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>zabbix[process,"housekeeper",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -409,7 +409,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[process,"http poller",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -450,7 +450,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[process,"icmp pinger",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -491,7 +491,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[process,"poller",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -532,7 +532,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[process,"proxy poller",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -573,7 +573,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[process,"self-monitoring",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -614,7 +614,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[process,"trapper",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -655,7 +655,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[process,"unreachable poller",avg,busy]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -696,7 +696,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[queue,1m]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -737,7 +737,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[queue,5m]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -778,7 +778,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[queue,10m]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -819,7 +819,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[queue,10s]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -860,7 +860,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[queue,30s]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -901,7 +901,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[queue]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -942,7 +942,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[rcache,buffer,free]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -983,7 +983,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[rcache,buffer,pfree]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1024,7 +1024,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[rcache,buffer,used]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1065,7 +1065,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[requiredperformance]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1106,7 +1106,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[uptime]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1147,7 +1147,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[vcache,buffer,pfree]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1188,7 +1188,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[vcache,cache,hits]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1234,7 +1234,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[vcache,cache,misses]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1280,7 +1280,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[vcache,cache,requests]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1326,7 +1326,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_oid/>
           <key>zabbix[wcache,history,free]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1369,7 +1369,7 @@ A low number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,history,pfree]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1412,7 +1412,7 @@ A low number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,history,total]</key>
           <delay>1h</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1453,7 +1453,7 @@ A low number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,history,used]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1496,7 +1496,7 @@ A high number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,trend,free]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1539,7 +1539,7 @@ A low number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,trend,pfree]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1582,7 +1582,7 @@ A low number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,trend,total]</key>
           <delay>1h</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1623,7 +1623,7 @@ A low number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,trend,used]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1666,7 +1666,7 @@ A high number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,all]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1712,7 +1712,7 @@ A high number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,float]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1758,7 +1758,7 @@ A high number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,log]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1804,7 +1804,7 @@ A high number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,not supported]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1850,7 +1850,7 @@ A high number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,str]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1896,7 +1896,7 @@ A high number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,text]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1942,7 +1942,7 @@ A high number indicates performance problems on the database side.</description>
           <snmp_oid/>
           <key>zabbix[wcache,values,uint]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>

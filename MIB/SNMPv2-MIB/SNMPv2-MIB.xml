@@ -33,7 +33,7 @@
           <snmp_oid>SNMPv2-MIB::snmpInPkts.0</snmp_oid>
           <key>snmpInPkts</key>
           <delay>60</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -79,7 +79,7 @@
           <snmp_oid>SNMPv2-MIB::snmpOutPkts.0</snmp_oid>
           <key>snmpOutPkts</key>
           <delay>60</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>

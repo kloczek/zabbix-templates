@@ -63,7 +63,7 @@
               <snmp_oid/>
               <key>ltmPoolMemberCnt.max1h.["{#SNMPVALUE}"]</key>
               <delay>3600</delay>
-              <history>15d</history>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -105,7 +105,7 @@
               <snmp_oid>F5-BIGIP-LOCAL-MIB::ltmPoolMemberCnt.{#SNMPINDEX}</snmp_oid>
               <key>ltmPoolMemberCnt.["{#SNMPVALUE}"]</key>
               <delay>60</delay>
-              <history>15d</history>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
