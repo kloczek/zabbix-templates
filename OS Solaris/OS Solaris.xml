@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-09-12T22:20:13Z</date>
+  <date>2017-12-01T02:28:30Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,57 +13,10 @@
       <name>OS Solaris</name>
       <description>Base OS Solaris monitoring.&#13;
 &#13;
-Current version : 1.0&#13;
-Date:                   2017-09-09&#13;
-Changelog:&#13;
-1.0:&#13;
-- initial version.&#13;
+Version: 1.0.1 (2017-12-01)&#13;
+URL: https://github.com/kloczek/zabbix-templates/tree/master/OS%20Solaris&#13;
 &#13;
-Notes:&#13;
-https://github.com/mharsch/arcstat/blob/master/arcstat.pl&#13;
-http://dtrace.org/blogs/brendan/2012/01/09/activity-of-the-zfs-arc/&#13;
-&#13;
-Possible to add kstat ARC metrics:&#13;
-&#13;
-zfs:0:arcstats:buf_size&#13;
-zfs:0:arcstats:class&#13;
-zfs:0:arcstats:crtime&#13;
-zfs:0:arcstats:data_size&#13;
-zfs:0:arcstats:deleted&#13;
-zfs:0:arcstats:evict_l2_cached&#13;
-zfs:0:arcstats:evict_l2_eligible&#13;
-zfs:0:arcstats:evict_l2_ineligible&#13;
-zfs:0:arcstats:evict_mfu&#13;
-zfs:0:arcstats:evict_mru&#13;
-zfs:0:arcstats:hash_chain_max&#13;
-zfs:0:arcstats:hash_chains&#13;
-zfs:0:arcstats:hash_collisions&#13;
-zfs:0:arcstats:hash_elements&#13;
-zfs:0:arcstats:hash_elements_max&#13;
-zfs:0:arcstats:l2_abort_lowmem&#13;
-zfs:0:arcstats:l2_cksum_bad&#13;
-zfs:0:arcstats:l2_evict_lock_retry&#13;
-zfs:0:arcstats:l2_evict_reading&#13;
-zfs:0:arcstats:l2_feeds&#13;
-zfs:0:arcstats:l2_hdr_size&#13;
-zfs:0:arcstats:l2_io_error&#13;
-zfs:0:arcstats:l2_read_bytes&#13;
-zfs:0:arcstats:l2_rw_clash&#13;
-zfs:0:arcstats:l2_size&#13;
-zfs:0:arcstats:l2_write_bytes&#13;
-zfs:0:arcstats:l2_writes_done&#13;
-zfs:0:arcstats:l2_writes_error&#13;
-zfs:0:arcstats:l2_writes_hdr_miss&#13;
-zfs:0:arcstats:l2_writes_sent&#13;
-zfs:0:arcstats:meta_limit&#13;
-zfs:0:arcstats:meta_max&#13;
-zfs:0:arcstats:meta_used&#13;
-zfs:0:arcstats:mutex_miss&#13;
-zfs:0:arcstats:other_size&#13;
-zfs:0:arcstats:p&#13;
-zfs:0:arcstats:snaptime&#13;
-&#13;
-https://github.com/bcantrill/node-kstat</description>
+Notes:</description>
       <groups>
         <group>
           <name>Templates</name>
@@ -2160,7 +2113,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <snmp_community/>
           <snmp_oid/>
           <key>net.if.discovery</key>
-          <delay>1d</delay>
+          <delay>10m</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -2196,7 +2149,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               </condition>
             </conditions>
           </filter>
-          <lifetime>31d</lifetime>
+          <lifetime>1d</lifetime>
           <description>Discovery of network interfaces.</description>
           <item_prototypes>
             <item_prototype>
@@ -2206,7 +2159,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <snmp_oid/>
               <key>net.if.in[{#IFNAME}]</key>
               <delay>30s</delay>
-              <history>1w</history>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -2257,7 +2210,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <snmp_oid/>
               <key>net.if.out[{#IFNAME}]</key>
               <delay>30s</delay>
-              <history>1w</history>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -2402,7 +2355,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <snmp_community/>
           <snmp_oid/>
           <key>system.run["iostat -x|awk 'BEGIN {print \"{\\"data\\":[\"; ORS=\"\"} {if (NR&gt;3) {print \",\n\"}; if (NR&gt;2) print \"{\\"{#DISK}\\":\\"\" $1 \"\\"}\"} END {print \"]}\"}'"]</key>
-          <delay>1d</delay>
+          <delay>10m</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -2432,7 +2385,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               </condition>
             </conditions>
           </filter>
-          <lifetime>31d</lifetime>
+          <lifetime>1d</lifetime>
           <description>List of Solaris storage devices (typically displayed by iostat -x).</description>
           <item_prototypes>
             <item_prototype>
@@ -2853,7 +2806,7 @@ last("vfs.dev.write[{#DISK},operations]")</params>
           <snmp_community/>
           <snmp_oid/>
           <key>system.run["kstat -p zfs::arcstats:l2_hdr_size|awk '/(.*\t0$)/{print \"{\\"data\\":[ ]}\"} !/(.*\t0$)/{print \"{\\"data\\":[{\\"{#L2ARC}\\":\\"*\\"}]}\"}''"]</key>
-          <delay>1d</delay>
+          <delay>10m</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -2876,10 +2829,8 @@ last("vfs.dev.write[{#DISK},operations]")</params>
             <formula/>
             <conditions/>
           </filter>
-          <lifetime>30d</lifetime>
-          <description>Using unix:0:l2arc_buf_t:alloc kstat metrics detect does zfs pools are using L2ARC or not.&#13;
-&#13;
-system.run["kstat -p zfs::arcstats:l2_hdr_size|awk '/(.*\t0$)/{print \"{\\"data\\":[ ]}\"} !/(.*\t0$)/{print \"{\\"data\\":[{\\"{#L2ARC}\\":\\"*\\"}]}\"}''"]</description>
+          <lifetime>1d</lifetime>
+          <description>Using unix:0:l2arc_buf_t:alloc kstat metrics detect does zfs pools are using L2ARC or not.</description>
           <item_prototypes>
             <item_prototype>
               <name>zfs:{#L2ARC}:arcstats:l2_feeds</name>
@@ -3168,7 +3119,7 @@ system.run["kstat -p zfs::arcstats:l2_hdr_size|awk '/(.*\t0$)/{print \"{\\"data\
           <snmp_community/>
           <snmp_oid/>
           <key>system.run["zpool list -Ho name|awk 'BEGIN {print \"{\\"data\\":[\"; ORS=\"\"} {if (NR&gt;1) {print \",\n\"}; print \"{\\"{#ZPOOL}\\":\\"\" $1 \"\\"}\"} END {print \"]}\"}'"]</key>
-          <delay>1d</delay>
+          <delay>10m</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -3191,7 +3142,7 @@ system.run["kstat -p zfs::arcstats:l2_hdr_size|awk '/(.*\t0$)/{print \"{\\"data\
             <formula/>
             <conditions/>
           </filter>
-          <lifetime>31d</lifetime>
+          <lifetime>1d</lifetime>
           <description>List of zpools.</description>
           <item_prototypes>
             <item_prototype>
@@ -3201,7 +3152,7 @@ system.run["kstat -p zfs::arcstats:l2_hdr_size|awk '/(.*\t0$)/{print \"{\\"data\
               <snmp_oid/>
               <key>system.run[zpool list -Ho health {#ZPOOL}]</key>
               <delay>10m</delay>
-              <history>365d</history>
+              <history>2w</history>
               <trends>0</trends>
               <status>0</status>
               <value_type>1</value_type>
@@ -3243,7 +3194,7 @@ system.run["kstat -p zfs::arcstats:l2_hdr_size|awk '/(.*\t0$)/{print \"{\\"data\
               <snmp_oid/>
               <key>system.run[zpool list -Ho version {#ZPOOL}]</key>
               <delay>1d</delay>
-              <history>365d</history>
+              <history>2w</history>
               <trends>0</trends>
               <status>0</status>
               <value_type>1</value_type>
@@ -3347,7 +3298,7 @@ Please login on the host and check output of the commands:&#13;
               </condition>
             </conditions>
           </filter>
-          <lifetime>31d</lifetime>
+          <lifetime>1d</lifetime>
           <description>Discovery of file systems.</description>
           <item_prototypes>
             <item_prototype>
@@ -3357,7 +3308,7 @@ Please login on the host and check output of the commands:&#13;
               <snmp_oid/>
               <key>vfs.fs.size[{#FSNAME},pfree]</key>
               <delay>1m</delay>
-              <history>1w</history>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3399,7 +3350,7 @@ Please login on the host and check output of the commands:&#13;
               <snmp_oid/>
               <key>vfs.fs.size[{#FSNAME},total]</key>
               <delay>1h</delay>
-              <history>1w</history>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3441,7 +3392,7 @@ Please login on the host and check output of the commands:&#13;
               <snmp_oid/>
               <key>vfs.fs.size[{#FSNAME},used]</key>
               <delay>1m</delay>
-              <history>1w</history>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
