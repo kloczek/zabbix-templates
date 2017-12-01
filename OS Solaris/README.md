@@ -11,12 +11,9 @@ Changelog:
   - initial version.
 
 Notes:
-
-https://github.com/mharsch/arcstat/blob/master/arcstat.pl
-
-http://dtrace.org/blogs/brendan/2012/01/09/activity-of-the-zfs-arc/
-
-Possible to add kstat ARC metrics:
+- https://github.com/mharsch/arcstat/blob/master/arcstat.pl
+- http://dtrace.org/blogs/brendan/2012/01/09/activity-of-the-zfs-arc/
+- Possible to add kstat ARC metrics:
 ```
 zfs:0:arcstats:buf_size
 zfs:0:arcstats:class
@@ -56,4 +53,4 @@ zfs:0:arcstats:other_size
 zfs:0:arcstats:p
 zfs:0:arcstats:snaptime
 ```
-https://github.com/bcantrill/node-kstat
+- https://github.com/bcantrill/node-kstat
