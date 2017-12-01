@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+  <version>3.4</version>
+  <date>2017-12-01T15:11:11Z</date>
+  <groups>
+    <group>
+      <name>Templates SNMP MIB</name>
+    </group>
+  </groups>
+  <templates>
+    <template>
+      <template>SNMP-VIEW-BASED-ACM-MIB</template>
+      <name>SNMP-VIEW-BASED-ACM-MIB</name>
+      <description>The MIB bsed template view-based Access Control Model for SNMP.&#13;
+&#13;
+Version: 0.0.0 (2017-12-01)&#13;
+OIDs tree: http://support.ipmonitor.com/mibs/SNMP-VIEW-BASED-ACM-MIB/tree.aspx&#13;
+URL: https://github.com/kloczek/zabbix-templates/tree/master/SNMP-VIEW-BASED-ACM-MIB&#13;
+&#13;
+Notes:&#13;
+- so far it is only empty template.</description>
+      <groups>
+        <group>
+          <name>Templates SNMP MIB</name>
+        </group>
+      </groups>
+      <applications/>
+      <items/>
+      <discovery_rules/>
+      <httptests/>
+      <macros/>
+      <templates/>
+      <screens/>
+    </template>
+  </templates>
+</zabbix_export>
