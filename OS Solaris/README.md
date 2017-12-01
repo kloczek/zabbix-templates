@@ -4,11 +4,11 @@ Version: 1.0.1 (2017-12-01)
 
 Changelog:
 * 1.0.1 (2017-12-01):
-- execute all LLD every 10m
-- channge default history perid to 2w
-- moved some parts of the template description to README.md
+ - execute all LLD every 10m
+ - channge default history perid to 2w
+ - moved some parts of the template description to README.md
 * 1.0.0 (2017-09-09):
-- initial version.
+ - initial version.
 
 Notes:
 
