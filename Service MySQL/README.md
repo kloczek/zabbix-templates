@@ -27,11 +27,11 @@ My advice is even to disable show_compatibility_56 to not start by mistake use s
 - By default this template is monitoring the engine working on localhost.
 To be able to use this template on a host you need to setup a monitoring account with the proper privileges.
 To add such account you can use below queries:
-
+```
 CREATE USER 'monitoring'@'localhost' IDENTIFIED BY 'monitoring';
 GRANT SELECT, INDEX, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'monitoring'@'localhost';
 FLUSH PRIVILEGES;
-
+```
 - MySQL 5.7 documentation:
   - http://dev.mysql.com/doc/refman/5.7/en/innodb-parameters.html
   - http://dev.mysql.com/doc/refman/5.7/en/innodb-configuration.html
