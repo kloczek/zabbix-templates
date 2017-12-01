@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-11-30T13:43:58Z</date>
+  <date>2017-12-01T03:53:50Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -12,18 +12,12 @@
       <template>ICMP</template>
       <name>ICMP</name>
       <description>Base ICMP template checking availability of the host using ICMP protocol.&#13;
-This template is used by OS templates.&#13;
 &#13;
-Current version : 1.0.1&#13;
-Date:                   2017-10-13&#13;
+Version : 1.0.1 (2017-10-13)&#13;
+URL: https://github.com/kloczek/zabbix-templates/tree/master/ICMP&#13;
+&#13;
 Notes:&#13;
-&#13;
-Changelog:&#13;
-1.0.1:&#13;
-- added NET::ICMP screen&#13;
-&#13;
-1.0:&#13;
-- initial version.</description>
+- This template is used by all OS and SNMP Devices templates</description>
       <groups>
         <group>
           <name>Templates</name>
