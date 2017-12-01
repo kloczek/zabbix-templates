@@ -2,9 +2,22 @@
 
 List of templates:
 - ICMP
+- MIB
+  - F5-BIGIP-LOCAL-MIB
+  - F5-BIGIP-SYSTEM-MIB
+  - IF-MIB
+  - IP-MIB
+  - SNMP-MPD-MIB
+  - SNMP-USER-BASED-SM-MIB
+  - SNMPv2-MIB
+  - SNMP-VIEW-BASED-ACM-MIB
+  - UDP-MIB
 - OS Linux
 - OS Solaris
 - OS Windows
+- SNMP Devices
+  - BIG-IP 5000
+  - DSL-3782
 - Service Apache
 - Service MySQL
 - Service Zabbix Agent
