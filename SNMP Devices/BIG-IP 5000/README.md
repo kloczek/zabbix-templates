@@ -1,8 +1,6 @@
 
 Device: BIG-IP 5000
 
-Product page: https://worldtechit.com/f5-products/f5-big-ip-5000s-5050s-5250v-5200v-hardware-datasheet/
-
 Version: 1.0.1 (2017-12-01)
 
 Changelog:
@@ -16,3 +14,4 @@ Changelog:
   - initial version.
 
 Notes:
+- Product page: https://worldtechit.com/f5-products/f5-big-ip-5000s-5050s-5250v-5200v-hardware-datasheet/
