@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-01T03:53:54Z</date>
+  <date>2017-12-05T23:01:44Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,7 +13,7 @@
       <name>OS Linux</name>
       <description>Base Linux monitoring template.&#13;
 &#13;
-Version: 1.0.2 (2017-11-30)&#13;
+Version: 1.0.3 (2017-12-05)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/OS%20Linux&#13;
 &#13;
 Notes:&#13;
@@ -2879,7 +2879,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               </condition>
               <condition>
                 <macro>{#FSNAME}</macro>
-                <value>(?!(^/run/media))</value>
+                <value>^(?!(^/run/media))</value>
                 <operator>8</operator>
                 <formulaid>A</formulaid>
               </condition>

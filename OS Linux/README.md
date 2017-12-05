@@ -1,8 +1,10 @@
 Base Linux monitoring template.
 
-Version: 1.0.2 (2017-11-30)
+Version: 1.0.3 (2017-12-05)
 
 Changelog:
+- 1.0.3 (2017-12-05):
+  - fix: typo in /run/media VOL: LLD
 - 1.0.2 (2017-11-30):
   - removed NET::Other TCP timeouts (netstat no longer provides such data)
   - fix: corrected sed regexp in NET::segments retransmitted
