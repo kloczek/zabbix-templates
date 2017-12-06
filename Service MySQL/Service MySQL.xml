@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-11-30T04:14:32Z</date>
+  <date>2017-12-06T02:27:47Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -49,6 +49,12 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
         </application>
         <application>
           <name>SVC::MySQL::cfg</name>
+        </application>
+        <application>
+          <name>SVC::MySQL::Com</name>
+        </application>
+        <application>
+          <name>SVC::MySQL::innodb</name>
         </application>
         <application>
           <name>SVC::MySQL::QChache</name>
@@ -130,7 +136,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::Com</name>
             </application>
           </applications>
           <valuemap/>
@@ -176,7 +182,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::Com</name>
             </application>
           </applications>
           <valuemap/>
@@ -222,7 +228,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::Com</name>
             </application>
           </applications>
           <valuemap/>
@@ -268,7 +274,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::Com</name>
             </application>
           </applications>
           <valuemap/>
@@ -314,7 +320,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::Com</name>
             </application>
           </applications>
           <valuemap/>
@@ -360,7 +366,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::Com</name>
             </application>
           </applications>
           <valuemap/>
@@ -406,7 +412,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::Com</name>
             </application>
           </applications>
           <valuemap/>
@@ -783,7 +789,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -824,7 +830,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -865,7 +871,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -906,7 +912,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -947,7 +953,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -993,7 +999,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -1034,7 +1040,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -1075,7 +1081,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -1116,7 +1122,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -1162,7 +1168,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -1208,7 +1214,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -1254,7 +1260,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -1300,7 +1306,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -1341,7 +1347,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -1382,7 +1388,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -1423,7 +1429,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -1469,7 +1475,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -1510,7 +1516,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -1556,7 +1562,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -1602,7 +1608,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -1648,7 +1654,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -1694,7 +1700,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -1740,7 +1746,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -1786,7 +1792,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -1832,7 +1838,7 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::innodb</name>
             </application>
           </applications>
           <valuemap/>
@@ -2716,6 +2722,53 @@ You can also turn off this option if you do not need it for safe binary logging 
           <master_item/>
         </item>
         <item>
+          <name>max_allowed_packet</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='max_allowed_packet';",]</key>
+          <delay>1h</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>B</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>The maximum size of one packet or any generated/intermediate string, or any parameter sent by the mysql_stmt_send_long_data() C API function. The default is 4MB (4194304 bytes).&#13;
+&#13;
+The packet message buffer is initialized to net_buffer_length bytes, but can grow up to max_allowed_packet bytes when needed. This value by default is small, to catch large (possibly incorrect) packets.&#13;
+&#13;
+You must increase this value if you are using large BLOB columns or long strings. It should be as big as the largest BLOB you want to use. The protocol limit for max_allowed_packet is 1GB. The value should be a multiple of 1024; nonmultiples are rounded down to the nearest multiple.&#13;
+&#13;
+When you change the message buffer size by changing the value of the max_allowed_packet variable, you should also change the buffer size on the client side if your client program permits it. The default max_allowed_packet value built in to the client library is 1GB, but individual client programs might override this. For example, mysql and mysqldump have defaults of 16MB and 24MB, respectively. They also enable you to change the client-side value by setting max_allowed_packet on the command line or in an option file.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::MySQL::cfg</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
           <name>max_connections</name>
           <type>7</type>
           <snmp_community/>
@@ -3151,16 +3204,16 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
               <port/>
               <description>Database {#DB} sun of all tables data size.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>SVC::MySQL</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
               <jmx_endpoint/>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::MySQL::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
@@ -3193,16 +3246,16 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
               <port/>
               <description>Database {#DB} sun of all indexes size.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>SVC::MySQL</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
               <jmx_endpoint/>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::MySQL::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item_prototype/>
             </item_prototype>
           </item_prototypes>
@@ -3595,6 +3648,22 @@ event_scheduler = ON&#13;
 and restart MySQL or execute query:&#13;
 &#13;
 SET GLOBAL event_scheduler = ON;</description>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{Service MySQL:system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='version';",].diff()}&gt;0</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::MySQL::version has changed to {ITEM.LASTVALUE}</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>0</priority>
+      <description>The MySQL engine version has been changed.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>

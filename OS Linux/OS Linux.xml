@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
+<<<<<<< HEAD
   <date>2017-12-01T18:45:16Z</date>
+=======
+  <date>2017-12-05T23:01:44Z</date>
+>>>>>>> e22bebf6a03819125e57f8f6ded44d3d5849e4a7
   <groups>
     <group>
       <name>Templates</name>
@@ -11,7 +15,14 @@
     <template>
       <template>OS Linux</template>
       <name>OS Linux</name>
+<<<<<<< HEAD
       <description>Base Linux monitoring template compliant with EL7 and compatible.&#13;
+=======
+      <description>Base Linux monitoring template.&#13;
+&#13;
+Version: 1.0.3 (2017-12-05)&#13;
+URL: https://github.com/kloczek/zabbix-templates/tree/master/OS%20Linux&#13;
+>>>>>>> e22bebf6a03819125e57f8f6ded44d3d5849e4a7
 &#13;
 Current version : 1.0.1&#13;
 Date:                   2017-10-15&#13;
@@ -2947,6 +2958,15 @@ Value is calculated by read number of sectors multiplied by 512.</description>
                 <macro>{#FSTYPE}</macro>
                 <value>^(btrfs|ext2|ext3|ext4|jfs|reiser|xfs|ffs|ufs|jfs|jfs2|vxfs|hfs|refs|ntfs|fat32|zfs)$</value>
                 <operator>8</operator>
+<<<<<<< HEAD
+=======
+                <formulaid>B</formulaid>
+              </condition>
+              <condition>
+                <macro>{#FSNAME}</macro>
+                <value>^(?!(^/run/media))</value>
+                <operator>8</operator>
+>>>>>>> e22bebf6a03819125e57f8f6ded44d3d5849e4a7
                 <formulaid>A</formulaid>
               </condition>
             </conditions>
