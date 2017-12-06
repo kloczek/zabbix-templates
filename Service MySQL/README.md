@@ -3,6 +3,16 @@ Active agent monitoring of the MySQL engine.
 Version: 1.0.3 (2017-11-30)
 
 Changelog:
+- 1.0.4 (not reeaed yet):
+  - added Applications (improved gouping metrics Last data view):
+    - SVC::MySQL::Com for all Com_* metrics
+    - SVC::MySQL::DB::{#DB} prototype for all per database metrics 
+    - SVC::MySQL::cfg for all read configuration parameters
+    - SVC::MySQL::innodb with all innodb storage engine metrics
+  - added metrics:
+    - max_allowed_packet - The maximum size of one packet or any generated/intermediate string
+  - added triggers
+    - SVC::MySQL::version has been changed (severity: Not classified)
 - 1.0.3 (2017-11-30):
   - fix: added missing "^" in MySQL::DB filter which has been causing not filter off information_schema, mysql, performance_schema and sys databases
   - template Changelog no longer maintained in template description
