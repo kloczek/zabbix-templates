@@ -24,15 +24,15 @@ for i in \
 	do
 		template_name=$(basename "$i")
 		templates=$(zabbix_api template.get \
-				$(json_list params \
-				$(json_str output simple \
-					$(json_list filter \
-						$(json_array_str host \
-							"${template_name}" \
-						"") \
-					"")) \
-				"")
-			)
+			$(json_list params \
+			$(json_str output simple \
+				$(json_list filter \
+					$(json_array_str host \
+						"${template_name}" \
+					"") \
+				"")) \
+			"")
+		)
 
 		templateid="$(json_get "${templates=}" .result[].templateid)"
 
