@@ -5,6 +5,8 @@ Device: D-Link DSL-3782
 Version: 1.0.0 (2017-11-24)
 
 Changelog:
+- 1.0.1 (not released yet)
+  - added template URL in template description
 - 1.0.0 (2017-11-24):
   - initial version.
 
