@@ -6,6 +6,18 @@ Version: 1.0.2 (2017-11-22)
 OIDs tree: http://support.ipmonitor.com/mibs/IF-MIB/tree.aspx
 
 Changelog:
+- 1.0.2: (not released yet):
+  - changed NIC LLD prototype to
+    discovery[{#IFDESCR},IF-MIB::ifDescr,{#IFOPERSTATUS},IF-MIB::ifOperStatus]
+    and added filter to remove from the list all interfaces with
+    ifOperStatus=Down state. Switch from {#SNMPVALUE} to {#IFDESCR} as macro
+    indexing all prototype items
+  - removed Applications:
+    - Interface
+    - Interface::stat
+    - Performance
+  - added prototype Application on all NIC LLD prototype items
+    IF-MIB::interface {#IFDESCR}
 - 1.0.1 (2017-11-22):
   - channge default history perid to 2w
   - better temlate description
