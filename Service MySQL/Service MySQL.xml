@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-06T02:27:47Z</date>
+  <date>2017-12-07T09:32:05Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -58,6 +58,9 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
         </application>
         <application>
           <name>SVC::MySQL::QChache</name>
+        </application>
+        <application>
+          <name>SVC::MySQL::threads</name>
         </application>
       </applications>
       <items>
@@ -423,6 +426,131 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
               <params/>
             </step>
           </preprocessing>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>show_compatibility_56</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>system.run[{$MYSQL_CMD} "SELECT variable_name= FROM performance_schema.global_status WHERE variable_name='show_compatibility_56'",]</key>
+          <delay>1h</delay>
+          <history>2w</history>
+          <trends>0</trends>
+          <status>0</status>
+          <value_type>1</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>When show_compatibility_56 is OFF, compatibility with MySQL 5.6 is disabled and several changes result.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::MySQL::cfg</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Threads_cached</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>system.run[{$MYSQL_CMD} "SELECT variable_name FROM performance_schema.global_status where variable_name='Threads_cached';",]</key>
+          <delay>20s</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>threads</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>The number of threads in the thread cache.&#13;
+&#13;
+This variable is not meaningful in the embedded server (libmysqld) and as of MySQL 5.7.2 is no longer visible within the embedded server.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::MySQL::threads</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Threads_running</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>system.run[{$MYSQL_CMD} "SELECT variable_name FROM performance_schema.global_status WHERE variable_name='Threads_running';",]</key>
+          <delay>20s</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>threads</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>The number of threads that are not sleeping.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::MySQL::threads</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
           <jmx_endpoint/>
           <master_item/>
         </item>
@@ -2372,7 +2500,7 @@ It does not count COM_PING or COM_STATISTICS commands.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::threads</name>
             </application>
           </applications>
           <valuemap/>
@@ -2413,7 +2541,7 @@ It does not count COM_PING or COM_STATISTICS commands.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::MySQL</name>
+              <name>SVC::MySQL::threads</name>
             </application>
           </applications>
           <valuemap/>
@@ -3625,15 +3753,106 @@ SELECT variable_value FROM information_schema.global_status WHERE variable_name 
             </screen_item>
           </screen_items>
         </screen>
+        <screen>
+          <name>SVC::MySQL::threads</name>
+          <hsize>1</hsize>
+          <vsize>3</vsize>
+          <screen_items>
+            <screen_item>
+              <resourcetype>0</resourcetype>
+              <width>900</width>
+              <height>200</height>
+              <x>0</x>
+              <y>0</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>SVC::MySQL::threads</name>
+                <host>Service MySQL</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>1</resourcetype>
+              <width>900</width>
+              <height>100</height>
+              <x>0</x>
+              <y>1</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>0</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Threads_created';",]</key>
+                <host>Service MySQL</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>1</resourcetype>
+              <width>900</width>
+              <height>100</height>
+              <x>0</x>
+              <y>2</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Connections';",]</key>
+                <host>Service MySQL</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+          </screen_items>
+        </screen>
       </screens>
     </template>
   </templates>
   <triggers>
     <trigger>
+      <expression>{Service MySQL:system.run[{$MYSQL_CMD} "SELECT variable_name= FROM performance_schema.global_status WHERE variable_name='show_compatibility_56'",].str(OFF)}=1</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::MySQL::cfg::show_compatibility_56=OFF</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url>https://dev.mysql.com/doc/refman/5.7/en/performance-schema-variable-table-migration.html</url>
+      <status>0</status>
+      <priority>4</priority>
+      <description>When show_compatibility_56 is OFF, compatibility with MySQL 5.6 is disabled and several changes result. &#13;
+&#13;
+This template requires show_compatibility_56=OFF</description>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
       <expression>{Service MySQL:system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='event_scheduler';",].str(OFF)}=1</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>SVC::MySQL::event_scheduler is OFF</name>
+      <name>SVC::MySQL::event_scheduler=OFF</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
@@ -3654,30 +3873,14 @@ SET GLOBAL event_scheduler = ON;</description>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service MySQL:system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='version';",].diff()}&gt;0</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SVC::MySQL::version has changed to {ITEM.LASTVALUE}</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>0</priority>
-      <description>The MySQL engine version has been changed.</description>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
       <expression>{Service MySQL:system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Threads_connected';",].last()} &gt;=&#13;
 {Service MySQL:system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='max_connections';",].last()}*0.9</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>SVC::MySQL:Threads_connected &gt;= 90% max_connections</name>
+      <name>SVC::MySQL::Threads_connected &gt;= 90% max_connection</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
-      <url/>
+      <url>https://dev.mysql.com/doc/refman/5.7/en/server-status-variables.html#statvar_Threads_connected</url>
       <status>0</status>
       <priority>2</priority>
       <description>Number threads with actoive connections is greater than 90% of maximum connections which MySQL engine can establish to the clients.&#13;
@@ -3688,6 +3891,22 @@ SET GLOBAL max_connections  = &lt;new_limit&gt;;&#13;
 To preserve this setting between restarts you need to add to my.cnf:&#13;
 &#13;
 max_connections = &lt;new_limit&gt;</description>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{Service MySQL:system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_variables where VARIABLE_NAME='version';",].diff()}&gt;0</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::MySQL::version has changed to {ITEM.LASTVALUE}</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>0</priority>
+      <description>The MySQL engine version has been changed.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>
@@ -4048,6 +4267,62 @@ Possible restart has been done.</description>
           <item>
             <host>Service MySQL</host>
             <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Slow_queries';",]</key>
+          </item>
+        </graph_item>
+      </graph_items>
+    </graph>
+    <graph>
+      <name>SVC::MySQL::threads</name>
+      <width>900</width>
+      <height>400</height>
+      <yaxismin>0.0000</yaxismin>
+      <yaxismax>100.0000</yaxismax>
+      <show_work_period>1</show_work_period>
+      <show_triggers>1</show_triggers>
+      <type>0</type>
+      <show_legend>1</show_legend>
+      <show_3d>0</show_3d>
+      <percent_left>0.0000</percent_left>
+      <percent_right>0.0000</percent_right>
+      <ymin_type_1>0</ymin_type_1>
+      <ymax_type_1>0</ymax_type_1>
+      <ymin_item_1>0</ymin_item_1>
+      <ymax_item_1>0</ymax_item_1>
+      <graph_items>
+        <graph_item>
+          <sortorder>0</sortorder>
+          <drawtype>0</drawtype>
+          <color>1A7C11</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "select VARIABLE_VALUE from performance_schema.global_status where VARIABLE_NAME='Threads_connected';",]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>1</sortorder>
+          <drawtype>0</drawtype>
+          <color>F63100</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "SELECT variable_name FROM performance_schema.global_status WHERE variable_name='Threads_running';",]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>2</sortorder>
+          <drawtype>0</drawtype>
+          <color>2774A4</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service MySQL</host>
+            <key>system.run[{$MYSQL_CMD} "SELECT variable_name FROM performance_schema.global_status where variable_name='Threads_cached';",]</key>
           </item>
         </graph_item>
       </graph_items>

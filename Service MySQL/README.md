@@ -4,14 +4,22 @@ Version: 1.0.3 (2017-11-30)
 
 Changelog:
 - 1.0.4 (not reeaed yet):
-  - added Applications (improved gouping metrics Last data view):
+  - added applications (improved gouping metrics Last data view):
+    - SVC::MySQL::cfg for all read configuration parameters
     - SVC::MySQL::Com for all Com_* metrics
     - SVC::MySQL::DB::{#DB} prototype for all per database metrics 
-    - SVC::MySQL::cfg for all read configuration parameters
-    - SVC::MySQL::innodb with all innodb storage engine metrics
+    - SVC::MySQL::innodb for all innodb storage engine metrics
+    - SVC::MySQL::threads for all treads related metrics
+  - added graphs:
+    - SVC::MySQL::threads with: Threads_cached, Threads_connected and Threads_running metrics
   - added metrics:
-    - max_allowed_packet - The maximum size of one packet or any generated/intermediate string
-  - added triggers
+    - max_allowed_packet - the maximum size of one packet or any generated/intermediate string
+    - show_compatibility_56 - show is MySQL engine working in MySQL 5.6 compatibility mode is ON/OFF
+    - Threads_cached - the number of threads in the thread cache
+    - Threads_running - the number of threads that are not sleeping
+  - added screens:
+    - SVC::MySQL::threads with SVC::MySQL::threads (graph) and Connections (simple greph)
+  - added triggers:
     - SVC::MySQL::version has been changed (severity: Not classified)
 - 1.0.3 (2017-11-30):
   - fix: added missing "^" in MySQL::DB filter which has been causing not filter off information_schema, mysql, performance_schema and sys databases
