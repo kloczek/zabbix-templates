@@ -4,7 +4,7 @@ Version: 1.0.3 (2017-11-30)
 
 Changelog:
 - 1.0.4 (not reeaed yet):
-  - added applications (improved gouping metrics Last data view):
+  - added applications (improved gouping metrics in "Last data" view):
     - SVC::MySQL::cfg for all read configuration parameters
     - SVC::MySQL::Com for all Com_* metrics
     - SVC::MySQL::DB::{#DB} prototype for all per database metrics 
