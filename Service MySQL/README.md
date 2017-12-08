@@ -43,8 +43,8 @@ show_compatibility_56 = OFF
 My advice is even to disable show_compatibility_56 to not start by mistake use some older metrics which in next version of the MySQL no longer will be avalaible as an option.
 
 - By default this template is monitoring the engine working on localhost.
-To be able to use this template on a host you need to setup a monitoring account with the proper privileges.
-To add such account you can use below queries:
+- To be able to use this template on a host you need to setup a monitoring account with the proper privileges.
+  To add such account you can use below queries:
 ```
 CREATE USER 'monitoring'@'localhost' IDENTIFIED BY 'monitoring';
 GRANT SELECT, INDEX, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'monitoring'@'localhost';
