@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-01T15:11:12Z</date>
+  <date>2017-12-07T09:50:18Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -24,7 +24,14 @@ Notes:&#13;
           <name>Templates SNMP MIB</name>
         </group>
       </groups>
-      <applications/>
+      <applications>
+        <application>
+          <name>IP-MIB::icmp</name>
+        </application>
+        <application>
+          <name>IP-MIB::ip</name>
+        </application>
+      </applications>
       <items/>
       <discovery_rules/>
       <httptests/>

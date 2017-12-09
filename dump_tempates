@@ -1,0 +1,56 @@
+#!/bin/sh
+
+. ../zapish/zapish.sh
+
+for i in \
+	"ICMP" \
+	"MIB/F5-BIGIP-LOCAL-MIB"  \
+	"MIB/F5-BIGIP-SYSTEM-MIB" \
+	"MIB/IF-MIB" \
+	"MIB/IP-MIB" \
+	"MIB/SNMP-USER-BASED-SM-MIB" \
+	"MIB/SNMPv2-MIB" \
+	"MIB/SNMP-VIEW-BASED-ACM-MIB" \
+	"MIB/UDP-MIB" \
+	"OS Linux" \
+	"OS Solaris" \
+	"OS Windows" \
+	"Service Apache" \
+	"Service MySQL" \
+	"Service Zabbix Agent" \
+	"Service Zabbix Proxy" \
+	"SNMP Devices/BIG-IP 5000" \
+	"SNMP Devices/DSL-3782"
+	do
+		template_name=$(basename "$i")
+		templates=$(zabbix_api template.get \
+			"$(json_list params \
+				"$(json_str output simple \
+				"")" \
+				"$(json_list filter \
+					"$(json_array_str host \
+						"${template_name}" \
+					"")" \
+				"")" \
+			"")" \
+		)
+
+		templateid="$(json_get "${templates=}" .result[].templateid)"
+
+		xml_output=$(zabbix_api configuration.export \
+			"$(json_list params \
+				"$(json_list options \
+					"$(json_array_num templates \
+						${templateid} \
+					"")" \
+				"")" \
+				"$(json_str format xml \
+				"")" \
+			"")" \
+		)
+
+		echo ${xml_output} | jq -r .result | xmllint --format - > ${i}/${template_name}.new.xml
+		printf "Template id=%7s, Name=%-40s dump to %s.xml\n" ${templateid} "\"${template_name}\"" "${i}/${template_name}"
+		mv -f "${i}/${template_name}"{.new,}.xml
+	done
+

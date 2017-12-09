@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-09-12T22:20:12Z</date>
+  <date>2017-12-07T11:16:06Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,14 +13,11 @@
       <name>Service Zabbix Proxy</name>
       <description>Base Zabbix proxy service monitoring template.&#13;
 &#13;
-Current version : 1.0&#13;
-Date:                   2017-09-09&#13;
-Changelog:&#13;
-1.0:&#13;
-- initial version.&#13;
+Version: 1.0.0 (2017-09-09)&#13;
+URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Proxy&#13;
 &#13;
 Notes:&#13;
-* Host with this tempate needs to be monitored over proxy which it will be monitoring.</description>
+* Host with this template needs to be monitored over proxy which will be monitored.</description>
       <groups>
         <group>
           <name>Templates</name>
