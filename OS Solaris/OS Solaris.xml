@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-01T02:28:30Z</date>
+  <date>2017-12-09T23:26:32Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,10 +13,57 @@
       <name>OS Solaris</name>
       <description>Base OS Solaris monitoring.&#13;
 &#13;
-Version: 1.0.1 (2017-12-01)&#13;
-URL: https://github.com/kloczek/zabbix-templates/tree/master/OS%20Solaris&#13;
+Current version : 1.0&#13;
+Date:                   2017-09-09&#13;
+Changelog:&#13;
+1.0:&#13;
+- initial version.&#13;
 &#13;
-Notes:</description>
+Notes:&#13;
+https://github.com/mharsch/arcstat/blob/master/arcstat.pl&#13;
+http://dtrace.org/blogs/brendan/2012/01/09/activity-of-the-zfs-arc/&#13;
+&#13;
+Possible to add kstat ARC metrics:&#13;
+&#13;
+zfs:0:arcstats:buf_size&#13;
+zfs:0:arcstats:class&#13;
+zfs:0:arcstats:crtime&#13;
+zfs:0:arcstats:data_size&#13;
+zfs:0:arcstats:deleted&#13;
+zfs:0:arcstats:evict_l2_cached&#13;
+zfs:0:arcstats:evict_l2_eligible&#13;
+zfs:0:arcstats:evict_l2_ineligible&#13;
+zfs:0:arcstats:evict_mfu&#13;
+zfs:0:arcstats:evict_mru&#13;
+zfs:0:arcstats:hash_chain_max&#13;
+zfs:0:arcstats:hash_chains&#13;
+zfs:0:arcstats:hash_collisions&#13;
+zfs:0:arcstats:hash_elements&#13;
+zfs:0:arcstats:hash_elements_max&#13;
+zfs:0:arcstats:l2_abort_lowmem&#13;
+zfs:0:arcstats:l2_cksum_bad&#13;
+zfs:0:arcstats:l2_evict_lock_retry&#13;
+zfs:0:arcstats:l2_evict_reading&#13;
+zfs:0:arcstats:l2_feeds&#13;
+zfs:0:arcstats:l2_hdr_size&#13;
+zfs:0:arcstats:l2_io_error&#13;
+zfs:0:arcstats:l2_read_bytes&#13;
+zfs:0:arcstats:l2_rw_clash&#13;
+zfs:0:arcstats:l2_size&#13;
+zfs:0:arcstats:l2_write_bytes&#13;
+zfs:0:arcstats:l2_writes_done&#13;
+zfs:0:arcstats:l2_writes_error&#13;
+zfs:0:arcstats:l2_writes_hdr_miss&#13;
+zfs:0:arcstats:l2_writes_sent&#13;
+zfs:0:arcstats:meta_limit&#13;
+zfs:0:arcstats:meta_max&#13;
+zfs:0:arcstats:meta_used&#13;
+zfs:0:arcstats:mutex_miss&#13;
+zfs:0:arcstats:other_size&#13;
+zfs:0:arcstats:p&#13;
+zfs:0:arcstats:snaptime&#13;
+&#13;
+https://github.com/bcantrill/node-kstat</description>
       <groups>
         <group>
           <name>Templates</name>
@@ -62,7 +109,7 @@ Notes:</description>
           <snmp_oid/>
           <key>icmpping[]</key>
           <delay>2m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -105,7 +152,7 @@ Notes:</description>
           <snmp_oid/>
           <key>net.tcp.port[,22]</key>
           <delay>5m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -148,7 +195,7 @@ Notes:</description>
           <snmp_oid/>
           <key>net.tcp.service[ssh]</key>
           <delay>5m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -191,7 +238,7 @@ Notes:</description>
           <snmp_oid/>
           <key>proc.num[,,run]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -232,7 +279,7 @@ Notes:</description>
           <snmp_oid/>
           <key>proc.num[crond]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -273,7 +320,7 @@ Notes:</description>
           <snmp_oid/>
           <key>proc.num[ntpd]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -314,7 +361,7 @@ Notes:</description>
           <snmp_oid/>
           <key>proc.num[sshd]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -355,7 +402,7 @@ Notes:</description>
           <snmp_oid/>
           <key>proc.num[]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -396,7 +443,7 @@ Notes:</description>
           <snmp_oid/>
           <key>system.boottime</key>
           <delay>10m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -437,7 +484,7 @@ Notes:</description>
           <snmp_oid/>
           <key>system.cpu.intr</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -483,7 +530,7 @@ Notes:</description>
           <snmp_oid/>
           <key>system.cpu.load[,avg1]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -524,7 +571,7 @@ Notes:</description>
           <snmp_oid/>
           <key>system.cpu.num[max]</key>
           <delay>1d</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -565,7 +612,7 @@ Notes:</description>
           <snmp_oid/>
           <key>system.cpu.switches</key>
           <delay>5s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -613,7 +660,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.cpu.util[,idle,avg1]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -654,7 +701,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.cpu.util[,iowait,avg1]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -695,7 +742,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.cpu.util[,system,avg1]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -736,7 +783,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.cpu.util[,user,avg1]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -777,7 +824,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.hostname</key>
           <delay>1h</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
@@ -818,7 +865,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.localtime</key>
           <delay>15m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -859,7 +906,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_oid/>
           <key>system.run["kstat -p zfs:*:arcstats:c_max|cut -f2'"]</key>
           <delay>1h</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -905,7 +952,7 @@ set zfs:zfs_arc_max=34359738368</description>
           <snmp_oid/>
           <key>system.run["kstat -p zfs:*:arcstats:c_min|cut -f2'"]</key>
           <delay>1h</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -946,7 +993,7 @@ set zfs:zfs_arc_max=34359738368</description>
           <snmp_oid/>
           <key>system.run["kstat -p zfs:*:arcstats:c|cut -f2'"]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -987,7 +1034,7 @@ set zfs:zfs_arc_max=34359738368</description>
           <snmp_oid/>
           <key>system.run["kstat -p zfs:*:arcstats:demand_data_hits | cut -f2'"]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1037,7 +1084,7 @@ streaming ratio = prefetch_* / (hits + misses)</description>
           <snmp_oid/>
           <key>system.run[kstat -p zfs:*::prefetch_data_hits|cut -f2]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1085,7 +1132,7 @@ Prefetch is the ZFS read-ahead feature, to predict and pre-cache blocks for stre
           <snmp_oid/>
           <key>system.run[kstat -p zfs:*::prefetch_metadata_hits|cut -f2]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1133,7 +1180,7 @@ Prefetch is the ZFS read-ahead feature, to predict and pre-cache blocks for stre
           <snmp_oid/>
           <key>system.run[kstat -p zfs:*:arcstats:demand_data_misses|cut -f2]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1183,7 +1230,7 @@ streaming ratio = prefetch_* / (hits + misses)</description>
           <snmp_oid/>
           <key>system.run[kstat -p zfs:*:arcstats:demand_metadata_hits|cut -f2]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1233,7 +1280,7 @@ streaming ratio = prefetch_* / (hits + misses)</description>
           <snmp_oid/>
           <key>system.run[kstat -p zfs:*:arcstats:demand_metadata_misses|cut -f2]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1283,7 +1330,7 @@ streaming ratio = prefetch_* / (hits + misses)</description>
           <snmp_oid/>
           <key>system.run[kstat -p zfs:*:arcstats:hits|cut -f2]</key>
           <delay>5s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1331,7 +1378,7 @@ hits = demand_data_hits + demand_metadata_hits + prefetch_data_hits + prefetch_m
           <snmp_oid/>
           <key>system.run[kstat -p zfs:*:arcstats:memory_throttle_count|cut -f2]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1381,7 +1428,7 @@ A constant increasing of the memory_throttle_count statistic can indicate excess
           <snmp_oid/>
           <key>system.run[kstat -p zfs:*:arcstats:mfu_ghost_hits|cut -f2]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1429,7 +1476,7 @@ hits against pages held in ghost mfu list from pages evicted from ARC mfu list</
           <snmp_oid/>
           <key>system.run[kstat -p zfs:*:arcstats:mfu_hits|cut -f2]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1475,7 +1522,7 @@ hits against pages held in ghost mfu list from pages evicted from ARC mfu list</
           <snmp_oid/>
           <key>system.run[kstat -p zfs:*:arcstats:misses|cut -f2]</key>
           <delay>5s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1523,7 +1570,7 @@ misses = demand_data_misses + demand_metadata_misses + prefetch_data_misses + pr
           <snmp_oid/>
           <key>system.run[kstat -p zfs:*:arcstats:mru_ghost_hits|cut -f2]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1571,7 +1618,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <snmp_oid/>
           <key>system.run[kstat -p zfs:*:arcstats:mru_hits|cut -f2]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1617,7 +1664,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <snmp_oid/>
           <key>system.run[kstat -p zfs:*:arcstats:size|cut -f2]</key>
           <delay>30s</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1658,7 +1705,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <snmp_oid/>
           <key>system.swap.size[,free]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1699,7 +1746,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <snmp_oid/>
           <key>system.swap.size[,total]</key>
           <delay>1h</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1740,7 +1787,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <snmp_oid/>
           <key>system.uname</key>
           <delay>5h</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
@@ -1781,7 +1828,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <snmp_oid/>
           <key>system.uptime</key>
           <delay>10m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1822,7 +1869,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <snmp_oid/>
           <key>system.users.num</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1866,7 +1913,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <snmp_oid/>
           <key>vfs.file.cksum[/etc/passwd]</key>
           <delay>1h</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1907,7 +1954,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <snmp_oid/>
           <key>vm.memory.size[available]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1948,7 +1995,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <snmp_oid/>
           <key>vm.memory.size[free]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1989,7 +2036,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <snmp_oid/>
           <key>vm.memory.size[total]</key>
           <delay>1d</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2030,7 +2077,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <snmp_oid/>
           <key>vm.memory.size[used]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2071,7 +2118,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <snmp_oid/>
           <key>zabbix[items_unsupported,host]</key>
           <delay>1m</delay>
-          <history>2w</history>
+          <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -2113,7 +2160,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <snmp_community/>
           <snmp_oid/>
           <key>net.if.discovery</key>
-          <delay>10m</delay>
+          <delay>1d</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -2149,7 +2196,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               </condition>
             </conditions>
           </filter>
-          <lifetime>1d</lifetime>
+          <lifetime>31d</lifetime>
           <description>Discovery of network interfaces.</description>
           <item_prototypes>
             <item_prototype>
@@ -2159,7 +2206,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <snmp_oid/>
               <key>net.if.in[{#IFNAME}]</key>
               <delay>30s</delay>
-              <history>2w</history>
+              <history>1w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -2210,7 +2257,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <snmp_oid/>
               <key>net.if.out[{#IFNAME}]</key>
               <delay>30s</delay>
-              <history>2w</history>
+              <history>1w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -2355,7 +2402,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <snmp_community/>
           <snmp_oid/>
           <key>system.run["iostat -x|awk 'BEGIN {print \"{\\"data\\":[\"; ORS=\"\"} {if (NR&gt;3) {print \",\n\"}; if (NR&gt;2) print \"{\\"{#DISK}\\":\\"\" $1 \"\\"}\"} END {print \"]}\"}'"]</key>
-          <delay>10m</delay>
+          <delay>1d</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -2385,7 +2432,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               </condition>
             </conditions>
           </filter>
-          <lifetime>1d</lifetime>
+          <lifetime>31d</lifetime>
           <description>List of Solaris storage devices (typically displayed by iostat -x).</description>
           <item_prototypes>
             <item_prototype>
@@ -2395,7 +2442,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <snmp_oid/>
               <key>vfs.dev.read.size[{#DISK}]</key>
               <delay>30s</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2437,7 +2484,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <snmp_oid/>
               <key>vfs.dev.read[{#DISK},bytes]</key>
               <delay>30s</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2484,7 +2531,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <snmp_oid/>
               <key>vfs.dev.read[{#DISK},operations]</key>
               <delay>30s</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2531,7 +2578,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <snmp_oid/>
               <key>vfs.dev.write.size[{#DISK}]</key>
               <delay>30s</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2574,7 +2621,7 @@ last("vfs.dev.write[{#DISK},operations]")</params>
               <snmp_oid/>
               <key>vfs.dev.write[{#DISK},bytes]</key>
               <delay>30s</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2621,7 +2668,7 @@ last("vfs.dev.write[{#DISK},operations]")</params>
               <snmp_oid/>
               <key>vfs.dev.write[{#DISK},operations]</key>
               <delay>30s</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2806,7 +2853,7 @@ last("vfs.dev.write[{#DISK},operations]")</params>
           <snmp_community/>
           <snmp_oid/>
           <key>system.run["kstat -p zfs::arcstats:l2_hdr_size|awk '/(.*\t0$)/{print \"{\\"data\\":[ ]}\"} !/(.*\t0$)/{print \"{\\"data\\":[{\\"{#L2ARC}\\":\\"*\\"}]}\"}''"]</key>
-          <delay>10m</delay>
+          <delay>1d</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -2829,8 +2876,10 @@ last("vfs.dev.write[{#DISK},operations]")</params>
             <formula/>
             <conditions/>
           </filter>
-          <lifetime>1d</lifetime>
-          <description>Using unix:0:l2arc_buf_t:alloc kstat metrics detect does zfs pools are using L2ARC or not.</description>
+          <lifetime>30d</lifetime>
+          <description>Using unix:0:l2arc_buf_t:alloc kstat metrics detect does zfs pools are using L2ARC or not.&#13;
+&#13;
+system.run["kstat -p zfs::arcstats:l2_hdr_size|awk '/(.*\t0$)/{print \"{\\"data\\":[ ]}\"} !/(.*\t0$)/{print \"{\\"data\\":[{\\"{#L2ARC}\\":\\"*\\"}]}\"}''"]</description>
           <item_prototypes>
             <item_prototype>
               <name>zfs:{#L2ARC}:arcstats:l2_feeds</name>
@@ -2839,7 +2888,7 @@ last("vfs.dev.write[{#DISK},operations]")</params>
               <snmp_oid/>
               <key>system.run["kstat -p zfs:{#L2ARC}:arcstats:l2_feeds|cut -f2'"]</key>
               <delay>30s</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2886,7 +2935,7 @@ last("vfs.dev.write[{#DISK},operations]")</params>
               <snmp_oid/>
               <key>system.run["kstat -p zfs:{#L2ARC}:arcstats:l2_hits|cut -f2'"]</key>
               <delay>30s</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2933,7 +2982,7 @@ last("vfs.dev.write[{#DISK},operations]")</params>
               <snmp_oid/>
               <key>system.run["kstat -p zfs:{#L2ARC}:arcstats:l2_misses|cut -f2'"]</key>
               <delay>30s</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2980,7 +3029,7 @@ last("vfs.dev.write[{#DISK},operations]")</params>
               <snmp_oid/>
               <key>system.run["kstat -p zfs:{#L2ARC}:arcstats:l2_size|cut -f2'"]</key>
               <delay>30s</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3022,7 +3071,7 @@ last("vfs.dev.write[{#DISK},operations]")</params>
               <snmp_oid/>
               <key>system.run["kstat -p zfs:{#L2ARC}:arcstats:l2_write_bytes|cut -f2'"]</key>
               <delay>30s</delay>
-              <history>2w</history>
+              <history>15d</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3119,7 +3168,7 @@ last("vfs.dev.write[{#DISK},operations]")</params>
           <snmp_community/>
           <snmp_oid/>
           <key>system.run["zpool list -Ho name|awk 'BEGIN {print \"{\\"data\\":[\"; ORS=\"\"} {if (NR&gt;1) {print \",\n\"}; print \"{\\"{#ZPOOL}\\":\\"\" $1 \"\\"}\"} END {print \"]}\"}'"]</key>
-          <delay>10m</delay>
+          <delay>1d</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -3142,7 +3191,7 @@ last("vfs.dev.write[{#DISK},operations]")</params>
             <formula/>
             <conditions/>
           </filter>
-          <lifetime>1d</lifetime>
+          <lifetime>31d</lifetime>
           <description>List of zpools.</description>
           <item_prototypes>
             <item_prototype>
@@ -3152,7 +3201,7 @@ last("vfs.dev.write[{#DISK},operations]")</params>
               <snmp_oid/>
               <key>system.run[zpool list -Ho health {#ZPOOL}]</key>
               <delay>10m</delay>
-              <history>2w</history>
+              <history>365d</history>
               <trends>0</trends>
               <status>0</status>
               <value_type>1</value_type>
@@ -3194,7 +3243,7 @@ last("vfs.dev.write[{#DISK},operations]")</params>
               <snmp_oid/>
               <key>system.run[zpool list -Ho version {#ZPOOL}]</key>
               <delay>1d</delay>
-              <history>2w</history>
+              <history>365d</history>
               <trends>0</trends>
               <status>0</status>
               <value_type>1</value_type>
@@ -3298,7 +3347,7 @@ Please login on the host and check output of the commands:&#13;
               </condition>
             </conditions>
           </filter>
-          <lifetime>1d</lifetime>
+          <lifetime>31d</lifetime>
           <description>Discovery of file systems.</description>
           <item_prototypes>
             <item_prototype>
@@ -3308,7 +3357,7 @@ Please login on the host and check output of the commands:&#13;
               <snmp_oid/>
               <key>vfs.fs.size[{#FSNAME},pfree]</key>
               <delay>1m</delay>
-              <history>2w</history>
+              <history>1w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3350,7 +3399,7 @@ Please login on the host and check output of the commands:&#13;
               <snmp_oid/>
               <key>vfs.fs.size[{#FSNAME},total]</key>
               <delay>1h</delay>
-              <history>2w</history>
+              <history>1w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3392,7 +3441,7 @@ Please login on the host and check output of the commands:&#13;
               <snmp_oid/>
               <key>vfs.fs.size[{#FSNAME},used]</key>
               <delay>1m</delay>
-              <history>2w</history>
+              <history>1w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
