@@ -24,28 +24,29 @@ for i in \
 	do
 		template_name=$(basename "$i")
 		templates=$(zabbix_api template.get \
-			$(json_list params \
-			$(json_str output simple \
-				$(json_list filter \
-					$(json_array_str host \
+			"$(json_list params \
+				"$(json_str output simple \
+				"")" \
+				"$(json_list filter \
+					"$(json_array_str host \
 						"${template_name}" \
-					"") \
-				"")) \
-			"")
+					"")" \
+				"")" \
+			"")" \
 		)
 
 		templateid="$(json_get "${templates=}" .result[].templateid)"
 
 		xml_output=$(zabbix_api configuration.export \
-			$(json_list params \
-				$(json_list options \
-					$(json_array_num templates \
+			"$(json_list params \
+				"$(json_list options \
+					"$(json_array_num templates \
 						${templateid} \
-					"") \
-				"") \
-				$(json_str format xml \
-				"") \
-			"")
+					"")" \
+				"")" \
+				"$(json_str format xml \
+				"")" \
+			"")" \
 		)
 
 		echo "Template: id=${templateid}, Name=\"${template_name}\" dump to ${template_name}.xml"
