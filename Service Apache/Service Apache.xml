@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-01T03:44:05Z</date>
+  <date>2017-12-13T13:32:27Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -22,10 +22,10 @@ Notes:&#13;
 &#13;
 ExtendedStatus On&#13;
 &lt;Location /server-status&gt;&#13;
-            SetHandler server-status&#13;
-            Order deny,allow&#13;
-            Deny from all&#13;
-            Allow from localhost&#13;
+ SetHandler server-status&#13;
+ Order deny,allow&#13;
+ Deny from all&#13;
+ Allow from localhost&#13;
 &lt;/Location&gt;</description>
       <groups>
         <group>
