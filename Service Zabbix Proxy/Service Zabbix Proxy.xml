@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-07T11:16:06Z</date>
+  <date>2017-12-10T04:56:50Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -2388,7 +2388,7 @@ Possible:&#13;
       <manual_close>0</manual_close>
       <dependencies>
         <dependency>
-          <name>SVC::zabbix_proxy::Number of items queued  &gt;=20,000 (Last Value={ITEM.VALUE})</name>
+          <name>SVC::zabbix_proxy::Number of items queued &gt;=20,000 (Last Value={ITEM.VALUE})</name>
           <expression>{Service Zabbix Proxy:zabbix[queue,10m].last(0)}&gt;20000</expression>
           <recovery_expression/>
         </dependency>
@@ -2415,7 +2415,7 @@ Possible:&#13;
           <recovery_expression/>
         </dependency>
         <dependency>
-          <name>SVC::zabbix_proxy::Number of items queued  &gt;=20,000 (Last Value={ITEM.VALUE})</name>
+          <name>SVC::zabbix_proxy::Number of items queued &gt;=20,000 (Last Value={ITEM.VALUE})</name>
           <expression>{Service Zabbix Proxy:zabbix[queue,10m].last(0)}&gt;20000</expression>
           <recovery_expression/>
         </dependency>
@@ -2426,7 +2426,7 @@ Possible:&#13;
       <expression>{Service Zabbix Proxy:zabbix[queue,10m].last(0)}&gt;20000</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>SVC::zabbix_proxy::Number of items queued  &gt;=20,000 (Last Value={ITEM.VALUE})</name>
+      <name>SVC::zabbix_proxy::Number of items queued &gt;=20,000 (Last Value={ITEM.VALUE})</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
