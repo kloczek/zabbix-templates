@@ -28,7 +28,7 @@ for i in \
 				"$(json_str output simple \
 				"")" \
 				"$(json_list filter \
-					"$(json_array_str host \
+					"$(json_array_str "name" \
 						"${template_name}" \
 					"")" \
 				"")" \
