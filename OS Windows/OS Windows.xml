@@ -24,7 +24,7 @@ Notes:</description>
       </groups>
       <applications>
         <application>
-          <name>BITL</name>
+          <name>BLOC</name>
         </application>
         <application>
           <name>CPU</name>
@@ -43,6 +43,9 @@ Notes:</description>
         </application>
         <application>
           <name>HW::CPU</name>
+        </application>
+        <application>
+          <name>HW::NIC</name>
         </application>
         <application>
           <name>LOG</name>
@@ -91,6 +94,9 @@ Notes:</description>
         </application>
         <application>
           <name>SYS</name>
+        </application>
+        <application>
+          <name>SYS::SRV</name>
         </application>
         <application>
           <name>TSS</name>
@@ -212,6 +218,375 @@ Notes:</description>
           <applications>
             <application>
               <name>LOG</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::CAC::Copy Read Hits</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Cache\Copy Read Hits %]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>%</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Counter for hit rates and miss rates. Any value over 80 percent indicates that the application uses the cache very efficiently. Compare this counter against Cache\Copy Reads/sec to see how many hits you are really getting. Even though the hit percentage is small, if the rate of operations is high, this might indicate better cache effectiveness than a high percentage with a low rate of operations.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::CAC::Copy Reads</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Cache\Copy Reads/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Counter to see the rate at which the file system attempts to find application data in the cache without accessing the disk. This is a count of all copy read calls to the cache, including hits and misses. Copy reads are the usual method by which file data found in the cache is copied into an applications memory buffers.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::CAC::Data Flushes</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Cache\Data Flushes/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Counter for the rate at which cache data is being written back to disk. This counter reports application requests to flush data from the cache and is an indirect indicator of the volume and frequency of application data changes.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::CAC::Data Flush Pages</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Cache\Data Flush Pages/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Counter for the rate at which both applications change pages of cached data and the pages are written back to disk. This includes pages that have been written by the system process when many changed pages have accumulated, pages that have been flushed so that the cache can be trimmed, and disk writes that are caused by an application write-through request.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::CAC::Data Maps</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Cache\Data Maps/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Counter for the rate at which file systems map pages of a file into the cache for reading. This counter reports read-only access to file system directories, the file allocation table (FAT) in the FAT file system, and the Master File Table in the NTFS file system. This counter does not reflect cache use by applications.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::CAC::Fast Reads</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Cache\Fast Reads/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Counter for the rate at which applications bypass the file system and access data directly from the cache. A value over 50 percent indicates the application is behaving efficiently. Fast reads reduce processor overhead and are preferable to I/O requests.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::CAC::Lazy Write Flushes</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Cache\Lazy Write Flushes/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Counter for the rate at which an application changes data, causing the cache to write to the disk and flush the data. If this value reflects an upward trend, memory might be becoming low. Lazy write flushes are a subset of data flushes. The lazy writer thread in the system process periodically writes changed pages from the modified page list back to disk and flushes them from the cache. This thread is activated more often when memory needs to be released for other uses. This counter counts the number of write and flush operations, regardless of the amount of data written.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::CAC::Lazy Write Pages</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Cache\Lazy Write Pages/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Counter for the rate at which pages are changed by an application and written to the disk. If the counter value is increasing, this can indicate that memory is becoming low. Cache\Lazy Write Pages are a subset of Data Flush Pages.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::CAC::Read Aheads</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Cache\Read Aheads/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Counter to monitor the rate at which the Cache Manager detects that the file is being accessed sequentially. Sequential file access is a very efficient strategy in most cases. During sequential file access, the Cache Manager can read larger blocks of data into the cache on each I/O, thereby reducing the overhead per access.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
             </application>
           </applications>
           <valuemap/>
@@ -390,7 +765,7 @@ TypePerf.exe -qx on cmd prompt&#13;
           <master_item/>
         </item>
         <item>
-          <name>MEM::available</name>
+          <name>MEM::Available</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -417,7 +792,7 @@ TypePerf.exe -qx on cmd prompt&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Amount of physical memory immediately available for allocation to a process or for system use. It is equal to the sum of memory assigned to the standby (cached), free and zero page lists. Can also be indication of how much physical memory is remaining after the working sets of running processes and the cache have been served.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -431,7 +806,48 @@ TypePerf.exe -qx on cmd prompt&#13;
           <master_item/>
         </item>
         <item>
-          <name>MEM::commit::limit</name>
+          <name>MEM::CAC::Faults</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Memory\Cache Faults/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Counter for the rate at which pages sought in the cache were not found there and had to be obtained elsewhere in memory or on the disk. Compare this counter against Memory\Page Faults/sec and Pages Input/sec to determine the number of hard page faults, if any.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::Commit Limit</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -458,7 +874,10 @@ TypePerf.exe -qx on cmd prompt&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>The system commit limit of Windows and Windows Server is the sum of physical memory and the size of all of the page files combined on the system. It is the maximum amount of physical resources that the system can use to back committed memory. It is a factitious resource that prevents the system from over committing or over "promising" too much physical resources. With that said, when the system is unable to commit anymore memory, then applications may fail to function and the system may hang indefinitely.&#13;
+&#13;
+&#13;
+https://social.technet.microsoft.com/wiki/contents/articles/2248.perfguide-out-of-system-committed-memory.aspx</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -472,7 +891,7 @@ TypePerf.exe -qx on cmd prompt&#13;
           <master_item/>
         </item>
         <item>
-          <name>MEM::committed</name>
+          <name>MEM::Committed</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -499,7 +918,9 @@ TypePerf.exe -qx on cmd prompt&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Committed memory is the physical memory which has space reserved on the disk paging file(s). There can be one or more paging files on each physical drive. &#13;
+&#13;
+https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troubleshooting-memory-issues/</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -513,12 +934,12 @@ TypePerf.exe -qx on cmd prompt&#13;
           <master_item/>
         </item>
         <item>
-          <name>MEM::free::FSPTE</name>
+          <name>MEM::PTE::Free entries</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Memory\Free System Page Table Entries]</key>
-          <delay>1m</delay>
+          <delay>10m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -540,7 +961,9 @@ TypePerf.exe -qx on cmd prompt&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>A page table is the data structure used by the Windows Virtual Memory Manager (VMM) to store the mapping between virtual addresses and physical addresses in memory. The performance counter Free System Page Table Entries is the number of page table entries not currently used by the system. More important to observe with 32-bit Windows OS.&#13;
+&#13;
+https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-table-entries-ptes/</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -554,11 +977,11 @@ TypePerf.exe -qx on cmd prompt&#13;
           <master_item/>
         </item>
         <item>
-          <name>MEM::pages</name>
+          <name>MEM::Page Faults</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>perf_counter[\Memory\Pages/sec]</key>
+          <key>perf_counter[\Memory\Page Faults/sec]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -595,11 +1018,134 @@ TypePerf.exe -qx on cmd prompt&#13;
           <master_item/>
         </item>
         <item>
-          <name>MEM::pages::input</name>
+          <name>MEM::Page Reads</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Memory\Page Reads/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units>pages/s</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::Pages</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Memory\Pages/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Indicates the number of requested pages that were not immediately available in RAM and had to be read from the disk or had to be written to the disk to make room in RAM for other pages. If your system experiences a high rate of hard page faults, the value for Memory\Pages/sec can be high.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::Pages Input</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Memory\Pages Input/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::Pages Output</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Memory\Pages Output/sec]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -2124,6 +2670,47 @@ http://www.osronline.com/article.cfm?article=529</description>
           <master_item/>
         </item>
         <item>
+          <name>CPU::Processor::Frequency</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Processor Information(_Total)\Processor Frequency]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>HW::CPU</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
           <name>CPU::Processor::State Flags</name>
           <type>7</type>
           <snmp_community/>
@@ -2411,7 +2998,89 @@ http://www.osronline.com/article.cfm?article=529</description>
           <master_item/>
         </item>
         <item>
-          <name>SYS::Server Bytes Total</name>
+          <name>SYS::SRV::SMB::Blocking Requests Rejected</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Server\Blocking Requests Rejected]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the number of times that the server has rejected blocking server message block requests (SMBs) due to insufficient count of free work items. This counter indicates whether the MaxWorkItem or MinFreeWorkItems server registry parameters might need tuning.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS::SRV</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::SRV::Server Bytes Received</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Server\Bytes Received/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>Bps</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the rate at which the server is receiving bytes from the network.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS::SRV</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::SRV::Server Bytes Total</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2438,11 +3107,381 @@ http://www.osronline.com/article.cfm?article=529</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Shows the rate at which the server is transmitting bytes through the network.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SYS</name>
+              <name>SYS::SRV</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::SRV::Server Bytes Transmitted</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Server\Bytes Transmitted/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>Bps</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the rate at which the server is sending bytes on the network.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS::SRV</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::SRV::Errors Access Permissions</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Server\Errors Access Permissions]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the number of times attempts to open files on behalf of clients have failed with the message STATUS_ACCESS_DENIED. This counter can indicate if someone is attempting to access random files to improperly access a file that was not properly protected.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS::SRV</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::SRV::Errors Granted Access</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Server\Errors Granted Access]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the number of times that attempts to access files successfully opened were denied. This counter can indicate attempts to access files without proper access authorization.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS::SRV</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::SRV::Errors Logon</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Server\Errors Logon]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the number of failed logon attempts to the server. This counter can indicate whether password guessing programs are being used to crack the security on the server.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS::SRV</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::SRV::Errors System</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Server\Errors System]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the number of times that an internal server error was detected. Errors can reflect problems with logon, security, memory allocation, disk operations, transport driver interface operations, communication (such as receipt of unimplemented or unrecognized SMBs), or I/O Request Packet stack size for the server.&#13;
+Many of these errors are also written to the System log and Security log in Event Viewer. The server can recover from most the errors displayed by this counter, but they are unexpected and should be reported to Microsoft Product Support Services.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS::SRV</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::SRV::Sessions Errored Out</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Server\Sessions Errored Out]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the number of sessions that have been closed due to unexpected error conditions. This counter indicates how frequently network problems are causing dropped sessions on the server. The Sessions Errored Out counter reports auto-disconnects along with errored-out sessions. For a more accurate value for errored-out sessions, obtain the value for Sessions Timed Out and reduce the Sessions Errored Out value by that amount.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS::SRV</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::SRV::Sessions Forced Off</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Server\Sessions Forced Off]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the number of sessions that have been forced to log off. This counter can indicate how many sessions were forced to log off due to logon time constraints.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS::SRV</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::SRV::Sessions Logged Off</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Server\Sessions Logged Off]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the number of sessions that have been forced to log off. This counter can indicate how many sessions were forced to log off due to logon time constraints.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS::SRV</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::SRV::Sessions Timed Out</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Server\Sessions Timed Out]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the number of sessions that have been closed because idle time exceeded the AutoDisconnect parameter for the server. This counter shows whether the AutoDisconnect setting is helping to conserve resources.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS::SRV</name>
             </application>
           </applications>
           <valuemap/>
@@ -3158,7 +4197,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>SYS::Uptime</name>
+          <name>SYS::uptime</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
