@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-09T23:26:32Z</date>
+  <date>2017-12-13T13:26:42Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -3272,8 +3272,8 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>system.run[mysql -sNe  "",]</key>
-          <delay>30m</delay>
+          <key>system.run[mysql -sNe "",]</key>
+          <delay>10m</delay>
           <status>1</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -3625,7 +3625,7 @@ SET GLOBAL event_scheduler = ON;</description>
       <description>Number threads with actoive connections is greater than 90% of maximum connections which MySQL engine can establish to the clients.&#13;
 To increase max_connections by execute query:&#13;
 &#13;
-SET GLOBAL max_connections  = &lt;new_limit&gt;;&#13;
+SET GLOBAL max_connections = &lt;new_limit&gt;;&#13;
 &#13;
 To preserve this setting between restarts you need to add to my.cnf:&#13;
 &#13;

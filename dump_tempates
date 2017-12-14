@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 . ../zapish/zapish.sh
 
@@ -23,21 +23,21 @@ for i in \
 	"SNMP Devices/DSL-3782"
 	do
 		template_name=$(basename "$i")
-		templates=$(zabbix_api template.get \
+		templates="$(zabbix_api template.get \
 			"$(json_list params \
 				"$(json_str output simple \
 				"")" \
 				"$(json_list filter \
-					"$(json_array_str host \
+					"$(json_array_str "name" \
 						"${template_name}" \
 					"")" \
 				"")" \
 			"")" \
-		)
+		)"
 
 		templateid="$(json_get "${templates=}" .result[].templateid)"
 
-		xml_output=$(zabbix_api configuration.export \
+		xml_output="$(zabbix_api configuration.export \
 			"$(json_list params \
 				"$(json_list options \
 					"$(json_array_num templates \
@@ -47,10 +47,21 @@ for i in \
 				"$(json_str format xml \
 				"")" \
 			"")" \
-		)
+		)"
 
-		echo ${xml_output} | jq -r .result | xmllint --format - > ${i}/${template_name}.new.xml
-		printf "Template id=%7s, Name=%-40s dump to %s.xml\n" ${templateid} "\"${template_name}\"" "${i}/${template_name}"
-		mv -f "${i}/${template_name}"{.new,}.xml
+		echo "${xml_output}" | jq -r .result | xmllint --format - > "${i}/${template_name}".new.xml
+		if [ -f "${i}/${template_name}.xml" ]; then
+			cmp -s <(sed 4d "${i}/${template_name}".new.xml) <(sed 4d "${i}/${template_name}.xml")
+			if [ $? -ne 0 ]; then
+				printf "Template id=%7s, Name=%-40s dump to %s.xml\n" ${templateid} "\"${template_name}\"" "${i}/${template_name}"
+				mv -f "${i}/${template_name}"{.new,}.xml
+			else
+				printf "Template id=%7s, Name=%-40s is the same\n" ${templateid} \""${template_name}"\"
+				rm -f "${i}/${template_name}".new.xml
+			fi
+		else
+			printf "Template id=%7s, Name=%-40s dump to %s.xml\n" ${templateid} "\"${template_name}\"" "${i}/${template_name}"
+			mv -f "${i}/${template_name}"{.new,}.xml
+		fi
 	done
 

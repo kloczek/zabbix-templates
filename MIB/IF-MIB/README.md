@@ -18,6 +18,7 @@ Changelog:
     - Performance
   - added prototype Application on all NIC LLD prototype items
     IF-MIB::interface {#IFDESCR}
+  - added screen IF-MIB::interfaces with 
 - 1.0.1 (2017-11-22):
   - channge default history perid to 2w
   - better temlate description
