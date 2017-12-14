@@ -50,13 +50,18 @@ for i in \
 		)
 
 		echo ${xml_output} | jq -r .result | xmllint --format - > "${i}/${template_name}".new.xml
-		cmp <(sed 4d "${i}/${template_name}".new.xml) <(sed 4d "${i}/${template_name}.xml")
-		if [ $? -ne 0 ]; then
+		if [ -f "${i}/${template_name}" ]; then
+			cmp <(sed 4d "${i}/${template_name}".new.xml) <(sed 4d "${i}/${template_name}.xml")
+			if [ $? -ne 0 ]; then
+				printf "Template id=%7s, Name=%-40s dump to %s.xml\n" ${templateid} "\"${template_name}\"" "${i}/${template_name}"
+				mv -f "${i}/${template_name}"{.new,}.xml
+			else
+				printf "Template id=%7s, Name=%-40s is the same\n" ${templateid} \""${template_name}"\"
+				rm -f "${i}/${template_name}".new.xml
+			fi
+		else
 			printf "Template id=%7s, Name=%-40s dump to %s.xml\n" ${templateid} "\"${template_name}\"" "${i}/${template_name}"
 			mv -f "${i}/${template_name}"{.new,}.xml
-		else
-			printf "Template id=%7s, Name=%-40s is the same\n" ${templateid} \""${template_name}"\"
-			rm -f "${i}/${template_name}".new.xml
 		fi
 	done
 
