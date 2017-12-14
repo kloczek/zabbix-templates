@@ -23,7 +23,7 @@ for i in \
 	"SNMP Devices/DSL-3782"
 	do
 		template_name=$(basename "$i")
-		templates=$(zabbix_api template.get \
+		templates="$(zabbix_api template.get \
 			"$(json_list params \
 				"$(json_str output simple \
 				"")" \
@@ -33,11 +33,11 @@ for i in \
 					"")" \
 				"")" \
 			"")" \
-		)
+		)"
 
 		templateid="$(json_get "${templates=}" .result[].templateid)"
 
-		xml_output=$(zabbix_api configuration.export \
+		xml_output="$(zabbix_api configuration.export \
 			"$(json_list params \
 				"$(json_list options \
 					"$(json_array_num templates \
@@ -47,9 +47,9 @@ for i in \
 				"$(json_str format xml \
 				"")" \
 			"")" \
-		)
+		)"
 
-		echo ${xml_output} | jq -r .result | xmllint --format - > "${i}/${template_name}".new.xml
+		echo "${xml_output}" | jq -r .result | xmllint --format - > "${i}/${template_name}".new.xml
 		if [ -f "${i}/${template_name}" ]; then
 			cmp <(sed 4d "${i}/${template_name}".new.xml) <(sed 4d "${i}/${template_name}.xml")
 			if [ $? -ne 0 ]; then
