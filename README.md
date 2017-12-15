@@ -29,12 +29,15 @@ Notes:
 * Each template in the description field has the last modification date and internal version
 
 Templated items, applications and triggers must adhere to this naming convention using 3-4 letter abbreviations:
-<CLASS>::<Name>
-<CLASS>::<SUBCLASS>::<Name>
+<<CLASS>>::<<Name>>
+<<CLASS>>::<<SUBCLASS>>::<<Name>>
 
 Examples:
+
 MEM::Total Memory
+
 NET::ICMP::Loss
+
 NTP::WTS::Clock Frequency Adjustment
 
 This is to provide a parseable name, allowing us to distinguish between and categorise those objects.
