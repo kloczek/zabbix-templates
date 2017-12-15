@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-09T23:26:30Z</date>
+  <date>2017-12-01T14:49:55Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -11,13 +11,10 @@
     <template>
       <template>Service Zabbix Agent</template>
       <name>Service Zabbix Agent</name>
-      <description>Base zabbix active agent monitoring.&#13;
+      <description>Base zabbix agent working in active mode monitoring.&#13;
 &#13;
-Current version : 1.0&#13;
-Date:                   2017-09-09&#13;
-Changelog:&#13;
-1.0:&#13;
-- initial version.&#13;
+Version: 1.0.1 (2017-12-01)&#13;
+URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Agent&#13;
 &#13;
 Notes:</description>
       <groups>
@@ -38,7 +35,7 @@ Notes:</description>
           <snmp_oid/>
           <key>agent.ping</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -81,7 +78,7 @@ Notes:</description>
           <snmp_oid/>
           <key>agent.version</key>
           <delay>5m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
@@ -116,13 +113,13 @@ Notes:</description>
           <master_item/>
         </item>
         <item>
-          <name>items_unsupported]</name>
+          <name>items unsupported</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
           <key>zabbix[host,,items_unsupported]</key>
           <delay>30s</delay>
-          <history>90d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
