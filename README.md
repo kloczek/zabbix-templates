@@ -29,17 +29,17 @@ Notes:
 * Each template in the description field has the last modification date and internal version
 
 Templated items, applications and triggers must adhere to this naming convention using 3-4 letter abbreviations:
-<<CLASS>>::<<Name>>
-<<CLASS>>::<<SUBCLASS>>::<<Name>>
+'''
+&lt;CLASS&gt;::&lt;Name&gt;
 
+&lt;CLASS&gt;::&lt;SUBCLASS&gt;::&lt;Name&gt;
+'''
 Examples:
-
+'''
 MEM::Total Memory
-
 NET::ICMP::Loss
-
 NTP::WTS::Clock Frequency Adjustment
-
+'''
 This is to provide a parseable name, allowing us to distinguish between and categorise those objects.
 Such convention is quite easy to handle as pattern in alarming layer allowing for example send all tigger with SYS:: in the beginning name of the template to exact team.
 Such pattern is possible to use part of the general interface on communication with external services.
