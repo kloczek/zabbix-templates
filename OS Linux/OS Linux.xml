@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-15T01:01:00Z</date>
+  <date>2017-12-05T23:01:44Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -615,7 +615,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>system.cpu.switches</key>
           <delay>5s</delay>
-          <history>365d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1245,7 +1245,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)segments retransmited.*/\1/ p'"]</key>
+          <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\) segments retransmitted*/\1/ p'"]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -1909,7 +1909,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_community/>
           <snmp_oid/>
           <key>net.if.discovery</key>
-          <delay>5m</delay>
+          <delay>10m</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -1933,13 +1933,13 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
             <conditions>
               <condition>
                 <macro>{#IFNAME}</macro>
-                <value>(?!(lo))</value>
+                <value>^(?!(lo))</value>
                 <operator>8</operator>
                 <formulaid>A</formulaid>
               </condition>
             </conditions>
           </filter>
-          <lifetime>1w</lifetime>
+          <lifetime>1d</lifetime>
           <description>Discovery of network interfaces.</description>
           <item_prototypes>
             <item_prototype>
@@ -2411,7 +2411,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
                   <type>0</type>
                   <item>
                     <host>OS Linux</host>
-                    <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)segments retransmited.*/\1/ p'"]</key>
+                    <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\) segments retransmitted*/\1/ p'"]</key>
                   </item>
                 </graph_item>
               </graph_items>
@@ -2514,7 +2514,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_community/>
           <snmp_oid/>
           <key>system.run["awk 'BEGIN {print \"{\\"data\\":[\"; ORS=\"\"} {if (NR!=1) {print \",\n\"}; print \"{\\"{#DISK}\\":\\"\" $3 \"\\"}\"} END {print \"\n]}\"}' /proc/diskstats"]</key>
-          <delay>1h</delay>
+          <delay>10m</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -2544,7 +2544,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               </condition>
             </conditions>
           </filter>
-          <lifetime>31d</lifetime>
+          <lifetime>1d</lifetime>
           <description>List of Linux SCSI, ATA, XEN and Device Mapper storage devices without partitions.&#13;
 Discovery of storage devices is filtered over global regular expression "OS Linux::BlkDev" regexp.&#13;
 &#13;
@@ -2849,7 +2849,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>vfs.fs.discovery</key>
-          <delay>1h</delay>
+          <delay>10m</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -2868,18 +2868,24 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           <privatekey/>
           <port/>
           <filter>
-            <evaltype>0</evaltype>
+            <evaltype>1</evaltype>
             <formula/>
             <conditions>
               <condition>
                 <macro>{#FSTYPE}</macro>
                 <value>^(btrfs|ext2|ext3|ext4|jfs|reiser|xfs|ffs|ufs|jfs|jfs2|vxfs|hfs|refs|ntfs|fat32|zfs)$</value>
                 <operator>8</operator>
+                <formulaid>B</formulaid>
+              </condition>
+              <condition>
+                <macro>{#FSNAME}</macro>
+                <value>^(?!(^/run/media))</value>
+                <operator>8</operator>
                 <formulaid>A</formulaid>
               </condition>
             </conditions>
           </filter>
-          <lifetime>0</lifetime>
+          <lifetime>1d</lifetime>
           <description>Discovery of file systems.</description>
           <item_prototypes>
             <item_prototype>
@@ -3036,7 +3042,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description/>
+              <description>Percent used volume space.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
@@ -3078,7 +3084,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description/>
+              <description>Volume total space.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
@@ -3120,7 +3126,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description/>
+              <description>Volume used space.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
@@ -3998,13 +4004,13 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <expression>{OS Linux:system.hw.devices.str()}&lt;&gt;0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>HW::devices has changed</name>
+      <name>HW::devices list has been changed</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
       <status>0</status>
       <priority>1</priority>
-      <description>List of devices has been changed.</description>
+      <description>Hardware devices list has been changed.</description>
       <type>1</type>
       <manual_close>0</manual_close>
       <dependencies/>
@@ -4322,7 +4328,7 @@ s3-dump hosts delete</description>
       <expression>{OS Linux:system.uname.diff(0)}&gt;0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>SYS::uname changed</name>
+      <name>SYS:uname changed</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
