@@ -12,17 +12,13 @@
       <template>Service Apache</template>
       <name>Service Apache</name>
       <description>Apache service monitoring template using zabbix active agent items.&#13;
-This template uses apache mod_status metrics.&#13;
-To use this template in apache configuration needs to be added:&#13;
 &#13;
-Current version : 1.0&#13;
-Date:                   2017-09-09&#13;
-Changelog:&#13;
-1.0:&#13;
-- initial version.&#13;
+Version : 1.0.1 (2017-12-01)&#13;
+URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Apache&#13;
 &#13;
 Notes:&#13;
-* To allow use this template in apache configuration must be present:&#13;
+- This template uses apache mod_status metrics.&#13;
+- To use this template in apache configuration needs to be added:&#13;
 &#13;
 ExtendedStatus On&#13;
 &lt;Location /server-status&gt;&#13;
