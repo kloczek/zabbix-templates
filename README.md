@@ -30,8 +30,8 @@ Notes:
 
 Templated items, applications and triggers must adhere to this naming convention using 3-4 letter abbreviations:
 ```
-&lt;CLASS&gt;::&lt;Name&gt;
-&lt;CLASS&gt;::&lt;SUBCLASS&gt;::&lt;Name&gt;
+<CLASS>::<Name>
+<CLASS>::<SUBCLASS>::<Name>
 ```
 Examples:
 ```
