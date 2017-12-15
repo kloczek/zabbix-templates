@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ../zapish/zapish.sh
+. ../zapish/zapish.inc
 
 for i in \
 	"ICMP" \
