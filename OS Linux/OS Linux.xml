@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-05T23:01:44Z</date>
+  <date>2017-12-21T08:42:34Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -1724,7 +1724,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>The amount of physical RAM used for file buffers.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1765,7 +1765,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>The amount of physical RAM used as cache memory.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1806,7 +1806,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>The amount of physical RAM left unused by the system.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1847,7 +1847,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Total amount of physical RAM.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1888,7 +1888,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>It is total-free RAM.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
