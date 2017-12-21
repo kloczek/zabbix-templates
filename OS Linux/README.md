@@ -28,4 +28,6 @@ Changelog:
   - initial version
 
 Notes:
-- compliant with EL7 and compatible.
+- compliant with EL7 and compatible
+- documentation:
+  - https://www.kernel.org/doc/Documentation/filesystems/proc.txt
