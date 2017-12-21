@@ -13,6 +13,7 @@ for i in \
 	"MIB/SNMP-VIEW-BASED-ACM-MIB" \
 	"MIB/UDP-MIB" \
 	"OS Linux" \
+	"OS Linux ZBX-13233" \
 	"OS Solaris" \
 	"OS Windows" \
 	"Service Apache" \
