@@ -1,3 +1,13 @@
+This template is for production!!!
+It is the copy of "OS Linux" template to test new vm.memory.size[] introduced in patch submitted in
+https://support.zabbix.com/browse/ZBX-13233 which adds:
+```
+vm.memory.size[active]
+vm.memory.size[anon]
+vm.memory.size[inactive]
+vm.memory.size[slabs]
+```
+
 Base Linux monitoring template.
 
 Version: 1.0.3 (2017-12-05)
