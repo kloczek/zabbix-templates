@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-21T02:51:25Z</date>
+  <date>2017-12-21T08:42:35Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -1660,6 +1660,88 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
+          <key>vm.memory.size[active]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>B</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Memory that has been used more recently and usually not reclaimed unless absolutely necessary.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::$1</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>vm.memory.size[anon]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>B</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Non-file backed pages mapped into userspace page tables.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::$1</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
           <key>vm.memory.size[available]</key>
           <delay>1m</delay>
           <history>2w</history>
@@ -1724,7 +1806,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>The amount of physical RAM used for file buffers.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1765,7 +1847,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>The amount of physical RAM used as cache memory.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1806,7 +1888,89 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>The amount of physical RAM left unused by the system.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::$1</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>vm.memory.size[inactive]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>B</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Memory which has been less recently used. It is more eligible to be reclaimed for other purposes.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::$1</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>vm.memory.size[slabs]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>B</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>in-kernel data structures cache.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1847,7 +2011,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Total amount of physical RAM.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1888,7 +2052,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>It is total-free RAM.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
