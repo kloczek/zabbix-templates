@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-10T04:56:48Z</date>
+  <date>2018-01-26T10:23:25Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -63,9 +63,6 @@ Notes:</description>
           <name>NET::PNR</name>
         </application>
         <application>
-          <name>NLOG</name>
-        </application>
-        <application>
           <name>NTP</name>
         </application>
         <application>
@@ -73,9 +70,6 @@ Notes:</description>
         </application>
         <application>
           <name>PROC</name>
-        </application>
-        <application>
-          <name>RBC</name>
         </application>
         <application>
           <name>SEC</name>
@@ -87,9 +81,6 @@ Notes:</description>
           <name>SMB</name>
         </application>
         <application>
-          <name>SS</name>
-        </application>
-        <application>
           <name>SVC</name>
         </application>
         <application>
@@ -99,12 +90,15 @@ Notes:</description>
           <name>SYS::SRV</name>
         </application>
         <application>
+          <name>THRD</name>
+        </application>
+        <application>
           <name>TSS</name>
         </application>
       </applications>
       <items>
         <item>
-          <name>LOG::application::errors</name>
+          <name>LOG::APP::Errors</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -145,7 +139,7 @@ Notes:</description>
           <master_item/>
         </item>
         <item>
-          <name>LOG::application::zabbix_agent::all</name>
+          <name>LOG::APP::zabbix_agent::all</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -186,7 +180,89 @@ Notes:</description>
           <master_item/>
         </item>
         <item>
-          <name>LOG::system::errors</name>
+          <name>LOG::SEC::Errors</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>eventlog[Security,,"Error"]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>0</trends>
+          <status>0</status>
+          <value_type>2</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>captures security (event log) errors</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>LOG</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>LOG::SET::Errors</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>eventlog[Setup,,"Error"]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>0</trends>
+          <status>0</status>
+          <value_type>2</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>captures setup (event log) errors</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>LOG</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>LOG::SYS::Errors</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -765,6 +841,50 @@ TypePerf.exe -qx on cmd prompt&#13;
           <master_item/>
         </item>
         <item>
+          <name>MEM::Committed Used</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Memory\% Committed Bytes In Use]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units>%</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Ratio of Memory \ Committed Bytes to the Memory \ Commit Limit.&#13;
+Committed memory is the physical memory which has space reserved on the disk paging file(s). There can be one or more paging files on each physical drive.&#13;
+&#13;
+https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troubleshooting-memory-issues/</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
           <name>MEM::Available</name>
           <type>7</type>
           <snmp_community/>
@@ -877,7 +997,9 @@ TypePerf.exe -qx on cmd prompt&#13;
           <description>The system commit limit of Windows and Windows Server is the sum of physical memory and the size of all of the page files combined on the system. It is the maximum amount of physical resources that the system can use to back committed memory. It is a factitious resource that prevents the system from over committing or over "promising" too much physical resources. With that said, when the system is unable to commit anymore memory, then applications may fail to function and the system may hang indefinitely.&#13;
 &#13;
 &#13;
-https://social.technet.microsoft.com/wiki/contents/articles/2248.perfguide-out-of-system-committed-memory.aspx</description>
+https://social.technet.microsoft.com/wiki/contents/articles/2248.perfguide-out-of-system-committed-memory.aspx&#13;
+&#13;
+https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troubleshooting-memory-issues/</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -918,9 +1040,50 @@ https://social.technet.microsoft.com/wiki/contents/articles/2248.perfguide-out-o
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Committed memory is the physical memory which has space reserved on the disk paging file(s). There can be one or more paging files on each physical drive. &#13;
+          <description>Committed memory is the physical memory which has space reserved on the disk paging file(s). There can be one or more paging files on each physical drive.&#13;
 &#13;
 https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troubleshooting-memory-issues/</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::Demand Zero Faults</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Memory\Demand Zero Faults/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>WIP...</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1169,6 +1332,172 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <privatekey/>
           <port/>
           <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::Pool Paged</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Memory\Pool Paged Bytes]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Area of system memory (physical memory used by the operating system) for objects that can be written to disk when they are not being used.  Memory \ Pool Paged Bytes is calculated differently than Process \ Pool Paged Bytes, so it might not equal Process \ Pool Paged Bytes \ _Total.&#13;
+&#13;
+https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troubleshooting-memory-issues/</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::Transition Faults</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Memory\Transition Faults/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>TBC...</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::Transition Pages Repurposed</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Memory\Transition Pages RePurposed/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>TBC...</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::Write Copies</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Memory\Write Copies/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>WIP</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1643,7 +1972,7 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units>%</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -1660,7 +1989,7 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Shows the percentage of elapsed time that the threads of the process have spent executing code in privileged mode. When a Windows 2000 system service is called, the service often runs in Privileged Mode to gain access to system-private data. Such data is protected from access by threads executing in user mode. Calls to the system can be explicit or implicit, such as page faults or interrupts. Unlike some early operating systems, Windows 2000 uses process boundaries for subsystem protection in addition to the traditional protection of user and privileged modes. These subsystem processes provide additional protection. Therefore, some work done by Windows 2000 on behalf of your application might appear in other subsystem processes in addition to the privileged time in your process.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1684,7 +2013,7 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units>%</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -1701,7 +2030,7 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Shows the percentage of elapsed time that all of the threads of this process used the processor to execute instructions. An instruction is the basic unit of execution in a computer; a thread is the object that executes instructions; and a process is the object created when a program is run. Code executed to handle some hardware interrupts and trap conditions are included in this count.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1725,7 +2054,7 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units>%</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -1742,7 +2071,7 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Shows the percentage of elapsed time that this process's threads have spent executing code in user mode. Applications, environment subsystems, and integral subsystems execute in user mode. Code executing in user mode cannot damage the integrity of the Windows NT Executive, kernel, or and device drivers. Unlike some early operating systems, Windows 2000 uses process boundaries for subsystem protection in addition to the traditional protection of user and privileged modes. These subsystem processes provide additional protection. Therefore, some work done by Windows 2000 on behalf of your application might appear in other subsystem processes in addition to the privileged time in your process.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1756,7 +2085,89 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <master_item/>
         </item>
         <item>
-          <name>Process Handle Count Total</name>
+          <name>Process Creating Process ID</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Process(_Total)\Creating Process ID]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the identifier of the process that created the current process. Note that the creating process may have terminated since this process was created and so this value may no longer identify a running process.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>PROC</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Process Elapsed Time</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Process(_Total)\Elapsed Time]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the total elapsed time, in seconds, that this process has been running.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>PROC</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Process Handle Count</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1766,7 +2177,7 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units/>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -1783,7 +2194,7 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Shows the total number of handles currently open by this process. This number is the equal to the sum of the handles currently open by each thread in this process.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1797,7 +2208,89 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <master_item/>
         </item>
         <item>
-          <name>Process IO Data Total</name>
+          <name>Process ID Process</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Process(_Total)\ID Process]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the unique identifier of this process. ID Process numbers are reused, so they only identify a process for the lifetime of that process.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>PROC</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Process IO Data Bytes</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Process(_Total)\IO Data Bytes/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the rate at which the process is reading and writing bytes in I/O operations. This counter counts all I/O activity generated by the process to include file, network and device I/O's.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>PROC</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Process IO Data</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1807,7 +2300,7 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units/>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -1824,7 +2317,7 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Shows the rate at which the process is issuing read and write I/O operations. This counter counts all I/O activity generated by the process to include file, network and device I/O's.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1838,7 +2331,48 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <master_item/>
         </item>
         <item>
-          <name>Process IO Other Total</name>
+          <name>Process IO Other Bytes</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Process(_Total)\IO Other Bytes/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the rate at which the process is issuing bytes to I/O operations that don't involve data such as control operations. This counter counts all I/O activity generated by the process to include file, network and device I/O's.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>PROC</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Process IO Other</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1848,7 +2382,7 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units/>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -1865,7 +2399,7 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Shows the rate at which the process is issuing I/O operations that are neither a read or a write operation. An example of this type of operation would be a control function. This counter counts all I/O activity generated by the process to include file, network and device I/O's.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1879,7 +2413,212 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <master_item/>
         </item>
         <item>
-          <name>SYS::Page File Bytes Total</name>
+          <name>Process IO Read Bytes</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Process(_Total)\IO Read Bytes/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the rate at which the process is reading bytes from I/O operations. This counter counts all I/O activity generated by the process to include file, network and device I/O's.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>PROC</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Process IO Read Operations</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Process(_Total)\IO Read Operations/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the rate at which the process is issuing read I/O operations. This counter counts all I/O activity generated by the process to include file, network and device I/O's.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>PROC</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Process IO Write Bytes</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Process(_Total)\IO Write Bytes/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the rate the process is writing bytes to I/O operations. This counter counts all I/O activity generated by the process to include file, network and device I/O's.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>PROC</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Process IO Write Operations</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Process(_Total)\IO Write Operations/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the rate at which the process is issuing write I/O operations. This counter counts all I/O activity generated by the process to include file, network and device I/O's.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>PROC</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Process Page Faults</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Process(_Total)\Page Faults/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the rate at which page faults by the threads executing in this process are occurring. A page fault occurs when a thread refers to a virtual memory page that is not in its working set in main memory. This does not cause the page to be fetched from disk if it is on the standby list and hence already in main memory, or if it is in use by another process with whom the page is shared.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>PROC</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::Page File Bytes</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1906,7 +2645,7 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Shows the current number of bytes that this process has used in the paging file(s). Paging files are used to store pages of memory used by the process that are not contained in other files. Paging files are shared by all processes, and lack of space in paging files can prevent other processes from allocating memory.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1920,7 +2659,130 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <master_item/>
         </item>
         <item>
-          <name>Process Private Bytes Total</name>
+          <name>Process Pool Nonpaged Bytes</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Process(_Total)\Pool Nonpaged Bytes]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the number of bytes in the nonpaged pool, a system memory area where space is acquired by operating system components as they accomplish their appointed tasks. Nonpaged pool pages cannot be paged out to the paging file, but instead remain in main memory as long as they are allocated.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>PROC</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Process Pool Paged Bytes</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Process(_Total)\Pool Paged Bytes]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the number of bytes in the Paged Pool, a system memory area where space is acquired by operating system components as they accomplish their appointed tasks. Paged Pool pages can be paged out to the paging file when not accessed by the system for sustained periods of time.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>PROC</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Process Priority Base</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Process(_Total)\Priority Base]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the current base priority of this process. Threads within a process can raise and lower their own base priority relative to the process's base priority.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>PROC</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Process Private Bytes</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1930,7 +2792,7 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units/>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -1947,7 +2809,7 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Shows the current number of bytes that this process has allocated that cannot be shared with other processes.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1961,7 +2823,7 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <master_item/>
         </item>
         <item>
-          <name>Process Thread Count Total</name>
+          <name>Process Thread Count</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1971,7 +2833,89 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the number of threads currently active in this process. An instruction is the basic unit of execution in a processor, and a thread is the object that executes instructions. Every running process has at least one thread.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>PROC</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Process Virtual Bytes</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Process(_Total)\Virtual Bytes]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the current size, in bytes, of the virtual address space that the process is using. Use of virtual address space does not necessarily imply corresponding use of either disk or main memory pages. Virtual space is finite, and by using too much, the process can limit its ability to load libraries.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>PROC</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Process Working Set Private</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Process(_Total)\Working Set - Private]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
           <units/>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -2002,7 +2946,7 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <master_item/>
         </item>
         <item>
-          <name>Process Working Set Total</name>
+          <name>Process Working Set</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2012,7 +2956,7 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
-          <allowed_hosts>localhost</allowed_hosts>
+          <allowed_hosts/>
           <units/>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -2029,7 +2973,9 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Shows the current number of bytes in the working set of this process. The working set is the set of memory pages touched recently by the threads in the process. If free memory in the computer is above a certain threshold, pages are left in the working set of a process even if they are not in use. When free memory falls below a certain threshold, pages are trimmed from working sets. If they are needed, they are then soft-faulted back into the working set before they leave main memory.&#13;
+&#13;
+https://msdn.microsoft.com/en-us/library/ms804621.aspx</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -2207,7 +3153,7 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <master_item/>
         </item>
         <item>
-          <name>CPU::privileged time</name>
+          <name>CPU::Privileged Time</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2234,7 +3180,9 @@ https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-ta
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Amount of time being spent in the Windows kernel executing system calls such as drivers, IRPs (I/O Request Packets), context switching, etc. If the operating system is spending more than 30% of it’s time in privileged mode, then it means that it is likely doing a high amount of I/O and one or more of the drivers are executing to manage that I/O.&#13;
+&#13;
+https://blogs.technet.microsoft.com/perfguide/2010/09/28/user-mode-versus-privileged-mode-processor-usage/</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -2679,9 +3627,9 @@ http://www.osronline.com/article.cfm?article=529</description>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
-          <value_type>0</value_type>
+          <value_type>3</value_type>
           <allowed_hosts/>
-          <units/>
+          <units>GHz</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
           <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2757,7 +3705,130 @@ http://www.osronline.com/article.cfm?article=529</description>
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Search Indexer(SystemIndex)\Active Connections]</key>
-          <delay>1m</delay>
+          <delay>5m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SIND</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SIND::SystemIndex::Clean WidSets</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Search Indexer(SystemIndex)\Clean WidSets]</key>
+          <delay>5m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SIND</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SIND::SystemIndex::Dirty WidSets</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Search Indexer(SystemIndex)\Dirty WidSets]</key>
+          <delay>5m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SIND</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SIND::SystemIndex::Documents Filtered</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Search Indexer(SystemIndex)\Documents Filtered]</key>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -2798,7 +3869,7 @@ http://www.osronline.com/article.cfm?article=529</description>
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Search Indexer(SystemIndex)\Index Size]</key>
-          <delay>1m</delay>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -2839,7 +3910,130 @@ http://www.osronline.com/article.cfm?article=529</description>
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Search Indexer(SystemIndex)\Master Merge Progress]</key>
-          <delay>1m</delay>
+          <delay>5m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SIND</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SIND::SystemIndex::Master Merges Now</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Search Indexer(SystemIndex)\Master Merges Now.]</key>
+          <delay>5m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SIND</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SIND::SystemIndex::Master Merges to Date</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Search Indexer(SystemIndex)\Master Merges to Date]</key>
+          <delay>5m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SIND</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SIND::SystemIndex::Persistent Indexes</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Search Indexer(SystemIndex)\Persistent Indexes]</key>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -2880,7 +4074,7 @@ http://www.osronline.com/article.cfm?article=529</description>
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Search Indexer(SystemIndex)\Queries Failed]</key>
-          <delay>1m</delay>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -2921,7 +4115,7 @@ http://www.osronline.com/article.cfm?article=529</description>
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Search Indexer(SystemIndex)\Queries Succeeded]</key>
-          <delay>1m</delay>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -2962,7 +4156,212 @@ http://www.osronline.com/article.cfm?article=529</description>
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Search Indexer(SystemIndex)\Queries]</key>
-          <delay>1m</delay>
+          <delay>5m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SIND</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SIND::SystemIndex::Shadow Merge Levels Threshold</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Search Indexer(SystemIndex)\Shadow Merge Levels Threshold]</key>
+          <delay>5m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SIND</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SIND::SystemIndex::Shadow Merge Levels</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Search Indexer(SystemIndex)\Shadow Merge Levels]</key>
+          <delay>5m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SIND</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SIND::SystemIndex::Unique Keys</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Search Indexer(SystemIndex)\Unique Keys]</key>
+          <delay>5m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SIND</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SIND::SystemIndex::Work Items Created</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Search Indexer(SystemIndex)\Work Items Created]</key>
+          <delay>5m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SIND</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SIND::SystemIndex::Work Items Deleted</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Search Indexer(SystemIndex)\Work Items Deleted]</key>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -3003,7 +4402,7 @@ http://www.osronline.com/article.cfm?article=529</description>
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Server\Blocking Requests Rejected]</key>
-          <delay>1m</delay>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -3044,7 +4443,7 @@ http://www.osronline.com/article.cfm?article=529</description>
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Server\Bytes Received/sec]</key>
-          <delay>1m</delay>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -3085,7 +4484,7 @@ http://www.osronline.com/article.cfm?article=529</description>
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Server\Bytes Total/sec]</key>
-          <delay>1m</delay>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -3126,7 +4525,7 @@ http://www.osronline.com/article.cfm?article=529</description>
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Server\Bytes Transmitted/sec]</key>
-          <delay>1m</delay>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -3167,7 +4566,7 @@ http://www.osronline.com/article.cfm?article=529</description>
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Server\Errors Access Permissions]</key>
-          <delay>1m</delay>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -3208,7 +4607,7 @@ http://www.osronline.com/article.cfm?article=529</description>
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Server\Errors Granted Access]</key>
-          <delay>1m</delay>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -3249,7 +4648,7 @@ http://www.osronline.com/article.cfm?article=529</description>
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Server\Errors Logon]</key>
-          <delay>1m</delay>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -3290,7 +4689,7 @@ http://www.osronline.com/article.cfm?article=529</description>
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Server\Errors System]</key>
-          <delay>1m</delay>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -3327,12 +4726,94 @@ Many of these errors are also written to the System log and Security log in Even
           <master_item/>
         </item>
         <item>
+          <name>SYS::SRV::Logon</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Server\Logon/sec]</key>
+          <delay>5m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the rate of all interactive logon attempts, network logon attempts, service logon attempts, successful logon attempts, and failed logon attempts.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS::SRV</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::SRV::Sessions</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Server\Server Sessions]</key>
+          <delay>5m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the number of sessions currently active in the server. This counter indicates current server activity.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS::SRV</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
           <name>SYS::SRV::Sessions Errored Out</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Server\Sessions Errored Out]</key>
-          <delay>1m</delay>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -3373,7 +4854,7 @@ Many of these errors are also written to the System log and Security log in Even
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Server\Sessions Forced Off]</key>
-          <delay>1m</delay>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -3414,7 +4895,7 @@ Many of these errors are also written to the System log and Security log in Even
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Server\Sessions Logged Off]</key>
-          <delay>1m</delay>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -3455,7 +4936,7 @@ Many of these errors are also written to the System log and Security log in Even
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\Server\Sessions Timed Out]</key>
-          <delay>1m</delay>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -3491,11 +4972,138 @@ Many of these errors are also written to the System log and Security log in Even
           <master_item/>
         </item>
         <item>
-          <name>SYS::context switches</name>
+          <name>SYS::REG::Quota In Use</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\System\% Registry Quota In Use]</key>
+          <delay>10m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units>%</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>https://blogs.technet.microsoft.com/supportingwindows/2014/10/22/unable-to-restart-server-due-to-registry-bloat-over-2gb/&#13;
+&#13;
+Total Registry Quota Allowed that is currently being used by the system</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::Alignment Fixups</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\System\Alignment Fixups/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Rate of alignment faults fixed by the system.&#13;
+&#13;
+https://msdn.microsoft.com/en-gb/library/ms804037.aspx</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::Context Switches</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
           <key>perf_counter[\System\Context Switches/sec]</key>
+          <delay>4s</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>System (all CPUs) context switches per second.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::Exception Dispatches</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\System\Exception Dispatches/sec]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -3518,9 +5126,173 @@ Many of these errors are also written to the System log and Security log in Even
           <publickey/>
           <privatekey/>
           <port/>
-          <description>System (all CPUs) context switches per second.&#13;
+          <description>Rate at which exceptions are dispatched by the system.&#13;
 &#13;
-lowered from 10 -&gt; 5 second updates as characteristics observed are very different</description>
+https://msdn.microsoft.com/en-gb/library/ms804037.aspx</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::File Control Operations</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\System\File Control Operations/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>combined rate of file system operations that are neither read nor write operations, such as file system control requests and requests for information about device characteristics or status. This is the inverse of System\System: File Data Operations/sec.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::File Read Operations</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\System\File Read Operations/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Combined rate of file system read requests to all devices on the computer, including requests to read from the file system cache. It is measured in numbers of read operations per second.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::File Write Operations</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\System\File Write Operations/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Combined rate of file system write requests to all devices on the computer, including requests to write to data in the file system cache. It is measured in numbers of write operations per second.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SYS</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::Floating Emulations</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\System\Floating Emulations/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Rate of floating emulations performed by the system.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -3575,7 +5347,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>SYS::calls</name>
+          <name>SYS::Calls</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -3602,9 +5374,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <publickey/>
           <privatekey/>
           <port/>
-          <description>System (all CPUs) calls per second.&#13;
-&#13;
-lowered from 10 -&gt; 5 second updates as characteristics observed are very different</description>
+          <description>System (all CPUs) calls per second.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -3618,11 +5388,11 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>SYS::threads</name>
+          <name>SYS::Threads</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>perf_counter[\System\threads]</key>
+          <key>perf_counter[\System\Threads]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -3650,6 +5420,1057 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <applications>
             <application>
               <name>SYS</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NET::TCP::V4::Connection Failures</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\TCPv4\Connection Failures]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Number of times that TCP connections have made a direct transition to the CLOSED state from the SYN-SENT or SYN-RCVD state, plus the number of times TCP connections have made a direct transition to the LISTEN state from the SYN-RCVD state.	&#13;
+&#13;
+https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NET</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NET::TCP::V4::Connections Active</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\TCPv4\Connections Active]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the number of times TCP connections have made a direct transition to the SYN-SENT state from the CLOSED state.&#13;
+&#13;
+https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NET</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NET::TCP::V4::Connections Established</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\TCPv4\Connections Established]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Number of TCP connections for which the current state is either ESTABLISHED or CLOSE-WAIT.&#13;
+&#13;
+https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NET</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NET::TCP::V4::Connections Reset</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\TCPv4\Connections Reset]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Number of times that TCP connections have made a direct transition to the CLOSED state from either the ESTABLISHED or CLOSE-WAIT state.&#13;
+&#13;
+https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NET</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NET::TCP::V4::Segments</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\TCPv4\Segments/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Rate at which TCP segments are sent or received using the TCP protocol. Segments/sec is the sum of the values of TCP\ Segments Received/sec and TCP\Segments Sent/sec.&#13;
+&#13;
+https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NET</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NET::TCP::V4::Segments Received</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\TCPv4\Segments Received/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Rate at which segments are received, including those received in error. This count includes segments received on currently established connections. Segments Received/sec is a subset of TCP: Segments/sec.&#13;
+&#13;
+https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NET</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NET::TCP::V4::Segments Retransmitted</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\TCPv4\Segments Retransmitted/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Rate at which segments containing one or more previously transmitted bytes are retransmitted.&#13;
+&#13;
+https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NET</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NET::TCP::V4::Segments Sent</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\TCPv4\Segments Sent/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Rate at which segments are sent. This value includes those on current connections, but excludes those containing only retransmitted bytes. Segments Sent/sec is a subset of TCP\ Segments/sec.&#13;
+&#13;
+https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NET</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Thread Privileged Time</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Thread(_Total/_Total)\% Privileged Time]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units>%</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>THRD</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Thread Processor Time</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Thread(_Total/_Total)\% Processor Time]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units>%</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>THRD</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Thread User Time</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Thread(_Total/_Total)\% User Time]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units>%</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>THRD</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Thread Context Switches</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Thread(_Total/_Total)\Context Switches/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>THRD</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Thread Elapsed Time</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Thread(_Total/_Total)\Elapsed Time]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>THRD</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Thread ID Process</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Thread(_Total/_Total)\ID Process]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>THRD</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Thread ID Thread</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Thread(_Total/_Total)\ID Thread]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>THRD</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Thread Priority Base</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Thread(_Total/_Total)\Priority Base]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>THRD</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Thread Priority Current</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Thread(_Total/_Total)\Priority Current]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>THRD</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Thread Start Address</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Thread(_Total/_Total)\Start Address]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>THRD</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Thread State</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Thread(_Total/_Total)\Thread State]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>THRD</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Thread Wait Reason</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\Thread(_Total/_Total)\Thread Wait Reason]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>THRD</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NET::UDP::V4::Datagrams</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\UDPv4\Datagrams/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the rate at which UDP datagrams are transferred by the computer.&#13;
+&#13;
+https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NET</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NET::UDP::V4::Datagrams No Port</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\UDPv4\Datagrams No Port/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the rate at which UDP datagrams are received which there was no application at the destination port.&#13;
+&#13;
+https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NET</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NET::UDP::V4::Datagrams Received</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\UDPv4\Datagrams Received/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the rate at which UDP datagrams are delivered to UDP users.&#13;
+&#13;
+https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NET</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NET::UDP::V4::Datagrams Received Errors</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\UDPv4\Datagrams Received Errors]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the number of received UDP datagrams that could not be delivered for reasons other than the lack of an application at the destination port.&#13;
+&#13;
+https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NET</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>NET::UDP::V4::Datagrams Sent</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>perf_counter[\UDPv4\Datagrams Sent/sec]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Shows the rate at which UDP datagrams are sent from the computer.&#13;
+&#13;
+https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NET</name>
             </application>
           </applications>
           <valuemap/>
@@ -4197,7 +7018,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>SYS::uptime</name>
+          <name>SYS::Uptime</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -6195,7 +9016,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
       <expression>{OS Windows:vm.memory.size[free].last(0)}&lt;1000000</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>MEM:free {ITEM.LASTVALUE}</name>
+      <name>MEM:free  {ITEM.LASTVALUE}</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>

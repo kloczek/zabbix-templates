@@ -1241,11 +1241,11 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>NET::segments retransmitted</name>
+          <name>NET::segments retransmited</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\) segments retransmitted*/\1/ p'"]</key>
+          <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\) segments retransmited*/\1/ p'"]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -2411,7 +2411,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
                   <type>0</type>
                   <item>
                     <host>OS Linux</host>
-                    <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\) segments retransmitted*/\1/ p'"]</key>
+                    <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\) segments retransmited*/\1/ p'"]</key>
                   </item>
                 </graph_item>
               </graph_items>
