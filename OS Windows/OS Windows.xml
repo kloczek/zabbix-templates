@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-01-26T10:23:25Z</date>
+  <date>2018-04-19T12:16:41Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -8981,22 +8981,6 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
   </templates>
   <triggers>
     <trigger>
-      <expression>{OS Windows:system.uname.diff(0)}&gt;0</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>Host information was changed</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>2</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
       <expression>{OS Windows:vm.memory.size[free].last(0)}&lt;1000000</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
@@ -9071,6 +9055,22 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
       <status>0</status>
       <priority>2</priority>
       <description>Tim drift bigger than 60s.</description>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{OS Windows:system.uname.diff(0)}&gt;0</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SYS::uname changed</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>2</priority>
+      <description/>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>

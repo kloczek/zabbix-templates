@@ -3,6 +3,10 @@ Base OS Windows template.
 Version: 1.0.3 (2018-01-26)
 
 Changelog:
+- 1.0.4 (not released yet)
+  - triggers:
+    - rename trigger name to the same name as it is in other OS templates
+       s/Host information was changed/SYS:uname changed/
 - 1.0.3
   - Added TCP and UDP V4 items (ss)
   - Added more items to PROC with descriptions (ss)
