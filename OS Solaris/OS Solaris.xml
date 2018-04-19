@@ -3912,7 +3912,7 @@ Please login on the host and check output of the commands:&#13;
       <expression>{OS Solaris:system.uname.diff(0)}&gt;0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>SYS:uname changed</name>
+      <name>SYS::uname changed</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>

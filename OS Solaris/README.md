@@ -3,6 +3,8 @@ Base OS Solaris monitoring.
 Version: 1.0.1 (2017-12-01)
 
 Changelog:
+- 1.0.2 (still not released)
+  - fixed typo in trigger name s/SYS:uname changed/SYS::uname changed/
 - 1.0.1 (2017-12-01):
   - execute all LLD every 10m
   - channge default history perid to 2w
