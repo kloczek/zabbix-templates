@@ -3,7 +3,7 @@ Active agent monitoring of the MySQL engine.
 Version: 1.0.3 (2017-11-30)
 
 Changelog:
-- 1.0.4 (not reeaed yet):
+- 1.0.4 (not released yet):
   - added applications (improved gouping metrics in "Last data" view):
     - SVC::MySQL::cfg for all read configuration parameters
     - SVC::MySQL::Com for all Com_* metrics
