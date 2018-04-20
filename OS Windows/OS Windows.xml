@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-04-19T12:16:41Z</date>
+  <date>2018-04-20T20:48:00Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -9000,7 +9000,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
       <expression>{OS Windows:vm.memory.size[free].last(0)}&lt;1000000</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>MEM:free  {ITEM.LASTVALUE}</name>
+      <name>MEM::free {ITEM.LASTVALUE}</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>

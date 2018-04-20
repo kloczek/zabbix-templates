@@ -7,6 +7,7 @@ Changelog:
   - triggers:
     - rename trigger name to the same name as it is in other OS templates
        s/Host information was changed/SYS:uname changed/
+    - fixed typo in MEM trigger name (s/MEM:free /MEM::free/)
 - 1.0.3
   - Added TCP and UDP V4 items (ss)
   - Added more items to PROC with descriptions (ss)
