@@ -12,7 +12,7 @@ Changelog:
   - removed NET::Other TCP timeouts (netstat no longer provides such data)
   - fix: corrected sed regexp in NET::segments retransmitted
   - fix: added missing "^" in NIC: LLD filter which has been causing not filter off about lo interface
-  - in VOL: LLD filter added remove all volumes mounted in /run/media
+  - in VOL: LLD filter added to remove all volumes mounted in /run/media
   - execute all LLD every 10m
   - moved temmplate Changelog to README.md and added temlate URL in description
 - 1.0.1 (2017-10-15):
