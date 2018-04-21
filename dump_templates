@@ -57,7 +57,7 @@ for i in \
 				printf "Template id=%7s, Name=%-40s dump to %s.xml\n" ${templateid} "\"${template_name}\"" "${i}/${template_name}"
 				mv -f "${i}/${template_name}"{.new,}.xml
 			else
-				printf "Template id=%7s, Name=%-40s is the same\n" ${templateid} \""${template_name}"\"
+				printf "Template id=%7s, Name=%-40s no changes\n" ${templateid} \""${template_name}"\"
 				rm -f "${i}/${template_name}".new.xml
 			fi
 		else
@@ -65,4 +65,3 @@ for i in \
 			mv -f "${i}/${template_name}"{.new,}.xml
 		fi
 	done
-
