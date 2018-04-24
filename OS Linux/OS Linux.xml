@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-04-21T16:07:41Z</date>
+  <date>2018-04-22T08:50:44Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -4017,22 +4017,6 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{OS Linux:vm.memory.size[free].last(0)}&lt;10000</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>Lack of free memory</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
       <expression>({OS Linux:vm.memory.size[available].min(#3)}/{OS Linux:vm.memory.size[total].last(0)})&lt;0.05</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
@@ -4068,6 +4052,22 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           <recovery_expression/>
         </dependency>
       </dependencies>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{OS Linux:vm.memory.size[free].last(0)}&lt;10000</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>MEM::free {ITEM.LASTVALUE}</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
       <tags/>
     </trigger>
     <trigger>

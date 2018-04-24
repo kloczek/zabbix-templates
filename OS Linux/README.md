@@ -10,6 +10,7 @@ Changelog:
       use new sed regexp in this item: "s/\( *\)\(.*\) segments retransmitted*/\2/ p/"
   - Triggers:
     - fixed typo in name: s/SYS:uname changed/SYS::uname changed/
+    - rename "Lack of free memory" to "MEM::free {ITEM.LASTVALUE}"
 - 1.0.3 (2017-12-05):
   - LLDs:
     - VOL: fixed typo in /run/media filter
