@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-15T15:05:30Z</date>
+  <date>2018-04-24T08:06:05Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -3740,6 +3740,22 @@ Please login on the host and check output of the commands:&#13;
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>CHK::Checksum::/etc/passwd has been changed</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{OS Solaris:vm.memory.size[free].last(0)}&lt;10000</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>MEM::free {ITEM.LASTVALUE}</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
