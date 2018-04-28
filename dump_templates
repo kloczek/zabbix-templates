@@ -50,6 +50,12 @@ for i in \
 			"")" \
 		)"
 
+		# Create template directory if it does not exiest
+		if [ ! -d "${i}" ]; then
+			mkdir -p "${i}"
+		fi
+		
+		# Dump template
 		echo "${xml_output}" | jq -r .result | xmllint --format - > "${i}/${template_name}".new.xml
 		if [ -f "${i}/${template_name}.xml" ]; then
 			cmp -s <(sed 4d "${i}/${template_name}".new.xml) <(sed 4d "${i}/${template_name}.xml")
