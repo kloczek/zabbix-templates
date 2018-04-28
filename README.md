@@ -20,6 +20,7 @@ List of templates:
   - DSL-3782
 - Service Apache
 - Service MySQL
+- Service Nginx
 - Service Zabbix Agent
 - Service Zabbix Proxy
 - Service Zabbix Server
