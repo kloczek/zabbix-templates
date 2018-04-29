@@ -47,6 +47,6 @@ Such pattern is possible to use part of the general interface on communication w
 
 * Do not use {HOSTNAME} macros in triggers, as web frontend from Monitoring -> Triggers has a list with "host" column name on the host where the trigger is active (it is waste of space on web page)
 
-## Copyright (C) 2017 Tomasz Kłoczko <kloczek@fedoraproject.org>
+## Copyright (C) 2017-2018 Tomasz Kłoczko <kloczek@fedoraproject.org>
 
 ## This program is free software, distributed under the terms of the GNU General Public License Version 2.
