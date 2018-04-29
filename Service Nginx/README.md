@@ -3,7 +3,7 @@ Nginx https service monitoring template using zabbix active agent items and mast
 Default addres of the stub_status page can be custimized by change macros values used by template:
 
 | Macro              | Default value       | Description                                         |
-| ------------------ | ------------------- | --------------------------------------------------- |
+| :----------------- | :------------------ | :-------------------------------------------------- |
 | {$NGINX_HOST}      | localhost           | Hostname of the nhings service                      |
 | {$NGINX_PORT}      | 80                  | TCP port                                            |
 | {$NGINX_STATS_URI} | /stub_status        | URI adderss of the status_stub page                 |
