@@ -9,8 +9,8 @@ Changelog:
 Notes:
 - This template uses nginx stub_status loadable module metrics.
 - To allow use this template in nginx.conf configuration file must be present:
-```
 In nginx.config:
+```
     location /nginx_status {
 	stub_status	on;
 	# I do not log query for stats in access log
