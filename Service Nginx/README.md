@@ -1,13 +1,13 @@
-#### Description
+#### Description:
 Nginx https service monitoring template. This template is using
 - zabbix active agent items
 - master item data obtained from by default http://localhost/stub_status
 
-Default addres of the stub_status page can be custimized by change macros values used by template:
+#### Macros used by template:
 
 | Macro              | Default value       | Description                                         |
 | :----------------- | :------------------ | :-------------------------------------------------- |
-| {$NGINX_HOST}      | localhost           | Hostname of the nhings service                      |
+| {$NGINX_HOST}      | localhost           | Hostname of the nginx service                       |
 | {$NGINX_PORT}      | 80                  | TCP port                                            |
 | {$NGINX_STATS_URI} | /stub_status        | URI adderss of the status_stub page                 |
 | {$NGINX_USER}      | nginx               | nginx non-root user used by workers nginx processes |
