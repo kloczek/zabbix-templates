@@ -1,3 +1,5 @@
+#### Version: 1.0.0 (WIP)
+
 #### Description:
 Nginx https service monitoring template. This template is using
 - zabbix active agent items
@@ -11,8 +13,6 @@ Nginx https service monitoring template. This template is using
 | {$NGINX_PORT}      | 80                  | TCP port                                            |
 | {$NGINX_STATS_URI} | /stub_status        | URI adderss of the status_stub page                 |
 | {$NGINX_USER}      | nginx               | nginx non-root user used by workers nginx processes |
-
-#### Version: 1.0.0 (WIP)
 
 #### Changelog:
 - 1.0.0 (WIP):

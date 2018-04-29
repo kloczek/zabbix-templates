@@ -1,8 +1,10 @@
-Version: 1.0.1 (2017-11-22)
+#### Version: 1.0.1 (2017-11-22)
 
-OIDs tree: http://support.ipmonitor.com/mibs/SNMPv2-MIB/tree.aspx
+#### Description:
 
-Changelog:
+#### OIDs tree: http://support.ipmonitor.com/mibs/SNMPv2-MIB/tree.aspx
+
+#### Changelog:
 - 1.0.2 (not released yet):
   - changed units in update interval from number of seconds to number of m/h/d
   - adde graph:
@@ -12,6 +14,6 @@ Changelog:
   - channge default history perid to 2w
   - add temlate description
 - 1.0.0:
-  - initial version
+  - initial version.
 
-Notes:
+#### Notes:

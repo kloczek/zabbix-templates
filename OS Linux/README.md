@@ -1,8 +1,9 @@
+#### Version: 1.0.4 (WIP)
+
+#### Description:
 Base Linux monitoring template.
 
-Version: 1.0.4 (WIP)
-
-Changelog:
+#### Changelog:
 - 1.0.4
   - Items:
     - added MEM::* items descriptions
@@ -37,7 +38,7 @@ Changelog:
 - 1.0.0:
   - initial version
 
-Notes:
+#### Notes:
 - compliant with EL7 and compatible
 - documentation:
   - https://www.kernel.org/doc/Documentation/filesystems/proc.txt

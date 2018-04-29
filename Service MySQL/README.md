@@ -1,8 +1,9 @@
+#### Version: 1.0.3 (2017-11-30)
+
+#### Description:
 Active agent monitoring of the MySQL engine.
 
-Version: 1.0.3 (2017-11-30)
-
-Changelog:
+#### Changelog:
 - 1.0.4 (not released yet):
   - added applications (improved gouping metrics in "Last data" view):
     - SVC::MySQL::cfg for all read configuration parameters
@@ -32,9 +33,9 @@ Changelog:
 - 1.0.1:
   - added missing entries in SVC::MySQL::Queries screen
 - 1.0.0:
-  - initial version
+  - initial version.
 
-Notes:
+#### Notes:
 - Tested on MySQL 5.7 and it not uses MySQL 5.6 backward compatibility.  The
   template requires to disable MySQL 5.6 backward compatibility and it will
   raise alarm that show_compatibility_56 is OFF. To disable MySQL 5.6

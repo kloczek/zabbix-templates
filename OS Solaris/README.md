@@ -1,8 +1,9 @@
+#### Version: 1.0.1 (2017-12-01)
+
+#### Description:
 Base OS Solaris monitoring.
 
-Version: 1.0.1 (2017-12-01)
-
-Changelog:
+#### Changelog:
 - 1.0.2 (still not released)
   - Triggers:
     - fixed typo in trigger name s/SYS:uname changed/SYS::uname changed/
@@ -14,7 +15,7 @@ Changelog:
 - 1.0.0 (2017-09-09):
   - initial version.
 
-Notes:
+#### Notes:
 - https://github.com/mharsch/arcstat/blob/master/arcstat.pl
 - http://dtrace.org/blogs/brendan/2012/01/09/activity-of-the-zfs-arc/
 - Possible to add kstat ARC metrics:

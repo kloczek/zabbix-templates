@@ -1,4 +1,4 @@
-This template is for production!!!
+This template is for not production!!!
 It is the copy of "OS Linux" template to test new vm.memory.size[] introduced in patch submitted in
 https://support.zabbix.com/browse/ZBX-13233 which adds:
 ```
@@ -8,11 +8,12 @@ vm.memory.size[inactive]
 vm.memory.size[slabs]
 ```
 
+#### Version: 1.0.4 (2017-12-21)
+
+#### Description:
 Base Linux monitoring template.
 
-Version: 1.0.4 (2017-12-21)
-
-Changelog:
+#### Changelog:
 - 1.0.4 (not released yet)
   - added MEM::* items descriptions
   - added new ites:
@@ -41,7 +42,7 @@ Changelog:
     - HW::devices has changed
   - remove using @OS Linux::NET regexp network interfaces filter and replace by regexp "(?!(lo))" (removed global regexp dependency)
 - 1.0.0:
-  - initial version
+  - initial version.
 
-Notes:
-- compliant with EL7 and compatible
+#### Notes:
+- compliant with EL7 and compatible.
