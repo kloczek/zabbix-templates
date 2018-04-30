@@ -830,7 +830,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <value>/stub_status</value>
         </macro>
         <macro>
-          <macro>{$NGINX_USE}</macro>
+          <macro>{$NGINX_USER}</macro>
           <value>nginx</value>
         </macro>
       </macros>
