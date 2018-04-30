@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-04-30T23:06:52Z</date>
+  <date>2018-04-30T23:20:33Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -727,7 +727,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <master_item/>
         </item>
         <item>
-          <name>nginx::stub_status:</name>
+          <name>stub_status:</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
