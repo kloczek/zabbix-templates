@@ -444,7 +444,8 @@ in nginx config:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>The number of handled connections per second by Nginx server.&#13;
+Generally, the parameter value is the same as accepts unless some resource limits have been reached (for example, the worker_connections limit).</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
