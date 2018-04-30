@@ -4,13 +4,16 @@
 Apache service monitoring template using zabbix active agent items.
 
 #### Changelog:
+- 1.0.2 (WIP)
+  - Items:
+    - rename s/Network::service::$1/SVC::$1/
 - 1.0.1 (2017-12-01):
   - channge default history perid to 2w
   - moved some parts of the template description to README.md
-  - added items:
-     - ServerMPM
-     - ServerVersion
-  - use ServerUptimeSeconds in uptime item
+  - Items:
+     - added ServerMPM
+     - added ServerVersion
+     - use ServerUptimeSeconds in uptime item
 - 1.0.0 (2017-09-09):
   - initial version
 

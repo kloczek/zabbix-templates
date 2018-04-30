@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-13T13:32:27Z</date>
+  <date>2018-04-28T22:06:51Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -39,7 +39,7 @@ ExtendedStatus On&#13;
       </applications>
       <items>
         <item>
-          <name>Network::service::$1</name>
+          <name>SVC::$1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -82,7 +82,7 @@ ExtendedStatus On&#13;
           <master_item/>
         </item>
         <item>
-          <name>SYS::process::$1</name>
+          <name>PROC::$1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
