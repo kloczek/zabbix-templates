@@ -46,7 +46,7 @@ in nginx config:&#13;
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>net.tcp.service[http,,{$NGINX_PORT}]</key>
+          <key>net.tcp.service[http,,80]</key>
           <delay>1m</delay>
           <history>15d</history>
           <trends>365d</trends>
@@ -69,7 +69,7 @@ in nginx config:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Alarm if on tcp/{$NGINX_PORT} noting listen.</description>
+          <description>Checking is it possible to connect to tcp/80.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -914,7 +914,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
   </templates>
   <triggers>
     <trigger>
-      <expression>{Service Nginx:net.tcp.service[http,,{$NGINX_PORT}].max(#3)}=0</expression>
+      <expression>{Service Nginx:net.tcp.service[http,,80].max(#3)}=0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::http tcp/{$NGINX_PORT} is DOWN</name>
@@ -923,7 +923,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
       <url/>
       <status>0</status>
       <priority>3</priority>
-      <description>Alarm if nothing listens on tcp/{$NGINX_PORT} .</description>
+      <description>Nothing listens on http tcp/{$NGINX_PORT} port or traffic on this port is filtered by firewall.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>
