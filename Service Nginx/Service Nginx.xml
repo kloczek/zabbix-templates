@@ -993,8 +993,8 @@ Please confirm the state.</description>
           <sortorder>0</sortorder>
           <drawtype>5</drawtype>
           <color>1A7C11</color>
-          <yaxisside>1</yaxisside>
-          <calc_fnc>2</calc_fnc>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
             <host>Service Nginx</host>
@@ -1005,8 +1005,8 @@ Please confirm the state.</description>
           <sortorder>1</sortorder>
           <drawtype>2</drawtype>
           <color>F63100</color>
-          <yaxisside>1</yaxisside>
-          <calc_fnc>2</calc_fnc>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
             <host>Service Nginx</host>
@@ -1035,7 +1035,7 @@ Please confirm the state.</description>
       <graph_items>
         <graph_item>
           <sortorder>0</sortorder>
-          <drawtype>5</drawtype>
+          <drawtype>2</drawtype>
           <color>00C800</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
@@ -1047,7 +1047,7 @@ Please confirm the state.</description>
         </graph_item>
         <graph_item>
           <sortorder>1</sortorder>
-          <drawtype>0</drawtype>
+          <drawtype>2</drawtype>
           <color>0000C8</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
@@ -1059,7 +1059,7 @@ Please confirm the state.</description>
         </graph_item>
         <graph_item>
           <sortorder>2</sortorder>
-          <drawtype>0</drawtype>
+          <drawtype>2</drawtype>
           <color>C80000</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
@@ -1071,7 +1071,7 @@ Please confirm the state.</description>
         </graph_item>
         <graph_item>
           <sortorder>3</sortorder>
-          <drawtype>0</drawtype>
+          <drawtype>2</drawtype>
           <color>C800C8</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
@@ -1085,8 +1085,8 @@ Please confirm the state.</description>
     </graph>
     <graph>
       <name>SVC::Nginx::requests</name>
-      <width>900</width>
-      <height>200</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -1103,20 +1103,20 @@ Please confirm the state.</description>
       <graph_items>
         <graph_item>
           <sortorder>0</sortorder>
-          <drawtype>5</drawtype>
-          <color>00C800</color>
+          <drawtype>2</drawtype>
+          <color>0000AA</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
             <host>Service Nginx</host>
-            <key>nginx.handled[{$NGINX_HOST},{$NGINX_PORT}]</key>
+            <key>nginx.requests</key>
           </item>
         </graph_item>
         <graph_item>
           <sortorder>1</sortorder>
-          <drawtype>0</drawtype>
-          <color>0000C8</color>
+          <drawtype>2</drawtype>
+          <color>DD0000</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
           <type>0</type>
@@ -1127,14 +1127,14 @@ Please confirm the state.</description>
         </graph_item>
         <graph_item>
           <sortorder>2</sortorder>
-          <drawtype>0</drawtype>
-          <color>C80000</color>
+          <drawtype>2</drawtype>
+          <color>00BB00</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
             <host>Service Nginx</host>
-            <key>nginx.requests</key>
+            <key>nginx.handled[{$NGINX_HOST},{$NGINX_PORT}]</key>
           </item>
         </graph_item>
       </graph_items>
