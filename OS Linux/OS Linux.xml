@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-04-22T08:50:44Z</date>
+  <date>2018-04-30T14:51:36Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -3985,7 +3985,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{OS Linux:system.hw.cpu.change()}&lt;&gt;0</expression>
+      <expression>{OS Linux:system.hw.cpu.diff()}=1</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>HW::CPU info has changed</name>
@@ -4001,7 +4001,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{OS Linux:system.hw.devices.str()}&lt;&gt;0</expression>
+      <expression>{OS Linux:system.hw.devices.diff()}=1</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>HW::devices list has been changed</name>
