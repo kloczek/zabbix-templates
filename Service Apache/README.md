@@ -7,6 +7,8 @@ Apache service monitoring template using zabbix active agent items.
 - 1.0.2 (WIP)
   - Items:
     - rename s/Network::service::$1/SVC::$1/
+  - Triggers:
+    - rename s/SVC:httpd:Server is down/SVC::http::Service is down
 - 1.0.1 (2017-12-01):
   - channge default history perid to 2w
   - moved some parts of the template description to README.md
