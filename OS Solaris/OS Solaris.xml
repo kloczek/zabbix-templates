@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-04-24T08:06:05Z</date>
+  <date>2018-05-05T16:14:05Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -2259,8 +2259,8 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <graph_prototypes>
             <graph_prototype>
               <name>NIC::{#IFNAME}::bytes</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -2303,8 +2303,8 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
             </graph_prototype>
             <graph_prototype>
               <name>NIC::{#IFNAME}::bytes (calc)</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -2666,8 +2666,8 @@ last("vfs.dev.write[{#DISK},operations]")</params>
           <graph_prototypes>
             <graph_prototype>
               <name>DSK::{#DISK}::bytes</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -2710,8 +2710,8 @@ last("vfs.dev.write[{#DISK},operations]")</params>
             </graph_prototype>
             <graph_prototype>
               <name>DSK::{#DISK}::IO</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -2754,8 +2754,8 @@ last("vfs.dev.write[{#DISK},operations]")</params>
             </graph_prototype>
             <graph_prototype>
               <name>DSK::{#DISK}::IO::size</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -3067,8 +3067,8 @@ last("vfs.dev.write[{#DISK},operations]")</params>
           <graph_prototypes>
             <graph_prototype>
               <name>ZFS:L2ARC:{#L2ARC}:hits/misses</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -3432,8 +3432,8 @@ Please login on the host and check output of the commands:&#13;
           <graph_prototypes>
             <graph_prototype>
               <name>VOL::{#FSNAME}::used &amp; total</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -3476,8 +3476,8 @@ Please login on the host and check output of the commands:&#13;
             </graph_prototype>
             <graph_prototype>
               <name>VOL::{#FSNAME}::used &amp; total (calc)</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -3944,8 +3944,8 @@ Please login on the host and check output of the commands:&#13;
   <graphs>
     <graph>
       <name>CPU::*::avg1</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -4012,8 +4012,8 @@ Please login on the host and check output of the commands:&#13;
     </graph>
     <graph>
       <name>CPU::*::cs vs cores</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -4056,8 +4056,8 @@ Please login on the host and check output of the commands:&#13;
     </graph>
     <graph>
       <name>MEM</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -4103,8 +4103,8 @@ Please login on the host and check output of the commands:&#13;
     </graph>
     <graph>
       <name>SWAP</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -4147,8 +4147,8 @@ Please login on the host and check output of the commands:&#13;
     </graph>
     <graph>
       <name>SYS::intr</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -4179,8 +4179,8 @@ Please login on the host and check output of the commands:&#13;
     </graph>
     <graph>
       <name>SYS::load::avg1</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -4211,8 +4211,8 @@ Please login on the host and check output of the commands:&#13;
     </graph>
     <graph>
       <name>ZFS::arcstat::c vs. c_max</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -4255,8 +4255,8 @@ Please login on the host and check output of the commands:&#13;
     </graph>
     <graph>
       <name>ZFS::arcstat::hits/misses</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
