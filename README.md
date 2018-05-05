@@ -10,13 +10,25 @@
 
 ## Changelog:
 ### 1.0.4
-- This is first tagged in git repo set of templates and tools. After this version whole development will be done only on branches
-- recent changes
+- This is first tagged in git repo set of templates and tools
+- After this version development of all templates will be done only on branches and when everything will be ready devel branch will be merged to maste one
+- Recent changes
   - All template:
     - change all graphs resolution to 1200x300
-  - ICMP
+  - ICMP:
     - Screens: 
       - new NET::ICMP
+  - OS Limnux:
+    - Items:
+      - added MEM::* items descriptions
+      - fixed NET::segments retransmitted item
+        use new sed regexp in this item: "s/\( *\)\(.*\) segments retransmitted*/\2/ p/"
+    - Triggers:
+      - fixed typo in name: s/SYS:uname changed/SYS::uname changed/
+      - rename "Lack of free memory" to "MEM::free {ITEM.LASTVALUE}"
+      - use diff()=1 function (instead change() and str()) in triggers:
+        - HW::devices list has been changed
+        - HW::CPU info has changed
 
 ## List of templates:
 - ICMP

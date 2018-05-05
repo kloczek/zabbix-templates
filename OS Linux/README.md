@@ -1,10 +1,12 @@
-#### Version: 1.0.4 (WIP)
+#### Version: 1.0.4 (2018-05-05)
 
 #### Description:
 Base Linux monitoring template.
 
 #### Changelog:
-- 1.0.4
+- 1.0.4 (2018-05-05)
+  - Graphs:
+    - change all graphs resolution to 1200x300
   - Items:
     - added MEM::* items descriptions
     - fixed NET::segments retransmitted item

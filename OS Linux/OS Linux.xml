@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-04-30T14:51:36Z</date>
+  <date>2018-05-05T14:19:23Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,7 +13,7 @@
       <name>OS Linux</name>
       <description>Base Linux monitoring template.&#13;
 &#13;
-Version: 1.0.3 (2017-12-05)&#13;
+Version: 1.0.4 (2018-05-05)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/OS%20Linux&#13;
 &#13;
 Notes:&#13;
@@ -4344,8 +4344,8 @@ s3-dump hosts delete</description>
   <graphs>
     <graph>
       <name>CPU::*::avg1</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -4448,8 +4448,8 @@ s3-dump hosts delete</description>
     </graph>
     <graph>
       <name>CPU::*::cs vs cores</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>
@@ -4492,8 +4492,8 @@ s3-dump hosts delete</description>
     </graph>
     <graph>
       <name>MEM</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -4551,8 +4551,8 @@ s3-dump hosts delete</description>
     </graph>
     <graph>
       <name>NET::Errors</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -4580,7 +4580,7 @@ s3-dump hosts delete</description>
           </item>
         </graph_item>
         <graph_item>
-          <sortorder>2</sortorder>
+          <sortorder>1</sortorder>
           <drawtype>4</drawtype>
           <color>0000C8</color>
           <yaxisside>0</yaxisside>
@@ -4595,8 +4595,8 @@ s3-dump hosts delete</description>
     </graph>
     <graph>
       <name>NET::lo::bytes</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>
@@ -4639,8 +4639,8 @@ s3-dump hosts delete</description>
     </graph>
     <graph>
       <name>SYS::intr</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -4671,8 +4671,8 @@ s3-dump hosts delete</description>
     </graph>
     <graph>
       <name>SYS::load::avg1</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
