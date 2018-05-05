@@ -6,7 +6,7 @@ Base OS Solaris monitoring.
 #### Changelog:
 - 1.0.4 (2018-05-05)
   - Triggers:
-    - fixed typo in trigger name s/SYS:uname changed/SYS::uname changed/
+    - fixed typo in trigger name s/SYS:uname changed/```SYS::uname changed```/
     - added ```MEM::free {ITEM.LASTVALUE}```
 - 1.0.1 (2017-12-01):
   - execute all LLD every 10m
