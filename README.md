@@ -3,17 +3,10 @@
 Table of Contents
 =================
 
-- [Zabbix templates](#zabbix-templates)
-- [Table of Contents](#table-of-contents)
-  * [Templates versioning:](#templates-versioning-)
-  * [Changelog:](#changelog-)
-  * [List of templates:](#list-of-templates-)
-  * [Notes:](#notes-)
-    * [Examples:](#examples-)
-- [Copyright (C) 2017-2018 Tomasz Kłoczko <kloczek@fedoraproject.org>](#copyright--c--2017-2018-tomasz-k-oczko--kloczek-fedoraprojectorg-)
-
-## Templates versioning:
-Each template has own version tag which is copy of the whole zabbix-templates package version tag in which changes has been released.
+- [Changelog](#changelog-)
+- [List of templates](#list-of-templates-)
+- [Notes](#notes-)
+- [Copyright](#copyright--c--2017-2018-tomasz-k-oczko--kloczek-fedoraprojectorg-)
 
 ## Changelog:
 
@@ -43,15 +36,15 @@ Each template has own version tag which is copy of the whole zabbix-templates pa
 - Service Zabbix Server
 
 ## Notes:
-* If it is something which needs to be done to use those templates it is described in each template within description notes
+* Each template has own version tag which is copy of the whole zabbix-templates package version tag in which changes has been released.
 * Each template in the description field has the last modification date and internal version
-
-Templated items, applications and triggers must adhere to this naming convention using 2-4 letter abbreviations:
+* If it is something which needs to be done to use those templates it is described in each template within description notes
+* Naming convention for the items names, applications and triggers must adhere naming convention using 2-4 letter abbreviations:
 ```
 <CLASS>::<Name>
 <CLASS>::<SUBCLASS>::<Name>
 ```
-##### Examples:
+##### Itemms Examples:
 ```
 HW::CPU
 MEM::Total Memory
