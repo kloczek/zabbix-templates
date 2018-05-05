@@ -4,6 +4,7 @@ Table of Contents
 =================
 
 - [Changelog](#changelog-)
+  * [1.0.4](#104)
 - [List of templates](#list-of-templates-)
 - [Notes](#notes-)
 - [Copyright](#copyright--c--2017-2018-tomasz-k-oczko--kloczek-fedoraprojectorg-)
