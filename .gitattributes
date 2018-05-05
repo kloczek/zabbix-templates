@@ -1,3 +1,5 @@
 *md		text
 */*md		text
 */*/*md		text
+*/*xml		linguist-language=XML
+*/*/*xml	linguist-language=XML
