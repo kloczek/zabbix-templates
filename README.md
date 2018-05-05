@@ -10,7 +10,7 @@
 
 ## Changelog:
 ### 1.0.4
-- This is first tagged in git repo set of templates and tools. After this version all development will be done only on branches
+- This is first tagged in git repo set of templates and tools. After this version whole development will be done only on branches
 - recent changes
   - All template:
     - change all graphs resolution to 1200x300
