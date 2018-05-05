@@ -15,10 +15,10 @@
 - Recent changes
   - All template:
     - change all graphs resolution to 1200x300
-  - ICMP:
+  - *ICMP*
     - Screens: 
       - new NET::ICMP
-  - OS Limnux:
+  - *OS Limnux*
     - Items:
       - added MEM::* items descriptions
       - fixed NET::segments retransmitted item
@@ -29,8 +29,27 @@
       - use diff()=1 function (instead change() and str()) in triggers:
         - HW::devices list has been changed
         - HW::CPU info has changed
-    - Service Nginx
-      - new template
+    - *Service MySQL*
+      - Applications:
+        - new SVC::MySQL::cfg for all read configuration parameters
+        - new SVC::MySQL::Com for all Com_* metrics
+        - new SVC::MySQL::DB::{#DB} prototype for all per database metrics
+        - new SVC::MySQL::innodb for all innodb storage engine metrics
+        - new SVC::MySQL::threads for all treads related metrics
+      - Graphs:
+        - new SVC::MySQL::threads with: Threads_cached, Threads_connected and Threads_running metrics
+        - changed resolution of all graphs to 1200x300
+      - Items:
+        - new max_allowed_packet - the maximum size of one packet or any generated/intermediate string
+        - new show_compatibility_56 - show is MySQL engine working in MySQL 5.6 compatibility mode is ON/OFF
+        - new Threads_cached - the number of threads in the thread cache
+        - mew Threads_running - the number of threads that are not sleeping
+      - Screens:
+        - new SVC::MySQL::threads which combines SVC::MySQL::threads graph and Connections simple greph
+    - Triggers:
+      - new SVC::MySQL::version has been changed (severity: Not classified)
+  - *Service Nginx*
+    - new template
 ***
 ## List of templates:
 - ICMP

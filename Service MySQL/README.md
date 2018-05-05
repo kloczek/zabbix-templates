@@ -1,27 +1,28 @@
-#### Version: 1.0.3 (2017-11-30)
+#### Version: 1.0.4 (2018-05-05)
 
 #### Description:
-Active agent monitoring of the MySQL engine.
+MySQL engine monitoring over Zabbix agent.
 
 #### Changelog:
 - 1.0.4 (not released yet):
-  - added applications (improved gouping metrics in "Last data" view):
-    - SVC::MySQL::cfg for all read configuration parameters
-    - SVC::MySQL::Com for all Com_* metrics
-    - SVC::MySQL::DB::{#DB} prototype for all per database metrics 
-    - SVC::MySQL::innodb for all innodb storage engine metrics
-    - SVC::MySQL::threads for all treads related metrics
-  - added graphs:
-    - SVC::MySQL::threads with: Threads_cached, Threads_connected and Threads_running metrics
-  - added metrics:
-    - max_allowed_packet - the maximum size of one packet or any generated/intermediate string
-    - show_compatibility_56 - show is MySQL engine working in MySQL 5.6 compatibility mode is ON/OFF
-    - Threads_cached - the number of threads in the thread cache
-    - Threads_running - the number of threads that are not sleeping
-  - added screens:
-    - SVC::MySQL::threads with SVC::MySQL::threads (graph) and Connections (simple greph)
-  - added triggers:
-    - SVC::MySQL::version has been changed (severity: Not classified)
+  - Applications:
+    - new SVC::MySQL::cfg for all read configuration parameters
+    - new SVC::MySQL::Com for all Com_* metrics
+    - new SVC::MySQL::DB::{#DB} prototype for all per database metrics 
+    - new SVC::MySQL::innodb for all innodb storage engine metrics
+    - new SVC::MySQL::threads for all treads related metrics
+  - Graphs:
+    - new SVC::MySQL::threads with: Threads_cached, Threads_connected and Threads_running metrics
+    - changed resolution of all graphs to 1200x300
+  - Items:
+    - new max_allowed_packet - the maximum size of one packet or any generated/intermediate string
+    - new show_compatibility_56 - show is MySQL engine working in MySQL 5.6 compatibility mode is ON/OFF
+    - new Threads_cached - the number of threads in the thread cache
+    - mew Threads_running - the number of threads that are not sleeping
+  - Screens:
+    - new SVC::MySQL::threads which combines SVC::MySQL::threads graph and Connections simple greph
+  - Triggers:
+    - new SVC::MySQL::version has been changed (severity: Not classified)
 - 1.0.3 (2017-11-30):
   - fix: added missing "^" in MySQL::DB filter which has been causing not filter off information_schema, mysql, performance_schema and sys databases
   - template Changelog no longer maintained in template description

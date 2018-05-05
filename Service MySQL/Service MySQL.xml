@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-15T15:05:33Z</date>
+  <date>2018-05-05T15:49:34Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -11,10 +11,10 @@
     <template>
       <template>Service MySQL</template>
       <name>Service MySQL</name>
-      <description>Active agent monitoring of the MySQL engine.&#13;
+      <description>MySQL engine monitoring over Zabbix agent.&#13;
 &#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20MySQL&#13;
-Version: 1.0.3 (2017-11-30)&#13;
+Version: 1.0.4 (2018-05-05)&#13;
 Notes:&#13;
 * Tested on MySQL 5.7 and it not uses MySQL 5.6 backward compatibility so it can be used to monitor MySQL engine which in my.cnf has:&#13;
 &#13;
@@ -3391,8 +3391,8 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
           <graph_prototypes>
             <graph_prototype>
               <name>SVC::MySQL::{#DB}::data &amp; index size</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -3949,8 +3949,8 @@ Possible restart has been done.</description>
   <graphs>
     <graph>
       <name>SVC::MySQL::bytes:in/out</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -3993,8 +3993,8 @@ Possible restart has been done.</description>
     </graph>
     <graph>
       <name>SVC::MySQL::Com</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -4085,8 +4085,8 @@ Possible restart has been done.</description>
     </graph>
     <graph>
       <name>SVC::MySQL::Connections</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -4129,8 +4129,8 @@ Possible restart has been done.</description>
     </graph>
     <graph>
       <name>SVC::MySQL::pages</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -4185,8 +4185,8 @@ Possible restart has been done.</description>
     </graph>
     <graph>
       <name>SVC::MySQL::QChache:hits/misses</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -4229,8 +4229,8 @@ Possible restart has been done.</description>
     </graph>
     <graph>
       <name>SVC::MySQL::Queries</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -4273,8 +4273,8 @@ Possible restart has been done.</description>
     </graph>
     <graph>
       <name>SVC::MySQL::threads</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -4329,8 +4329,8 @@ Possible restart has been done.</description>
     </graph>
     <graph>
       <name>SVC::MySQL::tmp tables</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
