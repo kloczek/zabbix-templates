@@ -56,7 +56,7 @@
     - new template
 ***
 ## List of templates:
-- ICMP
+- [ICMP](https://github.com/kloczek/zabbix-templates/tree/master/ICMP)
 - MIB
   - F5-BIGIP-LOCAL-MIB
   - F5-BIGIP-SYSTEM-MIB
@@ -67,7 +67,7 @@
   - SNMPv2-MIB
   - SNMP-VIEW-BASED-ACM-MIB
   - UDP-MIB
-- OS Linux
+- [OS Linux](https://github.com/kloczek/zabbix-templates/tree/master/OS%20Linux)
 - OS Solaris
 - OS Windows
 - SNMP Devices
