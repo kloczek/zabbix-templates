@@ -1,8 +1,7 @@
 # Zabbix templates
 
-Table of Contents
-=================
-
+## Table of Contents
+***
 - [Changelog](#changelog-)
   * [1.0.4](#104)
 - [List of templates](#list-of-templates-)
