@@ -1,6 +1,6 @@
-## Zabbix templates
+# Zabbix templates
 
-List of templates:
+## List of templates:
 - ICMP
 - MIB
   - F5-BIGIP-LOCAL-MIB
@@ -34,7 +34,7 @@ Templated items, applications and triggers must adhere to this naming convention
 <CLASS>::<Name>
 <CLASS>::<SUBCLASS>::<Name>
 ```
-# Examples:
+##### Examples:
 ```
 HW::CPU
 MEM::Total Memory
