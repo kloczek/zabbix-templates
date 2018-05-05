@@ -68,17 +68,17 @@
   - SNMP-VIEW-BASED-ACM-MIB
   - UDP-MIB
 - [OS Linux](https://github.com/kloczek/zabbix-templates/tree/master/OS%20Linux)
-- OS Solaris
+- [OS Solaris](https://github.com/kloczek/zabbix-templates/tree/master/OS%20Solaris)
 - OS Windows
 - SNMP Devices
   - BIG-IP 5000
   - DSL-3782
 - Service Apache
-- Service MySQL
-- Service Nginx
-- Service Zabbix Agent
+- [Service MySQL](https://github.com/kloczek/zabbix-templates/tree/master/Service%20MySQL)
+- [Service Nginx](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nginx)
+- [Service Zabbix Agent](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Agent)
 - Service Zabbix Proxy
-- Service Zabbix Server
+- [Service Zabbix Server](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Server)
 
 ## Notes and Guidlines:
 * Each template has own version tag which is copy of the whole zabbix-templates package version tag in which last changes has been released
