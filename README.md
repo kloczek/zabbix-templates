@@ -15,10 +15,10 @@
 - Recent changes
   - All template:
     - change all graphs resolution to 1200x300
-  - *ICMP*
+  - **ICMP**
     - Screens: 
       - new NET::ICMP
-  - *OS Limnux*
+  - **OS Limnux**
     - Items:
       - added MEM::* items descriptions
       - fixed NET::segments retransmitted item
@@ -29,7 +29,7 @@
       - use diff()=1 function (instead change() and str()) in triggers:
         - HW::devices list has been changed
         - HW::CPU info has changed
-    - *Service MySQL*
+    - **Service MySQL**
       - Applications:
         - new SVC::MySQL::cfg for all read configuration parameters
         - new SVC::MySQL::Com for all Com_* metrics
@@ -48,7 +48,7 @@
         - new SVC::MySQL::threads which combines SVC::MySQL::threads graph and Connections simple greph
     - Triggers:
       - new SVC::MySQL::version has been changed (severity: Not classified)
-  - *Service Nginx*
+  - **Service Nginx**
     - new template
 ***
 ## List of templates:
