@@ -20,6 +20,7 @@ for i in \
 	"Service Nginx" \
 	"Service Zabbix Agent" \
 	"Service Zabbix Proxy" \
+	"Service Zabbix Server" \
 	"SNMP Devices/BIG-IP 5000" \
 	"SNMP Devices/DSL-3782"
 	do
