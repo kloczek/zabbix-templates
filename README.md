@@ -25,7 +25,7 @@ List of templates:
 - Service Zabbix Proxy
 - Service Zabbix Server
 
-Notes:
+## Notes:
 * If it is something which needs to be done to use those templates it is described in each template within description notes
 * Each template in the description field has the last modification date and internal version
 
@@ -34,7 +34,7 @@ Templated items, applications and triggers must adhere to this naming convention
 <CLASS>::<Name>
 <CLASS>::<SUBCLASS>::<Name>
 ```
-Examples:
+### Examples:
 ```
 HW::CPU
 MEM::Total Memory
