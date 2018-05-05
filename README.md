@@ -34,7 +34,7 @@ Templated items, applications and triggers must adhere to this naming convention
 <CLASS>::<Name>
 <CLASS>::<SUBCLASS>::<Name>
 ```
-### Examples:
+# Examples:
 ```
 HW::CPU
 MEM::Total Memory
