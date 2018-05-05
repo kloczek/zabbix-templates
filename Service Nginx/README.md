@@ -1,4 +1,4 @@
-#### Version: 1.0.0 (WIP)
+#### Version: 1.0.4 (2018-05-05)
 
 #### Description:
 Nginx https service monitoring template. This template is using
@@ -15,12 +15,12 @@ Nginx https service monitoring template. This template is using
 | {$NGINX_USER}      | nginx               | nginx non-root user used by workers nginx processes |
 
 #### Changelog:
-- 1.0.0 (WIP):
+- 1.0.4 (2018-05-05)
   - Initial version
 
 #### Notes:
 - This template uses nginx stub_status loadable module metrics
-- To allow use this template in nginx.conf configuration file must be present in nginx.config:
+- To use this template add nginx.conf configuration file:
 ```
     location /stub_status {
 	stub_status	on;

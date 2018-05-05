@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-04-30T23:20:33Z</date>
+  <date>2018-05-05T14:48:34Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -11,18 +11,23 @@
     <template>
       <template>Service Nginx</template>
       <name>Service Nginx</name>
-      <description>The ngx_http_stub_status_module module provides access to basic status information.&#13;
+      <description>Nginx http server monitoring template.&#13;
 &#13;
-in nginx config:&#13;
- location /nginx_status {&#13;
-        # Turn on nginx stats&#13;
-        stub_status on;&#13;
-        # I do not need logs for stats&#13;
-        access_log   off;&#13;
-        # Security: Only allow access from IP #&#13;
-        allow $1;&#13;
-        # Send rest of the world to /dev/null #&#13;
-        deny all;&#13;
+Version: 1.0.4 (2018-05-05)&#13;
+URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nginx&#13;
+&#13;
+Notes:&#13;
+* The ngx_http_stub_status_module module provides access to basic status information.&#13;
+&#13;
+- This template uses nginx stub_status loadable module metrics&#13;
+- To use this template add nginx.conf configuration file:&#13;
+&#13;
+    location /stub_status {&#13;
+        stub_status     on;&#13;
+        # do not log query for stats in access log&#13;
+        access_log      off;&#13;
+        allow           127.0.0.1;&#13;
+        deny            all;&#13;
     }</description>
       <groups>
         <group>
@@ -949,8 +954,8 @@ Please confirm the state.</description>
   <graphs>
     <graph>
       <name>SVC::Nginx::connection</name>
-      <width>900</width>
-      <height>200</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -1017,8 +1022,8 @@ Please confirm the state.</description>
     </graph>
     <graph>
       <name>SVC::Nginx::memory</name>
-      <width>900</width>
-      <height>200</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -1061,8 +1066,8 @@ Please confirm the state.</description>
     </graph>
     <graph>
       <name>SVC::Nginx::requests</name>
-      <width>900</width>
-      <height>200</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>

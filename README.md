@@ -29,7 +29,9 @@
       - use diff()=1 function (instead change() and str()) in triggers:
         - HW::devices list has been changed
         - HW::CPU info has changed
-
+    - Service Nginx
+      - new template
+***
 ## List of templates:
 - ICMP
 - MIB
