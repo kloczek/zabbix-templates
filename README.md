@@ -5,7 +5,7 @@
 - [Changelog](#changelog)
   * [1.0.4](#104)
 - [List of templates](#list-of-templates)
-- [Notes](#notes)
+- [Notes and Guidlines](#notes-and-guidlines)
 - [Copyright](#copyright--c--2017-2018-tomasz-k-oczko--kloczek-fedoraprojectorg)
 
 ## Changelog:
@@ -43,7 +43,7 @@
 - Service Zabbix Proxy
 - Service Zabbix Server
 
-## Notes:
+## Notes and Guidlines:
 * Each template has own version tag which is copy of the whole zabbix-templates package version tag in which last changes has been released
 * Each template in the description field has the last modification date and internal version
 * If it is something which needs to be done to use those templates it is described in each template within description notes
