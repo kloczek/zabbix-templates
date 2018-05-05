@@ -9,6 +9,9 @@ Table of Contents
 - [Copyright](#copyright--c--2017-2018-tomasz-k-oczko--kloczek-fedoraprojectorg-)
 
 ## Changelog:
+### 1.0.4
+- Thi is first tagged in git repo set of templates and tools
+- recent changes
 
 ## List of templates:
 - ICMP
