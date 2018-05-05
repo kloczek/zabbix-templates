@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-05T14:19:23Z</date>
+  <date>2018-05-05T14:34:03Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -2262,8 +2262,8 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <graph_prototypes>
             <graph_prototype>
               <name>NET::{#IFNAME}::bytes</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -2306,8 +2306,8 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
             </graph_prototype>
             <graph_prototype>
               <name>NET::{#IFNAME}::bytes (calc)</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -2350,8 +2350,8 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
             </graph_prototype>
             <graph_prototype>
               <name>NET::{#IFNAME}::Errors</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -2403,7 +2403,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
                   </item>
                 </graph_item>
                 <graph_item>
-                  <sortorder>4</sortorder>
+                  <sortorder>3</sortorder>
                   <drawtype>0</drawtype>
                   <color>999999</color>
                   <yaxisside>0</yaxisside>
@@ -2418,8 +2418,8 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
             </graph_prototype>
             <graph_prototype>
               <name>NET::{#IFNAME}::packets</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -2462,8 +2462,8 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
             </graph_prototype>
             <graph_prototype>
               <name>NET::{#IFNAME}::packets (calc)</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -2753,8 +2753,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           <graph_prototypes>
             <graph_prototype>
               <name>DSK::{#DISK}::bytes</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -2797,8 +2797,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
             </graph_prototype>
             <graph_prototype>
               <name>DSK::{#DISK}::IOs</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -3420,8 +3420,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           <graph_prototypes>
             <graph_prototype>
               <name>VOL::{#FSNAME}::pfree &amp; inodes::pfree</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -3464,8 +3464,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
             </graph_prototype>
             <graph_prototype>
               <name>VOL::{#FSNAME}::used &amp; total</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -3508,8 +3508,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
             </graph_prototype>
             <graph_prototype>
               <name>VOL::{#FSNAME}::used &amp; total (calc)</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
