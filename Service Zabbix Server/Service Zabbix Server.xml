@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-07T11:22:38Z</date>
+  <date>2018-05-05T17:29:50Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,11 +13,11 @@
       <name>Service Zabbix Server</name>
       <description>Base Zabbix server monitoring template.&#13;
 &#13;
-Version: 1.0.1 (2017-09-09)&#13;
+Version: 1.0.4 (2018-05-05)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Server&#13;
 &#13;
 Notes:&#13;
-* Host with this template needs to monitored without any proxy.</description>
+* Host with this template must be monitored without any proxy.</description>
       <groups>
         <group>
           <name>Templates</name>
@@ -2440,8 +2440,8 @@ A high number indicates performance problems on the database side.</description>
   <graphs>
     <graph>
       <name>SVC::zabbix_server::caches usage %</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -2508,8 +2508,8 @@ A high number indicates performance problems on the database side.</description>
     </graph>
     <graph>
       <name>SVC::zabbix_server::internal process busy %</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -2561,7 +2561,7 @@ A high number indicates performance problems on the database side.</description>
           </item>
         </graph_item>
         <graph_item>
-          <sortorder>4</sortorder>
+          <sortorder>3</sortorder>
           <drawtype>2</drawtype>
           <color>EE0000</color>
           <yaxisside>0</yaxisside>
@@ -2573,7 +2573,7 @@ A high number indicates performance problems on the database side.</description>
           </item>
         </graph_item>
         <graph_item>
-          <sortorder>5</sortorder>
+          <sortorder>4</sortorder>
           <drawtype>2</drawtype>
           <color>FF66FF</color>
           <yaxisside>0</yaxisside>
@@ -2588,8 +2588,8 @@ A high number indicates performance problems on the database side.</description>
     </graph>
     <graph>
       <name>SVC::zabbix_server::items/wcache::buffer::pfree</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -2632,8 +2632,8 @@ A high number indicates performance problems on the database side.</description>
     </graph>
     <graph>
       <name>SVC::zabbix_server::items queued</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -2712,8 +2712,8 @@ A high number indicates performance problems on the database side.</description>
     </graph>
     <graph>
       <name>SVC::zabbix_server::items total/unsupported</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -2756,8 +2756,8 @@ A high number indicates performance problems on the database side.</description>
     </graph>
     <graph>
       <name>SVC::zabbix_server::process busy %</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -2860,8 +2860,8 @@ A high number indicates performance problems on the database side.</description>
     </graph>
     <graph>
       <name>SVC::zabbix_server::vcache::hits/misses</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>

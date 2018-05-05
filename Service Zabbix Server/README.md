@@ -1,9 +1,12 @@
-#### Version: 1.0.1 (2017-09-09)
+#### Version: 1.0.4 (2018-05-09)
 
 #### Description:
 Base Zabbix server monitoring template.
 
 #### Changelog:
+- 1.0.4 (2018-05-09)
+  - Graphs:
+    - changed resolution to 1200x300
 - 1.0.1 (2017-12-07):
   - removed monitoring zabbix[process,"db watchdog"] as it is no longer supported
   - add more desctiptions of the zabbix[process,] items
@@ -13,4 +16,4 @@ Base Zabbix server monitoring template.
   - initial version.
 
 #### Notes:
-* Host with this template needs to monitored without any proxy.
+* Host with this template must be monitored without any proxy.
