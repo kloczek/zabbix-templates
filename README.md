@@ -102,7 +102,7 @@
 * Do not use {HOSTNAME} macros in triggers, as web frontend from Monitoring -> Triggers has a list with "host" column name on the host where the trigger is active (it is waste of space on web page)
 * All zabbix agent items should be specified as ```zabbix agent (active)``` items
 * All graphs resolution should in 1200x300 resolution
-* All SNMP items should be as SNMPv2 and ``{$SNMP_COMMUNITY}``` as SNMP community read community
+* All SNMP items should be as SNMPv2 and ```{$SNMP_COMMUNITY}``` as SNMP community read community
 
 Because all templates are using the same graphs resolution, item types and SNMP protocol version ands community name with such settiongs is easy to change in all templates agent items type to passive one or change all other settings across all templates before import them.
 
