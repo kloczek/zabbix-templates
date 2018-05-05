@@ -10,9 +10,13 @@
 
 ## Changelog:
 ### 1.0.4
-- This is first tagged in git repo set of templates and tools
+- This is first tagged in git repo set of templates and tools. After this version all development will be done only on branches
 - recent changes
-  -
+  - All template:
+    - change all graphs resolution to 1200x300
+  - ICMP
+    - Screens: 
+      - new NET::ICMP
 
 ## List of templates:
 - ICMP
@@ -40,7 +44,7 @@
 - Service Zabbix Server
 
 ## Notes:
-* Each template has own version tag which is copy of the whole zabbix-templates package version tag in which changes has been released.
+* Each template has own version tag which is copy of the whole zabbix-templates package version tag in which last changes has been released
 * Each template in the description field has the last modification date and internal version
 * If it is something which needs to be done to use those templates it is described in each template within description notes
 * Naming convention for the items names, applications and triggers must adhere naming convention using 2-4 letter abbreviations:

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-01T03:53:50Z</date>
+  <date>2018-05-05T13:59:42Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,7 +13,7 @@
       <name>ICMP</name>
       <description>Base ICMP template checking availability of the host using ICMP protocol.&#13;
 &#13;
-Version : 1.0.1 (2017-10-13)&#13;
+Version : 1.0.4 (2018-05-05)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/ICMP&#13;
 &#13;
 Notes:&#13;
@@ -279,8 +279,8 @@ Notes:&#13;
   <graphs>
     <graph>
       <name>NET::ICMP</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -323,8 +323,8 @@ Notes:&#13;
     </graph>
     <graph>
       <name>NET::ICMP::latency</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
