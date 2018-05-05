@@ -16,7 +16,7 @@ Base Linux monitoring template.
     - fixed typo in name: s/SYS:uname changed/```SYS::uname changed```/
     - rename "Lack of free memory" to ``MEM::free {ITEM.LASTVALUE}```
     - use ```diff()```=1 function (instead ```change()``` and ```str()```) in triggers:
-      - ```HW::devices list has been changed``
+      - ```HW::devices list has been changed```
       - ```HW::CPU info has changed```
 - 1.0.3 (2017-12-05):
   - LLDs:
