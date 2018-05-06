@@ -10,8 +10,8 @@
 
 ## Changelog:
 ### 1.0.4
-- This is first tagged in git repo set of templates and tools
-- After this version development of all templates will be done only on branches and when everything will be ready devel branch will be merged to maste one
+- The first version tagged in git repo to stamp state of templates and tools and to provide better tracking changes by use ```git``` command
+- After this version development of all templates will be done only on branches and when everything is ready devel branch will be merged to master one
 - Recent changes
   - All template:
     - change all graphs resolution to 1200x300
@@ -97,8 +97,8 @@
 - [Service Zabbix Proxy](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Proxy)
 - [Service Zabbix Server](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Server)
 
-## Notes and Guidlines:
-* Each template has own version tag which is copy of the whole zabbix-templates package version tag in which last changes has been released
+## Notes and Guidelines:
+* Each template has own version tag which is the copy of the whole zabbix-templates package version tag in which last changes has released
 * Each template in the description field has the last modification date and internal version
 * If it is something which needs to be done to use those templates it is described in each template within description notes
 * Naming convention for the items names, applications and triggers must adhere naming convention using 2-4 letter abbreviations:
@@ -106,22 +106,22 @@
   <CLASS>::<Name>
   <CLASS>::<SUBCLASS>::<Name>
   ```
-  ##### Itemms Examples:
+  ##### Items Examples:
   ```
   HW::CPU
   MEM::Total Memory
   NET::ICMP::Loss
   NTP::WTS::Clock Frequency Adjustment
   ```
-  This is to provide a parseable name, allowing us to distinguish between and categorise those objects.
-  Such convention is quite easy to handle as pattern in alarming layer allowing for example send all tigger with SYS:: in the beginning name of the template to exact team.
+  Above provide a parseable name, allowing us to distinguish between and categorise those objects.
+  Such convention is quite easy to handle as the pattern in alarming layer allowing, for example, send all trigger with SYS:: in the beginning name of the template to exact team.
   Such pattern is possible to use part of the general interface on communication with external services.
-* Do not use {HOSTNAME} macros in triggers, as web frontend from Monitoring -> Triggers has a list with "host" column name on the host where the trigger is active (it is waste of space on web page)
+* Do not use {HOSTNAME} macros in triggers, as web frontend from Monitoring -> Triggers has a list with "host" column name on the host where the trigger is active (it is waste of space on the web page)
 * All zabbix agent items should be specified as ```zabbix agent (active)``` items
-* All graphs resolution should in 1200x300 resolution
+* All graphs resolution needs to be 1200x300
 * All SNMP items should be as SNMPv2 and ```{$SNMP_COMMUNITY}``` as SNMP read community name
 
-Because all templates are using the same graphs resolution, item types and SNMP protocol version ands community name with such settiongs is easy to change in all templates agent items type to passive one or change all other settings across all templates before import them.
+Because all templates are using the same graphs resolution, item types and SNMP protocol version and community name with such settings are easy to change in all templates agent items type to passive one or change all other settings across all templates before import them.
 
 ##### Copyright (C) 2017-2018 Tomasz Kłoczko <kloczek@fedoraproject.org>
 
