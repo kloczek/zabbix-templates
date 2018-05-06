@@ -7,7 +7,7 @@
 - [List of templates](#list-of-templates)
 - [Notes and Guidlines](#notes-and-guidlines)
 - [Copyright](#copyright--c--2017-2018-tomasz-k-oczko--kloczek-fedoraprojectorg)
-
+***
 ## Changelog:
 ### 1.0.4
 - The first version tagged in git repo to stamp state of templates and tools and to provide better tracking changes by use ```git``` command
