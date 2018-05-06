@@ -11,7 +11,7 @@
 ## Changelog:
 ### 1.0.4
 - The first version tagged in git repo to stamp state of templates and tools and to provide better tracking changes by using ```git``` command
-- Next version of the templates will continue on devel branch. When all changes are ready devel branch will be merged to master one. It will be way better for those who have interested enough tested template.
+- Development of the next version of the templates will continue on devel branch. When all changes are ready devel branch will be merged to master one. It will be way better for those who have interested enough tested template.
 - Recent changes
   - All template:
     - change all graphs resolution to 1200x300
