@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-06T10:55:14Z</date>
+  <date>2018-05-06T11:12:26Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -32,6 +32,9 @@ Notes:&#13;
         </application>
         <application>
           <name>SVC::Zabbix Proxy</name>
+        </application>
+        <application>
+          <name>SVC::Zabbix Proxy::proc</name>
         </application>
       </applications>
       <items>
@@ -273,7 +276,7 @@ It is calculated for last minute only.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Proxy</name>
+              <name>SVC::Zabbix Proxy::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -315,7 +318,7 @@ It is calculated for last minute only.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Proxy</name>
+              <name>SVC::Zabbix Proxy::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -357,7 +360,7 @@ It is calculated for last minute only.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Proxy</name>
+              <name>SVC::Zabbix Proxy::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -399,7 +402,7 @@ It is calculated for last minute only.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Proxy</name>
+              <name>SVC::Zabbix Proxy::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -441,7 +444,7 @@ It is calculated for last minute only.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Proxy</name>
+              <name>SVC::Zabbix Proxy::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -483,7 +486,7 @@ It is calculated for last minute only.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Proxy</name>
+              <name>SVC::Zabbix Proxy::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -525,7 +528,7 @@ It is calculated for last minute only.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Proxy</name>
+              <name>SVC::Zabbix Proxy::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -567,7 +570,7 @@ It is calculated for last minute only.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Proxy</name>
+              <name>SVC::Zabbix Proxy::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -609,7 +612,7 @@ It is calculated for last minute only.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Proxy</name>
+              <name>SVC::Zabbix Proxy::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -651,7 +654,7 @@ It is calculated for last minute only.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Proxy</name>
+              <name>SVC::Zabbix Proxy::proc</name>
             </application>
           </applications>
           <valuemap/>
