@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-06T11:12:26Z</date>
+  <date>2018-05-06T11:38:17Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -244,11 +244,11 @@ Notes:&#13;
           <master_item/>
         </item>
         <item>
-          <name>Processes::$4::$2</name>
+          <name>proc::$4::$2</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>zabbix[process,"discoverer",avg,busy]</key>
+          <key>zabbix[process,discoverer,avg,busy]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -286,11 +286,11 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>Processes::$4::$2</name>
+          <name>proc::$4::$2</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>zabbix[process,"history syncer",avg,busy]</key>
+          <key>zabbix[process,history syncer,avg,busy]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -328,11 +328,11 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>Processes::$4::$2</name>
+          <name>proc::$4::$2</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>zabbix[process,"housekeeper",avg,busy]</key>
+          <key>zabbix[process,housekeeper,avg,busy]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -370,11 +370,11 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>Processes::$4::$2</name>
+          <name>proc::$4::$2</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>zabbix[process,"http poller",avg,busy]</key>
+          <key>zabbix[process,http poller,avg,busy]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -412,11 +412,11 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>Processes::$4::$2</name>
+          <name>proc::$4::$2</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>zabbix[process,"icmp pinger",avg,busy]</key>
+          <key>zabbix[process,icmp pinger,avg,busy]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -454,11 +454,11 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>Processes::$4::$2</name>
+          <name>proc::$4::$2</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>zabbix[process,"poller",avg,busy]</key>
+          <key>zabbix[process,poller,avg,busy]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -496,11 +496,11 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>Processes::$4::$2</name>
+          <name>proc::$4::$2</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>zabbix[process,"self-monitoring",avg,busy]</key>
+          <key>zabbix[process,self-monitoring,avg,busy]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -538,11 +538,11 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>Processes::$4::$2</name>
+          <name>proc::$4::$2</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>zabbix[process,"trapper",avg,busy]</key>
+          <key>zabbix[process,trapper,avg,busy]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -580,11 +580,11 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>Processes::$4::$2</name>
+          <name>proc::$4::$2</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>zabbix[process,"unreachable poller",avg,busy]</key>
+          <key>zabbix[process,unreachable poller,avg,busy]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -622,11 +622,11 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>Processes::$4::$2</name>
+          <name>proc::$4::$2</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>zabbix[process,"vmware collector",avg,busy]</key>
+          <key>zabbix[process,vmware collector,avg,busy]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -2104,7 +2104,7 @@ It is calculated for last minute only.</description>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service Zabbix Proxy:zabbix[process,"history syncer",avg,busy].avg(600)}&gt;75</expression>
+      <expression>{Service Zabbix Proxy:zabbix[process,history syncer,avg,busy].avg(600)}&gt;75</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::zabbix_proxy::history syncer processes more than 75% busy</name>
@@ -2224,7 +2224,7 @@ Possible:&#13;
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service Zabbix Proxy:zabbix[process,"discoverer",avg,busy].avg(10m)}&gt;75</expression>
+      <expression>{Service Zabbix Proxy:zabbix[process,discoverer,avg,busy].avg(10m)}&gt;75</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::zabbix_proxy::process::discoverer &gt;=75% bus</name>
@@ -2240,7 +2240,7 @@ Possible:&#13;
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service Zabbix Proxy:zabbix[process,"housekeeper",avg,busy].avg(30m)}&gt;75</expression>
+      <expression>{Service Zabbix Proxy:zabbix[process,housekeeper,avg,busy].avg(30m)}&gt;75</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::zabbix_proxy::process::housekeeper &gt;=75% busy</name>
@@ -2256,7 +2256,7 @@ Possible:&#13;
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service Zabbix Proxy:zabbix[process,"http poller",avg,busy].avg(10m)}&gt;75</expression>
+      <expression>{Service Zabbix Proxy:zabbix[process,http poller,avg,busy].avg(10m)}&gt;75</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::zabbix_proxy::process::http poller &gt;=75% busy</name>
@@ -2272,7 +2272,7 @@ Possible:&#13;
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service Zabbix Proxy:zabbix[process,"icmp pinger",avg,busy].avg(10m)}&gt;75</expression>
+      <expression>{Service Zabbix Proxy:zabbix[process,icmp pinger,avg,busy].avg(10m)}&gt;75</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::zabbix_proxy::process::ICMP pinger &gt;=75% busy</name>
@@ -2288,7 +2288,7 @@ Possible:&#13;
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service Zabbix Proxy:zabbix[process,"poller",avg,busy].avg(10m)}&gt;75</expression>
+      <expression>{Service Zabbix Proxy:zabbix[process,poller,avg,busy].avg(10m)}&gt;75</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::zabbix_proxy::process::poller &gt;=75% busy</name>
@@ -2304,7 +2304,7 @@ Possible:&#13;
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service Zabbix Proxy:zabbix[process,"self-monitoring",avg,busy].avg(10m)}&gt;75</expression>
+      <expression>{Service Zabbix Proxy:zabbix[process,self-monitoring,avg,busy].avg(10m)}&gt;75</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::zabbix_proxy::process::self-monitoring &gt;=75% busy</name>
@@ -2320,7 +2320,7 @@ Possible:&#13;
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service Zabbix Proxy:zabbix[process,"trapper",avg,busy].avg(10m)}&gt;75</expression>
+      <expression>{Service Zabbix Proxy:zabbix[process,trapper,avg,busy].avg(10m)}&gt;75</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::zabbix_proxy::process::trapper &gt;=75% busy</name>
@@ -2336,7 +2336,7 @@ Possible:&#13;
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service Zabbix Proxy:zabbix[process,"unreachable poller",avg,busy].avg(10m)}&gt;75</expression>
+      <expression>{Service Zabbix Proxy:zabbix[process,unreachable poller,avg,busy].avg(10m)}&gt;75</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::zabbix_proxy::process::unreachable poller &gt;=75% busy</name>
@@ -2484,7 +2484,7 @@ Possible:&#13;
           <type>0</type>
           <item>
             <host>Service Zabbix Proxy</host>
-            <key>zabbix[process,"trapper",avg,busy]</key>
+            <key>zabbix[process,trapper,avg,busy]</key>
           </item>
         </graph_item>
         <graph_item>
@@ -2496,7 +2496,7 @@ Possible:&#13;
           <type>0</type>
           <item>
             <host>Service Zabbix Proxy</host>
-            <key>zabbix[process,"poller",avg,busy]</key>
+            <key>zabbix[process,poller,avg,busy]</key>
           </item>
         </graph_item>
         <graph_item>
@@ -2508,7 +2508,7 @@ Possible:&#13;
           <type>0</type>
           <item>
             <host>Service Zabbix Proxy</host>
-            <key>zabbix[process,"discoverer",avg,busy]</key>
+            <key>zabbix[process,discoverer,avg,busy]</key>
           </item>
         </graph_item>
         <graph_item>
@@ -2520,7 +2520,7 @@ Possible:&#13;
           <type>0</type>
           <item>
             <host>Service Zabbix Proxy</host>
-            <key>zabbix[process,"icmp pinger",avg,busy]</key>
+            <key>zabbix[process,icmp pinger,avg,busy]</key>
           </item>
         </graph_item>
         <graph_item>
@@ -2532,7 +2532,7 @@ Possible:&#13;
           <type>0</type>
           <item>
             <host>Service Zabbix Proxy</host>
-            <key>zabbix[process,"http poller",avg,busy]</key>
+            <key>zabbix[process,http poller,avg,busy]</key>
           </item>
         </graph_item>
         <graph_item>
@@ -2544,7 +2544,7 @@ Possible:&#13;
           <type>0</type>
           <item>
             <host>Service Zabbix Proxy</host>
-            <key>zabbix[process,"unreachable poller",avg,busy]</key>
+            <key>zabbix[process,unreachable poller,avg,busy]</key>
           </item>
         </graph_item>
       </graph_items>
@@ -2608,7 +2608,7 @@ Possible:&#13;
           <type>0</type>
           <item>
             <host>Service Zabbix Proxy</host>
-            <key>zabbix[process,"housekeeper",avg,busy]</key>
+            <key>zabbix[process,housekeeper,avg,busy]</key>
           </item>
         </graph_item>
         <graph_item>
@@ -2620,7 +2620,7 @@ Possible:&#13;
           <type>0</type>
           <item>
             <host>Service Zabbix Proxy</host>
-            <key>zabbix[process,"history syncer",avg,busy]</key>
+            <key>zabbix[process,history syncer,avg,busy]</key>
           </item>
         </graph_item>
         <graph_item>
@@ -2632,7 +2632,7 @@ Possible:&#13;
           <type>0</type>
           <item>
             <host>Service Zabbix Proxy</host>
-            <key>zabbix[process,"self-monitoring",avg,busy]</key>
+            <key>zabbix[process,self-monitoring,avg,busy]</key>
           </item>
         </graph_item>
         <graph_item>
@@ -2644,7 +2644,7 @@ Possible:&#13;
           <type>0</type>
           <item>
             <host>Service Zabbix Proxy</host>
-            <key>zabbix[process,"vmware collector",avg,busy]</key>
+            <key>zabbix[process,vmware collector,avg,busy]</key>
           </item>
         </graph_item>
       </graph_items>
