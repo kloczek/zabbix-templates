@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-06T15:54:46Z</date>
+  <date>2018-05-06T17:44:06Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -322,7 +322,7 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</descr
           <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
-          <value_type>3</value_type>
+          <value_type>0</value_type>
           <allowed_hosts/>
           <units>req/s</units>
           <snmpv3_contextname/>
@@ -438,7 +438,7 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</descr
           <history>15d</history>
           <trends>365d</trends>
           <status>0</status>
-          <value_type>3</value_type>
+          <value_type>0</value_type>
           <allowed_hosts/>
           <units/>
           <snmpv3_contextname/>
