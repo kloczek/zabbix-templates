@@ -1,14 +1,16 @@
-#### Version: 1.0.3 (2018-01-26)
+#### Version: 1.0.4 (2018-05-05)
 
 #### Description:
 Base OS Windows template.
 
 #### Changelog:
-- 1.0.4 (not released yet)
+- 1.0.4 (2018-05-05)
   - Triggers:
     - rename trigger name to the same name as it is in other OS templates
-       s/Host information was changed/SYS:uname changed/
-    - rename "Lack of free memory" to MEM::free {ITEM.LASTVALUE}"
+       s/Host information was changed/```SYS:uname changed```/
+    - rename "Lack of free memory" to ```MEM::free {ITEM.LASTVALUE}```
+  - Graphs:
+    - change resolution to 1200x300
 - 1.0.3
   - Added TCP and UDP V4 items (ss)
   - Added more items to PROC with descriptions (ss)

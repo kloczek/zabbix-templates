@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-04-24T08:11:20Z</date>
+  <date>2018-05-06T08:09:26Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,7 +13,7 @@
       <name>OS Windows</name>
       <description>Base OS Windows template.&#13;
 &#13;
-Version: 1.0.1 (2017-11-29)&#13;
+Version: 1.0.4 (2018-05-05)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/OS%20Windows&#13;
 &#13;
 Notes:</description>
@@ -7544,8 +7544,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
           <graph_prototypes>
             <graph_prototype>
               <name>NIC::{#IFNAME}::errors::max</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -7612,8 +7612,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
             </graph_prototype>
             <graph_prototype>
               <name>NIC::{#IFNAME}::throughput::avg</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -7656,8 +7656,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
             </graph_prototype>
             <graph_prototype>
               <name>NIC::{#IFNAME}::throughput::max</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -8750,8 +8750,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
           <graph_prototypes>
             <graph_prototype>
               <name>VOL::{#FSNAME}::io:bytes</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -8794,8 +8794,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
             </graph_prototype>
             <graph_prototype>
               <name>VOL::{#FSNAME}::io:ops</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -8838,8 +8838,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
             </graph_prototype>
             <graph_prototype>
               <name>VOL::{#FSNAME}::space::%</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -9080,8 +9080,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
   <graphs>
     <graph>
       <name>CPU::*::avg1</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>
@@ -9112,8 +9112,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
     </graph>
     <graph>
       <name>CPU Loads</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>
@@ -9168,8 +9168,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
     </graph>
     <graph>
       <name>Disk IO</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>
@@ -9260,8 +9260,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
     </graph>
     <graph>
       <name>MEM::pages</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>
@@ -9304,8 +9304,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
     </graph>
     <graph>
       <name>Object Events</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>
@@ -9360,8 +9360,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
     </graph>
     <graph>
       <name>Object Sections</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>
@@ -9416,8 +9416,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
     </graph>
     <graph>
       <name>Page File Bytes</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>
@@ -9448,8 +9448,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
     </graph>
     <graph>
       <name>Physical Memory</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -9516,8 +9516,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
     </graph>
     <graph>
       <name>Processor Queue Length</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>
@@ -9548,8 +9548,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
     </graph>
     <graph>
       <name>Processor Times</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>
@@ -9604,8 +9604,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
     </graph>
     <graph>
       <name>Process Times</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>
@@ -9660,8 +9660,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
     </graph>
     <graph>
       <name>Server Bytes Total</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>
@@ -9692,8 +9692,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
     </graph>
     <graph>
       <name>System Context</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>
@@ -9724,8 +9724,8 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
     </graph>
     <graph>
       <name>User Process Total</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>

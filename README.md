@@ -21,8 +21,7 @@
   - **OS Limnux**
     - Items:
       - added ```MEM::``` items descriptions
-      - fixed ```NET::segments retransmitted``` item
-        use new sed regexp in this item:
+      - fixed ```NET::segments retransmitted``` item use new sed regexp in this item
         ```s/\( *\)\(.*\) segments retransmitted*/\2/ p/```
     - Triggers:
       - fixed typo in name: s/SYS:uname changed/```SYS::uname changed```/
@@ -34,6 +33,11 @@
     - Triggers:
       - fixed typo in trigger name s/SYS:uname changed/```SYS::uname changed```/
       - added ```MEM::free {ITEM.LASTVALUE}```
+  - **OS Windows**
+    - Triggers:
+      - rename trigger name to the same name as it is in other OS templates
+         s/Host information was changed/```SYS:uname changed```/
+      - rename "Lack of free memory" to ```MEM::free {ITEM.LASTVALUE}```
   - **Service MySQL**
     - Applications:
       - new ```SVC::MySQL::cfg``` for all read configuration parameters
@@ -69,7 +73,7 @@
   - UDP-MIB
 - [OS Linux](https://github.com/kloczek/zabbix-templates/tree/master/OS%20Linux)
 - [OS Solaris](https://github.com/kloczek/zabbix-templates/tree/master/OS%20Solaris)
-- OS Windows
+- [OS Windows](https://github.com/kloczek/zabbix-templates/tree/master/OS%20Windows)
 - SNMP Devices
   - BIG-IP 5000
   - DSL-3782
