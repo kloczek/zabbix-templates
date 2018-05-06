@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-05T14:48:34Z</date>
+  <date>2018-05-06T15:54:46Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -117,7 +117,8 @@ Notes:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description>The current number of active client connections including waiting connections.</description>
+          <description>The current number of all open connections.&#13;
+This doesn’t mean number of users. A single user, for a single pageview can open many concurrent connections to your server.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -171,7 +172,7 @@ Notes:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description>The current number of connections where nginx is reading the request header.</description>
+          <description>The current number of client connections in reading the request state.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -225,7 +226,13 @@ Notes:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description>The current number of idle client connections waiting for a request.</description>
+          <description>The current number of client connections in waiting state.&#13;
+&#13;
+keep-alive connections, actually it is active – (reading + writing).This value depends on keepalive-timeout. Do not confuse non-zero waiting value for poor performance. It can be ignored. Although, you can force zero waiting by setting&#13;
+&#13;
+http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_disable&#13;
+http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_requests&#13;
+http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -279,7 +286,7 @@ Notes:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description>The current number of connections where nginx is writing the response back to the client.</description>
+          <description>The current number of client connections writing the response back to the client.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
