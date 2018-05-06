@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-06T08:20:52Z</date>
+  <date>2018-05-06T10:55:14Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -1524,170 +1524,6 @@ It is calculated for last minute only.</description>
         <item>
           <name>$1::$2::$3</name>
           <type>5</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>zabbix[wcache,text,free]</key>
-          <delay>30s</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>B</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::Zabbix Proxy</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>$1::$2::$3</name>
-          <type>5</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>zabbix[wcache,text,pfree]</key>
-          <delay>30s</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>0</value_type>
-          <allowed_hosts/>
-          <units>%</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::Zabbix Proxy</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>$1::$2::$3</name>
-          <type>5</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>zabbix[wcache,text,total]</key>
-          <delay>1h</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>B</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::Zabbix Proxy</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>$1::$2::$3</name>
-          <type>5</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>zabbix[wcache,text,used]</key>
-          <delay>30s</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>B</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::Zabbix Proxy</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>$1::$2::$3</name>
-          <type>5</type>
           <snmp_community>public</snmp_community>
           <snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
           <key>zabbix[wcache,values,all]</key>
@@ -2281,60 +2117,6 @@ It is calculated for last minute only.</description>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service Zabbix Proxy:zabbix[wcache,text,pfree].avg(5m)}&lt;5</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SVC::zabbix_proxy::HistoryTextCacheSize {ITEM.VALUE} free (&lt; 5%)</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>5</priority>
-      <description>Consider increasing HistoryTextCacheSize in the /etc/zabbix/zabbix_proxy/HistoryTextCacheSize file.</description>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{Service Zabbix Proxy:zabbix[wcache,text,pfree].avg(5m)}&lt;15</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SVC::zabbix_proxy::HistoryTextCacheSize {ITEM.VALUE} free (&lt; 15%)</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description>Consider increasing HistoryTextCacheSize in the /etc/zabbix/zabbix_proxy/HistoryTextCacheSize file.</description>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies>
-        <dependency>
-          <name>SVC::zabbix_proxy::HistoryTextCacheSize {ITEM.VALUE} free (&lt; 5%)</name>
-          <expression>{Service Zabbix Proxy:zabbix[wcache,text,pfree].avg(5m)}&lt;5</expression>
-          <recovery_expression/>
-        </dependency>
-      </dependencies>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{Service Zabbix Proxy:zabbix[wcache,text,pfree].avg(30m)}&gt;80</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SVC::zabbix_proxy::HistoryTextCacheSize {ITEM.VALUE} free (&gt; 80%)</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>1</status>
-      <priority>1</priority>
-      <description>Consider decrease HistoryTextCacheSize in the /etc/zabbix/zabbix_proxy/HistoryTextCacheSize file.</description>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
       <expression>(({Service Zabbix Proxy:logrt[/var/log/zabbix/zabbix_proxy.log,"cannot send list of active checks to \[.*\] failed: host \[.*\] not found",,].regexp(not found)})&gt;0)</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
@@ -2612,18 +2394,6 @@ Possible:&#13;
           <item>
             <host>Service Zabbix Proxy</host>
             <key>zabbix[rcache,buffer,pfree]</key>
-          </item>
-        </graph_item>
-        <graph_item>
-          <sortorder>1</sortorder>
-          <drawtype>2</drawtype>
-          <color>00DDDD</color>
-          <yaxisside>0</yaxisside>
-          <calc_fnc>2</calc_fnc>
-          <type>0</type>
-          <item>
-            <host>Service Zabbix Proxy</host>
-            <key>zabbix[wcache,text,pfree]</key>
           </item>
         </graph_item>
         <graph_item>
