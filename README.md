@@ -49,7 +49,7 @@
       - new ```SVC::MySQL::threads``` with ```Threads_cached```, ```Threads_connected``` and ```Threads_running``` metrics
     - Items:
       - new ```max_allowed_packet``` - the maximum size of one packet or any generated/intermediate string
-      - new ```show_compatibility_56``` - show is MySQL engine working in MySQL 5.6 compatibility mode is ON/OFF
+      - new ```show_compatibility_56``` - show is MySQL engine running in MySQL 5.6 compatibility mode is ON/OFF
       - new ```Threads_cached``` - the number of threads in the thread cache
       - mew ```Threads_running``` - the number of threads that are not sleeping
     - Screens:
