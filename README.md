@@ -56,6 +56,16 @@
       - new ```SVC::MySQL::threads``` which combines ```SVC::MySQL::threads``` graph and ```Connections``` simple greph
     - Triggers:
       - new ```SVC::MySQL::version``` has been changed (severity: Not classified)
+  - **Service Zabbix Proxy**
+    - Applications:
+      - new ```SVC::Zabbix Proxy::proc```
+    - Items:
+      - delete items which have been by mistake copied from Service Zabbix Server template
+        - wcache::text::free
+        - wcache::text::total
+        - wcache::text::used
+      - move ```Processes::``` items to ```SVC::Zabbix Proxy::proc``` Application
+      - rename all ```Processes::$4::$2``` to ```proc::$4::$2``` and remove quotes on all those items second key parameter (to allow easy migration from standard "Template App Zabbix Proxy" template)
   - **Service Zabbix Server**
     - Applications:
       - rename ```SVC::Zabbix Server::process::busy``` to ```SVC::Zabbix Server::proc```
