@@ -8,4 +8,4 @@ Base Zabbix proxy service monitoring template.
   - initial version.
 
 #### Notes:
-* Host with this template needs to be monitored over proxy which will be monitored.
+Host with this template must be monitored over proxy which will be monitored.

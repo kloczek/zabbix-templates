@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-10T04:56:50Z</date>
+  <date>2018-05-06T08:20:52Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,11 +13,11 @@
       <name>Service Zabbix Proxy</name>
       <description>Base Zabbix proxy service monitoring template.&#13;
 &#13;
-Version: 1.0.0 (2017-09-09)&#13;
+Version: 1.0.4 (2018-05-05)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Proxy&#13;
 &#13;
 Notes:&#13;
-* Host with this template needs to be monitored over proxy which will be monitored.</description>
+* Host with this template must be monitored over proxy which will be monitored.</description>
       <groups>
         <group>
           <name>Templates</name>
@@ -2586,8 +2586,8 @@ Possible:&#13;
   <graphs>
     <graph>
       <name>SVC::zabbix_proxy::cache usage %</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>
@@ -2642,8 +2642,8 @@ Possible:&#13;
     </graph>
     <graph>
       <name>SVC::zabbix_proxy::database items</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>
@@ -2686,8 +2686,8 @@ Possible:&#13;
     </graph>
     <graph>
       <name>SVC::zabbix_proxy::data gathering process busy %</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -2778,8 +2778,8 @@ Possible:&#13;
     </graph>
     <graph>
       <name>SVC::zabbix_proxy::history buffers % free</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>
@@ -2810,8 +2810,8 @@ Possible:&#13;
     </graph>
     <graph>
       <name>SVC::zabbix_proxy::internal process busy %</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -2878,8 +2878,8 @@ Possible:&#13;
     </graph>
     <graph>
       <name>SVC::zabbix_proxy::items queued</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>
@@ -2958,8 +2958,8 @@ Possible:&#13;
     </graph>
     <graph>
       <name>SVC::zabbix_proxy::VMWare Collector buffers % free</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>0</show_work_period>
