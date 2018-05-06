@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-05T17:29:50Z</date>
+  <date>2018-05-06T13:27:19Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -28,7 +28,7 @@ Notes:&#13;
           <name>SVC::Zabbix Server</name>
         </application>
         <application>
-          <name>SVC::Zabbix Server::process::busy</name>
+          <name>SVC::Zabbix Server::proc</name>
         </application>
         <application>
           <name>SVC::Zabbix Server::queue</name>
@@ -191,7 +191,7 @@ Notes:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server::process::busy</name>
+              <name>SVC::Zabbix Server::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -233,7 +233,7 @@ Notes:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server::process::busy</name>
+              <name>SVC::Zabbix Server::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -274,7 +274,7 @@ Notes:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server::process::busy</name>
+              <name>SVC::Zabbix Server::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -315,7 +315,7 @@ Notes:&#13;
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server::process::busy</name>
+              <name>SVC::Zabbix Server::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -357,7 +357,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server::process::busy</name>
+              <name>SVC::Zabbix Server::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -398,7 +398,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server::process::busy</name>
+              <name>SVC::Zabbix Server::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -439,7 +439,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server::process::busy</name>
+              <name>SVC::Zabbix Server::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -480,7 +480,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server::process::busy</name>
+              <name>SVC::Zabbix Server::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -521,7 +521,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server::process::busy</name>
+              <name>SVC::Zabbix Server::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -562,7 +562,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server::process::busy</name>
+              <name>SVC::Zabbix Server::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -603,7 +603,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server::process::busy</name>
+              <name>SVC::Zabbix Server::proc</name>
             </application>
           </applications>
           <valuemap/>
@@ -644,7 +644,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server::process::busy</name>
+              <name>SVC::Zabbix Server::proc</name>
             </application>
           </applications>
           <valuemap/>

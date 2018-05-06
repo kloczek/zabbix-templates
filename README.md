@@ -56,6 +56,9 @@
       - new ```SVC::MySQL::threads``` which combines ```SVC::MySQL::threads``` graph and ```Connections``` simple greph
     - Triggers:
       - new ```SVC::MySQL::version``` has been changed (severity: Not classified)
+  - **Service Zabbix Server**
+    - Applications:
+      - rename ```SVC::Zabbix Server::process::busy``` to ```SVC::Zabbix Server::proc```
   - **Service Nginx**
     - new template
 ***
