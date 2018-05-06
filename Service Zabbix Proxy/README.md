@@ -15,7 +15,7 @@ Base Zabbix proxy service monitoring template.
       - wcache::text::total
       - wcache::text::used
     - move ```Processes::``` items to ```SVC::Zabbix Proxy::proc``` Application
-    - rename all ```Processes::$4::$2``` to ``proc::$4::$2``` and remove quotes on all those items second key parameter (to allow easy migration from standard "emplate App Zabbix Proxy" template)
+    - rename all ```Processes::$4::$2``` to ```proc::$4::$2``` and remove quotes on all those items second key parameter (to allow easy migration from standard "emplate App Zabbix Proxy" template)
 - 1.0.0 (2017-09-09):
   - initial version.
 
