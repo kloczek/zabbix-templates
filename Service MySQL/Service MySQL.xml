@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-05T15:49:34Z</date>
+  <date>2018-05-06T14:07:57Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -462,90 +462,6 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <applications>
             <application>
               <name>SVC::MySQL::cfg</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>Threads_cached</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>system.run[{$MYSQL_CMD} "SELECT variable_name FROM performance_schema.global_status where variable_name='Threads_cached';",]</key>
-          <delay>20s</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>threads</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>The number of threads in the thread cache.&#13;
-&#13;
-This variable is not meaningful in the embedded server (libmysqld) and as of MySQL 5.7.2 is no longer visible within the embedded server.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::MySQL::threads</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>Threads_running</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>system.run[{$MYSQL_CMD} "SELECT variable_name FROM performance_schema.global_status WHERE variable_name='Threads_running';",]</key>
-          <delay>20s</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>threads</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>The number of threads that are not sleeping.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::MySQL::threads</name>
             </application>
           </applications>
           <valuemap/>
@@ -2469,6 +2385,49 @@ It does not count COM_PING or COM_STATISTICS commands.</description>
           <master_item/>
         </item>
         <item>
+          <name>Threads_cached</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>system.run[{$MYSQL_CMD} "SELECT variable_value FROM performance_schema.global_status where variable_name='Threads_cached';",]</key>
+          <delay>20s</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>threads</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>The number of threads in the thread cache.&#13;
+&#13;
+This variable is not meaningful in the embedded server (libmysqld) and as of MySQL 5.7.2 is no longer visible within the embedded server.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::MySQL::threads</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
           <name>Threads_connected</name>
           <type>7</type>
           <snmp_community/>
@@ -2538,6 +2497,47 @@ It does not count COM_PING or COM_STATISTICS commands.</description>
           <privatekey/>
           <port/>
           <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::MySQL::threads</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>Threads_running</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>system.run[{$MYSQL_CMD} "SELECT variable_value FROM performance_schema.global_status WHERE variable_name='Threads_running';",]</key>
+          <delay>20s</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>threads</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>The number of threads that are not sleeping.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -4310,7 +4310,7 @@ Possible restart has been done.</description>
           <type>0</type>
           <item>
             <host>Service MySQL</host>
-            <key>system.run[{$MYSQL_CMD} "SELECT variable_name FROM performance_schema.global_status WHERE variable_name='Threads_running';",]</key>
+            <key>system.run[{$MYSQL_CMD} "SELECT variable_value FROM performance_schema.global_status WHERE variable_name='Threads_running';",]</key>
           </item>
         </graph_item>
         <graph_item>
@@ -4322,7 +4322,7 @@ Possible restart has been done.</description>
           <type>0</type>
           <item>
             <host>Service MySQL</host>
-            <key>system.run[{$MYSQL_CMD} "SELECT variable_name FROM performance_schema.global_status where variable_name='Threads_cached';",]</key>
+            <key>system.run[{$MYSQL_CMD} "SELECT variable_value FROM performance_schema.global_status where variable_name='Threads_cached';",]</key>
           </item>
         </graph_item>
       </graph_items>
