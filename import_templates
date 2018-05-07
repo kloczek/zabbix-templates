@@ -2,6 +2,8 @@
 
 . ../zapish/zapish.inc
 
+echo "not finished"; exit
+
 for i in \
 	"ICMP" \
 	"MIB/F5-BIGIP-LOCAL-MIB"  \
