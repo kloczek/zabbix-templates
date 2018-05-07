@@ -19,6 +19,7 @@ MySQL engine monitoring over Zabbix agent.
     - new ```show_compatibility_56``` - show is MySQL engine running in MySQL 5.6 compatibility mode is ON/OFF
     - new ```Threads_cached``` - the number of threads in the thread cache
     - mew ```Threads_running``` - the number of threads that are not sleeping
+    - rewrite most of the items SQL queries to use uppercase SQL keywords and lowercase for table names and row names (this will cause problems with imprt new template but I need to standarize thuis before first officially announced release of the templates)
   - Screens:
     - new ```SVC::MySQL::thread```s which combines ```SVC::MySQL::threads``` graph and ```Connections``` simple greph
   - Triggers:
