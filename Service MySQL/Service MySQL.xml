@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-07T14:45:44Z</date>
+  <date>2018-05-07T15:38:34Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -3307,7 +3307,7 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
-              <key>system.run[{$MYSQL_CMD} "select SUM(DATA_LENGTH) from information_schema.TABLES where TABLE_SCHEMA='{#DB}';",]</key>
+              <key>system.run[{$MYSQL_CMD} "SELECT SUM(data_length) FROM information_schema.tables WHERE table_schema='{#DB}';",]</key>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
@@ -3349,7 +3349,7 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
-              <key>system.run[{$MYSQL_CMD} "select SUM(INDEX_LENGTH) from information_schema.TABLES where TABLE_SCHEMA='{#DB}';",]</key>
+              <key>system.run[{$MYSQL_CMD} "SELECT SUM(index_length) FROM information_schema.tables WHERE table_schema='{#DB}';",]</key>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
@@ -3416,7 +3416,7 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
                   <type>0</type>
                   <item>
                     <host>Service MySQL</host>
-                    <key>system.run[{$MYSQL_CMD} "select SUM(DATA_LENGTH) from information_schema.TABLES where TABLE_SCHEMA='{#DB}';",]</key>
+                    <key>system.run[{$MYSQL_CMD} "SELECT SUM(data_length) FROM information_schema.tables WHERE table_schema='{#DB}';",]</key>
                   </item>
                 </graph_item>
                 <graph_item>
@@ -3428,7 +3428,7 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
                   <type>0</type>
                   <item>
                     <host>Service MySQL</host>
-                    <key>system.run[{$MYSQL_CMD} "select SUM(INDEX_LENGTH) from information_schema.TABLES where TABLE_SCHEMA='{#DB}';",]</key>
+                    <key>system.run[{$MYSQL_CMD} "SELECT SUM(index_length) FROM information_schema.tables WHERE table_schema='{#DB}';",]</key>
                   </item>
                 </graph_item>
               </graph_items>
