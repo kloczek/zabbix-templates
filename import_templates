@@ -51,6 +51,11 @@ for i in \
 			"")" \
 		)"
 
+		# - extract from file template name
+		# - check is template name is in zabbix
+		# - if no -> import template
+		# - if no -> backup current template then import new one
+		
 		# Create template directory if it does not exiest
 		if [ ! -d "${i}" ]; then
 			mkdir -p "${i}"
