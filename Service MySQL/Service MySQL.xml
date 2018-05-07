@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-06T15:47:23Z</date>
+  <date>2018-05-07T09:59:19Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -426,53 +426,6 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
               <params/>
             </step>
           </preprocessing>
-          <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>binlog_format</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>system.run[{$MYSQL_CMD} "SELECT variable_value FROM performance_schema.global_status WHERE variable_name='binlog_format'",]</key>
-          <delay>1h</delay>
-          <history>2w</history>
-          <trends>0</trends>
-          <status>0</status>
-          <value_type>1</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>Default: STATEMENT&#13;
-&#13;
-This variable sets the binary logging format, and can be any one of STATEMENT, ROW, or MIXED.&#13;
-&#13;
-- STATEMENT causes logging to be statement based&#13;
-- ROW causes logging to be row based&#13;
-- MIXED causes logging to use mixed format</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::MySQL::cfg</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
           <jmx_endpoint/>
           <master_item/>
         </item>
@@ -2298,47 +2251,6 @@ It does not count COM_PING or COM_STATISTICS commands.</description>
           <master_item/>
         </item>
         <item>
-          <name>show_compatibility_56</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>system.run[{$MYSQL_CMD} "SELECT variable_value FROM performance_schema.global_status WHERE variable_name='show_compatibility_56'",]</key>
-          <delay>1h</delay>
-          <history>2w</history>
-          <trends>0</trends>
-          <status>0</status>
-          <value_type>1</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>When show_compatibility_56 is OFF, compatibility with MySQL 5.6 is disabled and several changes result.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::MySQL::cfg</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
           <name>Slow_queries</name>
           <type>7</type>
           <snmp_community/>
@@ -2583,6 +2495,53 @@ This variable is not meaningful in the embedded server (libmysqld) and as of MyS
           <applications>
             <application>
               <name>SVC::MySQL</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>binlog_format</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>system.run[{$MYSQL_CMD} "SELECT variable_value FROM performance_schema.global_variables WHERE variable_name='binlog_format'",]</key>
+          <delay>1h</delay>
+          <history>2w</history>
+          <trends>0</trends>
+          <status>0</status>
+          <value_type>1</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Default: STATEMENT&#13;
+&#13;
+This variable sets the binary logging format, and can be any one of STATEMENT, ROW, or MIXED.&#13;
+&#13;
+- STATEMENT causes logging to be statement based&#13;
+- ROW causes logging to be row based&#13;
+- MIXED causes logging to use mixed format</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::MySQL::cfg</name>
             </application>
           </applications>
           <valuemap/>
@@ -3100,6 +3059,47 @@ Possible values:&#13;
 - 0:	Do not cache results in or retrieve results from the query cache. Note that this does not deallocate the query cache buffer. To do that, you should set query_cache_size to 0&#13;
 - 1:	Cache all cacheable query results except for those that begin with SELECT SQL_NO_CACHE&#13;
 - 2:	Cache results only for cacheable queries that begin with SELECT SQL_CACHE</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::MySQL::cfg</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>show_compatibility_56</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>system.run[{$MYSQL_CMD} "SELECT variable_value FROM performance_schema.global_variables WHERE variable_name='show_compatibility_56'",]</key>
+          <delay>1h</delay>
+          <history>2w</history>
+          <trends>0</trends>
+          <status>0</status>
+          <value_type>1</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>When show_compatibility_56 is OFF, compatibility with MySQL 5.6 is disabled and several changes result.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -3831,7 +3831,7 @@ SELECT variable_value FROM information_schema.global_status WHERE variable_name 
   </templates>
   <triggers>
     <trigger>
-      <expression>{Service MySQL:system.run[{$MYSQL_CMD} "SELECT variable_value FROM performance_schema.global_status WHERE variable_name='show_compatibility_56'",].str(OFF)}=1</expression>
+      <expression>{Service MySQL:system.run[{$MYSQL_CMD} "SELECT variable_value FROM performance_schema.global_variables WHERE variable_name='show_compatibility_56'",].str(OFF)}=1</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::MySQL::cfg::show_compatibility_56=OFF</name>
