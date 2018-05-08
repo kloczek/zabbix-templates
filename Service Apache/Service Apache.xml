@@ -567,8 +567,8 @@ Possible values:&#13;
   <graphs>
     <graph>
       <name>SVC::Apache::processes</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -599,8 +599,8 @@ Possible values:&#13;
     </graph>
     <graph>
       <name>SVC::Apache::requests</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -631,8 +631,8 @@ Possible values:&#13;
     </graph>
     <graph>
       <name>SVC::Apache::workers</name>
-      <width>900</width>
-      <height>400</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>

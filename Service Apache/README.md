@@ -5,6 +5,8 @@ Apache service monitoring template using zabbix active agent items.
 
 #### Changelog:
 - 1.0.2 (WIP)
+  - Graphs:
+    - changed resolution of all graphs to 1200x300
   - Items:
     - rename s/Network::service::$1/SVC::$1/
   - Triggers:
