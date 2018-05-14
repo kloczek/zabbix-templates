@@ -83,7 +83,7 @@ ut I need to standarize thuis before first officially announced release of the t
   - IP-MIB
   - SNMP-MPD-MIB
   - SNMP-USER-BASED-SM-MIB
-  - SNMPv2-MIB
+  - [SNMPv2-MIB](https://github.com/kloczek/zabbix-templates/tree/master/MIB/SNMPv2-MIB)
   - SNMP-VIEW-BASED-ACM-MIB
   - UDP-MIB
 - [OS Linux](https://github.com/kloczek/zabbix-templates/tree/master/OS%20Linux)
