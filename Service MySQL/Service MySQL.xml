@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-07T15:38:34Z</date>
+  <date>2018-05-14T22:42:28Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -3831,10 +3831,10 @@ SELECT variable_value FROM information_schema.global_status WHERE variable_name 
   </templates>
   <triggers>
     <trigger>
-      <expression>{Service MySQL:system.run[{$MYSQL_CMD} "SELECT variable_value FROM performance_schema.global_variables WHERE variable_name='show_compatibility_56'",].str(OFF)}=1</expression>
+      <expression>{Service MySQL:system.run[{$MYSQL_CMD} "SELECT variable_value FROM performance_schema.global_variables WHERE variable_name='show_compatibility_56'",].str(ON)}=1</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>SVC::MySQL::cfg::show_compatibility_56=OFF</name>
+      <name>SVC::MySQL::cfg::show_compatibility_56=ON</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url>https://dev.mysql.com/doc/refman/5.7/en/performance-schema-variable-table-migration.html</url>
