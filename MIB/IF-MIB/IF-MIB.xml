@@ -63,8 +63,8 @@ Notes:</description>
               </condition>
             </conditions>
           </filter>
-          <lifetime>1d</lifetime>
-          <description>A textual string containing information about the interface.</description>
+          <lifetime>0d</lifetime>
+          <description>Discovery item information about the interfaces.</description>
           <item_prototypes>
             <item_prototype>
               <name>ifAdminStatus.$1</name>
