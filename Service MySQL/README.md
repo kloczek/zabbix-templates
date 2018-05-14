@@ -24,7 +24,7 @@ MySQL engine monitoring over Zabbix agent.
     - new ```SVC::MySQL::thread```s which combines ```SVC::MySQL::threads``` graph and ```Connections``` simple greph
   - Triggers:
     - new ```SVC::MySQL::version``` has been changed (severity: Not classified)
-    - new ```SVC::MySQL::cfg::show_compatibility_56=ON``` (Severity: High)
+    - new ```SVC::MySQL::cfg::show_compatibility_56=ON``` (severity: High)
 - 1.0.3 (2017-11-30):
   - fix: added missing "^" in MySQL::DB filter which has been causing not filter off information_schema, mysql, performance_schema and sys databases
   - template Changelog no longer maintained in template description
