@@ -18,6 +18,12 @@
   - **ICMP**
     - Screens: 
       - new ```NET::ICMP```
+  - **SNMPv2-MIB**
+    - Items:
+      - changed units in update interval from number of seconds to number of m/h/d
+    - Graphs:
+      - new normal graph SNMPv2-MIB::snmpPkts with SNMPv2-MIB::snmp{in,Out}Pkts OIDs presenting rate
+        of SNMP requests/replies
   - **OS Limnux**
     - Items:
       - added ```MEM::``` items descriptions
