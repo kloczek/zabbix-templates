@@ -69,10 +69,19 @@ ut I need to standarize thuis before first officially announced release of the t
     - Applications:
       - new ```SVC::Zabbix Proxy::proc```
     - Items:
+      - new:
+        - ```proc::busy::configuration syncer```
+        - ```proc::busy::data sender```
+        - ```proc::busy::heartbeat sender```
+        - ```proc::busy::ipmi manager```
+        - ```proc::busy::ipmi poller```
+        - ```proc::busy::java poller```
+        - ```proc::busy::snmp trapper```
+        - ```wcache::index::pfree```
       - delete items which have been by mistake copied from Service Zabbix Server template
-        - wcache::text::free
-        - wcache::text::total
-        - wcache::text::used
+        - ```wcache::text::free```
+        - ```wcache::text::total```
+        - ```wcache::text::used```
       - move ```Processes::``` items to ```SVC::Zabbix Proxy::proc``` Application
       - rename all ```Processes::$4::$2``` to ```proc::$4::$2``` and remove quotes on all those items second key parameter (to allow easy migration from standard "Template App Zabbix Proxy" template)
   - **Service Zabbix Server**
