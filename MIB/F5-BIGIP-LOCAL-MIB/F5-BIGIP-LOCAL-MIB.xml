@@ -11,7 +11,7 @@
     <template>
       <template>F5-BIGIP-LOCAL-MIB</template>
       <name>F5-BIGIP-LOCAL-MIB</name>
-      <description>Version: 1.0.1 (2017-11-22)&#13;
+      <description>Version: 1.0.4 (2018-05-05)&#13;
 OIDs tree: http://support.ipmonitor.com/mibs/F5-BIGIP-LOCAL-MIB/tree.aspx&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/F5-BIGIP-LOCAL-MIB&#13;
 &#13;
@@ -166,8 +166,8 @@ Notes:</description>
           <graph_prototypes>
             <graph_prototype>
               <name>POOL::{#SNMPVALUE} members</name>
-              <width>900</width>
-              <height>400</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
