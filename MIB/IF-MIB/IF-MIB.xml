@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-20T14:00:43Z</date>
+  <date>2018-05-20T14:07:24Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -28,7 +28,7 @@ Notes:</description>
       <items/>
       <discovery_rules>
         <discovery_rule>
-          <name>interface</name>
+          <name>interfaces</name>
           <type>4</type>
           <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
           <snmp_oid>discovery[{#IFDESCR},IF-MIB::ifDescr,{#IFOPERSTATUS},IF-MIB::ifOperStatus]</snmp_oid>
@@ -110,7 +110,7 @@ Testing(3) state indicates that no operational packets can be passed. When a man
               <jmx_endpoint/>
               <application_prototypes>
                 <application_prototype>
-                  <name>IF-MIB::interface::{#IFDESCR}</name>
+                  <name>IF-MIB::interfaces::{#IFDESCR}</name>
                 </application_prototype>
               </application_prototypes>
               <master_item_prototype/>
@@ -158,7 +158,7 @@ Some agents may support write-access only for interfaces having particular value
               <jmx_endpoint/>
               <application_prototypes>
                 <application_prototype>
-                  <name>IF-MIB::interface::{#IFDESCR}</name>
+                  <name>IF-MIB::interfaces::{#IFDESCR}</name>
                 </application_prototype>
               </application_prototypes>
               <master_item_prototype/>
@@ -213,7 +213,7 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
               <jmx_endpoint/>
               <application_prototypes>
                 <application_prototype>
-                  <name>IF-MIB::interface::{#IFDESCR}</name>
+                  <name>IF-MIB::interfaces::{#IFDESCR}</name>
                 </application_prototype>
               </application_prototypes>
               <master_item_prototype/>
@@ -269,7 +269,7 @@ If LLD items with ifHCOutOctets will be in unsupported on exact device ifHCOutOc
               <jmx_endpoint/>
               <application_prototypes>
                 <application_prototype>
-                  <name>IF-MIB::interface::{#IFDESCR}</name>
+                  <name>IF-MIB::interfaces::{#IFDESCR}</name>
                 </application_prototype>
               </application_prototypes>
               <master_item_prototype/>
@@ -325,7 +325,7 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
               <jmx_endpoint/>
               <application_prototypes>
                 <application_prototype>
-                  <name>IF-MIB::interface::{#IFDESCR}</name>
+                  <name>IF-MIB::interfaces::{#IFDESCR}</name>
                 </application_prototype>
               </application_prototypes>
               <master_item_prototype/>
@@ -372,7 +372,7 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
               <jmx_endpoint/>
               <application_prototypes>
                 <application_prototype>
-                  <name>IF-MIB::interface::{#IFDESCR}</name>
+                  <name>IF-MIB::interfaces::{#IFDESCR}</name>
                 </application_prototype>
               </application_prototypes>
               <master_item_prototype/>
@@ -417,7 +417,7 @@ The testing(3) state indicates that no operational packets can be passed. If ifA
               <jmx_endpoint/>
               <application_prototypes>
                 <application_prototype>
-                  <name>IF-MIB::interface::{#IFDESCR}</name>
+                  <name>IF-MIB::interfaces::{#IFDESCR}</name>
                 </application_prototype>
               </application_prototypes>
               <master_item_prototype/>
@@ -473,7 +473,7 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
               <jmx_endpoint/>
               <application_prototypes>
                 <application_prototype>
-                  <name>IF-MIB::interface::{#IFDESCR}</name>
+                  <name>IF-MIB::interfaces::{#IFDESCR}</name>
                 </application_prototype>
               </application_prototypes>
               <master_item_prototype/>
