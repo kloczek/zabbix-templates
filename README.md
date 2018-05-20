@@ -109,7 +109,7 @@ ut I need to standarize thuis before first officially announced release of the t
 - MIB
   - F5-BIGIP-LOCAL-MIB
   - F5-BIGIP-SYSTEM-MIB
-  - IF-MIB
+  - [IF-MIB](https://github.com/kloczek/zabbix-templates/tree/master/MIB/IF-MIB)
   - IP-MIB
   - SNMP-MPD-MIB
   - SNMP-USER-BASED-SM-MIB
