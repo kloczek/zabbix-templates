@@ -10,7 +10,7 @@ The IF-MIB is an updated version of MIB-II's ifTable, and incorporates the exten
 - 1.0.4: (2018-05-05):
   - Applications:
     - new prototype for all ```interface``` LLD prototype items
-      ```IF-MIB::interface {#IFDESCR}```
+      ```IF-MIB::interface::{#IFDESCR}```
   - Graphs:
     - change resolution of all graphs to 1200x300
   - LLDs:
