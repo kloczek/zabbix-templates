@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-10T04:56:43Z</date>
+  <date>2018-05-20T13:43:44Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -14,7 +14,7 @@
       <description>The MIB bsed template describes generic objects for network interface sub-layers.&#13;
 The IF-MIB is an updated version of MIB-II's ifTable, and incorporates the extensions defined in RFC 1229.&#13;
 &#13;
-Version: 1.0.2 (2017-11-22)&#13;
+Version: 1.0.4 (2018-05-05)&#13;
 OIDs tree: http://support.ipmonitor.com/mibs/IF-MIB/tree.aspx&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/MIB/IF-MIB&#13;
 &#13;
@@ -28,7 +28,7 @@ Notes:</description>
       <items/>
       <discovery_rules>
         <discovery_rule>
-          <name>NIC</name>
+          <name>interface</name>
           <type>4</type>
           <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
           <snmp_oid>discovery[{#IFDESCR},IF-MIB::ifDescr,{#IFOPERSTATUS},IF-MIB::ifOperStatus]</snmp_oid>
@@ -505,9 +505,9 @@ The testing(3) state indicates that no operational packets can be passed.</descr
           </trigger_prototypes>
           <graph_prototypes>
             <graph_prototype>
-              <name>NIC::{#IFDESCR}::In/Out 32bit</name>
-              <width>900</width>
-              <height>400</height>
+              <name>NIC::{#IFDESCR}::IfOctets</name>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -549,9 +549,9 @@ The testing(3) state indicates that no operational packets can be passed.</descr
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>NIC::{#IFDESCR}::In/Out 64bit</name>
-              <width>900</width>
-              <height>400</height>
+              <name>NIC::{#IFDESCR}::IifHCOctets</name>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -622,7 +622,7 @@ The testing(3) state indicates that no operational packets can be passed.</descr
               <dynamic>0</dynamic>
               <sort_triggers>0</sort_triggers>
               <resource>
-                <name>NIC::{#IFDESCR}::In/Out 32bit</name>
+                <name>NIC::{#IFDESCR}::IfOctets</name>
                 <host>IF-MIB</host>
               </resource>
               <max_columns>1</max_columns>
