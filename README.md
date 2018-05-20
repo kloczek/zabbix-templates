@@ -25,7 +25,7 @@
           ```IF-MIB::interfaces::{#IFDESCR}```
       - LLDs:
         - new ```interfaces``` LLD
-          discovery[{#IFDESCR},IF-MIB::ifDescr,{#IFOPERSTATUS},IF-MIB::ifOperStatus]
+          ```discovery[{#IFDESCR},IF-MIB::ifDescr,{#IFOPERSTATUS},IF-MIB::ifOperStatus]```
           and added filter to remove from the list all interfaces with
           ifOperStatus=Down state. Switch from {#SNMPVALUE} to {#IFDESCR} as macro
           indexing all prototype items

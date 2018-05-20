@@ -15,7 +15,7 @@ The IF-MIB is an updated version of MIB-II's ifTable, and incorporates the exten
     - change resolution of all graphs to 1200x300
   - LLDs:
     - new ```interfaces``` LLD
-      discovery[{#IFDESCR},IF-MIB::ifDescr,{#IFOPERSTATUS},IF-MIB::ifOperStatus]
+      ```discovery[{#IFDESCR},IF-MIB::ifDescr,{#IFOPERSTATUS},IF-MIB::ifOperStatus]```
       and added filter to remove from the list all interfaces with
       ifOperStatus=Down state. Switch from {#SNMPVALUE} to {#IFDESCR} as macro
       indexing all prototype items
