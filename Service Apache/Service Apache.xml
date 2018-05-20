@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-04-28T22:06:51Z</date>
+  <date>2018-05-20T07:56:26Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,7 +13,7 @@
       <name>Service Apache</name>
       <description>Apache service monitoring template using zabbix active agent items.&#13;
 &#13;
-Version : 1.0.1 (2017-12-01)&#13;
+Version : 1.0.1 (2018-05-05)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Apache&#13;
 &#13;
 Notes:&#13;
@@ -516,26 +516,10 @@ Possible values:&#13;
   </templates>
   <triggers>
     <trigger>
-      <expression>{Service Apache:net.tcp.service[http,,{$HTTP_SERVICE_PORT}].max(#3)}=0</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SVC:httpd:Server is down</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
       <expression>{Service Apache:proc.num[httpd].min(#3)}&gt;100</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>SVC:httpd:Too many httpd processes running (LV={ITEM.LASTVALUE})</name>
+      <name>PROC::httpd::too many processes running ({ITEM.LASTVALUE} processes)</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
@@ -551,13 +535,29 @@ Possible values:&#13;
       <expression>{Service Apache:proc.num[httpd].max(#8)}=0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>SYS::processes::httpd is not running</name>
+      <name>PROC::httpd is not running</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
       <status>0</status>
       <priority>3</priority>
       <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{Service Apache:net.tcp.service[http,,{$HTTP_SERVICE_PORT}].max(#3)}=0</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::http tcp/{$HTTP_SERVICE_PORT} is DOWN</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description>Nothing listens on http tcp/{$HTTP_SERVICE_PORT} port or traffic on this port is filtered by firewall.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>

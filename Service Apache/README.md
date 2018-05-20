@@ -1,16 +1,16 @@
-#### Version: 1.0.1 (2017-12-01)
+#### Version: 1.0.4 (2017-05-05)
 
 #### Description:
 Apache service monitoring template using zabbix active agent items.
 
 #### Changelog:
-- 1.0.2 (WIP)
+- 1.0.4 (2018-05-05)
   - Graphs:
     - changed resolution of all graphs to 1200x300
   - Items:
-    - rename s/Network::service::$1/SVC::$1/
+    - rename s/Network::service::$1/```SVC::$1```/
   - Triggers:
-    - rename s/SVC:httpd:Server is down/SVC::http::Service is down
+    - rename s/SVC:httpd:Server is down/```SVC::http tcp/{$HTTP_SERVICE_PORT} is DOWN```/
 - 1.0.1 (2017-12-01):
   - channge default history perid to 2w
   - moved some parts of the template description to README.md

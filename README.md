@@ -108,7 +108,7 @@ ut I need to standarize thuis before first officially announced release of the t
 - SNMP Devices
   - BIG-IP 5000
   - DSL-3782
-- Service Apache
+- [Service Apache](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Apache)
 - [Service MySQL](https://github.com/kloczek/zabbix-templates/tree/master/Service%20MySQL)
 - [Service Nginx](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nginx)
 - [Service Zabbix Agent](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Agent)
