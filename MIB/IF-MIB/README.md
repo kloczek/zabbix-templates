@@ -20,8 +20,8 @@ The IF-MIB is an updated version of MIB-II's ifTable, and incorporates the exten
       ifOperStatus=Down state. Switch from {#SNMPVALUE} to {#IFDESCR} as macro
       indexing all prototype items
   - Screens:
-    - new IF-MIB::ifHCOctets
-    - new IF-MIB::ifOctets
+    - new ```IF-MIB::ifHCOctets```
+    - new ```IF-MIB::ifOctets```
 - 1.0.1 (2017-11-22):
   - channge default history perid to 2w
   - better temlate description

@@ -8,7 +8,7 @@
 - 1.0.4 (2018-05-05):
   - Graphs:
     - change resolution to 1200x300
-    - new normal graph SNMPv2-MIB::snmpPkts with SNMPv2-MIB::snmp{in,Out}Pkts OIDs presenting rate
+    - new normal graph ```SNMPv2-MIB::snmpPkts``` with SNMPv2-MIB::snmp{in,Out}Pkts OIDs presenting rate
       of SNMP requests/replies
   - Items:
      - changed units in update interval from number of seconds to number of m/h/d
