@@ -18,12 +18,26 @@
   - **ICMP**
     - Screens: 
       - new ```NET::ICMP```
-  - **SNMPv2-MIB**
-    - Items:
-      - changed units in update interval from number of seconds to number of m/h/d
-    - Graphs:
-      - new normal graph SNMPv2-MIB::snmpPkts with SNMPv2-MIB::snmp{in,Out}Pkts OIDs presenting rate
-        of SNMP requests/replies
+  - **MIB**
+    - **IF-MIB**
+      - Applications:
+        - new prototype for all ```interfaces``` LLD prototype items
+          ```IF-MIB::interfaces::{#IFDESCR}```
+      - LLDs:
+        - new ```interfaces``` LLD
+          discovery[{#IFDESCR},IF-MIB::ifDescr,{#IFOPERSTATUS},IF-MIB::ifOperStatus]
+          and added filter to remove from the list all interfaces with
+          ifOperStatus=Down state. Switch from {#SNMPVALUE} to {#IFDESCR} as macro
+          indexing all prototype items
+      - Screens:
+        - new IF-MIB::ifHCOctets
+        - new IF-MIB::ifOctets
+    - **SNMPv2-MIB**
+      - Items:
+        - changed units in update interval from number of seconds to number of m/h/d
+      - Graphs:
+        - new normal graph SNMPv2-MIB::snmpPkts with SNMPv2-MIB::snmp{in,Out}Pkts OIDs presenting rate
+          of SNMP requests/replies
   - **OS Limnux**
     - Items:
       - added ```MEM::``` items descriptions
