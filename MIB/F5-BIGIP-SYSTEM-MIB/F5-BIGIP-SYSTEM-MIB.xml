@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-01T15:34:14Z</date>
+  <date>2018-05-14T07:06:36Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -23,7 +23,7 @@ Notes:</description>
       </groups>
       <applications>
         <application>
-          <name>F5-BIGIP-SYSTEM-MIB Memory</name>
+          <name>MEM</name>
         </application>
         <application>
           <name>sysGeneral.sysGeneralHwName</name>
@@ -112,7 +112,7 @@ Notes:</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>F5-BIGIP-SYSTEM-MIB Memory</name>
+              <name>MEM</name>
             </application>
             <application>
               <name>sysGlobalStats.sysGlobalTmmStat</name>
@@ -156,7 +156,7 @@ Notes:</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>F5-BIGIP-SYSTEM-MIB Memory</name>
+              <name>MEM</name>
             </application>
             <application>
               <name>sysGlobalStats.sysGlobalTmmStat</name>
@@ -200,7 +200,7 @@ Notes:</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>F5-BIGIP-SYSTEM-MIB Memory</name>
+              <name>MEM</name>
             </application>
             <application>
               <name>sysGlobalStats.sysGlobalStat</name>
@@ -244,7 +244,7 @@ Notes:</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>F5-BIGIP-SYSTEM-MIB Memory</name>
+              <name>MEM</name>
             </application>
             <application>
               <name>sysGlobalStats.sysGlobalStat</name>
