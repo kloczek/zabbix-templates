@@ -10,9 +10,10 @@ for i in \
 	"MIB/F5-BIGIP-SYSTEM-MIB" \
 	"MIB/IF-MIB" \
 	"MIB/IP-MIB" \
+	"MIB/SNMP-MPD-MIB" \
 	"MIB/SNMP-USER-BASED-SM-MIB" \
-	"MIB/SNMPv2-MIB" \
 	"MIB/SNMP-VIEW-BASED-ACM-MIB" \
+	"MIB/SNMPv2-MIB" \
 	"MIB/UDP-MIB" \
 	"OS Linux" \
 	"OS Solaris" \
