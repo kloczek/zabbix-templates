@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-20T21:55:40Z</date>
+  <date>2018-05-21T16:22:36Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -25,10 +25,10 @@ Notes:</description>
       </groups>
       <applications>
         <application>
-          <name>mib-2.system</name>
+          <name>SNMPv2-MIB::snmp</name>
         </application>
         <application>
-          <name>mib-2.system.snmp</name>
+          <name>SNMPv2-MIB::system</name>
         </application>
       </applications>
       <items>
@@ -64,7 +64,7 @@ Notes:</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>mib-2.system.snmp</name>
+              <name>SNMPv2-MIB::snmp</name>
             </application>
           </applications>
           <valuemap/>
@@ -110,7 +110,7 @@ Notes:</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>mib-2.system.snmp</name>
+              <name>SNMPv2-MIB::snmp</name>
             </application>
           </applications>
           <valuemap/>
@@ -156,7 +156,7 @@ Notes:</description>
           <inventory_link>23</inventory_link>
           <applications>
             <application>
-              <name>mib-2.system</name>
+              <name>SNMPv2-MIB::system</name>
             </application>
           </applications>
           <valuemap/>
@@ -197,7 +197,7 @@ Notes:</description>
           <inventory_link>6</inventory_link>
           <applications>
             <application>
-              <name>mib-2.system</name>
+              <name>SNMPv2-MIB::system</name>
             </application>
           </applications>
           <valuemap/>
@@ -238,7 +238,7 @@ Notes:</description>
           <inventory_link>24</inventory_link>
           <applications>
             <application>
-              <name>mib-2.system</name>
+              <name>SNMPv2-MIB::system</name>
             </application>
           </applications>
           <valuemap/>
@@ -279,7 +279,7 @@ Notes:</description>
           <inventory_link>3</inventory_link>
           <applications>
             <application>
-              <name>mib-2.system</name>
+              <name>SNMPv2-MIB::system</name>
             </application>
           </applications>
           <valuemap/>
@@ -321,7 +321,7 @@ This value is allocated within the SMI enterprises subtree (1.3.6.1.4.1) and pro
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>mib-2.system</name>
+              <name>SNMPv2-MIB::system</name>
             </application>
           </applications>
           <valuemap/>
@@ -362,7 +362,7 @@ This value is allocated within the SMI enterprises subtree (1.3.6.1.4.1) and pro
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>mib-2.system</name>
+              <name>SNMPv2-MIB::system</name>
             </application>
           </applications>
           <valuemap/>

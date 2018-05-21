@@ -34,6 +34,8 @@
         - new ```IF-MIB::ifHCOctets```
         - new ```IF-MIB::ifOctets```
     - **SNMPv2-MIB**
+      - Applications:
+        - rename mib-2.system to ```SNMPv2-MIB::system``` and mib-2.system.snmp to '''SNMPv2-MIB::system''' to use matching MIB naming conventoion
       - Items:
         - changed units in update interval from number of seconds to number of m/h/d
       - Graphs:
