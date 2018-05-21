@@ -9,6 +9,8 @@ Base Zabbix server monitoring template.
     - rename ```SVC::Zabbix Server::process::busy``` to ```SVC::Zabbix Server::proc```
   - Graphs:
     - changed resolution to 1200x300
+  - Items:
+    - remove quotes around processes names to make migration from standard zabbix template easier
 - 1.0.1 (2017-12-07):
   - removed monitoring zabbix[process,"db watchdog"] as it is no longer supported
   - add more desctiptions of the zabbix[process,] items

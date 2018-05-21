@@ -102,6 +102,8 @@ ut I need to standarize thuis before first officially announced release of the t
   - **Service Zabbix Server**
     - Applications:
       - rename ```SVC::Zabbix Server::process::busy``` to ```SVC::Zabbix Server::proc```
+    - Items:
+       - remove quotes around processes names to make migration from standard zabbix template easier
   - **Service Nginx**
     - new template
 ***
