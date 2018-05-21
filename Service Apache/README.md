@@ -1,4 +1,4 @@
-#### Version: 1.0.4 (2017-05-05)
+#### Version: 1.0.4 (2018-05-05)
 
 #### Description:
 Apache service monitoring template using zabbix active agent items.

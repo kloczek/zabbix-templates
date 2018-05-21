@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-06T17:44:06Z</date>
+  <date>2018-05-07T09:59:20Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -229,6 +229,7 @@ This doesn’t mean number of users. A single user, for a single pageview can op
           <description>The current number of client connections in waiting state.&#13;
 &#13;
 keep-alive connections, actually it is active – (reading + writing).This value depends on keepalive-timeout. Do not confuse non-zero waiting value for poor performance. It can be ignored. Although, you can force zero waiting by setting&#13;
+keepalive_timeout 0;&#13;
 &#13;
 http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_disable&#13;
 http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_requests&#13;

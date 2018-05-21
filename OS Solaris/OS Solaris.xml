@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-05T16:14:05Z</date>
+  <date>2018-05-21T13:25:19Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,7 +13,7 @@
       <name>OS Solaris</name>
       <description>Base OS Solaris monitoring.&#13;
 &#13;
-Version: 1.0.1 (2017-12-01)&#13;
+Version: 1.0.4 (2018-05-05)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/OS%20Solaris&#13;
 &#13;
 Notes:</description>
