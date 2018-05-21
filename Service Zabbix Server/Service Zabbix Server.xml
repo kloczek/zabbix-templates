@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-21T13:51:20Z</date>
+  <date>2018-05-21T14:12:33Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -206,8 +206,8 @@ Notes:&#13;
           <snmp_community/>
           <snmp_oid/>
           <key>zabbix[process,alert manager,avg,busy]</key>
-          <delay>1m</delay>
-          <history>1w</history>
+          <delay>30s</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -289,8 +289,8 @@ Notes:&#13;
           <snmp_community/>
           <snmp_oid/>
           <key>zabbix[process,db watchdog,avg,busy]</key>
-          <delay>1m</delay>
-          <history>1w</history>
+          <delay>30s</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -371,8 +371,8 @@ Notes:&#13;
           <snmp_community/>
           <snmp_oid/>
           <key>zabbix[process,escalator,avg,busy]</key>
-          <delay>1m</delay>
-          <history>1w</history>
+          <delay>30s</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -577,8 +577,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_community/>
           <snmp_oid/>
           <key>zabbix[process,ipmi manager,avg,busy]</key>
-          <delay>1m</delay>
-          <history>1w</history>
+          <delay>30s</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -618,8 +618,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_community/>
           <snmp_oid/>
           <key>zabbix[process,ipmi poller,avg,busy]</key>
-          <delay>1m</delay>
-          <history>1w</history>
+          <delay>30s</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -659,8 +659,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_community/>
           <snmp_oid/>
           <key>zabbix[process,java poller,avg,busy]</key>
-          <delay>1m</delay>
-          <history>1w</history>
+          <delay>30s</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -741,8 +741,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_community/>
           <snmp_oid/>
           <key>zabbix[process,preprocessing manager,avg,busy]</key>
-          <delay>1m</delay>
-          <history>1w</history>
+          <delay>30s</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -782,8 +782,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_community/>
           <snmp_oid/>
           <key>zabbix[process,preprocessing worker,avg,busy]</key>
-          <delay>1m</delay>
-          <history>1w</history>
+          <delay>30s</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -905,8 +905,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_community/>
           <snmp_oid/>
           <key>zabbix[process,task manager,avg,busy]</key>
-          <delay>1m</delay>
-          <history>1w</history>
+          <delay>30s</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -946,8 +946,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_community/>
           <snmp_oid/>
           <key>zabbix[process,timer,avg,busy]</key>
-          <delay>1m</delay>
-          <history>1w</history>
+          <delay>30s</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1069,8 +1069,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <snmp_community/>
           <snmp_oid/>
           <key>zabbix[process,vmware collector,avg,busy]</key>
-          <delay>1m</delay>
-          <history>1w</history>
+          <delay>30s</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
