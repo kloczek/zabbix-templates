@@ -107,15 +107,15 @@ ut I need to standarize thuis before first officially announced release of the t
 ## List of templates:
 - [ICMP](https://github.com/kloczek/zabbix-templates/tree/master/ICMP)
 - MIB
-  - F5-BIGIP-LOCAL-MIB
-  - F5-BIGIP-SYSTEM-MIB
+  - [F5-BIGIP-LOCAL-MIB](https://github.com/kloczek/zabbix-templates/tree/master/MIB/F5-BIGIP-LOCAL-MIB)
+  - [F5-BIGIP-SYSTEM-MIB](https://github.com/kloczek/zabbix-templates/tree/master/MIB/F5-BIGIP-SYSTEM-MIB)
   - [IF-MIB](https://github.com/kloczek/zabbix-templates/tree/master/MIB/IF-MIB)
-  - IP-MIB
-  - SNMP-MPD-MIB
-  - SNMP-USER-BASED-SM-MIB
+  - [IP-MIB](https://github.com/kloczek/zabbix-templates/tree/master/MIB/IP-MIB)
+  - [SNMP-MPD-MIB](https://github.com/kloczek/zabbix-templates/tree/master/MIB/SNMP-MPD-MIB)
+  - [SNMP-USER-BASED-SM-MIB](https://github.com/kloczek/zabbix-templates/tree/master/MIB/SNMP-USER-BASED-SM-MIB)
   - [SNMPv2-MIB](https://github.com/kloczek/zabbix-templates/tree/master/MIB/SNMPv2-MIB)
-  - SNMP-VIEW-BASED-ACM-MIB
-  - UDP-MIB
+  - [SNMP-VIEW-BASED-ACM-MIB](https://github.com/kloczek/zabbix-templates/tree/master/MIB/SNMP-VIEW-BASED-ACM-MIB)
+  - [UDP-MIB](https://github.com/kloczek/zabbix-templates/tree/master/MIB/UDP-MIB)
 - [OS Linux](https://github.com/kloczek/zabbix-templates/tree/master/OS%20Linux)
 - [OS Solaris](https://github.com/kloczek/zabbix-templates/tree/master/OS%20Solaris)
 - [OS Windows](https://github.com/kloczek/zabbix-templates/tree/master/OS%20Windows)
