@@ -1,12 +1,12 @@
-#### Version: 1.0.0 (2017-11-30)
+#### Version: 1.0.4 (2018-05-05)
 
 #### Description:
 The MIB based template for Message Processing and Dispatching.
 
-#### OIDs tree: http://support.ipmonitor.com/mibs/SNMP-MPD-MIB/tree.aspx
+#### OIDs tree: [SNMP-MPD-MIB](http://www.oidview.com/mibs/0/SNMP-MPD-MIB.html)
 
 #### Changelog:
-- 1.0.0 (2017-11-30):
+- 1.0.4 (2018-05-05):
   - initial version.
 
 #### Notes:

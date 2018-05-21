@@ -1,8 +1,9 @@
 #### Version: 1.0.4 (2018-05-05)
 
 #### Description:
+The template for SNMPv2 MIB entities.
 
-#### OIDs tree: http://support.ipmonitor.com/mibs/SNMPv2-MIB/tree.aspx
+#### OIDs tree: [SNMPv2-MIB](http://www.oidview.com/mibs/0/SNMPv2-MIB.html)
 
 #### Changelog:
 - 1.0.4 (2018-05-05):

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-14T07:06:36Z</date>
+  <date>2018-05-20T18:32:15Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -11,8 +11,8 @@
     <template>
       <template>F5-BIGIP-SYSTEM-MIB</template>
       <name>F5-BIGIP-SYSTEM-MIB</name>
-      <description>Version: 1.0.1 (2017-11-22)&#13;
-OIDs tree: http://support.ipmonitor.com/mibs/F5-BIGIP-SYSTEM-MIB/tree.aspx&#13;
+      <description>Version: 1.0.4 (2018-05-05)&#13;
+OIDs tree: http://www.oidview.com/mibs/3375/F5-BIGIP-SYSTEM-MIB.html&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/F5-BIGIP-SYSTEM-MIB&#13;
 &#13;
 Notes:</description>

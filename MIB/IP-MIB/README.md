@@ -1,12 +1,12 @@
-#### Version: 1.0.0 (2017-11-30)
+#### Version: 1.0.4 (2018-05-05)
 
 #### Description:
 The MIB based template for managing IP and ICMP implementations.
 
-#### OIDs tree: http://support.ipmonitor.com/mibs/IF-MIB/tree.aspx
+#### OIDs tree: [IP-MIB](http://www.oidview.com/mibs/0/IP-MIB.html)
 
 #### Changelog:
-- 1.0.1 (not released yet)
+- 1.0.4 (not released yet)
   - added Applications:
     - IP-MIB::icmp
     - IP-MIB::ip

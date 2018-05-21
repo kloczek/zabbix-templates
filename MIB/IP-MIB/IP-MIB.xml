@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-07T09:50:18Z</date>
+  <date>2018-05-20T19:40:03Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -13,8 +13,8 @@
       <name>IP-MIB</name>
       <description>The MIB based template for managing IP and ICMP implementations.&#13;
 &#13;
-Version: 0.0.0 (2017-12-01)&#13;
-OIDs tree: http://support.ipmonitor.com/mibs/IP-MIB/tree.aspx&#13;
+Version: 1.0.4 (2018-05-05)&#13;
+OIDs tree: http://www.oidview.com/mibs/0/IP-MIB.html&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/MIB/IP-MIB&#13;
 &#13;
 Notes:&#13;

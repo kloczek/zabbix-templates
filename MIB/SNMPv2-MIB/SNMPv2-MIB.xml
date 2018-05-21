@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-14T06:49:01Z</date>
+  <date>2018-05-20T21:55:40Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -14,7 +14,7 @@
       <description>The template for SNMPv2 MIB entities.&#13;
 &#13;
 Version: 1.0.4 (2018-05-05)&#13;
-OIDs tree: http://support.ipmonitor.com/mibs/SNMPV2-MIB/tree.aspx&#13;
+OIDs tree: http://www.oidview.com/mibs/0/SNMPv2-MIB.html&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/SNMPv2-MIB&#13;
 &#13;
 Notes:</description>

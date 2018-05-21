@@ -1,9 +1,9 @@
-#### Version: 1.0.0 (2017-11-30)
+#### Version: 1.0.4 (2018-05-05)
 
 #### Description:
 The MIB based template for managing UDP implementations.
 
-#### OIDs tree: http://support.ipmonitor.com/mibs/UDP-MIB/tree.aspx
+#### OIDs tree: [UDP-MIB](http://www.oidview.com/mibs/0/UDP-MIB.html)
 
 #### Changelog:
 - 1.0.0 (2017-11-30):

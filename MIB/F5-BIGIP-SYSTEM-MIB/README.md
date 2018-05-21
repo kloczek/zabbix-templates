@@ -2,7 +2,7 @@
 
 #### Description:
 
-#### OIDs tree: http://support.ipmonitor.com/mibs/F5-BIGIP-SYSTEM-MIB/tree.aspx
+#### OIDs tree: [F5-BIGIP-SYSTEM-MIB](http://www.oidview.com/mibs/3375/F5-BIGIP-SYSTEM-MIB.html)
 
 #### Changelog:
 - 1.0.4 (2018-05-05):

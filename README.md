@@ -5,7 +5,7 @@
 - [Changelog](#changelog)
   * [1.0.4](#104)
 - [List of templates](#list-of-templates)
-- [Notes and Guidlines](#notes-and-guidlines)
+- [Notes and Guidlines](#notes-and-guidelines)
 - [Copyright](#copyright--c--2017-2018-tomasz-k-oczko--kloczek-fedoraprojectorg)
 ***
 ## Changelog:
@@ -19,9 +19,10 @@
     - Screens: 
       - new ```NET::ICMP```
   - **MIB**
+    - changed all description OID trees URLs to http://www.oidview.com/mibs/ based (http://support.ipmonitor.com seems no longer available)
     - **IF-MIB**
       - Applications:
-        - new prototype for all ```interfaces``` LLD prototype items
+        - the new prototype for all ```interfaces``` LLD prototype items
           ```IF-MIB::interfaces::{#IFDESCR}```
       - LLDs:
         - new ```interfaces``` LLD
@@ -148,7 +149,7 @@ ut I need to standarize thuis before first officially announced release of the t
   Above provide a parseable name, allowing us to distinguish between and categorise those objects.
   Such convention is quite easy to handle to use the pattern in alarming layer allowing, for example, send all trigger with SYS:: in the beginning name of the template to exact team.
   Such pattern is possible to use part of the general interface on communication with external services.
-* Do not use {HOSTNAME} macros in triggers. In web frontend from Monitoring -> Triggers has a list with "host" column name on the host where the trigger is active (it is waste of space on the web page)
+* Do not use {HOSTNAME} macros in triggers. In web frontend from Monitoring -> Triggers has a list of "host" column name on the host where the trigger is active (it is waste of space on the web page)
 * All zabbix agent items should be specified as ```zabbix agent (active)``` items
 * All graphs resolution needs to be 1200x300
 * All SNMP items should be as SNMPv2 and ```{$SNMP_COMMUNITY}``` as SNMP read community name

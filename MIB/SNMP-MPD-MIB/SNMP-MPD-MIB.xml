@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-01T15:11:12Z</date>
+  <date>2018-05-20T20:04:21Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -13,8 +13,8 @@
       <name>SNMP-MPD-MIB</name>
       <description>The MIB based template for Message Processing and Dispatching.&#13;
 &#13;
-Version: 0.0.0 (2017-12-01)&#13;
-OIDs tree: http://support.ipmonitor.com/mibs/SNMP-MPD-MIB/tree.aspx&#13;
+Version: 1.0.4 (2018-05-05)&#13;
+OIDs tree: http://www.oidview.com/mibs/0/SNMP-USER-BASED-SM-MIB.html&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/SNMP-MPD-MIB&#13;
 &#13;
 Notes:&#13;
