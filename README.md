@@ -104,6 +104,20 @@ ut I need to standarize thuis before first officially announced release of the t
       - rename ```SVC::Zabbix Server::process::busy``` to ```SVC::Zabbix Server::proc```
     - Items:
        - remove quotes around processes names to make migration from standard zabbix template easier
+       - rename all process::* items to ```proc::*``` (keep it in sync with proxy template)
+       - new items:
+         - ```proc::busy::alert manager %```
+         - ```proc::busy::db watchdog %```
+         - ```proc::busy::escalator %```
+         - ```proc::busy::ipmi manager %```
+         - ```proc::busy::ipmi poller %```
+         - ```proc::busy::java poller %```
+         - ```proc::busy::preprocessing manager %```
+         - ```proc::busy::preprocessing worker %```
+         - ```proc::busy::proxy poller %```
+         - ```proc::busy::task manager %```
+         - ```proc::busy::timer %```
+         - ```proc::busy::vmware collector %```
   - **Service Nginx**
     - new template
 ***
