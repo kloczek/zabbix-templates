@@ -105,6 +105,7 @@ ut I need to standarize thuis before first officially announced release of the t
     - Applications:
       - rename ```SVC::Zabbix Server::process::busy``` to ```SVC::Zabbix Server::proc```
     - Items:
+       - added all items descriptions
        - remove quotes around processes names to make migration from standard zabbix template easier
        - rename all process::* items to ```proc::*``` (keep it in sync with proxy template)
        - new items:

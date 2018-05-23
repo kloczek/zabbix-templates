@@ -10,6 +10,7 @@ Base Zabbix server monitoring template.
   - Graphs:
     - changed resolution to 1200x300
   - Items:
+    - added all items descriptions
     - remove quotes around processes names to make migration from standard zabbix template easier
     - rename all process::* items to ```proc::*``` (keep it in sync with proxy template)
     - new items:

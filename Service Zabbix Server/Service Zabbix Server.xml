@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-21T14:12:33Z</date>
+  <date>2018-05-23T19:08:31Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -186,8 +186,8 @@ Notes:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Average percent of the time of the "alerter" processes  is busy during the last minute.&#13;
-"alerter" process is sending alarms notifications.</description>
+          <description>Average percent of the time of the "alerter" processes are busy during the last minute.&#13;
+"alerter" processes are responsible for sending alarms notifications.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -228,7 +228,8 @@ Notes:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "alert manager" process is busy during the last minute.&#13;
+"alert manager" process is managing alerts pool queue.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -269,7 +270,7 @@ Notes:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Average percent of the time of the "configuration syncer" processes is busy during the last minute.&#13;
+          <description>Average percent of the time of the "configuration syncer" process is busy during the last minute.&#13;
 "configuration syncer" process is for managing in-memory cache of configuration data.</description>
           <inventory_link>0</inventory_link>
           <applications>
@@ -311,7 +312,8 @@ Notes:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "db watchdog" process is busy during the last minute.&#13;
+"db watchdog" process is responsible for checking db backend availability.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -352,7 +354,8 @@ Notes:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "discoverer" process is busy during the last minute.&#13;
+"discoverer" process is responsible for discovery of the hosts.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -393,7 +396,8 @@ Notes:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "escalator" process is busy during the last minute.&#13;
+"escalator" process is responsible for escalation of actions.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -434,7 +438,8 @@ Notes:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "history syncer" processes are busy during the last minute.&#13;
+"history syncer" processes are responsible for history data writing to DB backend.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -475,7 +480,7 @@ Notes:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Average percent of the time "housekeeper" processes which is responsible for removal of old historical data.&#13;
+          <description>Average percent of the time "housekeeper" process which is responsible for removal of old historical data.&#13;
 This metrics should have only two values 0 and 100% because it is only one housekeeper process. When it is 100% it means that housekeeper is active.</description>
           <inventory_link>0</inventory_link>
           <applications>
@@ -517,7 +522,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "http poller" processes are busy during the last minute.&#13;
+"http poller" processes are responsible for web monitoring polling.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -558,7 +564,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "icmp pinger" processes are busy during the last minute.&#13;
+"icmp pinger" processes are responsible for polling icmpping checks..</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -599,7 +606,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "ipmi manager" process is busy during the last minute.&#13;
+"ipmi manager" process is responsible for IPMI poller management.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -640,7 +648,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "ipmi poller" processes are busy during the last minute.&#13;
+"ipmi poller" processes are responsible for poller for IPMI checks.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -681,7 +690,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "java poller" processes are busy during the last minute.&#13;
+"java poller" processes are responsible for polling Java checks.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -722,7 +732,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "poller" processes are busy during the last minute.&#13;
+"poller" processes are responsible for polling for passive checks, calculate values of calculated items and zabbix server internal checks.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -763,7 +774,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "preprocessing manager" process is busy during the last minute.&#13;
+"preprocessing manager" process is responsible for managing of preprocessing tasks.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -804,7 +816,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "preprocessing worker" processes are busy during the last minute.&#13;
+"preprocessing worker" processes are responsible for processing of all items preprocess rules.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -845,7 +858,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "proxy poller" processes are busy during the last minute.&#13;
+"proxy poller" processes are responsible for polling for passive proxies.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -886,7 +900,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "self-monitoring" process is busy during the last minute.&#13;
+"self-monitoring" process is responsible for collecting internal server statistics.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -927,7 +942,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "task manager" process is busy during the last minute.&#13;
+"task manager" process is responsible for manually closing problems.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -968,7 +984,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "timer" process is busy during the last minute.&#13;
+"timer" process is responsible for evaluation of time-related trigger functions and maintenances.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1009,7 +1026,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "trapper" processes are busy during the last minute.&#13;
+"trapper" processes are responsible for receive data from active check items.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1050,7 +1068,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "unreachable poller" processes are busy during the last minute.&#13;
+"unreachable poller" processes are responsible for polling unreachable hosts.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1091,7 +1110,8 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Average percent of the time of the "vmware collector" processes are busy during the last minute.&#13;
+"vmware collector" processes are responsible for data gathering from VMware servers.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1214,7 +1234,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Number of monitored items in the Queue which are delayed by 10 min or more.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1378,7 +1398,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Size of Zabbix server configuration cache buffer free memory.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1419,7 +1439,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Percent of Zabbix server configuration cache buffer free memory.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1460,7 +1480,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Size of Zabbix server configuration cache buffer used memory.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1501,7 +1521,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Required performance of the Zabbix server or Zabbix proxy, in new values per second expected.</description>
+          <description>Required performance of the Zabbix server  in new values per second expected.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1583,7 +1603,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Percent of Zabbix server value cache free buffer.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1624,7 +1644,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Zabbix server number of cache hits (history values taken from the cache).</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1670,7 +1690,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Zabbix server values cache misses (history values taken from the database).</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1716,7 +1736,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Zabbix server values cache total number of requests.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1763,7 +1783,6 @@ This metrics should have only two values 0 and 100% because it is only one house
           <privatekey/>
           <port/>
           <description>Size of free history cache.&#13;
-&#13;
 A low number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
@@ -1805,8 +1824,7 @@ A low number indicates performance problems on the database side.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Percent of free history cache.&#13;
-&#13;
+          <description>History cache feree  used to store item values.&#13;
 A low number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
@@ -1889,8 +1907,7 @@ A low number indicates performance problems on the database side.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Size of used history cache.&#13;
-&#13;
+          <description>The size of the history cache to store item values.&#13;
 A high number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
@@ -1932,8 +1949,7 @@ A high number indicates performance problems on the database side.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Size of free trend cache.&#13;
-&#13;
+          <description>Size of free trends cache.&#13;
 A low number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
@@ -1975,8 +1991,7 @@ A low number indicates performance problems on the database side.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Percent of free terend cache.&#13;
-&#13;
+          <description>Percent of the tends cache free space.&#13;
 A low number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
@@ -2018,7 +2033,7 @@ A low number indicates performance problems on the database side.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Total size of free trend cache.</description>
+          <description>Total size of the trends cache.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -2059,8 +2074,7 @@ A low number indicates performance problems on the database side.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Size of used trend cache.&#13;
-&#13;
+          <description>Size of used trends cache.&#13;
 A high number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
@@ -2102,7 +2116,7 @@ A high number indicates performance problems on the database side.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Total number of values per second processed by Zabbix server except unsupported items.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -2148,7 +2162,7 @@ A high number indicates performance problems on the database side.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Total number of values per second processed by Zabbix server except unsupported items.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -2194,7 +2208,7 @@ A high number indicates performance problems on the database side.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Number of log values per second processed by Zabbix server.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -2240,7 +2254,7 @@ A high number indicates performance problems on the database side.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Number of all item per second which processing resulted in item becoming unsupported or keeping that state by Zabbix server.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -2286,7 +2300,7 @@ A high number indicates performance problems on the database side.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Number of character/string values per second processed by Zabbix server.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -2332,7 +2346,7 @@ A high number indicates performance problems on the database side.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Number of text values per second processed by Zabbix server.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -2378,7 +2392,7 @@ A high number indicates performance problems on the database side.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Number of unsigned integer values per second processed by Zabbix server.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
