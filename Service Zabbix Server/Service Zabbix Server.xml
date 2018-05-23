@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-23T19:08:31Z</date>
+  <date>2018-05-23T19:14:24Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -272,48 +272,6 @@ Notes:&#13;
           <port/>
           <description>Average percent of the time of the "configuration syncer" process is busy during the last minute.&#13;
 "configuration syncer" process is for managing in-memory cache of configuration data.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::Zabbix Server::proc</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>proc::$4::$2 %</name>
-          <type>5</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>zabbix[process,db watchdog,avg,busy]</key>
-          <delay>30s</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>0</value_type>
-          <allowed_hosts/>
-          <units>%</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>Average percent of the time of the "db watchdog" process is busy during the last minute.&#13;
-"db watchdog" process is responsible for checking db backend availability.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>

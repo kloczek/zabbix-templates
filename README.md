@@ -108,6 +108,7 @@ ut I need to standarize thuis before first officially announced release of the t
        - added all items descriptions
        - remove quotes around processes names to make migration from standard zabbix template easier
        - rename all process::* items to ```proc::*``` (keep it in sync with proxy template)
+       - remove proc::busy::db watchdog % item (there is no such zabbix server process)
        - new items:
          - ```proc::busy::alert manager %```
          - ```proc::busy::db watchdog %```
