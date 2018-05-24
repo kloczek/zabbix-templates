@@ -31,8 +31,9 @@
           ifOperStatus=Down state. Switch from {#SNMPVALUE} to {#IFDESCR} as macro
           indexing all prototype items
       - Screens:
-        - new ```IF-MIB::ifHCOctets```
-        - new ```IF-MIB::ifOctets```
+        - new:
+          - ```IF-MIB::ifHCOctets```
+          - ```IF-MIB::ifOctets```
     - **SNMPv2-MIB**
       - Applications:
         - rename mib-2.system to ```SNMPv2-MIB::system``` and mib-2.system.snmp to '''SNMPv2-MIB::snmp''' to use matching MIB naming conventoion
@@ -63,11 +64,12 @@
       - rename "Lack of free memory" to ```MEM::free {ITEM.LASTVALUE}```
   - **Service MySQL**
     - Applications:
-      - new ```SVC::MySQL::cfg``` for all read configuration parameters
-      - new ```SVC::MySQL::Com``` for all Com_* metrics
-      - new ```SVC::MySQL::DB::{#DB}``` prototype for all per database metrics
-      - new ```SVC::MySQL::innodb``` for all innodb storage engine metrics
-      - new ```SVC::MySQL::threads``` for all treads related metrics
+      - new:
+      - ```SVC::MySQL::cfg``` for all read configuration parameters
+      - ```SVC::MySQL::Com``` for all Com_* metrics
+      - ```SVC::MySQL::DB::{#DB}``` prototype for all per database metrics
+      -  ```SVC::MySQL::innodb``` for all innodb storage engine metrics
+      - ```SVC::MySQL::threads``` for all treads related metrics
     - Graphs:
       - new ```SVC::MySQL::threads``` with ```Threads_cached```, ```Threads_connected``` and ```Threads_running``` metrics
     - Items:
@@ -103,7 +105,7 @@ ut I need to standarize thuis before first officially announced release of the t
       - rename all ```Processes::$4::$2``` to ```proc::$4::$2``` and remove quotes on all those items second key parameter (to allow easy migration from standard "Template App Zabbix Proxy" template)
   - **Service Zabbix Server**
     - Applications:
-      - new
+      - new:
         - ```SVC::Zabbix Server::vcache::cache```
         - ```SVC::Zabbix Server::wcache::history```
         - ```SVC::Zabbix Server::wcache::trend```
@@ -111,7 +113,7 @@ ut I need to standarize thuis before first officially announced release of the t
       - rename ```SVC::Zabbix Server::process::busy``` to ```SVC::Zabbix Server::proc```
     - Items:
        - added all items descriptions
-       - new items:
+       - new:
          - ```proc::busy::alert manager %```
          - ```proc::busy::escalator %```
          - ```proc::busy::ipmi manager %```
@@ -125,8 +127,8 @@ ut I need to standarize thuis before first officially announced release of the t
          - ```proc::busy::vmware collector %```
          - ```triggers```
          - ```queue::preprocessing```
-       - remove quotes around processes names to make migration from standard zabbix template easier
        - remove items::queued (it duplicates information provided by queue::* items)
+       - removed quotes around processes names to make migration from standard zabbix template easier
        - rename all process::* items to ```proc::*``` (keep it in sync with proxy template)
        - rename Uptime to ```uptime```
   - **Service Nginx**

@@ -6,7 +6,7 @@ Base Zabbix server monitoring template.
 #### Changelog:
 - 1.0.4 (2018-05-05)
   - Applications:
-    - new
+    - new:
       - ```SVC::Zabbix Server::vcache::cache```
       - ```SVC::Zabbix Server::wcache::history```
       - ```SVC::Zabbix Server::wcache::trend```
@@ -16,7 +16,7 @@ Base Zabbix server monitoring template.
     - changed resolution to 1200x300
   - Items:
     - added all items descriptions
-    - new items:
+    - new:
       - ```proc::busy::alert manager %```
       - ```proc::busy::escalator %```
       - ```proc::busy::ipmi manager %```
@@ -30,8 +30,8 @@ Base Zabbix server monitoring template.
       - ```proc::busy::vmware collector %```
       - ```triggers```
       - ```queue::preprocessing```
-    - remove quotes around processes names to make migration from standard zabbix template easier
     - remove items::queued (it duplicates information provided by queue::* items)
+    - removed quotes around processes names to make migration from standard zabbix template easier
     - rename all process::* items to ```proc::*``` (keep it in sync with proxy template)
     - rename Uptime to ```uptime```
 - 1.0.1 (2017-12-07):
