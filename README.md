@@ -83,7 +83,7 @@ ut I need to standarize thuis before first officially announced release of the t
       - new ```SVC::MySQL::threads``` which combines ```SVC::MySQL::threads``` graph and ```Connections``` simple graph
     - Triggers:
       - new ```SVC::MySQL::version``` has been changed (severity: Not classified)
-      - new ```SVC::MySQL::cfg::show_compatibility_56=ON``` (severity: High)
+      - new ```SVC::MySQL::cfg::show_compatibility_56=ON``` (severity: High, because this template requires show_compatibility_56=OFF)
   - **Service Zabbix Proxy**
     - Applications:
       - new ```SVC::Zabbix Proxy::proc```
