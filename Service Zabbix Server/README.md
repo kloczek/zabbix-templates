@@ -27,6 +27,7 @@ Base Zabbix server monitoring template.
       - ```proc::busy::preprocessing manager %```
       - ```proc::busy::preprocessing worker %```
       - ```proc::busy::proxy poller %```
+      - ```proc::busy::snmp trapper poller %```
       - ```proc::busy::task manager %```
       - ```proc::busy::timer %```
       - ```proc::busy::vmware collector %```
@@ -46,6 +47,7 @@ Base Zabbix server monitoring template.
         - ```SVC::zabbix_server::preprocessing manager processes >=75% busy```
         - ```SVC::zabbix_server::preprocessing worker processes >=75% busy```
         - ```SVC::zabbix_server::proxy poller processes >=75% busy```
+        - ```SVC::zabbix_server::snmp trapper processes >=75% busy```
         - ```SVC::zabbix_server::task manager processes >=75% busy```
         - ```SVC::zabbix_server::timer processes >=75% busy```
         - ```SVC::zabbix_server::vmware collector processes >=75% busy```

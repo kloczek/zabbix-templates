@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-24T21:42:24Z</date>
+  <date>2018-05-24T22:09:14Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -919,6 +919,48 @@ This metrics should have only two values 0 and 100% because it is only one house
           <port/>
           <description>Average percent of the time of the "self-monitoring" process is busy during the last minute.&#13;
 "self-monitoring" process is responsible for collecting internal server statistics.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::Zabbix Server::proc</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>proc::$4::$2 %</name>
+          <type>5</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>zabbix[process,snmp trapper,avg,busy]</key>
+          <delay>30s</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units>%</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Average percent of the time of the "snmp trapper" process is busy during the last minute.&#13;
+"snmp trapper" process is for receiving SNMP traps.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -3003,6 +3045,22 @@ A high number indicates performance problems on the database side.</description>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::zabbix_server::self-monitoring processes &gt;=75% busy</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{Service Zabbix Server:zabbix[process,snmp trapper,avg,busy].avg(10m)}&gt;75</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::zabbix_server::snmp trapper processes &gt;=75% busy</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
