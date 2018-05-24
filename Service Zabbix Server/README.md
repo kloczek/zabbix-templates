@@ -7,6 +7,8 @@ Base Zabbix server monitoring template.
 - 1.0.4 (2018-05-05)
   - Applications:
     - new:
+      - ```SVC::Zabbix Server::rcache::buffer```
+      - ```SVC::Zabbix Server::vcache::buffer```
       - ```SVC::Zabbix Server::vcache::cache```
       - ```SVC::Zabbix Server::wcache::history```
       - ```SVC::Zabbix Server::wcache::trend```
