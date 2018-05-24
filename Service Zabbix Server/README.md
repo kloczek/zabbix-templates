@@ -16,6 +16,7 @@ Base Zabbix server monitoring template.
     - rename ```SVC::Zabbix Server::process::busy``` to ```SVC::Zabbix Server::proc```
   - Graphs:
     - changed resolution to 1200x300
+    - updated ```SVC::zabbix_server::process busy %```
   - Items:
     - added all items descriptions
     - new:

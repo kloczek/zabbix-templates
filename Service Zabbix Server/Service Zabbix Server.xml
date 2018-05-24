@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-24T22:09:14Z</date>
+  <date>2018-05-24T22:26:16Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -3502,7 +3502,7 @@ A high number indicates performance problems on the database side.</description>
         </graph_item>
         <graph_item>
           <sortorder>1</sortorder>
-          <drawtype>2</drawtype>
+          <drawtype>0</drawtype>
           <color>990000</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
@@ -3515,6 +3515,18 @@ A high number indicates performance problems on the database side.</description>
         <graph_item>
           <sortorder>2</sortorder>
           <drawtype>0</drawtype>
+          <color>0000EE</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service Zabbix Server</host>
+            <key>zabbix[process,ipmi poller,avg,busy]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>3</sortorder>
+          <drawtype>0</drawtype>
           <color>FF33FF</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
@@ -3525,9 +3537,9 @@ A high number indicates performance problems on the database side.</description>
           </item>
         </graph_item>
         <graph_item>
-          <sortorder>3</sortorder>
+          <sortorder>4</sortorder>
           <drawtype>0</drawtype>
-          <color>00EE00</color>
+          <color>009600</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
@@ -3537,7 +3549,7 @@ A high number indicates performance problems on the database side.</description>
           </item>
         </graph_item>
         <graph_item>
-          <sortorder>4</sortorder>
+          <sortorder>5</sortorder>
           <drawtype>0</drawtype>
           <color>003300</color>
           <yaxisside>0</yaxisside>
@@ -3549,7 +3561,19 @@ A high number indicates performance problems on the database side.</description>
           </item>
         </graph_item>
         <graph_item>
-          <sortorder>5</sortorder>
+          <sortorder>6</sortorder>
+          <drawtype>0</drawtype>
+          <color>CCCC00</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service Zabbix Server</host>
+            <key>zabbix[process,proxy poller,avg,busy]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>7</sortorder>
           <drawtype>0</drawtype>
           <color>33FFFF</color>
           <yaxisside>0</yaxisside>
@@ -3561,15 +3585,39 @@ A high number indicates performance problems on the database side.</description>
           </item>
         </graph_item>
         <graph_item>
-          <sortorder>6</sortorder>
+          <sortorder>8</sortorder>
           <drawtype>0</drawtype>
-          <color>C8C8C8</color>
+          <color>DD0000</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
             <host>Service Zabbix Server</host>
-            <key>zabbix[process,proxy poller,avg,busy]</key>
+            <key>zabbix[process,java poller,avg,busy]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>9</sortorder>
+          <drawtype>0</drawtype>
+          <color>000099</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service Zabbix Server</host>
+            <key>zabbix[process,snmp trapper,avg,busy]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>10</sortorder>
+          <drawtype>0</drawtype>
+          <color>00FF00</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service Zabbix Server</host>
+            <key>zabbix[process,vmware collector,avg,busy]</key>
           </item>
         </graph_item>
       </graph_items>

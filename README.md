@@ -113,6 +113,8 @@ ut I need to standarize thuis before first officially announced release of the t
         - ```SVC::Zabbix Server::wcache::trend```
         - ```SVC::Zabbix Server::wcache::values```
       - rename ```SVC::Zabbix Server::process::busy``` to ```SVC::Zabbix Server::proc```
+    - Graphs:
+      - updated ```SVC::zabbix_server::process busy %```
     - Items:
        - added all items descriptions
        - new:
