@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-23T19:39:42Z</date>
+  <date>2018-05-24T11:32:12Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -1452,7 +1452,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <master_item/>
         </item>
         <item>
-          <name>Uptime</name>
+          <name>$1</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>

@@ -120,9 +120,10 @@ ut I need to standarize thuis before first officially announced release of the t
          - ```proc::busy::timer %```
          - ```proc::busy::vmware collector %```
        - remove quotes around processes names to make migration from standard zabbix template easier
-       - rename all process::* items to ```proc::*``` (keep it in sync with proxy template)
        - remove proc::busy::db watchdog % item (there is no such zabbix server process)
        - remove items::queued (it duplicates information provided by queue::* items)
+       - rename all process::* items to ```proc::*``` (keep it in sync with proxy template)
+       - rename Uptime to ```uptime``
   - **Service Nginx**
     - new template
 ***

@@ -25,9 +25,10 @@ Base Zabbix server monitoring template.
       - ```proc::busy::timer %```
       - ```proc::busy::vmware collector %```
     - remove quotes around processes names to make migration from standard zabbix template easier
-    - rename all process::* items to ```proc::*``` (keep it in sync with proxy template)
     - remove proc::busy::db watchdog % item (there is no such zabbix server process)
     - remove items::queued (it duplicates information provided by queue::* items)
+    - rename all process::* items to ```proc::*``` (keep it in sync with proxy template)
+    - rename Uptime to ```uptime``
 - 1.0.1 (2017-12-07):
   - removed monitoring zabbix[process,"db watchdog"] as it is no longer supported
   - add more desctiptions of the zabbix[process,] items
