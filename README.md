@@ -132,7 +132,20 @@ ut I need to standarize thuis before first officially announced release of the t
        - remove items::queued (it duplicates information provided by queue::* items)
        - removed quotes around processes names to make migration from standard zabbix template easier
        - rename all process::* items to ```proc::*``` (keep it in sync with proxy template)
-       - rename Uptime to ```uptime```
+       - rename Uptime to ```uptime``
+       - Triggers:
+         - new:                                                           
+           - ```SVC::zabbix_server::alert manager processes >=75% busy```
+           - ```SVC::zabbix_server::escalator processes >=75% busy```
+           - ```SVC::zabbix_server::ipmi manager processes >=75% busy```
+           - ```SVC::zabbix_server::ipmi poller processes >=75% busy```
+           - ```SVC::zabbix_server::java poller processes >=75% busy```
+           - ```SVC::zabbix_server::preprocessing manager processes >=75% busy```
+           - ```SVC::zabbix_server::preprocessing worker processes >=75% busy```
+           - ```SVC::zabbix_server::proxy poller processes >=75% busy```
+           - ```SVC::zabbix_server::task manager processes >=75% busy```
+           - ```SVC::zabbix_server::timer processes >=75% busy```
+           - ```SVC::zabbix_server::vmware collector processes >=75% busy``` 
   - **Service Nginx**
     - new template
 ***

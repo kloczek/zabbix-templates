@@ -36,6 +36,19 @@ Base Zabbix server monitoring template.
     - removed quotes around processes names to make migration from standard zabbix template easier
     - rename all process::* items to ```proc::*``` (keep it in sync with proxy template)
     - rename Uptime to ```uptime```
+    - Triggers:
+      - new:
+        - ```SVC::zabbix_server::alert manager processes >=75% busy```
+        - ```SVC::zabbix_server::escalator processes >=75% busy```
+        - ```SVC::zabbix_server::ipmi manager processes >=75% busy```
+        - ```SVC::zabbix_server::ipmi poller processes >=75% busy```
+        - ```SVC::zabbix_server::java poller processes >=75% busy```
+        - ```SVC::zabbix_server::preprocessing manager processes >=75% busy```
+        - ```SVC::zabbix_server::preprocessing worker processes >=75% busy```
+        - ```SVC::zabbix_server::proxy poller processes >=75% busy```
+        - ```SVC::zabbix_server::task manager processes >=75% busy```
+        - ```SVC::zabbix_server::timer processes >=75% busy```
+        - ```SVC::zabbix_server::vmware collector processes >=75% busy```
 - 1.0.1 (2017-12-07):
   - removed monitoring zabbix[process,"db watchdog"] as it is no longer supported
   - add more desctiptions of the zabbix[process,] items
