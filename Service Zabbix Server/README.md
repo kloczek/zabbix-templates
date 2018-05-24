@@ -6,6 +6,11 @@ Base Zabbix server monitoring template.
 #### Changelog:
 - 1.0.4 (2018-05-05)
   - Applications:
+    - new
+      - ```SVC::Zabbix Server::vcache::cache```
+      - ```SVC::Zabbix Server::wcache::history```
+      - ```SVC::Zabbix Server::wcache::trend```
+      - ```SVC::Zabbix Server::wcache::values```
     - rename ```SVC::Zabbix Server::process::busy``` to ```SVC::Zabbix Server::proc```
   - Graphs:
     - changed resolution to 1200x300

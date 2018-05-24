@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-24T11:35:41Z</date>
+  <date>2018-05-24T12:11:51Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -32,6 +32,18 @@ Notes:&#13;
         </application>
         <application>
           <name>SVC::Zabbix Server::queue</name>
+        </application>
+        <application>
+          <name>SVC::Zabbix Server::vcache::cache</name>
+        </application>
+        <application>
+          <name>SVC::Zabbix Server::wcache::history</name>
+        </application>
+        <application>
+          <name>SVC::Zabbix Server::wcache::trend</name>
+        </application>
+        <application>
+          <name>SVC::Zabbix Server::wcache::values</name>
         </application>
       </applications>
       <items>
@@ -1647,7 +1659,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::vcache::cache</name>
             </application>
           </applications>
           <valuemap/>
@@ -1693,7 +1705,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::vcache::cache</name>
             </application>
           </applications>
           <valuemap/>
@@ -1739,7 +1751,7 @@ This metrics should have only two values 0 and 100% because it is only one house
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::vcache::cache</name>
             </application>
           </applications>
           <valuemap/>
@@ -1786,7 +1798,7 @@ A low number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::wcache::history</name>
             </application>
           </applications>
           <valuemap/>
@@ -1828,7 +1840,7 @@ A low number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::wcache::history</name>
             </application>
           </applications>
           <valuemap/>
@@ -1869,7 +1881,7 @@ A low number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::wcache::history</name>
             </application>
           </applications>
           <valuemap/>
@@ -1911,7 +1923,7 @@ A high number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::wcache::history</name>
             </application>
           </applications>
           <valuemap/>
@@ -1953,7 +1965,7 @@ A low number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::wcache::trend</name>
             </application>
           </applications>
           <valuemap/>
@@ -1995,7 +2007,7 @@ A low number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::wcache::trend</name>
             </application>
           </applications>
           <valuemap/>
@@ -2036,7 +2048,7 @@ A low number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::wcache::trend</name>
             </application>
           </applications>
           <valuemap/>
@@ -2078,7 +2090,7 @@ A high number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::wcache::trend</name>
             </application>
           </applications>
           <valuemap/>
@@ -2119,7 +2131,7 @@ A high number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::wcache::values</name>
             </application>
           </applications>
           <valuemap/>
@@ -2165,7 +2177,7 @@ A high number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::wcache::values</name>
             </application>
           </applications>
           <valuemap/>
@@ -2211,7 +2223,7 @@ A high number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::wcache::values</name>
             </application>
           </applications>
           <valuemap/>
@@ -2257,7 +2269,7 @@ A high number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::wcache::values</name>
             </application>
           </applications>
           <valuemap/>
@@ -2303,7 +2315,7 @@ A high number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::wcache::values</name>
             </application>
           </applications>
           <valuemap/>
@@ -2349,7 +2361,7 @@ A high number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::wcache::values</name>
             </application>
           </applications>
           <valuemap/>
@@ -2395,7 +2407,7 @@ A high number indicates performance problems on the database side.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::Zabbix Server</name>
+              <name>SVC::Zabbix Server::wcache::values</name>
             </application>
           </applications>
           <valuemap/>

@@ -103,6 +103,11 @@ ut I need to standarize thuis before first officially announced release of the t
       - rename all ```Processes::$4::$2``` to ```proc::$4::$2``` and remove quotes on all those items second key parameter (to allow easy migration from standard "Template App Zabbix Proxy" template)
   - **Service Zabbix Server**
     - Applications:
+      - new
+        - ```SVC::Zabbix Server::vcache::cache```
+        - ```SVC::Zabbix Server::wcache::history```
+        - ```SVC::Zabbix Server::wcache::trend```
+        - ```SVC::Zabbix Server::wcache::values```
       - rename ```SVC::Zabbix Server::process::busy``` to ```SVC::Zabbix Server::proc```
     - Items:
        - added all items descriptions
