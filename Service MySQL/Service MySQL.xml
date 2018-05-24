@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-14T22:42:28Z</date>
+  <date>2018-05-24T21:10:47Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -16,7 +16,7 @@
 URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20MySQL&#13;
 Version: 1.0.4 (2018-05-05)&#13;
 Notes:&#13;
-* Tested on MySQL 5.7 and it not uses MySQL 5.6 backward compatibility so it can be used to monitor MySQL engine which in my.cnf has:&#13;
+* Tested on MySQL 5.7 and it not designed to be uses with MySQL older than 5.7 backward compatibility so it can be used to monitor MySQL engine which in my.cnf has:&#13;
 &#13;
 [mysqld]&#13;
 show_compatibility_56 = OFF &#13;
