@@ -109,7 +109,6 @@ ut I need to standarize thuis before first officially announced release of the t
        - new items:
          - ```proc::busy::alert manager %```
          - ```proc::busy::db watchdog %```
-         - ```proc::busy::escalator %```
          - ```proc::busy::ipmi manager %```
          - ```proc::busy::ipmi poller %```
          - ```proc::busy::java poller %```
@@ -122,7 +121,6 @@ ut I need to standarize thuis before first officially announced release of the t
          - ```triggers```
          - ```queue::preprocessing```
        - remove quotes around processes names to make migration from standard zabbix template easier
-       - remove proc::busy::db watchdog % item (there is no such zabbix server process)
        - remove items::queued (it duplicates information provided by queue::* items)
        - rename all process::* items to ```proc::*``` (keep it in sync with proxy template)
        - rename Uptime to ```uptime```
