@@ -24,6 +24,8 @@ Base Zabbix server monitoring template.
       - ```proc::busy::task manager %```
       - ```proc::busy::timer %```
       - ```proc::busy::vmware collector %```
+      - ```triggers```
+      - ```queue::preprocessing```
     - remove quotes around processes names to make migration from standard zabbix template easier
     - remove proc::busy::db watchdog % item (there is no such zabbix server process)
     - remove items::queued (it duplicates information provided by queue::* items)
