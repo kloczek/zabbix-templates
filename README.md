@@ -80,7 +80,7 @@
       - rewrite most of the items SQL queries to use uppercase SQL keywords and lowercase for table names and row names (this will cause problems with imprt new template b
 ut I need to standarize thuis before first officially announced release of the templates)
     - Screens:
-      - new ```SVC::MySQL::threads``` which combines ```SVC::MySQL::threads``` graph and ```Connections``` simple greph
+      - new ```SVC::MySQL::threads``` which combines ```SVC::MySQL::threads``` graph and ```Connections``` simple graph
     - Triggers:
       - new ```SVC::MySQL::version``` has been changed (severity: Not classified)
       - new ```SVC::MySQL::cfg::show_compatibility_56=ON``` (severity: High)
