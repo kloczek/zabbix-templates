@@ -108,7 +108,7 @@ ut I need to standarize thuis before first officially announced release of the t
        - added all items descriptions
        - new items:
          - ```proc::busy::alert manager %```
-         - ```proc::busy::db watchdog %```
+         - ```proc::busy::escalator %```
          - ```proc::busy::ipmi manager %```
          - ```proc::busy::ipmi poller %```
          - ```proc::busy::java poller %```
