@@ -125,7 +125,7 @@ ut I need to standarize thuis before first officially announced release of the t
        - remove proc::busy::db watchdog % item (there is no such zabbix server process)
        - remove items::queued (it duplicates information provided by queue::* items)
        - rename all process::* items to ```proc::*``` (keep it in sync with proxy template)
-       - rename Uptime to ```uptime``
+       - rename Uptime to ```uptime```
   - **Service Nginx**
     - new template
 ***
