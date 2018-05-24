@@ -106,6 +106,8 @@ ut I need to standarize thuis before first officially announced release of the t
   - **Service Zabbix Server**
     - Applications:
       - new:
+        - ```SVC::Zabbix Server::rcache::buffer```
+        - ```SVC::Zabbix Server::vcache::buffer```
         - ```SVC::Zabbix Server::vcache::cache```
         - ```SVC::Zabbix Server::wcache::history```
         - ```SVC::Zabbix Server::wcache::trend```
