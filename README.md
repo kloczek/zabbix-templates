@@ -103,6 +103,16 @@ ut I need to standarize thuis before first officially announced release of the t
         - ```wcache::text::used```
       - move ```Processes::``` items to ```SVC::Zabbix Proxy::proc``` Application
       - rename all ```Processes::$4::$2``` to ```proc::$4::$2``` and remove quotes on all those items second key parameter (to allow easy migration from standard "Template App Zabbix Proxy" template)
+    - Triggers:
+      - new:
+        - ```SVC::zabbix_proxy::configuration syncer >=75% busy```
+        - ```SVC::zabbix_proxy::data sender >=75% busy```
+        - ```SVC::zabbix_proxy::heartbeat sender >=75% busy```
+        - ```SVC::zabbix_proxy::ipmi manager >=75% busy```
+        - ```SVC::zabbix_proxy::ipmi poller >=75% busy```
+        - ```SVC::zabbix_proxy::java poller >=75% busy```
+        - ```SVC::zabbix_proxy::snmp trapper >=75% busy```
+        - ```SVC::zabbix_proxy::vmware collector >=75% busy```
   - **Service Zabbix Server**
     - Applications:
       - new:

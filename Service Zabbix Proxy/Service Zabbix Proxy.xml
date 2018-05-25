@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-19T16:23:19Z</date>
+  <date>2018-05-25T21:34:01Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -2378,6 +2378,70 @@ It is calculated for last minute only.</description>
       <tags/>
     </trigger>
     <trigger>
+      <expression>{Service Zabbix Proxy:zabbix[process,configuration syncer,avg,busy].avg(10m)}&gt;75</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::zabbix_proxy::configuration syncer &gt;=75% busy</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{Service Zabbix Proxy:zabbix[process,data sender,avg,busy].avg(10m)}&gt;75</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::zabbix_proxy::data sender &gt;=75% busy</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{Service Zabbix Proxy:zabbix[process,discoverer,avg,busy].avg(10m)}&gt;75</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::zabbix_proxy::discoverer &gt;=75% busy</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{Service Zabbix Proxy:zabbix[process,heartbeat sender,avg,busy].avg(10m)}&gt;75</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::zabbix_proxy::heartbeat sender &gt;=75% busy</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
       <expression>{Service Zabbix Proxy:zabbix[wcache,history,pfree].avg(5m)}&lt;5</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
@@ -2432,14 +2496,14 @@ It is calculated for last minute only.</description>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service Zabbix Proxy:zabbix[process,history syncer,avg,busy].avg(600)}&gt;75</expression>
+      <expression>{Service Zabbix Proxy:zabbix[process,history syncer,avg,busy].avg(10m)}&gt;75</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>SVC::zabbix_proxy::history syncer processes more than 75% busy</name>
+      <name>SVC::zabbix_proxy::history syncer &gt;=75% busy</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
-      <status>1</status>
+      <status>0</status>
       <priority>3</priority>
       <description/>
       <type>0</type>
@@ -2462,6 +2526,102 @@ It is calculated for last minute only.</description>
 499:20131203:021029.181 Sending list of active checks to [172.16.18.193] failed: host [app001.aci100.uk3.ribob01.net] not found&#13;
 &#13;
 This means that a host may be failing to auto-register, subsequently we will have no monitoring data for this host and manual intervention is required to get it into monitoring.</description>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{Service Zabbix Proxy:zabbix[process,housekeeper,avg,busy].avg(30m)}&gt;75</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::zabbix_proxy::housekeeper &gt;=75% busy</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{Service Zabbix Proxy:zabbix[process,http poller,avg,busy].avg(10m)}&gt;75</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::zabbix_proxy::http poller &gt;=75% busy</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{Service Zabbix Proxy:zabbix[process,icmp pinger,avg,busy].avg(10m)}&gt;75</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::zabbix_proxy::ICMP pinger &gt;=75% busy</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{Service Zabbix Proxy:zabbix[process,ipmi manager,avg,busy].avg(10m)}&gt;75</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::zabbix_proxy::ipmi manager &gt;=75% busy</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{Service Zabbix Proxy:zabbix[process,ipmi poller,avg,busy].avg(10m)}&gt;75</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::zabbix_proxy::ipmi poller &gt;=75% busy</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{Service Zabbix Proxy:zabbix[process,java poller,avg,busy].avg(10m)}&gt;75</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::zabbix_proxy::java poller &gt;=75% busy</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description/>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>
@@ -2552,74 +2712,10 @@ Possible:&#13;
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service Zabbix Proxy:zabbix[process,discoverer,avg,busy].avg(10m)}&gt;75</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SVC::zabbix_proxy::process::discoverer &gt;=75% bus</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{Service Zabbix Proxy:zabbix[process,housekeeper,avg,busy].avg(30m)}&gt;75</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SVC::zabbix_proxy::process::housekeeper &gt;=75% busy</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{Service Zabbix Proxy:zabbix[process,http poller,avg,busy].avg(10m)}&gt;75</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SVC::zabbix_proxy::process::http poller &gt;=75% busy</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{Service Zabbix Proxy:zabbix[process,icmp pinger,avg,busy].avg(10m)}&gt;75</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SVC::zabbix_proxy::process::ICMP pinger &gt;=75% busy</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
       <expression>{Service Zabbix Proxy:zabbix[process,poller,avg,busy].avg(10m)}&gt;75</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>SVC::zabbix_proxy::process::poller &gt;=75% busy</name>
+      <name>SVC::zabbix_proxy::poller &gt;=75% busy</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
@@ -2635,7 +2731,23 @@ Possible:&#13;
       <expression>{Service Zabbix Proxy:zabbix[process,self-monitoring,avg,busy].avg(10m)}&gt;75</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>SVC::zabbix_proxy::process::self-monitoring &gt;=75% busy</name>
+      <name>SVC::zabbix_proxy::self-monitoring &gt;=75% busy</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{Service Zabbix Proxy:zabbix[process,snmp trapper,avg,busy].avg(30m)}&gt;75</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::zabbix_proxy::snmp trapper &gt;=75% busy</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
@@ -2651,7 +2763,7 @@ Possible:&#13;
       <expression>{Service Zabbix Proxy:zabbix[process,trapper,avg,busy].avg(10m)}&gt;75</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>SVC::zabbix_proxy::process::trapper &gt;=75% busy</name>
+      <name>SVC::zabbix_proxy::trapper &gt;=75% busy</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
@@ -2667,7 +2779,23 @@ Possible:&#13;
       <expression>{Service Zabbix Proxy:zabbix[process,unreachable poller,avg,busy].avg(10m)}&gt;75</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>SVC::zabbix_proxy::process::unreachable poller &gt;=75% busy</name>
+      <name>SVC::zabbix_proxy::unreachable poller &gt;=75% busy</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{Service Zabbix Proxy:zabbix[process,vmware collector,avg,busy].avg(10m)}&gt;75</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::zabbix_proxy::vmware collector &gt;=75% busy</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
