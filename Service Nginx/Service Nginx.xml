@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-07T09:59:20Z</date>
+  <date>2018-05-26T13:11:53Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -53,7 +53,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>net.tcp.service[http,,80]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -96,7 +96,7 @@ Notes:&#13;
           <snmp_oid/>
           <key>nginx.connections[active]</key>
           <delay>0</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -151,7 +151,7 @@ This doesn’t mean number of users. A single user, for a single pageview can op
           <snmp_oid/>
           <key>nginx.connections[reading]</key>
           <delay>0</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -205,7 +205,7 @@ This doesn’t mean number of users. A single user, for a single pageview can op
           <snmp_oid/>
           <key>nginx.connections[waiting]</key>
           <delay>0</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -266,7 +266,7 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</descr
           <snmp_oid/>
           <key>nginx.connections[writing]</key>
           <delay>0</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -320,7 +320,7 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</descr
           <snmp_oid/>
           <key>nginx.requests</key>
           <delay>0</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -378,7 +378,7 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</descr
           <snmp_oid/>
           <key>nginx.requests[accepts]</key>
           <delay>0</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -436,7 +436,7 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</descr
           <snmp_oid/>
           <key>nginx.requests[handled]</key>
           <delay>0</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -500,7 +500,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <snmp_oid/>
           <key>proc.mem[nginx,root,]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -541,7 +541,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <snmp_oid/>
           <key>proc.mem[nginx,{$NGINX_USER},sum]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -582,7 +582,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <snmp_oid/>
           <key>proc.mem[nginx]</key>
           <delay>30s</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -623,7 +623,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <snmp_oid/>
           <key>proc.num[nginx,root]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -664,7 +664,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <snmp_oid/>
           <key>proc.num[nginx,{$NGINX_USER}]</key>
           <delay>1m</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -705,7 +705,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <snmp_oid/>
           <key>system.run["/usr/sbin/nginx -v 2&gt;&amp;1|/bin/sed -n 's/nginx version: nginx\/\(.*\)/\1/ p'"]</key>
           <delay>1h</delay>
-          <history>15d</history>
+          <history>2w</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>1</value_type>
