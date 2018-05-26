@@ -17,6 +17,7 @@ Base Zabbix server monitoring template.
   - Graphs:
     - changed resolution to 1200x300
     - updated ```SVC::zabbix_server::process busy %```
+    - new ```SVC::zabbix_server::preprocessing queue```
   - Items:
     - added all items descriptions
     - new:

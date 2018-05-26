@@ -87,6 +87,10 @@ ut I need to standarize thuis before first officially announced release of the t
   - **Service Zabbix Proxy**
     - Applications:
       - new ```SVC::Zabbix Proxy::proc```
+    - Graphs:
+      - updated:
+        - ```SVC::zabbix_proxy::process busy %```
+        - ```SVC::zabbix_proxy::data gathering process busy %```
     - Items:
       - new:
         - ```proc::busy::configuration syncer```
@@ -125,6 +129,7 @@ ut I need to standarize thuis before first officially announced release of the t
       - rename ```SVC::Zabbix Server::process::busy``` to ```SVC::Zabbix Server::proc```
     - Graphs:
       - updated ```SVC::zabbix_server::process busy %```
+      - new ```SVC::zabbix_server::preprocessing queue```
     - Items:
        - added all items descriptions
        - new:
