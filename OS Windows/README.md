@@ -1,10 +1,10 @@
-#### Version: 1.0.4 (2018-05-05)
+#### Version: 1.0.4 (2018-06-11)
 
 #### Description:
 Base OS Windows template.
 
 #### Changelog:
-- 1.0.4 (2018-05-05)
+- 1.0.4 (2018-06-11)
   - Triggers:
     - rename trigger name to the same name as it is in other OS templates
        s/Host information was changed/```SYS:uname changed```/

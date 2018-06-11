@@ -1,4 +1,4 @@
-#### Version: 1.0.4 (2018-05-05)
+#### Version: 1.0.4 (2018-06-11)
 
 #### Description:
 The MIB bsed template describes generic objects for network interface sub-layers.
@@ -7,7 +7,7 @@ The IF-MIB is an updated version of MIB-II's ifTable, and incorporates the exten
 #### OIDs tree: (IF-MIB](http://www.oidview.com/mibs/0/IF-MIB.html)
 
 #### Changelog:
-- 1.0.4: (2018-05-05):
+- 1.0.4 (2018-06-11):
   - Applications:
     - the new prototype for all ```interfaces``` LLD prototype items
       ```IF-MIB::interfaces::{#IFDESCR}```

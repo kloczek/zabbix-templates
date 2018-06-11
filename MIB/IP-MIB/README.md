@@ -1,4 +1,4 @@
-#### Version: 1.0.4 (2018-05-05)
+#### Version: 1.0.4 (2018-06-11)
 
 #### Description:
 The MIB based template for managing IP and ICMP implementations.

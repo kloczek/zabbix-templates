@@ -3,13 +3,13 @@
 ## Table of Contents
 ***
 - [Changelog](#changelog)
-  * [1.0.4](#104)
+  * [1.0.4](#104-2018-06-11)
 - [List of templates](#list-of-templates)
 - [Notes and Guidlines](#notes-and-guidelines)
 - [Copyright](#copyright--c--2017-2018-tomasz-k-oczko--kloczek-fedoraprojectorg)
 ***
 ## Changelog:
-### 1.0.4
+### 1.0.4 (2018-06-11)
 - The first version tagged in git repo to stamp state of templates and tools and to provide better tracking changes by using ```git``` command
 - The development of the next versions of the templates will continue on devel branch. When all changes are ready devel branch will be merged to master one. It will be way better for those who have interested enough tested template.
 - Recent changes

@@ -1,4 +1,4 @@
-#### Version: 1.0.4 (2018-05-05)
+#### Version: 1.0.4 (2018-06-11)
 
 #### Description:
 Nginx https service monitoring template. This template is using
@@ -15,7 +15,7 @@ Nginx https service monitoring template. This template is using
 | {$NGINX_USER}      | nginx               | nginx non-root user used by workers nginx processes |
 
 #### Changelog:
-- 1.0.4 (2018-05-05)
+- 1.0.4 (2018-06-11)
   - Initial version
 
 #### Notes:

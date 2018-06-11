@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-26T18:39:29Z</date>
+  <date>2018-06-11T11:39:07Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,7 +13,7 @@
       <name>Service Zabbix Server</name>
       <description>Base Zabbix server monitoring template.&#13;
 &#13;
-Version: 1.0.4 (2018-05-05)&#13;
+Version: 1.0.4 (2018-06-11)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Server&#13;
 &#13;
 Notes:&#13;

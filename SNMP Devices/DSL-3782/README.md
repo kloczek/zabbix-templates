@@ -2,10 +2,10 @@ The DSL-3782 Wireless AC1200 Dual-Band VDSL/ADSL Modem Router is a versatile, hi
 
 Device: D-Link DSL-3782
 
-Version: 1.0.0 (2017-11-24)
+Version: 1.0.4 (2018-06-11)
 
 Changelog:
-- 1.0.1 (not released yet)
+- 1.0.4 (2018-06-11)
   - added template URL in template description
 - 1.0.0 (2017-11-24):
   - initial version.

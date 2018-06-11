@@ -1,10 +1,10 @@
-#### Version: 1.0.4 (2018-05-05)
+#### Version: 1.0.4 (2018-06-11)
 
 #### Description:
 Base Zabbix server monitoring template.
 
 #### Changelog:
-- 1.0.4 (2018-05-05)
+- 1.0.4 (2018-06-11)
   - Applications:
     - new:
       - ```SVC::Zabbix Server::rcache::buffer```

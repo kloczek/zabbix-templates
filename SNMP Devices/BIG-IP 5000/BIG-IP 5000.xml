@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-01T13:06:25Z</date>
+  <date>2018-06-11T11:39:13Z</date>
   <groups>
     <group>
       <name>Templates SNMP Devices</name>
@@ -15,7 +15,7 @@
 &#13;
 Product page: https://worldtechit.com/f5-products/f5-big-ip-5000s-5050s-5250v-5200v-hardware-datasheet/&#13;
 &#13;
-Version: 1.0.1 (2017-12-01)&#13;
+Version: 1.0.4 (2018-06-11)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/SNMP%20Devices/BIG-IP%205000&#13;
 &#13;
 Notes:</description>

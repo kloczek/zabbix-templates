@@ -1,10 +1,10 @@
-#### Version: 1.0.4 (2018-05-05)
+#### Version: 1.0.4 (2018-06-11)
 
 #### Description:
 MySQL engine monitoring over Zabbix agent.
 
 #### Changelog:
-- 1.0.4 (2018-05-05):
+- 1.0.4 (2018-06-11):
   - Applications:
     - new ```SVC::MySQL::cfg``` for all read configuration parameters
     - new ```SVC::MySQL::Com``` for all Com_* metrics

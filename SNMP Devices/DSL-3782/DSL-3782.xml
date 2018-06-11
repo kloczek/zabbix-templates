@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2017-12-07T09:50:17Z</date>
+  <date>2018-06-11T11:39:19Z</date>
   <groups>
     <group>
       <name>Templates SNMP Devices</name>
@@ -15,8 +15,9 @@
 &#13;
 Product page: http://www.dlink.com/mk/mk/products/dsl-3782-wireless-ac1200-dual-band-vdsl-adsl-modem-router&#13;
 &#13;
+Version: 1.0.4 (2018-06-11)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/SNMP%20Devices/DSL-3782&#13;
-Version: 1.0.0 (2017-11-24)&#13;
+&#13;
 Notes:</description>
       <groups>
         <group>

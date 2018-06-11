@@ -1,4 +1,4 @@
-#### Version: 1.0.4 (2018-05-05)
+#### Version: 1.0.4 (2018-06-11)
 
 #### Description:
 The template for SNMPv2 MIB entities.
@@ -6,7 +6,7 @@ The template for SNMPv2 MIB entities.
 #### OIDs tree: [SNMPv2-MIB](http://www.oidview.com/mibs/0/SNMPv2-MIB.html)
 
 #### Changelog:
-- 1.0.4 (2018-05-05):
+- 1.0.4 (2018-06-11):
   - Applications:
     - rename mib-2.system to ```SNMPv2-MIB::system``` and mib-2.system.snmp to '''SNMPv2-MIB::snmp''' to use matching MIB naming conventoion
   - Graphs:

@@ -1,10 +1,10 @@
-#### Version: 1.0.4 (2018-05-05)
+#### Version: 1.0.4 (2018-06-11)
 
 #### Description:
 Base ICMP template checking availability of the host using ICMP protocol.
 
 #### Changelog:
-- 1.0.4 (2018-05-05):
+- 1.0.4 (2018-06-11):
   - Screens:
     - new ```NET::ICMP```
   - Graphs:

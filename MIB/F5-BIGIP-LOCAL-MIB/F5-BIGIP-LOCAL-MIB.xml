@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-20T19:33:53Z</date>
+  <date>2018-06-11T11:38:00Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -11,7 +11,7 @@
     <template>
       <template>F5-BIGIP-LOCAL-MIB</template>
       <name>F5-BIGIP-LOCAL-MIB</name>
-      <description>Version: 1.0.4 (2018-05-05)&#13;
+      <description>Version: 1.0.4 (2018-06-11)&#13;
 OIDs tree: http://www.oidview.com/mibs/3375/F5-BIGIP-LOCAL-MIB.html&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/F5-BIGIP-LOCAL-MIB&#13;
 &#13;

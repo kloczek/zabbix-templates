@@ -1,10 +1,10 @@
-#### Version: 1.0.4 (2018-05-05)
+#### Version: 1.0.4 (2018-06-11)
 
 #### Description:
 Apache service monitoring template using zabbix active agent items.
 
 #### Changelog:
-- 1.0.4 (2018-05-05)
+- 1.0.4 (2018-06-11)
   - Graphs:
     - changed resolution of all graphs to 1200x300
   - Items:

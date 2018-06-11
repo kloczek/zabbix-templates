@@ -1,10 +1,10 @@
 
 Device: BIG-IP 5000
 
-Version: 1.0.1 (2017-12-01)
+Version: 1.0.4 (2018-06-11)
 
 Changelog:
-- 1.0.1 (2017-12-01):
+- 1.0.4 (2018-06-11):
   - added items unsupported item which holds like in all other tenplates current counter of host items in unsupported state
   - added template description
   - channge default hiory perid to 2w

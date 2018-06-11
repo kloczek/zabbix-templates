@@ -1,10 +1,10 @@
-#### Version: 1.0.4 (2018-05-05)
+#### Version: 1.0.4 (2018-06-11)
 
 #### Description:
 Base OS Solaris monitoring.
 
 #### Changelog:
-- 1.0.4 (2018-05-05)
+- 1.0.4 (2018-06-11)
   - Triggers:
     - fixed typo in trigger name s/SYS:uname changed/```SYS::uname changed```/
     - added ```MEM::free {ITEM.LASTVALUE}```
