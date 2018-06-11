@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-05-25T21:34:01Z</date>
+  <date>2018-06-11T11:39:04Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,7 +13,7 @@
       <name>Service Zabbix Proxy</name>
       <description>Base Zabbix proxy service monitoring template.&#13;
 &#13;
-Version: 1.0.4 (2018-05-05)&#13;
+Version: 1.0.4 (2018-06-11)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Proxy&#13;
 &#13;
 Notes:&#13;
@@ -829,6 +829,48 @@ It is calculated for last minute only.</description>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
+          <key>zabbix[process,task manager,avg,busy]</key>
+          <delay>30s</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units>%</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Average percent of the time of the "task manager" process is busy during the last minute.&#13;
+"task manager" process is responsible for executing remote command tasks.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::Zabbix Proxy::proc</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
+        </item>
+        <item>
+          <name>proc::$4::$2</name>
+          <type>5</type>
+          <snmp_community/>
+          <snmp_oid/>
           <key>zabbix[process,trapper,avg,busy]</key>
           <delay>30s</delay>
           <history>2w</history>
@@ -1413,7 +1455,7 @@ It is calculated for last minute only.</description>
           <status>0</status>
           <value_type>0</value_type>
           <allowed_hosts/>
-          <units>nv/s</units>
+          <units>nvps</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
           <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -2760,6 +2802,22 @@ Possible:&#13;
       <tags/>
     </trigger>
     <trigger>
+      <expression>{Service Zabbix Proxy:zabbix[process,task manager,avg,busy].avg(30m)}&gt;75</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::zabbix_proxy::task manager &gt;=75% busy</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
       <expression>{Service Zabbix Proxy:zabbix[process,trapper,avg,busy].avg(10m)}&gt;75</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
@@ -2831,7 +2889,7 @@ Possible:&#13;
       <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
-      <show_work_period>0</show_work_period>
+      <show_work_period>1</show_work_period>
       <show_triggers>1</show_triggers>
       <type>0</type>
       <show_legend>1</show_legend>
@@ -2845,7 +2903,7 @@ Possible:&#13;
       <graph_items>
         <graph_item>
           <sortorder>0</sortorder>
-          <drawtype>2</drawtype>
+          <drawtype>0</drawtype>
           <color>DD0000</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
@@ -2856,8 +2914,20 @@ Possible:&#13;
           </item>
         </graph_item>
         <graph_item>
+          <sortorder>1</sortorder>
+          <drawtype>0</drawtype>
+          <color>00DDDD</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service Zabbix Proxy</host>
+            <key>zabbix[wcache,index,pfree]</key>
+          </item>
+        </graph_item>
+        <graph_item>
           <sortorder>2</sortorder>
-          <drawtype>2</drawtype>
+          <drawtype>0</drawtype>
           <color>3333FF</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
@@ -2945,7 +3015,7 @@ Possible:&#13;
         </graph_item>
         <graph_item>
           <sortorder>1</sortorder>
-          <drawtype>2</drawtype>
+          <drawtype>0</drawtype>
           <color>990000</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
@@ -2958,6 +3028,18 @@ Possible:&#13;
         <graph_item>
           <sortorder>2</sortorder>
           <drawtype>0</drawtype>
+          <color>0000EE</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service Zabbix Proxy</host>
+            <key>zabbix[process,ipmi poller,avg,busy]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>3</sortorder>
+          <drawtype>0</drawtype>
           <color>FF33FF</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
@@ -2968,7 +3050,7 @@ Possible:&#13;
           </item>
         </graph_item>
         <graph_item>
-          <sortorder>3</sortorder>
+          <sortorder>4</sortorder>
           <drawtype>0</drawtype>
           <color>00EE00</color>
           <yaxisside>0</yaxisside>
@@ -2980,7 +3062,7 @@ Possible:&#13;
           </item>
         </graph_item>
         <graph_item>
-          <sortorder>4</sortorder>
+          <sortorder>5</sortorder>
           <drawtype>0</drawtype>
           <color>003300</color>
           <yaxisside>0</yaxisside>
@@ -2992,7 +3074,7 @@ Possible:&#13;
           </item>
         </graph_item>
         <graph_item>
-          <sortorder>5</sortorder>
+          <sortorder>6</sortorder>
           <drawtype>0</drawtype>
           <color>33FFFF</color>
           <yaxisside>0</yaxisside>
@@ -3001,6 +3083,30 @@ Possible:&#13;
           <item>
             <host>Service Zabbix Proxy</host>
             <key>zabbix[process,unreachable poller,avg,busy]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>7</sortorder>
+          <drawtype>0</drawtype>
+          <color>DD0000</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service Zabbix Proxy</host>
+            <key>zabbix[process,java poller,avg,busy]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>8</sortorder>
+          <drawtype>0</drawtype>
+          <color>000099</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service Zabbix Proxy</host>
+            <key>zabbix[process,snmp trapper,avg,busy]</key>
           </item>
         </graph_item>
       </graph_items>
@@ -3057,7 +3163,7 @@ Possible:&#13;
       <graph_items>
         <graph_item>
           <sortorder>0</sortorder>
-          <drawtype>2</drawtype>
+          <drawtype>0</drawtype>
           <color>FFAA00</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
@@ -3069,7 +3175,19 @@ Possible:&#13;
         </graph_item>
         <graph_item>
           <sortorder>1</sortorder>
-          <drawtype>2</drawtype>
+          <drawtype>0</drawtype>
+          <color>990099</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service Zabbix Proxy</host>
+            <key>zabbix[process,configuration syncer,avg,busy]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>2</sortorder>
+          <drawtype>0</drawtype>
           <color>EE0000</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
@@ -3080,8 +3198,8 @@ Possible:&#13;
           </item>
         </graph_item>
         <graph_item>
-          <sortorder>2</sortorder>
-          <drawtype>2</drawtype>
+          <sortorder>3</sortorder>
+          <drawtype>0</drawtype>
           <color>FF66FF</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
@@ -3092,15 +3210,51 @@ Possible:&#13;
           </item>
         </graph_item>
         <graph_item>
-          <sortorder>3</sortorder>
-          <drawtype>2</drawtype>
-          <color>0000CC</color>
+          <sortorder>4</sortorder>
+          <drawtype>0</drawtype>
+          <color>960000</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>2</calc_fnc>
           <type>0</type>
           <item>
             <host>Service Zabbix Proxy</host>
-            <key>zabbix[process,vmware collector,avg,busy]</key>
+            <key>zabbix[process,heartbeat sender,avg,busy]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>5</sortorder>
+          <drawtype>0</drawtype>
+          <color>009600</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service Zabbix Proxy</host>
+            <key>zabbix[process,data sender,avg,busy]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>6</sortorder>
+          <drawtype>0</drawtype>
+          <color>009999</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service Zabbix Proxy</host>
+            <key>zabbix[process,task manager,avg,busy]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>7</sortorder>
+          <drawtype>0</drawtype>
+          <color>BBBB00</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service Zabbix Proxy</host>
+            <key>zabbix[process,ipmi manager,avg,busy]</key>
           </item>
         </graph_item>
       </graph_items>

@@ -1,14 +1,17 @@
-#### Version: 1.0.4 (2018-05-05)
+#### Version: 1.0.4 (2018-06-11)
 
 #### Description:
 Base Zabbix proxy service monitoring template.
 
 #### Changelog:
-- 1.0.4 (2018-05-05):
+- 1.0.4 (2018-06-11):
   - Applications:
     - new ```SVC::Zabbix Proxy::proc``` 
   - Graphs:
     - change resolution of all graphs to 1200x300
+    - updated:
+      - ```SVC::zabbix_proxy::process busy %```
+      - ```SVC::zabbix_proxy::data gathering process busy %```
   - Items:
     - new:
       - ```proc::busy::configuration syncer```
