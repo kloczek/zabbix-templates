@@ -1,5 +1,7 @@
 # Zabbix templates
 
+This is set of the templates which goes to provide alternastive set of templates to these which are provided by Zabbix.
+
 ## Table of Contents
 ***
 - [Changelog](#changelog)
