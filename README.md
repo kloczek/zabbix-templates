@@ -44,7 +44,7 @@ This is set of the templates which goes to provide alternastive set of templates
       - Graphs:
         - new normal graph ```SNMPv2-MIB::snmpPkts``` with SNMPv2-MIB::snmp{in,Out}Pkts OIDs presenting rate
           of SNMP requests/replies
-  - **OS Limnux**
+  - **OS Linux**
     - Items:
       - added ```MEM::``` items descriptions
       - fixed ```NET::segments retransmitted``` item use new sed regexp in this item
