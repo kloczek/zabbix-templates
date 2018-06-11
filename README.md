@@ -61,7 +61,7 @@ This is set of the templates which goes to provide alternastive set of templates
       - added ```MEM::free {ITEM.LASTVALUE}```
   - **OS Windows**
     - Triggers:
-      - rename trigger name to the same name as it is in other OS templates
+      - rename trigger to the same name as it is in other OS templates
          s/Host information was changed/```SYS:uname changed```/
       - rename "Lack of free memory" to ```MEM::free {ITEM.LASTVALUE}```
   - **Service MySQL**
