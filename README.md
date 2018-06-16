@@ -1,7 +1,7 @@
 # Zabbix templates
 [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 
-This repository provides a set of templates which offers the alternative set of templates to those which are supplied by Zabbix.
+This repository provides a set of templates which offers the alternative set of templates to supplied by Zabbix.
 
 ## Table of Contents
 ***
