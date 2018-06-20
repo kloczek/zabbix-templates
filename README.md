@@ -12,6 +12,11 @@ This repository provides a set of templates which offers the alternative set of 
 - [Copyright](#copyright--c--2017-2018-tomasz-k-oczko--kloczek-fedoraprojectorg)
 ***
 ## Changelog:
+### (devel)
+- New templates
+  - [Service php-fpm](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nphp-fpm)
+
+
 ### 1.0.4 (2018-06-11)
 - The first version tagged in git repo to stamp state of templates and tools and to provide better tracking changes by using ```git``` command
 - The development of the next versions of the templates will continue on devel branch. When all changes are ready devel branch will be merged to master one. It will be way better for those who have interested enough tested template.
@@ -192,6 +197,7 @@ ut I need to standarize thuis before first officially announced release of the t
 - [Service Apache](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Apache)
 - [Service MySQL](https://github.com/kloczek/zabbix-templates/tree/master/Service%20MySQL)
 - [Service Nginx](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nginx)
+- [Service php-fpm](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nphp-fpm)
 - [Service Zabbix Agent](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Agent)
 - [Service Zabbix Proxy](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Proxy)
 - [Service Zabbix Server](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Server)
