@@ -1,9 +1,14 @@
-#### Version: 1.0.4 (2018-06-11)
+#### Version: devel ()
 
 #### Description:
 Base zabbix agent monitoring.
 
 #### Changelog:
+- (devel)
+  - Graphs:
+    - new ```HOST::items``` which presents number of host items vs number of unsuppoerted item
+  - Items:
+    - new ```items``` with current counter of total host items (supported/unsupprted/enabled/disabled)
 - 1.0.4 (2018-06-11):
   - minor clenups in template description
 - 1.0.1 (2017-11-30):

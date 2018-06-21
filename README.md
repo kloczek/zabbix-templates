@@ -6,7 +6,7 @@ This repository provides a set of templates which offers the alternative set of 
 ## Table of Contents
 ***
 - [Changelog](#changelog)
-  * [1.0.5](devel)
+  * [devel](devel)
   * [1.0.4](#104-2018-06-11)
 - [List of templates](#list-of-templates)
 - [Notes and Guidlines](#notes-and-guidelines)
@@ -16,7 +16,11 @@ This repository provides a set of templates which offers the alternative set of 
 ### (devel)
 - New templates
   - [Service php-fpm](https://github.com/kloczek/zabbix-templates/tree/master/Service%20php-fpm)
-
+- **Service Zabbix Agent**
+  - Graphs:
+    - new ```HOST::items``` which presents number of host items vs number of unsuppoerted item
+  - Items:
+    - new ```items``` with current counter of total host items (supported/unsupprted/enabled/disabled)
 
 ### 1.0.4 (2018-06-11)
 - The first version tagged in git repo to stamp state of templates and tools and to provide better tracking changes by using ```git``` command
@@ -86,8 +90,7 @@ This repository provides a set of templates which offers the alternative set of 
       - new ```show_compatibility_56``` - show is MySQL engine running in MySQL 5.6 compatibility mode is ON/OFF
       - new ```Threads_cached``` - the number of threads in the thread cache
       - mew ```Threads_running``` - the number of threads that are not sleeping
-      - rewrite most of the items SQL queries to use uppercase SQL keywords and lowercase for table names and row names (this will cause problems with imprt new template b
-ut I need to standarize thuis before first officially announced release of the templates)
+      - rewrite most of the items SQL queries to use uppercase SQL keywords and lowercase for table names and row names (this will cause problems with imprt new template but I need to standarize thuis before first officially announced release of the templates)
     - Screens:
       - new ```SVC::MySQL::threads``` which combines ```SVC::MySQL::threads``` graph and ```Connections``` simple graph
     - Triggers:
