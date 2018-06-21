@@ -6,6 +6,7 @@ This repository provides a set of templates which offers the alternative set of 
 ## Table of Contents
 ***
 - [Changelog](#changelog)
+  * [1.0.5](devel)
   * [1.0.4](#104-2018-06-11)
 - [List of templates](#list-of-templates)
 - [Notes and Guidlines](#notes-and-guidelines)
@@ -14,7 +15,7 @@ This repository provides a set of templates which offers the alternative set of 
 ## Changelog:
 ### (devel)
 - New templates
-  - [Service php-fpm](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nphp-fpm)
+  - [Service php-fpm](https://github.com/kloczek/zabbix-templates/tree/master/Service%20php-fpm)
 
 
 ### 1.0.4 (2018-06-11)
@@ -197,7 +198,7 @@ ut I need to standarize thuis before first officially announced release of the t
 - [Service Apache](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Apache)
 - [Service MySQL](https://github.com/kloczek/zabbix-templates/tree/master/Service%20MySQL)
 - [Service Nginx](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nginx)
-- [Service php-fpm](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nphp-fpm)
+- [Service php-fpm](https://github.com/kloczek/zabbix-templates/tree/master/Service%20php-fpm)
 - [Service Zabbix Agent](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Agent)
 - [Service Zabbix Proxy](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Proxy)
 - [Service Zabbix Server](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Server)
