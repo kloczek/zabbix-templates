@@ -15,7 +15,7 @@ This repository provides a set of templates which offers the alternative set of 
 ## Changelog:
 ### (devel)
 - New templates
-  - [Service php-fpm](https://github.com/kloczek/zabbix-templates/tree/master/Service%20php-fpm)
+  - [Service php-fpm](https://github.com/kloczek/zabbix-templates/tree/devel/Service%20php-fpm)
 - **Service Zabbix Agent**
   - Graphs:
     - new ```HOST::items``` which presents number of host items vs number of unsuppoerted item
@@ -201,7 +201,7 @@ This repository provides a set of templates which offers the alternative set of 
 - [Service Apache](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Apache)
 - [Service MySQL](https://github.com/kloczek/zabbix-templates/tree/master/Service%20MySQL)
 - [Service Nginx](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nginx)
-- [Service php-fpm](https://github.com/kloczek/zabbix-templates/tree/master/Service%20php-fpm)
+- [Service php-fpm](https://github.com/kloczek/zabbix-templates/tree/devel/Service%20php-fpm)
 - [Service Zabbix Agent](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Agent)
 - [Service Zabbix Proxy](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Proxy)
 - [Service Zabbix Server](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Server)
