@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-06-11T11:38:58Z</date>
+  <date>2018-06-22T10:51:55Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,7 +13,7 @@
       <name>Service Nginx</name>
       <description>Nginx http server monitoring template.&#13;
 &#13;
-Version: 1.0.4 (2018-06-11)&#13;
+Version: (devel)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nginx&#13;
 &#13;
 Notes:&#13;
@@ -492,6 +492,47 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <master_item>
             <key>web.page.get[{$NGINX_HOST},{$NGINX_STATS_URI},{$NGINX_PORT}]</key>
           </master_item>
+        </item>
+        <item>
+          <name>reqs_per_conn</name>
+          <type>15</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>nginx.requests_per_connection</key>
+          <delay>30s</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units>reqs/conn</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params>last("nginx.requests")/last("nginx.requests[handled]")</params>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Number of requests done over single TCP connection.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::nginx::requests</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <master_item/>
         </item>
         <item>
           <name>memory::master</name>
@@ -1068,6 +1109,38 @@ Please confirm the state.</description>
           <item>
             <host>Service Nginx</host>
             <key>proc.mem[nginx,{$NGINX_USER},sum]</key>
+          </item>
+        </graph_item>
+      </graph_items>
+    </graph>
+    <graph>
+      <name>SVC::Nginx::reqs_per_conn</name>
+      <width>1200</width>
+      <height>300</height>
+      <yaxismin>0.0000</yaxismin>
+      <yaxismax>100.0000</yaxismax>
+      <show_work_period>1</show_work_period>
+      <show_triggers>1</show_triggers>
+      <type>0</type>
+      <show_legend>1</show_legend>
+      <show_3d>0</show_3d>
+      <percent_left>0.0000</percent_left>
+      <percent_right>0.0000</percent_right>
+      <ymin_type_1>0</ymin_type_1>
+      <ymax_type_1>0</ymax_type_1>
+      <ymin_item_1>0</ymin_item_1>
+      <ymax_item_1>0</ymax_item_1>
+      <graph_items>
+        <graph_item>
+          <sortorder>0</sortorder>
+          <drawtype>2</drawtype>
+          <color>00EE00</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service Nginx</host>
+            <key>nginx.requests_per_connection</key>
           </item>
         </graph_item>
       </graph_items>
