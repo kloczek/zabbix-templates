@@ -7,7 +7,7 @@ On [master](https://github.com/kloczek/zabbix-templates) branch is last stable v
 
 Development of the next version of the templates is done on [devel](https://github.com/kloczek/zabbix-templates/tree/devel) branch.
 
-If you have some changes for those templates please submit PR against **(devel)[https://github.com/kloczek/zabbix-templates/tree/devel]**.
+If you have some changes for those templates please submit PR against (devel)[https://github.com/kloczek/zabbix-templates/tree/devel].
 
 ## Table of Contents
 ***
