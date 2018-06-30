@@ -16,6 +16,11 @@ This repository provides a set of templates which offers the alternative set of 
 ### (devel)
 - New templates
   - [Service php-fpm](https://github.com/kloczek/zabbix-templates/tree/devel/Service%20php-fpm)
+- **IF-MIB**
+  - LLDs:
+    - interfaces: use ```IF-MIB::ifAdminStatus``` instead ``IF-MIB::ifOperusStatus``` on checking if interface is up or down
+    - interfaces: add to LLD iterator item ```IF-MIB::ifIndex``` and map it to ```{#IFINDEX}``` macro
+    - interfaces: add to all items, triggers anf graphs prototypes names ```[{#IFINDEX}]``` to display physycal port number in those names
 - **Service Nginx**
   - Graphs:
     - new ```SVC::Nginx::reqs_per_conn```
