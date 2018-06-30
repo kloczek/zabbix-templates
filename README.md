@@ -3,7 +3,7 @@
 
 This repository provides a set of templates which offers the alternative set of templates to supplied by Zabbix.
 
-On [master](https://github.com/kloczek/zabbix-templates) branch is last stable version of the templates. Please report eny found issues or bugs
+On [master](https://github.com/kloczek/zabbix-templates) branch is last stable version of the templates. Please report eny found issues or bugs.
 
 Development of the next version of the templates is done on [devel](https://github.com/kloczek/zabbix-templates/tree/devel) branch.
 
