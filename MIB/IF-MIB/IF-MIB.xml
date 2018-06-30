@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-06-30T21:04:13Z</date>
+  <date>2018-06-30T22:27:10Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -110,7 +110,7 @@ Testing(3) state indicates that no operational packets can be passed. When a man
               <jmx_endpoint/>
               <application_prototypes>
                 <application_prototype>
-                  <name>IF-MIB::interfaces::{#IFDESCR}</name>
+                  <name>IF-MIB::interfaces::{#IFDESCR} [{#IFINDEX}]</name>
                 </application_prototype>
               </application_prototypes>
               <master_item_prototype/>
@@ -158,7 +158,7 @@ Some agents may support write-access only for interfaces having particular value
               <jmx_endpoint/>
               <application_prototypes>
                 <application_prototype>
-                  <name>IF-MIB::interfaces::{#IFDESCR}</name>
+                  <name>IF-MIB::interfaces::{#IFDESCR} [{#IFINDEX}]</name>
                 </application_prototype>
               </application_prototypes>
               <master_item_prototype/>
@@ -213,7 +213,7 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
               <jmx_endpoint/>
               <application_prototypes>
                 <application_prototype>
-                  <name>IF-MIB::interfaces::{#IFDESCR}</name>
+                  <name>IF-MIB::interfaces::{#IFDESCR} [{#IFINDEX}]</name>
                 </application_prototype>
               </application_prototypes>
               <master_item_prototype/>
@@ -269,7 +269,7 @@ If LLD items with ifHCOutOctets will be in unsupported on exact device ifHCOutOc
               <jmx_endpoint/>
               <application_prototypes>
                 <application_prototype>
-                  <name>IF-MIB::interfaces::{#IFDESCR}</name>
+                  <name>IF-MIB::interfaces::{#IFDESCR} [{#IFINDEX}]</name>
                 </application_prototype>
               </application_prototypes>
               <master_item_prototype/>
@@ -372,7 +372,7 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
               <jmx_endpoint/>
               <application_prototypes>
                 <application_prototype>
-                  <name>IF-MIB::interfaces::{#IFDESCR}</name>
+                  <name>IF-MIB::interfaces::{#IFDESCR} [{#IFINDEX}]</name>
                 </application_prototype>
               </application_prototypes>
               <master_item_prototype/>
@@ -417,7 +417,7 @@ The testing(3) state indicates that no operational packets can be passed. If ifA
               <jmx_endpoint/>
               <application_prototypes>
                 <application_prototype>
-                  <name>IF-MIB::interfaces::{#IFDESCR}</name>
+                  <name>IF-MIB::interfaces::{#IFDESCR} [{#IFINDEX}]</name>
                 </application_prototype>
               </application_prototypes>
               <master_item_prototype/>
@@ -473,7 +473,7 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
               <jmx_endpoint/>
               <application_prototypes>
                 <application_prototype>
-                  <name>IF-MIB::interfaces::{#IFDESCR}</name>
+                  <name>IF-MIB::interfaces::{#IFDESCR} [{#IFINDEX}]</name>
                 </application_prototype>
               </application_prototypes>
               <master_item_prototype/>
@@ -512,7 +512,7 @@ The testing(3) state indicates that no operational packets can be passed.</descr
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
               <show_triggers>1</show_triggers>
-              <type>1</type>
+              <type>0</type>
               <show_legend>1</show_legend>
               <show_3d>0</show_3d>
               <percent_left>0.0000</percent_left>
@@ -556,7 +556,7 @@ The testing(3) state indicates that no operational packets can be passed.</descr
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
               <show_triggers>1</show_triggers>
-              <type>1</type>
+              <type>0</type>
               <show_legend>1</show_legend>
               <show_3d>0</show_3d>
               <percent_left>0.0000</percent_left>
