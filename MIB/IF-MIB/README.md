@@ -4,7 +4,7 @@
 The MIB bsed template describes generic objects for network interface sub-layers.
 The IF-MIB is an updated version of MIB-II's ifTable, and incorporates the extensions defined in RFC 1229.
 
-#### OIDs tree: (IF-MIB](http://www.oidview.com/mibs/0/IF-MIB.html)
+#### OIDs tree: [IF-MIB](http://www.oidview.com/mibs/0/IF-MIB.html)
 
 #### Changelog:
 - 1.0.4 (2018-06-11):
