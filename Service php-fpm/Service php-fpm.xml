@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-06-12T15:13:26Z</date>
+  <date>2018-07-02T10:06:32Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -57,7 +57,7 @@ pm.status_path = /status&#13;
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>proc.num[php-fpm]</key>
+          <key>proc.num[{$PHPFPM_SVC}]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -830,6 +830,10 @@ Trying ondemand is on todo list.</description>
           <macro>{$PHPFPM_STATS_URI}</macro>
           <value>/status?json</value>
         </macro>
+        <macro>
+          <macro>{$PHPFPM_SVC}</macro>
+          <value>php-fpm</value>
+        </macro>
       </macros>
       <templates/>
       <screens>
@@ -911,7 +915,7 @@ Trying ondemand is on todo list.</description>
   </templates>
   <triggers>
     <trigger>
-      <expression>{Service php-fpm:proc.num[php-fpm].last()}=0</expression>
+      <expression>{Service php-fpm:proc.num[{$PHPFPM_SVC}].last()}=0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>PROC::php-fpm is DOWN</name>
