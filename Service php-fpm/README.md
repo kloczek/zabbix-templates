@@ -37,4 +37,4 @@ pm.status_path = /status
 		fastcgi_pass	unix:/run/php-fpm/www.sock;
         }
 ```
-- If on some systems ```PROC::php-fpm``` item will be showing 0 processes find PID one of the working php-pfm process and use command ```basename $(readlink /proc/<PID>/exe)``` and update ```{$SVC_PHP_FPM_PROC}``` host macro content with value which this command show.
+- If on some Linux systems ```PROC::php-fpm``` item will be showing 0 processes find PID one of the working php-pfm process and use command ```basename $(readlink /proc/<PID>/exe)``` and update ```{$SVC_PHP_FPM_PROC}``` host macro content with value which this command show.
