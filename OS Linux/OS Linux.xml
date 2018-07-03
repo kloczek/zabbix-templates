@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-06-28T13:06:53Z</date>
+  <date>2018-06-11T11:38:28Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -177,92 +177,6 @@ Notes:&#13;
           <privatekey/>
           <port/>
           <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>NET</name>
-            </application>
-          </applications>
-          <valuemap>
-            <name>Service state</name>
-          </valuemap>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>CHK::Network port::ssh</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>net.tcp.port[,{$SVC_SSH_PORT}]</key>
-          <delay>5m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>Check of possible create TCP connection to SSH port (configured macros).</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>NET</name>
-            </application>
-          </applications>
-          <valuemap>
-            <name>Service state</name>
-          </valuemap>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>NET::service::$1</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>net.tcp.service[ssh,,{$SVC_SSH_PORT}]</key>
-          <delay>5m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>Check if SSH services is running and accepted connection.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -3229,7 +3143,39 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           </item_prototypes>
           <trigger_prototypes>
             <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;={$VOL_FREE_SPACE_AVERAGE}</expression>
+              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;15</expression>
+              <recovery_mode>0</recovery_mode>
+              <recovery_expression/>
+              <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
+              <correlation_mode>0</correlation_mode>
+              <correlation_tag/>
+              <url/>
+              <status>0</status>
+              <priority>1</priority>
+              <description>FS volume free space is less than 15%.</description>
+              <type>0</type>
+              <manual_close>0</manual_close>
+              <dependencies/>
+              <tags/>
+            </trigger_prototype>
+            <trigger_prototype>
+              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;15 and {OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&gt;10</expression>
+              <recovery_mode>0</recovery_mode>
+              <recovery_expression/>
+              <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
+              <correlation_mode>0</correlation_mode>
+              <correlation_tag/>
+              <url/>
+              <status>0</status>
+              <priority>1</priority>
+              <description>FS volume free space is between 85% and 90%.</description>
+              <type>0</type>
+              <manual_close>0</manual_close>
+              <dependencies/>
+              <tags/>
+            </trigger_prototype>
+            <trigger_prototype>
+              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=1</expression>
               <recovery_mode>0</recovery_mode>
               <recovery_expression/>
               <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
@@ -3238,20 +3184,41 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <url/>
               <status>0</status>
               <priority>3</priority>
-              <description>FS volume free space is less than {$VOL_FREE_SPACE_AVERAGE}%.</description>
+              <description>FS volume free space is less than 1%.</description>
+              <type>0</type>
+              <manual_close>0</manual_close>
+              <dependencies/>
+              <tags/>
+            </trigger_prototype>
+            <trigger_prototype>
+              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=5</expression>
+              <recovery_mode>0</recovery_mode>
+              <recovery_expression/>
+              <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
+              <correlation_mode>0</correlation_mode>
+              <correlation_tag/>
+              <url/>
+              <status>0</status>
+              <priority>3</priority>
+              <description>FS volume free space is less than 5%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
               <dependencies>
                 <dependency>
                   <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
-                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;={$VOL_FREE_SPACE_WARNING}</expression>
+                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;15</expression>
+                  <recovery_expression/>
+                </dependency>
+                <dependency>
+                  <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=10</expression>
                   <recovery_expression/>
                 </dependency>
               </dependencies>
               <tags/>
             </trigger_prototype>
             <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;={$VOL_FREE_SPACE_AVERAGE} and {OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&gt;{$VOL_FREE_SPACE_HIGH}</expression>
+              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=5 and {OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&gt;1</expression>
               <recovery_mode>0</recovery_mode>
               <recovery_expression/>
               <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
@@ -3260,63 +3227,14 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <url/>
               <status>0</status>
               <priority>3</priority>
-              <description>FS volume free space is between {$VOL_FREE_SPACE_HIGH}% and {$VOL_FREE_SPACE_AVERAGE}%.</description>
+              <description>FS volume free space is between 1% and 5%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
               <dependencies/>
               <tags/>
             </trigger_prototype>
             <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;={$VOL_FREE_SPACE_HIGH}</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>4</priority>
-              <description>FS volume free space is less than {$VOL_FREE_SPACE_HIGH}%.</description>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
-              <tags/>
-            </trigger_prototype>
-            <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;={$VOL_FREE_SPACE_INFORMATION}</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>1</priority>
-              <description>FS volume free space is &lt;={$VOL_FREE_SPACE_INFORMATION}%. Configured macros.</description>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
-              <tags/>
-            </trigger_prototype>
-            <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;={$VOL_FREE_SPACE_INFORMATION} and {OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&gt;{$VOL_FREE_SPACE_WARNING}</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>1</priority>
-              <description>FS volume free space is between {$VOL_FREE_SPACE_INFORMATION}% and {$VOL_FREE_SPACE_WARNING}%.&#13;
-Both are configured macros.</description>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
-              <tags/>
-            </trigger_prototype>
-            <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;={$VOL_FREE_SPACE_WARNING}</expression>
+              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=10</expression>
               <recovery_mode>0</recovery_mode>
               <recovery_expression/>
               <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
@@ -3325,14 +3243,20 @@ Both are configured macros.</description>
               <url/>
               <status>0</status>
               <priority>2</priority>
-              <description>FS volume free space is less than {$VOL_FREE_SPACE_WARNING}%.</description>
+              <description>FS volume free space is less than 10%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
-              <dependencies/>
+              <dependencies>
+                <dependency>
+                  <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;15</expression>
+                  <recovery_expression/>
+                </dependency>
+              </dependencies>
               <tags/>
             </trigger_prototype>
             <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;={$VOL_FREE_SPACE_WARNING} and {OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&gt;{$VOL_FREE_SPACE_AVERAGE}</expression>
+              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=10 and {OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&gt;5</expression>
               <recovery_mode>0</recovery_mode>
               <recovery_expression/>
               <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
@@ -3341,14 +3265,62 @@ Both are configured macros.</description>
               <url/>
               <status>0</status>
               <priority>2</priority>
-              <description>FS volume free space is between {$VOL_FREE_SPACE_WARNING}% and {$VOL_FREE_SPACE_AVERAGE}%.</description>
+              <description>FS volume free space is between 90% and 95%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
               <dependencies/>
               <tags/>
             </trigger_prototype>
             <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;={$VOL_FREE_INODE_AVERAGE}</expression>
+              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=15</expression>
+              <recovery_mode>0</recovery_mode>
+              <recovery_expression/>
+              <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
+              <correlation_mode>0</correlation_mode>
+              <correlation_tag/>
+              <url/>
+              <status>0</status>
+              <priority>1</priority>
+              <description>FS volume free space is &lt;=15%.</description>
+              <type>0</type>
+              <manual_close>0</manual_close>
+              <dependencies/>
+              <tags/>
+            </trigger_prototype>
+            <trigger_prototype>
+              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;15</expression>
+              <recovery_mode>0</recovery_mode>
+              <recovery_expression/>
+              <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
+              <correlation_mode>0</correlation_mode>
+              <correlation_tag/>
+              <url/>
+              <status>0</status>
+              <priority>1</priority>
+              <description>FS volume inodes free space is less than 15%.</description>
+              <type>0</type>
+              <manual_close>0</manual_close>
+              <dependencies/>
+              <tags/>
+            </trigger_prototype>
+            <trigger_prototype>
+              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;15 and {OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&gt;10</expression>
+              <recovery_mode>0</recovery_mode>
+              <recovery_expression/>
+              <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
+              <correlation_mode>0</correlation_mode>
+              <correlation_tag/>
+              <url/>
+              <status>0</status>
+              <priority>1</priority>
+              <description>FS volume inodes free space is between 15% and 10%.</description>
+              <type>0</type>
+              <manual_close>0</manual_close>
+              <dependencies/>
+              <tags/>
+            </trigger_prototype>
+            <trigger_prototype>
+              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=1</expression>
               <recovery_mode>0</recovery_mode>
               <recovery_expression/>
               <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
@@ -3357,25 +3329,41 @@ Both are configured macros.</description>
               <url/>
               <status>0</status>
               <priority>3</priority>
-              <description>FS volume inodes free space is less than {$VOL_FREE_INODE_AVERAGE}%.</description>
+              <description>FS volume inodes free space is less than 1%.</description>
+              <type>0</type>
+              <manual_close>0</manual_close>
+              <dependencies/>
+              <tags/>
+            </trigger_prototype>
+            <trigger_prototype>
+              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=5</expression>
+              <recovery_mode>0</recovery_mode>
+              <recovery_expression/>
+              <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
+              <correlation_mode>0</correlation_mode>
+              <correlation_tag/>
+              <url/>
+              <status>0</status>
+              <priority>3</priority>
+              <description>FS volume inodes free space is less than 5%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
               <dependencies>
                 <dependency>
                   <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
-                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;={$VOL_FREE_INODE_INFORMATION}</expression>
+                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;15</expression>
                   <recovery_expression/>
                 </dependency>
                 <dependency>
                   <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
-                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;={$VOL_FREE_INODE_WARNING}</expression>
+                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=10</expression>
                   <recovery_expression/>
                 </dependency>
               </dependencies>
               <tags/>
             </trigger_prototype>
             <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;={$VOL_FREE_INODE_AVERAGE} and {OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&gt;{$VOL_FREE_INODE_HIGH}</expression>
+              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=5 and {OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&gt;1</expression>
               <recovery_mode>0</recovery_mode>
               <recovery_expression/>
               <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
@@ -3384,62 +3372,14 @@ Both are configured macros.</description>
               <url/>
               <status>0</status>
               <priority>3</priority>
-              <description>FS volume inodes free space is between {$VOL_FREE_INODE_AVERAGE}% and {$VOL_FREE_INODE_HIGH}%.</description>
+              <description>FS volume inodes free space is between 5% and 1%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
               <dependencies/>
               <tags/>
             </trigger_prototype>
             <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;={$VOL_FREE_INODE_HIGH}</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>4</priority>
-              <description>FS volume inodes free space is less than {$VOL_FREE_INODE_HIGH}%.</description>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
-              <tags/>
-            </trigger_prototype>
-            <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;={$VOL_FREE_INODE_INFORMATION}</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>1</priority>
-              <description>FS volume inodes free space is less than {$VOL_FREE_INODE_INFORMATION}%.</description>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
-              <tags/>
-            </trigger_prototype>
-            <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;={$VOL_FREE_INODE_INFORMATION} and {OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&gt;{$VOL_FREE_INODE_WARNING}</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>1</priority>
-              <description>FS volume inodes free space is between {$VOL_FREE_INODE_INFORMATION}% and {$VOL_FREE_INODE_WARNING}%.</description>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
-              <tags/>
-            </trigger_prototype>
-            <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;={$VOL_FREE_INODE_WARNING}</expression>
+              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=10</expression>
               <recovery_mode>0</recovery_mode>
               <recovery_expression/>
               <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
@@ -3448,20 +3388,20 @@ Both are configured macros.</description>
               <url/>
               <status>0</status>
               <priority>2</priority>
-              <description>FS volume inodes free space is less than {$VOL_FREE_INODE_WARNING}%.</description>
+              <description>FS volume inodes free space is less than 10%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
               <dependencies>
                 <dependency>
                   <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
-                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;={$VOL_FREE_INODE_INFORMATION}</expression>
+                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;15</expression>
                   <recovery_expression/>
                 </dependency>
               </dependencies>
               <tags/>
             </trigger_prototype>
             <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;={$VOL_FREE_INODE_WARNING} and {OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&gt;{$VOL_FREE_INODE_AVERAGE}</expression>
+              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=10 and {OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&gt;5</expression>
               <recovery_mode>0</recovery_mode>
               <recovery_expression/>
               <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
@@ -3470,7 +3410,7 @@ Both are configured macros.</description>
               <url/>
               <status>0</status>
               <priority>2</priority>
-              <description>FS volume inodes free space is between {$VOL_FREE_INODE_WARNING}% and {$VOL_FREE_INODE_AVERAGE}%.</description>
+              <description>FS volume inodes free space is between 10% and 5%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
               <dependencies/>
@@ -3620,38 +3560,6 @@ Both are configured macros.</description>
         <macro>
           <macro>{$STEAL_WARN}</macro>
           <value>20</value>
-        </macro>
-        <macro>
-          <macro>{$VOL_FREE_INODE_AVERAGE}</macro>
-          <value>5</value>
-        </macro>
-        <macro>
-          <macro>{$VOL_FREE_INODE_HIGH}</macro>
-          <value>1</value>
-        </macro>
-        <macro>
-          <macro>{$VOL_FREE_INODE_INFORMATION}</macro>
-          <value>15</value>
-        </macro>
-        <macro>
-          <macro>{$VOL_FREE_INODE_WARNING}</macro>
-          <value>10</value>
-        </macro>
-        <macro>
-          <macro>{$VOL_FREE_SPACE_AVERAGE}</macro>
-          <value>5</value>
-        </macro>
-        <macro>
-          <macro>{$VOL_FREE_SPACE_HIGH}</macro>
-          <value>1</value>
-        </macro>
-        <macro>
-          <macro>{$VOL_FREE_SPACE_INFORMATION}</macro>
-          <value>15</value>
-        </macro>
-        <macro>
-          <macro>{$VOL_FREE_SPACE_WARNING}</macro>
-          <value>10</value>
         </macro>
       </macros>
       <templates>
@@ -4267,44 +4175,6 @@ Both are configured macros.</description>
           <recovery_expression/>
         </dependency>
       </dependencies>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{OS Linux:net.tcp.port[,{$SVC_SSH_PORT}].count(#3,0)}=3</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>NET::port::ssh unreachable</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies>
-        <dependency>
-          <name>SYS::processes::sshd is not running</name>
-          <expression>{OS Linux:proc.num[sshd].last(0)}&lt;1</expression>
-          <recovery_expression/>
-        </dependency>
-      </dependencies>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{OS Linux:net.tcp.service[ssh,,{$SVC_SSH_PORT}].count(#3,0)}=3</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SVC::ssh is down</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
       <tags/>
     </trigger>
     <trigger>
