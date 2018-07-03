@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-07-03T06:38:47Z</date>
+  <date>2018-07-03T12:34:48Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -144,7 +144,7 @@ pm.status_path = /status&#13;
           </preprocessing>
           <jmx_endpoint/>
           <master_item>
-            <key>web.page.regexp[{$PHPFPM_HOST},{$PHPFPM_STATS_URI},{$PHPFPM_PORT},(^\{.*),,\1]</key>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
         </item>
         <item>
@@ -192,7 +192,7 @@ pm.status_path = /status&#13;
           </preprocessing>
           <jmx_endpoint/>
           <master_item>
-            <key>web.page.regexp[{$PHPFPM_HOST},{$PHPFPM_STATS_URI},{$PHPFPM_PORT},(^\{.*),,\1]</key>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
         </item>
         <item>
@@ -240,7 +240,7 @@ pm.status_path = /status&#13;
           </preprocessing>
           <jmx_endpoint/>
           <master_item>
-            <key>web.page.regexp[{$PHPFPM_HOST},{$PHPFPM_STATS_URI},{$PHPFPM_PORT},(^\{.*),,\1]</key>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
         </item>
         <item>
@@ -288,7 +288,7 @@ pm.status_path = /status&#13;
           </preprocessing>
           <jmx_endpoint/>
           <master_item>
-            <key>web.page.regexp[{$PHPFPM_HOST},{$PHPFPM_STATS_URI},{$PHPFPM_PORT},(^\{.*),,\1]</key>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
         </item>
         <item>
@@ -336,7 +336,7 @@ pm.status_path = /status&#13;
           </preprocessing>
           <jmx_endpoint/>
           <master_item>
-            <key>web.page.regexp[{$PHPFPM_HOST},{$PHPFPM_STATS_URI},{$PHPFPM_PORT},(^\{.*),,\1]</key>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
         </item>
         <item>
@@ -384,7 +384,7 @@ pm.status_path = /status&#13;
           </preprocessing>
           <jmx_endpoint/>
           <master_item>
-            <key>web.page.regexp[{$PHPFPM_HOST},{$PHPFPM_STATS_URI},{$PHPFPM_PORT},(^\{.*),,\1]</key>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
         </item>
         <item>
@@ -432,7 +432,7 @@ pm.status_path = /status&#13;
           </preprocessing>
           <jmx_endpoint/>
           <master_item>
-            <key>web.page.regexp[{$PHPFPM_HOST},{$PHPFPM_STATS_URI},{$PHPFPM_PORT},(^\{.*),,\1]</key>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
         </item>
         <item>
@@ -480,7 +480,7 @@ pm.status_path = /status&#13;
           </preprocessing>
           <jmx_endpoint/>
           <master_item>
-            <key>web.page.regexp[{$PHPFPM_HOST},{$PHPFPM_STATS_URI},{$PHPFPM_PORT},(^\{.*),,\1]</key>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
         </item>
         <item>
@@ -529,7 +529,7 @@ Mostly it will be "www".</description>
           </preprocessing>
           <jmx_endpoint/>
           <master_item>
-            <key>web.page.regexp[{$PHPFPM_HOST},{$PHPFPM_STATS_URI},{$PHPFPM_PORT},(^\{.*),,\1]</key>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
         </item>
         <item>
@@ -578,7 +578,7 @@ Trying ondemand is on todo list.</description>
           </preprocessing>
           <jmx_endpoint/>
           <master_item>
-            <key>web.page.regexp[{$PHPFPM_HOST},{$PHPFPM_STATS_URI},{$PHPFPM_PORT},(^\{.*),,\1]</key>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
         </item>
         <item>
@@ -626,7 +626,7 @@ Trying ondemand is on todo list.</description>
           </preprocessing>
           <jmx_endpoint/>
           <master_item>
-            <key>web.page.regexp[{$PHPFPM_HOST},{$PHPFPM_STATS_URI},{$PHPFPM_PORT},(^\{.*),,\1]</key>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
         </item>
         <item>
@@ -674,7 +674,7 @@ Trying ondemand is on todo list.</description>
           </preprocessing>
           <jmx_endpoint/>
           <master_item>
-            <key>web.page.regexp[{$PHPFPM_HOST},{$PHPFPM_STATS_URI},{$PHPFPM_PORT},(^\{.*),,\1]</key>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
         </item>
         <item>
@@ -722,7 +722,7 @@ Trying ondemand is on todo list.</description>
           </preprocessing>
           <jmx_endpoint/>
           <master_item>
-            <key>web.page.regexp[{$PHPFPM_HOST},{$PHPFPM_STATS_URI},{$PHPFPM_PORT},(^\{.*),,\1]</key>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
         </item>
         <item>
@@ -770,7 +770,7 @@ Trying ondemand is on todo list.</description>
           </preprocessing>
           <jmx_endpoint/>
           <master_item>
-            <key>web.page.regexp[{$PHPFPM_HOST},{$PHPFPM_STATS_URI},{$PHPFPM_PORT},(^\{.*),,\1]</key>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
         </item>
         <item>
@@ -778,7 +778,7 @@ Trying ondemand is on todo list.</description>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>web.page.regexp[{$PHPFPM_HOST},{$PHPFPM_STATS_URI},{$PHPFPM_PORT},(^\{.*),,\1]</key>
+          <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           <delay>30s</delay>
           <history>0d</history>
           <trends>0</trends>
@@ -819,20 +819,20 @@ Trying ondemand is on todo list.</description>
       <httptests/>
       <macros>
         <macro>
-          <macro>{$PHPFPM_HOST}</macro>
+          <macro>{$SVC_PHP_FPM_HOST}</macro>
           <value>localhost</value>
         </macro>
         <macro>
-          <macro>{$PHPFPM_PORT}</macro>
+          <macro>{$SVC_PHP_FPM_PORT}</macro>
           <value>80</value>
-        </macro>
-        <macro>
-          <macro>{$PHPFPM_STATS_URI}</macro>
-          <value>/status?json</value>
         </macro>
         <macro>
           <macro>{$SVC_PHP_FPM_PROC}</macro>
           <value>php-fpm</value>
+        </macro>
+        <macro>
+          <macro>{$SVC_PHP_FPM_STATS_URI}</macro>
+          <value>/status?json</value>
         </macro>
       </macros>
       <templates/>
