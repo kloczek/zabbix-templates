@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-07-03T12:56:24Z</date>
+  <date>2018-07-03T13:08:20Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -34,7 +34,9 @@ pm.status_path = /status&#13;
                 fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;&#13;
 &#13;
                 fastcgi_pass    unix:/run/php-fpm/www.sock;&#13;
-        }</description>
+        }&#13;
+&#13;
+- If on some systems PROC::php-fpm item will be showing 0 processes find PID one of the working php-pfm process and use command "basename $(readlink /proc/&lt;PID&gt;/exe)" and update {$SVC_PHP_FPM_PROC} host macro content with value which this command show.</description>
       <groups>
         <group>
           <name>Templates</name>
