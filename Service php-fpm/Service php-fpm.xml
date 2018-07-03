@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-07-03T13:12:22Z</date>
+  <date>2018-07-03T13:21:38Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -926,7 +926,9 @@ Trying ondemand is on todo list.</description>
       <url/>
       <status>0</status>
       <priority>4</priority>
-      <description>PHP-FPM process count: 0</description>
+      <description>php-fpm process is DOWN or wrong process name in {$SVC_PHP_FPM_PROC} macro.&#13;
+&#13;
+If on some Linux systems this item show 0 processes find PID one of the working php-pfm process and use command "basename $(readlink /proc/&lt;PID&gt;/exe)" and update {$SVC_PHP_FPM_PROC} host macro content with value which this command show.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>
