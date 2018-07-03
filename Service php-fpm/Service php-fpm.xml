@@ -36,7 +36,7 @@ pm.status_path = /status&#13;
                 fastcgi_pass    unix:/run/php-fpm/www.sock;&#13;
         }&#13;
 &#13;
-- If on some Linux systems PROC::php-fpm item will be showing 0 processes find PID one of the working php-pfm process and use command "basename $(readlink /proc/&lt;PID&gt;/exe)" and update {$SVC_PHP_FPM_PROC} host macro content with value which this command show.</description>
+- If on some Linux systems PROC::php-fpm item will be showing 0 processes find PID one of the working php-fpm process and use command "basename $(readlink /proc/&lt;PID&gt;/exe)" and update {$SVC_PHP_FPM_PROC} host macro content with value which this command show.</description>
       <groups>
         <group>
           <name>Templates</name>
@@ -928,7 +928,7 @@ Trying ondemand is on todo list.</description>
       <priority>4</priority>
       <description>php-fpm process is DOWN or wrong process name in {$SVC_PHP_FPM_PROC} macro.&#13;
 &#13;
-If on some Linux systems this item show 0 processes find PID one of the working php-pfm process and use command "basename $(readlink /proc/&lt;PID&gt;/exe)" and update {$SVC_PHP_FPM_PROC} host macro content with value which this command show.</description>
+If on some Linux systems this item show 0 processes find PID one of the working php-fpm process and use command "basename $(readlink /proc/&lt;PID&gt;/exe)" and update {$SVC_PHP_FPM_PROC} host macro content with value which this command show.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>
