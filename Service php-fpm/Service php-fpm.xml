@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-07-03T12:34:48Z</date>
+  <date>2018-07-03T12:56:24Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -53,7 +53,7 @@ pm.status_path = /status&#13;
       </applications>
       <items>
         <item>
-          <name>PROC::php-fpm</name>
+          <name>PROC::$1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
