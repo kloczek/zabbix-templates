@@ -7,6 +7,13 @@ PHP FastCGI Process Manager service monitoring template. This template is using
 
 #### Macros used by template:
 
+| Macro | Default value | Description |
+| :-- | :-- | :-- |
+| {$SVC_PHP_FPM_HOST} | localhost | Hostname of the php-fpm service |
+| {$SVC_PHP_FPM_PORT} | 80 | TCP port on which is listening php-fpm |
+| {$SVC_PHP_FPM_STATS_URI} | /status | URI adderss of the status page |
+| {$SVC_PHP_FPM_PROC} | php-fpm | php-fpm process name |
+
 #### Changelog:
 - (devel)
   - Initial version
