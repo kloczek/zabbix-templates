@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-06-11T11:39:07Z</date>
+  <date>2018-07-04T00:05:37Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -2478,7 +2478,7 @@ A high number indicates performance problems on the database side.</description>
         <screen>
           <name>SVC::zabbix_server::status</name>
           <hsize>2</hsize>
-          <vsize>3</vsize>
+          <vsize>5</vsize>
           <screen_items>
             <screen_item>
               <resourcetype>0</resourcetype>
@@ -2584,7 +2584,7 @@ A high number indicates performance problems on the database side.</description>
               <dynamic>0</dynamic>
               <sort_triggers>0</sort_triggers>
               <resource>
-                <name>SVC::zabbix_server::items queued</name>
+                <name>SVC::zabbix_server::preprocessing queue</name>
                 <host>Service Zabbix Server</host>
               </resource>
               <max_columns>3</max_columns>
@@ -2606,7 +2606,95 @@ A high number indicates performance problems on the database side.</description>
               <dynamic>0</dynamic>
               <sort_triggers>0</sort_triggers>
               <resource>
+                <name>SVC::zabbix_server::items queued</name>
+                <host>Service Zabbix Server</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>0</resourcetype>
+              <width>500</width>
+              <height>100</height>
+              <x>0</x>
+              <y>3</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
                 <name>SVC::zabbix_server::items total/unsupported</name>
+                <host>Service Zabbix Server</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>0</resourcetype>
+              <width>500</width>
+              <height>100</height>
+              <x>1</x>
+              <y>3</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>SVC::zabbix_server::items::nvps</name>
+                <host>Service Zabbix Server</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>0</resourcetype>
+              <width>500</width>
+              <height>100</height>
+              <x>0</x>
+              <y>4</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>SVC::zabbix_server::items/triggers</name>
+                <host>Service Zabbix Server</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>0</resourcetype>
+              <width>500</width>
+              <height>100</height>
+              <x>1</x>
+              <y>4</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>SVC::zabbix_server::hosts</name>
                 <host>Service Zabbix Server</host>
               </resource>
               <max_columns>3</max_columns>
@@ -3223,6 +3311,38 @@ A high number indicates performance problems on the database side.</description>
       </graph_items>
     </graph>
     <graph>
+      <name>SVC::zabbix_server::hosts</name>
+      <width>1200</width>
+      <height>300</height>
+      <yaxismin>0.0000</yaxismin>
+      <yaxismax>100.0000</yaxismax>
+      <show_work_period>1</show_work_period>
+      <show_triggers>0</show_triggers>
+      <type>0</type>
+      <show_legend>1</show_legend>
+      <show_3d>0</show_3d>
+      <percent_left>0.0000</percent_left>
+      <percent_right>0.0000</percent_right>
+      <ymin_type_1>1</ymin_type_1>
+      <ymax_type_1>0</ymax_type_1>
+      <ymin_item_1>0</ymin_item_1>
+      <ymax_item_1>0</ymax_item_1>
+      <graph_items>
+        <graph_item>
+          <sortorder>0</sortorder>
+          <drawtype>2</drawtype>
+          <color>33FF33</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service Zabbix Server</host>
+            <key>zabbix[hosts]</key>
+          </item>
+        </graph_item>
+      </graph_items>
+    </graph>
+    <graph>
       <name>SVC::zabbix_server::internal process busy %</name>
       <width>1200</width>
       <height>300</height>
@@ -3303,7 +3423,7 @@ A high number indicates performance problems on the database side.</description>
       </graph_items>
     </graph>
     <graph>
-      <name>SVC::zabbix_server::items/wcache::buffer::pfree</name>
+      <name>SVC::zabbix_server::items/triggers</name>
       <width>1200</width>
       <height>300</height>
       <yaxismin>0.0000</yaxismin>
@@ -3315,17 +3435,17 @@ A high number indicates performance problems on the database side.</description>
       <show_3d>0</show_3d>
       <percent_left>0.0000</percent_left>
       <percent_right>0.0000</percent_right>
-      <ymin_type_1>0</ymin_type_1>
+      <ymin_type_1>1</ymin_type_1>
       <ymax_type_1>0</ymax_type_1>
       <ymin_item_1>0</ymin_item_1>
       <ymax_item_1>0</ymax_item_1>
       <graph_items>
         <graph_item>
           <sortorder>0</sortorder>
-          <drawtype>0</drawtype>
-          <color>00BB00</color>
+          <drawtype>2</drawtype>
+          <color>EE0000</color>
           <yaxisside>0</yaxisside>
-          <calc_fnc>2</calc_fnc>
+          <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
             <host>Service Zabbix Server</host>
@@ -3335,13 +3455,45 @@ A high number indicates performance problems on the database side.</description>
         <graph_item>
           <sortorder>1</sortorder>
           <drawtype>0</drawtype>
-          <color>FFFF33</color>
+          <color>00DD00</color>
           <yaxisside>0</yaxisside>
-          <calc_fnc>2</calc_fnc>
+          <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
             <host>Service Zabbix Server</host>
-            <key>zabbix[vcache,buffer,pfree]</key>
+            <key>zabbix[triggers]</key>
+          </item>
+        </graph_item>
+      </graph_items>
+    </graph>
+    <graph>
+      <name>SVC::zabbix_server::items::nvps</name>
+      <width>1200</width>
+      <height>300</height>
+      <yaxismin>0.0000</yaxismin>
+      <yaxismax>100.0000</yaxismax>
+      <show_work_period>1</show_work_period>
+      <show_triggers>0</show_triggers>
+      <type>0</type>
+      <show_legend>1</show_legend>
+      <show_3d>0</show_3d>
+      <percent_left>0.0000</percent_left>
+      <percent_right>0.0000</percent_right>
+      <ymin_type_1>1</ymin_type_1>
+      <ymax_type_1>0</ymax_type_1>
+      <ymin_item_1>0</ymin_item_1>
+      <ymax_item_1>0</ymax_item_1>
+      <graph_items>
+        <graph_item>
+          <sortorder>0</sortorder>
+          <drawtype>2</drawtype>
+          <color>FF3333</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service Zabbix Server</host>
+            <key>zabbix[requiredperformance]</key>
           </item>
         </graph_item>
       </graph_items>

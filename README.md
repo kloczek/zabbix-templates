@@ -31,7 +31,20 @@ This repository provides a set of templates which offers the alternative set of 
     - new ```HOST::items``` which presents number of host items vs number of unsuppoerted item
   - Items:
     - new ```items``` with current counter of total host items (supported/unsupprted/enabled/disabled)
-
+- **Service Zabbix Server**
+  Presentation layer impromements:
+  - Graphs:
+    - delete SVC::zabbix_server::items/wcache::buffer::pfree graph
+    - new ```SVC::zabbix_server::hosts``` graph with number of monitored hosts
+    - new ```SVC::zabbix_server::items/triggers``` graph with total number of items vs. triggers
+    - new ```SVC::zabbix_server::items::nvps``` graphs with zabbix stack NVPS
+  - Screens:
+    - reorganized ```SVC::zabbix_server::status``` screen to put in rows:
+      - "process busy %" and "internam process busy %"
+      - "cahces usage %" and "vcache::hits/misses"
+      - "processing queue" and flame like graph with "queued items"
+      - "items totat/unsupported" and "items::nvps"
+      - "items/triggers" and "hosts"
 ### 1.0.4 (2018-06-11)
 - The first version tagged in git repo to stamp state of templates and tools and to provide better tracking changes by using ```git``` command
 - The development of the next versions of the templates will continue on devel branch. When all changes are ready devel branch will be merged to master one. It will be way better for those who have interested enough tested template.
