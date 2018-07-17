@@ -26,6 +26,9 @@ This repository provides a set of templates which offers the alternative set of 
     - new ```SVC::Nginx::reqs_per_conn```
   - Items:
     - new calculated item ```reqs_per_conn``` which shows number requests in single connection (```nginx.requests")/last("nginx.requests[handled]```)
+- **OS Windows**
+  - Triggers:
+    - added missing ```SYS::Host is down``` trigger with all necessary dependencies
 - **Service Zabbix Agent**
   - Graphs:
     - new ```HOST::items``` which presents number of host items vs number of unsuppoerted item

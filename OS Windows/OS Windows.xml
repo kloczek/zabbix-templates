@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-06-11T11:38:42Z</date>
+  <date>2018-07-17T14:28:21Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -8997,6 +8997,91 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
       <tags/>
     </trigger>
     <trigger>
+      <expression>{OS Windows:icmpping.count(#10,1,"eq")}&lt;5</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>NET::ICMP 50% failing</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>2</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies>
+        <dependency>
+          <name>NET::ICMP 100% failing</name>
+          <expression>{OS Windows:icmpping.count(#10,0,"eq")}=10</expression>
+          <recovery_expression/>
+        </dependency>
+        <dependency>
+          <name>SYS::Host just (re)started</name>
+          <expression>{OS Windows:system.uptime.last(0)}&lt;10m</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{OS Windows:icmpping.count(#10,0,"eq")}=10</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>NET::ICMP 100% failing</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>2</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Windows:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Windows:agent.ping.nodata(15m)}=1 and&#13;
+{OS Windows:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{OS Windows:icmpping.count(#10,1,"eq")}&lt;10</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>NET::ICMP failing</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>2</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies>
+        <dependency>
+          <name>NET::ICMP 50% failing</name>
+          <expression>{OS Windows:icmpping.count(#10,1,"eq")}&lt;5</expression>
+          <recovery_expression/>
+        </dependency>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Windows:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Windows:agent.ping.nodata(15m)}=1 and&#13;
+{OS Windows:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+        <dependency>
+          <name>SYS::Host just (re)started</name>
+          <expression>{OS Windows:system.uptime.last(0)}&lt;10m</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
+      <tags/>
+    </trigger>
+    <trigger>
       <expression>{OS Windows:system.cpu.load[,avg1].min(#5)}&gt;{$PROC_LD_P4}</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
@@ -9007,6 +9092,24 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
       <status>0</status>
       <priority>2</priority>
       <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{OS Windows:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Windows:agent.ping.nodata(15m)}=1 and&#13;
+{OS Windows:system.uptime.count(15m)}=0</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SYS::Host is down</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description>Investigate -&gt; acknowledge and raise ticket if it is something unusual.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>
