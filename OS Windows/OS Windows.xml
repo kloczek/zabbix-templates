@@ -303,7 +303,7 @@ Notes:</description>
           <master_item/>
         </item>
         <item>
-          <name>MEM::CAC::Copy Read Hits</name>
+          <name>MEM::Copy Read Hits</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -344,7 +344,7 @@ Notes:</description>
           <master_item/>
         </item>
         <item>
-          <name>MEM::CAC::Copy Reads</name>
+          <name>MEM::Copy Reads</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -385,7 +385,7 @@ Notes:</description>
           <master_item/>
         </item>
         <item>
-          <name>MEM::CAC::Data Flushes</name>
+          <name>MEM::Data Flushes</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -426,7 +426,7 @@ Notes:</description>
           <master_item/>
         </item>
         <item>
-          <name>MEM::CAC::Data Flush Pages</name>
+          <name>MEM::Data Flush Pages</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -467,7 +467,7 @@ Notes:</description>
           <master_item/>
         </item>
         <item>
-          <name>MEM::CAC::Data Maps</name>
+          <name>MEM::Data Maps</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -508,7 +508,7 @@ Notes:</description>
           <master_item/>
         </item>
         <item>
-          <name>MEM::CAC::Fast Reads</name>
+          <name>MEM::Fast Reads</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -549,7 +549,7 @@ Notes:</description>
           <master_item/>
         </item>
         <item>
-          <name>MEM::CAC::Lazy Write Flushes</name>
+          <name>MEM::Lazy Write Flushes</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -590,7 +590,7 @@ Notes:</description>
           <master_item/>
         </item>
         <item>
-          <name>MEM::CAC::Lazy Write Pages</name>
+          <name>MEM::Lazy Write Pages</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -631,7 +631,7 @@ Notes:</description>
           <master_item/>
         </item>
         <item>
-          <name>MEM::CAC::Read Aheads</name>
+          <name>MEM::Read Aheads</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -926,7 +926,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
           <master_item/>
         </item>
         <item>
-          <name>MEM::CAC::Faults</name>
+          <name>MEM::Faults</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
