@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2018-08-13T14:20:48Z</date>
+    <date>2018-08-24T14:42:18Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -82,6 +82,9 @@ Notes:</description>
                 </application>
                 <application>
                     <name>SVC</name>
+                </application>
+                <application>
+                    <name>SYNC</name>
                 </application>
                 <application>
                     <name>SYS</name>
@@ -7744,6 +7747,164 @@ system.run[&quot;powershell -NoProfile -ExecutionPolicy Bypass -File \&quot;C:\P
                     <jmx_endpoint/>
                 </discovery_rule>
                 <discovery_rule>
+                    <name>SVC</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>service.discovery</key>
+                    <delay>1d</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions>
+                            <condition>
+                                <macro>{#SERVICE.NAME}</macro>
+                                <value>@Windows service names for discovery</value>
+                                <operator>8</operator>
+                                <formulaid>A</formulaid>
+                            </condition>
+                            <condition>
+                                <macro>{#SERVICE.STARTUPNAME}</macro>
+                                <value>@Windows service startup states for discovery</value>
+                                <operator>8</operator>
+                                <formulaid>B</formulaid>
+                            </condition>
+                        </conditions>
+                    </filter>
+                    <lifetime>30d</lifetime>
+                    <description>Discovery of Windows services of different types as defined in global regular expressions &quot;Windows service names for discovery&quot; and &quot;Windows service startup states for discovery&quot;.</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>SVC::State of service &quot;{#SERVICE.NAME}&quot; ({#SERVICE.DISPLAYNAME})</name>
+                            <type>7</type>
+                            <snmp_community/>
+                            <snmp_oid/>
+                            <key>service.info[{#SERVICE.NAME},state]</key>
+                            <delay>10m</delay>
+                            <history>90d</history>
+                            <trends>365d</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>SVC</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>Windows service state</name>
+                            </valuemap>
+                            <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint/>
+                            <application_prototypes/>
+                            <master_item_prototype/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{OS Windows:service.info[{#SERVICE.NAME},state].min(#3)}&lt;&gt;0</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>Service &quot;{#SERVICE.NAME}&quot; ({#SERVICE.DISPLAYNAME}) is not running (startup type {#SERVICE.STARTUPNAME})</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>3</priority>
+                            <description/>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes/>
+                    <host_prototypes/>
+                    <jmx_endpoint/>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>SYNC</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>system.run[&quot;powershell -NoProfile -ExecutionPolicy Get-Counter -ListSet * | select -expand PathsWithInstances | Select-String -Pattern \&quot;_Total\&quot; | ConvertTo-Json&quot;]</key>
+                    <delay>5m</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>
+                        <evaltype>1</evaltype>
+                        <formula/>
+                        <conditions>
+                            <condition>
+                                <macro>{#SYNC}</macro>
+                                <value>Synchronization</value>
+                                <operator>8</operator>
+                                <formulaid>A</formulaid>
+                            </condition>
+                        </conditions>
+                    </filter>
+                    <lifetime>90d</lifetime>
+                    <description>Find all Total Perf Counters.&#13;
+&#13;
+WIP</description>
+                    <item_prototypes/>
+                    <trigger_prototypes/>
+                    <graph_prototypes/>
+                    <host_prototypes/>
+                    <jmx_endpoint/>
+                </discovery_rule>
+                <discovery_rule>
                     <name>VOL:</name>
                     <type>7</type>
                     <snmp_community/>
@@ -9915,4 +10076,47 @@ system.run[&quot;powershell -NoProfile -ExecutionPolicy Bypass -File \&quot;C:\P
             </graph_items>
         </graph>
     </graphs>
+    <value_maps>
+        <value_map>
+            <name>Windows service state</name>
+            <mappings>
+                <mapping>
+                    <value>0</value>
+                    <newvalue>Running</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>Paused</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>Start pending</newvalue>
+                </mapping>
+                <mapping>
+                    <value>3</value>
+                    <newvalue>Pause pending</newvalue>
+                </mapping>
+                <mapping>
+                    <value>4</value>
+                    <newvalue>Continue pending</newvalue>
+                </mapping>
+                <mapping>
+                    <value>5</value>
+                    <newvalue>Stop pending</newvalue>
+                </mapping>
+                <mapping>
+                    <value>6</value>
+                    <newvalue>Stopped</newvalue>
+                </mapping>
+                <mapping>
+                    <value>7</value>
+                    <newvalue>Unknown</newvalue>
+                </mapping>
+                <mapping>
+                    <value>255</value>
+                    <newvalue>No such service</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+    </value_maps>
 </zabbix_export>
