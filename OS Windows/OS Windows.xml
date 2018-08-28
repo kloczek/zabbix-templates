@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2018-08-24T14:42:18Z</date>
+    <date>2018-08-28T14:03:58Z</date>
     <groups>
         <group>
-            <name>Templates</name>
+            <name>WIP</name>
         </group>
     </groups>
     <templates>
@@ -19,7 +19,7 @@ URL: https://github.com/kloczek/zabbix-templates/tree/master/OS%20Windows&#13;
 Notes:</description>
             <groups>
                 <group>
-                    <name>Templates</name>
+                    <name>WIP</name>
                 </group>
             </groups>
             <applications>
@@ -297,6 +297,47 @@ Notes:</description>
                     <applications>
                         <application>
                             <name>LOG</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>HW::NIC List</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>net.if.list</key>
+                    <delay>1d</delay>
+                    <history>90d</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>4</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Network interface list (includes interface type, status, IPv4 address, description).</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>HW::NIC</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -1105,7 +1146,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <snmp_community/>
                     <snmp_oid/>
                     <key>perf_counter[\Memory\Free System Page Table Entries]</key>
-                    <delay>10m</delay>
+                    <delay>30m</delay>
                     <history>2w</history>
                     <trends>365d</trends>
                     <status>0</status>
@@ -3156,7 +3197,7 @@ https://msdn.microsoft.com/en-us/library/ms804621.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>CPU::Privileged Time</name>
+                    <name>CPU::Processor::Privileged Time</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -4980,7 +5021,7 @@ Many of these errors are also written to the System log and Security log in Even
                     <snmp_community/>
                     <snmp_oid/>
                     <key>perf_counter[\System\% Registry Quota In Use]</key>
-                    <delay>10m</delay>
+                    <delay>30m</delay>
                     <history>2w</history>
                     <trends>365d</trends>
                     <status>0</status>
@@ -6729,7 +6770,7 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>SYS::process::*</name>
+                    <name>Process::Number</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -6760,7 +6801,7 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
-                            <name>SYS</name>
+                            <name>PROC</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -6775,12 +6816,12 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>SYS::load:$2</name>
+                    <name>CPU::Load Average::1 min</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>system.cpu.load[,avg1]</key>
-                    <delay>1m</delay>
+                    <delay>2m</delay>
                     <history>2w</history>
                     <trends>365d</trends>
                     <status>0</status>
@@ -6802,11 +6843,11 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description>Avg1 system running queue length.</description>
+                    <description>Load Average over a 1 min time period</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
-                            <name>SYS</name>
+                            <name>CPU</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -6816,7 +6857,7 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>CPU::Processor load5</name>
+                    <name>CPU::Load Average::5 min</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -6843,7 +6884,7 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>Load Average over a 5 min time period</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -6857,7 +6898,7 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>CPU::Processor load15</name>
+                    <name>CPU::Load Average::15 min</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -6884,7 +6925,7 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>Load Average over a 15 min time period</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -6925,7 +6966,10 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description>Number of CPU cores</description>
+                    <description>Number of CPU cores.&#13;
+&#13;
+possible values:&#13;
+online (default), max</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -6939,7 +6983,7 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>CPU::$2::$3</name>
+                    <name>CPU::System Average::1 min</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -6971,6 +7015,91 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
                     <applications>
                         <application>
                             <name>CPU</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>HW::Chassis</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>system.hw.chassis[full]</key>
+                    <delay>1d</delay>
+                    <history>90d</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>4</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>This key depends on the availability of the SMBIOS table.&#13;
+Will try to read the DMI table from sysfs, if sysfs access fails then try reading directly from memory. &#13;
+&#13;
+Root permissions are required because the value is acquired by reading from sysfs or memory.</description>
+                    <inventory_link>28</inventory_link>
+                    <applications>
+                        <application>
+                            <name>HW</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>HW::NIC MACADDR</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>system.hw.macaddr[all,full]</key>
+                    <delay>1d</delay>
+                    <history>90d</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>4</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Network interface list all MAC addresses.</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>HW::NIC</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -7103,7 +7232,7 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>MEM::cached</name>
+                    <name>MEM::Cached</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -7144,7 +7273,7 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>MEM::$1</name>
+                    <name>MEM::Free</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -7752,7 +7881,7 @@ system.run[&quot;powershell -NoProfile -ExecutionPolicy Bypass -File \&quot;C:\P
                     <snmp_community/>
                     <snmp_oid/>
                     <key>service.discovery</key>
-                    <delay>1d</delay>
+                    <delay>2h</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -7788,7 +7917,7 @@ system.run[&quot;powershell -NoProfile -ExecutionPolicy Bypass -File \&quot;C:\P
                             </condition>
                         </conditions>
                     </filter>
-                    <lifetime>30d</lifetime>
+                    <lifetime>90d</lifetime>
                     <description>Discovery of Windows services of different types as defined in global regular expressions &quot;Windows service names for discovery&quot; and &quot;Windows service startup states for discovery&quot;.</description>
                     <item_prototypes>
                         <item_prototype>
@@ -9183,6 +9312,70 @@ WIP</description>
     </templates>
     <triggers>
         <trigger>
+            <expression>{OS Windows:system.hw.chassis[full].diff(0)}&gt;0</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>HW::Chassis Info Changed</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>1</priority>
+            <description>Chassis Info Changed</description>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{OS Windows:system.cpu.num[max].diff(0)}&gt;0</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>HW::CPU::Core Count Changed</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>1</priority>
+            <description>Total amount of visible cores has changed.</description>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{OS Windows:net.if.list.diff(0)}&gt;0</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>HW:NIC List Changed</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>1</priority>
+            <description>NIC List Changed. One or more of; interface type, status, IPv4 address or description</description>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{OS Windows:system.hw.macaddr[all,full].diff(0)}&gt;0</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>HW:NIC MACADDR Changed</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>1</priority>
+            <description>NIC MAC address changed.</description>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
             <expression>{OS Windows:vm.memory.size[free].last(0)}&lt;10000</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
@@ -9310,7 +9503,7 @@ WIP</description>
             <correlation_tag/>
             <url/>
             <status>0</status>
-            <priority>3</priority>
+            <priority>4</priority>
             <description>Investigate -&gt; acknowledge and raise ticket if it is something unusual.</description>
             <type>0</type>
             <manual_close>0</manual_close>
@@ -9358,7 +9551,7 @@ WIP</description>
             <correlation_tag/>
             <url/>
             <status>0</status>
-            <priority>2</priority>
+            <priority>1</priority>
             <description/>
             <type>0</type>
             <manual_close>0</manual_close>
