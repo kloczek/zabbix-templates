@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2018-08-28T14:03:58Z</date>
+    <date>2018-08-29T07:09:18Z</date>
     <groups>
         <group>
             <name>WIP</name>
@@ -4449,7 +4449,7 @@ http://www.osronline.com/article.cfm?article=529</description>
                     <delay>5m</delay>
                     <history>2w</history>
                     <trends>365d</trends>
-                    <status>0</status>
+                    <status>1</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
                     <units/>
@@ -5437,7 +5437,7 @@ https://msdn.microsoft.com/en-gb/library/ms804037.aspx</description>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>perf_counter[\System\Threads]</key>
-                    <delay>1m</delay>
+                    <delay>4s</delay>
                     <history>2w</history>
                     <trends>365d</trends>
                     <status>0</status>
@@ -5911,47 +5911,6 @@ https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
                     <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>%</units>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>THRD</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <master_item/>
-                </item>
-                <item>
-                    <name>Thread Context Switches</name>
-                    <type>7</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>perf_counter[\Thread(_Total/_Total)\Context Switches/sec]</key>
-                    <delay>1m</delay>
-                    <history>2w</history>
-                    <trends>365d</trends>
-                    <status>1</status>
-                    <value_type>0</value_type>
-                    <allowed_hosts/>
-                    <units/>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
