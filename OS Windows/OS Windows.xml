@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2018-08-29T07:09:18Z</date>
+    <date>2018-08-29T07:59:21Z</date>
     <groups>
         <group>
             <name>WIP</name>
@@ -2006,7 +2006,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process Privileged Time</name>
+                    <name>PROC::Privileged Time</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2047,7 +2047,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process Processor Time</name>
+                    <name>PROC::Processor Time</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2088,7 +2088,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process User Time</name>
+                    <name>PROC::User Time</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2129,7 +2129,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process Creating Process ID</name>
+                    <name>PROC::Creating Process ID</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2170,7 +2170,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process Elapsed Time</name>
+                    <name>PROC::Elapsed Time</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2211,7 +2211,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process Handle Count</name>
+                    <name>PROC::Handle Count</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2252,7 +2252,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process ID Process</name>
+                    <name>PROC::ID Process</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2293,7 +2293,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process IO Data Bytes</name>
+                    <name>PROC::IO Data Bytes</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2334,7 +2334,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process IO Data</name>
+                    <name>PROC::IO Data</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2375,7 +2375,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process IO Other Bytes</name>
+                    <name>PROC::IO Other Bytes</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2416,7 +2416,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process IO Other</name>
+                    <name>PROC::IO Other</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2457,7 +2457,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process IO Read Bytes</name>
+                    <name>PROC::IO Read Bytes</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2498,7 +2498,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process IO Read Operations</name>
+                    <name>PROC::IO Read Operations</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2539,7 +2539,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process IO Write Bytes</name>
+                    <name>PROC::IO Write Bytes</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2580,7 +2580,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process IO Write Operations</name>
+                    <name>PROC::IO Write Operations</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2621,7 +2621,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process Page Faults</name>
+                    <name>PROC::Page Faults</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2703,7 +2703,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process Pool Nonpaged Bytes</name>
+                    <name>PROC::Pool Nonpaged Bytes</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2744,7 +2744,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process Pool Paged Bytes</name>
+                    <name>PROC::Pool Paged Bytes</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2785,7 +2785,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process Priority Base</name>
+                    <name>PROC::Priority Base</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2826,7 +2826,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process Private Bytes</name>
+                    <name>PROC::Private Bytes</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2867,7 +2867,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process Thread Count</name>
+                    <name>PROC::Thread Count</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2908,7 +2908,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process Virtual Bytes</name>
+                    <name>PROC::Virtual Bytes</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2949,7 +2949,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process Working Set Private</name>
+                    <name>PROC::Working Set Private</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -2990,7 +2990,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process Working Set</name>
+                    <name>PROC::Working Set</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -5817,7 +5817,7 @@ https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>Thread Privileged Time</name>
+                    <name>THRD::Privileged Time</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -5858,7 +5858,7 @@ https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>Thread Processor Time</name>
+                    <name>THRD::Processor Time</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -5899,7 +5899,7 @@ https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>Thread User Time</name>
+                    <name>THRD::User Time</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -5940,7 +5940,7 @@ https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>Thread Elapsed Time</name>
+                    <name>THRD::Elapsed Time</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -5981,7 +5981,7 @@ https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>Thread ID Process</name>
+                    <name>THRD::ID Process</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -6022,7 +6022,7 @@ https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>Thread ID Thread</name>
+                    <name>THRD::ID Thread</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -6063,7 +6063,7 @@ https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>Thread Priority Base</name>
+                    <name>THRD::Priority Base</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -6104,7 +6104,7 @@ https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>Thread Priority Current</name>
+                    <name>THRD::Priority Current</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -6145,7 +6145,7 @@ https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>Thread Start Address</name>
+                    <name>THRD::Start Address</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -6186,7 +6186,7 @@ https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>Thread State</name>
+                    <name>THRD::State</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -6227,7 +6227,7 @@ https://msdn.microsoft.com/en-us/library/ms804042.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>Thread Wait Reason</name>
+                    <name>THRD::Wait Reason</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -6729,7 +6729,7 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>Process::Number</name>
+                    <name>PROC::Number</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -10003,6 +10003,62 @@ WIP</description>
                     <item>
                         <host>OS Windows</host>
                         <key>perf_counter[\Memory\Commit Limit]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>PROC::Times</name>
+            <width>1200</width>
+            <height>300</height>
+            <yaxismin>0.0000</yaxismin>
+            <yaxismax>100.0000</yaxismax>
+            <show_work_period>0</show_work_period>
+            <show_triggers>0</show_triggers>
+            <type>0</type>
+            <show_legend>1</show_legend>
+            <show_3d>0</show_3d>
+            <percent_left>0.0000</percent_left>
+            <percent_right>0.0000</percent_right>
+            <ymin_type_1>0</ymin_type_1>
+            <ymax_type_1>0</ymax_type_1>
+            <ymin_item_1>0</ymin_item_1>
+            <ymax_item_1>0</ymax_item_1>
+            <graph_items>
+                <graph_item>
+                    <sortorder>0</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>009900</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>OS Windows</host>
+                        <key>perf_counter[\Process(_Total)\% Processor Time]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>0000DD</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>OS Windows</host>
+                        <key>perf_counter[\Process(_Total)\% Privileged Time]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>00BBBB</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>2</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>OS Windows</host>
+                        <key>perf_counter[\Process(_Total)\% User Time]</key>
                     </item>
                 </graph_item>
             </graph_items>
