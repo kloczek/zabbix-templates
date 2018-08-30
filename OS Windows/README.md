@@ -5,6 +5,13 @@ Base OS Windows template.
 
 #### Changelog:
 - (devel)
+  - LLD:
+    - Added SVC (Service) LLD
+  - Items:
+    - Added HW items
+    - Renamed PROC and THRD items
+    - Removed single duplicate item
+    - Updated intervals
   - Triggers:
     - added missing ```SYS::Host is down``` trigger with all necessary dependencies
 - 1.0.4 (2018-06-11)
