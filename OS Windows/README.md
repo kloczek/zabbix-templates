@@ -5,6 +5,8 @@ Base OS Windows template.
 
 #### Changelog:
 - (devel)
+  - Apps:
+    - Added AV (AntiVirus)
   - LLD:
     - Added SVC (Service) LLD
   - Items:
@@ -12,9 +14,13 @@ Base OS Windows template.
     - Renamed PROC and THRD items
     - Removed single duplicate item
     - Updated intervals
+    - Added SYNC items
   - Triggers:
     - Added missing ```SYS::Host is down``` trigger with all necessary dependencies
     - Adjusted trigger priorities, added more triggers.
+  - Graphs:
+    - Added SIND graphs for indexes and merges L0 - L8.
+    - Added NET V4 UDP and TCP.
 - 1.0.4 (2018-06-11)
   - Triggers:
     - rename trigger name to the same name as it is in other OS templates
