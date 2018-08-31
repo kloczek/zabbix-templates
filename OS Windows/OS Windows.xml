@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2018-08-30T10:05:28Z</date>
+    <date>2018-08-31T10:37:30Z</date>
     <groups>
         <group>
             <name>WIP</name>
@@ -23,6 +23,9 @@ Notes:</description>
                 </group>
             </groups>
             <applications>
+                <application>
+                    <name>AV</name>
+                </application>
                 <application>
                     <name>BLOC</name>
                 </application>
@@ -46,6 +49,9 @@ Notes:</description>
                 </application>
                 <application>
                     <name>HW::NIC</name>
+                </application>
+                <application>
+                    <name>INV</name>
                 </application>
                 <application>
                     <name>LOG</name>
@@ -79,9 +85,6 @@ Notes:</description>
                 </application>
                 <application>
                     <name>SMB</name>
-                </application>
-                <application>
-                    <name>SVC</name>
                 </application>
                 <application>
                     <name>SYNC</name>
@@ -5030,6 +5033,1792 @@ Many of these errors are also written to the System log and Security log in Even
                     <master_item/>
                 </item>
                 <item>
+                    <name>SYNC::EXEC::RES Acquires AcqExclLite</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Acquires AcqExclLite/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Acq/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Attempts AcqShrdLite</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Attempts AcqShrdLite/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Acq/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Attempts AcqShrdStarveExcl</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Attempts AcqShrdStarveExcl/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Acq/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Attempts AcqShrdWaitForExcl</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Attempts AcqShrdWaitForExcl/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Acq/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Boost Excl. Owner</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Boost Excl. Owner/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>O/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Boost Shared Owners</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Boost Shared Owners/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>O/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Contention AcqExclLite</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Contention AcqExclLite/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Acq/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Contention AcqShrdLite</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Contention AcqShrdLite/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Acq/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Contention AcqShrdStarveExcl</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Contention AcqShrdStarveExcl/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Acq/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Contention AcqShrdWaitForExcl</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Contention AcqShrdWaitForExcl/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Acq/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES No-Waits AcqExclLite</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource no-Waits AcqExclLite/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Acq/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES No-Waits AcqShrdLite</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource no-Waits AcqShrdLite/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Acq/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES No-Waits AcqShrdStarveExcl</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource no-Waits AcqShrdStarveExcl/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Acq/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES No-Waits AcqShrdWaitForExcl</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource no-Waits AcqShrdWaitForExcl/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Acq/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Recursive Excl. Acquires AcqExclLite</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Recursive Excl. Acquires AcqExclLite/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Acq/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Recursive Excl. Acquires AcqShrdLite</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Recursive Excl. Acquires AcqShrdLite/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Acq/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Recursive Excl. Acquires AcqShrdStarveExcl</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Recursive Excl. Acquires AcqShrdStarveExcl/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Acq/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Recursive Excl. Acquires AcqShrdWaitForExcl</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Recursive Excl. Acquires AcqShrdWaitForExcl/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Acq/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Recursive Sh. Acquires AcqShrdLite</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Recursive Sh. Acquires AcqShrdLite/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Acq/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Recursive Sh. Acquires AcqShrdStarveExcl</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Recursive Sh. Acquires AcqShrdStarveExcl/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Acq/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Recursive Sh. Acquires AcqShrdWaitForExcl</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Recursive Sh. Acquires AcqShrdWaitForExcl/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Acq/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Set Pointer Exclusive Owner</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Set Owner Pointer Exclusive/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>O/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Set Pointer Existing Owner</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Set Owner Pointer Shared (Existing Owner)/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>O/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Set Pointer New Owner</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Set Owner Pointer Shared (New Owner)/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>O/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Total Acquires</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Total Acquires/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Rps</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Total Contentions</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Total Contentions/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Rps</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Total Conv. Exclusive To Shared</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Total Conv. Exclusive To Shared/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Rps</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Total Delete</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Total Delete/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Rps</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Total Exclusive Releases</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Total Exclusive Releases/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Rps</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Total Initialize</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Total Initialize/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Rps</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Total Re-Initialize</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Total Re-Initialize/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Rps</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::EXEC::RES Total Shared Releases</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Exec. Resource Total Shared Releases/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Rps</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::IPI::Send Broadcast Requests</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\IPI Send Broadcast Requests/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Rps</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::IPI::Send Routine Requests</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\IPI Send Routine Requests/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Rps</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::IPI::Send Software Interrupts</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\IPI Send Software Interrupts/sec]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>Intr/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::SPIN::Acquires</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Spinlock Acquires/sec]</key>
+                    <delay>4s</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>SL/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::SPIN::Contentions</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Spinlock Contentions/sec]</key>
+                    <delay>4s</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>SL/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYNC::SPIN::Spins</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>perf_counter[\Synchronization(_Total)\Spinlock Spins/sec]</key>
+                    <delay>4s</delay>
+                    <history>2w</history>
+                    <trends>365d</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
+                    <allowed_hosts/>
+                    <units>SL/s</units>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>TBC&#13;
+&#13;
+Could be in Windows Internals book&#13;
+&#13;
+https://social.technet.microsoft.com/Forums/en-US/1dd67c70-78c1-425e-8e39-f3f57105b8ca/display-description-field-per-perf-counter?forum=ITCG&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYNC</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
                     <name>SYS::REG::Quota In Use</name>
                     <type>7</type>
                     <snmp_community/>
@@ -7074,7 +8863,7 @@ Root permissions are required because the value is acquired by reading from sysf
                     <inventory_link>28</inventory_link>
                     <applications>
                         <application>
-                            <name>HW</name>
+                            <name>INV</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -7136,7 +8925,7 @@ Root permissions are required because the value is acquired by reading from sysf
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
-                    <units/>
+                    <units>unixtime</units>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -7152,7 +8941,7 @@ Root permissions are required because the value is acquired by reading from sysf
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description>Time in UTC</description>
+                    <description>Local Time in UTC</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -7197,7 +8986,7 @@ Root permissions are required because the value is acquired by reading from sysf
                     <inventory_link>30</inventory_link>
                     <applications>
                         <application>
-                            <name>SYS</name>
+                            <name>INV</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -7441,7 +9230,144 @@ Root permissions are required because the value is acquired by reading from sysf
                     <port/>
                     <description>Full list of installed packages.&#13;
 &#13;
--- only first result? How to get Full list?</description>
+-- only first result? How to get Full list?&#13;
+&#13;
+https://docs.microsoft.com/en-us/windows/desktop/CIMWin32Prov/win32-provider</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYS</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYS::Update-ALL</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>wmi.get[root\cimv2,SELECT * FROM win32_quickfixengineering]</key>
+                    <delay>1d</delay>
+                    <history>90d</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>4</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Displays latest official update.&#13;
+&#13;
+-- better if just had complete list for everything.&#13;
+&#13;
+http://www.powertheshell.com/reference/wmireference/root/cimv2/win32_quickfixengineering/&#13;
+&#13;
+https://social.technet.microsoft.com/wiki/contents/articles/4197.how-to-list-all-of-the-windows-and-software-updates-applied-to-a-computer.aspx</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYS</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYS::TZ</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>wmi.get[root\cimv2,SELECT CAPTION FROM Win32_TimeZone]</key>
+                    <delay>1d</delay>
+                    <history>90d</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>4</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Displays configured TZ (Time Zone)</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>SYS</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>SYS::Update</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>wmi.get[root\cimv2,SELECT HOTFIXID FROM win32_quickfixengineering]</key>
+                    <delay>1d</delay>
+                    <history>90d</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>4</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Displays latest official update.&#13;
+&#13;
+-- better if just had complete list for everything.&#13;
+&#13;
+http://www.powertheshell.com/reference/wmireference/root/cimv2/win32_quickfixengineering/&#13;
+&#13;
+https://social.technet.microsoft.com/wiki/contents/articles/4197.how-to-list-all-of-the-windows-and-software-updates-applied-to-a-computer.aspx</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -7457,7 +9383,7 @@ Root permissions are required because the value is acquired by reading from sysf
             </items>
             <discovery_rules>
                 <discovery_rule>
-                    <name>NET:</name>
+                    <name>NET</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -8050,11 +9976,7 @@ system.run[&quot;powershell -NoProfile -ExecutionPolicy Bypass -File \&quot;C:\P
                             <port/>
                             <description/>
                             <inventory_link>0</inventory_link>
-                            <applications>
-                                <application>
-                                    <name>SVC</name>
-                                </application>
-                            </applications>
+                            <applications/>
                             <valuemap>
                                 <name>Windows service state</name>
                             </valuemap>
@@ -8074,7 +9996,7 @@ system.run[&quot;powershell -NoProfile -ExecutionPolicy Bypass -File \&quot;C:\P
                             <correlation_mode>0</correlation_mode>
                             <correlation_tag/>
                             <url/>
-                            <status>0</status>
+                            <status>1</status>
                             <priority>3</priority>
                             <description/>
                             <type>0</type>
@@ -8093,7 +10015,7 @@ system.run[&quot;powershell -NoProfile -ExecutionPolicy Bypass -File \&quot;C:\P
                     <snmp_community/>
                     <snmp_oid/>
                     <key>system.run[&quot;powershell -NoProfile -ExecutionPolicy Get-Counter -ListSet * | select -expand PathsWithInstances | Select-String -Pattern \&quot;_Total\&quot; | ConvertTo-Json&quot;]</key>
-                    <delay>5m</delay>
+                    <delay>2h</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -8134,7 +10056,7 @@ WIP</description>
                     <jmx_endpoint/>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>VOL:</name>
+                    <name>VOL</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -9659,6 +11581,22 @@ WIP</description>
             <status>0</status>
             <priority>3</priority>
             <description>Time drift bigger than 10m.</description>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{OS Windows:wmi.get[root\cimv2,SELECT CAPTION FROM Win32_TimeZone].diff(0)}&gt;0</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>SYS::TZ Changed</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>1</priority>
+            <description>TZ (Time Zone) has been changed.</description>
             <type>0</type>
             <manual_close>0</manual_close>
             <dependencies/>
