@@ -50,5 +50,5 @@ Changelog:
 #### Notes:
 
 #### Contributors:
-- ss: Scott Simmons
+- ss: Scott S.
 - tk: Tomasz Kłoczko
