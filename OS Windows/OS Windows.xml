@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2018-08-31T14:41:38Z</date>
+    <date>2018-09-04T08:01:08Z</date>
     <groups>
         <group>
             <name>WIP</name>
@@ -746,7 +746,7 @@ Notes:</description>
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>https://blogs.technet.microsoft.com/askcore/2012/03/16/windows-performance-monitor-disk-counters-explained/</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -787,7 +787,7 @@ Notes:</description>
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description/>
+                    <description>https://blogs.technet.microsoft.com/askcore/2012/03/16/windows-performance-monitor-disk-counters-explained/</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -7726,7 +7726,7 @@ https://docs.microsoft.com/en-us/windows/desktop/sync/synchronization-objects</d
                     <snmp_community/>
                     <snmp_oid/>
                     <key>perf_counter[\System\% Registry Quota In Use]</key>
-                    <delay>6h</delay>
+                    <delay>1d</delay>
                     <history>2w</history>
                     <trends>365d</trends>
                     <status>0</status>
@@ -9440,7 +9440,7 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>proc.num[]</key>
+                    <key>proc.num</key>
                     <delay>1m</delay>
                     <history>2w</history>
                     <trends>365d</trends>
@@ -9478,47 +9478,6 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
                             <params/>
                         </step>
                     </preprocessing>
-                    <jmx_endpoint/>
-                    <master_item/>
-                </item>
-                <item>
-                    <name>SYS::CPU</name>
-                    <type>7</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>system.cpu.discovery</key>
-                    <delay>1d</delay>
-                    <history>2w</history>
-                    <trends>365d</trends>
-                    <status>1</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>HW::CPU</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
                     <jmx_endpoint/>
                     <master_item/>
                 </item>
@@ -9646,18 +9605,18 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>HW::CPU::cores</name>
+                    <name>HW::CPU::Cores Online</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>system.cpu.num[max]</key>
-                    <delay>1d</delay>
+                    <key>system.cpu.num</key>
+                    <delay>6h</delay>
                     <history>2w</history>
                     <trends>365d</trends>
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
-                    <units>cores</units>
+                    <units>Cores</units>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -9673,7 +9632,7 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description>Number of CPU cores.&#13;
+                    <description>Number of CPU cores online&#13;
 &#13;
 possible values:&#13;
 online (default), max</description>
@@ -9862,7 +9821,7 @@ Root permissions are required because the value is acquired by reading from sysf
                     <snmp_community/>
                     <snmp_oid/>
                     <key>system.sw.arch</key>
-                    <delay>5m</delay>
+                    <delay>1d</delay>
                     <history>2w</history>
                     <trends>0</trends>
                     <status>0</status>
@@ -11035,6 +10994,103 @@ system.run[&quot;powershell -NoProfile -ExecutionPolicy Bypass -File \&quot;C:\P
                     <jmx_endpoint/>
                 </discovery_rule>
                 <discovery_rule>
+                    <name>HW::CPU</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>system.cpu.discovery</key>
+                    <delay>2h</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions/>
+                    </filter>
+                    <lifetime>90d</lifetime>
+                    <description/>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>HW::CPU</name>
+                            <type>7</type>
+                            <snmp_community/>
+                            <snmp_oid/>
+                            <key>system.hw.cpu[{#CPU.NUMBER},{#CPU.STATUS}]</key>
+                            <delay>6h</delay>
+                            <history>90d</history>
+                            <trends>365d</trends>
+                            <status>1</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>Cores</units>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>HW::CPU</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint/>
+                            <application_prototypes/>
+                            <master_item_prototype/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{OS Windows:system.hw.cpu[{#CPU.NUMBER},{#CPU.STATUS}].diff(0)}&gt;0</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>HW::CPU::Core {#CPU.NUMBER} State Changed to {#CPU.STATUS}</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>1</priority>
+                            <description>Core State Changed from either: online,offline or unknown (Windows Only)</description>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes/>
+                    <host_prototypes/>
+                    <jmx_endpoint/>
+                </discovery_rule>
+                <discovery_rule>
                     <name>SYNC</name>
                     <type>7</type>
                     <snmp_community/>
@@ -11147,7 +11203,11 @@ WIP</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description/>
+                            <description>%Disk Time (% Disk Read Time, % Disk Write Time) &#13;
+The “% Disk Time” counter is nothing more than the “Avg. Disk Queue Length” counter multiplied by 100. It is the same value displayed in a different scale. &#13;
+If the Avg. Disk queue length is equal to 1, the %Disk Time will equal 100. If the Avg. Disk Queue Length is 0.37, then the %Disk Time will be 37. &#13;
+This is the reason why you can see the % Disk Time being greater than 100%, all it takes is the Avg. Disk Queue length value being greater than 1. &#13;
+The same logic applies to the % Disk Read Time and the % Disk Write Time. Their data comes from the Avg. Disk Read Queue Length and Avg. Disk Write Queue Length, respectively.</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -11189,7 +11249,11 @@ WIP</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description/>
+                            <description>%Disk Time (% Disk Read Time, % Disk Write Time) &#13;
+The “% Disk Time” counter is nothing more than the “Avg. Disk Queue Length” counter multiplied by 100. It is the same value displayed in a different scale. &#13;
+If the Avg. Disk queue length is equal to 1, the %Disk Time will equal 100. If the Avg. Disk Queue Length is 0.37, then the %Disk Time will be 37. &#13;
+This is the reason why you can see the % Disk Time being greater than 100%, all it takes is the Avg. Disk Queue length value being greater than 1. &#13;
+The same logic applies to the % Disk Read Time and the % Disk Write Time. Their data comes from the Avg. Disk Read Queue Length and Avg. Disk Write Queue Length, respectively.</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -11231,7 +11295,11 @@ WIP</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description/>
+                            <description>%Disk Time (% Disk Read Time, % Disk Write Time) &#13;
+The “% Disk Time” counter is nothing more than the “Avg. Disk Queue Length” counter multiplied by 100. It is the same value displayed in a different scale. &#13;
+If the Avg. Disk queue length is equal to 1, the %Disk Time will equal 100. If the Avg. Disk Queue Length is 0.37, then the %Disk Time will be 37. &#13;
+This is the reason why you can see the % Disk Time being greater than 100%, all it takes is the Avg. Disk Queue length value being greater than 1. &#13;
+The same logic applies to the % Disk Read Time and the % Disk Write Time. Their data comes from the Avg. Disk Read Queue Length and Avg. Disk Write Queue Length, respectively.</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -11315,7 +11383,11 @@ WIP</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description/>
+                            <description>%Disk Time (% Disk Read Time, % Disk Write Time) &#13;
+The “% Disk Time” counter is nothing more than the “Avg. Disk Queue Length” counter multiplied by 100. It is the same value displayed in a different scale. &#13;
+If the Avg. Disk queue length is equal to 1, the %Disk Time will equal 100. If the Avg. Disk Queue Length is 0.37, then the %Disk Time will be 37. &#13;
+This is the reason why you can see the % Disk Time being greater than 100%, all it takes is the Avg. Disk Queue length value being greater than 1. &#13;
+The same logic applies to the % Disk Read Time and the % Disk Write Time. Their data comes from the Avg. Disk Read Queue Length and Avg. Disk Write Queue Length, respectively.</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -12076,7 +12148,11 @@ WIP</description>
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description/>
+                            <description>Measures the rate of IO split due to file fragmentation. This happens if the IO request touches data on non-contiguous file segments.&#13;
+&#13;
+https://blogs.technet.microsoft.com/askcore/2009/10/16/the-four-stages-of-ntfs-file-growth/&#13;
+&#13;
+https://blogs.technet.microsoft.com/askcore/2015/03/12/the-four-stages-of-ntfs-file-growth-part-2/</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -12375,7 +12451,7 @@ WIP</description>
             <tags/>
         </trigger>
         <trigger>
-            <expression>{OS Windows:system.cpu.num[max].diff(0)}&gt;0</expression>
+            <expression>{OS Windows:system.cpu.num.diff(0)}&gt;0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>HW::CPU::Core Count Changed</name>
@@ -12628,6 +12704,22 @@ WIP</description>
             <tags/>
         </trigger>
         <trigger>
+            <expression>{OS Windows:perf_counter[\System\% Registry Quota In Use].last()}&lt;10</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>SYS::REG::Quota In Use Less Than 10% Free</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description>Registry Quota In Use Less Than 10% Free</description>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
             <expression>{OS Windows:wmi.get[root\cimv2,SELECT CAPTION FROM Win32_TimeZone].diff(0)}&gt;0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
@@ -12644,7 +12736,7 @@ WIP</description>
             <tags/>
         </trigger>
         <trigger>
-            <expression>{OS Windows:proc.num[].last(0)}&gt;300</expression>
+            <expression>{OS Windows:proc.num.last(0)}&gt;300</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Too many processes</name>
@@ -12720,7 +12812,7 @@ WIP</description>
                     <type>0</type>
                     <item>
                         <host>OS Windows</host>
-                        <key>system.cpu.num[max]</key>
+                        <key>system.cpu.num</key>
                     </item>
                 </graph_item>
                 <graph_item>
