@@ -3,10 +3,33 @@
 #### Description:
 Base OS Windows template.
 
+During import into your Zabbix stack if you have an error such as "Cannot import, linked template does not exist" then import the dependant template first, then this one after.
+
+#### Requirements:
+
+Import ICMP template
+Service Zabbix Agent template
+Active agent
+
 #### Changelog:
 - (devel)
+  - Apps:
+    - Added AV (AntiVirus)
+  - LLD:
+    - Added SVC (Service) LLD
+  - Items:
+    - Added Critical Log items
+    - Added HW items
+    - Renamed PROC and THRD items
+    - Removed single duplicate item
+    - Updated intervals
+    - Added SYNC items
   - Triggers:
-    - added missing ```SYS::Host is down``` trigger with all necessary dependencies
+    - Added missing ```SYS::Host is down``` trigger with all necessary dependencies
+    - Adjusted trigger priorities, added more triggers.
+  - Graphs:
+    - Added SIND graphs for indexes and merges L0 - L8.
+    - Added NET V4 UDP and TCP.
 - 1.0.4 (2018-06-11)
   - Triggers:
     - rename trigger name to the same name as it is in other OS templates
@@ -36,5 +59,5 @@ Changelog:
 #### Notes:
 
 #### Contributors:
-- ss: Scott Simmons
+- ss: Scott S.
 - tk: Tomasz Kłoczko

@@ -6,9 +6,12 @@ Base zabbix agent monitoring.
 #### Changelog:
 - (devel)
   - Graphs:
-    - new ```HOST::items``` which presents number of host items vs number of unsuppoerted item
+    - New ```HOST::items``` which presents number of host items vs number of unsuppoerted item
   - Items:
-    - new ```items``` with current counter of total host items (supported/unsupprted/enabled/disabled)
+    - New ```items``` with current counter of total host items (supported/unsupprted/enabled/disabled)
+    - Added agent.hostname with trigger
+  - Triggers:
+    - Added trigger for agent unreachable more than 7 days.
 - 1.0.4 (2018-06-11):
   - minor clenups in template description
 - 1.0.1 (2017-11-30):
