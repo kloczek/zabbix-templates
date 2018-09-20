@@ -7,7 +7,8 @@ During import into your Zabbix stack if you have an error such as "Cannot import
 
 #### Requirements:
 
-Import ICMP template first.
+Import ICMP template
+Service Zabbix Agent template
 Active agent
 
 #### Changelog:
