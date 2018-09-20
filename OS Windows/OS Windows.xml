@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2018-09-04T08:01:08Z</date>
+    <date>2018-09-20T14:48:44Z</date>
     <groups>
         <group>
             <name>WIP</name>
@@ -104,6 +104,47 @@ Notes:</description>
             </applications>
             <items>
                 <item>
+                    <name>LOG::APP::Critical</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>eventlog[Application,,&quot;Critical&quot;]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>2</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>captures Application (event log) Critical</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>LOG</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
                     <name>LOG::APP::Errors</name>
                     <type>7</type>
                     <snmp_community/>
@@ -186,6 +227,47 @@ Notes:</description>
                     <master_item/>
                 </item>
                 <item>
+                    <name>LOG::SEC::Critical</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>eventlog[Security,,&quot;Critical&quot;]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>2</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>captures security (event log) Critical</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>LOG</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
                     <name>LOG::SEC::Errors</name>
                     <type>7</type>
                     <snmp_community/>
@@ -227,6 +309,47 @@ Notes:</description>
                     <master_item/>
                 </item>
                 <item>
+                    <name>LOG::SET::Critical</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>eventlog[Setup,,&quot;Critical&quot;]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>2</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>captures setup (event log) Critical</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>LOG</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
                     <name>LOG::SET::Errors</name>
                     <type>7</type>
                     <snmp_community/>
@@ -255,6 +378,47 @@ Notes:</description>
                     <privatekey/>
                     <port/>
                     <description>captures setup (event log) errors</description>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>LOG</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <master_item/>
+                </item>
+                <item>
+                    <name>LOG::SYS::Critical</name>
+                    <type>7</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>eventlog[System,,&quot;Critical&quot;]</key>
+                    <delay>1m</delay>
+                    <history>2w</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>2</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>captures system (event log) Critical</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -1226,7 +1390,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <master_item/>
                 </item>
                 <item>
-                    <name>MEM::PTE::Free entries</name>
+                    <name>MEM::PTE::Free Entries</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -1237,7 +1401,7 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <status>0</status>
                     <value_type>3</value_type>
                     <allowed_hosts/>
-                    <units/>
+                    <units>Pages</units>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1253,9 +1417,13 @@ https://blogs.technet.microsoft.com/askperf/2008/01/25/an-overview-of-troublesho
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <description>A page table is the data structure used by the Windows Virtual Memory Manager (VMM) to store the mapping between virtual addresses and physical addresses in memory. The performance counter Free System Page Table Entries is the number of page table entries not currently used by the system. More important to observe with 32-bit Windows OS.&#13;
+                    <description>A page table is the data structure used by the Windows Virtual Memory Manager (VMM) to store the mapping between virtual addresses and physical addresses in memory. The performance counter Free System Page Table Entries is the number of page table entries not currently used by the system. More important to observe with 32-bit Windows OS. - Lack of this resource is a rare issue to encounter.&#13;
 &#13;
-https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-table-entries-ptes/</description>
+https://blogs.technet.microsoft.com/clint_huffman/2008/04/07/free-system-page-table-entries-ptes/&#13;
+&#13;
+https://blogs.technet.microsoft.com/cotw/2008/04/07/symptoms-lack-of-free-system-page-table-entries-ptes-and-system-wide-delays-io-request-failures/&#13;
+&#13;
+https://blogs.technet.microsoft.com/perfguide/2010/09/28/the-microsoft-pfe-performance-guide-start-here/</description>
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
@@ -7807,7 +7975,7 @@ https://msdn.microsoft.com/en-gb/library/ms804037.aspx</description>
                     <master_item/>
                 </item>
                 <item>
-                    <name>SYS::Context Switches</name>
+                    <name>CPU::Context Switches</name>
                     <type>7</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -7840,7 +8008,7 @@ Gives same result as perf_counter[\Thread(_Total/_Total)\Context Switches/sec]</
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
-                            <name>SYS</name>
+                            <name>CPU</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -12515,6 +12683,22 @@ https://blogs.technet.microsoft.com/askcore/2015/03/12/the-four-stages-of-ntfs-f
             <tags/>
         </trigger>
         <trigger>
+            <expression>{OS Windows:perf_counter[\Memory\Free System Page Table Entries].last(0)}&lt;10000</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>MEM::PTE::Free Entries Less Than 10K</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description>Lack of Free System Page Table Entries.</description>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
             <expression>{OS Windows:icmpping.count(#10,1,&quot;eq&quot;)}&lt;5</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
@@ -12704,7 +12888,7 @@ https://blogs.technet.microsoft.com/askcore/2015/03/12/the-four-stages-of-ntfs-f
             <tags/>
         </trigger>
         <trigger>
-            <expression>{OS Windows:perf_counter[\System\% Registry Quota In Use].last()}&lt;10</expression>
+            <expression>{OS Windows:perf_counter[\System\% Registry Quota In Use].last()}&gt;10</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>SYS::REG::Quota In Use Less Than 10% Free</name>
