@@ -3,6 +3,13 @@
 #### Description:
 Base OS Windows template.
 
+During import into your Zabbix stack if you have an error such as "Cannot import, linked template does not exist" then import the dependant template first, then this one after.
+
+### Requirements
+
+Import ICMP template first.
+Active agent
+
 #### Changelog:
 - (devel)
   - Apps:
@@ -10,6 +17,7 @@ Base OS Windows template.
   - LLD:
     - Added SVC (Service) LLD
   - Items:
+    - Added Critical Log items
     - Added HW items
     - Renamed PROC and THRD items
     - Removed single duplicate item
