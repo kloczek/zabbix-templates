@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-06-11T11:38:28Z</date>
+  <date>2018-10-05T23:34:36Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -4205,16 +4205,10 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <url/>
       <status>0</status>
       <priority>3</priority>
-      <description>Instructions on how to handle this trigger if is active:&#13;
-* with daily autoscaling like PERF, PAT or DEV -&gt; delete box&#13;
-* if it is PROD or STAGE box:&#13;
-** remove all groups and assign box to "Terminated instances" group&#13;
-** change Name to "term YYYY-MM-DD &lt;orig_Name&gt;"&#13;
-** set host Monitored by proxy -&gt; (no proxy)&#13;
-** change state to "not monitored"&#13;
-* anything else -&gt; investigate -&gt; acknowledge and raise jira ticket if it is something unusual&#13;
-&#13;
-s3-dump hosts delete</description>
+      <description>Host is down when:&#13;
+- is unreachable over ICMP for +9 times&#13;
+- no new moitoring data for +15min&#13;
+- host has uptime +15 min</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>

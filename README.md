@@ -29,6 +29,9 @@ This repository provides a set of templates which offers the alternative set of 
 - **OS Windows**
   - Triggers:
     - added missing ```SYS::Host is down``` trigger with all necessary dependencies
+- **OS Linux**
+  - Triggers:
+    - '''SYS::Host is down''' corrected descrition
 - **Service Zabbix Agent**
   - Graphs:
     - new ```HOST::items``` which presents number of host items vs number of unsuppoerted item

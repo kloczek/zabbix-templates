@@ -4,6 +4,9 @@
 Base Linux monitoring template.
 
 #### Changelog:
+- devel (wip)
+  - Triggers:
+    - '''SYS::Host is down''' corrected descrition
 - 1.0.4 (2018-06-11)
   - Graphs:
     - change all graphs resolution to 1200x300
