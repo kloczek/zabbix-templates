@@ -4,6 +4,21 @@
 Base Zabbix server monitoring template.
 
 #### Changelog:
+- (devel):
+  - Items:
+    - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
+  - Graphs:
+    - delete SVC::zabbix_server::items/wcache::buffer::pfree graph
+    - new ```SVC::zabbix_server::hosts``` graph with number of monitored hosts
+    - new ```SVC::zabbix_server::items/triggers``` graph with total number of items vs. triggers
+    - new ```SVC::zabbix_server::items::nvps``` graphs with zabbix stack NVPS
+  - Screens:
+    - reorganized ```SVC::zabbix_server::status``` screen to put in rows:
+      - "process busy %" and "internam process busy %"
+      - "cahces usage %" and "vcache::hits/misses"
+      - "processing queue" and flame like graph with "queued items"
+      - "items totat/unsupported" and "items::nvps"
+      - "items/triggers" and "hosts"
 - 1.0.4 (2018-06-11)
   - Applications:
     - new:

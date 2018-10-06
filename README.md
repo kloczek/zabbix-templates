@@ -14,19 +14,49 @@ This repository provides a set of templates which offers the alternative set of 
 ***
 ## Changelog:
 ### (devel)
+- Make all templates zabbix 4.0.x ready by remove using $1-$9 macros in items names
 - New templates
   - [Service php-fpm](https://github.com/kloczek/zabbix-templates/tree/devel/Service%20php-fpm)
+- **IF-MIB**
+  - LLDs:
+    - interfaces: use ```IF-MIB::ifAdminStatus``` instead ```IF-MIB::ifOperusStatus``` on checking if interface is up or down
+    - interfaces: add to LLD iterator item ```IF-MIB::ifIndex``` and map it to ```{#IFINDEX}``` macro
+    - interfaces: add to all applications, items, triggers anf graphs prototypes names ```[{#IFINDEX}]``` to display physical port number in those names
+    - graphs improvements
 - **Service Nginx**
   - Graphs:
     - new ```SVC::Nginx::reqs_per_conn```
   - Items:
     - new calculated item ```reqs_per_conn``` which shows number requests in single connection (```nginx.requests")/last("nginx.requests[handled]```)
+- **OS Windows**
+  - Triggers:
+    - added missing ```SYS::Host is down``` trigger with all necessary dependencies
+- **OS Linux**
+  - Triggers:
+    - '''SYS::Host is down''' corrected descrition
+- **OS Solaris**
+  - Triggers:
+    - added ```SYS::Host is down```
+    - added ```CPU::idle {ITEM.VALUE}```
 - **Service Zabbix Agent**
   - Graphs:
     - new ```HOST::items``` which presents number of host items vs number of unsuppoerted item
   - Items:
     - new ```items``` with current counter of total host items (supported/unsupprted/enabled/disabled)
-
+- **Service Zabbix Server**
+  Presentation layer impromements:
+  - Graphs:
+    - delete SVC::zabbix_server::items/wcache::buffer::pfree graph
+    - new ```SVC::zabbix_server::hosts``` graph with number of monitored hosts
+    - new ```SVC::zabbix_server::items/triggers``` graph with total number of items vs. triggers
+    - new ```SVC::zabbix_server::items::nvps``` graphs with zabbix stack NVPS
+  - Screens:
+    - reorganized ```SVC::zabbix_server::status``` screen to put in rows:
+      - "process busy %" and "internam process busy %"
+      - "cahces usage %" and "vcache::hits/misses"
+      - "processing queue" and flame like graph with "queued items"
+      - "items totat/unsupported" and "items::nvps"
+      - "items/triggers" and "hosts"
 ### 1.0.4 (2018-06-11)
 - The first version tagged in git repo to stamp state of templates and tools and to provide better tracking changes by using ```git``` command
 - The development of the next versions of the templates will continue on devel branch. When all changes are ready devel branch will be merged to master one. It will be way better for those who have interested enough tested template.

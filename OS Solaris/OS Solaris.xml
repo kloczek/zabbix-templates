@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-06-11T11:38:35Z</date>
+  <date>2018-10-06T16:06:23Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -142,7 +142,7 @@ Notes:</description>
           <master_item/>
         </item>
         <item>
-          <name>NET::service::$1</name>
+          <name>NET::service::ssh</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -226,7 +226,7 @@ Notes:</description>
           <master_item/>
         </item>
         <item>
-          <name>PROC::$1</name>
+          <name>PROC::crond</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -267,7 +267,7 @@ Notes:</description>
           <master_item/>
         </item>
         <item>
-          <name>PROC::$1</name>
+          <name>PROC::ntpd</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -308,7 +308,7 @@ Notes:</description>
           <master_item/>
         </item>
         <item>
-          <name>PROC::$1</name>
+          <name>PROC::sshd</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -477,7 +477,7 @@ Notes:</description>
           <master_item/>
         </item>
         <item>
-          <name>SYS::load:$2</name>
+          <name>SYS::load:avg1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -607,7 +607,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>CPU::$2::$3</name>
+          <name>CPU::idle::avg1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -648,7 +648,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>CPU::$2::$3</name>
+          <name>CPU::iowait::avg1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -689,7 +689,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>CPU::$2::$3</name>
+          <name>CPU::system::avg1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -730,7 +730,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>CPU::$2::$3</name>
+          <name>CPU::user::avg1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1860,7 +1860,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <master_item/>
         </item>
         <item>
-          <name>CHK::Checksum::$1</name>
+          <name>CHK::Checksum::/etc/passwd</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1901,7 +1901,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <master_item/>
         </item>
         <item>
-          <name>MEM::$1</name>
+          <name>MEM::available</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1942,7 +1942,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <master_item/>
         </item>
         <item>
-          <name>MEM::$1</name>
+          <name>MEM::free</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1983,7 +1983,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <master_item/>
         </item>
         <item>
-          <name>MEM::$1</name>
+          <name>MEM::total</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2024,7 +2024,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <master_item/>
         </item>
         <item>
-          <name>MEM::$1</name>
+          <name>MEM::used</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2153,7 +2153,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <description>Discovery of network interfaces.</description>
           <item_prototypes>
             <item_prototype>
-              <name>$1::in</name>
+              <name>{#IFNAME}::in</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2204,7 +2204,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>$1::out</name>
+              <name>{#IFNAME}::out</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3302,7 +3302,7 @@ Please login on the host and check output of the commands:&#13;
           <description>Discovery of file systems.</description>
           <item_prototypes>
             <item_prototype>
-              <name>$1::$2</name>
+              <name>{#FSNAME}::pfree</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3344,7 +3344,7 @@ Please login on the host and check output of the commands:&#13;
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>$1::$2</name>
+              <name>{#FSNAME}::total</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3386,7 +3386,7 @@ Please login on the host and check output of the commands:&#13;
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>$1::$2</name>
+              <name>{#FSNAME}::used</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3752,6 +3752,22 @@ Please login on the host and check output of the commands:&#13;
       <tags/>
     </trigger>
     <trigger>
+      <expression>{OS Solaris:system.cpu.util[,idle,avg1].last(0)}&lt;5</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>CPU::idle {ITEM.VALUE}</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
       <expression>{OS Solaris:vm.memory.size[free].last(0)}&lt;10000</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
@@ -3806,7 +3822,9 @@ Please login on the host and check output of the commands:&#13;
       <tags/>
     </trigger>
     <trigger>
-      <expression>{OS Solaris:icmpping[].count(#10,0,"eq")}&gt;9 and {OS Solaris:agent.ping.nodata(1h)}=1</expression>
+      <expression>{OS Solaris:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Solaris:agent.ping.nodata(15m)}=1 and&#13;
+{OS Solaris:system.uptime.count(15m)}=0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SYS::Host is down</name>
@@ -3815,14 +3833,10 @@ Please login on the host and check output of the commands:&#13;
       <url/>
       <status>0</status>
       <priority>3</priority>
-      <description>Instructions on how to handle this trigger if is active:&#13;
-* with daily autoscaling like PERF, PAT or DEV -&gt; delete box&#13;
-* if it is PROD or STAGE box:&#13;
-** remove all groups and assign box to "Terminated instances" group&#13;
-** change Name to "term YYYY-MM-DD &lt;orig_Name&gt;"&#13;
-** set host Monitored by proxy -&gt; (no proxy)&#13;
-** change state to "not monitored"&#13;
-* anything else -&gt; investigate -&gt; acknowledge and raise jira ticket if it is something unusual</description>
+      <description>Host is down when:&#13;
+- is unreachable over ICMP for +9 times&#13;
+- no new moitoring data for +15min&#13;
+- host has uptime +15 min</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>
@@ -3841,7 +3855,15 @@ Please login on the host and check output of the commands:&#13;
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Solaris:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Solaris:agent.ping.nodata(15m)}=1 and&#13;
+{OS Solaris:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>

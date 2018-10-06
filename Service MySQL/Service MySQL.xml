@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-06-11T11:38:51Z</date>
+  <date>2018-10-06T10:54:02Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -66,7 +66,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
       </applications>
       <items>
         <item>
-          <name>PROC::$1</name>
+          <name>PROC::mysqld</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>

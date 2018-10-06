@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-06-11T11:38:00Z</date>
+  <date>2018-10-06T10:53:57Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -61,7 +61,7 @@ Notes:</description>
           <description>The name of this pool.</description>
           <item_prototypes>
             <item_prototype>
-              <name>ltmPoolMemberCnt.$1 1h max</name>
+              <name>ltmPoolMemberCnt.{#SNMPVALUE} 1h max</name>
               <type>15</type>
               <snmp_community/>
               <snmp_oid/>
@@ -103,7 +103,7 @@ Notes:</description>
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>ltmPoolMemberCnt.$1</name>
+              <name>ltmPoolMemberCnt.{#SNMPVALUE}</name>
               <type>4</type>
               <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
               <snmp_oid>F5-BIGIP-LOCAL-MIB::ltmPoolMemberCnt.{#SNMPINDEX}</snmp_oid>

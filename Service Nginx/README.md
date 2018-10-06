@@ -15,10 +15,11 @@ Nginx https service monitoring template. This template is using
 | {$NGINX_USER}      | nginx               | nginx non-root user used by workers nginx processes |
 
 #### Changelog:
-- (devel)
+- (devel):
   - Graphs:
     - new ```SVC::Nginx::reqs_per_conn```
   - Items:
+    - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
     - new calculated item ```requs_per_conn``` which shows number requests in single connection (```nginx.requests")/last("nginx.requests[handled]```)
 - 1.0.4 (2018-06-11)
   - Initial version

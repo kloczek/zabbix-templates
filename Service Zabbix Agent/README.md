@@ -4,10 +4,11 @@
 Base zabbix agent monitoring.
 
 #### Changelog:
-- (devel)
+- (devel):
   - Graphs:
     - new ```HOST::items``` which presents number of host items vs number of unsuppoerted item
   - Items:
+    - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
     - new ```items``` with current counter of total host items (supported/unsupprted/enabled/disabled)
 - 1.0.4 (2018-06-11):
   - minor clenups in template description

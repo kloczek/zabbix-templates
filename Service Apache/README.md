@@ -4,6 +4,9 @@
 Apache service monitoring template using zabbix active agent items.
 
 #### Changelog:
+- (devel):
+  - Items:
+    - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
 - 1.0.4 (2018-06-11)
   - Graphs:
     - changed resolution of all graphs to 1200x300

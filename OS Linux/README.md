@@ -4,6 +4,11 @@
 Base Linux monitoring template.
 
 #### Changelog:
+- (devel):
+  - Items:
+    - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
+  - Triggers:
+    - '''SYS::Host is down''' corrected descrition
 - 1.0.4 (2018-06-11)
   - Graphs:
     - change all graphs resolution to 1200x300
