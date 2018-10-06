@@ -4,8 +4,9 @@
 Base Zabbix server monitoring template.
 
 #### Changelog:
-- (devel)
-  Presentation layer impromements:
+- (devel):
+  - Items:
+    - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
   - Graphs:
     - delete SVC::zabbix_server::items/wcache::buffer::pfree graph
     - new ```SVC::zabbix_server::hosts``` graph with number of monitored hosts

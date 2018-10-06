@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-10-06T00:12:33Z</date>
+  <date>2018-10-06T10:53:57Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -67,7 +67,7 @@ Notes:</description>
           <description>Discovery item information about the interfaces.</description>
           <item_prototypes>
             <item_prototype>
-              <name>ifAdminStatus.$1 [{#IFINDEX}]</name>
+              <name>ifAdminStatus.{#IFDESCR} [{#IFINDEX}]</name>
               <type>4</type>
               <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
               <snmp_oid>IF-MIB::ifAdminStatus.{#SNMPINDEX}</snmp_oid>
@@ -116,7 +116,7 @@ Testing(3) state indicates that no operational packets can be passed. When a man
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>ifAlias.$1 [{#IFINDEX}]</name>
+              <name>ifAlias.{#IFDESCR} [{#IFINDEX}]</name>
               <type>4</type>
               <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
               <snmp_oid>IF-MIB::ifAlias.{#SNMPINDEX}</snmp_oid>
@@ -164,7 +164,7 @@ Some agents may support write-access only for interfaces having particular value
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>ifHCInOctets.$1 [{#IFINDEX}]</name>
+              <name>ifHCInOctets.{#IFDESCR} [{#IFINDEX}]</name>
               <type>4</type>
               <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
               <snmp_oid>IF-MIB::ifHCInOctets.{#SNMPINDEX}</snmp_oid>
@@ -219,7 +219,7 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>ifHCOutOctets.$1 [{#IFINDEX}]</name>
+              <name>ifHCOutOctets.{#IFDESCR} [{#IFINDEX}]</name>
               <type>4</type>
               <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
               <snmp_oid>IF-MIB::ifHCOutOctets.{#SNMPINDEX}</snmp_oid>
@@ -275,7 +275,7 @@ If LLD items with ifHCOutOctets will be in unsupported on exact device ifHCOutOc
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>ifInOctets.$1 [{#IFINDEX}]</name>
+              <name>ifInOctets.{#IFDESCR} [{#IFINDEX}]</name>
               <type>4</type>
               <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
               <snmp_oid>IF-MIB::ifInOctets.{#SNMPINDEX}</snmp_oid>
@@ -331,7 +331,7 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>ifLastChange.$1 [{#IFINDEX}]</name>
+              <name>ifLastChange.{#IFDESCR} [{#IFINDEX}]</name>
               <type>4</type>
               <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
               <snmp_oid>IF-MIB::ifLastChange.{#SNMPINDEX}</snmp_oid>
@@ -378,7 +378,7 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>ifOperStatus.$1 [{#IFINDEX}]</name>
+              <name>ifOperStatus.{#IFDESCR} [{#IFINDEX}]</name>
               <type>4</type>
               <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
               <snmp_oid>IF-MIB::ifOperStatus.{#SNMPINDEX}</snmp_oid>
@@ -423,7 +423,7 @@ The testing(3) state indicates that no operational packets can be passed. If ifA
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>ifOutOctets.$1 [{#IFINDEX}]</name>
+              <name>ifOutOctets.{#IFDESCR} [{#IFINDEX}]</name>
               <type>4</type>
               <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
               <snmp_oid>IF-MIB::ifOutOctets.{#SNMPINDEX}</snmp_oid>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-07-03T13:21:38Z</date>
+  <date>2018-10-06T11:08:38Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -55,7 +55,7 @@ pm.status_path = /status&#13;
       </applications>
       <items>
         <item>
-          <name>PROC::$1</name>
+          <name>PROC::{$SVC_PHP_FPM_PROC}</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -98,7 +98,7 @@ pm.status_path = /status&#13;
           <master_item/>
         </item>
         <item>
-          <name>$1</name>
+          <name>accepted conn</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -150,7 +150,7 @@ pm.status_path = /status&#13;
           </master_item>
         </item>
         <item>
-          <name>$1</name>
+          <name>active processes</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -198,7 +198,7 @@ pm.status_path = /status&#13;
           </master_item>
         </item>
         <item>
-          <name>$1</name>
+          <name>idle processes</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -246,7 +246,7 @@ pm.status_path = /status&#13;
           </master_item>
         </item>
         <item>
-          <name>$1</name>
+          <name>listen queue len</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -294,7 +294,7 @@ pm.status_path = /status&#13;
           </master_item>
         </item>
         <item>
-          <name>$1</name>
+          <name>listen queue</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -342,7 +342,7 @@ pm.status_path = /status&#13;
           </master_item>
         </item>
         <item>
-          <name>$1</name>
+          <name>max active processes</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -390,7 +390,7 @@ pm.status_path = /status&#13;
           </master_item>
         </item>
         <item>
-          <name>$1</name>
+          <name>max children reached</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -438,7 +438,7 @@ pm.status_path = /status&#13;
           </master_item>
         </item>
         <item>
-          <name>$1</name>
+          <name>max listen queue</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -465,7 +465,7 @@ pm.status_path = /status&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description>The maximum number of requests in the queue of pending connections since PHP-FPM has started</description>
+          <description>The maximum number of requests in the queue of pending connections since PHP-FPM has started.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -486,7 +486,7 @@ pm.status_path = /status&#13;
           </master_item>
         </item>
         <item>
-          <name>$1</name>
+          <name>pool</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -513,7 +513,7 @@ pm.status_path = /status&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description>the name of the pool.&#13;
+          <description>The name of the pool.&#13;
 Mostly it will be "www".</description>
           <inventory_link>0</inventory_link>
           <applications>
@@ -535,7 +535,7 @@ Mostly it will be "www".</description>
           </master_item>
         </item>
         <item>
-          <name>$1</name>
+          <name>process manager</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -562,7 +562,7 @@ Mostly it will be "www".</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description>possible values static, dynamic or ondemand. We never use static.&#13;
+          <description>Possible values static, dynamic or ondemand. We never use static.&#13;
 Trying ondemand is on todo list.</description>
           <inventory_link>0</inventory_link>
           <applications>
@@ -584,7 +584,7 @@ Trying ondemand is on todo list.</description>
           </master_item>
         </item>
         <item>
-          <name>$1</name>
+          <name>slow requests</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -632,7 +632,7 @@ Trying ondemand is on todo list.</description>
           </master_item>
         </item>
         <item>
-          <name>$1</name>
+          <name>start since</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -680,7 +680,7 @@ Trying ondemand is on todo list.</description>
           </master_item>
         </item>
         <item>
-          <name>$1</name>
+          <name>start time</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -728,7 +728,7 @@ Trying ondemand is on todo list.</description>
           </master_item>
         </item>
         <item>
-          <name>$1</name>
+          <name>total processes</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>

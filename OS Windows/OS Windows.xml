@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-07-17T14:28:21Z</date>
+  <date>2018-10-06T10:54:01Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -6772,7 +6772,7 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
           <master_item/>
         </item>
         <item>
-          <name>SYS::load:$2</name>
+          <name>SYS::load:avg1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -6895,7 +6895,7 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
           <master_item/>
         </item>
         <item>
-          <name>CPU::$2::$3</name>
+          <name>CPU::system::avg1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -7100,7 +7100,7 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
           <master_item/>
         </item>
         <item>
-          <name>MEM::$1</name>
+          <name>MEM::free</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -7225,7 +7225,7 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
 system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Files\Zabbix Agent\NIC.ps1\""]</description>
           <item_prototypes>
             <item_prototype>
-              <name>NIC::{#IFNAME}::$2::in</name>
+              <name>NIC::{#IFNAME}::bytes::in</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -7272,7 +7272,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>NIC::{#IFNAME}::$2::in</name>
+              <name>NIC::{#IFNAME}::dropped::in</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -7319,7 +7319,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>NIC::{#IFNAME}::$2::in</name>
+              <name>NIC::{#IFNAME}::errors::in</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -7366,7 +7366,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>NIC::{#IFNAME}::$2::out</name>
+              <name>NIC::{#IFNAME}::bytes::out</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -7413,7 +7413,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>NIC::{#IFNAME}::$2::out</name>
+              <name>NIC::{#IFNAME}::dropped::out</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -7460,7 +7460,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>NIC::{#IFNAME}::$2::out</name>
+              <name>NIC::{#IFNAME}::errors::out</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>

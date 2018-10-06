@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-06-22T10:51:55Z</date>
+  <date>2018-10-06T10:54:02Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -47,7 +47,7 @@ Notes:&#13;
       </applications>
       <items>
         <item>
-          <name>SVC::$1 tcp/$3</name>
+          <name>SVC::http tcp/80</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -90,7 +90,7 @@ Notes:&#13;
           <master_item/>
         </item>
         <item>
-          <name>connections::$1</name>
+          <name>connections::active</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -145,7 +145,7 @@ This doesn’t mean number of users. A single user, for a single pageview can op
           </master_item>
         </item>
         <item>
-          <name>connections::$1</name>
+          <name>connections::reading</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -199,7 +199,7 @@ This doesn’t mean number of users. A single user, for a single pageview can op
           </master_item>
         </item>
         <item>
-          <name>connections::$1</name>
+          <name>connections::waiting</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -260,7 +260,7 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</descr
           </master_item>
         </item>
         <item>
-          <name>connections::$1</name>
+          <name>connections::writing</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -372,7 +372,7 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</descr
           </master_item>
         </item>
         <item>
-          <name>requests::$1</name>
+          <name>requests::accepts</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -430,7 +430,7 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</descr
           </master_item>
         </item>
         <item>
-          <name>requests::$1</name>
+          <name>requests::handled</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -658,7 +658,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <master_item/>
         </item>
         <item>
-          <name>PROC::$1</name>
+          <name>PROC::nginx</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>

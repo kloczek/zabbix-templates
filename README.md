@@ -14,6 +14,7 @@ This repository provides a set of templates which offers the alternative set of 
 ***
 ## Changelog:
 ### (devel)
+- Make all templates zabbix 4.0.x ready by remove using $1-$9 macros in items names
 - New templates
   - [Service php-fpm](https://github.com/kloczek/zabbix-templates/tree/devel/Service%20php-fpm)
 - **IF-MIB**

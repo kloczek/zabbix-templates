@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-06-11T11:39:04Z</date>
+  <date>2018-10-06T10:54:03Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -80,7 +80,7 @@ Notes:&#13;
           <master_item/>
         </item>
         <item>
-          <name>SYS::processes::$1</name>
+          <name>SYS::processes::zabbix_proxy</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -121,7 +121,7 @@ Notes:&#13;
           <master_item/>
         </item>
         <item>
-          <name>$1</name>
+          <name>hosts</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -162,7 +162,7 @@ Notes:&#13;
           <master_item/>
         </item>
         <item>
-          <name>$1</name>
+          <name>items</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -203,7 +203,7 @@ Notes:&#13;
           <master_item/>
         </item>
         <item>
-          <name>$1</name>
+          <name>items_unsupported</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -244,7 +244,7 @@ Notes:&#13;
           <master_item/>
         </item>
         <item>
-          <name>proc::$4::$2</name>
+          <name>proc::busy::configuration syncer</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -285,7 +285,7 @@ Notes:&#13;
           <master_item/>
         </item>
         <item>
-          <name>proc::$4::$2</name>
+          <name>proc::busy::data sender</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -326,7 +326,7 @@ Notes:&#13;
           <master_item/>
         </item>
         <item>
-          <name>proc::$4::$2</name>
+          <name>proc::busy::discoverer</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -368,7 +368,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>proc::$4::$2</name>
+          <name>proc::busy::heartbeat sender</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -409,7 +409,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>proc::$4::$2</name>
+          <name>proc::busy::history syncer</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -451,7 +451,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>proc::$4::$2</name>
+          <name>proc::busy::housekeeper</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -493,7 +493,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>proc::$4::$2</name>
+          <name>proc::busy::http poller</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -535,7 +535,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>proc::$4::$2</name>
+          <name>proc::busy::icmp pinger</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -577,7 +577,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>proc::$4::$2</name>
+          <name>proc::busy::ipmi manager</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -618,7 +618,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>proc::$4::$2</name>
+          <name>proc::busy::ipmi poller</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -659,7 +659,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>proc::$4::$2</name>
+          <name>proc::busy::java poller</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -700,7 +700,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>proc::$4::$2</name>
+          <name>proc::busy::poller</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -742,7 +742,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>proc::$4::$2</name>
+          <name>proc::busy::self-monitoring</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -784,7 +784,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>proc::$4::$2</name>
+          <name>proc::busy::snmp trapper</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -825,7 +825,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>proc::$4::$2</name>
+          <name>proc::busy::task manager</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -867,7 +867,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>proc::$4::$2</name>
+          <name>proc::busy::trapper</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -909,7 +909,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>proc::$4::$2</name>
+          <name>proc::busy::unreachable poller</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -951,7 +951,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>proc::$4::$2</name>
+          <name>proc::busy::vmware collector</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -993,7 +993,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$3</name>
+          <name>proxy::lastaccess</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1034,7 +1034,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1</name>
+          <name>proxy_history</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1075,7 +1075,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>Items::queue::$2</name>
+          <name>Items::queue::1m</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1116,7 +1116,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>Items::queue::$2</name>
+          <name>Items::queue::5m</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1157,7 +1157,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>Items::queue::$2</name>
+          <name>Items::queue::10m</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1198,7 +1198,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>Items::queue::$2</name>
+          <name>Items::queue::10s</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1239,7 +1239,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>Items::queue::$2</name>
+          <name>Items::queue::30s</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1280,7 +1280,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>rcache::buffer::free</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1321,7 +1321,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>rcache::buffer::pfree</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1362,7 +1362,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>rcache::buffer::total</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1403,7 +1403,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>rcache::buffer::used</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1444,7 +1444,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1</name>
+          <name>requiredperformance</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1485,7 +1485,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1</name>
+          <name>uptime</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1526,7 +1526,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>wcache::history::used</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1567,7 +1567,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>vmware::buffer::pfree</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1608,7 +1608,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>vmware::buffer::total</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1649,7 +1649,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>vmware::buffer::used</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1690,7 +1690,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>wcache::history::free</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1731,7 +1731,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>wcache::history::pfree</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1772,7 +1772,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>wcache::history::total</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1813,7 +1813,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>wcache::history::used</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1854,7 +1854,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>wcache::index::pfree</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1895,10 +1895,10 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>wcache::values::all</name>
           <type>5</type>
-          <snmp_community>public</snmp_community>
-          <snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+          <snmp_community/>
+          <snmp_oid/>
           <key>zabbix[wcache,values,all]</key>
           <delay>30s</delay>
           <history>2w</history>
@@ -1941,7 +1941,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>wcache::values::float</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1987,7 +1987,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>wcache::values::log</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2033,7 +2033,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>wcache::values::not supported</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2079,7 +2079,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>wcache::values::str</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2125,7 +2125,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>wcache::values::text</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2171,7 +2171,7 @@ It is calculated for last minute only.</description>
           <master_item/>
         </item>
         <item>
-          <name>$1::$2::$3</name>
+          <name>wcache::values::uint</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>

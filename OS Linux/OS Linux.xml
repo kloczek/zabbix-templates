@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-10-05T23:34:36Z</date>
+  <date>2018-10-06T15:59:14Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -57,7 +57,7 @@ Notes:&#13;
       </applications>
       <items>
         <item>
-          <name>NET::$1::in</name>
+          <name>NET::lo::in</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -103,7 +103,7 @@ Notes:&#13;
           <master_item/>
         </item>
         <item>
-          <name>NET::$1::out</name>
+          <name>NET::lo::out</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -192,7 +192,7 @@ Notes:&#13;
           <master_item/>
         </item>
         <item>
-          <name>NET::service::$1</name>
+          <name>NET::service::ssh</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -276,7 +276,7 @@ Notes:&#13;
           <master_item/>
         </item>
         <item>
-          <name>PROC::$1</name>
+          <name>PROC::crond</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -317,7 +317,7 @@ Notes:&#13;
           <master_item/>
         </item>
         <item>
-          <name>PROC::$1</name>
+          <name>PROC::rsyslogd</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -358,7 +358,7 @@ Notes:&#13;
           <master_item/>
         </item>
         <item>
-          <name>PROC::$1</name>
+          <name>PROC::sshd</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -527,7 +527,7 @@ Notes:&#13;
           <master_item/>
         </item>
         <item>
-          <name>SYS::load:$2</name>
+          <name>SYS::load:avg1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -657,7 +657,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>CPU::$2::$3</name>
+          <name>CPU::idle::avg1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -698,7 +698,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>CPU::$2::$3</name>
+          <name>CPU::interrupt::avg1]</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -739,7 +739,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>CPU::$2::$3</name>
+          <name>CPU::iowait::avg1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -780,7 +780,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>CPU::$2::$3</name>
+          <name>CPU::nice::avg1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -821,7 +821,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>CPU::$2::$3</name>
+          <name>CPU::softirq::avg1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -862,7 +862,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>CPU::$2::$3</name>
+          <name>CPU::steal::avg1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -903,7 +903,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>CPU::$2::$3</name>
+          <name>CPU::system::avg1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -944,7 +944,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>CPU::$2::$3</name>
+          <name>CPU::user::avg1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1533,7 +1533,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>CHK::Checksum::$1</name>
+          <name>CHK::Checksum::/etc/passwd</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1574,7 +1574,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>CHK::checksum::$1</name>
+          <name>CHK::checksum::/usr/bin/ssh</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1615,7 +1615,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>CHK::Checksum::$1</name>
+          <name>CHK::Checksum::/usr/sbin/sshd</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1656,7 +1656,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>MEM::$1</name>
+          <name>MEM::available</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1697,7 +1697,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>MEM::$1</name>
+          <name>MEM::buffers</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1738,7 +1738,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>MEM::$1</name>
+          <name>MEM::cached</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1779,7 +1779,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>MEM::$1</name>
+          <name>MEM::free</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1820,7 +1820,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>MEM::$1</name>
+          <name>MEM::total</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1861,7 +1861,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
-          <name>MEM::$1</name>
+          <name>MEM::used</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1943,7 +1943,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <description>Discovery of network interfaces.</description>
           <item_prototypes>
             <item_prototype>
-              <name>$1::in::bytes</name>
+              <name>{#IFNAME}::in::bytes</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -1990,7 +1990,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>$1::in::packets</name>
+              <name>{#IFNAME}::in::packets</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2037,7 +2037,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>$1::out::bytes</name>
+              <name>{#IFNAME}::out::bytes</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2084,7 +2084,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>$1::out::packets</name>
+              <name>{#IFNAME}::out::packets</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2131,7 +2131,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>$1::total::dropped</name>
+              <name>{#IFNAME}::total::dropped</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2178,7 +2178,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>$1::total::errors</name>
+              <name>{#IFNAME}::total::errors</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2889,7 +2889,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           <description>Discovery of file systems.</description>
           <item_prototypes>
             <item_prototype>
-              <name>$1::inodes::$2</name>
+              <name>{#FSNAME}::inodes::pfree</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2916,7 +2916,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description/>
+              <description>Volume inodes percent free space.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
@@ -2931,7 +2931,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>$1::inodes::$2</name>
+              <name>{#FSNAME}::inodes::total</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2958,7 +2958,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description/>
+              <description>Volume inodes total space.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
@@ -2973,7 +2973,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>$1::inodes::$2</name>
+              <name>{#FSNAME}::inodes::used</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3000,7 +3000,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description/>
+              <description>Volume inodes used space.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
@@ -3015,7 +3015,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>$1::$2</name>
+              <name>{#FSNAME}::pfree</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3057,7 +3057,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>$1::$2</name>
+              <name>{#FSNAME}::total</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3099,7 +3099,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <master_item_prototype/>
             </item_prototype>
             <item_prototype>
-              <name>$1::$2</name>
+              <name>{#FSNAME}::used</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3937,13 +3937,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies>
-        <dependency>
-          <name>CPU::idle {ITEM.VALUE}</name>
-          <expression>{OS Linux:system.cpu.util[,idle,avg1].last(0)}&lt;5</expression>
-          <recovery_expression/>
-        </dependency>
-      </dependencies>
+      <dependencies/>
       <tags/>
     </trigger>
     <trigger>

@@ -5,6 +5,8 @@ Base OS Solaris monitoring.
 
 #### Changelog:
 - (devel):
+  - Items:
+    - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
   - Triggers:
     - added ```SYS::Host is down```
     - added ```CPU::idle {ITEM.VALUE}```

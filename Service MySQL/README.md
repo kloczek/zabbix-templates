@@ -4,6 +4,9 @@
 MySQL engine monitoring over Zabbix agent.
 
 #### Changelog:
+- (devel):
+  - Items:
+    - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
 - 1.0.4 (2018-06-11):
   - Applications:
     - new ```SVC::MySQL::cfg``` for all read configuration parameters
