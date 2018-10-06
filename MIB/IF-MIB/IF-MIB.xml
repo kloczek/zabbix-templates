@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>3.4</version>
-  <date>2018-06-30T22:27:10Z</date>
+  <date>2018-10-06T00:12:33Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -524,10 +524,10 @@ The testing(3) state indicates that no operational packets can be passed.</descr
               <graph_items>
                 <graph_item>
                   <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
+                  <drawtype>2</drawtype>
                   <color>00BB00</color>
                   <yaxisside>1</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>IF-MIB</host>
@@ -536,10 +536,10 @@ The testing(3) state indicates that no operational packets can be passed.</descr
                 </graph_item>
                 <graph_item>
                   <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>0000CC</color>
+                  <drawtype>2</drawtype>
+                  <color>EE0000</color>
                   <yaxisside>1</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>IF-MIB</host>
@@ -568,10 +568,10 @@ The testing(3) state indicates that no operational packets can be passed.</descr
               <graph_items>
                 <graph_item>
                   <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
+                  <drawtype>2</drawtype>
                   <color>00BB00</color>
                   <yaxisside>1</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>IF-MIB</host>
@@ -580,10 +580,10 @@ The testing(3) state indicates that no operational packets can be passed.</descr
                 </graph_item>
                 <graph_item>
                   <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>0000CC</color>
+                  <drawtype>2</drawtype>
+                  <color>EE0000</color>
                   <yaxisside>1</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>IF-MIB</host>
