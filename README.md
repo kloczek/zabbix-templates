@@ -33,6 +33,10 @@ This repository provides a set of templates which offers the alternative set of 
 - **OS Linux**
   - Triggers:
     - '''SYS::Host is down''' corrected descrition
+- **OS Solaris**
+  - Triggers:
+    - added ```SYS::Host is down```
+    - added ```CPU::idle {ITEM.VALUE}```
 - **Service Zabbix Agent**
   - Graphs:
     - new ```HOST::items``` which presents number of host items vs number of unsuppoerted item

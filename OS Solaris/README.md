@@ -4,6 +4,10 @@
 Base OS Solaris monitoring.
 
 #### Changelog:
+- (devel):
+  - Triggers:
+    - added ```SYS::Host is down```
+    - added ```CPU::idle {ITEM.VALUE}```
 - 1.0.4 (2018-06-11)
   - Triggers:
     - fixed typo in trigger name s/SYS:uname changed/```SYS::uname changed```/
