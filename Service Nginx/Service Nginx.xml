@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-05-29T15:03:47Z</date>
+  <date>2019-05-29T18:07:27Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -48,10 +48,10 @@ Notes:&#13;
       <items>
         <item>
           <name>SVC::$1 tcp/$3</name>
-          <type>7</type>
+          <type>3</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>net.tcp.service[http,,80]</key>
+          <key>net.tcp.service[http,,{$NGINX_PORT}]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -74,7 +74,7 @@ Notes:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Checking is it possible to connect to tcp/80.</description>
+          <description>Checking is it possible to connect to tcp/{$NGINX_PORT}.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1269,7 +1269,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
   </templates>
   <triggers>
     <trigger>
-      <expression>{Service Nginx:net.tcp.service[http,,80].max(#3)}=0</expression>
+      <expression>{Service Nginx:net.tcp.service[http,,{$NGINX_PORT}].max(#3)}=0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::http tcp/{$NGINX_PORT} is DOWN</name>

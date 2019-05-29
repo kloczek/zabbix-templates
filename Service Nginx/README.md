@@ -21,6 +21,7 @@ Nginx https service monitoring template. This template is using
   - Items:
     - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
     - new calculated item ```requs_per_conn``` which shows number requests in single connection (```nginx.requests")/last("nginx.requests[handled]```)
+    - ```SVC::$1 tcp/$3```: add using ```{$NGINX_PORT}``` macro
 - 1.0.4 (2018-06-11)
   - Initial version
 

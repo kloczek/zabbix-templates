@@ -40,6 +40,9 @@ This repository provides a set of templates which offers the alternative set of 
   - Triggers:
     - added ```SYS::Host is down```
     - added ```CPU::idle {ITEM.VALUE}```
+- **Service Nginx**
+  - Items:
+    - ```SVC::$1 tcp/$3```: add using ```{$NGINX_PORT}``` macro
 - **Service Zabbix Agent**
   - Graphs:
     - new ```HOST::items``` which presents number of host items vs number of unsuppoerted item
