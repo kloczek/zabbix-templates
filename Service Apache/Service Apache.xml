@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-05-29T12:46:31Z</date>
+  <date>2019-05-29T14:20:52Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,20 +13,24 @@
       <name>Service Apache</name>
       <description>Apache service monitoring template using zabbix active agent items.&#13;
 &#13;
-Version : 1.0.4 (2018-06-11)&#13;
-URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Apache&#13;
+#### Version: 4.2.1 (2019-05-29&#13;
 &#13;
-Notes:&#13;
-- This template uses apache mod_status metrics.&#13;
-- To use this template in apache configuration needs to be added:&#13;
+#### Description:&#13;
+Apache service monitoring template using zabbix active agent items.&#13;
 &#13;
+#### Notes:&#13;
+- This template uses apache mod_status metrics&#13;
+- Macro ```{$HTTP_SERVICE_PROCESS}```: has bee nadded t oallow easy use it on Debian/Ubuntu. Default value is ```http```. On Ubuntu/Debian that value needs to be changed to ```apache2```&#13;
+- To allow use this template in apache configuration must be present:&#13;
+```&#13;
 ExtendedStatus On&#13;
 &lt;Location /server-status&gt;&#13;
- SetHandler server-status&#13;
- Order deny,allow&#13;
- Deny from all&#13;
- Allow from localhost&#13;
-&lt;/Location&gt;</description>
+            SetHandler server-status&#13;
+            Order deny,allow&#13;
+            Deny from all&#13;
+            Allow from localhost&#13;
+&lt;/Location&gt;&#13;
+```</description>
       <groups>
         <group>
           <name>Templates</name>
@@ -159,7 +163,7 @@ ExtendedStatus On&#13;
           <master_item/>
         </item>
         <item>
-          <name>PROC::httpd</name>
+          <name>PROC::{$HTTP_SERVICE_PROCESS}</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -661,6 +665,10 @@ Possible values:&#13;
         <macro>
           <macro>{$HTTP_SERVICE_PORT}</macro>
           <value>80</value>
+        </macro>
+        <macro>
+          <macro>{$HTTP_SERVICE_PROCESS}</macro>
+          <value>httpd</value>
         </macro>
       </macros>
       <templates/>

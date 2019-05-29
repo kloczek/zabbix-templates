@@ -23,6 +23,8 @@ This repository provides a set of templates which offers the alternative set of 
     - interfaces: add to LLD iterator item ```IF-MIB::ifIndex``` and map it to ```{#IFINDEX}``` macro
     - interfaces: add to all applications, items, triggers anf graphs prototypes names ```[{#IFINDEX}]``` to display physical port number in those names
     - graphs improvements
+- **Service Apache**
+  - Macro ```{$HTTP_SERVICE_PROCESS}```: has bee nadded to allow easy use it on Debian/Ubuntu. Default value is ```http```. On Ubuntu/Debian that value needs to be changed to ```apache2```
 - **Service Nginx**
   - Graphs:
     - new ```SVC::Nginx::reqs_per_conn```
