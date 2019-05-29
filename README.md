@@ -38,6 +38,10 @@ This repository provides a set of templates which offers the alternative set of 
   - Triggers:
     - added ```SYS::Host is down```
     - added ```CPU::idle {ITEM.VALUE}```
+  - Items:
+    - copy the same set of 6 NET item LLD prototypes as in ```OS Linux``` template
+      to cover monitoring in/out traffic in packets and bytes and errors and dropped
+      packets as well
 - **Service Apache**
   - Add using ```{$HTTP_SERVICE_PROCESS}''', '''{$HTTP_SERVICE_PORT}''' macros in more places in item names and triggers
   - Items:

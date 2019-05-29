@@ -7,9 +7,12 @@ Base OS Solaris monitoring.
 - (devel):
   - Items:
     - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
+    - copy the same set of 6 NET item LLD prototypes as in ```OS Linux``` template
+      to cover monitoring in/out traffic in packets and bytes and errors and dropped
+      packets as well
   - Triggers:
-    - added ```SYS::Host is down```
-    - added ```CPU::idle {ITEM.VALUE}```
+    - Added ```SYS::Host is down```
+    - Added ```CPU::idle {ITEM.VALUE}```
 - 1.0.4 (2018-06-11)
   - Triggers:
     - fixed typo in trigger name s/SYS:uname changed/```SYS::uname changed```/

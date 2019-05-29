@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-05-29T15:03:46Z</date>
+  <date>2019-05-29T20:33:08Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -3029,11 +3029,11 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
           <description>Discovery of network interfaces.</description>
           <item_prototypes>
             <item_prototype>
-              <name>$1::in</name>
+              <name>$1::in::bytes</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
-              <key>net.if.in[{#IFNAME}]</key>
+              <key>net.if.in[{#IFNAME},bytes]</key>
               <delay>30s</delay>
               <history>2w</history>
               <trends>365d</trends>
@@ -3056,13 +3056,9 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <publickey/>
               <privatekey/>
               <port/>
-              <description/>
+              <description>Incoming traffic statistics on network interface in bytes.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -3098,15 +3094,79 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>$1::out</name>
+              <name>{#IFNAME}::in::packets</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
-              <key>net.if.out[{#IFNAME}]</key>
+              <key>net.if.in[{#IFNAME},packets]</key>
+              <delay>15s</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>3</value_type>
+              <allowed_hosts/>
+              <units>pakets/s</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description/>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing/>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
+            </item_prototype>
+            <item_prototype>
+              <name>$1::out::bytes</name>
+              <type>7</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>net.if.out[{#IFNAME},bytes]</key>
               <delay>30s</delay>
               <history>2w</history>
               <trends>365d</trends>
@@ -3129,13 +3189,9 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <publickey/>
               <privatekey/>
               <port/>
-              <description/>
+              <description>Outgoing traffic statistics on network interface in bytes.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -3171,7 +3227,191 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
+            </item_prototype>
+            <item_prototype>
+              <name>{#IFNAME}::out::packets</name>
+              <type>7</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>net.if.out[{#IFNAME},packets]</key>
+              <delay>15s</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>3</value_type>
+              <allowed_hosts/>
+              <units>pakets/s</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description/>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing/>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
+            </item_prototype>
+            <item_prototype>
+              <name>{#IFNAME}::total::dropped</name>
+              <type>7</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>net.if.total[{#IFNAME},dropped]</key>
+              <delay>1m</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>3</value_type>
+              <allowed_hosts/>
+              <units>packets/s</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Sum of incoming and outgoing traffic statistics on network interface - dropped packets.</description>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing/>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
+            </item_prototype>
+            <item_prototype>
+              <name>$1::total::errors</name>
+              <type>7</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>net.if.total[{#IFNAME},errors]</key>
+              <delay>1m</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>3</value_type>
+              <allowed_hosts/>
+              <units>err/s</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Sum of incoming and outgoing traffic statistics on network interface. Number of errors.</description>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing/>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
           </item_prototypes>
@@ -3204,7 +3444,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
                   <type>0</type>
                   <item>
                     <host>OS Solaris</host>
-                    <key>net.if.in[{#IFNAME}]</key>
+                    <key>net.if.in[{#IFNAME},bytes]</key>
                   </item>
                 </graph_item>
                 <graph_item>
@@ -3216,7 +3456,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
                   <type>0</type>
                   <item>
                     <host>OS Solaris</host>
-                    <key>net.if.out[{#IFNAME}]</key>
+                    <key>net.if.out[{#IFNAME},bytes]</key>
                   </item>
                 </graph_item>
               </graph_items>
@@ -3248,7 +3488,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
                   <type>0</type>
                   <item>
                     <host>OS Solaris</host>
-                    <key>net.if.in[{#IFNAME}]</key>
+                    <key>net.if.in[{#IFNAME},bytes]</key>
                   </item>
                 </graph_item>
                 <graph_item>
@@ -3260,7 +3500,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
                   <type>0</type>
                   <item>
                     <host>OS Solaris</host>
-                    <key>net.if.out[{#IFNAME}]</key>
+                    <key>net.if.out[{#IFNAME},bytes]</key>
                   </item>
                 </graph_item>
               </graph_items>
@@ -4975,6 +5215,108 @@ Please login on the host and check output of the commands:&#13;
               <sort_triggers>0</sort_triggers>
               <resource>
                 <name>DSK::{#DISK}::bytes</name>
+                <host>OS Solaris</host>
+              </resource>
+              <max_columns>1</max_columns>
+              <application/>
+            </screen_item>
+          </screen_items>
+        </screen>
+        <screen>
+          <name>MEM</name>
+          <hsize>1</hsize>
+          <vsize>1</vsize>
+          <screen_items>
+            <screen_item>
+              <resourcetype>0</resourcetype>
+              <width>1200</width>
+              <height>200</height>
+              <x>0</x>
+              <y>0</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>MEM</name>
+                <host>OS Solaris</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+          </screen_items>
+        </screen>
+        <screen>
+          <name>NET</name>
+          <hsize>2</hsize>
+          <vsize>2</vsize>
+          <screen_items>
+            <screen_item>
+              <resourcetype>0</resourcetype>
+              <width>600</width>
+              <height>200</height>
+              <x>0</x>
+              <y>0</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>NET::ICMP</name>
+                <host>OS Solaris</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>0</resourcetype>
+              <width>600</width>
+              <height>200</height>
+              <x>1</x>
+              <y>0</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>NET::ICMP::latency</name>
+                <host>OS Solaris</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>20</resourcetype>
+              <width>600</width>
+              <height>200</height>
+              <x>0</x>
+              <y>1</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>NIC::{#IFNAME}::bytes</name>
                 <host>OS Solaris</host>
               </resource>
               <max_columns>1</max_columns>
