@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-05-29T14:20:52Z</date>
+  <date>2019-05-29T15:03:46Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -20,7 +20,7 @@ Apache service monitoring template using zabbix active agent items.&#13;
 &#13;
 #### Notes:&#13;
 - This template uses apache mod_status metrics&#13;
-- Macro ```{$HTTP_SERVICE_PROCESS}```: has bee nadded t oallow easy use it on Debian/Ubuntu. Default value is ```http```. On Ubuntu/Debian that value needs to be changed to ```apache2```&#13;
+- Macro ```{$HTTP_SERVICE_PROCESS}```: has bee nadded to allow easy use it on Debian/Ubuntu. Default value is ```http```. On Ubuntu/Debian that value needs to be changed to ```apache2```&#13;
 - To allow use this template in apache configuration must be present:&#13;
 ```&#13;
 ExtendedStatus On&#13;
@@ -675,12 +675,12 @@ Possible values:&#13;
       <screens>
         <screen>
           <name>SVC::Apache</name>
-          <hsize>1</hsize>
-          <vsize>3</vsize>
+          <hsize>2</hsize>
+          <vsize>2</vsize>
           <screen_items>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>900</width>
+              <width>600</width>
               <height>200</height>
               <x>0</x>
               <y>0</y>
@@ -702,10 +702,10 @@ Possible values:&#13;
             </screen_item>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>900</width>
+              <width>600</width>
               <height>200</height>
-              <x>0</x>
-              <y>1</y>
+              <x>1</x>
+              <y>0</y>
               <colspan>1</colspan>
               <rowspan>1</rowspan>
               <elements>0</elements>
@@ -724,10 +724,10 @@ Possible values:&#13;
             </screen_item>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>900</width>
+              <width>600</width>
               <height>200</height>
-              <x>0</x>
-              <y>2</y>
+              <x>1</x>
+              <y>1</y>
               <colspan>1</colspan>
               <rowspan>1</rowspan>
               <elements>0</elements>

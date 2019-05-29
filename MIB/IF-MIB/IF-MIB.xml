@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-05-29T12:46:29Z</date>
+  <date>2019-05-29T15:03:45Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -900,8 +900,8 @@ The testing(3) state indicates that no operational packets can be passed.</descr
           <screen_items>
             <screen_item>
               <resourcetype>20</resourcetype>
-              <width>900</width>
-              <height>100</height>
+              <width>1200</width>
+              <height>200</height>
               <x>0</x>
               <y>0</y>
               <colspan>1</colspan>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-05-29T12:46:32Z</date>
+  <date>2019-05-29T15:03:47Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -1170,8 +1170,8 @@ Generally, the parameter value is the same as accepts unless some resource limit
       <screens>
         <screen>
           <name>SVC::Nginx</name>
-          <hsize>1</hsize>
-          <vsize>4</vsize>
+          <hsize>2</hsize>
+          <vsize>3</vsize>
           <screen_items>
             <screen_item>
               <resourcetype>3</resourcetype>
@@ -1197,8 +1197,8 @@ Generally, the parameter value is the same as accepts unless some resource limit
             </screen_item>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>1200</width>
-              <height>300</height>
+              <width>600</width>
+              <height>200</height>
               <x>0</x>
               <y>1</y>
               <colspan>1</colspan>
@@ -1219,10 +1219,10 @@ Generally, the parameter value is the same as accepts unless some resource limit
             </screen_item>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>1200</width>
-              <height>300</height>
-              <x>0</x>
-              <y>2</y>
+              <width>600</width>
+              <height>200</height>
+              <x>1</x>
+              <y>1</y>
               <colspan>1</colspan>
               <rowspan>1</rowspan>
               <elements>0</elements>
@@ -1241,10 +1241,10 @@ Generally, the parameter value is the same as accepts unless some resource limit
             </screen_item>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>1200</width>
-              <height>300</height>
+              <width>600</width>
+              <height>200</height>
               <x>0</x>
-              <y>3</y>
+              <y>2</y>
               <colspan>1</colspan>
               <rowspan>1</rowspan>
               <elements>0</elements>

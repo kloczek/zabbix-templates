@@ -9,6 +9,8 @@ Base OS Windows template.
     - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
   - Triggers:
     - added missing ```SYS::Host is down``` trigger with all necessary dependencies
+  - Screens:
+    - Added ```CPU``` screen like in other Os templates
 - 1.0.4 (2018-06-11)
   - Triggers:
     - rename trigger name to the same name as it is in other OS templates

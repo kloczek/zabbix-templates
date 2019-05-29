@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-05-29T12:46:31Z</date>
+  <date>2019-05-29T15:03:46Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -4860,12 +4860,12 @@ Please login on the host and check output of the commands:&#13;
       <screens>
         <screen>
           <name>CPU</name>
-          <hsize>1</hsize>
-          <vsize>3</vsize>
+          <hsize>2</hsize>
+          <vsize>2</vsize>
           <screen_items>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>900</width>
+              <width>600</width>
               <height>200</height>
               <x>0</x>
               <y>0</y>
@@ -4887,10 +4887,10 @@ Please login on the host and check output of the commands:&#13;
             </screen_item>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>900</width>
+              <width>600</width>
               <height>200</height>
-              <x>0</x>
-              <y>1</y>
+              <x>1</x>
+              <y>0</y>
               <colspan>1</colspan>
               <rowspan>1</rowspan>
               <elements>0</elements>
@@ -4909,10 +4909,10 @@ Please login on the host and check output of the commands:&#13;
             </screen_item>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>900</width>
+              <width>600</width>
               <height>200</height>
               <x>0</x>
-              <y>2</y>
+              <y>1</y>
               <colspan>1</colspan>
               <rowspan>1</rowspan>
               <elements>0</elements>
@@ -4938,8 +4938,8 @@ Please login on the host and check output of the commands:&#13;
           <screen_items>
             <screen_item>
               <resourcetype>20</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>0</x>
               <y>0</y>
               <colspan>1</colspan>
@@ -4960,8 +4960,8 @@ Please login on the host and check output of the commands:&#13;
             </screen_item>
             <screen_item>
               <resourcetype>20</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>1</x>
               <y>0</y>
               <colspan>1</colspan>
@@ -4989,7 +4989,7 @@ Please login on the host and check output of the commands:&#13;
           <screen_items>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>900</width>
+              <width>1200</width>
               <height>200</height>
               <x>0</x>
               <y>0</y>
@@ -5011,7 +5011,7 @@ Please login on the host and check output of the commands:&#13;
             </screen_item>
             <screen_item>
               <resourcetype>20</resourcetype>
-              <width>900</width>
+              <width>1200</width>
               <height>200</height>
               <x>0</x>
               <y>1</y>
@@ -5033,7 +5033,7 @@ Please login on the host and check output of the commands:&#13;
             </screen_item>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>900</width>
+              <width>1200</width>
               <height>200</height>
               <x>0</x>
               <y>2</y>

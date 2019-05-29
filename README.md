@@ -59,6 +59,7 @@ This repository provides a set of templates which offers the alternative set of 
       - "processing queue" and flame like graph with "queued items"
       - "items totat/unsupported" and "items::nvps"
       - "items/triggers" and "hosts"
+- All graphs in screens resolution have been changed to 1200x200 or 600x200 in case screens with two columns of graphs
 ### 1.0.4 (2018-06-11)
 - The first version tagged in git repo to stamp state of templates and tools and to provide better tracking changes by using ```git``` command
 - The development of the next versions of the templates will continue on devel branch. When all changes are ready devel branch will be merged to master one. It will be way better for those who have interested enough tested template.

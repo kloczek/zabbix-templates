@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-05-29T12:46:31Z</date>
+  <date>2019-05-29T15:03:46Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -5078,13 +5078,13 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <screens>
         <screen>
           <name>CPU</name>
-          <hsize>1</hsize>
+          <hsize>2</hsize>
           <vsize>2</vsize>
           <screen_items>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>1200</width>
-              <height>300</height>
+              <width>600</width>
+              <height>200</height>
               <x>0</x>
               <y>0</y>
               <colspan>1</colspan>
@@ -5105,7 +5105,29 @@ Value is calculated by read number of sectors multiplied by 512.</description>
             </screen_item>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>1200</width>
+              <width>500</width>
+              <height>200</height>
+              <x>1</x>
+              <y>0</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>SYS::load::avg1</name>
+                <host>OS Linux</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>0</resourcetype>
+              <width>600</width>
               <height>200</height>
               <x>0</x>
               <y>1</y>
@@ -5134,8 +5156,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           <screen_items>
             <screen_item>
               <resourcetype>20</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>0</x>
               <y>0</y>
               <colspan>1</colspan>
@@ -5156,8 +5178,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
             </screen_item>
             <screen_item>
               <resourcetype>20</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>1</x>
               <y>0</y>
               <colspan>1</colspan>
@@ -5214,8 +5236,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           <screen_items>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>0</x>
               <y>0</y>
               <colspan>1</colspan>
@@ -5236,8 +5258,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
             </screen_item>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>1</x>
               <y>0</y>
               <colspan>1</colspan>
@@ -5258,8 +5280,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
             </screen_item>
             <screen_item>
               <resourcetype>20</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>0</x>
               <y>1</y>
               <colspan>1</colspan>
@@ -5280,15 +5302,15 @@ Value is calculated by read number of sectors multiplied by 512.</description>
             </screen_item>
             <screen_item>
               <resourcetype>20</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>1</x>
               <y>1</y>
               <colspan>1</colspan>
               <rowspan>1</rowspan>
               <elements>0</elements>
               <valign>1</valign>
-              <halign>0</halign>
+              <halign>1</halign>
               <style>0</style>
               <url/>
               <dynamic>0</dynamic>
@@ -5309,8 +5331,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           <screen_items>
             <screen_item>
               <resourcetype>20</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>0</x>
               <y>0</y>
               <colspan>1</colspan>
@@ -5331,8 +5353,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
             </screen_item>
             <screen_item>
               <resourcetype>20</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>1</x>
               <y>0</y>
               <colspan>1</colspan>

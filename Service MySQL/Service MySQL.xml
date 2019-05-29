@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-05-29T12:46:32Z</date>
+  <date>2019-05-29T15:03:46Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -4934,11 +4934,11 @@ SELECT variable_value FROM information_schema.global_status WHERE variable_name 
         <screen>
           <name>SVC::MySQL::Com</name>
           <hsize>1</hsize>
-          <vsize>7</vsize>
+          <vsize>6</vsize>
           <screen_items>
             <screen_item>
               <resourcetype>1</resourcetype>
-              <width>900</width>
+              <width>1200</width>
               <height>200</height>
               <x>0</x>
               <y>0</y>
@@ -4960,7 +4960,7 @@ SELECT variable_value FROM information_schema.global_status WHERE variable_name 
             </screen_item>
             <screen_item>
               <resourcetype>1</resourcetype>
-              <width>900</width>
+              <width>1200</width>
               <height>200</height>
               <x>0</x>
               <y>1</y>
@@ -4982,7 +4982,7 @@ SELECT variable_value FROM information_schema.global_status WHERE variable_name 
             </screen_item>
             <screen_item>
               <resourcetype>1</resourcetype>
-              <width>900</width>
+              <width>1200</width>
               <height>200</height>
               <x>0</x>
               <y>2</y>
@@ -5004,7 +5004,7 @@ SELECT variable_value FROM information_schema.global_status WHERE variable_name 
             </screen_item>
             <screen_item>
               <resourcetype>1</resourcetype>
-              <width>900</width>
+              <width>1200</width>
               <height>200</height>
               <x>0</x>
               <y>3</y>
@@ -5026,7 +5026,7 @@ SELECT variable_value FROM information_schema.global_status WHERE variable_name 
             </screen_item>
             <screen_item>
               <resourcetype>1</resourcetype>
-              <width>900</width>
+              <width>1200</width>
               <height>200</height>
               <x>0</x>
               <y>4</y>
@@ -5048,7 +5048,7 @@ SELECT variable_value FROM information_schema.global_status WHERE variable_name 
             </screen_item>
             <screen_item>
               <resourcetype>1</resourcetype>
-              <width>900</width>
+              <width>1200</width>
               <height>200</height>
               <x>0</x>
               <y>5</y>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-05-29T12:46:32Z</date>
+  <date>2019-05-29T15:03:47Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -3179,8 +3179,8 @@ It is calculated for last minute only.</description>
           <screen_items>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>0</x>
               <y>0</y>
               <colspan>1</colspan>
@@ -3201,8 +3201,8 @@ It is calculated for last minute only.</description>
             </screen_item>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>1</x>
               <y>0</y>
               <colspan>1</colspan>
@@ -3223,8 +3223,8 @@ It is calculated for last minute only.</description>
             </screen_item>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>0</x>
               <y>1</y>
               <colspan>1</colspan>
@@ -3245,8 +3245,8 @@ It is calculated for last minute only.</description>
             </screen_item>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>1</x>
               <y>1</y>
               <colspan>1</colspan>
@@ -3267,8 +3267,8 @@ It is calculated for last minute only.</description>
             </screen_item>
             <screen_item>
               <resourcetype>1</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>0</x>
               <y>2</y>
               <colspan>1</colspan>
@@ -3289,8 +3289,8 @@ It is calculated for last minute only.</description>
             </screen_item>
             <screen_item>
               <resourcetype>1</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>1</x>
               <y>2</y>
               <colspan>1</colspan>
