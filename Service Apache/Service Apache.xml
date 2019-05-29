@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-05-29T15:03:46Z</date>
+  <date>2019-05-29T19:07:58Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -43,8 +43,8 @@ ExtendedStatus On&#13;
       </applications>
       <items>
         <item>
-          <name>SVC::$1</name>
-          <type>7</type>
+          <name>NET::$1</name>
+          <type>3</type>
           <snmp_community/>
           <snmp_oid/>
           <key>net.tcp.service[http,,{$HTTP_SERVICE_PORT}]</key>
@@ -80,65 +80,6 @@ ExtendedStatus On&#13;
           <valuemap>
             <name>Service state</name>
           </valuemap>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>PROC::$1</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>proc.num[httpd]</key>
-          <delay>30s</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>processes</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::Apache</name>
-            </application>
-          </applications>
-          <valuemap/>
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
@@ -705,28 +646,6 @@ Possible values:&#13;
               <width>600</width>
               <height>200</height>
               <x>1</x>
-              <y>0</y>
-              <colspan>1</colspan>
-              <rowspan>1</rowspan>
-              <elements>0</elements>
-              <valign>1</valign>
-              <halign>1</halign>
-              <style>0</style>
-              <url/>
-              <dynamic>0</dynamic>
-              <sort_triggers>0</sort_triggers>
-              <resource>
-                <name>SVC::Apache::processes</name>
-                <host>Service Apache</host>
-              </resource>
-              <max_columns>3</max_columns>
-              <application/>
-            </screen_item>
-            <screen_item>
-              <resourcetype>0</resourcetype>
-              <width>600</width>
-              <height>200</height>
-              <x>1</x>
               <y>1</y>
               <colspan>1</colspan>
               <rowspan>1</rowspan>
@@ -752,16 +671,16 @@ Possible values:&#13;
   </templates>
   <triggers>
     <trigger>
-      <expression>{Service Apache:proc.num[httpd].min(#3)}&gt;100</expression>
+      <expression>{Service Apache:net.tcp.service[http,,{$HTTP_SERVICE_PORT}].max(#3)}=0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>PROC::httpd::too many processes running ({ITEM.LASTVALUE} processes)</name>
+      <name>NET::Apache tcp/{$HTTP_SERVICE_PORT} is DOWN</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
       <status>0</status>
       <priority>3</priority>
-      <description/>
+      <description>Nothing listens on http tcp/{$HTTP_SERVICE_PORT} port or traffic on this port is filtered by firewall.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>
@@ -771,23 +690,7 @@ Possible values:&#13;
       <expression>{Service Apache:proc.num[{$HTTP_SERVICE_PROCESS}].min(#3)}&gt;100</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>PROC::httpd::too many processes running ({ITEM.LASTVALUE} processes)</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{Service Apache:proc.num[httpd].max(#8)}=0</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>PROC::httpd is not running</name>
+      <name>PROC::{$HTTP_SERVICE_PROCESS}::too many processes running ({ITEM.LASTVALUE} processes)</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
@@ -803,29 +706,13 @@ Possible values:&#13;
       <expression>{Service Apache:proc.num[{$HTTP_SERVICE_PROCESS}].max(#8)}=0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>PROC::httpd is not running</name>
+      <name>PROC::{$HTTP_SERVICE_PROCESS} is not running</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
       <status>0</status>
       <priority>3</priority>
       <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{Service Apache:net.tcp.service[http,,{$HTTP_SERVICE_PORT}].max(#3)}=0</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SVC::http tcp/{$HTTP_SERVICE_PORT} is DOWN</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description>Nothing listens on http tcp/{$HTTP_SERVICE_PORT} port or traffic on this port is filtered by firewall.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>
@@ -860,7 +747,7 @@ Possible values:&#13;
           <type>0</type>
           <item>
             <host>Service Apache</host>
-            <key>proc.num[httpd]</key>
+            <key>proc.num[{$HTTP_SERVICE_PROCESS}]</key>
           </item>
         </graph_item>
       </graph_items>

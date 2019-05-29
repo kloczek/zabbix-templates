@@ -18,9 +18,13 @@ ExtendedStatus On
 ```
 #### Changelog:
 - (devel):
+  - Add using ```{$HTTP_SERVICE_PROCESS}''', '''{$HTTP_SERVICE_PORT}''' macros in more places in item names and triggers
   - Items:
     - Make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
+    - Rename ```net.tcp.service[http,,{$HTTP_SERVICE_PORT}]``` key item from ```SVC::$1``` to ```NET::$1```
   - Macro ```{$HTTP_SERVICE_PROCESS}```: has bee nadded to allow easy use it on Debian/Ubuntu. Default value is ```http```. On Ubuntu/Debian that value needs to be changed to ```apache2```
+  - Triggers:
+    - rename ```SVC::Apache tcp/{$HTTP_SERVICE_PORT} is DOWN``` to ```NET::Apache tcp/{$HTTP_SERVICE_PORT} is DOWN```
 - 1.0.4 (2018-06-11)
   - Graphs:
     - changed resolution of all graphs to 1200x300
