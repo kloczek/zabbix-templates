@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-  <version>3.4</version>
-  <date>2018-10-06T10:54:04Z</date>
+  <version>4.2</version>
+  <date>2019-05-29T12:46:32Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -54,7 +54,7 @@ Notes:&#13;
       </applications>
       <items>
         <item>
-          <name>hosts</name>
+          <name>$1</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -92,10 +92,28 @@ Notes:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>items</name>
+          <name>$1</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -133,6 +151,24 @@ Notes:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -174,6 +210,24 @@ Notes:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -215,10 +269,28 @@ Notes:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::alerter</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -257,10 +329,28 @@ Notes:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::alert manager</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -299,10 +389,28 @@ Notes:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::guration sync</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -341,10 +449,28 @@ Notes:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::discoverer</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -383,10 +509,28 @@ Notes:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::escalator</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -425,10 +569,28 @@ Notes:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::history syncer</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -467,10 +629,28 @@ Notes:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::housekeeper</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -509,10 +689,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::http polle</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -551,10 +749,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::icmp pinger</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -593,10 +809,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::ipmi manager</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -635,10 +869,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::ipmi poller</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -677,10 +929,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::java poller</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -719,10 +989,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::poller</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -761,10 +1049,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::preprocessing manager</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -803,10 +1109,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::preprocessing worker</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -845,10 +1169,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::proxy poller</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -887,10 +1229,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::self-monitoring</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -929,10 +1289,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::snmp trapper</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -971,10 +1349,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::task manager</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1013,10 +1409,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::timer</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1055,10 +1469,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::trapper</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1097,10 +1529,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::unreachable poller</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1139,10 +1589,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>proc::busy::vmware collector</name>
+          <name>proc::$4::$2 %</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1181,10 +1649,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>queue::1m</name>
+          <name>queue::$2</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1222,10 +1708,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>queue::5m</name>
+          <name>queue::$2</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1263,10 +1767,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>queue::10m</name>
+          <name>queue::$2</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1304,10 +1826,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>queue::10s</name>
+          <name>queue::$2</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1345,10 +1885,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>queue::30s</name>
+          <name>queue::$2</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1386,10 +1944,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>rcache::buffer::free</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1427,10 +2003,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>rcache::buffer::pfree</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1468,10 +2062,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>rcach::buffer::used</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1509,6 +2121,24 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1550,10 +2180,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>triggers</name>
+          <name>$1</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1591,10 +2239,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>uptime</name>
+          <name>$1</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1632,10 +2298,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>vcache::buffer::pfree</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1673,10 +2357,28 @@ This metrics should have only two values 0 and 100% because it is only one house
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>vcache::cache::hits</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1716,13 +2418,33 @@ This metrics should have only two values 0 and 100% because it is only one house
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>vcache::cache::misses</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1762,13 +2484,33 @@ This metrics should have only two values 0 and 100% because it is only one house
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>vcache::cache::requests</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1808,13 +2550,33 @@ This metrics should have only two values 0 and 100% because it is only one house
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>wcache::history::free</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1853,10 +2615,28 @@ A low number indicates performance problems on the database side.</description>
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>wcache::history::pfree</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1895,10 +2675,28 @@ A low number indicates performance problems on the database side.</description>
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>wcache::history::total</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1936,10 +2734,28 @@ A low number indicates performance problems on the database side.</description>
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>wcache::history::used</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1978,10 +2794,28 @@ A high number indicates performance problems on the database side.</description>
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>wcache::trend::free</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2020,10 +2854,28 @@ A low number indicates performance problems on the database side.</description>
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>wcache::trend::pfree</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2062,10 +2914,28 @@ A low number indicates performance problems on the database side.</description>
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>wcache::trend::total</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2103,10 +2973,28 @@ A low number indicates performance problems on the database side.</description>
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>wcache::trend::used</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2145,10 +3033,28 @@ A high number indicates performance problems on the database side.</description>
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>wcache::values::all</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2188,13 +3094,33 @@ A high number indicates performance problems on the database side.</description>
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>wcache::values::float</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2234,13 +3160,33 @@ A high number indicates performance problems on the database side.</description>
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>wcache::values::log</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2280,13 +3226,33 @@ A high number indicates performance problems on the database side.</description>
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>wcache::values::not supported</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2326,13 +3292,33 @@ A high number indicates performance problems on the database side.</description>
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>wcache::values::str</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2372,13 +3358,33 @@ A high number indicates performance problems on the database side.</description>
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>wcache::values::text</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2418,13 +3424,33 @@ A high number indicates performance problems on the database side.</description>
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>wcache::values::uint</name>
+          <name>$1::$2::$3</name>
           <type>5</type>
           <snmp_community/>
           <snmp_oid/>
@@ -2464,9 +3490,29 @@ A high number indicates performance problems on the database side.</description>
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
       </items>
@@ -2478,7 +3524,7 @@ A high number indicates performance problems on the database side.</description>
         <screen>
           <name>SVC::zabbix_server::status</name>
           <hsize>2</hsize>
-          <vsize>5</vsize>
+          <vsize>3</vsize>
           <screen_items>
             <screen_item>
               <resourcetype>0</resourcetype>
@@ -2584,7 +3630,7 @@ A high number indicates performance problems on the database side.</description>
               <dynamic>0</dynamic>
               <sort_triggers>0</sort_triggers>
               <resource>
-                <name>SVC::zabbix_server::preprocessing queue</name>
+                <name>SVC::zabbix_server::items queued</name>
                 <host>Service Zabbix Server</host>
               </resource>
               <max_columns>3</max_columns>
@@ -2606,95 +3652,7 @@ A high number indicates performance problems on the database side.</description>
               <dynamic>0</dynamic>
               <sort_triggers>0</sort_triggers>
               <resource>
-                <name>SVC::zabbix_server::items queued</name>
-                <host>Service Zabbix Server</host>
-              </resource>
-              <max_columns>3</max_columns>
-              <application/>
-            </screen_item>
-            <screen_item>
-              <resourcetype>0</resourcetype>
-              <width>500</width>
-              <height>100</height>
-              <x>0</x>
-              <y>3</y>
-              <colspan>1</colspan>
-              <rowspan>1</rowspan>
-              <elements>0</elements>
-              <valign>1</valign>
-              <halign>1</halign>
-              <style>0</style>
-              <url/>
-              <dynamic>0</dynamic>
-              <sort_triggers>0</sort_triggers>
-              <resource>
                 <name>SVC::zabbix_server::items total/unsupported</name>
-                <host>Service Zabbix Server</host>
-              </resource>
-              <max_columns>3</max_columns>
-              <application/>
-            </screen_item>
-            <screen_item>
-              <resourcetype>0</resourcetype>
-              <width>500</width>
-              <height>100</height>
-              <x>1</x>
-              <y>3</y>
-              <colspan>1</colspan>
-              <rowspan>1</rowspan>
-              <elements>0</elements>
-              <valign>1</valign>
-              <halign>1</halign>
-              <style>0</style>
-              <url/>
-              <dynamic>0</dynamic>
-              <sort_triggers>0</sort_triggers>
-              <resource>
-                <name>SVC::zabbix_server::items::nvps</name>
-                <host>Service Zabbix Server</host>
-              </resource>
-              <max_columns>3</max_columns>
-              <application/>
-            </screen_item>
-            <screen_item>
-              <resourcetype>0</resourcetype>
-              <width>500</width>
-              <height>100</height>
-              <x>0</x>
-              <y>4</y>
-              <colspan>1</colspan>
-              <rowspan>1</rowspan>
-              <elements>0</elements>
-              <valign>1</valign>
-              <halign>1</halign>
-              <style>0</style>
-              <url/>
-              <dynamic>0</dynamic>
-              <sort_triggers>0</sort_triggers>
-              <resource>
-                <name>SVC::zabbix_server::items/triggers</name>
-                <host>Service Zabbix Server</host>
-              </resource>
-              <max_columns>3</max_columns>
-              <application/>
-            </screen_item>
-            <screen_item>
-              <resourcetype>0</resourcetype>
-              <width>500</width>
-              <height>100</height>
-              <x>1</x>
-              <y>4</y>
-              <colspan>1</colspan>
-              <rowspan>1</rowspan>
-              <elements>0</elements>
-              <valign>1</valign>
-              <halign>1</halign>
-              <style>0</style>
-              <url/>
-              <dynamic>0</dynamic>
-              <sort_triggers>0</sort_triggers>
-              <resource>
-                <name>SVC::zabbix_server::hosts</name>
                 <host>Service Zabbix Server</host>
               </resource>
               <max_columns>3</max_columns>
@@ -2703,6 +3661,7 @@ A high number indicates performance problems on the database side.</description>
           </screen_items>
         </screen>
       </screens>
+      <tags/>
     </template>
   </templates>
   <triggers>
@@ -3462,6 +4421,50 @@ A high number indicates performance problems on the database side.</description>
           <item>
             <host>Service Zabbix Server</host>
             <key>zabbix[triggers]</key>
+          </item>
+        </graph_item>
+      </graph_items>
+    </graph>
+    <graph>
+      <name>SVC::zabbix_server::items/wcache::buffer::pfree</name>
+      <width>1200</width>
+      <height>300</height>
+      <yaxismin>0.0000</yaxismin>
+      <yaxismax>100.0000</yaxismax>
+      <show_work_period>1</show_work_period>
+      <show_triggers>0</show_triggers>
+      <type>0</type>
+      <show_legend>1</show_legend>
+      <show_3d>0</show_3d>
+      <percent_left>0.0000</percent_left>
+      <percent_right>0.0000</percent_right>
+      <ymin_type_1>0</ymin_type_1>
+      <ymax_type_1>0</ymax_type_1>
+      <ymin_item_1>0</ymin_item_1>
+      <ymax_item_1>0</ymax_item_1>
+      <graph_items>
+        <graph_item>
+          <sortorder>0</sortorder>
+          <drawtype>0</drawtype>
+          <color>00BB00</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service Zabbix Server</host>
+            <key>zabbix[items]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>1</sortorder>
+          <drawtype>0</drawtype>
+          <color>FFFF33</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service Zabbix Server</host>
+            <key>zabbix[vcache,buffer,pfree]</key>
           </item>
         </graph_item>
       </graph_items>

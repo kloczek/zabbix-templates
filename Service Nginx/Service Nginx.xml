@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-  <version>3.4</version>
-  <date>2018-10-06T10:54:02Z</date>
+  <version>4.2</version>
+  <date>2019-05-29T12:46:32Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,7 +13,7 @@
       <name>Service Nginx</name>
       <description>Nginx http server monitoring template.&#13;
 &#13;
-Version: (devel)&#13;
+Version: 1.0.4 (2018-06-11)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nginx&#13;
 &#13;
 Notes:&#13;
@@ -47,7 +47,7 @@ Notes:&#13;
       </applications>
       <items>
         <item>
-          <name>SVC::http tcp/80</name>
+          <name>SVC::$1 tcp/$3</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -87,10 +87,28 @@ Notes:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>connections::active</name>
+          <name>connections::$1</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -132,20 +150,42 @@ This doesn’t mean number of users. A single user, for a single pageview can op
               <type>5</type>
               <params>Active(.*)
 \0</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
             <step>
               <type>5</type>
               <params>\d+
 \0</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.get[{$NGINX_HOST},{$NGINX_STATS_URI},{$NGINX_PORT}]</key>
           </master_item>
         </item>
         <item>
-          <name>connections::reading</name>
+          <name>connections::$1</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -186,20 +226,42 @@ This doesn’t mean number of users. A single user, for a single pageview can op
               <type>5</type>
               <params>Reading:(.*)
 \0</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
             <step>
               <type>5</type>
               <params>\d+
 \0</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.get[{$NGINX_HOST},{$NGINX_STATS_URI},{$NGINX_PORT}]</key>
           </master_item>
         </item>
         <item>
-          <name>connections::waiting</name>
+          <name>connections::$1</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -247,20 +309,42 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</descr
               <type>5</type>
               <params>Waiting:(.*)
 \0</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
             <step>
               <type>5</type>
               <params>\d+
 \0</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.get[{$NGINX_HOST},{$NGINX_STATS_URI},{$NGINX_PORT}]</key>
           </master_item>
         </item>
         <item>
-          <name>connections::writing</name>
+          <name>connections::$1</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -301,14 +385,36 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</descr
               <type>5</type>
               <params>Writing:(.*)
 \0</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
             <step>
               <type>5</type>
               <params>\d+
 \0</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.get[{$NGINX_HOST},{$NGINX_STATS_URI},{$NGINX_PORT}]</key>
           </master_item>
@@ -355,24 +461,48 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</descr
               <type>5</type>
               <params>\s\d+\s\d+\s\d+
 \0</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
             <step>
               <type>5</type>
               <params>\s\d+\s\d+\s(.*)
 \1</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.get[{$NGINX_HOST},{$NGINX_STATS_URI},{$NGINX_PORT}]</key>
           </master_item>
         </item>
         <item>
-          <name>requests::accepts</name>
+          <name>requests::$1</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -413,24 +543,48 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</descr
               <type>5</type>
               <params>\s\d+\s\d+\s\d+
 \0</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
             <step>
               <type>5</type>
               <params>\d+
 \0</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.get[{$NGINX_HOST},{$NGINX_STATS_URI},{$NGINX_PORT}]</key>
           </master_item>
         </item>
         <item>
-          <name>requests::handled</name>
+          <name>requests::$1</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
@@ -472,23 +626,49 @@ Generally, the parameter value is the same as accepts unless some resource limit
               <type>5</type>
               <params>\s\d+\s\d+\s\d+
 \0</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
             <step>
               <type>5</type>
               <params>\s\d+\s\d+\s
 \0</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
             <step>
               <type>5</type>
               <params>\s\d+\s(.*)
 \1</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.get[{$NGINX_HOST},{$NGINX_STATS_URI},{$NGINX_PORT}]</key>
           </master_item>
@@ -532,6 +712,24 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -573,6 +771,24 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -614,6 +830,24 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -655,10 +889,28 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>PROC::nginx</name>
+          <name>PROC::$1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -696,6 +948,24 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -737,6 +1007,24 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -778,6 +1066,24 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -819,6 +1125,24 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
       </items>
@@ -940,6 +1264,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           </screen_items>
         </screen>
       </screens>
+      <tags/>
     </template>
   </templates>
   <triggers>

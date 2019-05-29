@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-  <version>3.4</version>
-  <date>2018-10-06T11:08:38Z</date>
+  <version>4.2</version>
+  <date>2019-05-29T12:46:32Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -95,6 +95,24 @@ pm.status_path = /status&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -138,13 +156,35 @@ pm.status_path = /status&#13;
             <step>
               <type>12</type>
               <params>$['accepted conn']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
@@ -190,9 +230,29 @@ pm.status_path = /status&#13;
             <step>
               <type>12</type>
               <params>$['active processes']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
@@ -238,9 +298,29 @@ pm.status_path = /status&#13;
             <step>
               <type>12</type>
               <params>$['idle processes']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
@@ -286,9 +366,29 @@ pm.status_path = /status&#13;
             <step>
               <type>12</type>
               <params>$['listen queue len']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
@@ -334,9 +434,29 @@ pm.status_path = /status&#13;
             <step>
               <type>12</type>
               <params>$['listen queue']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
@@ -382,9 +502,29 @@ pm.status_path = /status&#13;
             <step>
               <type>12</type>
               <params>$['max active processes']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
@@ -430,9 +570,29 @@ pm.status_path = /status&#13;
             <step>
               <type>12</type>
               <params>$['max children reached']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
@@ -478,9 +638,29 @@ pm.status_path = /status&#13;
             <step>
               <type>12</type>
               <params>$['max listen queue']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
@@ -527,9 +707,29 @@ Mostly it will be "www".</description>
             <step>
               <type>12</type>
               <params>$.pool</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
@@ -576,9 +776,29 @@ Trying ondemand is on todo list.</description>
             <step>
               <type>12</type>
               <params>$['process manager']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
@@ -624,9 +844,29 @@ Trying ondemand is on todo list.</description>
             <step>
               <type>12</type>
               <params>$['slow requests']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
@@ -672,9 +912,29 @@ Trying ondemand is on todo list.</description>
             <step>
               <type>12</type>
               <params>$['start since']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
@@ -720,9 +980,29 @@ Trying ondemand is on todo list.</description>
             <step>
               <type>12</type>
               <params>$['start time']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
@@ -768,9 +1048,29 @@ Trying ondemand is on todo list.</description>
             <step>
               <type>12</type>
               <params>$['total processes']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item>
             <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
@@ -814,6 +1114,24 @@ Trying ondemand is on todo list.</description>
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
       </items>
@@ -822,7 +1140,7 @@ Trying ondemand is on todo list.</description>
       <macros>
         <macro>
           <macro>{$SVC_PHP_FPM_HOST}</macro>
-          <value>localhost</value>
+          <value>127.0.0.1</value>
         </macro>
         <macro>
           <macro>{$SVC_PHP_FPM_PORT}</macro>
@@ -913,6 +1231,7 @@ Trying ondemand is on todo list.</description>
           </screen_items>
         </screen>
       </screens>
+      <tags/>
     </template>
   </templates>
   <triggers>
