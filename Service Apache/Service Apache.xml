@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-05-29T19:07:58Z</date>
+  <date>2019-05-30T11:58:50Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -636,6 +636,28 @@ Possible values:&#13;
               <sort_triggers>0</sort_triggers>
               <resource>
                 <name>SVC::Apache::requests</name>
+                <host>Service Apache</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>0</resourcetype>
+              <width>600</width>
+              <height>200</height>
+              <x>1</x>
+              <y>0</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>SVC::Apache::processes</name>
                 <host>Service Apache</host>
               </resource>
               <max_columns>3</max_columns>
