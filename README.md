@@ -43,7 +43,10 @@ This repository provides a set of templates which offers the alternative set of 
       to cover monitoring in/out traffic in packets and bytes and errors and dropped
       packets as well
 - **Service Apache**
-  - Add using ```{$HTTP_SERVICE_PROCESS}''', '''{$HTTP_SERVICE_PORT}''' macros in more places in item names and triggers
+  - Macros:
+    - Rename all ```{$APACHE_SERVICE_*}``` macros to ```{$SVC_APACHE_*}```
+    - Macro ```{$SVC_APACHE_PROCESS}```: has bee nadded to allow easy use it on Debian/Ubuntu. Default value is ```http```. On Ubuntu/Debian that value needs to be changed to ```apache2```
+    - Add using ```{$SVC_APACHE_PROCESS}''', '''{$SVC_SVC_PORT}''' macros in more places in item names and triggers
   - Items:
     - Make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
     - Rename ```net.tcp.service[http,,{$HTTP_SERVICE_PORT}]``` key item from ```SVC::$1``` to ```NET::$1```

@@ -3,6 +3,13 @@
 #### Description:
 Apache service monitoring template using zabbix active agent items.
 
+#### Macros used by template:
+
+| Macro                 | Default value       | Description                                         |
+| :-------------------- | :------------------ | :-------------------------------------------------- |
+| {$SVC_APACHE_PORT}    | 80                  | TCP port                                            |
+| {$SVC_APACHE_PROCESS} | http                | non-root user used by workers Apache processes      |
+
 #### Notes:
 - This template uses apache mod_status metrics
 - When this template is used on Ubuntu/Debian please change the host macro value ```{$HTTP_SERVICE_PROCESS}``` to ```apache2```
@@ -18,13 +25,15 @@ ExtendedStatus On
 ```
 #### Changelog:
 - (devel):
-  - Add using ```{$HTTP_SERVICE_PROCESS}''', '''{$HTTP_SERVICE_PORT}''' macros in more places in item names and triggers
+  - Macros:
+    - Rename all ```{$APACHE_SERVICE_*}``` macros to ```{$SVC_APACHE_*}```
+    - Macro ```{$SVC_APACHE_PROCESS}```: has bee nadded to allow easy use it on Debian/Ubuntu. Default value is ```http```. On Ubuntu/Debian that value needs to be changed to ```apache2```
+    - Add using ```{$SVC_APACHE_PROCESS}''', '''{$SVC_SVC_PORT}''' macros in more places in item names and triggers
   - Items:
     - Make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
-    - Rename ```net.tcp.service[http,,{$HTTP_SERVICE_PORT}]``` key item from ```SVC::$1``` to ```NET::$1```
-  - Macro ```{$HTTP_SERVICE_PROCESS}```: has bee nadded to allow easy use it on Debian/Ubuntu. Default value is ```http```. On Ubuntu/Debian that value needs to be changed to ```apache2```
+    - Rename ```net.tcp.service[http,,{$SVC_APACHE_PORT}]``` key item from ```SVC::$1``` to ```NET::$1```
   - Triggers:
-    - rename ```SVC::Apache tcp/{$HTTP_SERVICE_PORT} is DOWN``` to ```NET::Apache tcp/{$HTTP_SERVICE_PORT} is DOWN```
+    - rename ```SVC::Apache tcp/{$SVC_APACHE_PORT} is DOWN``` to ```NET::Apache tcp/{$SVC_APACHE_PORT} is DOWN```
 - 1.0.4 (2018-06-11)
   - Graphs:
     - changed resolution of all graphs to 1200x300

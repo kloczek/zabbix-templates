@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-05-30T11:58:50Z</date>
+  <date>2019-05-30T17:23:42Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -47,7 +47,7 @@ ExtendedStatus On&#13;
           <type>3</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>net.tcp.service[http,,{$HTTP_SERVICE_PORT}]</key>
+          <key>net.tcp.service[http,,{$SVC_APACHE_PORT}]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -104,11 +104,11 @@ ExtendedStatus On&#13;
           <master_item/>
         </item>
         <item>
-          <name>PROC::{$HTTP_SERVICE_PROCESS}</name>
+          <name>PROC::{$SVC_APACHE_PROCESS}</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>proc.num[{$HTTP_SERVICE_PROCESS}]</key>
+          <key>proc.num[{$SVC_APACHE_PROCESS}]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -167,7 +167,7 @@ ExtendedStatus On&#13;
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"BusyWorkers: ([0-9]+)",,\1]</key>
+          <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"BusyWorkers: ([0-9]+)",,\1]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -226,7 +226,7 @@ ExtendedStatus On&#13;
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"IdleWorkers: ([0-9]+)",,\1]</key>
+          <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"IdleWorkers: ([0-9]+)",,\1]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -285,7 +285,7 @@ ExtendedStatus On&#13;
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"ServerMPM: (.+)",,\1]</key>
+          <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"ServerMPM: (.+)",,\1]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>0</trends>
@@ -348,7 +348,7 @@ Possible values:&#13;
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"ServerUptimeSeconds: ([0-9]+)",,\1]</key>
+          <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"ServerUptimeSeconds: ([0-9]+)",,\1]</key>
           <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -407,7 +407,7 @@ Possible values:&#13;
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"ServerVersion: (.+)",,\1]</key>
+          <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"ServerVersion: (.+)",,\1]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>0</trends>
@@ -466,7 +466,7 @@ Possible values:&#13;
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"Total Accesses: ([0-9]+)",,\1]</key>
+          <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"Total Accesses: ([0-9]+)",,\1]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -532,7 +532,7 @@ Possible values:&#13;
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"Total kBytes: ([0-9]+)",,\1]</key>
+          <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"Total kBytes: ([0-9]+)",,\1]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -604,11 +604,11 @@ Possible values:&#13;
       <httptests/>
       <macros>
         <macro>
-          <macro>{$HTTP_SERVICE_PORT}</macro>
+          <macro>{$SVC_APACHE_PORT}</macro>
           <value>80</value>
         </macro>
         <macro>
-          <macro>{$HTTP_SERVICE_PROCESS}</macro>
+          <macro>{$SVC_APACHE_PROCESS}</macro>
           <value>httpd</value>
         </macro>
       </macros>
@@ -693,26 +693,26 @@ Possible values:&#13;
   </templates>
   <triggers>
     <trigger>
-      <expression>{Service Apache:net.tcp.service[http,,{$HTTP_SERVICE_PORT}].max(#3)}=0</expression>
+      <expression>{Service Apache:net.tcp.service[http,,{$SVC_APACHE_PORT}].max(#3)}=0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>NET::Apache tcp/{$HTTP_SERVICE_PORT} is DOWN</name>
+      <name>NET::Apache tcp/{$SVC_APACHE_PORT} is DOWN</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
       <status>0</status>
       <priority>3</priority>
-      <description>Nothing listens on http tcp/{$HTTP_SERVICE_PORT} port or traffic on this port is filtered by firewall.</description>
+      <description>Nothing listens on http tcp/{$SVC_APACHE_PORT} port or traffic on this port is filtered by firewall.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service Apache:proc.num[{$HTTP_SERVICE_PROCESS}].min(#3)}&gt;100</expression>
+      <expression>{Service Apache:proc.num[{$SVC_APACHE_PROCESS}].min(#3)}&gt;100</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>PROC::{$HTTP_SERVICE_PROCESS}::too many processes running ({ITEM.LASTVALUE} processes)</name>
+      <name>PROC::{$SVC_APACHE_PROCESS}::too many processes running ({ITEM.LASTVALUE} processes)</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
@@ -725,10 +725,10 @@ Possible values:&#13;
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service Apache:proc.num[{$HTTP_SERVICE_PROCESS}].max(#8)}=0</expression>
+      <expression>{Service Apache:proc.num[{$SVC_APACHE_PROCESS}].max(#8)}=0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>PROC::{$HTTP_SERVICE_PROCESS} is not running</name>
+      <name>PROC::{$SVC_APACHE_PROCESS} is not running</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
@@ -769,7 +769,7 @@ Possible values:&#13;
           <type>0</type>
           <item>
             <host>Service Apache</host>
-            <key>proc.num[{$HTTP_SERVICE_PROCESS}]</key>
+            <key>proc.num[{$SVC_APACHE_PROCESS}]</key>
           </item>
         </graph_item>
       </graph_items>
@@ -801,7 +801,7 @@ Possible values:&#13;
           <type>0</type>
           <item>
             <host>Service Apache</host>
-            <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"Total Accesses: ([0-9]+)",,\1]</key>
+            <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"Total Accesses: ([0-9]+)",,\1]</key>
           </item>
         </graph_item>
       </graph_items>
@@ -833,7 +833,7 @@ Possible values:&#13;
           <type>0</type>
           <item>
             <host>Service Apache</host>
-            <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"BusyWorkers: ([0-9]+)",,\1]</key>
+            <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"BusyWorkers: ([0-9]+)",,\1]</key>
           </item>
         </graph_item>
         <graph_item>
@@ -845,7 +845,7 @@ Possible values:&#13;
           <type>0</type>
           <item>
             <host>Service Apache</host>
-            <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"IdleWorkers: ([0-9]+)",,\1]</key>
+            <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"IdleWorkers: ([0-9]+)",,\1]</key>
           </item>
         </graph_item>
       </graph_items>
