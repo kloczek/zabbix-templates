@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-05-29T18:07:27Z</date>
+  <date>2019-05-30T17:06:11Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -16,19 +16,19 @@
 Version: 1.0.4 (2018-06-11)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nginx&#13;
 &#13;
-Notes:&#13;
-* The ngx_http_stub_status_module module provides access to basic status information.&#13;
-&#13;
+#### Notes:&#13;
 - This template uses nginx stub_status loadable module metrics&#13;
+- On Debian/Ubuntu change ```{$NGINX_USER}``` macro value to ```www-data```&#13;
 - To use this template add nginx.conf configuration file:&#13;
-&#13;
+```&#13;
     location /stub_status {&#13;
         stub_status     on;&#13;
         # do not log query for stats in access log&#13;
         access_log      off;&#13;
         allow           127.0.0.1;&#13;
         deny            all;&#13;
-    }</description>
+    }&#13;
+```</description>
       <groups>
         <group>
           <name>Templates</name>
@@ -48,10 +48,10 @@ Notes:&#13;
       <items>
         <item>
           <name>SVC::$1 tcp/$3</name>
-          <type>3</type>
+          <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>net.tcp.service[http,,{$NGINX_PORT}]</key>
+          <key>net.tcp.service[{$SVC_NGINX_PROCESS},,{$SVC_NGINX_PORT}]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -74,7 +74,7 @@ Notes:&#13;
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Checking is it possible to connect to tcp/{$NGINX_PORT}.</description>
+          <description>Checking is it possible to connect to tcp/{$SVC_NGINX_PORT}.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -181,7 +181,7 @@ This doesn’t mean number of users. A single user, for a single pageview can op
           <verify_peer>0</verify_peer>
           <verify_host>0</verify_host>
           <master_item>
-            <key>web.page.get[{$NGINX_HOST},{$NGINX_STATS_URI},{$NGINX_PORT}]</key>
+            <key>web.page.get[{$SVC_NGINX_HOST},{$SVC_NGINX_STATS_URI},{$NGINX_PORT}]</key>
           </master_item>
         </item>
         <item>
@@ -257,7 +257,7 @@ This doesn’t mean number of users. A single user, for a single pageview can op
           <verify_peer>0</verify_peer>
           <verify_host>0</verify_host>
           <master_item>
-            <key>web.page.get[{$NGINX_HOST},{$NGINX_STATS_URI},{$NGINX_PORT}]</key>
+            <key>web.page.get[{$SVC_NGINX_HOST},{$SVC_NGINX_STATS_URI},{$NGINX_PORT}]</key>
           </master_item>
         </item>
         <item>
@@ -340,7 +340,7 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</descr
           <verify_peer>0</verify_peer>
           <verify_host>0</verify_host>
           <master_item>
-            <key>web.page.get[{$NGINX_HOST},{$NGINX_STATS_URI},{$NGINX_PORT}]</key>
+            <key>web.page.get[{$SVC_NGINX_HOST},{$SVC_NGINX_STATS_URI},{$NGINX_PORT}]</key>
           </master_item>
         </item>
         <item>
@@ -416,7 +416,7 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</descr
           <verify_peer>0</verify_peer>
           <verify_host>0</verify_host>
           <master_item>
-            <key>web.page.get[{$NGINX_HOST},{$NGINX_STATS_URI},{$NGINX_PORT}]</key>
+            <key>web.page.get[{$SVC_NGINX_HOST},{$SVC_NGINX_STATS_URI},{$NGINX_PORT}]</key>
           </master_item>
         </item>
         <item>
@@ -498,7 +498,7 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</descr
           <verify_peer>0</verify_peer>
           <verify_host>0</verify_host>
           <master_item>
-            <key>web.page.get[{$NGINX_HOST},{$NGINX_STATS_URI},{$NGINX_PORT}]</key>
+            <key>web.page.get[{$SVC_NGINX_HOST},{$SVC_NGINX_STATS_URI},{$NGINX_PORT}]</key>
           </master_item>
         </item>
         <item>
@@ -580,7 +580,7 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</descr
           <verify_peer>0</verify_peer>
           <verify_host>0</verify_host>
           <master_item>
-            <key>web.page.get[{$NGINX_HOST},{$NGINX_STATS_URI},{$NGINX_PORT}]</key>
+            <key>web.page.get[{$SVC_NGINX_HOST},{$SVC_NGINX_STATS_URI},{$NGINX_PORT}]</key>
           </master_item>
         </item>
         <item>
@@ -670,7 +670,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <verify_peer>0</verify_peer>
           <verify_host>0</verify_host>
           <master_item>
-            <key>web.page.get[{$NGINX_HOST},{$NGINX_STATS_URI},{$NGINX_PORT}]</key>
+            <key>web.page.get[{$SVC_NGINX_HOST},{$SVC_NGINX_STATS_URI},{$NGINX_PORT}]</key>
           </master_item>
         </item>
         <item>
@@ -737,7 +737,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>proc.mem[nginx,root,]</key>
+          <key>proc.mem[{$SVC_NGINX_PROCESS},root,]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -796,7 +796,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>proc.mem[nginx,{$NGINX_USER},sum]</key>
+          <key>proc.mem[{$SVC_NGINX_PROCESS},{$SVC_NGINX_USER},sum]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -855,7 +855,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>proc.mem[nginx]</key>
+          <key>proc.mem[{$SVC_NGINX_PROCESS}]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -914,7 +914,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>proc.num[nginx,root]</key>
+          <key>proc.num[{$SVC_NGINX_PROCESS},root]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -973,7 +973,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>proc.num[nginx,{$NGINX_USER}]</key>
+          <key>proc.num[{$SVC_NGINX_PROCESS},{$SVC_NGINX_USER}]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -1091,7 +1091,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>web.page.get[{$NGINX_HOST},{$NGINX_STATS_URI},{$NGINX_PORT}]</key>
+          <key>web.page.get[{$SVC_NGINX_HOST},{$SVC_NGINX_STATS_URI},{$NGINX_PORT}]</key>
           <delay>30s</delay>
           <history>0d</history>
           <trends>0</trends>
@@ -1150,19 +1150,23 @@ Generally, the parameter value is the same as accepts unless some resource limit
       <httptests/>
       <macros>
         <macro>
-          <macro>{$NGINX_HOST}</macro>
+          <macro>{$SVC_NGINX_HOST}</macro>
           <value>localhost</value>
         </macro>
         <macro>
-          <macro>{$NGINX_PORT}</macro>
+          <macro>{$SVC_NGINX_PORT}</macro>
           <value>80</value>
         </macro>
         <macro>
-          <macro>{$NGINX_STATS_URI}</macro>
+          <macro>{$SVC_NGINX_PROCESS}</macro>
+          <value>nginx</value>
+        </macro>
+        <macro>
+          <macro>{$SVC_NGINX_STATS_URI}</macro>
           <value>/stub_status</value>
         </macro>
         <macro>
-          <macro>{$NGINX_USER}</macro>
+          <macro>{$SVC_NGINX_USER}</macro>
           <value>nginx</value>
         </macro>
       </macros>
@@ -1269,23 +1273,23 @@ Generally, the parameter value is the same as accepts unless some resource limit
   </templates>
   <triggers>
     <trigger>
-      <expression>{Service Nginx:net.tcp.service[http,,{$NGINX_PORT}].max(#3)}=0</expression>
+      <expression>{Service Nginx:net.tcp.service[{$SVC_NGINX_PROCESS},,{$SVC_NGINX_PORT}].max(#3)}=0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>SVC::http tcp/{$NGINX_PORT} is DOWN</name>
+      <name>SVC::http tcp/{$SVC_NGINX_PORT} is DOWN</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
       <status>0</status>
       <priority>3</priority>
-      <description>Nothing listens on http tcp/{$NGINX_PORT} port or traffic on this port is filtered by firewall.</description>
+      <description>Nothing listens on http tcp/{$SVC_NGINX_PORT} port or traffic on this port is filtered by firewall.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service Nginx:proc.num[nginx,root].last()}=0</expression>
+      <expression>{Service Nginx:proc.num[{$SVC_NGINX_PROCESS},root].last()}=0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::nginx::master process is DOWN</name>
@@ -1302,7 +1306,7 @@ Please confirm the state.</description>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service Nginx:proc.num[nginx,{$NGINX_USER}].avg(#3)}=0</expression>
+      <expression>{Service Nginx:proc.num[{$SVC_NGINX_PROCESS},{$SVC_NGINX_USER}].avg(#3)}=0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::nginx::workers DOWN</name>
@@ -1318,7 +1322,7 @@ Please confirm the state.</description>
       <dependencies>
         <dependency>
           <name>SVC::nginx::master process is DOWN</name>
-          <expression>{Service Nginx:proc.num[nginx,root].last()}=0</expression>
+          <expression>{Service Nginx:proc.num[{$SVC_NGINX_PROCESS},root].last()}=0</expression>
           <recovery_expression/>
         </dependency>
       </dependencies>
@@ -1421,7 +1425,7 @@ Please confirm the state.</description>
           <type>0</type>
           <item>
             <host>Service Nginx</host>
-            <key>proc.mem[nginx,root,]</key>
+            <key>proc.mem[{$SVC_NGINX_PROCESS},root,]</key>
           </item>
         </graph_item>
         <graph_item>
@@ -1433,7 +1437,7 @@ Please confirm the state.</description>
           <type>0</type>
           <item>
             <host>Service Nginx</host>
-            <key>proc.mem[nginx,{$NGINX_USER},sum]</key>
+            <key>proc.mem[{$SVC_NGINX_PROCESS},{$SVC_NGINX_USER},sum]</key>
           </item>
         </graph_item>
       </graph_items>

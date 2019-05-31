@@ -23,11 +23,6 @@ This repository provides a set of templates which offers the alternative set of 
     - interfaces: add to LLD iterator item ```IF-MIB::ifIndex``` and map it to ```{#IFINDEX}``` macro
     - interfaces: add to all applications, items, triggers anf graphs prototypes names ```[{#IFINDEX}]``` to display physical port number in those names
     - graphs improvements
-- **Service Nginx**
-  - Graphs:
-    - new ```SVC::Nginx::reqs_per_conn```
-  - Items:
-    - new calculated item ```reqs_per_conn``` which shows number requests in single connection (```nginx.requests")/last("nginx.requests[handled]```)
 - **OS Windows**
   - Triggers:
     - added missing ```SYS::Host is down``` trigger with all necessary dependencies
@@ -54,11 +49,13 @@ This repository provides a set of templates which offers the alternative set of 
   - Triggers:
     - rename ```SVC::Apache tcp/{$HTTP_SERVICE_PORT} is DOWN``` to ```NET::Apache tcp/{$HTTP_SERVICE_PORT} is DOWN```
 - **Service Nginx**
+  - Macros:
+    - Rename ```{$NGINX_*}``` macros to ```{$SVC_NGINX_*}```
+    - Added ```{$SVC_NGINX_USER}``` macro to allow use this template on Debian/Ubuntu as well
   - Graphs:
     - new ```SVC::Nginx::reqs_per_conn```
   - Items:
     - new calculated item ```reqs_per_conn``` which shows number requests in single connection (```nginx.requests")/last("nginx.requests[handled]```)
-    - ```SVC::$1 tcp/$3```: add using ```{$NGINX_PORT}``` macro
 - **Service Zabbix Agent**
   - Graphs:
     - new ```HOST::items``` which presents number of host items vs number of unsuppoerted item
