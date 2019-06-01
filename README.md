@@ -23,9 +23,6 @@ This repository provides a set of templates which offers the alternative set of 
     - interfaces: add to LLD iterator item ```IF-MIB::ifIndex``` and map it to ```{#IFINDEX}``` macro
     - interfaces: add to all applications, items, triggers anf graphs prototypes names ```[{#IFINDEX}]``` to display physical port number in those names
     - graphs improvements
-- **OS Windows**
-  - Triggers:
-    - added missing ```SYS::Host is down``` trigger with all necessary dependencies
 - **OS Linux**
   - Items:
     - ```VOL:``` LLD items fixed Application ```VOL``` changed to per volume ```VOL::{#FSNAME}```
@@ -42,6 +39,12 @@ This repository provides a set of templates which offers the alternative set of 
       packets as well
     - changed ```VOL:``` LLD items Application from fixed ```VOL``` to per volume ```VOL::{#FSNAME}```
       and added LLD VOL items descriptions
+- **OS Windows**
+  - Iems:
+    - ```VOL:``` LLD items fixed Application ```VOL``` changed to per volume ```VOL::{#FSNAME}```
+    - ```NET:``` LLD items fixed Application ```NET``` changed to per interface ```NET::{#FSNAME}```
+  - Triggers:
+    - added missing ```SYS::Host is down``` trigger with all necessary dependencies
 - **Service Apache**
   - Macros:
     - Rename all ```{$APACHE_SERVICE_*}``` macros to ```{$SVC_APACHE_*}```

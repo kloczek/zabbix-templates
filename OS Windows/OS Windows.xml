@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-05-29T15:03:46Z</date>
+  <date>2019-06-01T20:53:19Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -10305,7 +10305,7 @@ https://msdn.microsoft.com/en-gb/library/ms804038.aspx</description>
 system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Files\Zabbix Agent\NIC.ps1\""]</description>
           <item_prototypes>
             <item_prototype>
-              <name>NIC::{#IFNAME}::$2::in</name>
+              <name>{#IFNAME}::$2::in</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -10334,11 +10334,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -10368,11 +10364,15 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>NIC::{#IFNAME}::$2::in</name>
+              <name>{#IFNAME}::$2::in</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -10401,11 +10401,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -10435,11 +10431,15 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>NIC::{#IFNAME}::$2::in</name>
+              <name>{#IFNAME}::$2::in</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -10468,11 +10468,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -10502,11 +10498,15 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>NIC::{#IFNAME}::$2::out</name>
+              <name>{#IFNAME}::$2::out</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -10535,11 +10535,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -10573,7 +10569,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>NIC::{#IFNAME}::$2::out</name>
+              <name>{#IFNAME}::$2::out</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -10602,11 +10598,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -10636,11 +10628,15 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>NIC::{#IFNAME}::$2::out</name>
+              <name>{#IFNAME}::$2::out</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -10669,11 +10665,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -10703,7 +10695,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
           </item_prototypes>
@@ -10991,11 +10987,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -11018,7 +11010,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -11051,11 +11047,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -11078,7 +11070,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -11111,11 +11107,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -11138,7 +11130,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -11171,11 +11167,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -11198,7 +11190,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -11231,11 +11227,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -11258,7 +11250,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -11291,11 +11287,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -11318,7 +11310,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -11351,11 +11347,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -11378,7 +11370,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -11411,11 +11407,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -11438,7 +11430,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -11471,11 +11467,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -11498,7 +11490,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -11531,11 +11527,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -11558,7 +11550,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -11591,11 +11587,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -11618,7 +11610,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -11651,11 +11647,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -11678,7 +11670,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -11711,11 +11707,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -11738,7 +11730,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -11771,11 +11767,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -11798,7 +11790,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -11831,11 +11827,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -11858,7 +11850,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -11891,11 +11887,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -11918,7 +11910,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -11951,11 +11947,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -11978,7 +11970,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -12011,11 +12007,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -12038,7 +12030,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -12071,11 +12067,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -12098,7 +12090,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -12131,11 +12127,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -12158,7 +12150,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -12191,11 +12187,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -12218,7 +12210,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -12251,11 +12247,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -12285,7 +12277,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -12318,11 +12314,7 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -12345,7 +12337,11 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
           </item_prototypes>
@@ -12553,6 +12549,12 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
         </template>
       </templates>
       <screens>
+        <screen>
+          <name>BI - Disk &amp; Network Activity</name>
+          <hsize>2</hsize>
+          <vsize>4</vsize>
+          <screen_items/>
+        </screen>
         <screen>
           <name>CPU</name>
           <hsize>2</hsize>

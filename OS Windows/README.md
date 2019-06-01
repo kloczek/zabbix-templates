@@ -1,12 +1,20 @@
-#### Version: 1.0.4 (2018-06-11)
+#### Version: devel (2019-06-01)
 
 #### Description:
 Base OS Windows template.
+
+#### Notes:
+
+#### Contributors:
+- ss: Scott Simmons
+- tk: Tomasz Kłoczko
 
 #### Changelog:
 - (devel):
   - Items:
     - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
+    - ```VOL:``` LLD items fixed Application ```VOL``` changed to per volume ```VOL::{#FSNAME}```
+    - ```NET:``` LLD items fixed Application ```NET``` changed to per interface ```NET::{#FSNAME}```
   - Triggers:
     - added missing ```SYS::Host is down``` trigger with all necessary dependencies
   - Screens:
@@ -37,8 +45,3 @@ Changelog:
 - 1.0.0:
   - initial version
 
-#### Notes:
-
-#### Contributors:
-- ss: Scott Simmons
-- tk: Tomasz Kłoczko
