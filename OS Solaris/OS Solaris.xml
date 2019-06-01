@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-05-29T20:33:08Z</date>
+  <date>2019-06-01T19:05:22Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -3058,7 +3058,11 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <port/>
               <description>Incoming traffic statistics on network interface in bytes.</description>
               <inventory_link>0</inventory_link>
-              <applications/>
+              <applications>
+                <application>
+                  <name>NET</name>
+                </application>
+              </applications>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -3131,7 +3135,11 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications/>
+              <applications>
+                <application>
+                  <name>NET</name>
+                </application>
+              </applications>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -3191,7 +3199,11 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <port/>
               <description>Outgoing traffic statistics on network interface in bytes.</description>
               <inventory_link>0</inventory_link>
-              <applications/>
+              <applications>
+                <application>
+                  <name>NET</name>
+                </application>
+              </applications>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -3264,7 +3276,11 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications/>
+              <applications>
+                <application>
+                  <name>NET</name>
+                </application>
+              </applications>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -3324,7 +3340,11 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <port/>
               <description>Sum of incoming and outgoing traffic statistics on network interface - dropped packets.</description>
               <inventory_link>0</inventory_link>
-              <applications/>
+              <applications>
+                <application>
+                  <name>NET</name>
+                </application>
+              </applications>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -3384,7 +3404,11 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <port/>
               <description>Sum of incoming and outgoing traffic statistics on network interface. Number of errors.</description>
               <inventory_link>0</inventory_link>
-              <applications/>
+              <applications>
+                <application>
+                  <name>NET</name>
+                </application>
+              </applications>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
