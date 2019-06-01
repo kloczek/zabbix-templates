@@ -10,6 +10,8 @@ Base OS Solaris monitoring.
     - copy the same set of 6 NET item LLD prototypes as in ```OS Linux``` template
       to cover monitoring in/out traffic in packets and bytes and errors and dropped
       packets as well
+    - changed ```VOL:``` LLD tems Application from fixed ```VOL``` to per volume ```VOL::{#FSNAME}```
+      and added LLD VOL items descriptions
   - Triggers:
     - Added ```SYS::Host is down```
     - Added ```CPU::idle {ITEM.VALUE}```

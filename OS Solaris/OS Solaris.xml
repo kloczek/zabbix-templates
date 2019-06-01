@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-06-01T19:05:22Z</date>
+  <date>2019-06-01T20:28:48Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -4843,13 +4843,9 @@ Please login on the host and check output of the commands:&#13;
               <publickey/>
               <privatekey/>
               <port/>
-              <description/>
+              <description>Percent used volume space.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>VOL</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -4872,7 +4868,11 @@ Please login on the host and check output of the commands:&#13;
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -4903,13 +4903,9 @@ Please login on the host and check output of the commands:&#13;
               <publickey/>
               <privatekey/>
               <port/>
-              <description/>
+              <description>Volume total space.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>VOL</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -4932,7 +4928,11 @@ Please login on the host and check output of the commands:&#13;
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -4963,13 +4963,9 @@ Please login on the host and check output of the commands:&#13;
               <publickey/>
               <privatekey/>
               <port/>
-              <description/>
+              <description>Volume used space.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>VOL</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -4992,7 +4988,11 @@ Please login on the host and check output of the commands:&#13;
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
           </item_prototypes>

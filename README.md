@@ -37,6 +37,8 @@ This repository provides a set of templates which offers the alternative set of 
     - copy the same set of 6 NET item LLD prototypes as in ```OS Linux``` template
       to cover monitoring in/out traffic in packets and bytes and errors and dropped
       packets as well
+    - changed ```VOL:``` LLD items Application from fixed ```VOL``` to per volume ```VOL::{#FSNAME}```
+      and added LLD VOL items descriptions
 - **Service Apache**
   - Macros:
     - Rename all ```{$APACHE_SERVICE_*}``` macros to ```{$SVC_APACHE_*}```
