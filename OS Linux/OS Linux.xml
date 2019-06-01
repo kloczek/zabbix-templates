@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-05-29T15:03:46Z</date>
+  <date>2019-06-01T20:53:17Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -3105,11 +3105,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <port/>
               <description>Incoming traffic statistics on network interface in bytes.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -3139,7 +3135,11 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -3172,11 +3172,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <port/>
               <description>Incoming traffic statistics on network interface in packets.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -3206,7 +3202,11 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -3239,11 +3239,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <port/>
               <description>Outgoing traffic statistics on network interface in bytes.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -3273,7 +3269,11 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -3306,11 +3306,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <port/>
               <description>Outgoing traffic statistics on network interface in packets.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -3340,7 +3336,11 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -3373,11 +3373,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <port/>
               <description>Sum of incoming and outgoing traffic statistics on network interface - dropped packets.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -3407,7 +3403,11 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -3440,11 +3440,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <port/>
               <description>Sum of incoming and outgoing traffic statistics on network interface. Number of errors.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -3474,7 +3470,11 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
           </item_prototypes>
@@ -4263,7 +4263,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
             </conditions>
           </filter>
           <lifetime>1d</lifetime>
-          <description>Discovery of file systems.</description>
+          <description>Discovery of the file systems.</description>
           <item_prototypes>
             <item_prototype>
               <name>$1::inodes::$2</name>
@@ -4295,11 +4295,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>VOL</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -4322,7 +4318,11 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -4355,11 +4355,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>VOL</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -4382,7 +4378,11 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -4415,11 +4415,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>VOL</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -4442,7 +4438,11 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -4475,11 +4475,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <port/>
               <description>Percent used volume space.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>VOL</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -4502,7 +4498,11 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -4535,11 +4535,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <port/>
               <description>Volume total space.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>VOL</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -4562,7 +4558,11 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -4595,11 +4595,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <port/>
               <description>Volume used space.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>VOL</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -4622,7 +4618,11 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
           </item_prototypes>

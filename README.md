@@ -27,6 +27,9 @@ This repository provides a set of templates which offers the alternative set of 
   - Triggers:
     - added missing ```SYS::Host is down``` trigger with all necessary dependencies
 - **OS Linux**
+  - Items:
+    - ```VOL:``` LLD items fixed Application ```VOL``` changed to per volume ```VOL::{#FSNAME}```
+    - ```NET:``` LLD items fixed Application ```NET``` changed to per interface ```NET::{#FSNAME}```
   - Triggers:
     - '''SYS::Host is down''' corrected descrition
 - **OS Solaris**

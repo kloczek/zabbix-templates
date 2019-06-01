@@ -7,6 +7,8 @@ Base Linux monitoring template.
 - (devel):
   - Items:
     - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
+    - ```VOL:``` LLD items fixed Application ```VOL``` changed to per volume ```VOL::{#FSNAME}```
+    - ```NET:``` LLD items fixed Application ```NET``` changed to per interface ```NET::{#FSNAME}```
   - Triggers:
     - '''SYS::Host is down''' corrected descrition
 - 1.0.4 (2018-06-11)
