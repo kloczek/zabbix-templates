@@ -41,7 +41,5 @@ Base OS Windows template.
   - added items across the board (ss)
   - moved some items (ss)
   - removed Network::ICMP as this metric is now provided by ICMP template (tk)
-Changelog:
 - 1.0.0:
   - initial version
-

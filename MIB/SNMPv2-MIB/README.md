@@ -5,6 +5,8 @@ The template for SNMPv2 MIB entities.
 
 #### OIDs tree: [SNMPv2-MIB](http://www.oidview.com/mibs/0/SNMPv2-MIB.html)
 
+#### Notes:
+
 #### Changelog:
 - 1.0.4 (2018-06-11):
   - Applications:
@@ -20,5 +22,3 @@ The template for SNMPv2 MIB entities.
   - add temlate description
 - 1.0.0:
   - initial version.
-
-#### Notes:

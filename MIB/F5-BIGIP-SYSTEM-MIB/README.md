@@ -4,6 +4,8 @@
 
 #### OIDs tree: [F5-BIGIP-SYSTEM-MIB](http://www.oidview.com/mibs/3375/F5-BIGIP-SYSTEM-MIB.html)
 
+#### Notes:
+
 #### Changelog:
 - 1.0.4 (2018-06-11):
  - Applications:
@@ -13,5 +15,3 @@
   - add temlate description
 - 1.0.0:
   - initial version
-
-#### Notes:

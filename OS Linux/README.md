@@ -3,6 +3,11 @@
 #### Description:
 Base Linux monitoring template.
 
+#### Notes:
+- compliant with EL7 and compatible
+- documentation:
+  - https://www.kernel.org/doc/Documentation/filesystems/proc.txt
+
 #### Changelog:
 - (devel):
   - Items:
@@ -50,8 +55,3 @@ Base Linux monitoring template.
   - remove using @OS Linux::NET regexp network interfaces filter and replace by regexp "(?!(lo))" (removed global regexp dependency)
 - 1.0.0:
   - initial version
-
-#### Notes:
-- compliant with EL7 and compatible
-- documentation:
-  - https://www.kernel.org/doc/Documentation/filesystems/proc.txt

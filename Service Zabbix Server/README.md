@@ -3,6 +3,9 @@
 #### Description:
 Base Zabbix server monitoring template.
 
+#### Notes:
+* Host with this template must be monitored without any proxy.
+
 #### Changelog:
 - (devel):
   - Items:
@@ -75,6 +78,3 @@ Base Zabbix server monitoring template.
   - change default history period to 2w
 - 1.0.0 (2017-09-09):
   - initial version.
-
-#### Notes:
-* Host with this template must be monitored without any proxy.

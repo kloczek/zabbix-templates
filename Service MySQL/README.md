@@ -3,6 +3,27 @@
 #### Description:
 MySQL engine monitoring over Zabbix agent.
 
+#### Notes:
+- Tested on MySQL 5.7 and it not uses MySQL 5.6 backward compatibility.  The
+  template requires to disable MySQL 5.6 backward compatibility and it will
+  raise alarm that show_compatibility_56 is OFF. To disable MySQL 5.6
+  backward compatibility best to add in my.cnf:
+```
+[mysqld]
+show_compatibility_56=OFF
+```
+- By default this template is monitoring the engine working on localhost
+- To be able to use this template on a host you need to setup a monitoring account with the proper privileges. To add such account you can use below queries:
+```
+CREATE USER 'monitoring'@'localhost' IDENTIFIED BY 'monitoring';
+GRANT SELECT, INDEX, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'monitoring'@'localhost';
+FLUSH PRIVILEGES;
+```
+- MySQL 5.7 documentation:
+  - http://dev.mysql.com/doc/refman/5.7/en/innodb-parameters.html
+  - http://dev.mysql.com/doc/refman/5.7/en/innodb-configuration.html
+  - http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html
+
 #### Changelog:
 - (devel):
   - Items:
@@ -40,24 +61,3 @@ MySQL engine monitoring over Zabbix agent.
   - added missing entries in SVC::MySQL::Queries screen
 - 1.0.0:
   - initial version.
-
-#### Notes:
-- Tested on MySQL 5.7 and it not uses MySQL 5.6 backward compatibility.  The
-  template requires to disable MySQL 5.6 backward compatibility and it will
-  raise alarm that show_compatibility_56 is OFF. To disable MySQL 5.6
-  backward compatibility best to add in my.cnf:
-```
-[mysqld]
-show_compatibility_56=OFF
-```
-- By default this template is monitoring the engine working on localhost
-- To be able to use this template on a host you need to setup a monitoring account with the proper privileges. To add such account you can use below queries:
-```
-CREATE USER 'monitoring'@'localhost' IDENTIFIED BY 'monitoring';
-GRANT SELECT, INDEX, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'monitoring'@'localhost';
-FLUSH PRIVILEGES;
-```
-- MySQL 5.7 documentation:
-  - http://dev.mysql.com/doc/refman/5.7/en/innodb-parameters.html
-  - http://dev.mysql.com/doc/refman/5.7/en/innodb-configuration.html
-  - http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html

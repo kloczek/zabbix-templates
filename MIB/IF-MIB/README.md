@@ -6,6 +6,8 @@ The IF-MIB is an updated version of MIB-II's ifTable, and incorporates the exten
 
 #### OIDs tree: (IF-MIB](http://www.oidview.com/mibs/0/IF-MIB.html)
 
+#### Notes:
+
 #### Changelog:
 - (devel):
   - LLDs:
@@ -37,5 +39,3 @@ The IF-MIB is an updated version of MIB-II's ifTable, and incorporates the exten
   - added more descriptions of the LLD items
 - 1.0.0:
   - initial version.
-
-#### Notes:

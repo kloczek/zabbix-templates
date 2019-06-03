@@ -3,29 +3,6 @@
 #### Description:
 Base OS Solaris monitoring.
 
-#### Changelog:
-- (devel):
-  - Items:
-    - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
-    - copy the same set of 6 NET item LLD prototypes as in ```OS Linux``` template
-      to cover monitoring in/out traffic in packets and bytes and errors and dropped
-      packets as well
-    - changed ```VOL:``` LLD tems Application from fixed ```VOL``` to per volume ```VOL::{#FSNAME}```
-      and added LLD VOL items descriptions
-  - Triggers:
-    - Added ```SYS::Host is down```
-    - Added ```CPU::idle {ITEM.VALUE}```
-- 1.0.4 (2018-06-11)
-  - Triggers:
-    - fixed typo in trigger name s/SYS:uname changed/```SYS::uname changed```/
-    - added ```MEM::free {ITEM.LASTVALUE}```
-- 1.0.1 (2017-12-01):
-  - execute all LLD every 10m
-  - channge default history perid to 2w
-  - moved some parts of the template description to README.md
-- 1.0.0 (2017-09-09):
-  - initial version.
-
 #### Notes:
 - https://github.com/mharsch/arcstat/blob/master/arcstat.pl
 - http://dtrace.org/blogs/brendan/2012/01/09/activity-of-the-zfs-arc/
@@ -70,3 +47,26 @@ zfs:0:arcstats:p
 zfs:0:arcstats:snaptime
 ```
 - https://github.com/bcantrill/node-kstat
+
+#### Changelog:
+- (devel):
+  - Items:
+    - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
+    - copy the same set of 6 NET item LLD prototypes as in ```OS Linux``` template
+      to cover monitoring in/out traffic in packets and bytes and errors and dropped
+      packets as well
+    - changed ```VOL:``` LLD tems Application from fixed ```VOL``` to per volume ```VOL::{#FSNAME}```
+      and added LLD VOL items descriptions
+  - Triggers:
+    - Added ```SYS::Host is down```
+    - Added ```CPU::idle {ITEM.VALUE}```
+- 1.0.4 (2018-06-11)
+  - Triggers:
+    - fixed typo in trigger name s/SYS:uname changed/```SYS::uname changed```/
+    - added ```MEM::free {ITEM.LASTVALUE}```
+- 1.0.1 (2017-12-01):
+  - execute all LLD every 10m
+  - channge default history perid to 2w
+  - moved some parts of the template description to README.md
+- 1.0.0 (2017-09-09):
+  - initial version.

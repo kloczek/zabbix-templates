@@ -3,6 +3,8 @@
 #### Description:
 Base zabbix agent monitoring.
 
+#### Notes:
+
 #### Changelog:
 - (devel):
   - Graphs:
@@ -17,5 +19,3 @@ Base zabbix agent monitoring.
   - moved temmplate Changelog to README.md and added temlate URL in description
 - 1.0.0 (2017-09-09):
   - initial version
-
-#### Notes:
