@@ -50,12 +50,15 @@ zfs:0:arcstats:snaptime
 
 #### Changelog:
 - (devel):
+  - Applications:
+    - remove using ```DSK```, ```NET``` and ```VOL``` Applications and replace them by LLD prototypes
+      ```DSK::{#DISK}```, ```NET::{#IFNAME}``` and ```VOL::{#FSNAME}```
   - Items:
     - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
     - copy the same set of 6 NET item LLD prototypes as in ```OS Linux``` template
       to cover monitoring in/out traffic in packets and bytes and errors and dropped
       packets as well
-    - changed ```VOL:``` LLD tems Application from fixed ```VOL``` to per volume ```VOL::{#FSNAME}```
+    - changed ```VOL:``` LLD items Application from fixed ```VOL``` to per volume ```VOL::{#FSNAME}```
       and added LLD VOL items descriptions
   - Triggers:
     - Added ```SYS::Host is down```

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-06-01T20:28:48Z</date>
+  <date>2019-06-06T14:12:40Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -16,7 +16,7 @@
 Version: 1.0.4 (2018-06-11)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/OS%20Solaris&#13;
 &#13;
-Notes:</description>
+#### Notes:</description>
       <groups>
         <group>
           <name>Templates</name>
@@ -30,9 +30,6 @@ Notes:</description>
           <name>CPU</name>
         </application>
         <application>
-          <name>DSK</name>
-        </application>
-        <application>
           <name>MEM</name>
         </application>
         <application>
@@ -43,9 +40,6 @@ Notes:</description>
         </application>
         <application>
           <name>SYS</name>
-        </application>
-        <application>
-          <name>VOL</name>
         </application>
         <application>
           <name>ZFS::arcstat</name>
@@ -3058,11 +3052,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <port/>
               <description>Incoming traffic statistics on network interface in bytes.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -3135,11 +3125,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -3199,11 +3185,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <port/>
               <description>Outgoing traffic statistics on network interface in bytes.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -3276,11 +3258,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -3340,11 +3318,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <port/>
               <description>Sum of incoming and outgoing traffic statistics on network interface - dropped packets.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -3404,11 +3378,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <port/>
               <description>Sum of incoming and outgoing traffic statistics on network interface. Number of errors.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -3622,11 +3592,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <port/>
               <description>Size of read IO in bytes.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -3649,7 +3615,11 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>DSK::{#DISK}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -3682,11 +3652,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <port/>
               <description>Number of read bytes per second on block device in use.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -3716,7 +3682,11 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>DSK::{#DISK}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -3749,11 +3719,7 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <port/>
               <description>Number of read IO operation per second on block device in use.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -3783,7 +3749,11 @@ Hits against pages held in ghost mru list from pages evicted from ARC mru list</
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>DSK::{#DISK}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -3817,11 +3787,7 @@ last("vfs.dev.write[{#DISK},operations]")</params>
               <port/>
               <description>Size of write IO in bytes.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
@@ -3844,7 +3810,11 @@ last("vfs.dev.write[{#DISK},operations]")</params>
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>DSK::{#DISK}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -3877,11 +3847,7 @@ last("vfs.dev.write[{#DISK},operations]")</params>
               <port/>
               <description>Number of write bytes per second on block device in use.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -3911,7 +3877,11 @@ last("vfs.dev.write[{#DISK},operations]")</params>
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>DSK::{#DISK}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -3944,11 +3914,7 @@ last("vfs.dev.write[{#DISK},operations]")</params>
               <port/>
               <description>Number of write IO operation per second on block device in use.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -3978,7 +3944,11 @@ last("vfs.dev.write[{#DISK},operations]")</params>
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>DSK::{#DISK}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
           </item_prototypes>
@@ -4870,6 +4840,9 @@ Please login on the host and check output of the commands:&#13;
               <verify_host>0</verify_host>
               <application_prototypes>
                 <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+                <application_prototype>
                   <name>VOL::{#FSNAME}</name>
                 </application_prototype>
               </application_prototypes>
@@ -4930,7 +4903,7 @@ Please login on the host and check output of the commands:&#13;
               <verify_host>0</verify_host>
               <application_prototypes>
                 <application_prototype>
-                  <name>VOL::{#FSNAME}</name>
+                  <name>NET::{#IFNAME}</name>
                 </application_prototype>
               </application_prototypes>
               <master_item/>
@@ -4990,7 +4963,7 @@ Please login on the host and check output of the commands:&#13;
               <verify_host>0</verify_host>
               <application_prototypes>
                 <application_prototype>
-                  <name>VOL::{#FSNAME}</name>
+                  <name>NET::{#IFNAME}</name>
                 </application_prototype>
               </application_prototypes>
               <master_item/>
