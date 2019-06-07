@@ -20,6 +20,7 @@ Base Linux monitoring template.
       because this option doesws not include current CPU frequency (which is constantly changing)
     - removed monitoring sshd, crond and rsyslogd as monitoring of those processes
       is not essential and will be provided in separated template(s)
+    - ```DSK:``` LLD items Application changed from ```DSK``` prototype ```DSK::{#DISK}```
     - ```NET:``` LLD items Application changed from ```NET``` prototype ```NET::{#FSNAME}```
     - ```VOL:``` LLD items Application changed from ```VOL``` prototype ```VOL::{#FSNAME}```
     - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names

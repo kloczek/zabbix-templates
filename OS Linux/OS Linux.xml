@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-06-07T18:54:05Z</date>
+  <date>2019-06-07T18:59:17Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -3125,7 +3125,11 @@ Discovery of storage devices is filtered over global regular expression "OS Linu
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>DSK::{#DISK}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -3195,7 +3199,11 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>DSK::{#DISK}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -3258,7 +3266,11 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>DSK::{#DISK}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
             <item_prototype>
@@ -3328,7 +3340,11 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <ssl_key_password/>
               <verify_peer>0</verify_peer>
               <verify_host>0</verify_host>
-              <application_prototypes/>
+              <application_prototypes>
+                <application_prototype>
+                  <name>DSK::{#DISK}</name>
+                </application_prototype>
+              </application_prototypes>
               <master_item/>
             </item_prototype>
           </item_prototypes>
