@@ -11,6 +11,8 @@ Base Linux monitoring template.
 #### Changelog:
 - (devel):
   - Items:
+    - removed monitoring sshd, crond and rsyslogd as monitoring of those processes
+      is not essential and will be provided in separated template(s)
     - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
     - ```VOL:``` LLD items fixed Application ```VOL``` changed to per volume ```VOL::{#FSNAME}```
     - ```NET:``` LLD items fixed Application ```NET``` changed to per interface ```NET::{#FSNAME}```

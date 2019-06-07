@@ -54,6 +54,8 @@ zfs:0:arcstats:snaptime
     - remove using ```DSK```, ```NET``` and ```VOL``` Applications and replace them by LLD prototypes
       ```DSK::{#DISK}```, ```NET::{#IFNAME}``` and ```VOL::{#FSNAME}```
   - Items:
+    - removed monitoring sshd, crond and rsyslogd as monitoring of those processes
+      is not essential and will be provided in separated template(s)
     - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
     - copy the same set of 6 NET item LLD prototypes as in ```OS Linux``` template
       to cover monitoring in/out traffic in packets and bytes and errors and dropped

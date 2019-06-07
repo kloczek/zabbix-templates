@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-06-01T20:53:17Z</date>
+  <date>2019-06-07T13:35:10Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -25,16 +25,10 @@ Notes:&#13;
       </groups>
       <applications>
         <application>
-          <name>CHK</name>
-        </application>
-        <application>
           <name>CHK::Integrity</name>
         </application>
         <application>
           <name>CPU</name>
-        </application>
-        <application>
-          <name>DSK</name>
         </application>
         <application>
           <name>HW</name>
@@ -50,9 +44,6 @@ Notes:&#13;
         </application>
         <application>
           <name>SYS</name>
-        </application>
-        <application>
-          <name>VOL</name>
         </application>
       </applications>
       <items>
@@ -189,264 +180,6 @@ Notes:&#13;
           <master_item/>
         </item>
         <item>
-          <name>CHK::Network port::ssh</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>net.tcp.port[,22]</key>
-          <delay>5m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>NET</name>
-            </application>
-          </applications>
-          <valuemap>
-            <name>Service state</name>
-          </valuemap>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>CHK::Network port::ssh</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>net.tcp.port[,{$SVC_SSH_PORT}]</key>
-          <delay>5m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>Check of possible create TCP connection to SSH port (configured macros).</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>NET</name>
-            </application>
-          </applications>
-          <valuemap>
-            <name>Service state</name>
-          </valuemap>
-          <logtimefmt/>
-          <preprocessing>
-            <step>
-              <type>19</type>
-              <params/>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-          </preprocessing>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>1</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>NET::service::ssh</name>
-          <type>3</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>net.tcp.service[ssh,,{$SVC_SSH_PORT}]</key>
-          <delay>5m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>Check if SSH services is running and accepted connection.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>NET</name>
-            </application>
-          </applications>
-          <valuemap>
-            <name>Service state</name>
-          </valuemap>
-          <logtimefmt/>
-          <preprocessing>
-            <step>
-              <type>19</type>
-              <params/>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-          </preprocessing>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>1</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>NET::service::$1</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>net.tcp.service[ssh]</key>
-          <delay>5m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>NET</name>
-            </application>
-          </applications>
-          <valuemap>
-            <name>Service state</name>
-          </valuemap>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
           <name>SYS::process::running</name>
           <type>7</type>
           <snmp_community/>
@@ -479,183 +212,6 @@ Notes:&#13;
           <applications>
             <application>
               <name>SYS</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>PROC::$1</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>proc.num[crond]</key>
-          <delay>1m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>processes</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>PROC</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>PROC::$1</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>proc.num[rsyslogd]</key>
-          <delay>1m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>processes</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>PROC</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>PROC::$1</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>proc.num[sshd]</key>
-          <delay>1m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>processes</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>PROC</name>
             </application>
           </applications>
           <valuemap/>
@@ -1831,72 +1387,6 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>system.run["/bin/netstat -s|/bin/sed -n 's/\( *\)\(.*\) segments retransmi.*ted*/\2/ p'"]</key>
-          <delay>1m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>0</value_type>
-          <allowed_hosts/>
-          <units>segm/s</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>NET</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing>
-            <step>
-              <type>19</type>
-              <params/>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-          </preprocessing>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>1</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>NET::segments retransmitted</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
           <key>system.run["/bin/netstat -s|/bin/sed -n 's/\( *\)\(.*\) segments retransmitted*/\2/ p'"]</key>
           <delay>1m</delay>
           <history>2w</history>
@@ -2532,124 +2022,6 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <privatekey/>
           <port/>
           <description>Check sum of /etc/passwd.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>CHK::Integrity</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>CHK::checksum::$1</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>vfs.file.cksum[/usr/bin/ssh]</key>
-          <delay>1h</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>Check sum of /usr/bin/ssh binary.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>CHK::Integrity</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>CHK::Checksum::$1</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>vfs.file.cksum[/usr/sbin/sshd]</key>
-          <delay>1h</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>Check sum of /usr/sbin/sshd binary.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -3853,11 +3225,7 @@ Discovery of storage devices is filtered over global regular expression "OS Linu
               <port/>
               <description>Number of read IO operation per second on block device in use.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -3921,11 +3289,7 @@ Discovery of storage devices is filtered over global regular expression "OS Linu
               <description>Number of read bytes per second on block device in use.&#13;
 Value is calculated by read number of sectors multiplied by 512.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -3994,11 +3358,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <port/>
               <description>Number of write IO operation per second on block device in use.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -4062,11 +3422,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <description>Number of written bytes per second on block device in use.&#13;
 Value is calculated by read number of sectors multiplied by 512.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
@@ -5397,38 +4753,6 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{OS Linux:vfs.file.cksum[/usr/bin/ssh].diff(0)}&gt;0</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>CHK::Checksum::/usr/bin/ssh has been changed</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{OS Linux:vfs.file.cksum[/usr/sbin/sshd].diff(0)}&gt;0</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>CHK::Checksum::/usr/sbin/sshd has been changed</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
       <expression>{OS Linux:system.cpu.util[,idle,avg1].last(0)}&lt;5</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
@@ -5700,82 +5024,6 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{OS Linux:net.tcp.port[,22].count(#3,0)}=3</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>NET::port::ssh unreachable</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies>
-        <dependency>
-          <name>SYS::processes::sshd is not running</name>
-          <expression>{OS Linux:proc.num[sshd].last(0)}&lt;1</expression>
-          <recovery_expression/>
-        </dependency>
-      </dependencies>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{OS Linux:net.tcp.port[,{$SVC_SSH_PORT}].count(#3,0)}=3</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>NET::port::ssh unreachable</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies>
-        <dependency>
-          <name>SYS::processes::sshd is not running</name>
-          <expression>{OS Linux:proc.num[sshd].last(0)}&lt;1</expression>
-          <recovery_expression/>
-        </dependency>
-      </dependencies>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{OS Linux:net.tcp.service[ssh,,{$SVC_SSH_PORT}].count(#3,0)}=3</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SVC::ssh is down</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{OS Linux:net.tcp.service[ssh].count(#3,0)}=3</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SVC::ssh is down</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
       <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
 {OS Linux:agent.ping.nodata(15m)}=1 and&#13;
 {OS Linux:system.uptime.count(15m)}=0</expression>
@@ -5853,54 +5101,6 @@ s3-dump hosts delete</description>
       <status>0</status>
       <priority>2</priority>
       <description>Tim drift bigger than 60s.</description>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{OS Linux:proc.num[crond].last(0)}&gt;5</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SYS::processes::crond &gt; 5 processes (LV={ITEM.VALUE})</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>2</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{OS Linux:proc.num[rsyslogd].last(0)}&lt;1</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SYS::processes::rsyslogd is not running</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>2</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{OS Linux:proc.num[sshd].last(0)}&lt;1</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SYS::processes::sshd is not running</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>2</priority>
-      <description/>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>
@@ -6284,19 +5484,4 @@ s3-dump hosts delete</description>
       </graph_items>
     </graph>
   </graphs>
-  <value_maps>
-    <value_map>
-      <name>Service state</name>
-      <mappings>
-        <mapping>
-          <value>0</value>
-          <newvalue>Down</newvalue>
-        </mapping>
-        <mapping>
-          <value>1</value>
-          <newvalue>Up</newvalue>
-        </mapping>
-      </mappings>
-    </value_map>
-  </value_maps>
 </zabbix_export>
