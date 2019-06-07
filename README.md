@@ -38,6 +38,8 @@ This repository provides a set of templates which offers the alternative set of 
     - ```NET:``` LLD items Application changed from ```NET``` prototype ```NET::{#FSNAME}```
     - ```VOL:``` LLD items Application changed from ```VOL``` prototype ```VOL::{#FSNAME}```
     - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
+  - LLD:
+    - rewrited ```VOL``` triggers to use proper severities and triggers prototypes dependencies
   - Triggers:
     - '''SYS::Host is down''' corrected descrition
 - **OS Solaris**

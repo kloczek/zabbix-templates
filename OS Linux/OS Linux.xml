@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-06-07T18:59:17Z</date>
+  <date>2019-06-07T19:32:02Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -3870,38 +3870,6 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           </item_prototypes>
           <trigger_prototypes>
             <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;15</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>1</priority>
-              <description>FS volume free space is less than 15%.</description>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
-              <tags/>
-            </trigger_prototype>
-            <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;15 and {OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&gt;10</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>1</priority>
-              <description>FS volume free space is between 85% and 90%.</description>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
-              <tags/>
-            </trigger_prototype>
-            <trigger_prototype>
               <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=1</expression>
               <recovery_mode>0</recovery_mode>
               <recovery_expression/>
@@ -3910,11 +3878,27 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <correlation_tag/>
               <url/>
               <status>0</status>
-              <priority>3</priority>
+              <priority>5</priority>
               <description>FS volume free space is less than 1%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
-              <dependencies/>
+              <dependencies>
+                <dependency>
+                  <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=5</expression>
+                  <recovery_expression/>
+                </dependency>
+                <dependency>
+                  <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=10</expression>
+                  <recovery_expression/>
+                </dependency>
+                <dependency>
+                  <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=15</expression>
+                  <recovery_expression/>
+                </dependency>
+              </dependencies>
               <tags/>
             </trigger_prototype>
             <trigger_prototype>
@@ -3933,31 +3917,15 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <dependencies>
                 <dependency>
                   <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
-                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;15</expression>
+                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=10</expression>
                   <recovery_expression/>
                 </dependency>
                 <dependency>
                   <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
-                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=10</expression>
+                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=15</expression>
                   <recovery_expression/>
                 </dependency>
               </dependencies>
-              <tags/>
-            </trigger_prototype>
-            <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=5 and {OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&gt;1</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>3</priority>
-              <description>FS volume free space is between 1% and 5%.</description>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
               <tags/>
             </trigger_prototype>
             <trigger_prototype>
@@ -3976,26 +3944,10 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <dependencies>
                 <dependency>
                   <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
-                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;15</expression>
+                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=15</expression>
                   <recovery_expression/>
                 </dependency>
               </dependencies>
-              <tags/>
-            </trigger_prototype>
-            <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=10 and {OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&gt;5</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>2</priority>
-              <description>FS volume free space is between 90% and 95%.</description>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
               <tags/>
             </trigger_prototype>
             <trigger_prototype>
@@ -4008,7 +3960,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <url/>
               <status>0</status>
               <priority>1</priority>
-              <description>FS volume free space is &lt;=15%.</description>
+              <description>FS volume free space is less than 15%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
               <dependencies/>
@@ -4031,22 +3983,6 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <tags/>
             </trigger_prototype>
             <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;15 and {OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&gt;10</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>1</priority>
-              <description>FS volume inodes free space is between 15% and 10%.</description>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
-              <tags/>
-            </trigger_prototype>
-            <trigger_prototype>
               <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=1</expression>
               <recovery_mode>0</recovery_mode>
               <recovery_expression/>
@@ -4055,11 +3991,27 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <correlation_tag/>
               <url/>
               <status>0</status>
-              <priority>3</priority>
+              <priority>5</priority>
               <description>FS volume inodes free space is less than 1%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
-              <dependencies/>
+              <dependencies>
+                <dependency>
+                  <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;15</expression>
+                  <recovery_expression/>
+                </dependency>
+                <dependency>
+                  <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=5</expression>
+                  <recovery_expression/>
+                </dependency>
+                <dependency>
+                  <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=10</expression>
+                  <recovery_expression/>
+                </dependency>
+              </dependencies>
               <tags/>
             </trigger_prototype>
             <trigger_prototype>
@@ -4090,22 +4042,6 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <tags/>
             </trigger_prototype>
             <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=5 and {OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&gt;1</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>3</priority>
-              <description>FS volume inodes free space is between 5% and 1%.</description>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
-              <tags/>
-            </trigger_prototype>
-            <trigger_prototype>
               <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=10</expression>
               <recovery_mode>0</recovery_mode>
               <recovery_expression/>
@@ -4125,22 +4061,6 @@ Value is calculated by read number of sectors multiplied by 512.</description>
                   <recovery_expression/>
                 </dependency>
               </dependencies>
-              <tags/>
-            </trigger_prototype>
-            <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=10 and {OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&gt;5</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>2</priority>
-              <description>FS volume inodes free space is between 10% and 5%.</description>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
               <tags/>
             </trigger_prototype>
           </trigger_prototypes>
