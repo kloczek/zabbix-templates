@@ -11,6 +11,8 @@ Base Linux monitoring template.
 #### Changelog:
 - (devel):
   - Items:
+    - ```NET::segments retransmitted``` sed regexp changed to cover old "segments retransmited"
+      output as well
     - replace ```SYS::rh-distribution``` by ```SYS::os-release``` which grabs the content of the
       ```/etc/os-releases``` using ```vfs.file.contents[/etc/os-release]``` key
       (this will be wortking on all LSB compliant distributions)

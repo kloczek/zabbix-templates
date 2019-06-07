@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-06-07T18:46:48Z</date>
+  <date>2019-06-07T18:54:05Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -1328,7 +1328,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>system.run["/bin/netstat -s|/bin/sed -n 's/\( *\)\(.*\) segments retransmitted*/\2/ p'"]</key>
+          <key>system.run["/bin/netstat -s|/bin/sed -n 's/\( *\)\(.*\) segments retransmit.*ed*/\2/ p'"]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
