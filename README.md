@@ -25,10 +25,16 @@ This repository provides a set of templates which offers the alternative set of 
     - graphs improvements
 - **OS Linux**
   - Items:
+    - replace ```SYS::rh-distribution``` by ```SYS::os-release``` which grabs the content of the
+      ```/etc/os-releases``` using ```vfs.file.contents[/etc/os-release]``` key
+      (this will be wortking on all LSB compliant distributions)
+    - ```HW::CPU```` item key changed from ```system.hw.cpu``` to ```system.hw.cpu[,model]```
+      because this option doesws not include current CPU frequency (which is constantly changing)
     - removed monitoring sshd, crond and rsyslogd as monitoring of those processes
       is not essential and will be provided in separated template(s)
-    - ```VOL:``` LLD items fixed Application ```VOL``` changed to per volume ```VOL::{#FSNAME}```
-    - ```NET:``` LLD items fixed Application ```NET``` changed to per interface ```NET::{#FSNAME}```
+    - ```NET:``` LLD items Application changed from ```NET``` prototype ```NET::{#FSNAME}```
+    - ```VOL:``` LLD items Application changed from ```VOL``` prototype ```VOL::{#FSNAME}```
+    - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
   - Triggers:
     - '''SYS::Host is down''' corrected descrition
 - **OS Solaris**

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-06-07T13:35:10Z</date>
+  <date>2019-06-07T18:46:48Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -1144,65 +1144,6 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>system.hw.cpu</key>
-          <delay>1d</delay>
-          <history>2w</history>
-          <trends>0</trends>
-          <status>0</status>
-          <value_type>4</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>All CPUs information.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>HW</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>HW::CPU</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
           <key>system.hw.cpu[,model]</key>
           <delay>1d</delay>
           <history>2w</history>
@@ -1421,7 +1362,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing>
             <step>
-              <type>10</type>
+              <type>19</type>
               <params/>
               <error_handler>0</error_handler>
               <error_handler_params/>
@@ -1438,7 +1379,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <http_proxy/>
           <headers/>
           <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
+          <request_method>1</request_method>
           <output_format>0</output_format>
           <allow_traps>0</allow_traps>
           <ssl_cert_file/>
@@ -1559,124 +1500,6 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <error_handler_params/>
             </step>
           </preprocessing>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>SYS::os-release</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>system.run["cat /etc/os-release"]</key>
-          <delay>6h</delay>
-          <history>2w</history>
-          <trends>0</trends>
-          <status>0</status>
-          <value_type>1</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>Content of /etc/os-release.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SYS</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>1</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>SYS::rh-distribution</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>system.run["cat /etc/redhat-release"]</key>
-          <delay>6h</delay>
-          <history>2w</history>
-          <trends>0</trends>
-          <status>0</status>
-          <value_type>1</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>Content of /etc/redhat-release.</description>
-          <inventory_link>7</inventory_link>
-          <applications>
-            <application>
-              <name>SYS</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
           <jmx_endpoint/>
           <timeout>3s</timeout>
           <url/>
@@ -2043,6 +1866,65 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <headers/>
           <retrieve_mode>0</retrieve_mode>
           <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item/>
+        </item>
+        <item>
+          <name>SYS::os-release</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>vfs.file.contents[/etc/os-release]</key>
+          <delay>6h</delay>
+          <history>2w</history>
+          <trends>0</trends>
+          <status>0</status>
+          <value_type>1</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Content of /etc/os-release.</description>
+          <inventory_link>7</inventory_link>
+          <applications>
+            <application>
+              <name>SYS</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
           <output_format>0</output_format>
           <allow_traps>0</allow_traps>
           <ssl_cert_file/>
@@ -3025,18 +2907,6 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
                   <item>
                     <host>OS Linux</host>
                     <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)failed connection attempts/\1/ p'"]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>3</sortorder>
-                  <drawtype>0</drawtype>
-                  <color>999999</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>7</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>OS Linux</host>
-                    <key>system.run["/bin/netstat -s|/bin/sed -n 's/\( *\)\(.*\) segments retransmitted*/\2/ p'"]</key>
                   </item>
                 </graph_item>
               </graph_items>
@@ -4831,22 +4701,6 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <status>0</status>
       <priority>3</priority>
       <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{OS Linux:system.hw.cpu.diff()}=1</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>HW::CPU info has changed</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>1</priority>
-      <description>CPUs information has change.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>
