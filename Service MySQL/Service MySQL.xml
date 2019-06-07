@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-05-29T15:03:46Z</date>
+  <date>2019-06-03T14:55:01Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -16,22 +16,22 @@
 Version: 1.0.4 (2018-06-11)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20MySQL&#13;
 &#13;
-Notes:&#13;
+#### Notes:&#13;
 * Tested on MySQL 5.7 and it not designed to be uses with MySQL older than 5.7 backward compatibility so it can be used to monitor MySQL engine which in my.cnf has:&#13;
-&#13;
+```&#13;
 [mysqld]&#13;
 show_compatibility_56 = OFF &#13;
-&#13;
-My advice is even to disable show_compatibility_56 to not start by mistake use some older metrics which in next version of the MySQL no longer will be avalaible as an option.&#13;
+```&#13;
+My advice is even to disable show_compatibility_56 to not start by mistake use some older metrics which in next version of the MySQL no longer will be available as an option.&#13;
 &#13;
 * By default this template is monitoring the engine working on localhost.&#13;
 To be able to use this template on a host you need to setup a monitoring account with the proper privileges.&#13;
 To add such account you can use below queries:&#13;
-&#13;
+```&#13;
 CREATE USER 'monitoring'@'localhost' IDENTIFIED BY 'monitoring';&#13;
 GRANT SELECT, INDEX, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'monitoring'@'localhost';&#13;
 FLUSH PRIVILEGES;&#13;
-&#13;
+```&#13;
 * MySQL 5.7 documentation:&#13;
 http://dev.mysql.com/doc/refman/5.7/en/innodb-parameters.html&#13;
 http://dev.mysql.com/doc/refman/5.7/en/innodb-configuration.html&#13;
