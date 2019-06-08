@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-06-08T13:56:42Z</date>
+  <date>2019-06-08T14:01:18Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -5164,29 +5164,6 @@ Please login on the host and check output of the commands:&#13;
 - is unreachable over ICMP for +9 times&#13;
 - no new moitoring data for +15min&#13;
 - host has uptime +15 min</description>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{OS Solaris:icmpping[].count(#10,0,"eq")}&gt;9 and {OS Solaris:agent.ping.nodata(1h)}=1</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SYS::Host is down</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description>Instructions on how to handle this trigger if is active:&#13;
-* with daily autoscaling like PERF, PAT or DEV -&gt; delete box&#13;
-* if it is PROD or STAGE box:&#13;
-** remove all groups and assign box to "Terminated instances" group&#13;
-** change Name to "term YYYY-MM-DD &lt;orig_Name&gt;"&#13;
-** set host Monitored by proxy -&gt; (no proxy)&#13;
-** change state to "not monitored"&#13;
-* anything else -&gt; investigate -&gt; acknowledge and raise jira ticket if it is something unusual</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>
