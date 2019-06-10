@@ -40,6 +40,10 @@ This repository provides a set of templates which offers the alternative set of 
     - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
   - LLD:
     - rewrited ```VOL``` triggers to use proper severities and triggers prototypes dependencies
+    - LXC monitoring adaptations:
+      - add in ```VOL:``` LLD filter off all volumes mounted under /var/lib/lxc. If ```OS Linux```
+        template will used inside of each LXC container it will provide proper not duplicated
+        monirtoring of the LXC container volumes
   - Triggers:
     - '''SYS::Host is down''' corrected descrition
 - **OS Solaris**

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-06-07T19:32:02Z</date>
+  <date>2019-06-10T12:56:35Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -3494,11 +3494,17 @@ Value is calculated by read number of sectors multiplied by 512.</description>
                 <macro>{#FSTYPE}</macro>
                 <value>^(btrfs|ext2|ext3|ext4|jfs|reiser|xfs|ffs|ufs|jfs|jfs2|vxfs|hfs|refs|ntfs|fat32|zfs)$</value>
                 <operator>8</operator>
-                <formulaid>B</formulaid>
+                <formulaid>C</formulaid>
               </condition>
               <condition>
                 <macro>{#FSNAME}</macro>
                 <value>^(?!(^/run/media))</value>
+                <operator>8</operator>
+                <formulaid>B</formulaid>
+              </condition>
+              <condition>
+                <macro>{#FSNAME}</macro>
+                <value>^(?!(^/var/lib/lxc))</value>
                 <operator>8</operator>
                 <formulaid>A</formulaid>
               </condition>
