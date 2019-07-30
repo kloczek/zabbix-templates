@@ -44,6 +44,8 @@ This repository provides a set of templates which offers the alternative set of 
       - add in ```VOL:``` LLD filter off all volumes mounted under /var/lib/lxc. If ```OS Linux```
         template will used inside of each LXC container it will provide proper not duplicated
         monirtoring of the LXC container volumes
+    - Added 4th level of the alarm in ```VOL::{#FSNAME}::free {ITEM.VALUE}``` LLD trigger
+      Now alarms are raised <1%, <%5, <10% and now <20% free volume space
   - Screens:
     - ```DSK, NET``` added
   - Triggers:
