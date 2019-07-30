@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-07-30T12:35:13Z</date>
+  <date>2019-07-30T14:02:53Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -3053,7 +3053,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
             <conditions>
               <condition>
                 <macro>{#DISK}</macro>
-                <value>^(?!(​sr[0-9]$|​fd[0-9]$|​sd[a-z][0-9]$|​xvd[a-z][0-9]$|​hd[a-z][0-9]$|​cciss/c0d0p[0-9]$|​^loop.[0-9]|​^ram|​^zram))</value>
+                <value>^(?!(​fd[0-9]$|loop[0-9]|​ram[0-9]|​sd[a-z][0-9]$|sr[0-9]$|​​zram|​xvd[a-z][0-9]$|​hd[a-z][0-9]$|​cciss/c0d0p[0-9]$))</value>
                 <operator>8</operator>
                 <formulaid>A</formulaid>
               </condition>
