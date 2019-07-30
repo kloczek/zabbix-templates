@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-06-10T12:56:35Z</date>
+  <date>2019-06-21T16:52:01Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -1324,6 +1324,72 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <master_item/>
         </item>
         <item>
+          <name>NET::Failed connection attempts</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>system.run["/bin/netstat -s|/bin/sed -n 's/\( *\)\(.*\)failed connection attempts/\2/ p'"]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units>events/s</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NET</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing>
+            <step>
+              <type>10</type>
+              <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item/>
+        </item>
+        <item>
           <name>NET::segments retransmitted</name>
           <type>7</type>
           <snmp_community/>
@@ -1395,72 +1461,6 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_community/>
           <snmp_oid/>
           <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)connections aborted due to timeout/\1/ p'"]</key>
-          <delay>1m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>0</value_type>
-          <allowed_hosts/>
-          <units>events/s</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>NET</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing>
-            <step>
-              <type>10</type>
-              <params/>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-          </preprocessing>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>NET::Failed connection attempts</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)failed connection attempts/\1/ p'"]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -2906,7 +2906,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
                   <type>0</type>
                   <item>
                     <host>OS Linux</host>
-                    <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)failed connection attempts/\1/ p'"]</key>
+                    <key>system.run["/bin/netstat -s|/bin/sed -n 's/\( *\)\(.*\)failed connection attempts/\2/ p'"]</key>
                   </item>
                 </graph_item>
               </graph_items>
@@ -3053,7 +3053,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
             <conditions>
               <condition>
                 <macro>{#DISK}</macro>
-                <value>@OS Linux::BlkDev</value>
+                <value>^(?!(​sr[0-9]$|​fd[0-9]$|​sd[a-z][0-9]$|​xvd[a-z][0-9]$|​hd[a-z][0-9]$|​cciss/c0d0p[0-9]$|​^loop|​^ram|​^zram))</value>
                 <operator>8</operator>
                 <formulaid>A</formulaid>
               </condition>
@@ -4091,8 +4091,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <graph_items>
                 <graph_item>
                   <sortorder>0</sortorder>
-                  <drawtype>2</drawtype>
-                  <color>0000DD</color>
+                  <drawtype>5</drawtype>
+                  <color>FF4000</color>
                   <yaxisside>0</yaxisside>
                   <calc_fnc>7</calc_fnc>
                   <type>0</type>
@@ -4103,8 +4103,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
                 </graph_item>
                 <graph_item>
                   <sortorder>1</sortorder>
-                  <drawtype>2</drawtype>
-                  <color>DD00DD</color>
+                  <drawtype>5</drawtype>
+                  <color>80FF00</color>
                   <yaxisside>0</yaxisside>
                   <calc_fnc>7</calc_fnc>
                   <type>0</type>
@@ -4361,6 +4361,57 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <sort_triggers>0</sort_triggers>
               <resource>
                 <name>DSK::{#DISK}::bytes</name>
+                <host>OS Linux</host>
+              </resource>
+              <max_columns>1</max_columns>
+              <application/>
+            </screen_item>
+          </screen_items>
+        </screen>
+        <screen>
+          <name>DSK, NET</name>
+          <hsize>2</hsize>
+          <vsize>1</vsize>
+          <screen_items>
+            <screen_item>
+              <resourcetype>20</resourcetype>
+              <width>600</width>
+              <height>200</height>
+              <x>0</x>
+              <y>0</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>DSK::{#DISK}::IOs</name>
+                <host>OS Linux</host>
+              </resource>
+              <max_columns>1</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>20</resourcetype>
+              <width>600</width>
+              <height>200</height>
+              <x>1</x>
+              <y>0</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>0</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>NET::{#IFNAME}::bytes</name>
                 <host>OS Linux</host>
               </resource>
               <max_columns>1</max_columns>
@@ -5166,7 +5217,7 @@ s3-dump hosts delete</description>
           <type>0</type>
           <item>
             <host>OS Linux</host>
-            <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)failed connection attempts/\1/ p'"]</key>
+            <key>system.run["/bin/netstat -s|/bin/sed -n 's/\( *\)\(.*\)failed connection attempts/\2/ p'"]</key>
           </item>
         </graph_item>
       </graph_items>

@@ -30,6 +30,8 @@ Base Linux monitoring template.
       - add in ```VOL:``` LLD filter off all volumes mounted under /var/lib/lxc. If ```OS Linux```
         template will used inside of each LXC container it will provide proper not duplicated
         monirtoring of the LXC container volumes
+  - Screens:
+    - ```DSK, NET``` added
   - Triggers:
     - '''SYS::Host is down''' corrected descrition
 - 1.0.4 (2018-06-11)

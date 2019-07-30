@@ -44,6 +44,8 @@ This repository provides a set of templates which offers the alternative set of 
       - add in ```VOL:``` LLD filter off all volumes mounted under /var/lib/lxc. If ```OS Linux```
         template will used inside of each LXC container it will provide proper not duplicated
         monirtoring of the LXC container volumes
+  - Screens:
+    - ```DSK, NET``` added
   - Triggers:
     - '''SYS::Host is down''' corrected descrition
 - **OS Solaris**
@@ -106,6 +108,9 @@ This repository provides a set of templates which offers the alternative set of 
       - "processing queue" and flame like graph with "queued items"
       - "items totat/unsupported" and "items::nvps"
       - "items/triggers" and "hosts"
+- **Service Zabbix Proxy**
+  - Graphs:
+    - ```SVC::zabbix_proxy::data gathering process busy %``` change the color of the ```http poller``` to bright yellow
 - All graphs in screens resolution have been changed to 1200x200 or 600x200 in case screens with two columns of graphs
 ### 1.0.4 (2018-06-11)
 - The first version tagged in git repo to stamp state of templates and tools and to provide better tracking changes by using ```git``` command
