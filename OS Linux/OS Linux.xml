@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-07-30T14:02:53Z</date>
+  <date>2019-07-30T17:04:35Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -4690,16 +4690,16 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{OS Linux:system.cpu.util[,idle,avg1].last(0)}&lt;5</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
+      <expression>{OS Linux:system.cpu.util[,idle,avg1].last(1h)}&lt;5</expression>
+      <recovery_mode>1</recovery_mode>
+      <recovery_expression>{OS Linux:system.cpu.util[,idle,avg1].last(1h)}&gt;5</recovery_expression>
       <name>CPU::idle {ITEM.VALUE}</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
       <status>0</status>
       <priority>3</priority>
-      <description/>
+      <description>CPU idle time less than 5% for more than 1h.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies>
@@ -4714,23 +4714,23 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{OS Linux:system.cpu.util[,idle,avg1].last(0)}&lt;15</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
+      <expression>{OS Linux:system.cpu.util[,idle,avg1].last(1h)}&lt;15</expression>
+      <recovery_mode>1</recovery_mode>
+      <recovery_expression>{OS Linux:system.cpu.util[,idle,avg1].last(1h)}&gt;15</recovery_expression>
       <name>CPU::idle {ITEM.VALUE}</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
       <status>0</status>
-      <priority>2</priority>
-      <description/>
+      <priority>1</priority>
+      <description>CPU idle time less than 15% for more than 1h.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies>
         <dependency>
           <name>CPU::idle {ITEM.VALUE}</name>
-          <expression>{OS Linux:system.cpu.util[,idle,avg1].last(0)}&lt;5</expression>
-          <recovery_expression/>
+          <expression>{OS Linux:system.cpu.util[,idle,avg1].last(1h)}&lt;5</expression>
+          <recovery_expression>{OS Linux:system.cpu.util[,idle,avg1].last(1h)}&gt;5</recovery_expression>
         </dependency>
       </dependencies>
       <tags/>
