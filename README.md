@@ -50,7 +50,7 @@ This repository provides a set of templates which offers the alternative set of 
   - Screens:
     - ```DSK, NET``` added
   - Triggers:
-    - '''SYS::Host is down''' corrected descrition
+    - ```SYS::Host is down``` corrected descrition
 - **OS Solaris**
   - Applications:
     - remove using ```DSK```, ```NET``` and ```VOL``` Applications and replace them by LLD prototypes
@@ -77,7 +77,7 @@ This repository provides a set of templates which offers the alternative set of 
   - Macros:
     - Rename all ```{$APACHE_SERVICE_*}``` macros to ```{$SVC_APACHE_*}```
     - Macro ```{$SVC_APACHE_PROCESS}```: has bee nadded to allow easy use it on Debian/Ubuntu. Default value is ```http```. On Ubuntu/Debian that value needs to be changed to ```apache2```
-    - Add using ```{$SVC_APACHE_PROCESS}''', '''{$SVC_SVC_PORT}''' macros in more places in item names and triggers
+    - Add using ```{$SVC_APACHE_PROCESS}```, ```{$SVC_SVC_PORT}``` macros in more places in item names and triggers
   - Items:
     - Make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
     - Rename ```net.tcp.service[http,,{$HTTP_SERVICE_PORT}]``` key item from ```SVC::$1``` to ```NET::$1```
@@ -142,7 +142,7 @@ This repository provides a set of templates which offers the alternative set of 
           - ```IF-MIB::ifOctets```
     - **SNMPv2-MIB**
       - Applications:
-        - rename mib-2.system to ```SNMPv2-MIB::system``` and mib-2.system.snmp to '''SNMPv2-MIB::snmp''' to use matching MIB naming conventoion
+        - rename mib-2.system to ```SNMPv2-MIB::system``` and mib-2.system.snmp to ```SNMPv2-MIB::snmp``` to use matching MIB naming conventoion
       - Items:
         - changed units in update interval from number of seconds to number of m/h/d
       - Graphs:

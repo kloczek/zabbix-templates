@@ -10,7 +10,7 @@ The template for SNMPv2 MIB entities.
 #### Changelog:
 - 1.0.4 (2018-06-11):
   - Applications:
-    - rename mib-2.system to ```SNMPv2-MIB::system``` and mib-2.system.snmp to '''SNMPv2-MIB::snmp''' to use matching MIB naming conventoion
+    - rename mib-2.system to ```SNMPv2-MIB::system``` and mib-2.system.snmp to ```SNMPv2-MIB::snmp``` to use matching MIB naming conventoion
   - Graphs:
     - change resolution to 1200x300
     - new normal graph ```SNMPv2-MIB::snmpPkts``` with SNMPv2-MIB::snmp{in,Out}Pkts OIDs presenting rate

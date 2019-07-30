@@ -36,7 +36,7 @@ Base Linux monitoring template.
   - Screens:
     - ```DSK, NET``` added
   - Triggers:
-    - '''SYS::Host is down''' corrected descrition
+    - ```SYS::Host is down``` corrected descrition
 - 1.0.4 (2018-06-11)
   - Graphs:
     - change all graphs resolution to 1200x300
