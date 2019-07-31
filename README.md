@@ -46,7 +46,9 @@ This repository provides a set of templates which offers the alternative set of 
         monirtoring of the LXC container volumes
     - Added 4th level of the alarm in ```VOL::{#FSNAME}::free {ITEM.VALUE}``` LLD trigger
       Now alarms are raised <1%, <%5, <10% and now <20% free volume space
-    - ```DSK:``` filter corrected to get reed of loop devices. Use ```loop.[0-9]``` instead ```loop```
+    - ```DSK:``` filter: corrected to get reed of loop devices. Use ```loop.[0-9]``` instead ```loop```
+    - ```DSK:``` filter: remove from the list of moniitored block devices ZFS vdevs partitions and
+      corrected regexp to remove all SCSI partitions
   - Screens:
     - ```DSK, NET``` added
   - Triggers:
