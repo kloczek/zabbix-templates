@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-08-06T17:07:55Z</date>
+  <date>2019-08-06T17:18:58Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -19,54 +19,54 @@
       </groups>
       <applications>
         <application>
-          <name>PostgreSQL Backend Connections</name>
+          <name>SVC::PostgreSQL</name>
         </application>
         <application>
-          <name>PostgreSQL Background Writer</name>
+          <name>SVC::PostgreSQL::cfg</name>
         </application>
         <application>
-          <name>PostgreSQL Configuration</name>
+          <name>SVC::PostgreSQL::tablespace</name>
         </application>
         <application>
-          <name>PostgreSQL Database Backend Connections</name>
+          <name>SVC::PostgreSQL Backend Connections</name>
         </application>
         <application>
-          <name>PostgreSQL Database Capacity</name>
+          <name>SVC::PostgreSQL Background Writer</name>
         </application>
         <application>
-          <name>PostgreSQL Database Disk IO</name>
+          <name>SVC::PostgreSQL Database Backend Connections</name>
         </application>
         <application>
-          <name>PostgreSQL Database Errors</name>
+          <name>SVC::PostgreSQL Database Capacity</name>
         </application>
         <application>
-          <name>PostgreSQL Database Performance</name>
+          <name>SVC::PostgreSQL Database Disk IO</name>
         </application>
         <application>
-          <name>PostgreSQL Database Temp File Utilization</name>
+          <name>SVC::PostgreSQL Database Errors</name>
         </application>
         <application>
-          <name>PostgreSQL Index Statistics</name>
+          <name>SVC::PostgreSQL Database Performance</name>
         </application>
         <application>
-          <name>PostgreSQL MVCC</name>
+          <name>SVC::PostgreSQL Database Temp File Utilization</name>
         </application>
         <application>
-          <name>PostgreSQL Prepared Transactions</name>
+          <name>SVC::PostgreSQL Index Statistics</name>
         </application>
         <application>
-          <name>PostgreSQL Server</name>
+          <name>SVC::PostgreSQL MVCC</name>
         </application>
         <application>
-          <name>PostgreSQL Tablespace Statistics</name>
+          <name>SVC::PostgreSQL Prepared Transactions</name>
         </application>
         <application>
-          <name>PostgreSQL Table Statistics</name>
+          <name>SVC::PostgreSQL Table Statistics</name>
         </application>
       </applications>
       <items>
         <item>
-          <name>PostgreSQL Backends connected (Total)</name>
+          <name>backends::connected</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -99,13 +99,11 @@ Accepts the default connection parameters plus the following:&#13;
 Database: count only the given database name or OID&#13;
 User: count only the given user name or OID&#13;
 Client: count only the given IP address or hostname&#13;
-Waiting: true|false count only backends waiting on a lock&#13;
-&#13;
-Requires libzbxpgsql v1.0.0 or above.</description>
+Waiting: true|false count only backends waiting on a lock.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Backend Connections</name>
+              <name>SVC::PostgreSQL Backend Connections</name>
             </application>
           </applications>
           <valuemap/>
@@ -133,7 +131,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Backends connections available</name>
+          <name>backends::connections available</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -144,7 +142,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <status>0</status>
           <value_type>3</value_type>
           <allowed_hosts/>
-          <units/>
+          <units>connections</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
           <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -160,13 +158,11 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Returns the total number of available backend connections remaining (excluding the check query itself).&#13;
-&#13;
-Requires libzbxpgsql v1.0.0 or above.</description>
+          <description>Returns the total number of available backend connections remaining (excluding the check query itself).</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Backend Connections</name>
+              <name>SVC::PostgreSQL Backend Connections</name>
             </application>
           </applications>
           <valuemap/>
@@ -194,7 +190,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Backends connections used %</name>
+          <name>backends::connections used %</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -221,13 +217,11 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Returns the total number of used backend connections as a ratio of the total available.&#13;
-&#13;
-Requires libzbxpgsql v1.0.0 or above.</description>
+          <description>Returns the total number of used backend connections as a ratio of the total available.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Backend Connections</name>
+              <name>SVC::PostgreSQL Backend Connections</name>
             </application>
           </applications>
           <valuemap/>
@@ -262,7 +256,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Buffers allocated/sec</name>
+          <name>buffers::allocated</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -271,9 +265,9 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <history>7d</history>
           <trends>365d</trends>
           <status>0</status>
-          <value_type>3</value_type>
+          <value_type>0</value_type>
           <allowed_hosts/>
-          <units/>
+          <units>buffers/s</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
           <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -289,11 +283,11 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Number of buffers allocated</description>
+          <description>Number of buffers allocated.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Background Writer</name>
+              <name>SVC::PostgreSQL Background Writer</name>
             </application>
           </applications>
           <valuemap/>
@@ -328,7 +322,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Buffers written directly by a backend/sec</name>
+          <name>buffers::written</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -337,9 +331,9 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <history>7d</history>
           <trends>365d</trends>
           <status>0</status>
-          <value_type>3</value_type>
+          <value_type>0</value_type>
           <allowed_hosts/>
-          <units/>
+          <units>buffers/s</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
           <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -355,11 +349,11 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Number of buffers written directly by a backend</description>
+          <description>Number of buffers written directly by a backend.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Background Writer</name>
+              <name>SVC::PostgreSQL Background Writer</name>
             </application>
           </applications>
           <valuemap/>
@@ -394,7 +388,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Backend fsync call executions/sec</name>
+          <name>backend::fsync</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -403,9 +397,9 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <history>7d</history>
           <trends>365d</trends>
           <status>0</status>
-          <value_type>3</value_type>
+          <value_type>0</value_type>
           <allowed_hosts/>
-          <units/>
+          <units>fsync/s</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
           <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -425,7 +419,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Background Writer</name>
+              <name>SVC::PostgreSQL Background Writer</name>
             </application>
           </applications>
           <valuemap/>
@@ -460,7 +454,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Buffers written during checkpoints/sec</name>
+          <name>buffers::written checkpoints</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -471,7 +465,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <status>0</status>
           <value_type>3</value_type>
           <allowed_hosts/>
-          <units/>
+          <units>buffers/s</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
           <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -487,11 +481,11 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Number of buffers written during checkpoints</description>
+          <description>Number of buffers written during checkpoints.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Background Writer</name>
+              <name>SVC::PostgreSQL Background Writer</name>
             </application>
           </applications>
           <valuemap/>
@@ -526,7 +520,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Buffers written by the background writer/sec</name>
+          <name>buffers::written background</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -535,9 +529,9 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <history>7d</history>
           <trends>365d</trends>
           <status>0</status>
-          <value_type>3</value_type>
+          <value_type>0</value_type>
           <allowed_hosts/>
-          <units/>
+          <units>buffers/s</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
           <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -557,7 +551,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Background Writer</name>
+              <name>SVC::PostgreSQL Background Writer</name>
             </application>
           </applications>
           <valuemap/>
@@ -592,7 +586,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Checkpoints performed on request</name>
+          <name>Checkpoints performed on request</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -623,7 +617,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Background Writer</name>
+              <name>SVC::PostgreSQL Background Writer</name>
             </application>
           </applications>
           <valuemap/>
@@ -651,7 +645,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Checkpoints performed on schedule</name>
+          <name>Checkpoints performed on schedule</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -682,7 +676,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Background Writer</name>
+              <name>SVC::PostgreSQL Background Writer</name>
             </application>
           </applications>
           <valuemap/>
@@ -710,7 +704,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Average interval between checkpoints</name>
+          <name>Average interval between checkpoints</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -743,7 +737,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Background Writer</name>
+              <name>SVC::PostgreSQL Background Writer</name>
             </application>
           </applications>
           <valuemap/>
@@ -771,7 +765,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Checkpoint sync time</name>
+          <name>Checkpoint sync time</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -802,7 +796,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Background Writer</name>
+              <name>SVC::PostgreSQL Background Writer</name>
             </application>
           </applications>
           <valuemap/>
@@ -837,7 +831,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Checkpoint time</name>
+          <name>Checkpoint time</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -864,13 +858,11 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Returns the percentage of time spent writing or syncing checkpoints since statistics were reset.&#13;
-&#13;
-Requires libzbxpgsql v1.0.0 or above.</description>
+          <description>Returns the percentage of time spent writing or syncing checkpoints since statistics were reset.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Background Writer</name>
+              <name>SVC::PostgreSQL Background Writer</name>
             </application>
           </applications>
           <valuemap/>
@@ -905,7 +897,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Checkpoint write time</name>
+          <name>Checkpoint write time</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -936,7 +928,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Background Writer</name>
+              <name>SVC::PostgreSQL Background Writer</name>
             </application>
           </applications>
           <valuemap/>
@@ -971,7 +963,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Server responding</name>
+          <name>Server responding</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1001,13 +993,11 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <description>Returns 1 on successful connection, otherwise 0.&#13;
 &#13;
 Accepts only the default connection parameters.&#13;
-NOTE: If you are using connection pooling, this parameter should bypass the connection pooler and connect directly to your PostgreSQL server. Create a second item key to check the availability of your connection pooler.&#13;
-&#13;
-Requires libzbxpgsql v1.0.0 or above.</description>
+NOTE: If you are using connection pooling, this parameter should bypass the connection pooler and connect directly to your PostgreSQL server. Create a second item key to check the availability of your connection pooler.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Server</name>
+              <name>SVC::PostgreSQL</name>
             </application>
           </applications>
           <valuemap/>
@@ -1035,7 +1025,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Database transaction ID age (oldest)</name>
+          <name>Database transaction ID age (oldest)</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1068,7 +1058,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL MVCC</name>
+              <name>SVC::PostgreSQL MVCC</name>
             </application>
           </applications>
           <valuemap/>
@@ -1096,7 +1086,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Background writer stops</name>
+          <name>Background writer stops</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1127,7 +1117,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Background Writer</name>
+              <name>SVC::PostgreSQL Background Writer</name>
             </application>
           </applications>
           <valuemap/>
@@ -1155,7 +1145,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Module version</name>
+          <name>version::module</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1182,15 +1172,11 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Returns the version string for the installed PostgreSQL agent module.&#13;
-&#13;
-Does not accept any parameters.&#13;
-&#13;
-Requires libzbxpgsql v1.0.0 or above.</description>
+          <description>Returns the version string for the installed PostgreSQL agent module.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Server</name>
+              <name>SVC::PostgreSQL</name>
             </application>
           </applications>
           <valuemap/>
@@ -1218,7 +1204,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Prepared transaction age</name>
+          <name>Prepared transaction age</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1251,7 +1237,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Prepared Transactions</name>
+              <name>SVC::PostgreSQL Prepared Transactions</name>
             </application>
           </applications>
           <valuemap/>
@@ -1279,7 +1265,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Prepared transaction count</name>
+          <name>Prepared transaction count</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1312,7 +1298,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Prepared Transactions</name>
+              <name>SVC::PostgreSQL Prepared Transactions</name>
             </application>
           </applications>
           <valuemap/>
@@ -1340,7 +1326,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Prepared transaction used %</name>
+          <name>Prepared transaction used %</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1373,7 +1359,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Prepared Transactions</name>
+              <name>SVC::PostgreSQL Prepared Transactions</name>
             </application>
           </applications>
           <valuemap/>
@@ -1408,7 +1394,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Longest running query</name>
+          <name>Longest running query</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1435,13 +1421,11 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description>The duration in seconds of the longest running, currently active query for all databases.&#13;
-&#13;
-Requires libzbxpgsql v1.0.0 or above.</description>
+          <description>The duration in seconds of the longest running, currently active query for all databases.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Backend Connections</name>
+              <name>SVC::PostgreSQL Backend Connections</name>
             </application>
           </applications>
           <valuemap/>
@@ -1469,7 +1453,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Server start time</name>
+          <name>Server start time</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1502,11 +1486,7 @@ Accepts only the default connection parameters.&#13;
 &#13;
 Requires libzbxpgsql v1.0.0 or above.</description>
           <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>PostgreSQL Server</name>
-            </application>
-          </applications>
+          <applications/>
           <valuemap/>
           <logtimefmt/>
           <preprocessing/>
@@ -1532,7 +1512,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Background writer statistics last reset</name>
+          <name>Background writer statistics last reset</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1563,7 +1543,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Background Writer</name>
+              <name>SVC::PostgreSQL Background Writer</name>
             </application>
           </applications>
           <valuemap/>
@@ -1591,7 +1571,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Server uptime</name>
+          <name>Uptime</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1602,7 +1582,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <status>0</status>
           <value_type>3</value_type>
           <allowed_hosts/>
-          <units>s</units>
+          <units>uptime</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
           <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1620,13 +1600,11 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <port/>
           <description>Returns the number of seconds since the PostgreSQL server process started&#13;
 &#13;
-Accepts only the default connection parameters.&#13;
-&#13;
-Requires libzbxpgsql v1.0.0 or above.</description>
+Accepts only the default connection parameters.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Server</name>
+              <name>SVC::PostgreSQL</name>
             </application>
           </applications>
           <valuemap/>
@@ -1654,7 +1632,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </item>
         <item>
-          <name>PostgreSQL Server version</name>
+          <name>version</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1685,7 +1663,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>PostgreSQL Server</name>
+              <name>SVC::PostgreSQL</name>
             </application>
           </applications>
           <valuemap/>
@@ -1715,7 +1693,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
       </items>
       <discovery_rules>
         <discovery_rule>
-          <name>Discover PostgreSQL Databases</name>
+          <name>PostgreSQL::DB:</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -1743,11 +1721,11 @@ Requires libzbxpgsql v1.0.0 or above.</description>
             <formula/>
             <conditions/>
           </filter>
-          <lifetime>30d</lifetime>
-          <description>Discover all databases available for connection</description>
+          <lifetime>2w</lifetime>
+          <description>Discover all databases available for connection.</description>
           <item_prototypes>
             <item_prototype>
-              <name>PostgreSQL Database disk block hits/sec on {#PATH}</name>
+              <name>disk block hits/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -1778,7 +1756,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Disk IO</name>
+                  <name>SVC::PostgreSQL Database Disk IO</name>
                 </application>
               </applications>
               <valuemap/>
@@ -1814,7 +1792,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database disk blocks read/sec on {#PATH}</name>
+              <name>disk blocks read/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -1845,7 +1823,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Disk IO</name>
+                  <name>SVC::PostgreSQL Database Disk IO</name>
                 </application>
               </applications>
               <valuemap/>
@@ -1881,7 +1859,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database time spent reading data on {#PATH}</name>
+              <name>time spent reading data on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -1912,7 +1890,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Disk IO</name>
+                  <name>SVC::PostgreSQL Database Disk IO</name>
                 </application>
               </applications>
               <valuemap/>
@@ -1948,7 +1926,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database time spent writing data on {#PATH}</name>
+              <name>time spent writing data on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -1979,7 +1957,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Disk IO</name>
+                  <name>SVC::PostgreSQL Database Disk IO</name>
                 </application>
               </applications>
               <valuemap/>
@@ -2015,7 +1993,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database conflicts/sec on {#PATH}</name>
+              <name>conflicts/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2046,7 +2024,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Errors</name>
+                  <name>SVC::PostgreSQL Database Errors</name>
                 </application>
               </applications>
               <valuemap/>
@@ -2082,7 +2060,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database deadlocks/sec on {#PATH}</name>
+              <name>deadlocks {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2113,7 +2091,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Errors</name>
+                  <name>SVC::PostgreSQL Database Errors</name>
                 </application>
               </applications>
               <valuemap/>
@@ -2149,7 +2127,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database backends connected on {#PATH}</name>
+              <name>backends connected on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2180,7 +2158,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Backend Connections</name>
+                  <name>SVC::PostgreSQL Backend Connections</name>
                 </application>
               </applications>
               <valuemap/>
@@ -2209,7 +2187,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database disk size on {#PATH}</name>
+              <name>disk size on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2240,7 +2218,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Capacity</name>
+                  <name>SVC::PostgreSQL Database Capacity</name>
                 </application>
               </applications>
               <valuemap/>
@@ -2269,7 +2247,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database statistics last reset on {#PATH}</name>
+              <name>statistics last reset on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2300,7 +2278,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Errors</name>
+                  <name>SVC::PostgreSQL Database Errors</name>
                 </application>
               </applications>
               <valuemap/>
@@ -2329,7 +2307,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database temp data write/sec on {#PATH}</name>
+              <name>temp data write/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2360,7 +2338,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Temp File Utilization</name>
+                  <name>SVC::PostgreSQL Database Temp File Utilization</name>
                 </application>
               </applications>
               <valuemap/>
@@ -2396,7 +2374,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database temp files created/sec on {#PATH}</name>
+              <name>temp files created/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2427,7 +2405,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Temp File Utilization</name>
+                  <name>SVC::PostgreSQL Database Temp File Utilization</name>
                 </application>
               </applications>
               <valuemap/>
@@ -2463,7 +2441,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database rows deleted/sec on {#PATH}</name>
+              <name>rows deleted/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2494,7 +2472,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Performance</name>
+                  <name>SVC::PostgreSQL Database Performance</name>
                 </application>
               </applications>
               <valuemap/>
@@ -2530,7 +2508,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database rows fetched by bitmap scans/sec on {#PATH}</name>
+              <name>rows fetched by bitmap scans/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2561,7 +2539,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Performance</name>
+                  <name>SVC::PostgreSQL Database Performance</name>
                 </application>
               </applications>
               <valuemap/>
@@ -2597,7 +2575,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database rows inserted/sec on {#PATH}</name>
+              <name>rows inserted/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2628,7 +2606,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Performance</name>
+                  <name>SVC::PostgreSQL Database Performance</name>
                 </application>
               </applications>
               <valuemap/>
@@ -2664,7 +2642,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database rows returned by sequential scans/sec on {#PATH}</name>
+              <name>rows returned by sequential scans/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2695,7 +2673,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Performance</name>
+                  <name>SVC::PostgreSQL Database Performance</name>
                 </application>
               </applications>
               <valuemap/>
@@ -2731,7 +2709,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database rows updated/sec on {#PATH}</name>
+              <name>rows updated/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2762,7 +2740,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Performance</name>
+                  <name>SVC::PostgreSQL Database Performance</name>
                 </application>
               </applications>
               <valuemap/>
@@ -2798,7 +2776,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database transactions committed/sec on {#PATH}</name>
+              <name>ransactions committed/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2829,7 +2807,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Performance</name>
+                  <name>SVC::PostgreSQL Database Performance</name>
                 </application>
               </applications>
               <valuemap/>
@@ -2865,7 +2843,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database transactions rolled back/sec on {#PATH}</name>
+              <name>transactions rolled back/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2896,7 +2874,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Performance</name>
+                  <name>SVC::PostgreSQL Database Performance</name>
                 </application>
               </applications>
               <valuemap/>
@@ -2932,7 +2910,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database transaction ID age on {#PATH}</name>
+              <name>transaction ID age on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -2965,7 +2943,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL MVCC</name>
+                  <name>SVC::PostgreSQL MVCC</name>
                 </application>
               </applications>
               <valuemap/>
@@ -2994,7 +2972,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database oldest prepared transaction on {#PATH}</name>
+              <name>oldest prepared transaction on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3027,7 +3005,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Prepared Transactions</name>
+                  <name>SVC::PostgreSQL Prepared Transactions</name>
                 </application>
               </applications>
               <valuemap/>
@@ -3056,7 +3034,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database transactions prepared on {#PATH}</name>
+              <name>transactions prepared on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3089,7 +3067,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Prepared Transactions</name>
+                  <name>SVC::PostgreSQL Prepared Transactions</name>
                 </application>
               </applications>
               <valuemap/>
@@ -3118,7 +3096,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database longest running query on {#PATH}</name>
+              <name>longest running query on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3151,7 +3129,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Backend Connections</name>
+                  <name>SVC::PostgreSQL Backend Connections</name>
                 </application>
               </applications>
               <valuemap/>
@@ -3180,7 +3158,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database index scans/sec on {#PATH}</name>
+              <name>index scans/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3211,7 +3189,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Performance</name>
+                  <name>SVC::PostgreSQL Database Performance</name>
                 </application>
               </applications>
               <valuemap/>
@@ -3247,7 +3225,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database live rows fetched by indexes/sec on {#PATH}</name>
+              <name>live rows fetched by indexes/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3278,7 +3256,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Performance</name>
+                  <name>SVC::PostgreSQL Database Performance</name>
                 </application>
               </applications>
               <valuemap/>
@@ -3314,7 +3292,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database estimated dead rows on {#PATH}</name>
+              <name>estimated dead rows on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3345,7 +3323,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Capacity</name>
+                  <name>SVC::PostgreSQL Database Capacity</name>
                 </application>
               </applications>
               <valuemap/>
@@ -3381,7 +3359,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database estimated live rows on {#PATH}</name>
+              <name>estimated live rows on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3412,7 +3390,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Capacity</name>
+                  <name>SVC::PostgreSQL Database Capacity</name>
                 </application>
               </applications>
               <valuemap/>
@@ -3448,7 +3426,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database estimated modified rows since analyze on {#PATH}</name>
+              <name>estimated modified rows since analyze on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3479,7 +3457,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Capacity</name>
+                  <name>SVC::PostgreSQL Database Capacity</name>
                 </application>
               </applications>
               <valuemap/>
@@ -3508,7 +3486,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database rows deleted/sec on {#PATH}</name>
+              <name>rows deleted/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3539,7 +3517,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Performance</name>
+                  <name>SVC::PostgreSQL Database Performance</name>
                 </application>
               </applications>
               <valuemap/>
@@ -3575,7 +3553,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database rows hot updated on {#PATH}</name>
+              <name>rows hot updated on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3606,7 +3584,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Performance</name>
+                  <name>SVC::PostgreSQL Database Performance</name>
                 </application>
               </applications>
               <valuemap/>
@@ -3642,7 +3620,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database rows inserted/sec on {#PATH}</name>
+              <name>rows inserted/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3673,7 +3651,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Performance</name>
+                  <name>SVC::PostgreSQL Database Performance</name>
                 </application>
               </applications>
               <valuemap/>
@@ -3709,7 +3687,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database rows updated/sec on {#PATH}</name>
+              <name>rows updated/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3740,7 +3718,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Performance</name>
+                  <name>SVC::PostgreSQL Database Performance</name>
                 </application>
               </applications>
               <valuemap/>
@@ -3776,7 +3754,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database estimated row count on {#PATH}</name>
+              <name>estimated row count on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3807,7 +3785,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Capacity</name>
+                  <name>SVC::PostgreSQL Database Capacity</name>
                 </application>
               </applications>
               <valuemap/>
@@ -3836,7 +3814,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database sequential scans/sec on {#PATH}</name>
+              <name>sequential scans/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3867,7 +3845,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Performance</name>
+                  <name>SVC::PostgreSQL Database Performance</name>
                 </application>
               </applications>
               <valuemap/>
@@ -3903,7 +3881,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Database live rows fetched by scans/sec on {#PATH}</name>
+              <name>live rows fetched by scans/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -3934,7 +3912,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Database Performance</name>
+                  <name>SVC::PostgreSQL Database Performance</name>
                 </application>
               </applications>
               <valuemap/>
@@ -3973,7 +3951,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <trigger_prototypes/>
           <graph_prototypes>
             <graph_prototype>
-              <name>PostgreSQL Database blocks/sec on {#DATABASE}</name>
+              <name>SVC::PostgreSQL::{#DATABASE}::blocks</name>
               <width>900</width>
               <height>200</height>
               <yaxismin>0.0000</yaxismin>
@@ -4017,651 +3995,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>PostgreSQL Database blocks/sec on {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.blks_hit[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.blks_read[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>PostgreSQL Database disk size on {#DATABASE}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.size[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>PostgreSQL Database disk size on {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.size[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>PostgreSQL Database errors/sec on {#DATABASE}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C800C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.conflicts[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.deadlocks[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>PostgreSQL Database errors/sec on {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C800C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.conflicts[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.deadlocks[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>PostgreSQL Database index utilization on {#DATABASE}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.idx_tup_fetch[{$PG_CONN},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.seq_tup_read[{$PG_CONN},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>PostgreSQL Database index utilization on {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.idx_tup_fetch[{$PG_CONN},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.seq_tup_read[{$PG_CONN},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>PostgreSQL Database IO time on {#DATABASE}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.blk_read_time[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.blk_write_time[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>PostgreSQL Database IO time on {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.blk_read_time[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.blk_write_time[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>PostgreSQL Database row count on {#DATABASE}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.n_dead_tup[{$PG_CONN},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.n_live_tup[{$PG_CONN},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>2</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>0000C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.rows[{$PG_CONN},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>PostgreSQL Database row count on {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.n_dead_tup[{$PG_CONN},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.n_live_tup[{$PG_CONN},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>2</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>0000C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.rows[{$PG_CONN},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>PostgreSQL Database row IO on {#DATABASE}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_deleted[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_fetched[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>2</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C800C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_inserted[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>3</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>0000C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_returned[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>4</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C8C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_updated[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>PostgreSQL Database row IO on {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_deleted[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_fetched[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>2</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C800C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_inserted[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>3</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>0000C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_returned[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>4</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C8C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_updated[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>PostgreSQL Database row writes/sec on {#DATABASE}</name>
+              <name>SVC::PostgreSQL::{#DATABASE}::rows writes</name>
               <width>900</width>
               <height>200</height>
               <yaxismin>0.0000</yaxismin>
@@ -4729,7 +4063,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>PostgreSQL Database row writes/sec on {#PATH}</name>
+              <name>SVC::PostgreSQL::{#DATABASE}::size</name>
               <width>900</width>
               <height>200</height>
               <yaxismin>0.0000</yaxismin>
@@ -4749,55 +4083,19 @@ Requires libzbxpgsql v1.0.0 or above.</description>
                 <graph_item>
                   <sortorder>0</sortorder>
                   <drawtype>5</drawtype>
-                  <color>0000C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.n_tup_ins[{$PG_CONN},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C800C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.n_tup_upd[{$PG_CONN},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>2</sortorder>
-                  <drawtype>5</drawtype>
                   <color>00C800</color>
                   <yaxisside>0</yaxisside>
                   <calc_fnc>2</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
-                    <key>pg.table.n_tup_hot_upd[{$PG_CONN},{#DATABASE}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>3</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.n_tup_del[{$PG_CONN},{#DATABASE}]</key>
+                    <key>pg.db.size[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
                   </item>
                 </graph_item>
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>PostgreSQL Database transactions/sec on {#DATABASE}</name>
+              <name>SVC::PostgreSQL::{#DATABASE}::transactions</name>
               <width>900</width>
               <height>200</height>
               <yaxismin>0.0000</yaxismin>
@@ -4841,7 +4139,687 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>PostgreSQL Database transactions/sec on {#PATH}</name>
+              <name>SVC::PostgreSQL Database blocks/sec on {#PATH}</name>
+              <width>900</width>
+              <height>200</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>1</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>00C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.blks_hit[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C80000</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.blks_read[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>SVC::PostgreSQL Database disk size on {#PATH}</name>
+              <width>900</width>
+              <height>200</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>1</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>00C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.size[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>SVC::PostgreSQL Database errors/sec on {#DATABASE}</name>
+              <width>900</width>
+              <height>200</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>1</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C800C8</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.conflicts[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C80000</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.deadlocks[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>SVC::PostgreSQL Database errors/sec on {#PATH}</name>
+              <width>900</width>
+              <height>200</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>1</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C800C8</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.conflicts[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C80000</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.deadlocks[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>SVC::PostgreSQL Database index utilization on {#DATABASE}</name>
+              <width>900</width>
+              <height>200</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>1</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>00C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.table.idx_tup_fetch[{$PG_CONN},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C80000</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.table.seq_tup_read[{$PG_CONN},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>SVC::PostgreSQL Database index utilization on {#PATH}</name>
+              <width>900</width>
+              <height>200</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>1</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>00C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.table.idx_tup_fetch[{$PG_CONN},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C80000</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.table.seq_tup_read[{$PG_CONN},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>SVC::PostgreSQL Database IO time on {#DATABASE}</name>
+              <width>900</width>
+              <height>200</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>1</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>00C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.blk_read_time[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C80000</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.blk_write_time[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>SVC::PostgreSQL Database IO time on {#PATH}</name>
+              <width>900</width>
+              <height>200</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>1</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>00C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.blk_read_time[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C80000</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.blk_write_time[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>SVC::PostgreSQL Database row count on {#DATABASE}</name>
+              <width>900</width>
+              <height>200</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>1</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C80000</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.table.n_dead_tup[{$PG_CONN},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>00C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.table.n_live_tup[{$PG_CONN},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>2</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>0000C8</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.table.rows[{$PG_CONN},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>SVC::PostgreSQL Database row count on {#PATH}</name>
+              <width>900</width>
+              <height>200</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>1</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C80000</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.table.n_dead_tup[{$PG_CONN},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>00C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.table.n_live_tup[{$PG_CONN},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>2</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>0000C8</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.table.rows[{$PG_CONN},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>SVC::PostgreSQL Database row IO on {#DATABASE}</name>
+              <width>900</width>
+              <height>200</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>1</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C80000</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.tup_deleted[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>00C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.tup_fetched[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>2</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C800C8</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.tup_inserted[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>3</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>0000C8</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.tup_returned[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>4</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C8C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.tup_updated[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>SVC::PostgreSQL Database row IO on {#PATH}</name>
+              <width>900</width>
+              <height>200</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>1</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C80000</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.tup_deleted[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>00C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.tup_fetched[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>2</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C800C8</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.tup_inserted[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>3</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>0000C8</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.tup_returned[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>4</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C8C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.tup_updated[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>SVC::PostgreSQL Database row writes/sec on {#PATH}</name>
+              <width>900</width>
+              <height>200</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>1</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>0000C8</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.table.n_tup_ins[{$PG_CONN},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C800C8</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.table.n_tup_upd[{$PG_CONN},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>2</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>00C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.table.n_tup_hot_upd[{$PG_CONN},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>3</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C80000</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.table.n_tup_del[{$PG_CONN},{#DATABASE}]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>SVC::PostgreSQL Database transactions/sec on {#DATABASE}</name>
               <width>900</width>
               <height>200</height>
               <yaxismin>0.0000</yaxismin>
@@ -4909,7 +4887,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </discovery_rule>
         <discovery_rule>
-          <name>Discover PostgreSQL Indexes</name>
+          <name>PostgreSQL::Indexes:</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -4941,18 +4919,18 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <description>Discover all indexes available to the connected user</description>
           <item_prototypes>
             <item_prototype>
-              <name>PostgreSQL Index buffer hits/sec on {#PATH}</name>
+              <name>Index buffer hits {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.index.idx_blks_hit[{$PG_CONN},{#DATABASE},{#INDEX}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
-              <value_type>3</value_type>
+              <value_type>0</value_type>
               <allowed_hosts/>
-              <units/>
+              <units>hits/s</units>
               <snmpv3_contextname/>
               <snmpv3_securityname/>
               <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -4972,7 +4950,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Index Statistics</name>
+                  <name>SVC::PostgreSQL Index Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -5008,18 +4986,18 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Index blocks read/sec on {#PATH}</name>
+              <name>Index blocks read/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.index.idx_blks_read[{$PG_CONN},{#DATABASE},{#INDEX}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
               <allowed_hosts/>
-              <units/>
+              <units>blocks/s</units>
               <snmpv3_contextname/>
               <snmpv3_securityname/>
               <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -5039,7 +5017,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Index Statistics</name>
+                  <name>SVC::PostgreSQL Index Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -5075,16 +5053,16 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Index scans/sec on {#PATH}</name>
+              <name>Index scans/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.index.idx_scan[{$PG_CONN},{#DATABASE},{#INDEX}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
-              <value_type>3</value_type>
+              <value_type>0</value_type>
               <allowed_hosts/>
               <units/>
               <snmpv3_contextname/>
@@ -5106,7 +5084,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Index Statistics</name>
+                  <name>SVC::PostgreSQL Index Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -5142,16 +5120,16 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Index fetched/sec on {#PATH}</name>
+              <name>Index fetched/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.index.idx_tup_fetch[{$PG_CONN},{#DATABASE},{#INDEX}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
-              <value_type>3</value_type>
+              <value_type>0</value_type>
               <allowed_hosts/>
               <units/>
               <snmpv3_contextname/>
@@ -5173,7 +5151,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Index Statistics</name>
+                  <name>SVC::PostgreSQL Index Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -5209,16 +5187,16 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Index entries returned/sec on {#PATH}</name>
+              <name>Index entries returned/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.index.idx_tup_read[{$PG_CONN},{#DATABASE},{#INDEX}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
-              <value_type>3</value_type>
+              <value_type>0</value_type>
               <allowed_hosts/>
               <units/>
               <snmpv3_contextname/>
@@ -5240,7 +5218,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Index Statistics</name>
+                  <name>SVC::PostgreSQL Index Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -5276,16 +5254,16 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Index row count on {#PATH}</name>
+              <name>Index row count on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.index.rows[{$PG_CONN},{#DATABASE},{#INDEX}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
-              <value_type>3</value_type>
+              <value_type>0</value_type>
               <allowed_hosts/>
               <units/>
               <snmpv3_contextname/>
@@ -5307,7 +5285,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Index Statistics</name>
+                  <name>SVC::PostgreSQL Index Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -5336,16 +5314,16 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Index size on {#PATH}</name>
+              <name>Index size on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.index.size[{$PG_CONN},{#DATABASE},{#INDEX}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
-              <value_type>3</value_type>
+              <value_type>0</value_type>
               <allowed_hosts/>
               <units>B</units>
               <snmpv3_contextname/>
@@ -5367,7 +5345,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Index Statistics</name>
+                  <name>SVC::PostgreSQL Index Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -5399,7 +5377,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <trigger_prototypes/>
           <graph_prototypes>
             <graph_prototype>
-              <name>PostgreSQL Index blocks/sec on {#PATH}</name>
+              <name>SVC::PostgreSQL Index blocks/sec on {#PATH}</name>
               <width>900</width>
               <height>200</height>
               <yaxismin>0.0000</yaxismin>
@@ -5443,7 +5421,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>PostgreSQL Index disk size on {#PATH}</name>
+              <name>SVC::PostgreSQL Index disk size on {#PATH}</name>
               <width>900</width>
               <height>200</height>
               <yaxismin>0.0000</yaxismin>
@@ -5475,7 +5453,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>PostgreSQL Index reads/sec on {#PATH}</name>
+              <name>SVC::PostgreSQL Index reads/sec on {#PATH}</name>
               <width>900</width>
               <height>200</height>
               <yaxismin>0.0000</yaxismin>
@@ -5531,7 +5509,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>PostgreSQL Index row count on {#PATH}</name>
+              <name>SVC::PostgreSQL Index row count on {#PATH}</name>
               <width>900</width>
               <height>200</height>
               <yaxismin>0.0000</yaxismin>
@@ -5587,7 +5565,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <master_item/>
         </discovery_rule>
         <discovery_rule>
-          <name>Discover PostgreSQL Settings</name>
+          <name>PostgreSQL::Settings:</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -5657,7 +5635,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Configuration</name>
+                  <name>SVC::PostgreSQL::cfg</name>
                 </application>
               </applications>
               <valuemap/>
@@ -5691,14 +5669,14 @@ Description: {#DESCRIPTION}</description>
               <expression>{Service PostgreSQL:pg.setting[{$PG_CONN},{$PG_DB},{#SETTING}].diff(0)}&gt;0</expression>
               <recovery_mode>0</recovery_mode>
               <recovery_expression/>
-              <name>PostgreSQL Setting: {#SETTING} has changed</name>
+              <name>SVC::PostgreSQL::Setting:L{#SETTING} has changed</name>
               <correlation_mode>0</correlation_mode>
               <correlation_tag/>
-              <url>https://www.postgresql.org/docs/current/static/runtime-config.html</url>
+              <url/>
               <status>0</status>
               <priority>1</priority>
               <description/>
-              <type>1</type>
+              <type>0</type>
               <manual_close>0</manual_close>
               <dependencies/>
               <tags/>
@@ -5729,7 +5707,7 @@ Description: {#DESCRIPTION}</description>
           <master_item/>
         </discovery_rule>
         <discovery_rule>
-          <name>Discover PostgreSQL Tables</name>
+          <name>PostgreSQL::Tables:</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -5761,7 +5739,7 @@ Description: {#DESCRIPTION}</description>
           <description>Discovery PostgreSQL Tables available to the connected user</description>
           <item_prototypes>
             <item_prototype>
-              <name>PostgreSQL Table analyze count on {#PATH}</name>
+              <name>Table analyze count on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -5792,7 +5770,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -5821,7 +5799,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Table autoanalyze count on {#PATH}</name>
+              <name>Table autoanalyze count on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -5852,7 +5830,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -5881,7 +5859,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Table autovacuum count on {#PATH}</name>
+              <name>Table autovacuum count on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -5912,7 +5890,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -5941,7 +5919,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Table index scans/sec on {#PATH}</name>
+              <name>Table index scans/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -5952,7 +5930,7 @@ Description: {#DESCRIPTION}</description>
               <status>0</status>
               <value_type>0</value_type>
               <allowed_hosts/>
-              <units/>
+              <units>scans/s</units>
               <snmpv3_contextname/>
               <snmpv3_securityname/>
               <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -5968,11 +5946,11 @@ Description: {#DESCRIPTION}</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description>Number of index scans initiated on this table</description>
+              <description>Number of index scans initiated on this table.</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -6008,7 +5986,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Table live rows fetched by indexes/sec on {#PATH}</name>
+              <name>Table live rows fetched by indexes/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6039,7 +6017,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -6075,7 +6053,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Table last analyze on {#PATH}</name>
+              <name>Table last analyze on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6106,7 +6084,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -6135,7 +6113,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Table last auto-analyze on {#PATH}</name>
+              <name>Table last auto-analyze on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6166,7 +6144,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -6195,7 +6173,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Table last auto-vacuum on {#PATH}</name>
+              <name>Table last auto-vacuum on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6226,7 +6204,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -6255,7 +6233,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Table last manual vacuum on {#PATH}</name>
+              <name>Table last manual vacuum on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6286,7 +6264,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -6315,7 +6293,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Table estimated dead rows on {#PATH}</name>
+              <name>Table estimated dead rows on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6346,7 +6324,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -6375,7 +6353,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Table estimated live rows on {#PATH}</name>
+              <name>Table estimated live rows on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6406,7 +6384,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -6435,7 +6413,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Table rows deleted/sec on {#PATH}</name>
+              <name>Table rows deleted/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6466,7 +6444,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -6502,7 +6480,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Table rows hot updated on {#PATH}</name>
+              <name>Table rows hot updated on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6533,7 +6511,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -6569,7 +6547,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Table rows inserted/sec on {#PATH}</name>
+              <name>Table rows inserted/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6600,7 +6578,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -6636,7 +6614,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Table rows updated/sec on {#PATH}</name>
+              <name>Table rows updated/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6667,7 +6645,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -6703,7 +6681,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Table estimated row count on {#PATH}</name>
+              <name>Table estimated row count on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6734,7 +6712,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -6763,7 +6741,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Table sequential scans/sec on {#PATH}</name>
+              <name>Table sequential scans/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6794,7 +6772,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -6830,7 +6808,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Table live rows fetched by scans/sec on {#PATH}</name>
+              <name>Table live rows fetched by scans/sec on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6861,7 +6839,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -6897,7 +6875,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Table disk size on {#PATH}</name>
+              <name>Table disk size on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6928,7 +6906,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -6957,7 +6935,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>PostgreSQL Table manual vacuum count on {#PATH}</name>
+              <name>Table manual vacuum count on {#PATH}</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6988,7 +6966,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Table Statistics</name>
+                  <name>SVC::PostgreSQL Table Statistics</name>
                 </application>
               </applications>
               <valuemap/>
@@ -7020,7 +6998,7 @@ Description: {#DESCRIPTION}</description>
           <trigger_prototypes/>
           <graph_prototypes>
             <graph_prototype>
-              <name>PostgreSQL Disk size on table {#PATH}</name>
+              <name>SVC::PostgreSQL Disk size on table {#PATH}</name>
               <width>900</width>
               <height>200</height>
               <yaxismin>0.0000</yaxismin>
@@ -7052,7 +7030,7 @@ Description: {#DESCRIPTION}</description>
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>PostgreSQL Fetches/sec on table {#PATH}</name>
+              <name>SVC::PostgreSQL Fetches/sec on table {#PATH}</name>
               <width>900</width>
               <height>200</height>
               <yaxismin>0.0000</yaxismin>
@@ -7096,7 +7074,7 @@ Description: {#DESCRIPTION}</description>
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>PostgreSQL Maintenance on table {#PATH}</name>
+              <name>SVC::PostgreSQL Maintenance on table {#PATH}</name>
               <width>900</width>
               <height>200</height>
               <yaxismin>0.0000</yaxismin>
@@ -7164,7 +7142,7 @@ Description: {#DESCRIPTION}</description>
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>PostgreSQL Row count on table {#PATH}</name>
+              <name>SVC::PostgreSQL Row count on table {#PATH}</name>
               <width>900</width>
               <height>200</height>
               <yaxismin>0.0000</yaxismin>
@@ -7220,7 +7198,7 @@ Description: {#DESCRIPTION}</description>
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>PostgreSQL Scans/sec on table {#PATH}</name>
+              <name>SVC::PostgreSQL Scans/sec on table {#PATH}</name>
               <width>900</width>
               <height>200</height>
               <yaxismin>0.0000</yaxismin>
@@ -7264,7 +7242,7 @@ Description: {#DESCRIPTION}</description>
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>PostgreSQL Writes/sec on table {#PATH}</name>
+              <name>SVC::PostgreSQL Writes/sec on table {#PATH}</name>
               <width>900</width>
               <height>200</height>
               <yaxismin>0.0000</yaxismin>
@@ -7356,7 +7334,7 @@ Description: {#DESCRIPTION}</description>
           <master_item/>
         </discovery_rule>
         <discovery_rule>
-          <name>Discover PostgreSQL Tablespaces</name>
+          <name>PostgreSQL::Tablespaces:</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
@@ -7388,7 +7366,7 @@ Description: {#DESCRIPTION}</description>
           <description/>
           <item_prototypes>
             <item_prototype>
-              <name>PostgreSQL Tablespace disk size on ({#TABLESPACE})</name>
+              <name>size on ({#TABLESPACE})</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -7419,7 +7397,7 @@ Description: {#DESCRIPTION}</description>
               <inventory_link>0</inventory_link>
               <applications>
                 <application>
-                  <name>PostgreSQL Tablespace Statistics</name>
+                  <name>SVC::PostgreSQL::tablespace</name>
                 </application>
               </applications>
               <valuemap/>
@@ -7451,7 +7429,7 @@ Description: {#DESCRIPTION}</description>
           <trigger_prototypes/>
           <graph_prototypes>
             <graph_prototype>
-              <name>PostgreSQL Disk size on {#TABLESPACE}</name>
+              <name>SVC::PostgreSQL Disk size on {#TABLESPACE}</name>
               <width>900</width>
               <height>200</height>
               <yaxismin>0.0000</yaxismin>
@@ -7548,7 +7526,7 @@ Description: {#DESCRIPTION}</description>
       <expression>{Service PostgreSQL:pg.modver.diff(0)}&gt;0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>PostgreSQL Agent module version was changed on {HOST.NAME}</name>
+      <name>SVC::PostgreSQL Agent module version was changed on {HOST.NAME}</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
@@ -7564,11 +7542,11 @@ Description: {#DESCRIPTION}</description>
       <expression>{Service PostgreSQL:pg.backends.free[{$PG_CONN},{$PG_DB}].last()}&lt;{$PG_BACKENDS_CRIT}</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>PostgreSQL Backend connections are exhausted on {HOST.NAME}</name>
+      <name>SVC::PostgreSQL Backend connections are exhausted</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url>https://www.postgresql.org/docs/current/static/runtime-config-connection.html#GUC-MAX-CONNECTIONS</url>
-      <status>0</status>
+      <status>1</status>
       <priority>4</priority>
       <description>Less than {$PG_BACKENDS_CRIT} backends connections are available.&#13;
 &#13;
@@ -7582,11 +7560,11 @@ Investigate the issue immediately and consider increasing max_connections.</desc
       <expression>({TRIGGER.VALUE}=0 and {Service PostgreSQL:pg.prepared_xacts_ratio[{$PG_CONN},{$PG_DB}].last()}&gt;{$PG_PXACT_WARN} and  {Service PostgreSQL:pg.prepared_xacts_ratio[{$PG_CONN},{$PG_DB}].last()}&lt;{$PG_PXACT_CRIT}) or ({TRIGGER.VALUE}=1 and {Service PostgreSQL:pg.prepared_xacts_ratio[{$PG_CONN},{$PG_DB}].last()}&gt;{$PG_PXACT_WARN})</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>PostgreSQL Prepared transactions are near exhaustion on {HOST.NAME}</name>
+      <name>SVC::PostgreSQL Prepared transactions are near exhaustion</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url>https://www.postgresql.org/docs/current/static/runtime-config-resource.html#GUC-MAX-PREPARED-TRANSACTIONS</url>
-      <status>0</status>
+      <status>1</status>
       <priority>2</priority>
       <description>80% of the maximum configured prepared transactions are in use.&#13;
 &#13;
@@ -7600,28 +7578,12 @@ Investigate the issue and consider increasing max_prepared_transactions.</descri
       <expression>{Service PostgreSQL:pg.uptime[{$PG_CONN},{$PG_DB}].change(0)}&lt;0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>PostgreSQL Server on {HOST.NAME} has just been restarted</name>
+      <name>SVC::PostgreSQL Server has just been restarted</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
-      <status>0</status>
+      <status>1</status>
       <priority>1</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{Service PostgreSQL:pg.connect[{$PG_CONN},{$PG_DB}].max(#3)}&lt;1</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>PostgreSQL Server on {HOST.NAME} is unreachable for the last 3 polls</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>4</priority>
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
@@ -7632,11 +7594,11 @@ Investigate the issue and consider increasing max_prepared_transactions.</descri
       <expression>{Service PostgreSQL:pg.version[{$PG_CONN},{$PG_DB}].diff(0)}&gt;0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>PostgreSQL Server version was changed on {HOST.NAME}</name>
+      <name>SVC::PostgreSQL Server version was changed</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
-      <status>0</status>
+      <status>1</status>
       <priority>1</priority>
       <description/>
       <type>0</type>
@@ -7648,11 +7610,11 @@ Investigate the issue and consider increasing max_prepared_transactions.</descri
       <expression>{Service PostgreSQL:pg.db.xid_age[{$PG_CONN},{$PG_DB}].last()}&gt;{$PG_XID_CRIT}</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>PostgreSQL Transaction IDs are exhausted on {HOST.NAME}</name>
+      <name>SVC::PostgreSQL Transaction IDs are exhausted</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url>https://www.postgresql.org/docs/current/static/routine-vacuuming.html#VACUUM-FOR-WRAPAROUND</url>
-      <status>0</status>
+      <status>1</status>
       <priority>4</priority>
       <description>Less than 1 million (0.0005%) Transactions IDs are remaining for allocation.&#13;
 &#13;
@@ -7666,11 +7628,11 @@ Perform a VACUUM immediately to reset the available Transaction IDs and review y
       <expression>({TRIGGER.VALUE}=0 and {Service PostgreSQL:pg.db.xid_age[{$PG_CONN},{$PG_DB}].last()}&gt;{$PG_XID_WARN} and {Service PostgreSQL:pg.db.xid_age[{$PG_CONN},{$PG_DB}].last()}&lt;{$PG_XID_CRIT}) or ({TRIGGER.VALUE}=1 and {Service PostgreSQL:pg.db.xid_age[{$PG_CONN},{$PG_DB}].last()}&gt;{$PG_XID_WARN})</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>PostgreSQL Transaction IDs are near exhaustion on {HOST.NAME}</name>
+      <name>SVC::PostgreSQL Transaction IDs are near exhaustion</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url>https://www.postgresql.org/docs/current/static/routine-vacuuming.html#VACUUM-FOR-WRAPAROUND</url>
-      <status>0</status>
+      <status>1</status>
       <priority>2</priority>
       <description>Less than 10 million (0.04%) Transactions IDs are remaining for allocation.&#13;
 &#13;
@@ -7680,10 +7642,26 @@ Perform a VACUUM as soon a possible to reset the available Transaction IDs and r
       <dependencies/>
       <tags/>
     </trigger>
+    <trigger>
+      <expression>{Service PostgreSQL:pg.connect[{$PG_CONN},{$PG_DB}].max(#3)}&lt;1</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>SVC::PostgreSQL unreachable for the last 3 polls</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>1</status>
+      <priority>4</priority>
+      <description/>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
   </triggers>
   <graphs>
     <graph>
-      <name>PostgreSQL Backend Connections</name>
+      <name>SVC::PostgreSQL Backend Connections</name>
       <width>900</width>
       <height>200</height>
       <yaxismin>0.0000</yaxismin>
@@ -7701,7 +7679,7 @@ Perform a VACUUM as soon a possible to reset the available Transaction IDs and r
       <ymax_item_1>0</ymax_item_1>
       <graph_items>
         <graph_item>
-          <sortorder>3</sortorder>
+          <sortorder>0</sortorder>
           <drawtype>0</drawtype>
           <color>000000</color>
           <yaxisside>0</yaxisside>
@@ -7715,7 +7693,7 @@ Perform a VACUUM as soon a possible to reset the available Transaction IDs and r
       </graph_items>
     </graph>
     <graph>
-      <name>PostgreSQL Buffers</name>
+      <name>SVC::PostgreSQL Buffers</name>
       <width>900</width>
       <height>200</height>
       <yaxismin>0.0000</yaxismin>
@@ -7783,7 +7761,7 @@ Perform a VACUUM as soon a possible to reset the available Transaction IDs and r
       </graph_items>
     </graph>
     <graph>
-      <name>PostgreSQL Checkpoints</name>
+      <name>SVC::PostgreSQL Checkpoints</name>
       <width>900</width>
       <height>200</height>
       <yaxismin>0.0000</yaxismin>
@@ -7827,7 +7805,7 @@ Perform a VACUUM as soon a possible to reset the available Transaction IDs and r
       </graph_items>
     </graph>
     <graph>
-      <name>PostgreSQL Configuration thresholds</name>
+      <name>SVC::PostgreSQL Configuration thresholds</name>
       <width>900</width>
       <height>200</height>
       <yaxismin>0.0000</yaxismin>
