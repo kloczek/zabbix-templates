@@ -52,9 +52,10 @@ Base Linux monitoring template.
     - add to ```MEM``` screen ```MEM::active vs inactive``` graph
   - Triggers:
     - ```SYS::Host is down``` corrected descrition
-    - ```CPU::idle``` triggers change to raise alarm when idle time is less than 5% CPU
-      idle time time for at least 1 hour and alarm is cleared ehen for next hour will be no other
-      flapping anbove 5%
+    - ```CPU::idle``` trigger now uses macros:
+      ```{$OS_CPU_IDLE}```: threshold below which is raised alarm about low ```CPU::idle time```&#13;
+      ```{$OS_CPU_IDLE_HIST}```: hysteresis time for ```CPU::idle``` after which alarm starts and recovers after additional period defined in ```{$OS_CPU_IDLE_HIST}```</description>
+      If those macros are not defined in system macros alarms about low ```CPU::idle time``` will be not created
 - 1.0.4 (2018-06-11)
   - Graphs:
     - change all graphs resolution to 1200x300

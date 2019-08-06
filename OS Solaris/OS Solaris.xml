@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-06-08T14:01:18Z</date>
+  <date>2019-08-06T15:48:15Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -16,7 +16,10 @@
 Version: 1.0.4 (2018-06-11)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/OS%20Solaris&#13;
 &#13;
-#### Notes:</description>
+#### Notes:&#13;
+- used macros:&#13;
+```{$OS_CPU_IDLE}```: threshold below which is raised alarm about low ```CPU::idle time```&#13;
+```{$OS_CPU_IDLE_HIST}```: hysteresis time for ```CPU::idle``` after which alarm starts and recovers after additional period defined in ```{$OS_CPU_IDLE_HIST}```</description>
       <groups>
         <group>
           <name>Templates</name>
@@ -5117,16 +5120,17 @@ Please login on the host and check output of the commands:&#13;
       <tags/>
     </trigger>
     <trigger>
-      <expression>{OS Solaris:system.cpu.util[,idle,avg1].last(0)}&lt;5</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
+      <expression>{OS Solaris:system.cpu.util[,idle,avg1].last(0)}&lt;{$OS_CPU_IDLE}</expression>
+      <recovery_mode>1</recovery_mode>
+      <recovery_expression>{OS Solaris:system.cpu.util[,idle,avg1].last({$OS_CPU_IDLE_HIST})}&lt;{$OS_CPU_IDLE}</recovery_expression>
       <name>CPU::idle {ITEM.VALUE}</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
       <status>0</status>
       <priority>3</priority>
-      <description/>
+      <description>CPU idle time less than {$OS_CPU_IDLE}% for more than {$OS_CPU_IDLE_HIST}.&#13;
+If those macros are not defined alarms about low CPU::idle will be not created.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>
