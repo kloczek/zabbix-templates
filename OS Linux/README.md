@@ -52,9 +52,9 @@ Base Linux monitoring template.
     - add to ```MEM``` screen ```MEM::active vs inactive``` graph
   - Triggers:
     - ```SYS::Host is down``` corrected descrition
-    - ```CPU::idle``` triggers change to raise alarm when idle time is less than 5% or 15% CPU
+    - ```CPU::idle``` triggers change to raise alarm when idle time is less than 5% CPU
       idle time time for at least 1 hour and alarm is cleared ehen for next hour will be no other
-      flapping anbove 5% or 15%
+      flapping anbove 5%
 - 1.0.4 (2018-06-11)
   - Graphs:
     - change all graphs resolution to 1200x300

@@ -4969,28 +4969,6 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{OS Linux:system.cpu.util[,idle,avg1].last(1h)}&lt;15</expression>
-      <recovery_mode>1</recovery_mode>
-      <recovery_expression>{OS Linux:system.cpu.util[,idle,avg1].last(1h)}&gt;15</recovery_expression>
-      <name>CPU::idle {ITEM.VALUE}</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>1</priority>
-      <description>CPU idle time less than 15% for more than 1h.</description>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies>
-        <dependency>
-          <name>CPU::idle {ITEM.VALUE}</name>
-          <expression>{OS Linux:system.cpu.util[,idle,avg1].last(1h)}&lt;5</expression>
-          <recovery_expression>{OS Linux:system.cpu.util[,idle,avg1].last(1h)}&gt;5</recovery_expression>
-        </dependency>
-      </dependencies>
-      <tags/>
-    </trigger>
-    <trigger>
       <expression>{OS Linux:system.cpu.util[,steal,avg1].min(5m)}&gt;{$STEAL_WARN}</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
