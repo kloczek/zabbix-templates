@@ -4,7 +4,7 @@
 Base Linux monitoring template.
 
 #### Notes:
-- compliant with EL7 and compatible
+- compliant with EL7, OL7, Ubuntu (Xenial, Bionic)
 - documentation:
   - https://www.kernel.org/doc/Documentation/filesystems/proc.txt
 

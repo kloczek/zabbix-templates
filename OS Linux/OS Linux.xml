@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-07-31T13:15:11Z</date>
+  <date>2019-08-06T15:22:22Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -17,7 +17,7 @@ Version: 1.0.4 (2018-06-11)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/OS%20Linux&#13;
 &#13;
 Notes:&#13;
-- compliant with EL7 and compatible</description>
+- compliant with EL7, OL7, Ubuntu (Xenial, Bionic)</description>
       <groups>
         <group>
           <name>Templates</name>

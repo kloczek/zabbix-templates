@@ -24,6 +24,7 @@ This repository provides a set of templates which offers the alternative set of 
     - interfaces: add to all applications, items, triggers anf graphs prototypes names ```[{#IFINDEX}]``` to display physical port number in those names
     - graphs improvements
 - **OS Linux**
+  - template can be now used on Ubuntu and compatible as well (tested on Xenial and Bionic)
   - Items:
     - ```NET::segments retransmitted``` sed regexp changed to cover old "segments retransmited"
       output as well
