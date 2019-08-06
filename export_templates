@@ -19,6 +19,7 @@ for i in \
 	"Service Apache" \
 	"Service MySQL" \
 	"Service Nginx" \
+	"Service PostgreSQ" \
 	"Service php-fpm" \
 	"Service Zabbix Agent" \
 	"Service Zabbix Proxy" \

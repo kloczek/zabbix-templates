@@ -17,6 +17,7 @@ This repository provides a set of templates which offers the alternative set of 
 - Make all templates zabbix 4.0.x ready by remove using $1-$9 macros in items names
 - New templates
   - [Service php-fpm](https://github.com/kloczek/zabbix-templates/tree/devel/Service%20php-fpm)
+  - [Service PostgreSQL](https://github.com/kloczek/zabbix-templates/tree/PostgreSQL/Service%20PostgreSQL)
 - **IF-MIB**
   - LLDs:
     - interfaces: use ```IF-MIB::ifAdminStatus``` instead ```IF-MIB::ifOperusStatus``` on checking if interface is up or down
