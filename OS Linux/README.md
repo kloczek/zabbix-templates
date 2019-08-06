@@ -29,6 +29,8 @@ Base Linux monitoring template.
       - ```MEM::anon```
       - ```MEM::inactive```
       - ```MEM::slab```
+    - ```MEM::total`` history period changed to 1h as "Discard unchanged" filter preprocessor cannot be used for now
+      https://support.zabbix.com/browse/ZBX-16456
     - Graphs:
       - new graph ```MEM::active vs inactive```
   - LLD:
