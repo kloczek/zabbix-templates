@@ -38,6 +38,11 @@ This repository provides a set of templates which offers the alternative set of 
     - ```NET:``` LLD items Application changed from ```NET``` prototype ```NET::{#FSNAME}```
     - ```VOL:``` LLD items Application changed from ```VOL``` prototype ```VOL::{#FSNAME}```
     - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
+    - new MEM:: metrics:
+      - ```MEM::active```
+      - ```MEM::anon```
+      - ```MEM::inactive```
+      - ```MEM::slab```
   - LLD:
     - rewrited ```VOL``` triggers to use proper severities and triggers prototypes dependencies
     - LXC monitoring adaptations:
@@ -50,7 +55,8 @@ This repository provides a set of templates which offers the alternative set of 
     - ```DSK:``` filter: remove from the list of moniitored block devices ZFS vdevs partitions and
       corrected regexp to remove all SCSI partitions
   - Screens:
-    - ```DSK, NET``` added
+    - new ```DSK, NET``` screen added
+    - add to ```MEM``` screen ```MEM::active vs inactive``` graph
   - Triggers:
     - ```SYS::Host is down``` corrected descrition
     - ```CPU::idle``` triggers change to raise alarm when idle time is less than 5% or 15% CPU
