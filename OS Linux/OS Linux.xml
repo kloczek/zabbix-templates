@@ -4729,7 +4729,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
         <screen>
           <name>MEM</name>
           <hsize>1</hsize>
-          <vsize>1</vsize>
+          <vsize>2</vsize>
           <screen_items>
             <screen_item>
               <resourcetype>0</resourcetype>
