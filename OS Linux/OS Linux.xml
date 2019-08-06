@@ -3812,7 +3812,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>vfs.fs.inode[{#FSNAME},total]</key>
-              <delay>1d</delay>
+              <delay>1h</delay>
               <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
@@ -3992,7 +3992,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>vfs.fs.size[{#FSNAME},total]</key>
-              <delay>1d</delay>
+              <delay>1h</delay>
               <history>2w</history>
               <trends>365d</trends>
               <status>0</status>

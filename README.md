@@ -56,6 +56,9 @@ This repository provides a set of templates which offers the alternative set of 
     - ```DSK:``` filter: corrected to get reed of loop devices. Use ```loop.[0-9]``` instead ```loop```
     - ```DSK:``` filter: remove from the list of moniitored block devices ZFS vdevs partitions and
       corrected regexp to remove all SCSI partitions
+    - ```VOL:``` ``{#FSNAME}::total``` and ```{#FSNAME}::inodes::total``` history period changed to 1h
+      as "Discard unchanged" filter preprocessor cannot be used for now
+      https://support.zabbix.com/browse/ZBX-16456
   - Screens:
     - new ```DSK, NET``` screen added
     - add to ```MEM``` screen ```MEM::active vs inactive``` graph
