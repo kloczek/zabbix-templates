@@ -3060,10 +3060,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
             </conditions>
           </filter>
           <lifetime>1d</lifetime>
-          <description>List of Linux SCSI, ATA, XEN and Device Mapper storage devices without partitions.&#13;
-Discovery of storage devices is filtered over global regular expression "OS Linux::BlkDev" regexp.&#13;
-&#13;
-@OS Linux::BlkDev</description>
+          <description>List of Linux SCSI, ATA, XEN, ZFS vdevs and Device Mapper storage devices without partitions.</description>
           <item_prototypes>
             <item_prototype>
               <name>{#DISK}::read::IOs</name>
