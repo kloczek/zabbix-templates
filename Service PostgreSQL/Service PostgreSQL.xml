@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-08-06T17:18:58Z</date>
+  <date>2019-08-06T17:31:23Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -731,9 +731,7 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Returns the average interval in seconds between each checkpoint that has occurred since statistics were reset, or 0 if no checkpoints have occurred.&#13;
-&#13;
-Requires libzbxpgsql v1.0.0 or above.</description>
+          <description>Returns the average interval in seconds between each checkpoint that has occurred since statistics were reset, or 0 if no checkpoints have occurred.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1052,9 +1050,7 @@ NOTE: If you are using connection pooling, this parameter should bypass the conn
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Returns the age (as a transaction count) of the oldest Transaction ID for all readable databases.&#13;
-&#13;
-Requires libzbxpgsql v1.0.0 or above.</description>
+          <description>Returns the age (as a transaction count) of the oldest Transaction ID for all readable databases.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1231,9 +1227,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Returns the age of the oldest transaction that is currently prepared for two phase commit.&#13;
-&#13;
-Requires libzbxpgsql v1.0.0 or above.</description>
+          <description>Returns the age of the oldest transaction that is currently prepared for two phase commit.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1292,9 +1286,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Returns the number of transactions that are currently prepared for two phase commit.&#13;
-&#13;
-Requires libzbxpgsql v1.0.0 or above.</description>
+          <description>Returns the number of transactions that are currently prepared for two phase commit.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1353,9 +1345,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Returns the number of transactions that are currently prepared for two phase commit as a percentage of the maximum available prepared transactions.&#13;
-&#13;
-Requires libzbxpgsql v1.0.0 or above.</description>
+          <description>Returns the number of transactions that are currently prepared for two phase commit as a percentage of the maximum available prepared transactions.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1482,9 +1472,7 @@ Requires libzbxpgsql v1.0.0 or above.</description>
           <port/>
           <description>Returns the UTC timestamp that the PostgreSQL server process started.&#13;
 &#13;
-Accepts only the default connection parameters.&#13;
-&#13;
-Requires libzbxpgsql v1.0.0 or above.</description>
+Accepts only the default connection parameters.</description>
           <inventory_link>0</inventory_link>
           <applications/>
           <valuemap/>
