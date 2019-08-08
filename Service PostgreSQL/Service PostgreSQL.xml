@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-08-08T17:05:10Z</date>
+  <date>2019-08-08T17:57:49Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -41,6 +41,9 @@ https://www.postgresql.org/docs/9.6/monitoring-stats.html</description>
         </group>
       </groups>
       <applications>
+        <application>
+          <name>PROC</name>
+        </application>
         <application>
           <name>SVC::PostgreSQL</name>
         </application>
@@ -1497,7 +1500,11 @@ NOTE: If you are using connection pooling, this parameter should bypass the conn
 &#13;
 Accepts only the default connection parameters.</description>
           <inventory_link>0</inventory_link>
-          <applications/>
+          <applications>
+            <application>
+              <name>SVC::PostgreSQL</name>
+            </application>
+          </applications>
           <valuemap/>
           <logtimefmt/>
           <preprocessing/>
@@ -1643,65 +1650,6 @@ Accepts only the default connection parameters.</description>
           <master_item/>
         </item>
         <item>
-          <name>version</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>pg.version[{$PG_CONN},{$PG_DB}]</key>
-          <delay>1m</delay>
-          <history>2w</history>
-          <trends>0</trends>
-          <status>0</status>
-          <value_type>4</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::PostgreSQL</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
           <name>PROC::$1</name>
           <type>7</type>
           <snmp_community/>
@@ -1731,12 +1679,82 @@ Accepts only the default connection parameters.</description>
           <port/>
           <description>Number PostgreSQL processes.</description>
           <inventory_link>0</inventory_link>
-          <applications/>
+          <applications>
+            <application>
+              <name>PROC</name>
+            </application>
+          </applications>
           <valuemap>
             <name>Service state</name>
           </valuemap>
           <logtimefmt/>
           <preprocessing/>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item/>
+        </item>
+        <item>
+          <name>version</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>service.pgsql.version</key>
+          <delay>30s</delay>
+          <history>2w</history>
+          <trends>0</trends>
+          <status>0</status>
+          <value_type>4</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>The PostgreSQL server version.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::PostgreSQL::cfg</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing>
+            <step>
+              <type>20</type>
+              <params>7d</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
           <jmx_endpoint/>
           <timeout>3s</timeout>
           <url/>
@@ -7584,7 +7602,7 @@ Description: {#DESCRIPTION}</description>
           <value>2137483648</value>
         </macro>
         <macro>
-          <macro>{$SVC_PSQL_PROCESS}</macro>
+          <macro>{$SVC_PSQL_PROC}</macro>
           <value>postgres</value>
         </macro>
       </macros>
@@ -7598,13 +7616,13 @@ Description: {#DESCRIPTION}</description>
       <expression>{Service PostgreSQL:pg.modver.diff(0)}&gt;0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>SVC::PostgreSQL Agent module version was changed on {HOST.NAME}</name>
+      <name>SVC::PostgreSQL::version has changed to {ITEM.LASTVALUE}</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
       <status>0</status>
       <priority>1</priority>
-      <description/>
+      <description>The PostgreSQL engine version has been changed.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>
@@ -7663,7 +7681,7 @@ Investigate the issue and consider increasing max_prepared_transactions.</descri
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service PostgreSQL:pg.version[{$PG_CONN},{$PG_DB}].diff(0)}&gt;0</expression>
+      <expression>{Service PostgreSQL:service.pgsql.version.diff(0)}&gt;0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::PostgreSQL Server version was changed</name>
