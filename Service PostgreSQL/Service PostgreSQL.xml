@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-08-06T17:31:23Z</date>
+  <date>2019-08-08T14:58:21Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -71,8 +71,8 @@
           <snmp_community/>
           <snmp_oid/>
           <key>pg.backends.count[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -136,8 +136,8 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.backends.free[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -195,8 +195,8 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.backends.ratio[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -261,8 +261,8 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.buffers_alloc[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -327,8 +327,8 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.buffers_backend[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -393,8 +393,8 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.buffers_backend_fsync[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -459,8 +459,8 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.buffers_checkpoint[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -525,8 +525,8 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.buffers_clean[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -591,8 +591,8 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.checkpoints_req[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -650,8 +650,8 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.checkpoints_timed[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -709,8 +709,8 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.checkpoint_avg_interval[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -768,8 +768,8 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.checkpoint_sync_time[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -834,8 +834,8 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.checkpoint_time_ratio[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -900,8 +900,8 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.checkpoint_write_time[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -966,8 +966,8 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.connect[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1028,8 +1028,8 @@ NOTE: If you are using connection pooling, this parameter should bypass the conn
           <snmp_community/>
           <snmp_oid/>
           <key>pg.db.xid_age[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1087,8 +1087,8 @@ NOTE: If you are using connection pooling, this parameter should bypass the conn
           <snmp_community/>
           <snmp_oid/>
           <key>pg.maxwritten_clean[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1146,8 +1146,8 @@ NOTE: If you are using connection pooling, this parameter should bypass the conn
           <snmp_community/>
           <snmp_oid/>
           <key>pg.modver</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>4</value_type>
@@ -1205,8 +1205,8 @@ NOTE: If you are using connection pooling, this parameter should bypass the conn
           <snmp_community/>
           <snmp_oid/>
           <key>pg.prepared_xacts_age[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1264,8 +1264,8 @@ NOTE: If you are using connection pooling, this parameter should bypass the conn
           <snmp_community/>
           <snmp_oid/>
           <key>pg.prepared_xacts_count[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1323,8 +1323,8 @@ NOTE: If you are using connection pooling, this parameter should bypass the conn
           <snmp_community/>
           <snmp_oid/>
           <key>pg.prepared_xacts_ratio[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1389,8 +1389,8 @@ NOTE: If you are using connection pooling, this parameter should bypass the conn
           <snmp_community/>
           <snmp_oid/>
           <key>pg.queries.longest[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>0</value_type>
@@ -1448,8 +1448,8 @@ NOTE: If you are using connection pooling, this parameter should bypass the conn
           <snmp_community/>
           <snmp_oid/>
           <key>pg.starttime[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>4</value_type>
@@ -1505,8 +1505,8 @@ Accepts only the default connection parameters.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.stats_reset[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>4</value_type>
@@ -1564,8 +1564,8 @@ Accepts only the default connection parameters.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.uptime[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
@@ -1625,8 +1625,8 @@ Accepts only the default connection parameters.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.version[{$PG_CONN},{$PG_DB}]</key>
-          <delay>60</delay>
-          <history>7d</history>
+          <delay>1m</delay>
+          <history>2w</history>
           <trends>0</trends>
           <status>0</status>
           <value_type>4</value_type>
@@ -1718,8 +1718,8 @@ Accepts only the default connection parameters.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.db.blks_hit[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -1785,8 +1785,8 @@ Accepts only the default connection parameters.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.db.blks_read[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -1852,8 +1852,8 @@ Accepts only the default connection parameters.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.db.blk_read_time[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -1919,8 +1919,8 @@ Accepts only the default connection parameters.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.db.blk_write_time[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -1986,8 +1986,8 @@ Accepts only the default connection parameters.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.db.conflicts[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2053,8 +2053,8 @@ Accepts only the default connection parameters.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.db.deadlocks[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2120,8 +2120,8 @@ Accepts only the default connection parameters.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.db.numbackends[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -2180,8 +2180,8 @@ Accepts only the default connection parameters.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.db.size[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -2240,8 +2240,8 @@ Accepts only the default connection parameters.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.db.stats_reset[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>0</trends>
               <status>0</status>
               <value_type>4</value_type>
@@ -2300,8 +2300,8 @@ Accepts only the default connection parameters.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.db.temp_bytes[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2367,8 +2367,8 @@ Accepts only the default connection parameters.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.db.temp_files[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2434,8 +2434,8 @@ Accepts only the default connection parameters.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.db.tup_deleted[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2501,8 +2501,8 @@ Accepts only the default connection parameters.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.db.tup_fetched[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2568,8 +2568,8 @@ Accepts only the default connection parameters.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.db.tup_inserted[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2635,8 +2635,8 @@ Accepts only the default connection parameters.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.db.tup_returned[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2702,8 +2702,8 @@ Accepts only the default connection parameters.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.db.tup_updated[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2769,8 +2769,8 @@ Accepts only the default connection parameters.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.db.xact_commit[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2836,8 +2836,8 @@ Accepts only the default connection parameters.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.db.xact_rollback[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -2903,8 +2903,8 @@ Accepts only the default connection parameters.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.db.xid_age[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -2965,8 +2965,8 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.prepared_xacts_age[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3027,8 +3027,8 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.prepared_xacts_count[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3089,8 +3089,8 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.queries.longest[{$PG_CONN},{$PG_DB},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -3151,8 +3151,8 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.idx_scan[{$PG_CONN},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3218,8 +3218,8 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.idx_tup_fetch[{$PG_CONN},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3285,8 +3285,8 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.n_dead_tup[{$PG_CONN},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3352,8 +3352,8 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.n_live_tup[{$PG_CONN},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3419,8 +3419,8 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.n_mod_since_analyze[{$PG_CONN},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3479,8 +3479,8 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.n_tup_del[{$PG_CONN},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3546,8 +3546,8 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.n_tup_hot_upd[{$PG_CONN},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3613,8 +3613,8 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.n_tup_ins[{$PG_CONN},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3680,8 +3680,8 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.n_tup_upd[{$PG_CONN},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3747,8 +3747,8 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.rows[{$PG_CONN},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3807,8 +3807,8 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.seq_scan[{$PG_CONN},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -3874,8 +3874,8 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.seq_tup_read[{$PG_CONN},{#DATABASE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -5594,8 +5594,8 @@ Requires libzbxpgsql v1.0.0 or above.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.setting[{$PG_CONN},{$PG_DB},{#SETTING}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>0</trends>
               <status>0</status>
               <value_type>4</value_type>
@@ -5732,8 +5732,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.analyze_count[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -5792,8 +5792,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.autoanalyze_count[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -5852,8 +5852,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.autovacuum_count[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -5912,8 +5912,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.idx_scan[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -5979,8 +5979,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.idx_tup_fetch[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -6046,8 +6046,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.last_analyze[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>0</trends>
               <status>0</status>
               <value_type>4</value_type>
@@ -6106,8 +6106,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.last_autoanalyze[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>0</trends>
               <status>0</status>
               <value_type>4</value_type>
@@ -6166,8 +6166,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.last_autovacuum[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>0</trends>
               <status>0</status>
               <value_type>4</value_type>
@@ -6226,8 +6226,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.last_vacuum[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>0</trends>
               <status>0</status>
               <value_type>4</value_type>
@@ -6286,8 +6286,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.n_dead_tup[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -6346,8 +6346,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.n_live_tup[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -6406,8 +6406,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.n_tup_del[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -6473,8 +6473,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.n_tup_hot_upd[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -6540,8 +6540,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.n_tup_ins[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -6607,8 +6607,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.n_tup_upd[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -6674,8 +6674,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.rows[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -6734,8 +6734,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.seq_scan[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -6801,8 +6801,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.seq_tup_read[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>0</value_type>
@@ -6868,8 +6868,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.size[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -6928,8 +6928,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.table.vacuum_count[{$PG_CONN},{#DATABASE},{#TABLE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
@@ -7359,8 +7359,8 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>pg.tablespace.size[{$PG_CONN},{$PG_DB},{#TABLESPACE}]</key>
-              <delay>60</delay>
-              <history>7d</history>
+              <delay>1m</delay>
+              <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
               <value_type>3</value_type>
