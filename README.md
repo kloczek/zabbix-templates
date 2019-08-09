@@ -101,6 +101,17 @@ This repository provides a set of templates which offers the alternative set of 
   - Macro ```{$HTTP_SERVICE_PROCESS}```: has bee nadded to allow easy use it on Debian/Ubuntu. Default value is ```http```. On Ubuntu/Debian that value needs to be changed to ```apache2```
   - Triggers:
     - rename ```SVC::Apache tcp/{$HTTP_SERVICE_PORT} is DOWN``` to ```NET::Apache tcp/{$HTTP_SERVICE_PORT} is DOWN```
+- **Service MySQL**
+  - Items:
+    - ```PROC::mysqld```
+      - change hardcoded MySQL process name to the macro ``{$SVC_MYSQL_PROC}```
+      - add missing "processes" unit
+    - ```version``` add ```Discard unchanged with hartbeat``` filter which allows
+      change sampling rate from 1d to 5min with HB preriod 7d
+  - Triggers:
+    - ```SYS::processes::{$SVC_MYSQL_PROC} is not running``` severity changed
+      to disaster
+  - Add use md markups in template description
 - **Service Nginx**
   - Macros:
     - Rename ```{$NGINX_*}``` macros to ```{$SVC_NGINX_*}```

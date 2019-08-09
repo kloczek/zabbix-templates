@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-06-03T14:55:01Z</date>
+  <date>2019-08-09T15:37:41Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,8 +13,13 @@
       <name>Service MySQL</name>
       <description>MySQL engine monitoring over Zabbix agent.&#13;
 &#13;
-Version: 1.0.4 (2018-06-11)&#13;
+#### Version: (devel)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20MySQL&#13;
+&#13;
+| Macro | Default value | Description |&#13;
+| :-- | :-- | :-- |&#13;
+| {$SVC_MYSQL_CMD} | HOME=/var/lib/zabbix /usr/bin/mysql --login-path=monitoring -Nse | mysql command used in system.run[] keys |&#13;
+| {$SVC_MYSQL_PROC} | mysqld | MySQL process name |&#13;
 &#13;
 #### Notes:&#13;
 * Tested on MySQL 5.7 and it not designed to be uses with MySQL older than 5.7 backward compatibility so it can be used to monitor MySQL engine which in my.cnf has:&#13;
@@ -23,10 +28,9 @@ URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20MySQL&#13
 show_compatibility_56 = OFF &#13;
 ```&#13;
 My advice is even to disable show_compatibility_56 to not start by mistake use some older metrics which in next version of the MySQL no longer will be available as an option.&#13;
-&#13;
 * By default this template is monitoring the engine working on localhost.&#13;
-To be able to use this template on a host you need to setup a monitoring account with the proper privileges.&#13;
-To add such account you can use below queries:&#13;
+* To be able to use this template on a host you need to setup a monitoring account with the proper privileges.&#13;
+* To add such account you can use below queries:&#13;
 ```&#13;
 CREATE USER 'monitoring'@'localhost' IDENTIFIED BY 'monitoring';&#13;
 GRANT SELECT, INDEX, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'monitoring'@'localhost';&#13;
@@ -70,14 +74,14 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>proc.num[mysqld]</key>
+          <key>proc.num[{$SVC_MYSQL_PROC}]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
           <allowed_hosts/>
-          <units/>
+          <units>processes</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
           <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -93,7 +97,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Number MySQL processes.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -4573,7 +4577,7 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
           <snmp_community/>
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "SELECT variable_value FROM performance_schema.global_variables WHERE variable_name='version';",]</key>
-          <delay>1d</delay>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>0</trends>
           <status>0</status>
@@ -4604,7 +4608,14 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
           </applications>
           <valuemap/>
           <logtimefmt/>
-          <preprocessing/>
+          <preprocessing>
+            <step>
+              <type>20</type>
+              <params>7d</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
           <jmx_endpoint/>
           <timeout>3s</timeout>
           <url/>
@@ -4927,6 +4938,10 @@ SELECT variable_value FROM information_schema.global_status WHERE variable_name 
         <macro>
           <macro>{$MYSQL_CMD}</macro>
           <value>HOME=/var/lib/zabbix /usr/bin/mysql --login-path=monitoring -Nse</value>
+        </macro>
+        <macro>
+          <macro>{$SVC_MYSQL_PROC}</macro>
+          <value>mysqld</value>
         </macro>
       </macros>
       <templates/>
@@ -5372,16 +5387,16 @@ Possible restart has been done.</description>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service MySQL:proc.num[mysqld].last(0)}&lt;1</expression>
+      <expression>{Service MySQL:proc.num[{$SVC_MYSQL_PROC}].last(0)}&lt;1</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>SYS::processes::mysqld is not running</name>
+      <name>SYS::processes::{$SVC_MYSQL_PROC} is not running</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
       <status>0</status>
-      <priority>4</priority>
-      <description/>
+      <priority>5</priority>
+      <description>The MySQL process is not running.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>
