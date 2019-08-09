@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-08-08T17:57:49Z</date>
+  <date>2019-08-09T14:47:38Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -30,8 +30,17 @@ URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20PostgreSQ
 * To be able to use this template on a host you need to setup a monitoring account with the proper privileges&#13;
 * To add such account you can use below queries:&#13;
 ```&#13;
-su - postgres "createuser monitoring"&#13;
-su - postgres psql "&#13;
+su - postgres -c "/usr/bin/psql postgres -c \"create user monitoring with password 'monitoring';\""&#13;
+su - postgres -c "/usr/bin/psql postgres -c \"grant SELECT ON pg_stat_database, pg_stat_user_tables, pg_stat_user_indexes, pg_stat_bgwriter, pg_statio_user_tables to monitoring;\""&#13;
+```&#13;
+* Add to /etc/postgresql/&lt;version&gt;/main/pg_hba.conf file line:&#13;
+```&#13;
+local   all             monitoring                              trust&#13;
+```&#13;
+* Command to test the monitoring access (display version of the PostgreSQL engine):&#13;
+```&#13;
+psql -U monitoring -qAtX postgres -c "SELECT version();"&#13;
+&#13;
 ```&#13;
 * PostgreSQL 9.5 documentation about monitoring:&#13;
 https://www.postgresql.org/docs/9.6/monitoring-stats.html</description>
@@ -1661,7 +1670,7 @@ Accepts only the default connection parameters.</description>
           <status>0</status>
           <value_type>3</value_type>
           <allowed_hosts/>
-          <units/>
+          <units>processes</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
           <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1716,7 +1725,7 @@ Accepts only the default connection parameters.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>service.pgsql.version</key>
-          <delay>30s</delay>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>0</trends>
           <status>0</status>
@@ -1739,7 +1748,7 @@ Accepts only the default connection parameters.</description>
           <privatekey/>
           <port/>
           <description>The PostgreSQL server version.</description>
-          <inventory_link>0</inventory_link>
+          <inventory_link>19</inventory_link>
           <applications>
             <application>
               <name>SVC::PostgreSQL::cfg</name>
