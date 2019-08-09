@@ -85,6 +85,7 @@ This repository provides a set of templates which offers the alternative set of 
   - Triggers:
     - Added ```SYS::Host is down```
     - Added ```CPU::idle {ITEM.VALUE}```
+    - Add proper dependency for all trigges which still does not depend on ```SYS::Host is down```
 - **OS Windows**
   - Iems:
     - ```VOL:``` LLD items fixed Application ```VOL``` changed to per volume ```VOL::{#FSNAME}```

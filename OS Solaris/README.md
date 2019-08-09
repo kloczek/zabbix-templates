@@ -70,6 +70,7 @@ zfs:0:arcstats:snaptime
       ```{$OS_CPU_IDLE}```: threshold below which is raised alarm about low ```CPU::idle time```&#13;
       ```{$OS_CPU_IDLE_HIST}```: hysteresis time for ```CPU::idle``` after which alarm starts and recovers after additional period defined in ```{$OS_CPU_IDLE_HIST}```</description>
       If those macros are not defined in system macros alarms about low ```CPU::idle time``` will be not created
+    - Add proper dependency for all trigges which still does not depend on ```SYS::Host is down```
 - 1.0.4 (2018-06-11)
   - Triggers:
     - fixed typo in trigger name s/SYS:uname changed/```SYS::uname changed```/

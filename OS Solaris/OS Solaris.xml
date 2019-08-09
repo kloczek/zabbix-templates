@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-08-06T15:48:15Z</date>
+  <date>2019-08-09T18:15:54Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -5116,7 +5116,15 @@ Please login on the host and check output of the commands:&#13;
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Solaris:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Solaris:agent.ping.nodata(15m)}=1 and&#13;
+{OS Solaris:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -5133,7 +5141,15 @@ Please login on the host and check output of the commands:&#13;
 If those macros are not defined alarms about low CPU::idle will be not created.</description>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Solaris:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Solaris:agent.ping.nodata(15m)}=1 and&#13;
+{OS Solaris:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -5149,7 +5165,15 @@ If those macros are not defined alarms about low CPU::idle will be not created.<
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Solaris:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Solaris:agent.ping.nodata(15m)}=1 and&#13;
+{OS Solaris:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -5186,7 +5210,15 @@ If those macros are not defined alarms about low CPU::idle will be not created.<
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Solaris:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Solaris:agent.ping.nodata(15m)}=1 and&#13;
+{OS Solaris:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -5202,7 +5234,15 @@ If those macros are not defined alarms about low CPU::idle will be not created.<
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Solaris:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Solaris:agent.ping.nodata(15m)}=1 and&#13;
+{OS Solaris:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -5218,7 +5258,15 @@ If those macros are not defined alarms about low CPU::idle will be not created.<
       <description>Tim drift bigger than 50s.</description>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Solaris:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Solaris:agent.ping.nodata(15m)}=1 and&#13;
+{OS Solaris:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -5234,7 +5282,15 @@ If those macros are not defined alarms about low CPU::idle will be not created.<
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Solaris:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Solaris:agent.ping.nodata(15m)}=1 and&#13;
+{OS Solaris:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
   </triggers>
