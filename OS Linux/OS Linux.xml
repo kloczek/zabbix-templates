@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-08-06T15:22:22Z</date>
+  <date>2019-08-09T15:37:38Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -4944,7 +4944,15 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -5007,7 +5015,15 @@ If those macros are not defined alarms about low CPU::idle will be not created.<
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -5023,7 +5039,15 @@ If those macros are not defined alarms about low CPU::idle will be not created.<
       <description>CPUs information has change.</description>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -5039,7 +5063,15 @@ If those macros are not defined alarms about low CPU::idle will be not created.<
       <description>Hardware devices list has been changed.</description>
       <type>1</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -5055,7 +5087,15 @@ If those macros are not defined alarms about low CPU::idle will be not created.<
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -5077,6 +5117,13 @@ If those macros are not defined alarms about low CPU::idle will be not created.<
           <expression>({OS Linux:vm.memory.size[available].min(#3)}/{OS Linux:vm.memory.size[total].last(0)})&lt;0.05</expression>
           <recovery_expression/>
         </dependency>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
       </dependencies>
       <tags/>
     </trigger>
@@ -5093,7 +5140,15 @@ If those macros are not defined alarms about low CPU::idle will be not created.<
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -5245,7 +5300,15 @@ s3-dump hosts delete</description>
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -5261,7 +5324,15 @@ s3-dump hosts delete</description>
       <description>Tim drift bigger than 60s.</description>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -5277,7 +5348,15 @@ s3-dump hosts delete</description>
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
   </triggers>

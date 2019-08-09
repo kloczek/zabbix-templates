@@ -51,11 +51,12 @@ Base Linux monitoring template.
     - new ```DSK, NET``` screen added
     - add to ```MEM``` screen ```MEM::active vs inactive``` graph
   - Triggers:
-    - ```SYS::Host is down``` corrected descrition
+    - ```SYS::Host is down``` descrition corrected
     - ```CPU::idle``` trigger now uses macros:
       ```{$OS_CPU_IDLE}```: threshold below which is raised alarm about low ```CPU::idle time```&#13;
       ```{$OS_CPU_IDLE_HIST}```: hysteresis time for ```CPU::idle``` after which alarm starts and recovers after additional period defined in ```{$OS_CPU_IDLE_HIST}```</description>
       If those macros are not defined in system macros alarms about low ```CPU::idle time``` will be not created
+    - Add proper dependency for all trigges which still does not depend on ```SYS::Host is down```
 - 1.0.4 (2018-06-11)
   - Graphs:
     - change all graphs resolution to 1200x300

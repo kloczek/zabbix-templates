@@ -64,10 +64,11 @@ This repository provides a set of templates which offers the alternative set of 
     - new ```DSK, NET``` screen added
     - add to ```MEM``` screen ```MEM::active vs inactive``` graph
   - Triggers:
-    - ```SYS::Host is down``` corrected descrition
+    - ```SYS::Host is down``` descrition corrected
     - ```CPU::idle``` triggers change to raise alarm when idle time is less than 5% CPU
       idle time time for at least 1 hour and alarm is cleared ehen for next hour will be no other
       flapping anbove 5%
+    - Add proper dependency for all trigges which still does not depend on ```SYS::Host is down```
 - **OS Solaris**
   - Applications:
     - remove using ```DSK```, ```NET``` and ```VOL``` Applications and replace them by LLD prototypes
