@@ -12,18 +12,19 @@ Base OS Windows template.
 #### Changelog:
 - (devel):
   - Items:
-    - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
+    - Make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
     - ```VOL:``` LLD items fixed Application ```VOL``` changed to per volume ```VOL::{#FSNAME}```
     - ```NET:``` LLD items fixed Application ```NET``` changed to per interface ```NET::{#FSNAME}```
   - Triggers:
-    - added missing ```SYS::Host is down``` trigger with all necessary dependencies
+    - Added missing ```SYS::Host is down``` trigger with all necessary dependencies
+    - Add proper dependency for all trigges which still does not depend on ```SYS::Host is down```
   - Screens:
     - Added ```CPU``` screen like in other Os templates
 - 1.0.4 (2018-06-11)
   - Triggers:
-    - rename trigger name to the same name as it is in other OS templates
+    - Rename trigger name to the same name as it is in other OS templates
        s/Host information was changed/```SYS:uname changed```/
-    - rename "Lack of free memory" to ```MEM::free {ITEM.LASTVALUE}```
+    - Rename "Lack of free memory" to ```MEM::free {ITEM.LASTVALUE}```
   - Graphs:
     - change resolution to 1200x300
 - 1.0.3

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-06-01T20:53:19Z</date>
+  <date>2019-08-09T18:18:30Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -16,7 +16,7 @@
 Version: 1.0.4 (2018-06-04)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/OS%20Windows&#13;
 &#13;
-Notes:</description>
+#### Notes:</description>
       <groups>
         <group>
           <name>Templates</name>
@@ -12697,7 +12697,15 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Solaris:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Solaris:agent.ping.nodata(15m)}=1 and&#13;
+{OS Solaris:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -12798,7 +12806,15 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Solaris:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Solaris:agent.ping.nodata(15m)}=1 and&#13;
+{OS Solaris:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -12832,7 +12848,15 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Solaris:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Solaris:agent.ping.nodata(15m)}=1 and&#13;
+{OS Solaris:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -12848,7 +12872,15 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
       <description>Tim drift bigger than 60s.</description>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Solaris:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Solaris:agent.ping.nodata(15m)}=1 and&#13;
+{OS Solaris:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -12864,7 +12896,15 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Solaris:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Solaris:agent.ping.nodata(15m)}=1 and&#13;
+{OS Solaris:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -12880,7 +12920,15 @@ system.run["powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\Program Fil
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Solaris:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Solaris:agent.ping.nodata(15m)}=1 and&#13;
+{OS Solaris:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
   </triggers>

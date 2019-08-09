@@ -90,7 +90,8 @@ This repository provides a set of templates which offers the alternative set of 
     - ```VOL:``` LLD items fixed Application ```VOL``` changed to per volume ```VOL::{#FSNAME}```
     - ```NET:``` LLD items fixed Application ```NET``` changed to per interface ```NET::{#FSNAME}```
   - Triggers:
-    - added missing ```SYS::Host is down``` trigger with all necessary dependencies
+    - Added missing ```SYS::Host is down``` trigger with all necessary dependencies
+    - Add proper dependency for all trigges which still does not depend on ```SYS::Host is down```
 - **Service Apache**
   - Macros:
     - Rename all ```{$APACHE_SERVICE_*}``` macros to ```{$SVC_APACHE_*}```
