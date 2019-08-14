@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-08-12T17:41:21Z</date>
+  <date>2019-08-14T12:56:15Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -1659,6 +1659,65 @@ Accepts only the default connection parameters.</description>
           <master_item/>
         </item>
         <item>
+          <name>stats::db</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>pgsql.discovery.db</key>
+          <delay>1m</delay>
+          <history>0</history>
+          <trends>0</trends>
+          <status>0</status>
+          <value_type>4</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Master item with all databases statistics.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::PostgreSQL</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item/>
+        </item>
+        <item>
           <name>PROC::$1</name>
           <type>7</type>
           <snmp_community/>
@@ -2279,8 +2338,8 @@ Accepts only the default connection parameters.</description>
           <graph_prototypes>
             <graph_prototype>
               <name>SVC::PostgreSQL Index blocks/sec on {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -2323,8 +2382,8 @@ Accepts only the default connection parameters.</description>
             </graph_prototype>
             <graph_prototype>
               <name>SVC::PostgreSQL Index disk size on {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -2355,8 +2414,8 @@ Accepts only the default connection parameters.</description>
             </graph_prototype>
             <graph_prototype>
               <name>SVC::PostgreSQL Index reads/sec on {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -2411,8 +2470,8 @@ Accepts only the default connection parameters.</description>
             </graph_prototype>
             <graph_prototype>
               <name>SVC::PostgreSQL Index row count on {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -3898,8 +3957,8 @@ Description: {#DESCRIPTION}</description>
           <graph_prototypes>
             <graph_prototype>
               <name>SVC::PostgreSQL Disk size on table {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -3930,8 +3989,8 @@ Description: {#DESCRIPTION}</description>
             </graph_prototype>
             <graph_prototype>
               <name>SVC::PostgreSQL Fetches/sec on table {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -3974,8 +4033,8 @@ Description: {#DESCRIPTION}</description>
             </graph_prototype>
             <graph_prototype>
               <name>SVC::PostgreSQL Maintenance on table {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -4042,8 +4101,8 @@ Description: {#DESCRIPTION}</description>
             </graph_prototype>
             <graph_prototype>
               <name>SVC::PostgreSQL Row count on table {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -4098,8 +4157,8 @@ Description: {#DESCRIPTION}</description>
             </graph_prototype>
             <graph_prototype>
               <name>SVC::PostgreSQL Scans/sec on table {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -4142,8 +4201,8 @@ Description: {#DESCRIPTION}</description>
             </graph_prototype>
             <graph_prototype>
               <name>SVC::PostgreSQL Writes/sec on table {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -4329,8 +4388,8 @@ Description: {#DESCRIPTION}</description>
           <graph_prototypes>
             <graph_prototype>
               <name>SVC::PostgreSQL Disk size on {#TABLESPACE}</name>
-              <width>900</width>
-              <height>200</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -4388,7 +4447,7 @@ Description: {#DESCRIPTION}</description>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>service.pgsql.discovery[db]</key>
+          <key>service.pgsql.discovery.db</key>
           <delay>2m</delay>
           <status>0</status>
           <allowed_hosts/>
@@ -4408,14 +4467,26 @@ Description: {#DESCRIPTION}</description>
           <privatekey/>
           <port/>
           <filter>
-            <evaltype>0</evaltype>
+            <evaltype>1</evaltype>
             <formula/>
             <conditions>
               <condition>
                 <macro>{#DB}</macro>
-                <value>^(?!(postgres|mdb-snapshot))</value>
+                <value>^(?!(postgres))</value>
+                <operator>8</operator>
+                <formulaid>C</formulaid>
+              </condition>
+              <condition>
+                <macro>{#DATALLOWCONN}</macro>
+                <value>true</value>
                 <operator>8</operator>
                 <formulaid>A</formulaid>
+              </condition>
+              <condition>
+                <macro>{#DATISTEMPLATE}</macro>
+                <value>false</value>
+                <operator>8</operator>
+                <formulaid>B</formulaid>
               </condition>
             </conditions>
           </filter>
@@ -4423,208 +4494,7 @@ Description: {#DESCRIPTION}</description>
           <description>Discover all databases available for connection.</description>
           <item_prototypes>
             <item_prototype>
-              <name>disk block hits</name>
-              <type>7</type>
-              <snmp_community/>
-              <snmp_oid/>
-              <key>pg.db.blks_hit[{#DB}]</key>
-              <delay>1m</delay>
-              <history>2w</history>
-              <trends>365d</trends>
-              <status>0</status>
-              <value_type>3</value_type>
-              <allowed_hosts/>
-              <units>hits/s</units>
-              <snmpv3_contextname/>
-              <snmpv3_securityname/>
-              <snmpv3_securitylevel>0</snmpv3_securitylevel>
-              <snmpv3_authprotocol>0</snmpv3_authprotocol>
-              <snmpv3_authpassphrase/>
-              <snmpv3_privprotocol>0</snmpv3_privprotocol>
-              <snmpv3_privpassphrase/>
-              <params/>
-              <ipmi_sensor/>
-              <authtype>0</authtype>
-              <username/>
-              <password/>
-              <publickey/>
-              <privatekey/>
-              <port/>
-              <description>Number of times disk blocks were found already in the buffer cache, so that a read was not necessary (this only includes hits in the PostgreSQL buffer cache, not the operating system's file system cache)</description>
-              <inventory_link>0</inventory_link>
-              <applications/>
-              <valuemap/>
-              <logtimefmt/>
-              <preprocessing>
-                <step>
-                  <type>10</type>
-                  <params/>
-                  <error_handler>0</error_handler>
-                  <error_handler_params/>
-                </step>
-              </preprocessing>
-              <jmx_endpoint/>
-              <timeout>3s</timeout>
-              <url/>
-              <query_fields/>
-              <posts/>
-              <status_codes>200</status_codes>
-              <follow_redirects>1</follow_redirects>
-              <post_type>0</post_type>
-              <http_proxy/>
-              <headers/>
-              <retrieve_mode>0</retrieve_mode>
-              <request_method>0</request_method>
-              <output_format>0</output_format>
-              <allow_traps>0</allow_traps>
-              <ssl_cert_file/>
-              <ssl_key_file/>
-              <ssl_key_password/>
-              <verify_peer>0</verify_peer>
-              <verify_host>0</verify_host>
-              <application_prototypes>
-                <application_prototype>
-                  <name>SVC::Postgresql::DB::{#DB}</name>
-                </application_prototype>
-              </application_prototypes>
-              <master_item/>
-            </item_prototype>
-            <item_prototype>
-              <name>disk blocks read/sec</name>
-              <type>7</type>
-              <snmp_community/>
-              <snmp_oid/>
-              <key>pg.db.blks_read[{#DB}]</key>
-              <delay>1m</delay>
-              <history>2w</history>
-              <trends>365d</trends>
-              <status>0</status>
-              <value_type>0</value_type>
-              <allowed_hosts/>
-              <units>reads/s</units>
-              <snmpv3_contextname/>
-              <snmpv3_securityname/>
-              <snmpv3_securitylevel>0</snmpv3_securitylevel>
-              <snmpv3_authprotocol>0</snmpv3_authprotocol>
-              <snmpv3_authpassphrase/>
-              <snmpv3_privprotocol>0</snmpv3_privprotocol>
-              <snmpv3_privpassphrase/>
-              <params/>
-              <ipmi_sensor/>
-              <authtype>0</authtype>
-              <username/>
-              <password/>
-              <publickey/>
-              <privatekey/>
-              <port/>
-              <description>Number of disk blocks read in this database</description>
-              <inventory_link>0</inventory_link>
-              <applications/>
-              <valuemap/>
-              <logtimefmt/>
-              <preprocessing>
-                <step>
-                  <type>10</type>
-                  <params/>
-                  <error_handler>0</error_handler>
-                  <error_handler_params/>
-                </step>
-              </preprocessing>
-              <jmx_endpoint/>
-              <timeout>3s</timeout>
-              <url/>
-              <query_fields/>
-              <posts/>
-              <status_codes>200</status_codes>
-              <follow_redirects>1</follow_redirects>
-              <post_type>0</post_type>
-              <http_proxy/>
-              <headers/>
-              <retrieve_mode>0</retrieve_mode>
-              <request_method>0</request_method>
-              <output_format>0</output_format>
-              <allow_traps>0</allow_traps>
-              <ssl_cert_file/>
-              <ssl_key_file/>
-              <ssl_key_password/>
-              <verify_peer>0</verify_peer>
-              <verify_host>0</verify_host>
-              <application_prototypes>
-                <application_prototype>
-                  <name>SVC::Postgresql::DB::{#DB}</name>
-                </application_prototype>
-              </application_prototypes>
-              <master_item/>
-            </item_prototype>
-            <item_prototype>
-              <name>time spent reading data</name>
-              <type>7</type>
-              <snmp_community/>
-              <snmp_oid/>
-              <key>pg.db.blk_read_time[{#DB}]</key>
-              <delay>1m</delay>
-              <history>2w</history>
-              <trends>365d</trends>
-              <status>0</status>
-              <value_type>0</value_type>
-              <allowed_hosts/>
-              <units>s</units>
-              <snmpv3_contextname/>
-              <snmpv3_securityname/>
-              <snmpv3_securitylevel>0</snmpv3_securitylevel>
-              <snmpv3_authprotocol>0</snmpv3_authprotocol>
-              <snmpv3_authpassphrase/>
-              <snmpv3_privprotocol>0</snmpv3_privprotocol>
-              <snmpv3_privpassphrase/>
-              <params/>
-              <ipmi_sensor/>
-              <authtype>0</authtype>
-              <username/>
-              <password/>
-              <publickey/>
-              <privatekey/>
-              <port/>
-              <description>Time spent reading data file blocks by backends in this database, in seconds</description>
-              <inventory_link>0</inventory_link>
-              <applications/>
-              <valuemap/>
-              <logtimefmt/>
-              <preprocessing>
-                <step>
-                  <type>1</type>
-                  <params>0.001</params>
-                  <error_handler>0</error_handler>
-                  <error_handler_params/>
-                </step>
-              </preprocessing>
-              <jmx_endpoint/>
-              <timeout>3s</timeout>
-              <url/>
-              <query_fields/>
-              <posts/>
-              <status_codes>200</status_codes>
-              <follow_redirects>1</follow_redirects>
-              <post_type>0</post_type>
-              <http_proxy/>
-              <headers/>
-              <retrieve_mode>0</retrieve_mode>
-              <request_method>0</request_method>
-              <output_format>0</output_format>
-              <allow_traps>0</allow_traps>
-              <ssl_cert_file/>
-              <ssl_key_file/>
-              <ssl_key_password/>
-              <verify_peer>0</verify_peer>
-              <verify_host>0</verify_host>
-              <application_prototypes>
-                <application_prototype>
-                  <name>SVC::Postgresql::DB::{#DB}</name>
-                </application_prototype>
-              </application_prototypes>
-              <master_item/>
-            </item_prototype>
-            <item_prototype>
-              <name>time spent writing data</name>
+              <name>{#DB}::time spent writing data</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -4691,7 +4561,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>conflicts</name>
+              <name>{#DB}::conflicts</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -4758,194 +4628,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>deadlocks</name>
-              <type>7</type>
-              <snmp_community/>
-              <snmp_oid/>
-              <key>pg.db.deadlocks[{#DB}]</key>
-              <delay>1m</delay>
-              <history>2w</history>
-              <trends>365d</trends>
-              <status>0</status>
-              <value_type>0</value_type>
-              <allowed_hosts/>
-              <units>deadlocks/s</units>
-              <snmpv3_contextname/>
-              <snmpv3_securityname/>
-              <snmpv3_securitylevel>0</snmpv3_securitylevel>
-              <snmpv3_authprotocol>0</snmpv3_authprotocol>
-              <snmpv3_authpassphrase/>
-              <snmpv3_privprotocol>0</snmpv3_privprotocol>
-              <snmpv3_privpassphrase/>
-              <params/>
-              <ipmi_sensor/>
-              <authtype>0</authtype>
-              <username/>
-              <password/>
-              <publickey/>
-              <privatekey/>
-              <port/>
-              <description>Number of deadlocks detected in this database</description>
-              <inventory_link>0</inventory_link>
-              <applications/>
-              <valuemap/>
-              <logtimefmt/>
-              <preprocessing>
-                <step>
-                  <type>10</type>
-                  <params/>
-                  <error_handler>0</error_handler>
-                  <error_handler_params/>
-                </step>
-              </preprocessing>
-              <jmx_endpoint/>
-              <timeout>3s</timeout>
-              <url/>
-              <query_fields/>
-              <posts/>
-              <status_codes>200</status_codes>
-              <follow_redirects>1</follow_redirects>
-              <post_type>0</post_type>
-              <http_proxy/>
-              <headers/>
-              <retrieve_mode>0</retrieve_mode>
-              <request_method>0</request_method>
-              <output_format>0</output_format>
-              <allow_traps>0</allow_traps>
-              <ssl_cert_file/>
-              <ssl_key_file/>
-              <ssl_key_password/>
-              <verify_peer>0</verify_peer>
-              <verify_host>0</verify_host>
-              <application_prototypes>
-                <application_prototype>
-                  <name>SVC::Postgresql::DB::{#DB}</name>
-                </application_prototype>
-              </application_prototypes>
-              <master_item/>
-            </item_prototype>
-            <item_prototype>
-              <name>backends connected</name>
-              <type>7</type>
-              <snmp_community/>
-              <snmp_oid/>
-              <key>pg.db.numbackends[{#DB}]</key>
-              <delay>1m</delay>
-              <history>2w</history>
-              <trends>365d</trends>
-              <status>0</status>
-              <value_type>3</value_type>
-              <allowed_hosts/>
-              <units>backends connected</units>
-              <snmpv3_contextname/>
-              <snmpv3_securityname/>
-              <snmpv3_securitylevel>0</snmpv3_securitylevel>
-              <snmpv3_authprotocol>0</snmpv3_authprotocol>
-              <snmpv3_authpassphrase/>
-              <snmpv3_privprotocol>0</snmpv3_privprotocol>
-              <snmpv3_privpassphrase/>
-              <params/>
-              <ipmi_sensor/>
-              <authtype>0</authtype>
-              <username/>
-              <password/>
-              <publickey/>
-              <privatekey/>
-              <port/>
-              <description>Number of backends currently connected to this database. This is the only column in this view that returns a value reflecting current state; all other columns return the accumulated values since the last reset.</description>
-              <inventory_link>0</inventory_link>
-              <applications/>
-              <valuemap/>
-              <logtimefmt/>
-              <preprocessing/>
-              <jmx_endpoint/>
-              <timeout>3s</timeout>
-              <url/>
-              <query_fields/>
-              <posts/>
-              <status_codes>200</status_codes>
-              <follow_redirects>1</follow_redirects>
-              <post_type>0</post_type>
-              <http_proxy/>
-              <headers/>
-              <retrieve_mode>0</retrieve_mode>
-              <request_method>0</request_method>
-              <output_format>0</output_format>
-              <allow_traps>0</allow_traps>
-              <ssl_cert_file/>
-              <ssl_key_file/>
-              <ssl_key_password/>
-              <verify_peer>0</verify_peer>
-              <verify_host>0</verify_host>
-              <application_prototypes>
-                <application_prototype>
-                  <name>SVC::Postgresql::DB::{#DB}</name>
-                </application_prototype>
-              </application_prototypes>
-              <master_item/>
-            </item_prototype>
-            <item_prototype>
-              <name>disk size</name>
-              <type>7</type>
-              <snmp_community/>
-              <snmp_oid/>
-              <key>pg.db.size[{#DB}]</key>
-              <delay>1m</delay>
-              <history>2w</history>
-              <trends>365d</trends>
-              <status>0</status>
-              <value_type>3</value_type>
-              <allowed_hosts/>
-              <units>B</units>
-              <snmpv3_contextname/>
-              <snmpv3_securityname/>
-              <snmpv3_securitylevel>0</snmpv3_securitylevel>
-              <snmpv3_authprotocol>0</snmpv3_authprotocol>
-              <snmpv3_authpassphrase/>
-              <snmpv3_privprotocol>0</snmpv3_privprotocol>
-              <snmpv3_privpassphrase/>
-              <params/>
-              <ipmi_sensor/>
-              <authtype>0</authtype>
-              <username/>
-              <password/>
-              <publickey/>
-              <privatekey/>
-              <port/>
-              <description/>
-              <inventory_link>0</inventory_link>
-              <applications/>
-              <valuemap/>
-              <logtimefmt/>
-              <preprocessing/>
-              <jmx_endpoint/>
-              <timeout>3s</timeout>
-              <url/>
-              <query_fields/>
-              <posts/>
-              <status_codes>200</status_codes>
-              <follow_redirects>1</follow_redirects>
-              <post_type>0</post_type>
-              <http_proxy/>
-              <headers/>
-              <retrieve_mode>0</retrieve_mode>
-              <request_method>0</request_method>
-              <output_format>0</output_format>
-              <allow_traps>0</allow_traps>
-              <ssl_cert_file/>
-              <ssl_key_file/>
-              <ssl_key_password/>
-              <verify_peer>0</verify_peer>
-              <verify_host>0</verify_host>
-              <application_prototypes>
-                <application_prototype>
-                  <name>SVC::Postgresql::DB::{#DB}</name>
-                </application_prototype>
-              </application_prototypes>
-              <master_item/>
-            </item_prototype>
-            <item_prototype>
-              <name>statistics last reset</name>
+              <name>{#DB}::statistics last reset</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -5005,141 +4688,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>temp data write/sec</name>
-              <type>7</type>
-              <snmp_community/>
-              <snmp_oid/>
-              <key>pg.db.temp_bytes[{#DB}]</key>
-              <delay>1m</delay>
-              <history>2w</history>
-              <trends>365d</trends>
-              <status>0</status>
-              <value_type>0</value_type>
-              <allowed_hosts/>
-              <units>Bps</units>
-              <snmpv3_contextname/>
-              <snmpv3_securityname/>
-              <snmpv3_securitylevel>0</snmpv3_securitylevel>
-              <snmpv3_authprotocol>0</snmpv3_authprotocol>
-              <snmpv3_authpassphrase/>
-              <snmpv3_privprotocol>0</snmpv3_privprotocol>
-              <snmpv3_privpassphrase/>
-              <params/>
-              <ipmi_sensor/>
-              <authtype>0</authtype>
-              <username/>
-              <password/>
-              <publickey/>
-              <privatekey/>
-              <port/>
-              <description>Total amount of data written to temporary files by queries in this database. All temporary files are counted, regardless of why the temporary file was created, and regardless of the log_temp_files setting.</description>
-              <inventory_link>0</inventory_link>
-              <applications/>
-              <valuemap/>
-              <logtimefmt/>
-              <preprocessing>
-                <step>
-                  <type>10</type>
-                  <params/>
-                  <error_handler>0</error_handler>
-                  <error_handler_params/>
-                </step>
-              </preprocessing>
-              <jmx_endpoint/>
-              <timeout>3s</timeout>
-              <url/>
-              <query_fields/>
-              <posts/>
-              <status_codes>200</status_codes>
-              <follow_redirects>1</follow_redirects>
-              <post_type>0</post_type>
-              <http_proxy/>
-              <headers/>
-              <retrieve_mode>0</retrieve_mode>
-              <request_method>0</request_method>
-              <output_format>0</output_format>
-              <allow_traps>0</allow_traps>
-              <ssl_cert_file/>
-              <ssl_key_file/>
-              <ssl_key_password/>
-              <verify_peer>0</verify_peer>
-              <verify_host>0</verify_host>
-              <application_prototypes>
-                <application_prototype>
-                  <name>SVC::Postgresql::DB::{#DB}</name>
-                </application_prototype>
-              </application_prototypes>
-              <master_item/>
-            </item_prototype>
-            <item_prototype>
-              <name>temp files created/sec</name>
-              <type>7</type>
-              <snmp_community/>
-              <snmp_oid/>
-              <key>pg.db.temp_files[{#DB}]</key>
-              <delay>1m</delay>
-              <history>2w</history>
-              <trends>365d</trends>
-              <status>0</status>
-              <value_type>0</value_type>
-              <allowed_hosts/>
-              <units/>
-              <snmpv3_contextname/>
-              <snmpv3_securityname/>
-              <snmpv3_securitylevel>0</snmpv3_securitylevel>
-              <snmpv3_authprotocol>0</snmpv3_authprotocol>
-              <snmpv3_authpassphrase/>
-              <snmpv3_privprotocol>0</snmpv3_privprotocol>
-              <snmpv3_privpassphrase/>
-              <params/>
-              <ipmi_sensor/>
-              <authtype>0</authtype>
-              <username/>
-              <password/>
-              <publickey/>
-              <privatekey/>
-              <port/>
-              <description>Number of temporary files created by queries in this database. All temporary files are counted, regardless of why the temporary file was created (e.g., sorting or hashing), and regardless of the log_temp_files setting.</description>
-              <inventory_link>0</inventory_link>
-              <applications/>
-              <valuemap/>
-              <logtimefmt/>
-              <preprocessing>
-                <step>
-                  <type>10</type>
-                  <params/>
-                  <error_handler>0</error_handler>
-                  <error_handler_params/>
-                </step>
-              </preprocessing>
-              <jmx_endpoint/>
-              <timeout>3s</timeout>
-              <url/>
-              <query_fields/>
-              <posts/>
-              <status_codes>200</status_codes>
-              <follow_redirects>1</follow_redirects>
-              <post_type>0</post_type>
-              <http_proxy/>
-              <headers/>
-              <retrieve_mode>0</retrieve_mode>
-              <request_method>0</request_method>
-              <output_format>0</output_format>
-              <allow_traps>0</allow_traps>
-              <ssl_cert_file/>
-              <ssl_key_file/>
-              <ssl_key_password/>
-              <verify_peer>0</verify_peer>
-              <verify_host>0</verify_host>
-              <application_prototypes>
-                <application_prototype>
-                  <name>SVC::Postgresql::DB::{#DB}</name>
-                </application_prototype>
-              </application_prototypes>
-              <master_item/>
-            </item_prototype>
-            <item_prototype>
-              <name>rows deleted/sec</name>
+              <name>{#DB}::rows deleted/sec</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -5206,208 +4755,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>rows fetched by bitmap scans/sec</name>
-              <type>7</type>
-              <snmp_community/>
-              <snmp_oid/>
-              <key>pg.db.tup_fetched[{#DB}]</key>
-              <delay>1m</delay>
-              <history>2w</history>
-              <trends>365d</trends>
-              <status>0</status>
-              <value_type>0</value_type>
-              <allowed_hosts/>
-              <units/>
-              <snmpv3_contextname/>
-              <snmpv3_securityname/>
-              <snmpv3_securitylevel>0</snmpv3_securitylevel>
-              <snmpv3_authprotocol>0</snmpv3_authprotocol>
-              <snmpv3_authpassphrase/>
-              <snmpv3_privprotocol>0</snmpv3_privprotocol>
-              <snmpv3_privpassphrase/>
-              <params/>
-              <ipmi_sensor/>
-              <authtype>0</authtype>
-              <username/>
-              <password/>
-              <publickey/>
-              <privatekey/>
-              <port/>
-              <description>Number of rows fetched by queries in this database</description>
-              <inventory_link>0</inventory_link>
-              <applications/>
-              <valuemap/>
-              <logtimefmt/>
-              <preprocessing>
-                <step>
-                  <type>10</type>
-                  <params/>
-                  <error_handler>0</error_handler>
-                  <error_handler_params/>
-                </step>
-              </preprocessing>
-              <jmx_endpoint/>
-              <timeout>3s</timeout>
-              <url/>
-              <query_fields/>
-              <posts/>
-              <status_codes>200</status_codes>
-              <follow_redirects>1</follow_redirects>
-              <post_type>0</post_type>
-              <http_proxy/>
-              <headers/>
-              <retrieve_mode>0</retrieve_mode>
-              <request_method>0</request_method>
-              <output_format>0</output_format>
-              <allow_traps>0</allow_traps>
-              <ssl_cert_file/>
-              <ssl_key_file/>
-              <ssl_key_password/>
-              <verify_peer>0</verify_peer>
-              <verify_host>0</verify_host>
-              <application_prototypes>
-                <application_prototype>
-                  <name>SVC::Postgresql::DB::{#DB}</name>
-                </application_prototype>
-              </application_prototypes>
-              <master_item/>
-            </item_prototype>
-            <item_prototype>
-              <name>rows inserted/s</name>
-              <type>7</type>
-              <snmp_community/>
-              <snmp_oid/>
-              <key>pg.db.tup_inserted[{#DB}]</key>
-              <delay>1m</delay>
-              <history>2w</history>
-              <trends>365d</trends>
-              <status>0</status>
-              <value_type>0</value_type>
-              <allowed_hosts/>
-              <units/>
-              <snmpv3_contextname/>
-              <snmpv3_securityname/>
-              <snmpv3_securitylevel>0</snmpv3_securitylevel>
-              <snmpv3_authprotocol>0</snmpv3_authprotocol>
-              <snmpv3_authpassphrase/>
-              <snmpv3_privprotocol>0</snmpv3_privprotocol>
-              <snmpv3_privpassphrase/>
-              <params/>
-              <ipmi_sensor/>
-              <authtype>0</authtype>
-              <username/>
-              <password/>
-              <publickey/>
-              <privatekey/>
-              <port/>
-              <description>Number of rows inserted by queries in this database</description>
-              <inventory_link>0</inventory_link>
-              <applications/>
-              <valuemap/>
-              <logtimefmt/>
-              <preprocessing>
-                <step>
-                  <type>10</type>
-                  <params/>
-                  <error_handler>0</error_handler>
-                  <error_handler_params/>
-                </step>
-              </preprocessing>
-              <jmx_endpoint/>
-              <timeout>3s</timeout>
-              <url/>
-              <query_fields/>
-              <posts/>
-              <status_codes>200</status_codes>
-              <follow_redirects>1</follow_redirects>
-              <post_type>0</post_type>
-              <http_proxy/>
-              <headers/>
-              <retrieve_mode>0</retrieve_mode>
-              <request_method>0</request_method>
-              <output_format>0</output_format>
-              <allow_traps>0</allow_traps>
-              <ssl_cert_file/>
-              <ssl_key_file/>
-              <ssl_key_password/>
-              <verify_peer>0</verify_peer>
-              <verify_host>0</verify_host>
-              <application_prototypes>
-                <application_prototype>
-                  <name>SVC::Postgresql::DB::{#DB}</name>
-                </application_prototype>
-              </application_prototypes>
-              <master_item/>
-            </item_prototype>
-            <item_prototype>
-              <name>rows returned by sequential scans/sec</name>
-              <type>7</type>
-              <snmp_community/>
-              <snmp_oid/>
-              <key>pg.db.tup_returned[{#DB}]</key>
-              <delay>1m</delay>
-              <history>2w</history>
-              <trends>365d</trends>
-              <status>0</status>
-              <value_type>0</value_type>
-              <allowed_hosts/>
-              <units/>
-              <snmpv3_contextname/>
-              <snmpv3_securityname/>
-              <snmpv3_securitylevel>0</snmpv3_securitylevel>
-              <snmpv3_authprotocol>0</snmpv3_authprotocol>
-              <snmpv3_authpassphrase/>
-              <snmpv3_privprotocol>0</snmpv3_privprotocol>
-              <snmpv3_privpassphrase/>
-              <params/>
-              <ipmi_sensor/>
-              <authtype>0</authtype>
-              <username/>
-              <password/>
-              <publickey/>
-              <privatekey/>
-              <port/>
-              <description>Number of rows returned by queries in this database</description>
-              <inventory_link>0</inventory_link>
-              <applications/>
-              <valuemap/>
-              <logtimefmt/>
-              <preprocessing>
-                <step>
-                  <type>10</type>
-                  <params/>
-                  <error_handler>0</error_handler>
-                  <error_handler_params/>
-                </step>
-              </preprocessing>
-              <jmx_endpoint/>
-              <timeout>3s</timeout>
-              <url/>
-              <query_fields/>
-              <posts/>
-              <status_codes>200</status_codes>
-              <follow_redirects>1</follow_redirects>
-              <post_type>0</post_type>
-              <http_proxy/>
-              <headers/>
-              <retrieve_mode>0</retrieve_mode>
-              <request_method>0</request_method>
-              <output_format>0</output_format>
-              <allow_traps>0</allow_traps>
-              <ssl_cert_file/>
-              <ssl_key_file/>
-              <ssl_key_password/>
-              <verify_peer>0</verify_peer>
-              <verify_host>0</verify_host>
-              <application_prototypes>
-                <application_prototype>
-                  <name>SVC::Postgresql::DB::{#DB}</name>
-                </application_prototype>
-              </application_prototypes>
-              <master_item/>
-            </item_prototype>
-            <item_prototype>
-              <name>rows updated/sec</name>
+              <name>{#DB}::rows updated/sec</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -5474,141 +4822,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>ransactions committed/sec</name>
-              <type>7</type>
-              <snmp_community/>
-              <snmp_oid/>
-              <key>pg.db.xact_commit[{#DB}]</key>
-              <delay>1m</delay>
-              <history>2w</history>
-              <trends>365d</trends>
-              <status>0</status>
-              <value_type>0</value_type>
-              <allowed_hosts/>
-              <units/>
-              <snmpv3_contextname/>
-              <snmpv3_securityname/>
-              <snmpv3_securitylevel>0</snmpv3_securitylevel>
-              <snmpv3_authprotocol>0</snmpv3_authprotocol>
-              <snmpv3_authpassphrase/>
-              <snmpv3_privprotocol>0</snmpv3_privprotocol>
-              <snmpv3_privpassphrase/>
-              <params/>
-              <ipmi_sensor/>
-              <authtype>0</authtype>
-              <username/>
-              <password/>
-              <publickey/>
-              <privatekey/>
-              <port/>
-              <description>Number of transactions in this database that have been committed</description>
-              <inventory_link>0</inventory_link>
-              <applications/>
-              <valuemap/>
-              <logtimefmt/>
-              <preprocessing>
-                <step>
-                  <type>10</type>
-                  <params/>
-                  <error_handler>0</error_handler>
-                  <error_handler_params/>
-                </step>
-              </preprocessing>
-              <jmx_endpoint/>
-              <timeout>3s</timeout>
-              <url/>
-              <query_fields/>
-              <posts/>
-              <status_codes>200</status_codes>
-              <follow_redirects>1</follow_redirects>
-              <post_type>0</post_type>
-              <http_proxy/>
-              <headers/>
-              <retrieve_mode>0</retrieve_mode>
-              <request_method>0</request_method>
-              <output_format>0</output_format>
-              <allow_traps>0</allow_traps>
-              <ssl_cert_file/>
-              <ssl_key_file/>
-              <ssl_key_password/>
-              <verify_peer>0</verify_peer>
-              <verify_host>0</verify_host>
-              <application_prototypes>
-                <application_prototype>
-                  <name>SVC::Postgresql::DB::{#DB}</name>
-                </application_prototype>
-              </application_prototypes>
-              <master_item/>
-            </item_prototype>
-            <item_prototype>
-              <name>rollbacks</name>
-              <type>7</type>
-              <snmp_community/>
-              <snmp_oid/>
-              <key>pg.db.xact_rollback[{#DB}]</key>
-              <delay>1m</delay>
-              <history>2w</history>
-              <trends>365d</trends>
-              <status>0</status>
-              <value_type>0</value_type>
-              <allowed_hosts/>
-              <units>rollbacks/s</units>
-              <snmpv3_contextname/>
-              <snmpv3_securityname/>
-              <snmpv3_securitylevel>0</snmpv3_securitylevel>
-              <snmpv3_authprotocol>0</snmpv3_authprotocol>
-              <snmpv3_authpassphrase/>
-              <snmpv3_privprotocol>0</snmpv3_privprotocol>
-              <snmpv3_privpassphrase/>
-              <params/>
-              <ipmi_sensor/>
-              <authtype>0</authtype>
-              <username/>
-              <password/>
-              <publickey/>
-              <privatekey/>
-              <port/>
-              <description>Number of transactions in this database that have been rolled back</description>
-              <inventory_link>0</inventory_link>
-              <applications/>
-              <valuemap/>
-              <logtimefmt/>
-              <preprocessing>
-                <step>
-                  <type>10</type>
-                  <params/>
-                  <error_handler>0</error_handler>
-                  <error_handler_params/>
-                </step>
-              </preprocessing>
-              <jmx_endpoint/>
-              <timeout>3s</timeout>
-              <url/>
-              <query_fields/>
-              <posts/>
-              <status_codes>200</status_codes>
-              <follow_redirects>1</follow_redirects>
-              <post_type>0</post_type>
-              <http_proxy/>
-              <headers/>
-              <retrieve_mode>0</retrieve_mode>
-              <request_method>0</request_method>
-              <output_format>0</output_format>
-              <allow_traps>0</allow_traps>
-              <ssl_cert_file/>
-              <ssl_key_file/>
-              <ssl_key_password/>
-              <verify_peer>0</verify_peer>
-              <verify_host>0</verify_host>
-              <application_prototypes>
-                <application_prototype>
-                  <name>SVC::Postgresql::DB::{#DB}</name>
-                </application_prototype>
-              </application_prototypes>
-              <master_item/>
-            </item_prototype>
-            <item_prototype>
-              <name>transaction ID age (oldest)</name>
+              <name>{#DB}::transaction ID age (oldest)</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -5668,7 +4882,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>oldest prepared transaction</name>
+              <name>{#DB}::oldest prepared transaction</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -5728,7 +4942,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>transactions prepared</name>
+              <name>{#DB}::transactions prepared</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -5788,7 +5002,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>longest running query</name>
+              <name>{#DB}::longest running query</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -5848,7 +5062,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>index scans</name>
+              <name>{#DB}::index scans</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -5915,7 +5129,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>live rows fetched by indexes/sec</name>
+              <name>{#DB}::live rows fetched by indexes/sec</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -5982,7 +5196,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>estimated dead rows</name>
+              <name>{#DB}::estimated dead rows</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6049,7 +5263,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>estimated live rows</name>
+              <name>{#DB}::estimated live rows</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6116,7 +5330,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>estimated modified rows since analyze</name>
+              <name>{#DB}::estimated modified rows since analyze</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6176,7 +5390,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>rows deleted/sec</name>
+              <name>{#DB}::rows deleted/sec</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6243,7 +5457,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>rows hot updated</name>
+              <name>{#DB}::rows hot updated</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6310,7 +5524,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>rows inserted/s</name>
+              <name>{#DB}::rows inserted/s</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6377,7 +5591,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>rows updated/sec</name>
+              <name>{#DB}::rows updated/sec</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6444,7 +5658,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>estimated row count</name>
+              <name>{#DB}::estimated row count</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6504,7 +5718,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>sequential scans/sec</name>
+              <name>{#DB}::sequential scans/sec</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6571,7 +5785,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>live rows fetched by scans/sec</name>
+              <name>{#DB}::live rows fetched by scans/sec</name>
               <type>7</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6637,13 +5851,1036 @@ Description: {#DESCRIPTION}</description>
               </application_prototypes>
               <master_item/>
             </item_prototype>
+            <item_prototype>
+              <name>size</name>
+              <type>18</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>service.pgsql.db.stats[{#DB,size}]</key>
+              <delay>0</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>3</value_type>
+              <allowed_hosts/>
+              <units>B</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description/>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>12</type>
+                  <params>$.pg_database_size</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::Postgresql::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item>
+                <key>service.pgsql.db[{#DB}]</key>
+              </master_item>
+            </item_prototype>
+            <item_prototype>
+              <name>disk block hits</name>
+              <type>18</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>service.pgsql.db.stats[{#DB},blks_hit]</key>
+              <delay>0</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>3</value_type>
+              <allowed_hosts/>
+              <units>hits/s</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Number of times disk blocks were found already in the buffer cache, so that a read was not necessary (this only includes hits in the PostgreSQL buffer cache, not the operating system's file system cache)</description>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>12</type>
+                  <params>$.blks_hit</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>10</type>
+                  <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::Postgresql::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item>
+                <key>service.pgsql.db[{#DB}]</key>
+              </master_item>
+            </item_prototype>
+            <item_prototype>
+              <name>disk blocks read</name>
+              <type>18</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>service.pgsql.db.stats[{#DB},blks_read]</key>
+              <delay>0</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>0</value_type>
+              <allowed_hosts/>
+              <units>reads/s</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Number of disk blocks read in this database</description>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>12</type>
+                  <params>$.blks_read</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>10</type>
+                  <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::Postgresql::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item>
+                <key>service.pgsql.db[{#DB}]</key>
+              </master_item>
+            </item_prototype>
+            <item_prototype>
+              <name>time spent reading data</name>
+              <type>18</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>service.pgsql.db.stats[{#DB},blk_read_time]</key>
+              <delay>0</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>0</value_type>
+              <allowed_hosts/>
+              <units>s</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Time spent reading data file blocks by backends in this database, in seconds</description>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>12</type>
+                  <params>$.blk_read_time</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>1</type>
+                  <params>0.001</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::Postgresql::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item>
+                <key>service.pgsql.db[{#DB}]</key>
+              </master_item>
+            </item_prototype>
+            <item_prototype>
+              <name>deadlocks</name>
+              <type>18</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>service.pgsql.db.stats[{#DB},deadlocks]</key>
+              <delay>0</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>0</value_type>
+              <allowed_hosts/>
+              <units>deadlocks/s</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Number of deadlocks detected in this database</description>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>12</type>
+                  <params>$.deadlocks</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>10</type>
+                  <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::Postgresql::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item>
+                <key>service.pgsql.db[{#DB}]</key>
+              </master_item>
+            </item_prototype>
+            <item_prototype>
+              <name>numbackends</name>
+              <type>18</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>service.pgsql.db.stats[{#DB},numbackends]</key>
+              <delay>0</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>0</value_type>
+              <allowed_hosts/>
+              <units>connections</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Number of queries canceled due to conflicts with recovery in this database. (Conflicts occur only on standby servers; see pg_stat_database_conflicts for details.)</description>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>12</type>
+                  <params>$.numbackends</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::Postgresql::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item>
+                <key>service.pgsql.db[{#DB}]</key>
+              </master_item>
+            </item_prototype>
+            <item_prototype>
+              <name>temp data</name>
+              <type>18</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>service.pgsql.db.stats[{#DB},temp_bytes]</key>
+              <delay>0</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>0</value_type>
+              <allowed_hosts/>
+              <units>B/s</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Total amount of data written to temporary files by queries in this database. All temporary files are counted, regardless of why the temporary file was created, and regardless of the log_temp_files setting.</description>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>12</type>
+                  <params>$.temp_bytes</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>10</type>
+                  <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::Postgresql::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item>
+                <key>service.pgsql.db[{#DB}]</key>
+              </master_item>
+            </item_prototype>
+            <item_prototype>
+              <name>temp files</name>
+              <type>18</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>service.pgsql.db.stats[{#DB},temp_files]</key>
+              <delay>0</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>0</value_type>
+              <allowed_hosts/>
+              <units>files/s</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Number of temporary files created by queries in this database. All temporary files are counted, regardless of why the temporary file was created (e.g., sorting or hashing), and regardless of the log_temp_files setting.</description>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>12</type>
+                  <params>$.temp_files</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>10</type>
+                  <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::Postgresql::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item>
+                <key>service.pgsql.db[{#DB}]</key>
+              </master_item>
+            </item_prototype>
+            <item_prototype>
+              <name>rows fetched by bitmap scans</name>
+              <type>18</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>service.pgsql.db.stats[{#DB},tup_fetched]</key>
+              <delay>0</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>0</value_type>
+              <allowed_hosts/>
+              <units>rows/s</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Number of rows fetched by queries in this database</description>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>10</type>
+                  <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>12</type>
+                  <params>$.tup_fetched</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::Postgresql::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item>
+                <key>service.pgsql.db[{#DB}]</key>
+              </master_item>
+            </item_prototype>
+            <item_prototype>
+              <name>rows inserted</name>
+              <type>18</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>service.pgsql.db.stats[{#DB},tup_inserted]</key>
+              <delay>0</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>0</value_type>
+              <allowed_hosts/>
+              <units>rows/s</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Number of rows inserted by queries in this database</description>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>12</type>
+                  <params>$.tup_inserted</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>10</type>
+                  <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::Postgresql::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item>
+                <key>service.pgsql.db[{#DB}]</key>
+              </master_item>
+            </item_prototype>
+            <item_prototype>
+              <name>rows returned by sequential scans</name>
+              <type>18</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>service.pgsql.db.stats[{#DB},tup_returned]</key>
+              <delay>0</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>0</value_type>
+              <allowed_hosts/>
+              <units>rows/s</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Number of rows returned by queries in this database</description>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>12</type>
+                  <params>$.tup_returned</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>10</type>
+                  <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::Postgresql::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item>
+                <key>service.pgsql.db[{#DB}]</key>
+              </master_item>
+            </item_prototype>
+            <item_prototype>
+              <name>transactions committed</name>
+              <type>18</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>service.pgsql.db.stats[{#DB},xact_commit]</key>
+              <delay>0</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>0</value_type>
+              <allowed_hosts/>
+              <units>transactions/s</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Number of transactions in this database that have been committed</description>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>12</type>
+                  <params>$.xact_commit</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>10</type>
+                  <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::Postgresql::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item>
+                <key>service.pgsql.db[{#DB}]</key>
+              </master_item>
+            </item_prototype>
+            <item_prototype>
+              <name>rollbacks</name>
+              <type>18</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>service.pgsql.db.stats[{#DB},xact_rollback]</key>
+              <delay>0</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>0</value_type>
+              <allowed_hosts/>
+              <units>rollbacks/s</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Number of transactions in this database that have been rolled back</description>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>12</type>
+                  <params>$.xact_rollback</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>10</type>
+                  <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::Postgresql::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item>
+                <key>service.pgsql.db[{#DB}]</key>
+              </master_item>
+            </item_prototype>
+            <item_prototype>
+              <name>{#DB}::stats:</name>
+              <type>7</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>service.pgsql.db[{#DB}]</key>
+              <delay>1m</delay>
+              <history>0</history>
+              <trends>0</trends>
+              <status>0</status>
+              <value_type>4</value_type>
+              <allowed_hosts/>
+              <units/>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description/>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing/>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::Postgresql::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
+            </item_prototype>
           </item_prototypes>
           <trigger_prototypes/>
           <graph_prototypes>
             <graph_prototype>
               <name>SVC::PostgreSQL::{#DB}::blocks</name>
-              <width>900</width>
-              <height>200</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -6667,7 +6904,7 @@ Description: {#DESCRIPTION}</description>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
-                    <key>pg.db.blks_hit[{#DB}]</key>
+                    <key>service.pgsql.db.stats[{#DB},blks_hit]</key>
                   </item>
                 </graph_item>
                 <graph_item>
@@ -6679,15 +6916,283 @@ Description: {#DESCRIPTION}</description>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
-                    <key>pg.db.blks_read[{#DB}]</key>
+                    <key>service.pgsql.db.stats[{#DB},blks_read]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>SVC::PostgreSQL::{#DB}::errors</name>
+              <width>1200</width>
+              <height>300</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>1</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C800C8</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.conflicts[{#DB}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C80000</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>service.pgsql.db.stats[{#DB},deadlocks]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>SVC::PostgreSQL::{#DB}::index utilization</name>
+              <width>1200</width>
+              <height>300</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>1</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>00C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.table.idx_tup_fetch[{#DB}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C80000</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.table.seq_tup_read[{#DB}]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>SVC::PostgreSQL::{#DB}::IO time</name>
+              <width>1200</width>
+              <height>300</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>1</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>00C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>service.pgsql.db.stats[{#DB},blk_read_time]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C80000</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.blk_write_time[{#DB}]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>SVC::PostgreSQL::{#DB}::row count</name>
+              <width>1200</width>
+              <height>300</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>1</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C80000</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.table.n_dead_tup[{#DB}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>00C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.table.n_live_tup[{#DB}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>2</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>0000C8</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.table.rows[{#DB}]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>SVC::PostgreSQL::{#DB}::row IO</name>
+              <width>1200</width>
+              <height>300</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>1</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C80000</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.tup_deleted[{#DB}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>00C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>service.pgsql.db.stats[{#DB},tup_fetched]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>2</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C800C8</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>service.pgsql.db.stats[{#DB},tup_inserted]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>3</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>0000C8</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>service.pgsql.db.stats[{#DB},tup_returned]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>4</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>C8C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>2</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.tup_updated[{#DB}]</key>
                   </item>
                 </graph_item>
               </graph_items>
             </graph_prototype>
             <graph_prototype>
               <name>SVC::PostgreSQL::{#DB}::rows writes</name>
-              <width>900</width>
-              <height>200</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -6748,46 +7253,14 @@ Description: {#DESCRIPTION}</description>
                   <item>
                     <host>Service PostgreSQL</host>
                     <key>pg.table.n_tup_del[{#DB}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>SVC::PostgreSQL::{#DB}::size</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.size[{#DB}]</key>
                   </item>
                 </graph_item>
               </graph_items>
             </graph_prototype>
             <graph_prototype>
               <name>SVC::PostgreSQL::{#DB}::transactions</name>
-              <width>900</width>
-              <height>200</height>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -6811,7 +7284,7 @@ Description: {#DESCRIPTION}</description>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
-                    <key>pg.db.xact_commit[{#DB}]</key>
+                    <key>service.pgsql.db.stats[{#DB},xact_commit]</key>
                   </item>
                 </graph_item>
                 <graph_item>
@@ -6823,15 +7296,15 @@ Description: {#DESCRIPTION}</description>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
-                    <key>pg.db.xact_rollback[{#DB}]</key>
+                    <key>service.pgsql.db.stats[{#DB},xact_rollback]</key>
                   </item>
                 </graph_item>
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>SVC::PostgreSQL Database blocks/sec</name>
-              <width>900</width>
-              <height>200</height>
+              <name>`SVC::PostgreSQL::{#DB}::size</name>
+              <width>1200</width>
+              <height>300</height>
               <yaxismin>0.0000</yaxismin>
               <yaxismax>100.0000</yaxismax>
               <show_work_period>1</show_work_period>
@@ -6855,699 +7328,7 @@ Description: {#DESCRIPTION}</description>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
-                    <key>pg.db.blks_hit[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.blks_read[{#DB}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>SVC::PostgreSQL Database disk size</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.size[{#DB}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>SVC::PostgreSQL Database errors/sec</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C800C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.conflicts[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.deadlocks[{#DB}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>SVC::PostgreSQL Database errors/sec on {#DB}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C800C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.conflicts[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.deadlocks[{#DB}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>SVC::PostgreSQL Database index utilization on {#DB}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.idx_tup_fetch[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.seq_tup_read[{#DB}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>SVC::PostgreSQL Database index utilization on {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.idx_tup_fetch[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.seq_tup_read[{#DB}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>SVC::PostgreSQL Database IO time</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.blk_read_time[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.blk_write_time[{#DB}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>SVC::PostgreSQL Database IO time on {#DB}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.blk_read_time[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.blk_write_time[{#DB}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>SVC::PostgreSQL Database row count on {#DB}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.n_dead_tup[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.n_live_tup[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>2</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>0000C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.rows[{#DB}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>SVC::PostgreSQL Database row count on {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.n_dead_tup[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.n_live_tup[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>2</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>0000C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.rows[{#DB}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>SVC::PostgreSQL Database row IO on {#DB}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_deleted[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_fetched[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>2</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C800C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_inserted[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>3</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>0000C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_returned[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>4</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C8C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_updated[{#DB}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>SVC::PostgreSQL Database row IO on {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_deleted[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_fetched[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>2</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C800C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_inserted[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>3</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>0000C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_returned[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>4</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C8C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_updated[{#DB}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>SVC::PostgreSQL Database row writes/sec on {#PATH}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>0000C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.n_tup_ins[{{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C800C8</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.n_tup_upd[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>2</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.n_tup_hot_upd[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>3</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.table.n_tup_del[{#DB}]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>SVC::PostgreSQL Database transactions/sec on {#DB}</name>
-              <width>900</width>
-              <height>200</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.xact_commit[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>C80000</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.xact_rollback[{#DB}]</key>
+                    <key>service.pgsql.db.stats[{#DB,size}]</key>
                   </item>
                 </graph_item>
               </graph_items>
@@ -7574,40 +7355,16 @@ Description: {#DESCRIPTION}</description>
           <verify_host>0</verify_host>
           <lld_macro_paths>
             <lld_macro_path>
+              <lld_macro>{#DATALLOWCONN}</lld_macro>
+              <path>$.datallowconn</path>
+            </lld_macro_path>
+            <lld_macro_path>
+              <lld_macro>{#DATISTEMPLATE}</lld_macro>
+              <path>$.datistemplate</path>
+            </lld_macro_path>
+            <lld_macro_path>
               <lld_macro>{#DB}</lld_macro>
-              <path>$.db</path>
-            </lld_macro_path>
-            <lld_macro_path>
-              <lld_macro>{#DESCRIPTION}</lld_macro>
-              <path>$.description</path>
-            </lld_macro_path>
-            <lld_macro_path>
-              <lld_macro>{#ENCODING}</lld_macro>
-              <path>$.encoding</path>
-            </lld_macro_path>
-            <lld_macro_path>
-              <lld_macro>{#LC_COLLATE}</lld_macro>
-              <path>$.lc_collate</path>
-            </lld_macro_path>
-            <lld_macro_path>
-              <lld_macro>{#LC_CTYPE}</lld_macro>
-              <path>$.lc_ctype</path>
-            </lld_macro_path>
-            <lld_macro_path>
-              <lld_macro>{#OID}</lld_macro>
-              <path>$.oid</path>
-            </lld_macro_path>
-            <lld_macro_path>
-              <lld_macro>{#OWNER}</lld_macro>
-              <path>$.owner</path>
-            </lld_macro_path>
-            <lld_macro_path>
-              <lld_macro>{#PATH}</lld_macro>
-              <path>$.path</path>
-            </lld_macro_path>
-            <lld_macro_path>
-              <lld_macro>{#TABLESPACE}</lld_macro>
-              <path>$.tablespace</path>
+              <path>$.datname</path>
             </lld_macro_path>
           </lld_macro_paths>
           <preprocessing/>
@@ -7650,7 +7407,14 @@ Description: {#DESCRIPTION}</description>
         </macro>
       </macros>
       <templates/>
-      <screens/>
+      <screens>
+        <screen>
+          <name>SVC::PostgreSQL::db::size</name>
+          <hsize>1</hsize>
+          <vsize>1</vsize>
+          <screen_items/>
+        </screen>
+      </screens>
       <tags/>
     </template>
   </templates>
@@ -7811,8 +7575,8 @@ Perform a VACUUM as soon a possible to reset the available Transaction IDs and r
   <graphs>
     <graph>
       <name>SVC::PostgreSQL Backend Connections</name>
-      <width>900</width>
-      <height>200</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -7843,8 +7607,8 @@ Perform a VACUUM as soon a possible to reset the available Transaction IDs and r
     </graph>
     <graph>
       <name>SVC::PostgreSQL Buffers</name>
-      <width>900</width>
-      <height>200</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -7911,8 +7675,8 @@ Perform a VACUUM as soon a possible to reset the available Transaction IDs and r
     </graph>
     <graph>
       <name>SVC::PostgreSQL Checkpoints</name>
-      <width>900</width>
-      <height>200</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>
@@ -7955,8 +7719,8 @@ Perform a VACUUM as soon a possible to reset the available Transaction IDs and r
     </graph>
     <graph>
       <name>SVC::PostgreSQL Configuration thresholds</name>
-      <width>900</width>
-      <height>200</height>
+      <width>1200</width>
+      <height>300</height>
       <yaxismin>0.0000</yaxismin>
       <yaxismax>100.0000</yaxismax>
       <show_work_period>1</show_work_period>

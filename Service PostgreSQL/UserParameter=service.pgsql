@@ -1,2 +1,3 @@
 UserParameter=service.pgsql.version[*],/usr/bin/psql -U monitoring -qAtX postgres -c "SELECT version();"
-UserParameter=service.pgsql.discovery[*],/usr/bin/psql -U monitoring -qAtX postgres -c "SELECT json_agg(row_to_json(row)) FROM ( SELECT d.oid as OID, d.datname as PATH, d.datname as DB, pg_catalog.pg_encoding_to_char(d.encoding) as ENCODING, d.datcollate as LC_COLLATE, d.datctype as lc_ctype, pg_catalog.pg_get_userbyid(d.datdba) as owner, t.spcname as tablespace, pg_catalog.shobj_description(d.oid, 'pg_database') as description FROM pg_catalog.pg_database d JOIN pg_catalog.pg_tablespace t on d.dattablespace = t.oid WHERE d.datallowconn = 't' AND d.datistemplate = 'n' ORDER BY 1) row;"
+UserParameter=service.pgsql.discovery.db,/usr/bin/psql -U monitoring -qAtX postgres -c "SELECT json_agg(row_to_json(row)) FROM (SELECT datname, datallowconn, datistemplate FROM pg_catalog.pg_database ORDER BY 1)
+row;"
