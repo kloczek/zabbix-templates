@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-08-14T12:56:15Z</date>
+  <date>2019-08-15T11:02:39Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -1723,7 +1723,7 @@ Accepts only the default connection parameters.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>proc.num[{$SVC_PSQL_PROC}]</key>
-          <delay>1m</delay>
+          <delay>10s</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -1756,7 +1756,14 @@ Accepts only the default connection parameters.</description>
             <name>Service state</name>
           </valuemap>
           <logtimefmt/>
-          <preprocessing/>
+          <preprocessing>
+            <step>
+              <type>20</type>
+              <params>7d</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
           <jmx_endpoint/>
           <timeout>3s</timeout>
           <url/>
@@ -5852,75 +5859,6 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>size</name>
-              <type>18</type>
-              <snmp_community/>
-              <snmp_oid/>
-              <key>service.pgsql.db.stats[{#DB,size}]</key>
-              <delay>0</delay>
-              <history>2w</history>
-              <trends>365d</trends>
-              <status>0</status>
-              <value_type>3</value_type>
-              <allowed_hosts/>
-              <units>B</units>
-              <snmpv3_contextname/>
-              <snmpv3_securityname/>
-              <snmpv3_securitylevel>0</snmpv3_securitylevel>
-              <snmpv3_authprotocol>0</snmpv3_authprotocol>
-              <snmpv3_authpassphrase/>
-              <snmpv3_privprotocol>0</snmpv3_privprotocol>
-              <snmpv3_privpassphrase/>
-              <params/>
-              <ipmi_sensor/>
-              <authtype>0</authtype>
-              <username/>
-              <password/>
-              <publickey/>
-              <privatekey/>
-              <port/>
-              <description/>
-              <inventory_link>0</inventory_link>
-              <applications/>
-              <valuemap/>
-              <logtimefmt/>
-              <preprocessing>
-                <step>
-                  <type>12</type>
-                  <params>$.pg_database_size</params>
-                  <error_handler>0</error_handler>
-                  <error_handler_params/>
-                </step>
-              </preprocessing>
-              <jmx_endpoint/>
-              <timeout>3s</timeout>
-              <url/>
-              <query_fields/>
-              <posts/>
-              <status_codes>200</status_codes>
-              <follow_redirects>1</follow_redirects>
-              <post_type>0</post_type>
-              <http_proxy/>
-              <headers/>
-              <retrieve_mode>0</retrieve_mode>
-              <request_method>0</request_method>
-              <output_format>0</output_format>
-              <allow_traps>0</allow_traps>
-              <ssl_cert_file/>
-              <ssl_key_file/>
-              <ssl_key_password/>
-              <verify_peer>0</verify_peer>
-              <verify_host>0</verify_host>
-              <application_prototypes>
-                <application_prototype>
-                  <name>SVC::Postgresql::DB::{#DB}</name>
-                </application_prototype>
-              </application_prototypes>
-              <master_item>
-                <key>service.pgsql.db[{#DB}]</key>
-              </master_item>
-            </item_prototype>
-            <item_prototype>
               <name>disk block hits</name>
               <type>18</type>
               <snmp_community/>
@@ -6257,6 +6195,75 @@ Description: {#DESCRIPTION}</description>
                 <step>
                   <type>12</type>
                   <params>$.numbackends</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::Postgresql::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item>
+                <key>service.pgsql.db[{#DB}]</key>
+              </master_item>
+            </item_prototype>
+            <item_prototype>
+              <name>size</name>
+              <type>18</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>service.pgsql.db.stats[{#DB},size}]</key>
+              <delay>0</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>3</value_type>
+              <allowed_hosts/>
+              <units>B</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description/>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>12</type>
+                  <params>$.pg_database_size</params>
                   <error_handler>0</error_handler>
                   <error_handler_params/>
                 </step>
@@ -6820,7 +6827,7 @@ Description: {#DESCRIPTION}</description>
               <snmp_community/>
               <snmp_oid/>
               <key>service.pgsql.db[{#DB}]</key>
-              <delay>1m</delay>
+              <delay>20s</delay>
               <history>0</history>
               <trends>0</trends>
               <status>0</status>
@@ -7328,7 +7335,7 @@ Description: {#DESCRIPTION}</description>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
-                    <key>service.pgsql.db.stats[{#DB,size}]</key>
+                    <key>service.pgsql.db.stats[{#DB},size}]</key>
                   </item>
                 </graph_item>
               </graph_items>
@@ -7353,20 +7360,7 @@ Description: {#DESCRIPTION}</description>
           <ssl_key_password/>
           <verify_peer>0</verify_peer>
           <verify_host>0</verify_host>
-          <lld_macro_paths>
-            <lld_macro_path>
-              <lld_macro>{#DATALLOWCONN}</lld_macro>
-              <path>$.datallowconn</path>
-            </lld_macro_path>
-            <lld_macro_path>
-              <lld_macro>{#DATISTEMPLATE}</lld_macro>
-              <path>$.datistemplate</path>
-            </lld_macro_path>
-            <lld_macro_path>
-              <lld_macro>{#DB}</lld_macro>
-              <path>$.datname</path>
-            </lld_macro_path>
-          </lld_macro_paths>
+          <lld_macro_paths/>
           <preprocessing/>
           <master_item/>
         </discovery_rule>
