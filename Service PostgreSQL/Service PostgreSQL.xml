@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-08-15T11:02:39Z</date>
+  <date>2019-08-15T15:39:54Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -5859,7 +5859,7 @@ Description: {#DESCRIPTION}</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>disk block hits</name>
+              <name>blks_hit</name>
               <type>18</type>
               <snmp_community/>
               <snmp_oid/>
@@ -5870,7 +5870,7 @@ Description: {#DESCRIPTION}</description>
               <status>0</status>
               <value_type>3</value_type>
               <allowed_hosts/>
-              <units>hits/s</units>
+              <units>blocks/s</units>
               <snmpv3_contextname/>
               <snmpv3_securityname/>
               <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -5886,7 +5886,7 @@ Description: {#DESCRIPTION}</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description>Number of times disk blocks were found already in the buffer cache, so that a read was not necessary (this only includes hits in the PostgreSQL buffer cache, not the operating system's file system cache)</description>
+              <description>Number of times disk blocks were found already in the buffer cache, so that a read was not necessary (this only includes hits in the PostgreSQL buffer cache, not the operating system's file system cache).</description>
               <inventory_link>0</inventory_link>
               <applications/>
               <valuemap/>
@@ -5934,7 +5934,7 @@ Description: {#DESCRIPTION}</description>
               </master_item>
             </item_prototype>
             <item_prototype>
-              <name>disk blocks read</name>
+              <name>blks_read</name>
               <type>18</type>
               <snmp_community/>
               <snmp_oid/>
@@ -5945,7 +5945,7 @@ Description: {#DESCRIPTION}</description>
               <status>0</status>
               <value_type>0</value_type>
               <allowed_hosts/>
-              <units>reads/s</units>
+              <units>blocks/s</units>
               <snmpv3_contextname/>
               <snmpv3_securityname/>
               <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -5961,7 +5961,7 @@ Description: {#DESCRIPTION}</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description>Number of disk blocks read in this database</description>
+              <description>Number of disk blocks read in this database.</description>
               <inventory_link>0</inventory_link>
               <applications/>
               <valuemap/>
@@ -6009,7 +6009,7 @@ Description: {#DESCRIPTION}</description>
               </master_item>
             </item_prototype>
             <item_prototype>
-              <name>time spent reading data</name>
+              <name>blk_read_time</name>
               <type>18</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6036,7 +6036,7 @@ Description: {#DESCRIPTION}</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description>Time spent reading data file blocks by backends in this database, in seconds</description>
+              <description>Time spent reading data file blocks by backends in this database.</description>
               <inventory_link>0</inventory_link>
               <applications/>
               <valuemap/>
@@ -6186,7 +6186,7 @@ Description: {#DESCRIPTION}</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description>Number of queries canceled due to conflicts with recovery in this database. (Conflicts occur only on standby servers; see pg_stat_database_conflicts for details.)</description>
+              <description>Number of backends currently connected to this database.</description>
               <inventory_link>0</inventory_link>
               <applications/>
               <valuemap/>
@@ -6297,7 +6297,7 @@ Description: {#DESCRIPTION}</description>
               </master_item>
             </item_prototype>
             <item_prototype>
-              <name>temp data</name>
+              <name>temp_bytes</name>
               <type>18</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6372,7 +6372,7 @@ Description: {#DESCRIPTION}</description>
               </master_item>
             </item_prototype>
             <item_prototype>
-              <name>temp files</name>
+              <name>temp_files</name>
               <type>18</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6399,7 +6399,8 @@ Description: {#DESCRIPTION}</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description>Number of temporary files created by queries in this database. All temporary files are counted, regardless of why the temporary file was created (e.g., sorting or hashing), and regardless of the log_temp_files setting.</description>
+              <description>Number of temporary files created by queries in this database.&#13;
+All temporary files are counted, regardless of why the temporary file was created (e.g., sorting or hashing), and regardless of the log_temp_files setting.</description>
               <inventory_link>0</inventory_link>
               <applications/>
               <valuemap/>
@@ -6447,7 +6448,7 @@ Description: {#DESCRIPTION}</description>
               </master_item>
             </item_prototype>
             <item_prototype>
-              <name>rows fetched by bitmap scans</name>
+              <name>tup_fetched</name>
               <type>18</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6474,7 +6475,7 @@ Description: {#DESCRIPTION}</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description>Number of rows fetched by queries in this database</description>
+              <description>Number of rows fetched by queries in this database.</description>
               <inventory_link>0</inventory_link>
               <applications/>
               <valuemap/>
@@ -6597,7 +6598,7 @@ Description: {#DESCRIPTION}</description>
               </master_item>
             </item_prototype>
             <item_prototype>
-              <name>rows returned by sequential scans</name>
+              <name>tup_returned</name>
               <type>18</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6624,7 +6625,7 @@ Description: {#DESCRIPTION}</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description>Number of rows returned by queries in this database</description>
+              <description>Number of rows returned by queries in this database.</description>
               <inventory_link>0</inventory_link>
               <applications/>
               <valuemap/>
@@ -6672,7 +6673,7 @@ Description: {#DESCRIPTION}</description>
               </master_item>
             </item_prototype>
             <item_prototype>
-              <name>transactions committed</name>
+              <name>xact_commit</name>
               <type>18</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6699,7 +6700,7 @@ Description: {#DESCRIPTION}</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description>Number of transactions in this database that have been committed</description>
+              <description>Number of transactions in this database that have been committed.</description>
               <inventory_link>0</inventory_link>
               <applications/>
               <valuemap/>
@@ -6747,7 +6748,7 @@ Description: {#DESCRIPTION}</description>
               </master_item>
             </item_prototype>
             <item_prototype>
-              <name>rollbacks</name>
+              <name>xact_rollback</name>
               <type>18</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6758,7 +6759,7 @@ Description: {#DESCRIPTION}</description>
               <status>0</status>
               <value_type>0</value_type>
               <allowed_hosts/>
-              <units>rollbacks/s</units>
+              <units>transactions/s</units>
               <snmpv3_contextname/>
               <snmpv3_securityname/>
               <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -6774,7 +6775,7 @@ Description: {#DESCRIPTION}</description>
               <publickey/>
               <privatekey/>
               <port/>
-              <description>Number of transactions in this database that have been rolled back</description>
+              <description>Number of transactions in this database that have been rolled back.</description>
               <inventory_link>0</inventory_link>
               <applications/>
               <valuemap/>
