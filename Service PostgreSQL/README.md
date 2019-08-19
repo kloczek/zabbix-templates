@@ -6,6 +6,7 @@ URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20PostgreSQ
 #### Macros used by template:
 | Macro | Default value | Description |
 | :-- | :-- | :-- |
+| {$SVC_PSQL_DB_FILTER} | ^(?!(postgres)) | default PosrgreSQL:DB: LLD filter |
 | {$SVC_PSQL_HOST} | localhost | Hostname of the Postgresql service to monitor |
 | {$SVC_PSQL_PORT} | 5432 | TCP port on which is listening monitored PostgreSQL |
 | {$SVC_PSQL_PROC} | postgres | PosgreSQL process name |

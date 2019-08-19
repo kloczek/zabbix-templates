@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-08-15T15:39:54Z</date>
+  <date>2019-08-19T14:34:37Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -4478,12 +4478,6 @@ Description: {#DESCRIPTION}</description>
             <formula/>
             <conditions>
               <condition>
-                <macro>{#DB}</macro>
-                <value>^(?!(postgres))</value>
-                <operator>8</operator>
-                <formulaid>C</formulaid>
-              </condition>
-              <condition>
                 <macro>{#DATALLOWCONN}</macro>
                 <value>true</value>
                 <operator>8</operator>
@@ -4494,6 +4488,12 @@ Description: {#DESCRIPTION}</description>
                 <value>false</value>
                 <operator>8</operator>
                 <formulaid>B</formulaid>
+              </condition>
+              <condition>
+                <macro>{#DB}</macro>
+                <value>{$SVC_PSQL_DB_FILTER}</value>
+                <operator>8</operator>
+                <formulaid>C</formulaid>
               </condition>
             </conditions>
           </filter>
@@ -6124,6 +6124,12 @@ Description: {#DESCRIPTION}</description>
                   <error_handler_params/>
                 </step>
                 <step>
+                  <type>20</type>
+                  <params>7d</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
                   <type>10</type>
                   <params/>
                   <error_handler>0</error_handler>
@@ -6523,7 +6529,7 @@ All temporary files are counted, regardless of why the temporary file was create
               </master_item>
             </item_prototype>
             <item_prototype>
-              <name>rows inserted</name>
+              <name>tup_inserted</name>
               <type>18</type>
               <snmp_community/>
               <snmp_oid/>
@@ -6784,6 +6790,12 @@ All temporary files are counted, regardless of why the temporary file was create
                 <step>
                   <type>12</type>
                   <params>$.xact_rollback</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>20</type>
+                  <params>7d</params>
                   <error_handler>0</error_handler>
                   <error_handler_params/>
                 </step>
@@ -7395,6 +7407,10 @@ All temporary files are counted, regardless of why the temporary file was create
         <macro>
           <macro>{$PG_XID_WARN}</macro>
           <value>2137483648</value>
+        </macro>
+        <macro>
+          <macro>{$SVC_PSQL_DB_FILTER}</macro>
+          <value>^(?!(postgres))</value>
         </macro>
         <macro>
           <macro>{$SVC_PSQL_PROC}</macro>
