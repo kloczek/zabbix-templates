@@ -1859,7 +1859,7 @@ Accepts only the default connection parameters.</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.index.discovery[{$PG_CONN},{$PG_DB}]</key>
-          <delay>3600</delay>
+          <delay>2m</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -1882,7 +1882,7 @@ Accepts only the default connection parameters.</description>
             <formula/>
             <conditions/>
           </filter>
-          <lifetime>30d</lifetime>
+          <lifetime>1d</lifetime>
           <description>Discover all indexes available to the connected user</description>
           <item_prototypes>
             <item_prototype>
@@ -2677,7 +2677,7 @@ Description: {#DESCRIPTION}</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.table.discovery[{$PG_CONN},{$PG_DB}]</key>
-          <delay>3600</delay>
+          <delay>2m</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -2700,7 +2700,7 @@ Description: {#DESCRIPTION}</description>
             <formula/>
             <conditions/>
           </filter>
-          <lifetime>30d</lifetime>
+          <lifetime>1d</lifetime>
           <description>Discovery PostgreSQL Tables available to the connected user</description>
           <item_prototypes>
             <item_prototype>
@@ -4304,7 +4304,7 @@ Description: {#DESCRIPTION}</description>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.tablespace.discovery[{$PG_CONN},{$PG_DB}]</key>
-          <delay>3600</delay>
+          <delay>2m</delay>
           <status>0</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
@@ -4327,7 +4327,7 @@ Description: {#DESCRIPTION}</description>
             <formula/>
             <conditions/>
           </filter>
-          <lifetime>30d</lifetime>
+          <lifetime>1d</lifetime>
           <description/>
           <item_prototypes>
             <item_prototype>
@@ -4497,7 +4497,7 @@ Description: {#DESCRIPTION}</description>
               </condition>
             </conditions>
           </filter>
-          <lifetime>2w</lifetime>
+          <lifetime>1d</lifetime>
           <description>Discover all databases available for connection.</description>
           <item_prototypes>
             <item_prototype>
@@ -6488,14 +6488,14 @@ All temporary files are counted, regardless of why the temporary file was create
               <logtimefmt/>
               <preprocessing>
                 <step>
-                  <type>10</type>
-                  <params/>
+                  <type>12</type>
+                  <params>$.tup_fetched</params>
                   <error_handler>0</error_handler>
                   <error_handler_params/>
                 </step>
                 <step>
-                  <type>12</type>
-                  <params>$.tup_fetched</params>
+                  <type>10</type>
+                  <params/>
                   <error_handler>0</error_handler>
                   <error_handler_params/>
                 </step>
@@ -6844,7 +6844,7 @@ All temporary files are counted, regardless of why the temporary file was create
               <history>0</history>
               <trends>0</trends>
               <status>0</status>
-              <value_type>4</value_type>
+              <value_type>1</value_type>
               <allowed_hosts/>
               <units/>
               <snmpv3_contextname/>
