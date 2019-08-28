@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-08-19T14:34:37Z</date>
+  <date>2019-08-28T11:53:40Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -109,7 +109,7 @@ https://www.postgresql.org/docs/9.6/monitoring-stats.html</description>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>3</value_type>
           <allowed_hosts/>
           <units/>
@@ -174,7 +174,7 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>3</value_type>
           <allowed_hosts/>
           <units>connections</units>
@@ -233,7 +233,7 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>0</value_type>
           <allowed_hosts/>
           <units>%</units>
@@ -299,7 +299,7 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>0</value_type>
           <allowed_hosts/>
           <units>buffers/s</units>
@@ -365,7 +365,7 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>0</value_type>
           <allowed_hosts/>
           <units>buffers/s</units>
@@ -431,7 +431,7 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>0</value_type>
           <allowed_hosts/>
           <units>fsync/s</units>
@@ -497,7 +497,7 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>3</value_type>
           <allowed_hosts/>
           <units>buffers/s</units>
@@ -563,7 +563,7 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>0</value_type>
           <allowed_hosts/>
           <units>buffers/s</units>
@@ -629,7 +629,7 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>3</value_type>
           <allowed_hosts/>
           <units/>
@@ -688,7 +688,7 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>3</value_type>
           <allowed_hosts/>
           <units/>
@@ -747,7 +747,7 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>0</value_type>
           <allowed_hosts/>
           <units>s</units>
@@ -806,7 +806,7 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>0</value_type>
           <allowed_hosts/>
           <units>s</units>
@@ -872,7 +872,7 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>0</value_type>
           <allowed_hosts/>
           <units>%</units>
@@ -938,7 +938,7 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>0</value_type>
           <allowed_hosts/>
           <units>s</units>
@@ -1004,7 +1004,7 @@ Waiting: true|false count only backends waiting on a lock.</description>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>3</value_type>
           <allowed_hosts/>
           <units/>
@@ -1066,7 +1066,7 @@ NOTE: If you are using connection pooling, this parameter should bypass the conn
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>3</value_type>
           <allowed_hosts/>
           <units>/ 2M</units>
@@ -1125,7 +1125,7 @@ NOTE: If you are using connection pooling, this parameter should bypass the conn
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>3</value_type>
           <allowed_hosts/>
           <units/>
@@ -1184,7 +1184,7 @@ NOTE: If you are using connection pooling, this parameter should bypass the conn
           <delay>1m</delay>
           <history>2w</history>
           <trends>0</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>4</value_type>
           <allowed_hosts/>
           <units/>
@@ -1243,7 +1243,7 @@ NOTE: If you are using connection pooling, this parameter should bypass the conn
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>3</value_type>
           <allowed_hosts/>
           <units>s</units>
@@ -1302,7 +1302,7 @@ NOTE: If you are using connection pooling, this parameter should bypass the conn
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>3</value_type>
           <allowed_hosts/>
           <units/>
@@ -1361,7 +1361,7 @@ NOTE: If you are using connection pooling, this parameter should bypass the conn
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>0</value_type>
           <allowed_hosts/>
           <units>%</units>
@@ -1427,7 +1427,7 @@ NOTE: If you are using connection pooling, this parameter should bypass the conn
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>0</value_type>
           <allowed_hosts/>
           <units>s</units>
@@ -1486,7 +1486,7 @@ NOTE: If you are using connection pooling, this parameter should bypass the conn
           <delay>1m</delay>
           <history>2w</history>
           <trends>0</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>4</value_type>
           <allowed_hosts/>
           <units/>
@@ -1547,7 +1547,7 @@ Accepts only the default connection parameters.</description>
           <delay>1m</delay>
           <history>2w</history>
           <trends>0</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>4</value_type>
           <allowed_hosts/>
           <units/>
@@ -1606,7 +1606,7 @@ Accepts only the default connection parameters.</description>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>3</value_type>
           <allowed_hosts/>
           <units>uptime</units>
@@ -1786,6 +1786,65 @@ Accepts only the default connection parameters.</description>
           <master_item/>
         </item>
         <item>
+          <name>configuration</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>service.pgsql.cfg</key>
+          <delay>1m</delay>
+          <history>90d</history>
+          <trends>0</trends>
+          <status>0</status>
+          <value_type>4</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Master item with all databases configuration.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::PostgreSQL</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item/>
+        </item>
+        <item>
           <name>version</name>
           <type>7</type>
           <snmp_community/>
@@ -1860,7 +1919,7 @@ Accepts only the default connection parameters.</description>
           <snmp_oid/>
           <key>pg.index.discovery[{$PG_CONN},{$PG_DB}]</key>
           <delay>2m</delay>
-          <status>0</status>
+          <status>1</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -2532,153 +2591,13 @@ Accepts only the default connection parameters.</description>
           <master_item/>
         </discovery_rule>
         <discovery_rule>
-          <name>PostgreSQL::Settings:</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>pg.setting.discovery[{$PG_CONN},{$PG_DB}]</key>
-          <delay>3600</delay>
-          <status>1</status>
-          <allowed_hosts/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <filter>
-            <evaltype>0</evaltype>
-            <formula/>
-            <conditions/>
-          </filter>
-          <lifetime>30d</lifetime>
-          <description>Discovers all known configuration settings.&#13;
-&#13;
-Accepts only the default connection parameters.</description>
-          <item_prototypes>
-            <item_prototype>
-              <name>PostgreSQL Setting: {#SETTING}</name>
-              <type>7</type>
-              <snmp_community/>
-              <snmp_oid/>
-              <key>pg.setting[{$PG_CONN},{$PG_DB},{#SETTING}]</key>
-              <delay>1m</delay>
-              <history>2w</history>
-              <trends>0</trends>
-              <status>0</status>
-              <value_type>4</value_type>
-              <allowed_hosts/>
-              <units/>
-              <snmpv3_contextname/>
-              <snmpv3_securityname/>
-              <snmpv3_securitylevel>0</snmpv3_securitylevel>
-              <snmpv3_authprotocol>0</snmpv3_authprotocol>
-              <snmpv3_authpassphrase/>
-              <snmpv3_privprotocol>0</snmpv3_privprotocol>
-              <snmpv3_privpassphrase/>
-              <params/>
-              <ipmi_sensor/>
-              <authtype>0</authtype>
-              <username/>
-              <password/>
-              <publickey/>
-              <privatekey/>
-              <port/>
-              <description>Returns the runtime value of the {#SETTING} configuration setting.&#13;
-&#13;
-Category: {#CATEGORY}&#13;
-Description: {#DESCRIPTION}</description>
-              <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>SVC::PostgreSQL::cfg</name>
-                </application>
-              </applications>
-              <valuemap/>
-              <logtimefmt/>
-              <preprocessing/>
-              <jmx_endpoint/>
-              <timeout>3s</timeout>
-              <url/>
-              <query_fields/>
-              <posts/>
-              <status_codes>200</status_codes>
-              <follow_redirects>1</follow_redirects>
-              <post_type>0</post_type>
-              <http_proxy/>
-              <headers/>
-              <retrieve_mode>0</retrieve_mode>
-              <request_method>0</request_method>
-              <output_format>0</output_format>
-              <allow_traps>0</allow_traps>
-              <ssl_cert_file/>
-              <ssl_key_file/>
-              <ssl_key_password/>
-              <verify_peer>0</verify_peer>
-              <verify_host>0</verify_host>
-              <application_prototypes/>
-              <master_item/>
-            </item_prototype>
-          </item_prototypes>
-          <trigger_prototypes>
-            <trigger_prototype>
-              <expression>{Service PostgreSQL:pg.setting[{$PG_CONN},{$PG_DB},{#SETTING}].diff(0)}&gt;0</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>SVC::PostgreSQL::Setting:L{#SETTING} has changed</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>1</priority>
-              <description/>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
-              <tags/>
-            </trigger_prototype>
-          </trigger_prototypes>
-          <graph_prototypes/>
-          <host_prototypes/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <lld_macro_paths/>
-          <preprocessing/>
-          <master_item/>
-        </discovery_rule>
-        <discovery_rule>
           <name>PostgreSQL::Tables:</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
           <key>pg.table.discovery[{$PG_CONN},{$PG_DB}]</key>
           <delay>2m</delay>
-          <status>0</status>
+          <status>1</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -4305,7 +4224,7 @@ Description: {#DESCRIPTION}</description>
           <snmp_oid/>
           <key>pg.tablespace.discovery[{$PG_CONN},{$PG_DB}]</key>
           <delay>2m</delay>
-          <status>0</status>
+          <status>1</status>
           <allowed_hosts/>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
@@ -4450,6 +4369,163 @@ Description: {#DESCRIPTION}</description>
           <master_item/>
         </discovery_rule>
         <discovery_rule>
+          <name>PostgreSQL::cfg:</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>service.pgsql.discovery.cfg</key>
+          <delay>2m</delay>
+          <status>0</status>
+          <allowed_hosts/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <filter>
+            <evaltype>0</evaltype>
+            <formula/>
+            <conditions/>
+          </filter>
+          <lifetime>1d</lifetime>
+          <description>Discovers all known configuration settings.</description>
+          <item_prototypes>
+            <item_prototype>
+              <name>PostgreSQL:cfg:{#NAME}</name>
+              <type>18</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>service.pgsql.cfg.setting[{#NAME}]</key>
+              <delay>0</delay>
+              <history>2w</history>
+              <trends>0</trends>
+              <status>0</status>
+              <value_type>1</value_type>
+              <allowed_hosts/>
+              <units/>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>{#SHORT_DESC}</description>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>12</type>
+                  <params>$.[?(@.name=="{#NAME}")].setting</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>5</type>
+                  <params>(\[\")(.*)(\"\])
+\2</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>20</type>
+                  <params>7d</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::PostgreSQL::{#CATEGORY}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item>
+                <key>service.pgsql.cfg</key>
+              </master_item>
+            </item_prototype>
+          </item_prototypes>
+          <trigger_prototypes>
+            <trigger_prototype>
+              <expression>{Service PostgreSQL:service.pgsql.cfg.setting[{#NAME}].diff(0)}&gt;0</expression>
+              <recovery_mode>0</recovery_mode>
+              <recovery_expression/>
+              <name>SVC::PostgreSQL::cfg:{#NAME} has changed to {ITEM.LASTVALUE}</name>
+              <correlation_mode>0</correlation_mode>
+              <correlation_tag/>
+              <url/>
+              <status>0</status>
+              <priority>1</priority>
+              <description>PostgreSQL configuration parameter "{#NAME} " has changed.</description>
+              <type>0</type>
+              <manual_close>1</manual_close>
+              <dependencies/>
+              <tags/>
+            </trigger_prototype>
+          </trigger_prototypes>
+          <graph_prototypes/>
+          <host_prototypes/>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <lld_macro_paths/>
+          <preprocessing/>
+          <master_item/>
+        </discovery_rule>
+        <discovery_rule>
           <name>PostgreSQL::DB:</name>
           <type>7</type>
           <snmp_community/>
@@ -4509,7 +4585,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>0</value_type>
               <allowed_hosts/>
               <units>s</units>
@@ -4576,7 +4652,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>0</value_type>
               <allowed_hosts/>
               <units>conflicts/s</units>
@@ -4643,7 +4719,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>0</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>4</value_type>
               <allowed_hosts/>
               <units/>
@@ -4703,7 +4779,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>0</value_type>
               <allowed_hosts/>
               <units/>
@@ -4770,7 +4846,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>0</value_type>
               <allowed_hosts/>
               <units/>
@@ -4837,7 +4913,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>3</value_type>
               <allowed_hosts/>
               <units>/ 2M</units>
@@ -4897,7 +4973,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>3</value_type>
               <allowed_hosts/>
               <units>s</units>
@@ -4957,7 +5033,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>3</value_type>
               <allowed_hosts/>
               <units/>
@@ -5017,7 +5093,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>0</value_type>
               <allowed_hosts/>
               <units>s</units>
@@ -5077,7 +5153,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>3</value_type>
               <allowed_hosts/>
               <units>scans/s</units>
@@ -5144,7 +5220,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>3</value_type>
               <allowed_hosts/>
               <units>rows/s</units>
@@ -5211,7 +5287,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>3</value_type>
               <allowed_hosts/>
               <units>rows</units>
@@ -5278,7 +5354,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>3</value_type>
               <allowed_hosts/>
               <units>rows</units>
@@ -5345,7 +5421,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>3</value_type>
               <allowed_hosts/>
               <units>rows</units>
@@ -5405,7 +5481,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>3</value_type>
               <allowed_hosts/>
               <units/>
@@ -5472,7 +5548,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>3</value_type>
               <allowed_hosts/>
               <units/>
@@ -5539,7 +5615,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>3</value_type>
               <allowed_hosts/>
               <units/>
@@ -5606,7 +5682,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>3</value_type>
               <allowed_hosts/>
               <units/>
@@ -5673,7 +5749,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>3</value_type>
               <allowed_hosts/>
               <units>rows</units>
@@ -5733,7 +5809,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>3</value_type>
               <allowed_hosts/>
               <units/>
@@ -5800,7 +5876,7 @@ Description: {#DESCRIPTION}</description>
               <delay>1m</delay>
               <history>2w</history>
               <trends>365d</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>3</value_type>
               <allowed_hosts/>
               <units/>
@@ -6124,14 +6200,14 @@ Description: {#DESCRIPTION}</description>
                   <error_handler_params/>
                 </step>
                 <step>
-                  <type>20</type>
-                  <params>7d</params>
+                  <type>10</type>
+                  <params/>
                   <error_handler>0</error_handler>
                   <error_handler_params/>
                 </step>
                 <step>
-                  <type>10</type>
-                  <params/>
+                  <type>20</type>
+                  <params>7d</params>
                   <error_handler>0</error_handler>
                   <error_handler_params/>
                 </step>
@@ -6794,14 +6870,14 @@ All temporary files are counted, regardless of why the temporary file was create
                   <error_handler_params/>
                 </step>
                 <step>
-                  <type>20</type>
-                  <params>7d</params>
+                  <type>10</type>
+                  <params/>
                   <error_handler>0</error_handler>
                   <error_handler_params/>
                 </step>
                 <step>
-                  <type>10</type>
-                  <params/>
+                  <type>20</type>
+                  <params>7d</params>
                   <error_handler>0</error_handler>
                   <error_handler_params/>
                 </step>
@@ -6843,7 +6919,7 @@ All temporary files are counted, regardless of why the temporary file was create
               <delay>20s</delay>
               <history>0</history>
               <trends>0</trends>
-              <status>0</status>
+              <status>1</status>
               <value_type>1</value_type>
               <allowed_hosts/>
               <units/>
@@ -6898,7 +6974,7 @@ All temporary files are counted, regardless of why the temporary file was create
           <trigger_prototypes/>
           <graph_prototypes>
             <graph_prototype>
-              <name>SVC::PostgreSQL::{#DB}::blocks</name>
+              <name>SVC::PostgreSQL::db::{#DB}::blocks</name>
               <width>1200</width>
               <height>300</height>
               <yaxismin>0.0000</yaxismin>
@@ -6918,31 +6994,31 @@ All temporary files are counted, regardless of why the temporary file was create
                 <graph_item>
                   <sortorder>0</sortorder>
                   <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>service.pgsql.db.stats[{#DB},blks_hit]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
                   <color>C80000</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
                     <key>service.pgsql.db.stats[{#DB},blks_read]</key>
                   </item>
                 </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>00C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>7</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>service.pgsql.db.stats[{#DB},blks_hit]</key>
+                  </item>
+                </graph_item>
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>SVC::PostgreSQL::{#DB}::errors</name>
+              <name>SVC::PostgreSQL::db::{#DB}::errors</name>
               <width>1200</width>
               <height>300</height>
               <yaxismin>0.0000</yaxismin>
@@ -6964,7 +7040,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <drawtype>5</drawtype>
                   <color>C800C8</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
@@ -6976,7 +7052,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <drawtype>5</drawtype>
                   <color>C80000</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
@@ -6986,7 +7062,7 @@ All temporary files are counted, regardless of why the temporary file was create
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>SVC::PostgreSQL::{#DB}::index utilization</name>
+              <name>SVC::PostgreSQL::db::{#DB}::index utilization</name>
               <width>1200</width>
               <height>300</height>
               <yaxismin>0.0000</yaxismin>
@@ -7008,7 +7084,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <drawtype>5</drawtype>
                   <color>00C800</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
@@ -7020,7 +7096,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <drawtype>5</drawtype>
                   <color>C80000</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
@@ -7030,7 +7106,7 @@ All temporary files are counted, regardless of why the temporary file was create
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>SVC::PostgreSQL::{#DB}::IO time</name>
+              <name>SVC::PostgreSQL::db::{#DB}::IO time</name>
               <width>1200</width>
               <height>300</height>
               <yaxismin>0.0000</yaxismin>
@@ -7052,7 +7128,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <drawtype>5</drawtype>
                   <color>00C800</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
@@ -7064,7 +7140,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <drawtype>5</drawtype>
                   <color>C80000</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
@@ -7074,7 +7150,7 @@ All temporary files are counted, regardless of why the temporary file was create
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>SVC::PostgreSQL::{#DB}::row count</name>
+              <name>SVC::PostgreSQL::db::{#DB}::rows</name>
               <width>1200</width>
               <height>300</height>
               <yaxismin>0.0000</yaxismin>
@@ -7082,7 +7158,7 @@ All temporary files are counted, regardless of why the temporary file was create
               <show_work_period>1</show_work_period>
               <show_triggers>1</show_triggers>
               <type>0</type>
-              <show_legend>1</show_legend>
+              <show_legend>0</show_legend>
               <show_3d>0</show_3d>
               <percent_left>0.0000</percent_left>
               <percent_right>0.0000</percent_right>
@@ -7096,7 +7172,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <drawtype>5</drawtype>
                   <color>C80000</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
@@ -7108,7 +7184,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <drawtype>5</drawtype>
                   <color>00C800</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
@@ -7120,7 +7196,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <drawtype>5</drawtype>
                   <color>0000C8</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
@@ -7130,7 +7206,7 @@ All temporary files are counted, regardless of why the temporary file was create
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>SVC::PostgreSQL::{#DB}::row IO</name>
+              <name>SVC::PostgreSQL::db::{#DB}::rows IO</name>
               <width>1200</width>
               <height>300</height>
               <yaxismin>0.0000</yaxismin>
@@ -7152,19 +7228,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <drawtype>5</drawtype>
                   <color>C80000</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_deleted[{#DB}]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>1</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
@@ -7172,11 +7236,23 @@ All temporary files are counted, regardless of why the temporary file was create
                   </item>
                 </graph_item>
                 <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>5</drawtype>
+                  <color>00FF00</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>7</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>pg.db.tup_deleted[{#DB}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
                   <sortorder>2</sortorder>
                   <drawtype>5</drawtype>
                   <color>C800C8</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
@@ -7188,7 +7264,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <drawtype>5</drawtype>
                   <color>0000C8</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
@@ -7200,7 +7276,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <drawtype>5</drawtype>
                   <color>C8C800</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
@@ -7210,7 +7286,7 @@ All temporary files are counted, regardless of why the temporary file was create
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>SVC::PostgreSQL::{#DB}::rows writes</name>
+              <name>SVC::PostgreSQL::db::{#DB}::rows writes</name>
               <width>1200</width>
               <height>300</height>
               <yaxismin>0.0000</yaxismin>
@@ -7232,7 +7308,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <drawtype>5</drawtype>
                   <color>0000C8</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
@@ -7244,7 +7320,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <drawtype>5</drawtype>
                   <color>C800C8</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
@@ -7256,7 +7332,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <drawtype>5</drawtype>
                   <color>00C800</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
@@ -7268,7 +7344,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <drawtype>5</drawtype>
                   <color>C80000</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
@@ -7278,7 +7354,39 @@ All temporary files are counted, regardless of why the temporary file was create
               </graph_items>
             </graph_prototype>
             <graph_prototype>
-              <name>SVC::PostgreSQL::{#DB}::transactions</name>
+              <name>SVC::PostgreSQL::db::{#DB}::size</name>
+              <width>1200</width>
+              <height>300</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>0</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>2</drawtype>
+                  <color>00C800</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>7</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>Service PostgreSQL</host>
+                    <key>service.pgsql.db.stats[{#DB},size}]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>SVC::PostgreSQL::db::{#DB}::transactions</name>
               <width>1200</width>
               <height>300</height>
               <yaxismin>0.0000</yaxismin>
@@ -7300,7 +7408,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <drawtype>5</drawtype>
                   <color>00C800</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
@@ -7312,43 +7420,11 @@ All temporary files are counted, regardless of why the temporary file was create
                   <drawtype>5</drawtype>
                   <color>C80000</color>
                   <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
+                  <calc_fnc>7</calc_fnc>
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
                     <key>service.pgsql.db.stats[{#DB},xact_rollback]</key>
-                  </item>
-                </graph_item>
-              </graph_items>
-            </graph_prototype>
-            <graph_prototype>
-              <name>`SVC::PostgreSQL::{#DB}::size</name>
-              <width>1200</width>
-              <height>300</height>
-              <yaxismin>0.0000</yaxismin>
-              <yaxismax>100.0000</yaxismax>
-              <show_work_period>1</show_work_period>
-              <show_triggers>1</show_triggers>
-              <type>0</type>
-              <show_legend>1</show_legend>
-              <show_3d>0</show_3d>
-              <percent_left>0.0000</percent_left>
-              <percent_right>0.0000</percent_right>
-              <ymin_type_1>1</ymin_type_1>
-              <ymax_type_1>0</ymax_type_1>
-              <ymin_item_1>0</ymin_item_1>
-              <ymax_item_1>0</ymax_item_1>
-              <graph_items>
-                <graph_item>
-                  <sortorder>0</sortorder>
-                  <drawtype>5</drawtype>
-                  <color>00C800</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>2</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>Service PostgreSQL</host>
-                    <key>service.pgsql.db.stats[{#DB},size}]</key>
                   </item>
                 </graph_item>
               </graph_items>
@@ -7423,7 +7499,30 @@ All temporary files are counted, regardless of why the temporary file was create
           <name>SVC::PostgreSQL::db::size</name>
           <hsize>1</hsize>
           <vsize>1</vsize>
-          <screen_items/>
+          <screen_items>
+            <screen_item>
+              <resourcetype>20</resourcetype>
+              <width>1200</width>
+              <height>300</height>
+              <x>0</x>
+              <y>0</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>SVC::PostgreSQL::db::{#DB}::size</name>
+                <host>Service PostgreSQL</host>
+              </resource>
+              <max_columns>1</max_columns>
+              <application/>
+            </screen_item>
+          </screen_items>
         </screen>
       </screens>
       <tags/>
@@ -7607,7 +7706,7 @@ Perform a VACUUM as soon a possible to reset the available Transaction IDs and r
           <drawtype>0</drawtype>
           <color>000000</color>
           <yaxisside>0</yaxisside>
-          <calc_fnc>2</calc_fnc>
+          <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
             <host>Service PostgreSQL</host>
@@ -7639,7 +7738,7 @@ Perform a VACUUM as soon a possible to reset the available Transaction IDs and r
           <drawtype>0</drawtype>
           <color>00C800</color>
           <yaxisside>0</yaxisside>
-          <calc_fnc>2</calc_fnc>
+          <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
             <host>Service PostgreSQL</host>
@@ -7651,7 +7750,7 @@ Perform a VACUUM as soon a possible to reset the available Transaction IDs and r
           <drawtype>0</drawtype>
           <color>C80000</color>
           <yaxisside>0</yaxisside>
-          <calc_fnc>2</calc_fnc>
+          <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
             <host>Service PostgreSQL</host>
@@ -7663,7 +7762,7 @@ Perform a VACUUM as soon a possible to reset the available Transaction IDs and r
           <drawtype>0</drawtype>
           <color>0000C8</color>
           <yaxisside>0</yaxisside>
-          <calc_fnc>2</calc_fnc>
+          <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
             <host>Service PostgreSQL</host>
@@ -7675,7 +7774,7 @@ Perform a VACUUM as soon a possible to reset the available Transaction IDs and r
           <drawtype>0</drawtype>
           <color>C800C8</color>
           <yaxisside>0</yaxisside>
-          <calc_fnc>2</calc_fnc>
+          <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
             <host>Service PostgreSQL</host>
@@ -7707,7 +7806,7 @@ Perform a VACUUM as soon a possible to reset the available Transaction IDs and r
           <drawtype>0</drawtype>
           <color>00C800</color>
           <yaxisside>0</yaxisside>
-          <calc_fnc>2</calc_fnc>
+          <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
             <host>Service PostgreSQL</host>
@@ -7719,7 +7818,7 @@ Perform a VACUUM as soon a possible to reset the available Transaction IDs and r
           <drawtype>0</drawtype>
           <color>0000C8</color>
           <yaxisside>0</yaxisside>
-          <calc_fnc>2</calc_fnc>
+          <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
             <host>Service PostgreSQL</host>
@@ -7751,7 +7850,7 @@ Perform a VACUUM as soon a possible to reset the available Transaction IDs and r
           <drawtype>5</drawtype>
           <color>C80000</color>
           <yaxisside>0</yaxisside>
-          <calc_fnc>2</calc_fnc>
+          <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
             <host>Service PostgreSQL</host>
@@ -7763,7 +7862,7 @@ Perform a VACUUM as soon a possible to reset the available Transaction IDs and r
           <drawtype>5</drawtype>
           <color>F63100</color>
           <yaxisside>0</yaxisside>
-          <calc_fnc>2</calc_fnc>
+          <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
             <host>Service PostgreSQL</host>
