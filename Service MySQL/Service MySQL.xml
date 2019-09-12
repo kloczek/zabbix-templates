@@ -32,10 +32,15 @@ My advice is even to disable show_compatibility_56 to not start by mistake use s
 * To be able to use this template on a host you need to setup a monitoring account with the proper privileges.&#13;
 * To add such account you can use below queries:&#13;
 ```&#13;
-CREATE USER 'monitoring'@'localhost' IDENTIFIED BY 'monitoring';&#13;
-GRANT SELECT, INDEX, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'monitoring'@'localhost';&#13;
-FLUSH PRIVILEGES;&#13;
+mysql -e "CREATE USER 'monitoring'@'localhost' IDENTIFIED BY 'monitoring';"&#13;
+mysql -e "GRANT SELECT, INDEX, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'monitoring'@'localhost';"&#13;
+mysql -e "FLUSH PRIVILEGES;"&#13;
+mkdir -p /var/lib/zabbix&#13;
+chwon zabbix:zabbix /var/lib/zabbix&#13;
+chmod 700 /var/lib/zabbix&#13;
+su - zabbix -s /bin/bash -c "mysql_config_editor set --login-path=monitoring --user monitoring --password"&#13;
 ```&#13;
+and enter as password "monitoring"&#13;
 * MySQL 5.7 documentation:&#13;
 http://dev.mysql.com/doc/refman/5.7/en/innodb-parameters.html&#13;
 http://dev.mysql.com/doc/refman/5.7/en/innodb-configuration.html&#13;

@@ -19,10 +19,15 @@ My advice is even to disable show_compatibility_56 to not start by mistake use s
 * To be able to use this template on a host you need to setup a monitoring account with the proper privileges.
 * To add such account you can use below queries:
 ```
-CREATE USER 'monitoring'@'localhost' IDENTIFIED BY 'monitoring';
-GRANT SELECT, INDEX, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'monitoring'@'localhost';
-FLUSH PRIVILEGES;
+mysql -e "CREATE USER 'monitoring'@'localhost' IDENTIFIED BY 'monitoring';"
+mysql -e "GRANT SELECT, INDEX, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'monitoring'@'localhost';"
+mysql -e "FLUSH PRIVILEGES;"
+mkdir -p /var/lib/zabbix
+chwon zabbix:zabbix /var/lib/zabbix
+chmod 700 /var/lib/zabbix
+su - zabbix -s /bin/bash -c "mysql_config_editor set --login-path=monitoring --user monitoring --password"
 ```
+and enter as password "monitoring"
 * MySQL 5.7 documentation:
 http://dev.mysql.com/doc/refman/5.7/en/innodb-parameters.html
 http://dev.mysql.com/doc/refman/5.7/en/innodb-configuration.html
@@ -30,6 +35,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html
 
 #### Changelog:
 - (devel):
+  - Documented how to setup mysql server to allow monitor it
   - Items:
     - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
     - ```PROC::mysqld```

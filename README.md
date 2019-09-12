@@ -105,6 +105,7 @@ This repository provides a set of templates which offers the alternative set of 
   - Triggers:
     - rename ```SVC::Apache tcp/{$HTTP_SERVICE_PORT} is DOWN``` to ```NET::Apache tcp/{$HTTP_SERVICE_PORT} is DOWN```
 - **Service MySQL**
+  - Documented how to setup mysql server to allow monitor it
   - Items:
     - ```PROC::mysqld```
       - change hardcoded MySQL process name to the macro ``{$SVC_MYSQL_PROC}```
