@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-08-28T11:53:40Z</date>
+  <date>2019-10-07T11:43:29Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -1667,7 +1667,7 @@ Accepts only the default connection parameters.</description>
           <delay>1m</delay>
           <history>0</history>
           <trends>0</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>4</value_type>
           <allowed_hosts/>
           <units/>
@@ -1794,7 +1794,7 @@ Accepts only the default connection parameters.</description>
           <delay>1m</delay>
           <history>90d</history>
           <trends>0</trends>
-          <status>0</status>
+          <status>1</status>
           <value_type>4</value_type>
           <allowed_hosts/>
           <units/>
@@ -4475,7 +4475,10 @@ Accepts only the default connection parameters.</description>
               <verify_host>0</verify_host>
               <application_prototypes>
                 <application_prototype>
-                  <name>SVC::PostgreSQL::{#CATEGORY}</name>
+                  <name>SVC::PostgreSQL::cfg::{#CATEGORY</name>
+                </application_prototype>
+                <application_prototype>
+                  <name>SVC::PostgreSQL::cfg::{#CATEGORY}</name>
                 </application_prototype>
               </application_prototypes>
               <master_item>
@@ -4644,73 +4647,6 @@ Accepts only the default connection parameters.</description>
               <master_item/>
             </item_prototype>
             <item_prototype>
-              <name>{#DB}::conflicts</name>
-              <type>7</type>
-              <snmp_community/>
-              <snmp_oid/>
-              <key>pg.db.conflicts[{#DB}]</key>
-              <delay>1m</delay>
-              <history>2w</history>
-              <trends>365d</trends>
-              <status>1</status>
-              <value_type>0</value_type>
-              <allowed_hosts/>
-              <units>conflicts/s</units>
-              <snmpv3_contextname/>
-              <snmpv3_securityname/>
-              <snmpv3_securitylevel>0</snmpv3_securitylevel>
-              <snmpv3_authprotocol>0</snmpv3_authprotocol>
-              <snmpv3_authpassphrase/>
-              <snmpv3_privprotocol>0</snmpv3_privprotocol>
-              <snmpv3_privpassphrase/>
-              <params/>
-              <ipmi_sensor/>
-              <authtype>0</authtype>
-              <username/>
-              <password/>
-              <publickey/>
-              <privatekey/>
-              <port/>
-              <description>Number of queries canceled due to conflicts with recovery in this database. (Conflicts occur only on standby servers; see pg_stat_database_conflicts for details.)</description>
-              <inventory_link>0</inventory_link>
-              <applications/>
-              <valuemap/>
-              <logtimefmt/>
-              <preprocessing>
-                <step>
-                  <type>10</type>
-                  <params/>
-                  <error_handler>0</error_handler>
-                  <error_handler_params/>
-                </step>
-              </preprocessing>
-              <jmx_endpoint/>
-              <timeout>3s</timeout>
-              <url/>
-              <query_fields/>
-              <posts/>
-              <status_codes>200</status_codes>
-              <follow_redirects>1</follow_redirects>
-              <post_type>0</post_type>
-              <http_proxy/>
-              <headers/>
-              <retrieve_mode>0</retrieve_mode>
-              <request_method>0</request_method>
-              <output_format>0</output_format>
-              <allow_traps>0</allow_traps>
-              <ssl_cert_file/>
-              <ssl_key_file/>
-              <ssl_key_password/>
-              <verify_peer>0</verify_peer>
-              <verify_host>0</verify_host>
-              <application_prototypes>
-                <application_prototype>
-                  <name>SVC::Postgresql::DB::{#DB}</name>
-                </application_prototype>
-              </application_prototypes>
-              <master_item/>
-            </item_prototype>
-            <item_prototype>
               <name>{#DB}::statistics last reset</name>
               <type>7</type>
               <snmp_community/>
@@ -4744,140 +4680,6 @@ Accepts only the default connection parameters.</description>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
-              <jmx_endpoint/>
-              <timeout>3s</timeout>
-              <url/>
-              <query_fields/>
-              <posts/>
-              <status_codes>200</status_codes>
-              <follow_redirects>1</follow_redirects>
-              <post_type>0</post_type>
-              <http_proxy/>
-              <headers/>
-              <retrieve_mode>0</retrieve_mode>
-              <request_method>0</request_method>
-              <output_format>0</output_format>
-              <allow_traps>0</allow_traps>
-              <ssl_cert_file/>
-              <ssl_key_file/>
-              <ssl_key_password/>
-              <verify_peer>0</verify_peer>
-              <verify_host>0</verify_host>
-              <application_prototypes>
-                <application_prototype>
-                  <name>SVC::Postgresql::DB::{#DB}</name>
-                </application_prototype>
-              </application_prototypes>
-              <master_item/>
-            </item_prototype>
-            <item_prototype>
-              <name>{#DB}::rows deleted/sec</name>
-              <type>7</type>
-              <snmp_community/>
-              <snmp_oid/>
-              <key>pg.db.tup_deleted[{#DB}]</key>
-              <delay>1m</delay>
-              <history>2w</history>
-              <trends>365d</trends>
-              <status>1</status>
-              <value_type>0</value_type>
-              <allowed_hosts/>
-              <units/>
-              <snmpv3_contextname/>
-              <snmpv3_securityname/>
-              <snmpv3_securitylevel>0</snmpv3_securitylevel>
-              <snmpv3_authprotocol>0</snmpv3_authprotocol>
-              <snmpv3_authpassphrase/>
-              <snmpv3_privprotocol>0</snmpv3_privprotocol>
-              <snmpv3_privpassphrase/>
-              <params/>
-              <ipmi_sensor/>
-              <authtype>0</authtype>
-              <username/>
-              <password/>
-              <publickey/>
-              <privatekey/>
-              <port/>
-              <description>Number of rows deleted by queries in this database</description>
-              <inventory_link>0</inventory_link>
-              <applications/>
-              <valuemap/>
-              <logtimefmt/>
-              <preprocessing>
-                <step>
-                  <type>10</type>
-                  <params/>
-                  <error_handler>0</error_handler>
-                  <error_handler_params/>
-                </step>
-              </preprocessing>
-              <jmx_endpoint/>
-              <timeout>3s</timeout>
-              <url/>
-              <query_fields/>
-              <posts/>
-              <status_codes>200</status_codes>
-              <follow_redirects>1</follow_redirects>
-              <post_type>0</post_type>
-              <http_proxy/>
-              <headers/>
-              <retrieve_mode>0</retrieve_mode>
-              <request_method>0</request_method>
-              <output_format>0</output_format>
-              <allow_traps>0</allow_traps>
-              <ssl_cert_file/>
-              <ssl_key_file/>
-              <ssl_key_password/>
-              <verify_peer>0</verify_peer>
-              <verify_host>0</verify_host>
-              <application_prototypes>
-                <application_prototype>
-                  <name>SVC::Postgresql::DB::{#DB}</name>
-                </application_prototype>
-              </application_prototypes>
-              <master_item/>
-            </item_prototype>
-            <item_prototype>
-              <name>{#DB}::rows updated/sec</name>
-              <type>7</type>
-              <snmp_community/>
-              <snmp_oid/>
-              <key>pg.db.tup_updated[{#DB}]</key>
-              <delay>1m</delay>
-              <history>2w</history>
-              <trends>365d</trends>
-              <status>1</status>
-              <value_type>0</value_type>
-              <allowed_hosts/>
-              <units/>
-              <snmpv3_contextname/>
-              <snmpv3_securityname/>
-              <snmpv3_securitylevel>0</snmpv3_securitylevel>
-              <snmpv3_authprotocol>0</snmpv3_authprotocol>
-              <snmpv3_authpassphrase/>
-              <snmpv3_privprotocol>0</snmpv3_privprotocol>
-              <snmpv3_privpassphrase/>
-              <params/>
-              <ipmi_sensor/>
-              <authtype>0</authtype>
-              <username/>
-              <password/>
-              <publickey/>
-              <privatekey/>
-              <port/>
-              <description>Number of rows updated by queries in this database</description>
-              <inventory_link>0</inventory_link>
-              <applications/>
-              <valuemap/>
-              <logtimefmt/>
-              <preprocessing>
-                <step>
-                  <type>10</type>
-                  <params/>
-                  <error_handler>0</error_handler>
-                  <error_handler_params/>
-                </step>
-              </preprocessing>
               <jmx_endpoint/>
               <timeout>3s</timeout>
               <url/>
@@ -6160,6 +5962,81 @@ Accepts only the default connection parameters.</description>
               </master_item>
             </item_prototype>
             <item_prototype>
+              <name>conflicts</name>
+              <type>18</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>service.pgsql.db.stats[{#DB},conflicts]</key>
+              <delay>0</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>0</value_type>
+              <allowed_hosts/>
+              <units>conflicts/s</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Number of queries canceled due to conflicts with recovery in this database. Conflicts occur only on standby servers; see pg_stat_database_conflicts for details.</description>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>12</type>
+                  <params>$.conflicts</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>10</type>
+                  <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::Postgresql::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item>
+                <key>service.pgsql.db[{#DB}]</key>
+              </master_item>
+            </item_prototype>
+            <item_prototype>
               <name>deadlocks</name>
               <type>18</type>
               <snmp_community/>
@@ -6277,6 +6154,12 @@ Accepts only the default connection parameters.</description>
                 <step>
                   <type>12</type>
                   <params>$.numbackends</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>10</type>
+                  <params/>
                   <error_handler>0</error_handler>
                   <error_handler_params/>
                 </step>
@@ -6530,6 +6413,81 @@ All temporary files are counted, regardless of why the temporary file was create
               </master_item>
             </item_prototype>
             <item_prototype>
+              <name>tup_deleted</name>
+              <type>18</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>service.pgsql.db.stats[{#DB},tup_deleted]</key>
+              <delay>0</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>0</value_type>
+              <allowed_hosts/>
+              <units/>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Number of rows deleted by queries in this database</description>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>12</type>
+                  <params>$.tup_deleted</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>10</type>
+                  <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::Postgresql::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item>
+                <key>service.pgsql.db[{#DB}]</key>
+              </master_item>
+            </item_prototype>
+            <item_prototype>
               <name>tup_fetched</name>
               <type>18</type>
               <snmp_community/>
@@ -6716,6 +6674,81 @@ All temporary files are counted, regardless of why the temporary file was create
                 <step>
                   <type>12</type>
                   <params>$.tup_returned</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>10</type>
+                  <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>SVC::Postgresql::DB::{#DB}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item>
+                <key>service.pgsql.db[{#DB}]</key>
+              </master_item>
+            </item_prototype>
+            <item_prototype>
+              <name>tup_updated</name>
+              <type>18</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>service.pgsql.db.stats[{#DB},tup_updated]</key>
+              <delay>0</delay>
+              <history>2w</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>0</value_type>
+              <allowed_hosts/>
+              <units/>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Number of rows updated by queries in this database.</description>
+              <inventory_link>0</inventory_link>
+              <applications/>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>12</type>
+                  <params>$.tup_updated</params>
                   <error_handler>0</error_handler>
                   <error_handler_params/>
                 </step>
@@ -7044,7 +7077,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
-                    <key>pg.db.conflicts[{#DB}]</key>
+                    <key>service.pgsql.db.stats[{#DB},conflicts]</key>
                   </item>
                 </graph_item>
                 <graph_item>
@@ -7244,7 +7277,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_deleted[{#DB}]</key>
+                    <key>service.pgsql.db.stats[{#DB},tup_deleted]</key>
                   </item>
                 </graph_item>
                 <graph_item>
@@ -7280,7 +7313,7 @@ All temporary files are counted, regardless of why the temporary file was create
                   <type>0</type>
                   <item>
                     <host>Service PostgreSQL</host>
-                    <key>pg.db.tup_updated[{#DB}]</key>
+                    <key>service.pgsql.db.stats[{#DB},tup_updated]</key>
                   </item>
                 </graph_item>
               </graph_items>
@@ -7704,7 +7737,7 @@ Perform a VACUUM as soon a possible to reset the available Transaction IDs and r
         <graph_item>
           <sortorder>0</sortorder>
           <drawtype>0</drawtype>
-          <color>000000</color>
+          <color>FFFF00</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
           <type>0</type>
