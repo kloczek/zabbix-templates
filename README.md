@@ -355,6 +355,15 @@ This repository provides a set of templates which offers the alternative set of 
 * All zabbix agent items should be specified as ```zabbix agent (active)``` items.
 * All graphs resolution needs to be 1200x300.
 * All SNMP items should be as SNMPv2 and ```{$SNMP_COMMUNITY}``` as SNMP read community name.
+* Trigger severities:
+  * Disaster:
+  * High:
+  * Average:
+  * Warning:
+  * Information:
+  * Not classified:
+    - Version has changed
+    - Configuration parametr has changed
 
 Reason of use in all templates the same graphs resolution, item types and SNMP protocol version and community name is to provide easy way to change those settings across all templates is someone may need this.
 
