@@ -318,12 +318,12 @@ Notes:</description>
       <expression>{Service Zabbix Agent:agent.version.diff(0)}&gt;0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>SVC::zabbix_agent::Version has changed to {ITEM.LASTVALUE}</name>
+      <name>SVC::zabbix_agent::version has changed to {ITEM.LASTVALUE}</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
       <status>0</status>
-      <priority>1</priority>
+      <priority>0</priority>
       <description>Version of the zabbix agen has been changed.</description>
       <type>0</type>
       <manual_close>0</manual_close>

@@ -115,6 +115,7 @@ This repository provides a set of templates which offers the alternative set of 
   - Triggers:
     - ```SYS::processes::{$SVC_MYSQL_PROC} is not running``` severity changed
       to disaster
+    - change ```SVC::MySQL::version has changed to {ITEM.LASTVALUE}``` to ```Not classified```
   - Add use md markups in template description
 - **Service Nginx**
   - Macros:
@@ -130,6 +131,8 @@ This repository provides a set of templates which offers the alternative set of 
     - new ```HOST::items``` which presents number of host items vs number of unsuppoerted item
   - Items:
     - new ```items``` with current counter of total host items (supported/unsupprted/enabled/disabled)
+  - Triggers:
+    - change ```SVC::zabbix_agent::Version has changed to {ITEM.LASTVALUE}``` to ```Not classified```
 - **Service Zabbix Server**
   Presentation layer impromements:
   - Graphs:

@@ -5370,7 +5370,7 @@ max_connections = &lt;new_limit&gt;</description>
       <priority>0</priority>
       <description>The MySQL engine version has been changed.</description>
       <type>0</type>
-      <manual_close>0</manual_close>
+      <manual_close>1</manual_close>
       <dependencies/>
       <tags/>
     </trigger>

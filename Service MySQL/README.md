@@ -46,6 +46,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html
   - Triggers:
     - ```SYS::processes::{$SVC_MYSQL_PROC} is not running`` severity changed
       to disaster
+    - change ```SVC::MySQL::version has changed to {ITEM.LASTVALUE}``` to ```Not classified```
   - Add use md markups in template description
 - 1.0.4 (2018-06-11):
   - Applications:
