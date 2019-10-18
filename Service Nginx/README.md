@@ -11,7 +11,7 @@ Nginx https service monitoring template. This template is using
 | :--------------------- | :------------------ | :-------------------------------------------------- |
 | {$SVC_NGINX_HOST}      | localhost           | Hostname of the nginx service                       |
 | {$SVC_NGINX_PORT}      | 80                  | TCP port                                            |
-| {$SVC_NGINX_PROC}      | nginx               | nginx non-root user used by workers nginx processes |
+| {$SVC_NGINX_PROC}      | nginx               | nginx processes command line                        |
 | {$SVC_NGINX_STATS_URI} | /stub_status        | URI adderss of the status_stub page                 |
 | {$SVC_NGINX_USER}      | nginx               | nginx non-root user used by workers nginx processes |
 
@@ -33,7 +33,7 @@ Nginx https service monitoring template. This template is using
   - Macros:
     - Rename ```{$NGINX_*}``` macros to ```{$SVC_NGINX_*}```
     - Added ```{$SVC_NGINX_USER}``` macro to allow use this template on Debian/Ubuntu as well
-    - Rename ```{$SVC_NGINX_PROCESS}`` to ```{$SVC_NGINX_PROC}```
+    - Rename ```{$SVC_NGINX_PROCESS}``` to ```{$SVC_NGINX_PROC}```
   - Graphs:
     - new ```SVC::Nginx::reqs_per_conn```
   - Items:

@@ -121,7 +121,7 @@ This repository provides a set of templates which offers the alternative set of 
   - Macros:
     - Rename ```{$NGINX_*}``` macros to ```{$SVC_NGINX_*}```
     - Added ```{$SVC_NGINX_USER}``` macro to allow use this template on Debian/Ubuntu as well
-    - Rename ```{$SVC_NGINX_PROCESS}`` to ```{$SVC_NGINX_PROC}```
+    - Rename ```{$SVC_NGINX_PROCESS}``` to ```{$SVC_NGINX_PROC}```
   - Graphs:
     - new ```SVC::Nginx::reqs_per_conn```
   - Items:

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-08-12T16:55:11Z</date>
+  <date>2019-09-18T11:35:09Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -51,7 +51,7 @@ URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nginx&#13
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>net.tcp.service[{$SVC_NGINX_PROC},,{$SVC_NGINX_PORT}]</key>
+          <key>net.tcp.service[http,,{$SVC_NGINX_PORT}]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -733,11 +733,70 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <master_item/>
         </item>
         <item>
+          <name>memory</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>proc.mem[nginx,,,{$SVC_NGINX_PROC},rss]</key>
+          <delay>30s</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>B</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Total RSS memory usage by all nginx processes.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::nginx</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item/>
+        </item>
+        <item>
           <name>memory::master</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>proc.mem[{$SVC_NGINX_PROC},root,]</key>
+          <key>proc.mem[nginx,root,,{$SVC_NGINX_PROC}]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -796,7 +855,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>proc.mem[{$SVC_NGINX_PROC},{$SVC_NGINX_USER},sum]</key>
+          <key>proc.mem[nginx,{$SVC_NGINX_USER},sum,{$SVC_NGINX_PROC}]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -851,70 +910,11 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <master_item/>
         </item>
         <item>
-          <name>memory</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>proc.mem[{$SVC_NGINX_PROC}]</key>
-          <delay>30s</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>B</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>Total memory usage by all nginx processes.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::nginx</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
           <name>PROC::$1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>proc.num[{$SVC_NGINX_PROC},root]</key>
+          <key>proc.num[nginx,root,,{$SVC_NGINX_PROC}]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -969,11 +969,11 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <master_item/>
         </item>
         <item>
-          <name>PROC::nginx::workers</name>
+          <name>PROC::$1::workers</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>proc.num[{$SVC_NGINX_PROC},{$SVC_NGINX_USER}]</key>
+          <key>proc.num[nginx,{$SVC_NGINX_USER},,{$SVC_NGINX_PROC}]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -1032,7 +1032,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>system.run["/usr/sbin/nginx -v 2&gt;&amp;1|/bin/sed -n 's/nginx version: nginx\/\(.*\)/\1/ p'"]</key>
+          <key>system.run["{$SVC_NGINX_PROC} -v 2&gt;&amp;1|/bin/sed -n 's/nginx version: nginx\/\(.*\)/\1/ p'"]</key>
           <delay>1h</delay>
           <history>2w</history>
           <trends>0</trends>
@@ -1151,7 +1151,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
       <macros>
         <macro>
           <macro>{$SVC_NGINX_HOST}</macro>
-          <value>localhost</value>
+          <value>127.0.0.1</value>
         </macro>
         <macro>
           <macro>{$SVC_NGINX_PORT}</macro>
@@ -1193,7 +1193,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
               <dynamic>0</dynamic>
               <sort_triggers>0</sort_triggers>
               <resource>
-                <key>system.run["/usr/sbin/nginx -v 2&gt;&amp;1|/bin/sed -n 's/nginx version: nginx\/\(.*\)/\1/ p'"]</key>
+                <key>system.run["{$SVC_NGINX_PROC} -v 2&gt;&amp;1|/bin/sed -n 's/nginx version: nginx\/\(.*\)/\1/ p'"]</key>
                 <host>Service Nginx</host>
               </resource>
               <max_columns>3</max_columns>
@@ -1273,7 +1273,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
   </templates>
   <triggers>
     <trigger>
-      <expression>{Service Nginx:net.tcp.service[{$SVC_NGINX_PROC},,{$SVC_NGINX_PORT}].max(#3)}=0</expression>
+      <expression>{Service Nginx:net.tcp.service[http,,{$SVC_NGINX_PORT}].max(#3)}=0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::http tcp/{$SVC_NGINX_PORT} is DOWN</name>
@@ -1289,7 +1289,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service Nginx:proc.num[{$SVC_NGINX_PROC},root].last()}=0</expression>
+      <expression>{Service Nginx:proc.num[nginx,root,,{$SVC_NGINX_PROC}].last()}=0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::nginx::master process is DOWN</name>
@@ -1306,7 +1306,7 @@ Please confirm the state.</description>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service Nginx:proc.num[{$SVC_NGINX_PROC},{$SVC_NGINX_USER}].avg(#3)}=0</expression>
+      <expression>{Service Nginx:proc.num[nginx,{$SVC_NGINX_USER},,{$SVC_NGINX_PROC}].avg(#3)}=0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>SVC::nginx::workers DOWN</name>
@@ -1322,7 +1322,7 @@ Please confirm the state.</description>
       <dependencies>
         <dependency>
           <name>SVC::nginx::master process is DOWN</name>
-          <expression>{Service Nginx:proc.num[{$SVC_NGINX_PROC},root].last()}=0</expression>
+          <expression>{Service Nginx:proc.num[nginx,root,,{$SVC_NGINX_PROC}].last()}=0</expression>
           <recovery_expression/>
         </dependency>
       </dependencies>
@@ -1425,7 +1425,7 @@ Please confirm the state.</description>
           <type>0</type>
           <item>
             <host>Service Nginx</host>
-            <key>proc.mem[{$SVC_NGINX_PROC},root,]</key>
+            <key>proc.mem[nginx,root,,{$SVC_NGINX_PROC}]</key>
           </item>
         </graph_item>
         <graph_item>
@@ -1437,7 +1437,7 @@ Please confirm the state.</description>
           <type>0</type>
           <item>
             <host>Service Nginx</host>
-            <key>proc.mem[{$SVC_NGINX_PROC},{$SVC_NGINX_USER},sum]</key>
+            <key>proc.mem[nginx,{$SVC_NGINX_USER},sum,{$SVC_NGINX_PROC}]</key>
           </item>
         </graph_item>
       </graph_items>
