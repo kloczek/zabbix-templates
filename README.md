@@ -47,6 +47,12 @@ This repository provides a set of templates which offers the alternative set of 
     - ```MEM::total``` history period changed to 1h as "Discard unchanged" filter preprocessor cannot be used for now
       https://support.zabbix.com/browse/ZBX-16456
   - LLD:
+    - ```SWAP:``` new LLD with complet swap space monitoring which is added only when swap is used
+      Swap monitoring consits of prototypes:
+      - items: ```in```, ```total```, ```out``` and ```used``` with discard unchanged filter
+      - ```SWAP``` and ```SWAP::in/out``` graphs
+      - trigger: ```SWAP::low space ({$ITEM.VALUE}% used)```
+        trigger is activated wnen more tha ```{$SWAP_HIGH}``` percent of the swap is used with default ```{$SWAP_HIGH}=80``` value
     - rewrited ```VOL``` triggers to use proper severities and triggers prototypes dependencies
     - LXC monitoring adaptations:
       - add in ```VOL:``` LLD filter off all volumes mounted under /var/lib/lxc. If ```OS Linux```
@@ -61,6 +67,7 @@ This repository provides a set of templates which offers the alternative set of 
       as "Discard unchanged" filter preprocessor cannot be used for now
       https://support.zabbix.com/browse/ZBX-16456
   - Screens:
+    - ```SWAP``` added with ```SWAP``` and ```SWAP::in/out``` graphs
     - new ```DSK, NET``` screen added
     - add to ```MEM``` screen ```MEM::active vs inactive``` graph
   - Triggers:

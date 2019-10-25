@@ -3,6 +3,10 @@
 #### Description:
 Base Linux monitoring template.
 
+| Macro | Default value | Description |
+| :-- | :-- | :-- |
+| {$SWAP_HIGH} | 80 | % threshold on which low swap space trigger is activated |
+
 #### Notes:
 - compliant with EL7, OL7, Ubuntu (Xenial, Bionic)
 - documentation:
@@ -34,6 +38,14 @@ Base Linux monitoring template.
     - Graphs:
       - new graph ```MEM::active vs inactive```
   - LLD:
+    - ```SWAP:``` new LLD with complet swap space monitoring which is added only when swap is used
+      Swap monitoring consits of prototypes:
+      - items: ```in```, ```total```, ```out``` and ```used``` with discard unchanged filter
+      - graphs: ```SWAP``` and ```SWAP::in/out```
+      - trigger: ```SWAP::low space ({$ITEM.VALUE}% used)```
+        trigger is activated wnen more than ```{$SWAP_HIGH}``` percent of the swap is used with default ```{$SWAP_HIGH}=80``` value
+   - Screens:
+    - ```SWAP``` added with ```SWAP``` and ```SWAP::in/out``` graphs
     - rewrited ```VOL``` triggers to use proper severities and triggers prototypes dependencies
     - LXC monitoring adaptations:
       - add in ```VOL:``` LLD filter off all volumes mounted under /var/lib/lxc. If ```OS Linux```
@@ -48,6 +60,7 @@ Base Linux monitoring template.
       as "Discard unchanged" filter preprocessor cannot be used for now
       https://support.zabbix.com/browse/ZBX-16456
   - Screens:
+    - ```SWAP``` added with ```SWAP``` and ```SWAP::in/out``` graphs
     - new ```DSK, NET``` screen added
     - add to ```MEM``` screen ```MEM::active vs inactive``` graph
   - Triggers:
