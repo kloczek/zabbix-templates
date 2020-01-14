@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-  <version>3.4</version>
-  <date>2018-06-11T11:38:04Z</date>
+  <version>4.2</version>
+  <date>2019-05-29T15:03:45Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -108,12 +108,30 @@ Testing(3) state indicates that no operational packets can be passed. When a man
               <logtimefmt/>
               <preprocessing/>
               <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
               <application_prototypes>
                 <application_prototype>
                   <name>IF-MIB::interfaces::{#IFDESCR}</name>
                 </application_prototype>
               </application_prototypes>
-              <master_item_prototype/>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>ifAlias.$1</name>
@@ -156,12 +174,30 @@ Some agents may support write-access only for interfaces having particular value
               <logtimefmt/>
               <preprocessing/>
               <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
               <application_prototypes>
                 <application_prototype>
                   <name>IF-MIB::interfaces::{#IFDESCR}</name>
                 </application_prototype>
               </application_prototypes>
-              <master_item_prototype/>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>ifHCInOctets.$1</name>
@@ -204,19 +240,41 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
                 <step>
                   <type>1</type>
                   <params>8</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
                 <step>
                   <type>10</type>
                   <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
               </preprocessing>
               <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
               <application_prototypes>
                 <application_prototype>
                   <name>IF-MIB::interfaces::{#IFDESCR}</name>
                 </application_prototype>
               </application_prototypes>
-              <master_item_prototype/>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>ifHCOutOctets.$1</name>
@@ -260,19 +318,41 @@ If LLD items with ifHCOutOctets will be in unsupported on exact device ifHCOutOc
                 <step>
                   <type>1</type>
                   <params>8</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
                 <step>
                   <type>10</type>
                   <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
               </preprocessing>
               <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
               <application_prototypes>
                 <application_prototype>
                   <name>IF-MIB::interfaces::{#IFDESCR}</name>
                 </application_prototype>
               </application_prototypes>
-              <master_item_prototype/>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>ifInOctets.$1</name>
@@ -316,19 +396,41 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
                 <step>
                   <type>10</type>
                   <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
                 <step>
                   <type>1</type>
                   <params>8</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
               </preprocessing>
               <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
               <application_prototypes>
                 <application_prototype>
                   <name>IF-MIB::interfaces::{#IFDESCR}</name>
                 </application_prototype>
               </application_prototypes>
-              <master_item_prototype/>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>ifLastChange.$1</name>
@@ -367,15 +469,35 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
                 <step>
                   <type>1</type>
                   <params>0.01</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
               </preprocessing>
               <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
               <application_prototypes>
                 <application_prototype>
                   <name>IF-MIB::interfaces::{#IFDESCR}</name>
                 </application_prototype>
               </application_prototypes>
-              <master_item_prototype/>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>ifOperStatus.$1</name>
@@ -415,12 +537,30 @@ The testing(3) state indicates that no operational packets can be passed. If ifA
               <logtimefmt/>
               <preprocessing/>
               <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
               <application_prototypes>
                 <application_prototype>
                   <name>IF-MIB::interfaces::{#IFDESCR}</name>
                 </application_prototype>
               </application_prototypes>
-              <master_item_prototype/>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>ifOutOctets.$1</name>
@@ -464,19 +604,41 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
                 <step>
                   <type>10</type>
                   <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
                 <step>
                   <type>1</type>
                   <params>8</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
               </preprocessing>
               <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
               <application_prototypes>
                 <application_prototype>
                   <name>IF-MIB::interfaces::{#IFDESCR}</name>
                 </application_prototype>
               </application_prototypes>
-              <master_item_prototype/>
+              <master_item/>
             </item_prototype>
           </item_prototypes>
           <trigger_prototypes>
@@ -485,6 +647,28 @@ If LLD items with ifHCInOctets will be in unsupported state ifHCOutOctets should
               <recovery_mode>0</recovery_mode>
               <recovery_expression/>
               <name>NIC::{#IFDESCR} status has changed to {ITEM.VALUE}</name>
+              <correlation_mode>0</correlation_mode>
+              <correlation_tag/>
+              <url/>
+              <status>0</status>
+              <priority>2</priority>
+              <description>The current operational state of the interface.&#13;
+Possible states:&#13;
+- up(1), &#13;
+- down(2),&#13;
+- testing(3)&#13;
+&#13;
+The testing(3) state indicates that no operational packets can be passed.</description>
+              <type>0</type>
+              <manual_close>0</manual_close>
+              <dependencies/>
+              <tags/>
+            </trigger_prototype>
+            <trigger_prototype>
+              <expression>{IF-MIB:ifOperStatus.["{#IFDESCR}"].change(0)}=1</expression>
+              <recovery_mode>0</recovery_mode>
+              <recovery_expression/>
+              <name>NIC::{#IFDESCR}[{#IFINDEX}] status has changed to {ITEM.VALUE}</name>
               <correlation_mode>0</correlation_mode>
               <correlation_tag/>
               <url/>
@@ -549,6 +733,50 @@ The testing(3) state indicates that no operational packets can be passed.</descr
               </graph_items>
             </graph_prototype>
             <graph_prototype>
+              <name>NIC::{#IFDESCR}::IfOctets [{#IFINDEX}]</name>
+              <width>1200</width>
+              <height>300</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>0</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>2</drawtype>
+                  <color>00BB00</color>
+                  <yaxisside>1</yaxisside>
+                  <calc_fnc>7</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>IF-MIB</host>
+                    <key>ifInOctets.["{#IFDESCR}"]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>2</drawtype>
+                  <color>EE0000</color>
+                  <yaxisside>1</yaxisside>
+                  <calc_fnc>7</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>IF-MIB</host>
+                    <key>ifOutOctets.["{#IFDESCR}"]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
               <name>NIC::{#IFDESCR}::IifHCOctets</name>
               <width>1200</width>
               <height>300</height>
@@ -592,9 +820,73 @@ The testing(3) state indicates that no operational packets can be passed.</descr
                 </graph_item>
               </graph_items>
             </graph_prototype>
+            <graph_prototype>
+              <name>NIC::{#IFDESCR}::IifHCOctets [{#IFINDEX}]</name>
+              <width>1200</width>
+              <height>300</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>0</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>2</drawtype>
+                  <color>00BB00</color>
+                  <yaxisside>1</yaxisside>
+                  <calc_fnc>7</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>IF-MIB</host>
+                    <key>ifHCInOctets.["{#IFDESCR}"]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>2</drawtype>
+                  <color>EE0000</color>
+                  <yaxisside>1</yaxisside>
+                  <calc_fnc>7</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>IF-MIB</host>
+                    <key>ifHCOutOctets.["{#IFDESCR}"]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
           </graph_prototypes>
           <host_prototypes/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <lld_macro_paths/>
+          <preprocessing/>
+          <master_item/>
         </discovery_rule>
       </discovery_rules>
       <httptests/>
@@ -608,8 +900,8 @@ The testing(3) state indicates that no operational packets can be passed.</descr
           <screen_items>
             <screen_item>
               <resourcetype>20</resourcetype>
-              <width>900</width>
-              <height>100</height>
+              <width>1200</width>
+              <height>200</height>
               <x>0</x>
               <y>0</y>
               <colspan>1</colspan>
@@ -631,6 +923,7 @@ The testing(3) state indicates that no operational packets can be passed.</descr
           </screen_items>
         </screen>
       </screens>
+      <tags/>
     </template>
   </templates>
   <value_maps>
@@ -656,31 +949,31 @@ The testing(3) state indicates that no operational packets can be passed.</descr
       <mappings>
         <mapping>
           <value>1</value>
-          <newvalue>Up</newvalue>
+          <newvalue>up</newvalue>
         </mapping>
         <mapping>
           <value>2</value>
-          <newvalue>Down</newvalue>
+          <newvalue>down</newvalue>
         </mapping>
         <mapping>
           <value>3</value>
-          <newvalue>Testing</newvalue>
+          <newvalue>testing</newvalue>
         </mapping>
         <mapping>
           <value>4</value>
-          <newvalue>Unknown</newvalue>
+          <newvalue>unknown</newvalue>
         </mapping>
         <mapping>
           <value>5</value>
-          <newvalue>Dormant</newvalue>
+          <newvalue>dormant</newvalue>
         </mapping>
         <mapping>
           <value>6</value>
-          <newvalue>Not Present</newvalue>
+          <newvalue>notPresent</newvalue>
         </mapping>
         <mapping>
           <value>7</value>
-          <newvalue>lower Layer Down</newvalue>
+          <newvalue>lowerLayerDown</newvalue>
         </mapping>
       </mappings>
     </value_map>

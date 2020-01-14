@@ -1,9 +1,53 @@
-#### Version: 1.0.4 (2018-06-11)
-
-#### Description:
 MySQL engine monitoring over Zabbix agent.
 
+#### Version: (devel)
+URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20MySQL
+
+| Macro | Default value | Description |
+| :-- | :-- | :-- |
+| {$SVC_MYSQL_CMD} | HOME=/var/lib/zabbix /usr/bin/mysql --login-path=monitoring -Nse | mysql command used in system.run[] keys |
+| {$SVC_MYSQL_PROC} | mysqld | MySQL process name |
+
+#### Notes:
+* Tested on MySQL 5.7 and it not designed to be uses with MySQL older than 5.7 backward compatibility so it can be used to monitor MySQL engine which in my.cnf has:
+```
+[mysqld]
+show_compatibility_56 = OFF 
+```
+My advice is even to disable show_compatibility_56 to not start by mistake use some older metrics which in next version of the MySQL no longer will be available as an option.
+* By default this template is monitoring the engine working on localhost.
+* To be able to use this template on a host you need to setup a monitoring account with the proper privileges.
+* To add such account you can use below queries:
+```
+mysql -e "CREATE USER 'monitoring'@'localhost' IDENTIFIED BY 'monitoring';"
+mysql -e "GRANT SELECT, INDEX, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'monitoring'@'localhost';"
+mysql -e "FLUSH PRIVILEGES;"
+mkdir -p /var/lib/zabbix
+chwon zabbix:zabbix /var/lib/zabbix
+chmod 700 /var/lib/zabbix
+su - zabbix -s /bin/bash -c "mysql_config_editor set --login-path=monitoring --user monitoring --password"
+```
+and enter as password "monitoring"
+* MySQL 5.7 documentation:
+http://dev.mysql.com/doc/refman/5.7/en/innodb-parameters.html
+http://dev.mysql.com/doc/refman/5.7/en/innodb-configuration.html
+http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html
+
 #### Changelog:
+- (devel):
+  - Documented how to setup mysql server to allow monitor it
+  - Items:
+    - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
+    - ```PROC::mysqld```
+      - change hardcoded MySQL process name to the macro ``{$SVC_MYSQL_PROC}```
+      - add missing "processes" unit
+    - ```version``` add ```Discard unchanged with hartbeat``` filter which allows
+      change sampling rate from 1d to 5min with HB preriod 7d
+  - Triggers:
+    - ```SYS::processes::{$SVC_MYSQL_PROC} is not running`` severity changed
+      to disaster
+    - change ```SVC::MySQL::version has changed to {ITEM.LASTVALUE}``` to ```Not classified```
+  - Add use md markups in template description
 - 1.0.4 (2018-06-11):
   - Applications:
     - new ```SVC::MySQL::cfg``` for all read configuration parameters
@@ -37,24 +81,3 @@ MySQL engine monitoring over Zabbix agent.
   - added missing entries in SVC::MySQL::Queries screen
 - 1.0.0:
   - initial version.
-
-#### Notes:
-- Tested on MySQL 5.7 and it not uses MySQL 5.6 backward compatibility.  The
-  template requires to disable MySQL 5.6 backward compatibility and it will
-  raise alarm that show_compatibility_56 is OFF. To disable MySQL 5.6
-  backward compatibility best to add in my.cnf:
-```
-[mysqld]
-show_compatibility_56=OFF
-```
-- By default this template is monitoring the engine working on localhost
-- To be able to use this template on a host you need to setup a monitoring account with the proper privileges. To add such account you can use below queries:
-```
-CREATE USER 'monitoring'@'localhost' IDENTIFIED BY 'monitoring';
-GRANT SELECT, INDEX, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'monitoring'@'localhost';
-FLUSH PRIVILEGES;
-```
-- MySQL 5.7 documentation:
-  - http://dev.mysql.com/doc/refman/5.7/en/innodb-parameters.html
-  - http://dev.mysql.com/doc/refman/5.7/en/innodb-configuration.html
-  - http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html

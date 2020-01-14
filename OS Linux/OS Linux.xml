@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-  <version>3.4</version>
-  <date>2018-06-11T11:38:28Z</date>
+  <version>4.2</version>
+  <date>2019-08-09T15:37:38Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -16,8 +16,11 @@
 Version: 1.0.4 (2018-06-11)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/OS%20Linux&#13;
 &#13;
-Notes:&#13;
-- compliant with EL7 and compatible</description>
+#### Notes:&#13;
+- compliant with EL7, OL7, Ubuntu (Xenial, Bionic)&#13;
+- used macros:&#13;
+```{$OS_CPU_IDLE}```: threshold below which is raised alarm about low ```CPU::idle time```&#13;
+```{$OS_CPU_IDLE_HIST}```: hysteresis time for ```CPU::idle``` after which alarm starts and recovers after additional period defined in ```{$OS_CPU_IDLE_HIST}```</description>
       <groups>
         <group>
           <name>Templates</name>
@@ -25,16 +28,10 @@ Notes:&#13;
       </groups>
       <applications>
         <application>
-          <name>CHK</name>
-        </application>
-        <application>
           <name>CHK::Integrity</name>
         </application>
         <application>
           <name>CPU</name>
-        </application>
-        <application>
-          <name>DSK</name>
         </application>
         <application>
           <name>HW</name>
@@ -49,10 +46,10 @@ Notes:&#13;
           <name>PROC</name>
         </application>
         <application>
-          <name>SYS</name>
+          <name>SWAP</name>
         </application>
         <application>
-          <name>VOL</name>
+          <name>SYS</name>
         </application>
       </applications>
       <items>
@@ -97,9 +94,29 @@ Notes:&#13;
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -143,95 +160,29 @@ Notes:&#13;
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>CHK::Network port::ssh</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>net.tcp.port[,22]</key>
-          <delay>5m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>NET</name>
-            </application>
-          </applications>
-          <valuemap>
-            <name>Service state</name>
-          </valuemap>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>NET::service::$1</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>net.tcp.service[ssh]</key>
-          <delay>5m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>NET</name>
-            </application>
-          </applications>
-          <valuemap>
-            <name>Service state</name>
-          </valuemap>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -273,129 +224,24 @@ Notes:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>PROC::$1</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>proc.num[crond]</key>
-          <delay>1m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>processes</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>PROC</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>PROC::$1</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>proc.num[rsyslogd]</key>
-          <delay>1m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>processes</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>PROC</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>PROC::$1</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>proc.num[sshd]</key>
-          <delay>1m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>processes</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>PROC</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -437,6 +283,24 @@ Notes:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -478,6 +342,24 @@ Notes:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -521,9 +403,29 @@ Notes:&#13;
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -565,6 +467,24 @@ Notes:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -606,6 +526,24 @@ Notes:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -651,9 +589,29 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -695,6 +653,24 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -736,6 +712,24 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -777,6 +771,24 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -818,6 +830,24 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -859,6 +889,24 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -900,6 +948,24 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -941,6 +1007,24 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -982,6 +1066,24 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1023,6 +1125,24 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1030,7 +1150,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>system.hw.cpu</key>
+          <key>system.hw.cpu[,model]</key>
           <delay>1d</delay>
           <history>2w</history>
           <trends>0</trends>
@@ -1053,7 +1173,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <publickey/>
           <privatekey/>
           <port/>
-          <description>All CPUs information.</description>
+          <description>All CPUs vendor information.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -1062,8 +1182,33 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           </applications>
           <valuemap/>
           <logtimefmt/>
-          <preprocessing/>
+          <preprocessing>
+            <step>
+              <type>19</type>
+              <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1105,6 +1250,24 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1146,6 +1309,90 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item/>
+        </item>
+        <item>
+          <name>NET::Failed connection attempts</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>system.run["/bin/netstat -s|/bin/sed -n 's/\( *\)\(.*\)failed connection attempts/\2/ p'"]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>0</value_type>
+          <allowed_hosts/>
+          <units>events/s</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>NET</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing>
+            <step>
+              <type>10</type>
+              <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1153,7 +1400,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>system.run["/bin/netstat -s|/bin/sed -n 's/\( *\)\(.*\) segments retransmitted*/\2/ p'"]</key>
+          <key>system.run["/bin/netstat -s|/bin/sed -n 's/\( *\)\(.*\) segments retransmit.*ed*/\2/ p'"]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -1187,11 +1434,31 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing>
             <step>
-              <type>10</type>
+              <type>19</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1235,96 +1502,29 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>NET::Failed connection attempts</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)failed connection attempts/\1/ p'"]</key>
-          <delay>1m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>0</value_type>
-          <allowed_hosts/>
-          <units>events/s</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description/>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>NET</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing>
-            <step>
-              <type>10</type>
-              <params/>
-            </step>
-          </preprocessing>
-          <jmx_endpoint/>
-          <master_item/>
-        </item>
-        <item>
-          <name>SYS::rh-distribution</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>system.run["cat /etc/redhat-release"]</key>
-          <delay>6h</delay>
-          <history>2w</history>
-          <trends>0</trends>
-          <status>0</status>
-          <value_type>1</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>Content of /etc/redhat-release.</description>
-          <inventory_link>7</inventory_link>
-          <applications>
-            <application>
-              <name>SYS</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1366,6 +1566,24 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1407,6 +1625,24 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1446,8 +1682,33 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           </applications>
           <valuemap/>
           <logtimefmt/>
-          <preprocessing/>
+          <preprocessing>
+            <step>
+              <type>20</type>
+              <params>7d</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1489,6 +1750,24 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1530,6 +1809,24 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1571,19 +1868,37 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>CHK::checksum::$1</name>
+          <name>SYS::os-release</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>vfs.file.cksum[/usr/bin/ssh]</key>
-          <delay>1h</delay>
+          <key>vfs.file.contents[/etc/os-release]</key>
+          <delay>6h</delay>
           <history>2w</history>
-          <trends>365d</trends>
+          <trends>0</trends>
           <status>0</status>
-          <value_type>3</value_type>
+          <value_type>1</value_type>
           <allowed_hosts/>
           <units/>
           <snmpv3_contextname/>
@@ -1601,32 +1916,50 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Check sum of /usr/bin/ssh binary.</description>
-          <inventory_link>0</inventory_link>
+          <description>Content of /etc/os-release.</description>
+          <inventory_link>7</inventory_link>
           <applications>
             <application>
-              <name>CHK::Integrity</name>
+              <name>SYS</name>
             </application>
           </applications>
           <valuemap/>
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>CHK::Checksum::$1</name>
+          <name>MEM::$1</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>vfs.file.cksum[/usr/sbin/sshd]</key>
-          <delay>1h</delay>
+          <key>vm.memory.size[active]</key>
+          <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
           <allowed_hosts/>
-          <units/>
+          <units>B</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
           <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -1642,17 +1975,94 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Check sum of /usr/sbin/sshd binary.</description>
+          <description>Memory that has been used more recently and usually not reclaimed unless absolutely necessary.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>CHK::Integrity</name>
+              <name>MEM</name>
             </application>
           </applications>
           <valuemap/>
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::$1</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>vm.memory.size[anon]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>B</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Non-file backed pages mapped into user space page tables.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1694,6 +2104,24 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1735,6 +2163,24 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1776,6 +2222,24 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1817,6 +2281,142 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::$1</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>vm.memory.size[inactive]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>B</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Memory which has been less recently used. It is more eligible to be reclaimed for other purposes.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item/>
+        </item>
+        <item>
+          <name>MEM::$1</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>vm.memory.size[slab]</key>
+          <delay>1m</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>B</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>In-kernel data structures/caches.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>MEM</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing/>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1825,7 +2425,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <snmp_community/>
           <snmp_oid/>
           <key>vm.memory.size[total]</key>
-          <delay>1d</delay>
+          <delay>1h</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
@@ -1858,6 +2458,24 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1899,6 +2517,24 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
       </items>
@@ -1972,22 +2608,42 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <port/>
               <description>Incoming traffic statistics on network interface in bytes.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
                 <step>
                   <type>10</type>
                   <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
               </preprocessing>
               <jmx_endpoint/>
-              <application_prototypes/>
-              <master_item_prototype/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>$1::in::packets</name>
@@ -2019,22 +2675,42 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <port/>
               <description>Incoming traffic statistics on network interface in packets.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
                 <step>
                   <type>10</type>
                   <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
               </preprocessing>
               <jmx_endpoint/>
-              <application_prototypes/>
-              <master_item_prototype/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>$1::out::bytes</name>
@@ -2066,22 +2742,42 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <port/>
               <description>Outgoing traffic statistics on network interface in bytes.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
                 <step>
                   <type>10</type>
                   <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
               </preprocessing>
               <jmx_endpoint/>
-              <application_prototypes/>
-              <master_item_prototype/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>$1::out::packets</name>
@@ -2113,22 +2809,42 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <port/>
               <description>Outgoing traffic statistics on network interface in packets.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
                 <step>
                   <type>10</type>
                   <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
               </preprocessing>
               <jmx_endpoint/>
-              <application_prototypes/>
-              <master_item_prototype/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>$1::total::dropped</name>
@@ -2160,22 +2876,42 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <port/>
               <description>Sum of incoming and outgoing traffic statistics on network interface - dropped packets.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
                 <step>
                   <type>10</type>
                   <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
               </preprocessing>
               <jmx_endpoint/>
-              <application_prototypes/>
-              <master_item_prototype/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>$1::total::errors</name>
@@ -2207,22 +2943,42 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
               <port/>
               <description>Sum of incoming and outgoing traffic statistics on network interface. Number of errors.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>NET</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
                 <step>
                   <type>10</type>
                   <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
               </preprocessing>
               <jmx_endpoint/>
-              <application_prototypes/>
-              <master_item_prototype/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>NET::{#IFNAME}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
             </item_prototype>
           </item_prototypes>
           <trigger_prototypes>
@@ -2399,19 +3155,7 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
                   <type>0</type>
                   <item>
                     <host>OS Linux</host>
-                    <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)failed connection attempts/\1/ p'"]</key>
-                  </item>
-                </graph_item>
-                <graph_item>
-                  <sortorder>3</sortorder>
-                  <drawtype>0</drawtype>
-                  <color>999999</color>
-                  <yaxisside>0</yaxisside>
-                  <calc_fnc>7</calc_fnc>
-                  <type>0</type>
-                  <item>
-                    <host>OS Linux</host>
-                    <key>system.run["/bin/netstat -s|/bin/sed -n 's/\( *\)\(.*\) segments retransmitted*/\2/ p'"]</key>
+                    <key>system.run["/bin/netstat -s|/bin/sed -n 's/\( *\)\(.*\)failed connection attempts/\2/ p'"]</key>
                   </item>
                 </graph_item>
               </graph_items>
@@ -2507,6 +3251,26 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
           </graph_prototypes>
           <host_prototypes/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <lld_macro_paths/>
+          <preprocessing/>
+          <master_item/>
         </discovery_rule>
         <discovery_rule>
           <name>DSK:</name>
@@ -2538,17 +3302,14 @@ lowered from 10 -&gt; 5 second updates as characteristics observed are very diff
             <conditions>
               <condition>
                 <macro>{#DISK}</macro>
-                <value>@OS Linux::BlkDev</value>
+                <value>^(?!(cciss/c0d0p[0-9]*|fd[0-9]*|hd[a-z][0-9]*|loop[0-9]*|ram[0-9]*|sd[a-z]*[0-9]|sr[0-9]*|zram|xvd[a-z][0-9]*|zd[0-9]*p[0-9]*))</value>
                 <operator>8</operator>
                 <formulaid>A</formulaid>
               </condition>
             </conditions>
           </filter>
           <lifetime>1d</lifetime>
-          <description>List of Linux SCSI, ATA, XEN and Device Mapper storage devices without partitions.&#13;
-Discovery of storage devices is filtered over global regular expression "OS Linux::BlkDev" regexp.&#13;
-&#13;
-@OS Linux::BlkDev</description>
+          <description>List of Linux SCSI, ATA, XEN, ZFS vdevs and Device Mapper storage devices without partitions.</description>
           <item_prototypes>
             <item_prototype>
               <name>{#DISK}::read::IOs</name>
@@ -2580,22 +3341,42 @@ Discovery of storage devices is filtered over global regular expression "OS Linu
               <port/>
               <description>Number of read IO operation per second on block device in use.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
                 <step>
                   <type>10</type>
                   <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
               </preprocessing>
               <jmx_endpoint/>
-              <application_prototypes/>
-              <master_item_prototype/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>DSK::{#DISK}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>{#DISK}::read::bytes</name>
@@ -2628,26 +3409,48 @@ Discovery of storage devices is filtered over global regular expression "OS Linu
               <description>Number of read bytes per second on block device in use.&#13;
 Value is calculated by read number of sectors multiplied by 512.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
                 <step>
                   <type>10</type>
                   <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
                 <step>
                   <type>1</type>
                   <params>512</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
               </preprocessing>
               <jmx_endpoint/>
-              <application_prototypes/>
-              <master_item_prototype/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>DSK::{#DISK}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>{#DISK}::write::IOs</name>
@@ -2679,22 +3482,42 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <port/>
               <description>Number of write IO operation per second on block device in use.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
                 <step>
                   <type>10</type>
                   <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
               </preprocessing>
               <jmx_endpoint/>
-              <application_prototypes/>
-              <master_item_prototype/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>DSK::{#DISK}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>{#DISK}::write::bytes</name>
@@ -2727,26 +3550,48 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <description>Number of written bytes per second on block device in use.&#13;
 Value is calculated by read number of sectors multiplied by 512.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>DSK</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing>
                 <step>
                   <type>10</type>
                   <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
                 <step>
                   <type>1</type>
                   <params>512</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
                 </step>
               </preprocessing>
               <jmx_endpoint/>
-              <application_prototypes/>
-              <master_item_prototype/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>DSK::{#DISK}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
             </item_prototype>
           </item_prototypes>
           <trigger_prototypes/>
@@ -2842,6 +3687,485 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           </graph_prototypes>
           <host_prototypes/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <lld_macro_paths/>
+          <preprocessing/>
+          <master_item/>
+        </discovery_rule>
+        <discovery_rule>
+          <name>SWAP:</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>vfs.file.contents[/proc/meminfo]</key>
+          <delay>5m</delay>
+          <status>0</status>
+          <allowed_hosts/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <filter>
+            <evaltype>0</evaltype>
+            <formula/>
+            <conditions>
+              <condition>
+                <macro>{#SIZE}</macro>
+                <value>0</value>
+                <operator>8</operator>
+                <formulaid>A</formulaid>
+              </condition>
+            </conditions>
+          </filter>
+          <lifetime>0d</lifetime>
+          <description>Swap space LLD item.</description>
+          <item_prototypes>
+            <item_prototype>
+              <name>in</name>
+              <type>7</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>system.swap.in[,{#PAGES}]</key>
+              <delay>30s</delay>
+              <history>90d</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>0</value_type>
+              <allowed_hosts/>
+              <units>pages</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Pages swapped in.</description>
+              <inventory_link>0</inventory_link>
+              <applications>
+                <application>
+                  <name>SWAP</name>
+                </application>
+              </applications>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>10</type>
+                  <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>20</type>
+                  <params>7d</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes/>
+              <master_item/>
+            </item_prototype>
+            <item_prototype>
+              <name>out</name>
+              <type>7</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>system.swap.out[,{#PAGES}]</key>
+              <delay>30s</delay>
+              <history>90d</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>0</value_type>
+              <allowed_hosts/>
+              <units>pages</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Pages swapped out.</description>
+              <inventory_link>0</inventory_link>
+              <applications>
+                <application>
+                  <name>SWAP</name>
+                </application>
+              </applications>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>10</type>
+                  <params/>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+                <step>
+                  <type>20</type>
+                  <params>7d</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes/>
+              <master_item/>
+            </item_prototype>
+            <item_prototype>
+              <name>{#TOTAL}</name>
+              <type>7</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>system.swap.size[,{#TOTAL}]</key>
+              <delay>30s</delay>
+              <history>90d</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>3</value_type>
+              <allowed_hosts/>
+              <units>B</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Total swap space.</description>
+              <inventory_link>0</inventory_link>
+              <applications>
+                <application>
+                  <name>SWAP</name>
+                </application>
+              </applications>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>20</type>
+                  <params>7d</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes/>
+              <master_item/>
+            </item_prototype>
+            <item_prototype>
+              <name>{#USED}</name>
+              <type>7</type>
+              <snmp_community/>
+              <snmp_oid/>
+              <key>system.swap.size[,{#USED}]</key>
+              <delay>30s</delay>
+              <history>90d</history>
+              <trends>365d</trends>
+              <status>0</status>
+              <value_type>3</value_type>
+              <allowed_hosts/>
+              <units>B</units>
+              <snmpv3_contextname/>
+              <snmpv3_securityname/>
+              <snmpv3_securitylevel>0</snmpv3_securitylevel>
+              <snmpv3_authprotocol>0</snmpv3_authprotocol>
+              <snmpv3_authpassphrase/>
+              <snmpv3_privprotocol>0</snmpv3_privprotocol>
+              <snmpv3_privpassphrase/>
+              <params/>
+              <ipmi_sensor/>
+              <authtype>0</authtype>
+              <username/>
+              <password/>
+              <publickey/>
+              <privatekey/>
+              <port/>
+              <description>Used swap space.</description>
+              <inventory_link>0</inventory_link>
+              <applications>
+                <application>
+                  <name>SWAP</name>
+                </application>
+              </applications>
+              <valuemap/>
+              <logtimefmt/>
+              <preprocessing>
+                <step>
+                  <type>20</type>
+                  <params>7d</params>
+                  <error_handler>0</error_handler>
+                  <error_handler_params/>
+                </step>
+              </preprocessing>
+              <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes/>
+              <master_item/>
+            </item_prototype>
+          </item_prototypes>
+          <trigger_prototypes>
+            <trigger_prototype>
+              <expression>({OS Linux:system.swap.size[,{#USED}].last()}/{OS Linux:system.swap.size[,{#TOTAL}].last()})*100&gt;{$SWAP_HIGH}</expression>
+              <recovery_mode>0</recovery_mode>
+              <recovery_expression/>
+              <name>{#SWAP}::low space ({$ITEM.VALUE}% used)</name>
+              <correlation_mode>0</correlation_mode>
+              <correlation_tag/>
+              <url/>
+              <status>0</status>
+              <priority>0</priority>
+              <description>Swap space low space level.</description>
+              <type>0</type>
+              <manual_close>1</manual_close>
+              <dependencies/>
+              <tags/>
+            </trigger_prototype>
+          </trigger_prototypes>
+          <graph_prototypes>
+            <graph_prototype>
+              <name>{#SWAP}</name>
+              <width>1200</width>
+              <height>300</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>0</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>2</drawtype>
+                  <color>FF4000</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>7</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>OS Linux</host>
+                    <key>system.swap.size[,{#TOTAL}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>1</drawtype>
+                  <color>00FF00</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>7</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>OS Linux</host>
+                    <key>system.swap.size[,{#USED}]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+            <graph_prototype>
+              <name>{#SWAP}:in/out</name>
+              <width>1200</width>
+              <height>300</height>
+              <yaxismin>0.0000</yaxismin>
+              <yaxismax>100.0000</yaxismax>
+              <show_work_period>1</show_work_period>
+              <show_triggers>1</show_triggers>
+              <type>0</type>
+              <show_legend>1</show_legend>
+              <show_3d>0</show_3d>
+              <percent_left>0.0000</percent_left>
+              <percent_right>0.0000</percent_right>
+              <ymin_type_1>0</ymin_type_1>
+              <ymax_type_1>0</ymax_type_1>
+              <ymin_item_1>0</ymin_item_1>
+              <ymax_item_1>0</ymax_item_1>
+              <graph_items>
+                <graph_item>
+                  <sortorder>0</sortorder>
+                  <drawtype>2</drawtype>
+                  <color>0040FF</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>7</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>OS Linux</host>
+                    <key>system.swap.in[,{#PAGES}]</key>
+                  </item>
+                </graph_item>
+                <graph_item>
+                  <sortorder>1</sortorder>
+                  <drawtype>2</drawtype>
+                  <color>00FF00</color>
+                  <yaxisside>0</yaxisside>
+                  <calc_fnc>7</calc_fnc>
+                  <type>0</type>
+                  <item>
+                    <host>OS Linux</host>
+                    <key>system.swap.out[,{#PAGES}]</key>
+                  </item>
+                </graph_item>
+              </graph_items>
+            </graph_prototype>
+          </graph_prototypes>
+          <host_prototypes/>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <lld_macro_paths/>
+          <preprocessing>
+            <step>
+              <type>5</type>
+              <params>SwapTotal: +([0-9]+) kB
+[{"{#SIZE}":\1,"{#SWAP}":"SWAP","{#TOTAL}":"total","{#USED}":"used","{#PAGES}":"pages"}]</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
+          <master_item/>
         </discovery_rule>
         <discovery_rule>
           <name>VOL:</name>
@@ -2875,18 +4199,24 @@ Value is calculated by read number of sectors multiplied by 512.</description>
                 <macro>{#FSTYPE}</macro>
                 <value>^(btrfs|ext2|ext3|ext4|jfs|reiser|xfs|ffs|ufs|jfs|jfs2|vxfs|hfs|refs|ntfs|fat32|zfs)$</value>
                 <operator>8</operator>
-                <formulaid>B</formulaid>
+                <formulaid>C</formulaid>
               </condition>
               <condition>
                 <macro>{#FSNAME}</macro>
                 <value>^(?!(^/run/media))</value>
+                <operator>8</operator>
+                <formulaid>B</formulaid>
+              </condition>
+              <condition>
+                <macro>{#FSNAME}</macro>
+                <value>^(?!(^/var/lib/lxc))</value>
                 <operator>8</operator>
                 <formulaid>A</formulaid>
               </condition>
             </conditions>
           </filter>
           <lifetime>1d</lifetime>
-          <description>Discovery of file systems.</description>
+          <description>Discovery of the file systems.</description>
           <item_prototypes>
             <item_prototype>
               <name>$1::inodes::$2</name>
@@ -2918,17 +4248,35 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>VOL</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
               <jmx_endpoint/>
-              <application_prototypes/>
-              <master_item_prototype/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>$1::inodes::$2</name>
@@ -2936,7 +4284,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>vfs.fs.inode[{#FSNAME},total]</key>
-              <delay>1d</delay>
+              <delay>1h</delay>
               <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
@@ -2960,17 +4308,35 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>VOL</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
               <jmx_endpoint/>
-              <application_prototypes/>
-              <master_item_prototype/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>$1::inodes::$2</name>
@@ -3002,17 +4368,35 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <port/>
               <description/>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>VOL</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
               <jmx_endpoint/>
-              <application_prototypes/>
-              <master_item_prototype/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>$1::$2</name>
@@ -3044,17 +4428,35 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <port/>
               <description>Percent used volume space.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>VOL</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
               <jmx_endpoint/>
-              <application_prototypes/>
-              <master_item_prototype/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>$1::$2</name>
@@ -3062,7 +4464,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <snmp_community/>
               <snmp_oid/>
               <key>vfs.fs.size[{#FSNAME},total]</key>
-              <delay>1d</delay>
+              <delay>1h</delay>
               <history>2w</history>
               <trends>365d</trends>
               <status>0</status>
@@ -3086,17 +4488,35 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <port/>
               <description>Volume total space.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>VOL</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
               <jmx_endpoint/>
-              <application_prototypes/>
-              <master_item_prototype/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>$1::$2</name>
@@ -3128,52 +4548,38 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <port/>
               <description>Volume used space.</description>
               <inventory_link>0</inventory_link>
-              <applications>
-                <application>
-                  <name>VOL</name>
-                </application>
-              </applications>
+              <applications/>
               <valuemap/>
               <logtimefmt/>
               <preprocessing/>
               <jmx_endpoint/>
-              <application_prototypes/>
-              <master_item_prototype/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
+              <application_prototypes>
+                <application_prototype>
+                  <name>VOL::{#FSNAME}</name>
+                </application_prototype>
+              </application_prototypes>
+              <master_item/>
             </item_prototype>
           </item_prototypes>
           <trigger_prototypes>
-            <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;15</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>1</priority>
-              <description>FS volume free space is less than 15%.</description>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
-              <tags/>
-            </trigger_prototype>
-            <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;15 and {OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&gt;10</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>1</priority>
-              <description>FS volume free space is between 85% and 90%.</description>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
-              <tags/>
-            </trigger_prototype>
             <trigger_prototype>
               <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=1</expression>
               <recovery_mode>0</recovery_mode>
@@ -3183,7 +4589,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <correlation_tag/>
               <url/>
               <status>0</status>
-              <priority>3</priority>
+              <priority>5</priority>
               <description>FS volume free space is less than 1%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
@@ -3199,38 +4605,17 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <correlation_tag/>
               <url/>
               <status>0</status>
-              <priority>3</priority>
+              <priority>4</priority>
               <description>FS volume free space is less than 5%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
               <dependencies>
                 <dependency>
                   <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
-                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;15</expression>
-                  <recovery_expression/>
-                </dependency>
-                <dependency>
-                  <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
-                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=10</expression>
+                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=1</expression>
                   <recovery_expression/>
                 </dependency>
               </dependencies>
-              <tags/>
-            </trigger_prototype>
-            <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=5 and {OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&gt;1</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>3</priority>
-              <description>FS volume free space is between 1% and 5%.</description>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
               <tags/>
             </trigger_prototype>
             <trigger_prototype>
@@ -3242,33 +4627,22 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <correlation_tag/>
               <url/>
               <status>0</status>
-              <priority>2</priority>
+              <priority>3</priority>
               <description>FS volume free space is less than 10%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
               <dependencies>
                 <dependency>
                   <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
-                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;15</expression>
+                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=1</expression>
+                  <recovery_expression/>
+                </dependency>
+                <dependency>
+                  <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=5</expression>
                   <recovery_expression/>
                 </dependency>
               </dependencies>
-              <tags/>
-            </trigger_prototype>
-            <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=10 and {OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&gt;5</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>2</priority>
-              <description>FS volume free space is between 90% and 95%.</description>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
               <tags/>
             </trigger_prototype>
             <trigger_prototype>
@@ -3280,11 +4654,64 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <correlation_tag/>
               <url/>
               <status>0</status>
-              <priority>1</priority>
-              <description>FS volume free space is &lt;=15%.</description>
+              <priority>2</priority>
+              <description>FS volume free space is less than 15%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
-              <dependencies/>
+              <dependencies>
+                <dependency>
+                  <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=1</expression>
+                  <recovery_expression/>
+                </dependency>
+                <dependency>
+                  <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=5</expression>
+                  <recovery_expression/>
+                </dependency>
+                <dependency>
+                  <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=10</expression>
+                  <recovery_expression/>
+                </dependency>
+              </dependencies>
+              <tags/>
+            </trigger_prototype>
+            <trigger_prototype>
+              <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=20</expression>
+              <recovery_mode>0</recovery_mode>
+              <recovery_expression/>
+              <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
+              <correlation_mode>0</correlation_mode>
+              <correlation_tag/>
+              <url/>
+              <status>0</status>
+              <priority>1</priority>
+              <description>FS volume free space is less than 20%.</description>
+              <type>0</type>
+              <manual_close>0</manual_close>
+              <dependencies>
+                <dependency>
+                  <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=1</expression>
+                  <recovery_expression/>
+                </dependency>
+                <dependency>
+                  <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=5</expression>
+                  <recovery_expression/>
+                </dependency>
+                <dependency>
+                  <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=10</expression>
+                  <recovery_expression/>
+                </dependency>
+                <dependency>
+                  <name>VOL::{#FSNAME}::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.size[{#FSNAME},pfree].last()}&lt;=15</expression>
+                  <recovery_expression/>
+                </dependency>
+              </dependencies>
               <tags/>
             </trigger_prototype>
             <trigger_prototype>
@@ -3296,15 +4723,31 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <correlation_tag/>
               <url/>
               <status>0</status>
-              <priority>1</priority>
+              <priority>2</priority>
               <description>FS volume inodes free space is less than 15%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
-              <dependencies/>
+              <dependencies>
+                <dependency>
+                  <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=1</expression>
+                  <recovery_expression/>
+                </dependency>
+                <dependency>
+                  <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=5</expression>
+                  <recovery_expression/>
+                </dependency>
+                <dependency>
+                  <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=10</expression>
+                  <recovery_expression/>
+                </dependency>
+              </dependencies>
               <tags/>
             </trigger_prototype>
             <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;15 and {OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&gt;10</expression>
+              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;20</expression>
               <recovery_mode>0</recovery_mode>
               <recovery_expression/>
               <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
@@ -3313,10 +4756,31 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <url/>
               <status>0</status>
               <priority>1</priority>
-              <description>FS volume inodes free space is between 15% and 10%.</description>
+              <description>FS volume inodes free space is less than 20%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
-              <dependencies/>
+              <dependencies>
+                <dependency>
+                  <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;15</expression>
+                  <recovery_expression/>
+                </dependency>
+                <dependency>
+                  <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=1</expression>
+                  <recovery_expression/>
+                </dependency>
+                <dependency>
+                  <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=5</expression>
+                  <recovery_expression/>
+                </dependency>
+                <dependency>
+                  <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=10</expression>
+                  <recovery_expression/>
+                </dependency>
+              </dependencies>
               <tags/>
             </trigger_prototype>
             <trigger_prototype>
@@ -3328,7 +4792,7 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <correlation_tag/>
               <url/>
               <status>0</status>
-              <priority>3</priority>
+              <priority>5</priority>
               <description>FS volume inodes free space is less than 1%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
@@ -3344,38 +4808,17 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <correlation_tag/>
               <url/>
               <status>0</status>
-              <priority>3</priority>
+              <priority>4</priority>
               <description>FS volume inodes free space is less than 5%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
               <dependencies>
                 <dependency>
                   <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
-                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;15</expression>
-                  <recovery_expression/>
-                </dependency>
-                <dependency>
-                  <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
-                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=10</expression>
+                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=1</expression>
                   <recovery_expression/>
                 </dependency>
               </dependencies>
-              <tags/>
-            </trigger_prototype>
-            <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=5 and {OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&gt;1</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>3</priority>
-              <description>FS volume inodes free space is between 5% and 1%.</description>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
               <tags/>
             </trigger_prototype>
             <trigger_prototype>
@@ -3387,33 +4830,22 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <correlation_tag/>
               <url/>
               <status>0</status>
-              <priority>2</priority>
+              <priority>3</priority>
               <description>FS volume inodes free space is less than 10%.</description>
               <type>0</type>
               <manual_close>0</manual_close>
               <dependencies>
                 <dependency>
                   <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
-                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;15</expression>
+                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=1</expression>
+                  <recovery_expression/>
+                </dependency>
+                <dependency>
+                  <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
+                  <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=5</expression>
                   <recovery_expression/>
                 </dependency>
               </dependencies>
-              <tags/>
-            </trigger_prototype>
-            <trigger_prototype>
-              <expression>{OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&lt;=10 and {OS Linux:vfs.fs.inode[{#FSNAME},pfree].last()}&gt;5</expression>
-              <recovery_mode>0</recovery_mode>
-              <recovery_expression/>
-              <name>VOL::{#FSNAME}::inodes::free {ITEM.VALUE}</name>
-              <correlation_mode>0</correlation_mode>
-              <correlation_tag/>
-              <url/>
-              <status>0</status>
-              <priority>2</priority>
-              <description>FS volume inodes free space is between 10% and 5%.</description>
-              <type>0</type>
-              <manual_close>0</manual_close>
-              <dependencies/>
               <tags/>
             </trigger_prototype>
           </trigger_prototypes>
@@ -3438,8 +4870,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <graph_items>
                 <graph_item>
                   <sortorder>0</sortorder>
-                  <drawtype>2</drawtype>
-                  <color>0000DD</color>
+                  <drawtype>5</drawtype>
+                  <color>FF4000</color>
                   <yaxisside>0</yaxisside>
                   <calc_fnc>7</calc_fnc>
                   <type>0</type>
@@ -3450,8 +4882,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
                 </graph_item>
                 <graph_item>
                   <sortorder>1</sortorder>
-                  <drawtype>2</drawtype>
-                  <color>DD00DD</color>
+                  <drawtype>5</drawtype>
+                  <color>80FF00</color>
                   <yaxisside>0</yaxisside>
                   <calc_fnc>7</calc_fnc>
                   <type>0</type>
@@ -3553,6 +4985,26 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           </graph_prototypes>
           <host_prototypes/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <lld_macro_paths/>
+          <preprocessing/>
+          <master_item/>
         </discovery_rule>
       </discovery_rules>
       <httptests/>
@@ -3560,6 +5012,10 @@ Value is calculated by read number of sectors multiplied by 512.</description>
         <macro>
           <macro>{$STEAL_WARN}</macro>
           <value>20</value>
+        </macro>
+        <macro>
+          <macro>{$SWAP_HIGH}</macro>
+          <value>80</value>
         </macro>
       </macros>
       <templates>
@@ -3573,13 +5029,13 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <screens>
         <screen>
           <name>CPU</name>
-          <hsize>1</hsize>
+          <hsize>2</hsize>
           <vsize>2</vsize>
           <screen_items>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>1200</width>
-              <height>300</height>
+              <width>600</width>
+              <height>200</height>
               <x>0</x>
               <y>0</y>
               <colspan>1</colspan>
@@ -3600,7 +5056,29 @@ Value is calculated by read number of sectors multiplied by 512.</description>
             </screen_item>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>1200</width>
+              <width>500</width>
+              <height>200</height>
+              <x>1</x>
+              <y>0</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>SYS::load::avg1</name>
+                <host>OS Linux</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>0</resourcetype>
+              <width>600</width>
               <height>200</height>
               <x>0</x>
               <y>1</y>
@@ -3629,8 +5107,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           <screen_items>
             <screen_item>
               <resourcetype>20</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>0</x>
               <y>0</y>
               <colspan>1</colspan>
@@ -3651,8 +5129,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
             </screen_item>
             <screen_item>
               <resourcetype>20</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>1</x>
               <y>0</y>
               <colspan>1</colspan>
@@ -3674,9 +5152,60 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           </screen_items>
         </screen>
         <screen>
+          <name>DSK, NET</name>
+          <hsize>2</hsize>
+          <vsize>1</vsize>
+          <screen_items>
+            <screen_item>
+              <resourcetype>20</resourcetype>
+              <width>600</width>
+              <height>200</height>
+              <x>0</x>
+              <y>0</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>DSK::{#DISK}::IOs</name>
+                <host>OS Linux</host>
+              </resource>
+              <max_columns>1</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>20</resourcetype>
+              <width>600</width>
+              <height>200</height>
+              <x>1</x>
+              <y>0</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>0</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>NET::{#IFNAME}::bytes</name>
+                <host>OS Linux</host>
+              </resource>
+              <max_columns>1</max_columns>
+              <application/>
+            </screen_item>
+          </screen_items>
+        </screen>
+        <screen>
           <name>MEM</name>
           <hsize>1</hsize>
-          <vsize>1</vsize>
+          <vsize>2</vsize>
           <screen_items>
             <screen_item>
               <resourcetype>0</resourcetype>
@@ -3700,6 +5229,28 @@ Value is calculated by read number of sectors multiplied by 512.</description>
               <max_columns>3</max_columns>
               <application/>
             </screen_item>
+            <screen_item>
+              <resourcetype>0</resourcetype>
+              <width>1200</width>
+              <height>200</height>
+              <x>0</x>
+              <y>1</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>MEM::active vs inactive</name>
+                <host>OS Linux</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
           </screen_items>
         </screen>
         <screen>
@@ -3709,8 +5260,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           <screen_items>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>0</x>
               <y>0</y>
               <colspan>1</colspan>
@@ -3731,8 +5282,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
             </screen_item>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>1</x>
               <y>0</y>
               <colspan>1</colspan>
@@ -3753,8 +5304,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
             </screen_item>
             <screen_item>
               <resourcetype>20</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>0</x>
               <y>1</y>
               <colspan>1</colspan>
@@ -3775,15 +5326,15 @@ Value is calculated by read number of sectors multiplied by 512.</description>
             </screen_item>
             <screen_item>
               <resourcetype>20</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>1</x>
               <y>1</y>
               <colspan>1</colspan>
               <rowspan>1</rowspan>
               <elements>0</elements>
               <valign>1</valign>
-              <halign>0</halign>
+              <halign>1</halign>
               <style>0</style>
               <url/>
               <dynamic>0</dynamic>
@@ -3804,8 +5355,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           <screen_items>
             <screen_item>
               <resourcetype>20</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>0</x>
               <y>0</y>
               <colspan>1</colspan>
@@ -3826,8 +5377,8 @@ Value is calculated by read number of sectors multiplied by 512.</description>
             </screen_item>
             <screen_item>
               <resourcetype>20</resourcetype>
-              <width>500</width>
-              <height>100</height>
+              <width>600</width>
+              <height>200</height>
               <x>1</x>
               <y>0</y>
               <colspan>1</colspan>
@@ -3848,7 +5399,59 @@ Value is calculated by read number of sectors multiplied by 512.</description>
             </screen_item>
           </screen_items>
         </screen>
+        <screen>
+          <name>SWAP</name>
+          <hsize>2</hsize>
+          <vsize>1</vsize>
+          <screen_items>
+            <screen_item>
+              <resourcetype>20</resourcetype>
+              <width>600</width>
+              <height>200</height>
+              <x>0</x>
+              <y>0</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>{#SWAP}</name>
+                <host>OS Linux</host>
+              </resource>
+              <max_columns>1</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>20</resourcetype>
+              <width>600</width>
+              <height>200</height>
+              <x>1</x>
+              <y>0</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>{#SWAP}:in/out</name>
+                <host>OS Linux</host>
+              </resource>
+              <max_columns>1</max_columns>
+              <application/>
+            </screen_item>
+          </screen_items>
+        </screen>
       </screens>
+      <tags/>
     </template>
   </templates>
   <triggers>
@@ -3857,54 +5460,6 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>CHK::Checksum::/etc/passwd has been changed</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{OS Linux:vfs.file.cksum[/usr/bin/ssh].diff(0)}&gt;0</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>CHK::Checksum::/usr/bin/ssh has been changed</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{OS Linux:vfs.file.cksum[/usr/sbin/sshd].diff(0)}&gt;0</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>CHK::Checksum::/usr/sbin/sshd has been changed</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{OS Linux:system.cpu.util[,idle,avg1].last(0)}&lt;5</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>CPU::idle {ITEM.VALUE}</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
@@ -3925,22 +5480,25 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{OS Linux:system.cpu.util[,idle,avg1].last(0)}&lt;15</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
+      <expression>{OS Linux:system.cpu.util[,idle,avg1].last({$OS_CPU_IDLE_HIST})}&lt;{$OS_CPU_IDLE}</expression>
+      <recovery_mode>1</recovery_mode>
+      <recovery_expression>{OS Linux:system.cpu.util[,idle,avg1].last({$OS_CPU_IDLE_HIST})}&gt;{$OS_CPU_IDLE}</recovery_expression>
       <name>CPU::idle {ITEM.VALUE}</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
       <status>0</status>
-      <priority>2</priority>
-      <description/>
+      <priority>3</priority>
+      <description>CPU idle time less than {$OS_CPU_IDLE}% for more than {$OS_CPU_IDLE_HIST}.&#13;
+If those macros are not defined alarms about low CPU::idle will be not created.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies>
         <dependency>
-          <name>CPU::idle {ITEM.VALUE}</name>
-          <expression>{OS Linux:system.cpu.util[,idle,avg1].last(0)}&lt;5</expression>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
           <recovery_expression/>
         </dependency>
       </dependencies>
@@ -3981,11 +5539,19 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{OS Linux:system.hw.cpu.diff()}=1</expression>
+      <expression>{OS Linux:system.hw.cpu[,model].diff()}=1</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
       <name>HW::CPU info has changed</name>
@@ -3997,7 +5563,15 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <description>CPUs information has change.</description>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -4013,7 +5587,15 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <description>Hardware devices list has been changed.</description>
       <type>1</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -4029,7 +5611,15 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -4051,6 +5641,13 @@ Value is calculated by read number of sectors multiplied by 512.</description>
           <expression>({OS Linux:vm.memory.size[available].min(#3)}/{OS Linux:vm.memory.size[total].last(0)})&lt;0.05</expression>
           <recovery_expression/>
         </dependency>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
       </dependencies>
       <tags/>
     </trigger>
@@ -4067,7 +5664,15 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -4156,44 +5761,6 @@ Value is calculated by read number of sectors multiplied by 512.</description>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{OS Linux:net.tcp.port[,22].count(#3,0)}=3</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>NET::port::ssh unreachable</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies>
-        <dependency>
-          <name>SYS::processes::sshd is not running</name>
-          <expression>{OS Linux:proc.num[sshd].last(0)}&lt;1</expression>
-          <recovery_expression/>
-        </dependency>
-      </dependencies>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{OS Linux:net.tcp.service[ssh].count(#3,0)}=3</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SVC::ssh is down</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
       <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
 {OS Linux:agent.ping.nodata(15m)}=1 and&#13;
 {OS Linux:system.uptime.count(15m)}=0</expression>
@@ -4257,7 +5824,15 @@ s3-dump hosts delete</description>
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -4273,55 +5848,15 @@ s3-dump hosts delete</description>
       <description>Tim drift bigger than 60s.</description>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{OS Linux:proc.num[crond].last(0)}&gt;5</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SYS::processes::crond &gt; 5 processes (LV={ITEM.VALUE})</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>2</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{OS Linux:proc.num[rsyslogd].last(0)}&lt;1</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SYS::processes::rsyslogd is not running</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>2</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{OS Linux:proc.num[sshd].last(0)}&lt;1</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SYS::processes::sshd is not running</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>2</priority>
-      <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
     <trigger>
@@ -4337,7 +5872,15 @@ s3-dump hosts delete</description>
       <description/>
       <type>0</type>
       <manual_close>0</manual_close>
-      <dependencies/>
+      <dependencies>
+        <dependency>
+          <name>SYS::Host is down</name>
+          <expression>{OS Linux:icmpping.count(#10,0,"eq")}&gt;9 and&#13;
+{OS Linux:agent.ping.nodata(15m)}=1 and&#13;
+{OS Linux:system.uptime.count(15m)}=0</expression>
+          <recovery_expression/>
+        </dependency>
+      </dependencies>
       <tags/>
     </trigger>
   </triggers>
@@ -4550,6 +6093,50 @@ s3-dump hosts delete</description>
       </graph_items>
     </graph>
     <graph>
+      <name>MEM::active vs inactive</name>
+      <width>1200</width>
+      <height>300</height>
+      <yaxismin>0.0000</yaxismin>
+      <yaxismax>100.0000</yaxismax>
+      <show_work_period>1</show_work_period>
+      <show_triggers>1</show_triggers>
+      <type>1</type>
+      <show_legend>1</show_legend>
+      <show_3d>0</show_3d>
+      <percent_left>0.0000</percent_left>
+      <percent_right>0.0000</percent_right>
+      <ymin_type_1>1</ymin_type_1>
+      <ymax_type_1>0</ymax_type_1>
+      <ymin_item_1>0</ymin_item_1>
+      <ymax_item_1>0</ymax_item_1>
+      <graph_items>
+        <graph_item>
+          <sortorder>0</sortorder>
+          <drawtype>1</drawtype>
+          <color>FF0000</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>OS Linux</host>
+            <key>vm.memory.size[active]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>1</sortorder>
+          <drawtype>0</drawtype>
+          <color>00DD00</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>2</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>OS Linux</host>
+            <key>vm.memory.size[inactive]</key>
+          </item>
+        </graph_item>
+      </graph_items>
+    </graph>
+    <graph>
       <name>NET::Errors</name>
       <width>1200</width>
       <height>300</height>
@@ -4588,7 +6175,7 @@ s3-dump hosts delete</description>
           <type>0</type>
           <item>
             <host>OS Linux</host>
-            <key>system.run["/bin/netstat -s|/bin/sed -n 's/\(.*\)failed connection attempts/\1/ p'"]</key>
+            <key>system.run["/bin/netstat -s|/bin/sed -n 's/\( *\)\(.*\)failed connection attempts/\2/ p'"]</key>
           </item>
         </graph_item>
       </graph_items>
@@ -4702,19 +6289,4 @@ s3-dump hosts delete</description>
       </graph_items>
     </graph>
   </graphs>
-  <value_maps>
-    <value_map>
-      <name>Service state</name>
-      <mappings>
-        <mapping>
-          <value>0</value>
-          <newvalue>Down</newvalue>
-        </mapping>
-        <mapping>
-          <value>1</value>
-          <newvalue>Up</newvalue>
-        </mapping>
-      </mappings>
-    </value_map>
-  </value_maps>
 </zabbix_export>

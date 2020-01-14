@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
   <version>4.2</version>
-  <date>2019-09-18T11:35:09Z</date>
+  <date>2019-05-29T15:03:47Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -9,26 +9,34 @@
   </groups>
   <templates>
     <template>
-      <template>Service Nginx</template>
-      <name>Service Nginx</name>
-      <description>Nginx http server monitoring template.&#13;
+      <template>Service php-fpm</template>
+      <name>Service php-fpm</name>
+      <description>PHP FastCGI Process Manager monitoring template.&#13;
 &#13;
 Version: 1.0.4 (2018-06-11)&#13;
-URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nginx&#13;
+URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20php-fpm&#13;
 &#13;
-#### Notes:&#13;
-- This template uses nginx stub_status loadable module metrics&#13;
-- On Debian/Ubuntu change ```{$NGINX_USER}``` macro value to ```www-data```&#13;
-- To use this template add nginx.conf configuration file:&#13;
-```&#13;
-    location /stub_status {&#13;
-        stub_status     on;&#13;
-        # do not log query for stats in access log&#13;
-        access_log      off;&#13;
-        allow           127.0.0.1;&#13;
-        deny            all;&#13;
-    }&#13;
-```</description>
+Notes:&#13;
+- the template uses php-fpm FPM status page so in php.ini must be enabled:&#13;
+&#13;
+pm.status_path = /status&#13;
+&#13;
+- In case of using nginx with php-fpm nginx.conf configuration file must have:&#13;
+&#13;
+        location ~ ^/(status|ping)$ {&#13;
+                access_log      off;&#13;
+                allow           127.0.0.1;&#13;
+                allow           ::1;&#13;
+                deny            all;&#13;
+                include         fastcgi_params;&#13;
+&#13;
+                fastcgi_index   index.php;&#13;
+                fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;&#13;
+&#13;
+                fastcgi_pass    unix:/run/php-fpm/www.sock;&#13;
+        }&#13;
+&#13;
+- If on some Linux systems PROC::php-fpm item will be showing 0 processes find PID one of the working php-fpm process and use command "basename $(readlink /proc/&lt;PID&gt;/exe)" and update {$SVC_PHP_FPM_PROC} host macro content with value which this command show.</description>
       <groups>
         <group>
           <name>Templates</name>
@@ -36,29 +44,29 @@ URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nginx&#13
       </groups>
       <applications>
         <application>
-          <name>SVC::nginx</name>
+          <name>PROC</name>
         </application>
         <application>
-          <name>SVC::nginx::connections</name>
+          <name>SVC::php-fpm</name>
         </application>
         <application>
-          <name>SVC::nginx::requests</name>
+          <name>SVC::php-fpm::proc</name>
         </application>
       </applications>
       <items>
         <item>
-          <name>SVC::$1 tcp/$3</name>
+          <name>PROC::{$SVC_PHP_FPM_PROC}</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>net.tcp.service[http,,{$SVC_NGINX_PORT}]</key>
-          <delay>1m</delay>
+          <key>proc.num[{$SVC_PHP_FPM_PROC}]</key>
+          <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
           <allowed_hosts/>
-          <units/>
+          <units>processes</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
           <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -74,11 +82,11 @@ URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nginx&#13
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Checking is it possible to connect to tcp/{$SVC_NGINX_PORT}.</description>
+          <description>Number php-fpm processes.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::nginx</name>
+              <name>PROC</name>
             </application>
           </applications>
           <valuemap>
@@ -97,7 +105,7 @@ URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nginx&#13
           <http_proxy/>
           <headers/>
           <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
+          <request_method>1</request_method>
           <output_format>0</output_format>
           <allow_traps>0</allow_traps>
           <ssl_cert_file/>
@@ -108,487 +116,11 @@ URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nginx&#13
           <master_item/>
         </item>
         <item>
-          <name>connections::$1</name>
+          <name>accepted conn</name>
           <type>18</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>nginx.connections[active]</key>
-          <delay>0</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>connections</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>The current number of all open connections.&#13;
-This doesn’t mean number of users. A single user, for a single pageview can open many concurrent connections to your server.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::nginx::connections</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing>
-            <step>
-              <type>5</type>
-              <params>Active(.*)
-\0</params>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-            <step>
-              <type>5</type>
-              <params>\d+
-\0</params>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-          </preprocessing>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item>
-            <key>web.page.get[{$SVC_NGINX_HOST},{$SVC_NGINX_STATS_URI},{$SVC_NGINX_PORT}]</key>
-          </master_item>
-        </item>
-        <item>
-          <name>connections::$1</name>
-          <type>18</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>nginx.connections[reading]</key>
-          <delay>0</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>connections</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>The current number of client connections in reading the request state.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::nginx::connections</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing>
-            <step>
-              <type>5</type>
-              <params>Reading:(.*)
-\0</params>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-            <step>
-              <type>5</type>
-              <params>\d+
-\0</params>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-          </preprocessing>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item>
-            <key>web.page.get[{$SVC_NGINX_HOST},{$SVC_NGINX_STATS_URI},{$SVC_NGINX_PORT}]</key>
-          </master_item>
-        </item>
-        <item>
-          <name>connections::$1</name>
-          <type>18</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>nginx.connections[waiting]</key>
-          <delay>0</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>connections</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>The current number of client connections in waiting state.&#13;
-&#13;
-keep-alive connections, actually it is active – (reading + writing).This value depends on keepalive-timeout. Do not confuse non-zero waiting value for poor performance. It can be ignored. Although, you can force zero waiting by setting&#13;
-keepalive_timeout 0;&#13;
-&#13;
-http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_disable&#13;
-http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_requests&#13;
-http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::nginx::connections</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing>
-            <step>
-              <type>5</type>
-              <params>Waiting:(.*)
-\0</params>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-            <step>
-              <type>5</type>
-              <params>\d+
-\0</params>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-          </preprocessing>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item>
-            <key>web.page.get[{$SVC_NGINX_HOST},{$SVC_NGINX_STATS_URI},{$SVC_NGINX_PORT}]</key>
-          </master_item>
-        </item>
-        <item>
-          <name>connections::$1</name>
-          <type>18</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>nginx.connections[writing]</key>
-          <delay>0</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>connections</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>The current number of client connections writing the response back to the client.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::nginx::connections</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing>
-            <step>
-              <type>5</type>
-              <params>Writing:(.*)
-\0</params>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-            <step>
-              <type>5</type>
-              <params>\d+
-\0</params>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-          </preprocessing>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item>
-            <key>web.page.get[{$SVC_NGINX_HOST},{$SVC_NGINX_STATS_URI},{$SVC_NGINX_PORT}]</key>
-          </master_item>
-        </item>
-        <item>
-          <name>requests</name>
-          <type>18</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>nginx.requests</key>
-          <delay>0</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>0</value_type>
-          <allowed_hosts/>
-          <units>req/s</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>The number of client requests per second.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::nginx::requests</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing>
-            <step>
-              <type>5</type>
-              <params>\s\d+\s\d+\s\d+
-\0</params>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-            <step>
-              <type>5</type>
-              <params>\s\d+\s\d+\s(.*)
-\1</params>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-            <step>
-              <type>10</type>
-              <params/>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-          </preprocessing>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item>
-            <key>web.page.get[{$SVC_NGINX_HOST},{$SVC_NGINX_STATS_URI},{$SVC_NGINX_PORT}]</key>
-          </master_item>
-        </item>
-        <item>
-          <name>requests::$1</name>
-          <type>18</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>nginx.requests[accepts]</key>
-          <delay>0</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>0</value_type>
-          <allowed_hosts/>
-          <units>req/s</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>The number of accepted client connections per second.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::nginx::requests</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing>
-            <step>
-              <type>5</type>
-              <params>\s\d+\s\d+\s\d+
-\0</params>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-            <step>
-              <type>5</type>
-              <params>\d+
-\0</params>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-            <step>
-              <type>10</type>
-              <params/>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-          </preprocessing>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item>
-            <key>web.page.get[{$SVC_NGINX_HOST},{$SVC_NGINX_STATS_URI},{$SVC_NGINX_PORT}]</key>
-          </master_item>
-        </item>
-        <item>
-          <name>requests::$1</name>
-          <type>18</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>nginx.requests[handled]</key>
+          <key>status[accepted conn]</key>
           <delay>0</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -611,35 +143,19 @@ http://nginx.org/en/docs/http/ngx_http_core_module.html#keepalive_timeout</descr
           <publickey/>
           <privatekey/>
           <port/>
-          <description>The number of handled connections per second by Nginx server.&#13;
-Generally, the parameter value is the same as accepts unless some resource limits have been reached (for example, the worker_connections limit).</description>
+          <description>The number of request accepted by the pool.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::nginx::requests</name>
+              <name>SVC::php-fpm</name>
             </application>
           </applications>
           <valuemap/>
           <logtimefmt/>
           <preprocessing>
             <step>
-              <type>5</type>
-              <params>\s\d+\s\d+\s\d+
-\0</params>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-            <step>
-              <type>5</type>
-              <params>\s\d+\s\d+\s
-\0</params>
-              <error_handler>0</error_handler>
-              <error_handler_params/>
-            </step>
-            <step>
-              <type>5</type>
-              <params>\s\d+\s(.*)
-\1</params>
+              <type>12</type>
+              <params>$['accepted conn']</params>
               <error_handler>0</error_handler>
               <error_handler_params/>
             </step>
@@ -661,7 +177,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <http_proxy/>
           <headers/>
           <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
+          <request_method>1</request_method>
           <output_format>0</output_format>
           <allow_traps>0</allow_traps>
           <ssl_cert_file/>
@@ -670,22 +186,22 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <verify_peer>0</verify_peer>
           <verify_host>0</verify_host>
           <master_item>
-            <key>web.page.get[{$SVC_NGINX_HOST},{$SVC_NGINX_STATS_URI},{$SVC_NGINX_PORT}]</key>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
           </master_item>
         </item>
         <item>
-          <name>reqs_per_conn</name>
-          <type>15</type>
+          <name>active processes</name>
+          <type>18</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>nginx.requests_per_connection</key>
-          <delay>30s</delay>
+          <key>status[active processes]</key>
+          <delay>0</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
-          <value_type>0</value_type>
+          <value_type>3</value_type>
           <allowed_hosts/>
-          <units>reqs/conn</units>
+          <units/>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
           <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -693,7 +209,7 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <snmpv3_authpassphrase/>
           <snmpv3_privprotocol>0</snmpv3_privprotocol>
           <snmpv3_privpassphrase/>
-          <params>last("nginx.requests")/last("nginx.requests[handled]")</params>
+          <params/>
           <ipmi_sensor/>
           <authtype>0</authtype>
           <username/>
@@ -701,11 +217,897 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <publickey/>
           <privatekey/>
           <port/>
-          <description>Number of requests done over single TCP connection.</description>
+          <description>The number of active processes.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
-              <name>SVC::nginx::requests</name>
+              <name>SVC::php-fpm</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing>
+            <step>
+              <type>12</type>
+              <params>$['active processes']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
+          </master_item>
+        </item>
+        <item>
+          <name>idle processes</name>
+          <type>18</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>status[idle processes]</key>
+          <delay>0</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>The number of idle processes.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::php-fpm::proc</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing>
+            <step>
+              <type>12</type>
+              <params>$['idle processes']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
+          </master_item>
+        </item>
+        <item>
+          <name>listen queue len</name>
+          <type>18</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>status[listen queue len]</key>
+          <delay>0</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>The size of the socket queue of pending connections.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::php-fpm</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing>
+            <step>
+              <type>12</type>
+              <params>$['listen queue len']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
+          </master_item>
+        </item>
+        <item>
+          <name>listen queue</name>
+          <type>18</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>status[listen queue]</key>
+          <delay>0</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>The number of request in the queue of pending connections. If this number is non-zero, then you better increase number of process FPM can spawn.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::php-fpm</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing>
+            <step>
+              <type>12</type>
+              <params>$['listen queue']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
+          </master_item>
+        </item>
+        <item>
+          <name>max active processes</name>
+          <type>18</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>status[max active processes]</key>
+          <delay>0</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>The maximum number of active processes since FPM has started.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::php-fpm::proc</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing>
+            <step>
+              <type>12</type>
+              <params>$['max active processes']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
+          </master_item>
+        </item>
+        <item>
+          <name>max children reached</name>
+          <type>18</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>status[max children reached]</key>
+          <delay>0</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Number of times, the process limit has been reached, when pm tries to start more children. If that value is not zero, then you may need to increase max process limit for your PHP-FPM pool. Like this, you can find other useful information to tweak your pool better way.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::php-fpm</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing>
+            <step>
+              <type>12</type>
+              <params>$['max children reached']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
+          </master_item>
+        </item>
+        <item>
+          <name>max listen queue</name>
+          <type>18</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>status[max listen queue]</key>
+          <delay>0</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>The maximum number of requests in the queue of pending connections since PHP-FPM has started.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::php-fpm</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing>
+            <step>
+              <type>12</type>
+              <params>$['max listen queue']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
+          </master_item>
+        </item>
+        <item>
+          <name>pool</name>
+          <type>18</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>status[pool]</key>
+          <delay>0</delay>
+          <history>2w</history>
+          <trends>0</trends>
+          <status>0</status>
+          <value_type>1</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>The name of the pool.&#13;
+Mostly it will be "www".</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::php-fpm</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing>
+            <step>
+              <type>12</type>
+              <params>$.pool</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
+          </master_item>
+        </item>
+        <item>
+          <name>process manager</name>
+          <type>18</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>status[process manager]</key>
+          <delay>0</delay>
+          <history>2w</history>
+          <trends>0</trends>
+          <status>0</status>
+          <value_type>1</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Possible values static, dynamic or ondemand. We never use static.&#13;
+Trying ondemand is on todo list.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::php-fpm::proc</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing>
+            <step>
+              <type>12</type>
+              <params>$['process manager']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
+          </master_item>
+        </item>
+        <item>
+          <name>slow requests</name>
+          <type>18</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>status[slow requests]</key>
+          <delay>0</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description/>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::php-fpm</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing>
+            <step>
+              <type>12</type>
+              <params>$['slow requests']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
+          </master_item>
+        </item>
+        <item>
+          <name>start since</name>
+          <type>18</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>status[start since]</key>
+          <delay>0</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>uptime</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>The number of seconds since PHP-FPM has started.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::php-fpm</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing>
+            <step>
+              <type>12</type>
+              <params>$['start since']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
+          </master_item>
+        </item>
+        <item>
+          <name>start time</name>
+          <type>18</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>status[start time]</key>
+          <delay>0</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units>unixtime</units>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>The date and time FPM has started or reloaded. Reloading PHP-FPM reset this value.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::php-fpm</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing>
+            <step>
+              <type>12</type>
+              <params>$['start time']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
+          </master_item>
+        </item>
+        <item>
+          <name>total processes</name>
+          <type>18</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>status[total processes]</key>
+          <delay>0</delay>
+          <history>2w</history>
+          <trends>365d</trends>
+          <status>0</status>
+          <value_type>3</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>The number of idle + active processes.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::php-fpm</name>
+            </application>
+          </applications>
+          <valuemap/>
+          <logtimefmt/>
+          <preprocessing>
+            <step>
+              <type>12</type>
+              <params>$['total processes']</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
+          <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <master_item>
+            <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
+          </master_item>
+        </item>
+        <item>
+          <name>pm.status_path</name>
+          <type>7</type>
+          <snmp_community/>
+          <snmp_oid/>
+          <key>web.page.regexp[{$SVC_PHP_FPM_HOST},{$SVC_PHP_FPM_STATS_URI},{$SVC_PHP_FPM_PORT},(^\{.*),,\1]</key>
+          <delay>30s</delay>
+          <history>0d</history>
+          <trends>0</trends>
+          <status>0</status>
+          <value_type>4</value_type>
+          <allowed_hosts/>
+          <units/>
+          <snmpv3_contextname/>
+          <snmpv3_securityname/>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authprotocol>0</snmpv3_authprotocol>
+          <snmpv3_authpassphrase/>
+          <snmpv3_privprotocol>0</snmpv3_privprotocol>
+          <snmpv3_privpassphrase/>
+          <params/>
+          <ipmi_sensor/>
+          <authtype>0</authtype>
+          <username/>
+          <password/>
+          <publickey/>
+          <privatekey/>
+          <port/>
+          <description>Master item sampling all php-fpm status page data.</description>
+          <inventory_link>0</inventory_link>
+          <applications>
+            <application>
+              <name>SVC::php-fpm</name>
             </application>
           </applications>
           <valuemap/>
@@ -732,479 +1134,40 @@ Generally, the parameter value is the same as accepts unless some resource limit
           <verify_host>0</verify_host>
           <master_item/>
         </item>
-        <item>
-          <name>memory</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>proc.mem[nginx,,,{$SVC_NGINX_PROC},rss]</key>
-          <delay>30s</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>B</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>Total RSS memory usage by all nginx processes.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::nginx</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>memory::master</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>proc.mem[nginx,root,,{$SVC_NGINX_PROC}]</key>
-          <delay>30s</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>B</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>Memory nginx process memory usage.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::nginx</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>memory::workers</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>proc.mem[nginx,{$SVC_NGINX_USER},sum,{$SVC_NGINX_PROC}]</key>
-          <delay>30s</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>B</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>Sum of memory of all ngingx worker process.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::nginx</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>PROC::$1</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>proc.num[nginx,root,,{$SVC_NGINX_PROC}]</key>
-          <delay>1m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>processes</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>Number Nginx processes.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::nginx</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>PROC::$1::workers</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>proc.num[nginx,{$SVC_NGINX_USER},,{$SVC_NGINX_PROC}]</key>
-          <delay>1m</delay>
-          <history>2w</history>
-          <trends>365d</trends>
-          <status>0</status>
-          <value_type>3</value_type>
-          <allowed_hosts/>
-          <units>processes</units>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>Number of Nginx worker processes.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::nginx</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>version</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>system.run["{$SVC_NGINX_PROC} -v 2&gt;&amp;1|/bin/sed -n 's/nginx version: nginx\/\(.*\)/\1/ p'"]</key>
-          <delay>1h</delay>
-          <history>2w</history>
-          <trends>0</trends>
-          <status>0</status>
-          <value_type>1</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>Version of the nginx.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::nginx</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
-        <item>
-          <name>stub_status:</name>
-          <type>7</type>
-          <snmp_community/>
-          <snmp_oid/>
-          <key>web.page.get[{$SVC_NGINX_HOST},{$SVC_NGINX_STATS_URI},{$SVC_NGINX_PORT}]</key>
-          <delay>30s</delay>
-          <history>0</history>
-          <trends>0</trends>
-          <status>0</status>
-          <value_type>4</value_type>
-          <allowed_hosts/>
-          <units/>
-          <snmpv3_contextname/>
-          <snmpv3_securityname/>
-          <snmpv3_securitylevel>0</snmpv3_securitylevel>
-          <snmpv3_authprotocol>0</snmpv3_authprotocol>
-          <snmpv3_authpassphrase/>
-          <snmpv3_privprotocol>0</snmpv3_privprotocol>
-          <snmpv3_privpassphrase/>
-          <params/>
-          <ipmi_sensor/>
-          <authtype>0</authtype>
-          <username/>
-          <password/>
-          <publickey/>
-          <privatekey/>
-          <port/>
-          <description>Master item sampling all nginx stub_status module data.</description>
-          <inventory_link>0</inventory_link>
-          <applications>
-            <application>
-              <name>SVC::nginx</name>
-            </application>
-          </applications>
-          <valuemap/>
-          <logtimefmt/>
-          <preprocessing/>
-          <jmx_endpoint/>
-          <timeout>3s</timeout>
-          <url/>
-          <query_fields/>
-          <posts/>
-          <status_codes>200</status_codes>
-          <follow_redirects>1</follow_redirects>
-          <post_type>0</post_type>
-          <http_proxy/>
-          <headers/>
-          <retrieve_mode>0</retrieve_mode>
-          <request_method>0</request_method>
-          <output_format>0</output_format>
-          <allow_traps>0</allow_traps>
-          <ssl_cert_file/>
-          <ssl_key_file/>
-          <ssl_key_password/>
-          <verify_peer>0</verify_peer>
-          <verify_host>0</verify_host>
-          <master_item/>
-        </item>
       </items>
       <discovery_rules/>
       <httptests/>
       <macros>
         <macro>
-          <macro>{$SVC_NGINX_HOST}</macro>
+          <macro>{$SVC_PHP_FPM_HOST}</macro>
           <value>127.0.0.1</value>
         </macro>
         <macro>
-          <macro>{$SVC_NGINX_PORT}</macro>
+          <macro>{$SVC_PHP_FPM_PORT}</macro>
           <value>80</value>
         </macro>
         <macro>
-          <macro>{$SVC_NGINX_PROC}</macro>
-          <value>nginx</value>
+          <macro>{$SVC_PHP_FPM_PROC}</macro>
+          <value>php-fpm</value>
         </macro>
         <macro>
-          <macro>{$SVC_NGINX_STATS_URI}</macro>
-          <value>/stub_status</value>
-        </macro>
-        <macro>
-          <macro>{$SVC_NGINX_USER}</macro>
-          <value>nginx</value>
+          <macro>{$SVC_PHP_FPM_STATS_URI}</macro>
+          <value>/status?json</value>
         </macro>
       </macros>
       <templates/>
       <screens>
         <screen>
-          <name>SVC::Nginx</name>
+          <name>SVC::php-fpm</name>
           <hsize>2</hsize>
-          <vsize>3</vsize>
+          <vsize>2</vsize>
           <screen_items>
-            <screen_item>
-              <resourcetype>3</resourcetype>
-              <width>500</width>
-              <height>100</height>
-              <x>0</x>
-              <y>0</y>
-              <colspan>1</colspan>
-              <rowspan>1</rowspan>
-              <elements>1</elements>
-              <valign>1</valign>
-              <halign>0</halign>
-              <style>0</style>
-              <url/>
-              <dynamic>0</dynamic>
-              <sort_triggers>0</sort_triggers>
-              <resource>
-                <key>system.run["{$SVC_NGINX_PROC} -v 2&gt;&amp;1|/bin/sed -n 's/nginx version: nginx\/\(.*\)/\1/ p'"]</key>
-                <host>Service Nginx</host>
-              </resource>
-              <max_columns>3</max_columns>
-              <application/>
-            </screen_item>
             <screen_item>
               <resourcetype>0</resourcetype>
               <width>600</width>
               <height>200</height>
               <x>0</x>
-              <y>1</y>
+              <y>0</y>
               <colspan>1</colspan>
               <rowspan>1</rowspan>
               <elements>0</elements>
@@ -1215,8 +1178,8 @@ Generally, the parameter value is the same as accepts unless some resource limit
               <dynamic>0</dynamic>
               <sort_triggers>0</sort_triggers>
               <resource>
-                <name>SVC::Nginx::requests</name>
-                <host>Service Nginx</host>
+                <name>SVC::php-fpm::requests</name>
+                <host>Service php-fpm</host>
               </resource>
               <max_columns>3</max_columns>
               <application/>
@@ -1226,6 +1189,28 @@ Generally, the parameter value is the same as accepts unless some resource limit
               <width>600</width>
               <height>200</height>
               <x>1</x>
+              <y>0</y>
+              <colspan>1</colspan>
+              <rowspan>1</rowspan>
+              <elements>0</elements>
+              <valign>1</valign>
+              <halign>1</halign>
+              <style>0</style>
+              <url/>
+              <dynamic>0</dynamic>
+              <sort_triggers>0</sort_triggers>
+              <resource>
+                <name>SVC::php-fpm::listen queue</name>
+                <host>Service php-fpm</host>
+              </resource>
+              <max_columns>3</max_columns>
+              <application/>
+            </screen_item>
+            <screen_item>
+              <resourcetype>0</resourcetype>
+              <width>600</width>
+              <height>200</height>
+              <x>0</x>
               <y>1</y>
               <colspan>1</colspan>
               <rowspan>1</rowspan>
@@ -1237,30 +1222,8 @@ Generally, the parameter value is the same as accepts unless some resource limit
               <dynamic>0</dynamic>
               <sort_triggers>0</sort_triggers>
               <resource>
-                <name>SVC::Nginx::connection</name>
-                <host>Service Nginx</host>
-              </resource>
-              <max_columns>3</max_columns>
-              <application/>
-            </screen_item>
-            <screen_item>
-              <resourcetype>0</resourcetype>
-              <width>600</width>
-              <height>200</height>
-              <x>0</x>
-              <y>2</y>
-              <colspan>1</colspan>
-              <rowspan>1</rowspan>
-              <elements>0</elements>
-              <valign>1</valign>
-              <halign>1</halign>
-              <style>0</style>
-              <url/>
-              <dynamic>0</dynamic>
-              <sort_triggers>0</sort_triggers>
-              <resource>
-                <name>SVC::Nginx::memory</name>
-                <host>Service Nginx</host>
+                <name>SVC::php-fpm::processes</name>
+                <host>Service php-fpm</host>
               </resource>
               <max_columns>3</max_columns>
               <application/>
@@ -1273,65 +1236,27 @@ Generally, the parameter value is the same as accepts unless some resource limit
   </templates>
   <triggers>
     <trigger>
-      <expression>{Service Nginx:net.tcp.service[http,,{$SVC_NGINX_PORT}].max(#3)}=0</expression>
+      <expression>{Service php-fpm:proc.num[{$SVC_PHP_FPM_PROC}].last()}=0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>SVC::http tcp/{$SVC_NGINX_PORT} is DOWN</name>
+      <name>PROC::php-fpm is DOWN</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
       <status>0</status>
-      <priority>3</priority>
-      <description>Nothing listens on http tcp/{$SVC_NGINX_PORT} port or traffic on this port is filtered by firewall.</description>
+      <priority>4</priority>
+      <description>php-fpm process is DOWN or wrong process name in {$SVC_PHP_FPM_PROC} macro.&#13;
+&#13;
+If on some Linux systems this item show 0 processes find PID one of the working php-fpm process and use command "basename $(readlink /proc/&lt;PID&gt;/exe)" and update {$SVC_PHP_FPM_PROC} host macro content with value which this command show.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{Service Nginx:proc.num[nginx,root,,{$SVC_NGINX_PROC}].last()}=0</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SVC::nginx::master process is DOWN</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>5</priority>
-      <description>The nginx main process is not running.&#13;
-Please confirm the state.</description>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{Service Nginx:proc.num[nginx,{$SVC_NGINX_USER},,{$SVC_NGINX_PROC}].avg(#3)}=0</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SVC::nginx::workers DOWN</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>5</priority>
-      <description>The Nginx worker process are not running.&#13;
-Please confirm the state.</description>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies>
-        <dependency>
-          <name>SVC::nginx::master process is DOWN</name>
-          <expression>{Service Nginx:proc.num[nginx,root,,{$SVC_NGINX_PROC}].last()}=0</expression>
-          <recovery_expression/>
-        </dependency>
-      </dependencies>
       <tags/>
     </trigger>
   </triggers>
   <graphs>
     <graph>
-      <name>SVC::Nginx::connection</name>
+      <name>SVC::php-fpm::listen queue</name>
       <width>1200</width>
       <height>300</height>
       <yaxismin>0.0000</yaxismin>
@@ -1350,132 +1275,44 @@ Please confirm the state.</description>
       <graph_items>
         <graph_item>
           <sortorder>0</sortorder>
-          <drawtype>2</drawtype>
-          <color>00C800</color>
-          <yaxisside>0</yaxisside>
-          <calc_fnc>7</calc_fnc>
-          <type>0</type>
-          <item>
-            <host>Service Nginx</host>
-            <key>nginx.connections[active]</key>
-          </item>
-        </graph_item>
-        <graph_item>
-          <sortorder>1</sortorder>
-          <drawtype>2</drawtype>
-          <color>0000C8</color>
-          <yaxisside>0</yaxisside>
-          <calc_fnc>7</calc_fnc>
-          <type>0</type>
-          <item>
-            <host>Service Nginx</host>
-            <key>nginx.connections[reading]</key>
-          </item>
-        </graph_item>
-        <graph_item>
-          <sortorder>2</sortorder>
-          <drawtype>2</drawtype>
-          <color>C80000</color>
-          <yaxisside>0</yaxisside>
-          <calc_fnc>7</calc_fnc>
-          <type>0</type>
-          <item>
-            <host>Service Nginx</host>
-            <key>nginx.connections[waiting]</key>
-          </item>
-        </graph_item>
-        <graph_item>
-          <sortorder>3</sortorder>
-          <drawtype>2</drawtype>
-          <color>C800C8</color>
-          <yaxisside>0</yaxisside>
-          <calc_fnc>7</calc_fnc>
-          <type>0</type>
-          <item>
-            <host>Service Nginx</host>
-            <key>nginx.connections[writing]</key>
-          </item>
-        </graph_item>
-      </graph_items>
-    </graph>
-    <graph>
-      <name>SVC::Nginx::memory</name>
-      <width>1200</width>
-      <height>300</height>
-      <yaxismin>0.0000</yaxismin>
-      <yaxismax>100.0000</yaxismax>
-      <show_work_period>1</show_work_period>
-      <show_triggers>1</show_triggers>
-      <type>1</type>
-      <show_legend>1</show_legend>
-      <show_3d>0</show_3d>
-      <percent_left>0.0000</percent_left>
-      <percent_right>0.0000</percent_right>
-      <ymin_type_1>0</ymin_type_1>
-      <ymax_type_1>0</ymax_type_1>
-      <ymin_item_1>0</ymin_item_1>
-      <ymax_item_1>0</ymax_item_1>
-      <graph_items>
-        <graph_item>
-          <sortorder>0</sortorder>
-          <drawtype>2</drawtype>
-          <color>DD0000</color>
-          <yaxisside>0</yaxisside>
-          <calc_fnc>2</calc_fnc>
-          <type>0</type>
-          <item>
-            <host>Service Nginx</host>
-            <key>proc.mem[nginx,root,,{$SVC_NGINX_PROC}]</key>
-          </item>
-        </graph_item>
-        <graph_item>
-          <sortorder>1</sortorder>
-          <drawtype>2</drawtype>
-          <color>00BB00</color>
-          <yaxisside>0</yaxisside>
-          <calc_fnc>2</calc_fnc>
-          <type>0</type>
-          <item>
-            <host>Service Nginx</host>
-            <key>proc.mem[nginx,{$SVC_NGINX_USER},sum,{$SVC_NGINX_PROC}]</key>
-          </item>
-        </graph_item>
-      </graph_items>
-    </graph>
-    <graph>
-      <name>SVC::Nginx::reqs_per_conn</name>
-      <width>1200</width>
-      <height>300</height>
-      <yaxismin>0.0000</yaxismin>
-      <yaxismax>100.0000</yaxismax>
-      <show_work_period>1</show_work_period>
-      <show_triggers>1</show_triggers>
-      <type>0</type>
-      <show_legend>1</show_legend>
-      <show_3d>0</show_3d>
-      <percent_left>0.0000</percent_left>
-      <percent_right>0.0000</percent_right>
-      <ymin_type_1>0</ymin_type_1>
-      <ymax_type_1>0</ymax_type_1>
-      <ymin_item_1>0</ymin_item_1>
-      <ymax_item_1>0</ymax_item_1>
-      <graph_items>
-        <graph_item>
-          <sortorder>0</sortorder>
-          <drawtype>2</drawtype>
+          <drawtype>0</drawtype>
           <color>00EE00</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
-            <host>Service Nginx</host>
-            <key>nginx.requests_per_connection</key>
+            <host>Service php-fpm</host>
+            <key>status[listen queue len]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>1</sortorder>
+          <drawtype>0</drawtype>
+          <color>0000EE</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service php-fpm</host>
+            <key>status[listen queue]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>2</sortorder>
+          <drawtype>0</drawtype>
+          <color>EE0000</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service php-fpm</host>
+            <key>status[max listen queue]</key>
           </item>
         </graph_item>
       </graph_items>
     </graph>
     <graph>
-      <name>SVC::Nginx::requests</name>
+      <name>SVC::php-fpm::processes</name>
       <width>1200</width>
       <height>300</height>
       <yaxismin>0.0000</yaxismin>
@@ -1494,38 +1331,94 @@ Please confirm the state.</description>
       <graph_items>
         <graph_item>
           <sortorder>0</sortorder>
-          <drawtype>2</drawtype>
-          <color>0000AA</color>
+          <drawtype>0</drawtype>
+          <color>1A7C11</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
-            <host>Service Nginx</host>
-            <key>nginx.requests</key>
+            <host>Service php-fpm</host>
+            <key>status[active processes]</key>
           </item>
         </graph_item>
         <graph_item>
           <sortorder>1</sortorder>
-          <drawtype>2</drawtype>
-          <color>DD0000</color>
+          <drawtype>0</drawtype>
+          <color>F63100</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
-            <host>Service Nginx</host>
-            <key>nginx.requests[accepts]</key>
+            <host>Service php-fpm</host>
+            <key>status[idle processes]</key>
           </item>
         </graph_item>
         <graph_item>
           <sortorder>2</sortorder>
-          <drawtype>2</drawtype>
-          <color>00BB00</color>
+          <drawtype>0</drawtype>
+          <color>2774A4</color>
           <yaxisside>0</yaxisside>
           <calc_fnc>7</calc_fnc>
           <type>0</type>
           <item>
-            <host>Service Nginx</host>
-            <key>nginx.requests[handled]</key>
+            <host>Service php-fpm</host>
+            <key>status[max active processes]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>3</sortorder>
+          <drawtype>0</drawtype>
+          <color>A54F10</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service php-fpm</host>
+            <key>status[total processes]</key>
+          </item>
+        </graph_item>
+      </graph_items>
+    </graph>
+    <graph>
+      <name>SVC::php-fpm::requests</name>
+      <width>1200</width>
+      <height>300</height>
+      <yaxismin>0.0000</yaxismin>
+      <yaxismax>100.0000</yaxismax>
+      <show_work_period>1</show_work_period>
+      <show_triggers>1</show_triggers>
+      <type>0</type>
+      <show_legend>1</show_legend>
+      <show_3d>0</show_3d>
+      <percent_left>0.0000</percent_left>
+      <percent_right>0.0000</percent_right>
+      <ymin_type_1>0</ymin_type_1>
+      <ymax_type_1>0</ymax_type_1>
+      <ymin_item_1>0</ymin_item_1>
+      <ymax_item_1>0</ymax_item_1>
+      <graph_items>
+        <graph_item>
+          <sortorder>0</sortorder>
+          <drawtype>0</drawtype>
+          <color>1A7C11</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service php-fpm</host>
+            <key>status[accepted conn]</key>
+          </item>
+        </graph_item>
+        <graph_item>
+          <sortorder>1</sortorder>
+          <drawtype>0</drawtype>
+          <color>F63100</color>
+          <yaxisside>0</yaxisside>
+          <calc_fnc>7</calc_fnc>
+          <type>0</type>
+          <item>
+            <host>Service php-fpm</host>
+            <key>status[slow requests]</key>
           </item>
         </graph_item>
       </graph_items>

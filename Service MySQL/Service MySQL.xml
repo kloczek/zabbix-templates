@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-  <version>3.4</version>
-  <date>2018-06-11T11:38:51Z</date>
+  <version>4.2</version>
+  <date>2019-08-09T15:37:41Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,25 +13,34 @@
       <name>Service MySQL</name>
       <description>MySQL engine monitoring over Zabbix agent.&#13;
 &#13;
-Version: 1.0.4 (2018-06-11)&#13;
+#### Version: (devel)&#13;
 URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20MySQL&#13;
 &#13;
-Notes:&#13;
-* Tested on MySQL 5.7 and it not designed to be uses with MySQL older than 5.7 backward compatibility so it can be used to monitor MySQL engine which in my.cnf has:&#13;
+| Macro | Default value | Description |&#13;
+| :-- | :-- | :-- |&#13;
+| {$SVC_MYSQL_CMD} | HOME=/var/lib/zabbix /usr/bin/mysql --login-path=monitoring -Nse | mysql command used in system.run[] keys |&#13;
+| {$SVC_MYSQL_PROC} | mysqld | MySQL process name |&#13;
 &#13;
+#### Notes:&#13;
+* Tested on MySQL 5.7 and it not designed to be uses with MySQL older than 5.7 backward compatibility so it can be used to monitor MySQL engine which in my.cnf has:&#13;
+```&#13;
 [mysqld]&#13;
 show_compatibility_56 = OFF &#13;
-&#13;
-My advice is even to disable show_compatibility_56 to not start by mistake use some older metrics which in next version of the MySQL no longer will be avalaible as an option.&#13;
-&#13;
+```&#13;
+My advice is even to disable show_compatibility_56 to not start by mistake use some older metrics which in next version of the MySQL no longer will be available as an option.&#13;
 * By default this template is monitoring the engine working on localhost.&#13;
-To be able to use this template on a host you need to setup a monitoring account with the proper privileges.&#13;
-To add such account you can use below queries:&#13;
-&#13;
-CREATE USER 'monitoring'@'localhost' IDENTIFIED BY 'monitoring';&#13;
-GRANT SELECT, INDEX, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'monitoring'@'localhost';&#13;
-FLUSH PRIVILEGES;&#13;
-&#13;
+* To be able to use this template on a host you need to setup a monitoring account with the proper privileges.&#13;
+* To add such account you can use below queries:&#13;
+```&#13;
+mysql -e "CREATE USER 'monitoring'@'localhost' IDENTIFIED BY 'monitoring';"&#13;
+mysql -e "GRANT SELECT, INDEX, SHOW DATABASES, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'monitoring'@'localhost';"&#13;
+mysql -e "FLUSH PRIVILEGES;"&#13;
+mkdir -p /var/lib/zabbix&#13;
+chwon zabbix:zabbix /var/lib/zabbix&#13;
+chmod 700 /var/lib/zabbix&#13;
+su - zabbix -s /bin/bash -c "mysql_config_editor set --login-path=monitoring --user monitoring --password"&#13;
+```&#13;
+and enter as password "monitoring"&#13;
 * MySQL 5.7 documentation:&#13;
 http://dev.mysql.com/doc/refman/5.7/en/innodb-parameters.html&#13;
 http://dev.mysql.com/doc/refman/5.7/en/innodb-configuration.html&#13;
@@ -70,14 +79,14 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>proc.num[mysqld]</key>
+          <key>proc.num[{$SVC_MYSQL_PROC}]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
           <status>0</status>
           <value_type>3</value_type>
           <allowed_hosts/>
-          <units/>
+          <units>processes</units>
           <snmpv3_contextname/>
           <snmpv3_securityname/>
           <snmpv3_securitylevel>0</snmpv3_securitylevel>
@@ -93,7 +102,7 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <publickey/>
           <privatekey/>
           <port/>
-          <description/>
+          <description>Number MySQL processes.</description>
           <inventory_link>0</inventory_link>
           <applications>
             <application>
@@ -106,6 +115,24 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -149,9 +176,29 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -195,9 +242,29 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -241,9 +308,29 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -287,9 +374,29 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -333,9 +440,29 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -379,9 +506,29 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -425,9 +572,29 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -471,9 +638,29 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -517,9 +704,29 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -563,9 +770,29 @@ http://dev.mysql.com/doc/refman/5.7/en/innodb-information-schema.html</descripti
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -613,9 +840,29 @@ You can compare the number of internal on-disk temporary tables created to the t
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -659,9 +906,29 @@ You can compare the number of internal on-disk temporary tables created to the t
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -709,9 +976,29 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -753,6 +1040,24 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -794,6 +1099,24 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -835,6 +1158,24 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -876,6 +1217,24 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -919,9 +1278,29 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -963,6 +1342,24 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1004,6 +1401,24 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1045,6 +1460,24 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1088,9 +1521,29 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1134,9 +1587,29 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1180,9 +1653,29 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1226,9 +1719,29 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1270,6 +1783,24 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1311,6 +1842,24 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1352,6 +1901,24 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1395,9 +1962,29 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1439,6 +2026,24 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1482,9 +2087,29 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
             <step>
               <type>9</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1528,9 +2153,29 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1574,9 +2219,29 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1620,9 +2285,29 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1666,9 +2351,29 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1712,9 +2417,29 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1758,9 +2483,29 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
             <step>
               <type>1</type>
               <params>0.001</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1804,9 +2549,29 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1848,6 +2613,24 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1889,6 +2672,24 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1932,9 +2733,29 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -1978,9 +2799,29 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2024,9 +2865,29 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2070,9 +2931,29 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2114,6 +2995,24 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2155,6 +3054,24 @@ Each invocation of the SHOW STATUS statement uses an internal temporary table an
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2200,9 +3117,29 @@ It does not count COM_PING or COM_STATISTICS commands.</description>
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2246,9 +3183,29 @@ It does not count COM_PING or COM_STATISTICS commands.</description>
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2292,9 +3249,29 @@ It does not count COM_PING or COM_STATISTICS commands.</description>
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2338,6 +3315,24 @@ This variable is not meaningful in the embedded server (libmysqld) and as of MyS
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2379,6 +3374,24 @@ This variable is not meaningful in the embedded server (libmysqld) and as of MyS
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2420,6 +3433,24 @@ This variable is not meaningful in the embedded server (libmysqld) and as of MyS
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2461,6 +3492,24 @@ This variable is not meaningful in the embedded server (libmysqld) and as of MyS
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2502,6 +3551,24 @@ This variable is not meaningful in the embedded server (libmysqld) and as of MyS
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2549,6 +3616,24 @@ This variable sets the binary logging format, and can be any one of STATEMENT, R
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2596,6 +3681,24 @@ This variable sets the binary logging format, and can be any one of STATEMENT, R
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2637,6 +3740,24 @@ This variable sets the binary logging format, and can be any one of STATEMENT, R
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2678,6 +3799,24 @@ This variable sets the binary logging format, and can be any one of STATEMENT, R
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2721,6 +3860,24 @@ The default, with the largest page size, is appropriate for a wide range of work
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2766,6 +3923,24 @@ You can also turn off this option if you do not need it for safe binary logging 
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2807,6 +3982,24 @@ You can also turn off this option if you do not need it for safe binary logging 
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2854,6 +4047,24 @@ When you change the message buffer size by changing the value of the max_allowed
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2895,6 +4106,24 @@ When you change the message buffer size by changing the value of the max_allowed
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2938,6 +4167,24 @@ This variable is also used in conjunction with tmp_table_size to limit the size 
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -2979,6 +4226,24 @@ This variable is also used in conjunction with tmp_table_size to limit the size 
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -3024,6 +4289,24 @@ The query cache needs a minimum size of about 40KB to allocate its structures. (
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -3070,6 +4353,24 @@ Possible values:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -3111,6 +4412,24 @@ Possible values:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -3154,6 +4473,24 @@ You can compare the number of internal on-disk temporary tables created to the t
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -3219,6 +4556,24 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -3227,7 +4582,7 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
           <snmp_community/>
           <snmp_oid/>
           <key>system.run[{$MYSQL_CMD} "SELECT variable_value FROM performance_schema.global_variables WHERE variable_name='version';",]</key>
-          <delay>1d</delay>
+          <delay>5m</delay>
           <history>2w</history>
           <trends>0</trends>
           <status>0</status>
@@ -3258,8 +4613,33 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
           </applications>
           <valuemap/>
           <logtimefmt/>
-          <preprocessing/>
+          <preprocessing>
+            <step>
+              <type>20</type>
+              <params>7d</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
+            </step>
+          </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
       </items>
@@ -3338,12 +4718,30 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
               <logtimefmt/>
               <preprocessing/>
               <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
               <application_prototypes>
                 <application_prototype>
                   <name>SVC::MySQL::DB::{#DB}</name>
                 </application_prototype>
               </application_prototypes>
-              <master_item_prototype/>
+              <master_item/>
             </item_prototype>
             <item_prototype>
               <name>{#DB}::index size</name>
@@ -3380,12 +4778,30 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
               <logtimefmt/>
               <preprocessing/>
               <jmx_endpoint/>
+              <timeout>3s</timeout>
+              <url/>
+              <query_fields/>
+              <posts/>
+              <status_codes>200</status_codes>
+              <follow_redirects>1</follow_redirects>
+              <post_type>0</post_type>
+              <http_proxy/>
+              <headers/>
+              <retrieve_mode>0</retrieve_mode>
+              <request_method>0</request_method>
+              <output_format>0</output_format>
+              <allow_traps>0</allow_traps>
+              <ssl_cert_file/>
+              <ssl_key_file/>
+              <ssl_key_password/>
+              <verify_peer>0</verify_peer>
+              <verify_host>0</verify_host>
               <application_prototypes>
                 <application_prototype>
                   <name>SVC::MySQL::DB::{#DB}</name>
                 </application_prototype>
               </application_prototypes>
-              <master_item_prototype/>
+              <master_item/>
             </item_prototype>
           </item_prototypes>
           <trigger_prototypes/>
@@ -3437,6 +4853,26 @@ This level is like REPEATABLE READ, but InnoDB implicitly converts all plain SEL
           </graph_prototypes>
           <host_prototypes/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <lld_macro_paths/>
+          <preprocessing/>
+          <master_item/>
         </discovery_rule>
         <discovery_rule>
           <name>MySQL::slave:</name>
@@ -3480,6 +4916,26 @@ SELECT variable_value FROM information_schema.global_status WHERE variable_name 
           <graph_prototypes/>
           <host_prototypes/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
+          <lld_macro_paths/>
+          <preprocessing/>
+          <master_item/>
         </discovery_rule>
       </discovery_rules>
       <httptests/>
@@ -3488,17 +4944,21 @@ SELECT variable_value FROM information_schema.global_status WHERE variable_name 
           <macro>{$MYSQL_CMD}</macro>
           <value>HOME=/var/lib/zabbix /usr/bin/mysql --login-path=monitoring -Nse</value>
         </macro>
+        <macro>
+          <macro>{$SVC_MYSQL_PROC}</macro>
+          <value>mysqld</value>
+        </macro>
       </macros>
       <templates/>
       <screens>
         <screen>
           <name>SVC::MySQL::Com</name>
           <hsize>1</hsize>
-          <vsize>7</vsize>
+          <vsize>6</vsize>
           <screen_items>
             <screen_item>
               <resourcetype>1</resourcetype>
-              <width>900</width>
+              <width>1200</width>
               <height>200</height>
               <x>0</x>
               <y>0</y>
@@ -3520,7 +4980,7 @@ SELECT variable_value FROM information_schema.global_status WHERE variable_name 
             </screen_item>
             <screen_item>
               <resourcetype>1</resourcetype>
-              <width>900</width>
+              <width>1200</width>
               <height>200</height>
               <x>0</x>
               <y>1</y>
@@ -3542,7 +5002,7 @@ SELECT variable_value FROM information_schema.global_status WHERE variable_name 
             </screen_item>
             <screen_item>
               <resourcetype>1</resourcetype>
-              <width>900</width>
+              <width>1200</width>
               <height>200</height>
               <x>0</x>
               <y>2</y>
@@ -3564,7 +5024,7 @@ SELECT variable_value FROM information_schema.global_status WHERE variable_name 
             </screen_item>
             <screen_item>
               <resourcetype>1</resourcetype>
-              <width>900</width>
+              <width>1200</width>
               <height>200</height>
               <x>0</x>
               <y>3</y>
@@ -3586,7 +5046,7 @@ SELECT variable_value FROM information_schema.global_status WHERE variable_name 
             </screen_item>
             <screen_item>
               <resourcetype>1</resourcetype>
-              <width>900</width>
+              <width>1200</width>
               <height>200</height>
               <x>0</x>
               <y>4</y>
@@ -3608,7 +5068,7 @@ SELECT variable_value FROM information_schema.global_status WHERE variable_name 
             </screen_item>
             <screen_item>
               <resourcetype>1</resourcetype>
-              <width>900</width>
+              <width>1200</width>
               <height>200</height>
               <x>0</x>
               <y>5</y>
@@ -3828,6 +5288,7 @@ SELECT variable_value FROM information_schema.global_status WHERE variable_name 
           </screen_items>
         </screen>
       </screens>
+      <tags/>
     </template>
   </templates>
   <triggers>
@@ -3909,7 +5370,7 @@ max_connections = &lt;new_limit&gt;</description>
       <priority>0</priority>
       <description>The MySQL engine version has been changed.</description>
       <type>0</type>
-      <manual_close>0</manual_close>
+      <manual_close>1</manual_close>
       <dependencies/>
       <tags/>
     </trigger>
@@ -3931,16 +5392,16 @@ Possible restart has been done.</description>
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service MySQL:proc.num[mysqld].last(0)}&lt;1</expression>
+      <expression>{Service MySQL:proc.num[{$SVC_MYSQL_PROC}].last(0)}&lt;1</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>SYS::processes::mysqld is not running</name>
+      <name>SYS::processes::{$SVC_MYSQL_PROC} is not running</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
       <status>0</status>
-      <priority>4</priority>
-      <description/>
+      <priority>5</priority>
+      <description>The MySQL process is not running.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>

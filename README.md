@@ -12,12 +12,158 @@ If you have some changes for those templates please submit PR against **[devel](
 ## Table of Contents
 ***
 - [Changelog](#changelog)
+  * [devel](devel)
   * [1.0.4](#104-2018-06-11)
 - [List of templates](#list-of-templates)
 - [Notes and Guidlines](#notes-and-guidelines)
 - [Copyright](#copyright--c--2017-2018-tomasz-k-oczko--kloczek-fedoraprojectorg)
 ***
 ## Changelog:
+### (devel)
+- Make all templates zabbix 4.0.x ready by remove using $1-$9 macros in items names
+- New templates
+  - [Service php-fpm](https://github.com/kloczek/zabbix-templates/tree/devel/Service%20php-fpm)
+- **IF-MIB**
+  - LLDs:
+    - interfaces: use ```IF-MIB::ifAdminStatus``` instead ```IF-MIB::ifOperusStatus``` on checking if interface is up or down
+    - interfaces: add to LLD iterator item ```IF-MIB::ifIndex``` and map it to ```{#IFINDEX}``` macro
+    - interfaces: add to all applications, items, triggers anf graphs prototypes names ```[{#IFINDEX}]``` to display physical port number in those names
+    - graphs improvements
+- **OS Linux**
+  - template can be now used on Ubuntu and compatible as well (tested on Xenial and Bionic)
+  - Items:
+    - ```NET::segments retransmitted``` sed regexp changed to cover old "segments retransmited"
+      output as well
+    - replace ```SYS::rh-distribution``` by ```SYS::os-release``` which grabs the content of the
+      ```/etc/os-releases``` using ```vfs.file.contents[/etc/os-release]``` key
+      (this will be wortking on all LSB compliant distributions)
+    - ```HW::CPU```` item key changed from ```system.hw.cpu``` to ```system.hw.cpu[,model]```
+      because this option doesws not include current CPU frequency (which is constantly changing)
+    - removed monitoring sshd, crond and rsyslogd as monitoring of those processes
+      is not essential and will be provided in separated template(s)
+    - ```DSK:``` LLD items Application changed from ```DSK``` prototype ```DSK::{#DISK}```
+    - ```NET:``` LLD items Application changed from ```NET``` prototype ```NET::{#FSNAME}```
+    - ```VOL:``` LLD items Application changed from ```VOL``` prototype ```VOL::{#FSNAME}```
+    - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
+    - new MEM:: metrics:
+      - ```MEM::active```
+      - ```MEM::anon```
+      - ```MEM::inactive```
+      - ```MEM::slab```
+    - ```MEM::total``` history period changed to 1h as "Discard unchanged" filter preprocessor cannot be used for now
+      https://support.zabbix.com/browse/ZBX-16456
+  - LLD:
+    - ```SWAP:``` new LLD with complet swap space monitoring which is added only when swap is used
+      Swap monitoring consits of prototypes:
+      - items: ```in```, ```total```, ```out``` and ```used``` with discard unchanged filter
+      - ```SWAP``` and ```SWAP::in/out``` graphs
+      - trigger: ```SWAP::low space ({$ITEM.VALUE}% used)```
+        trigger is activated wnen more tha ```{$SWAP_HIGH}``` percent of the swap is used with default ```{$SWAP_HIGH}=80``` value
+    - rewrited ```VOL``` triggers to use proper severities and triggers prototypes dependencies
+    - LXC monitoring adaptations:
+      - add in ```VOL:``` LLD filter off all volumes mounted under /var/lib/lxc. If ```OS Linux```
+        template will used inside of each LXC container it will provide proper not duplicated
+        monirtoring of the LXC container volumes
+    - Added 4th level of the alarm in ```VOL::{#FSNAME}::free {ITEM.VALUE}``` LLD trigger
+      Now alarms are raised <1%, <%5, <10% and now <20% free volume space
+    - ```DSK:``` filter: corrected to get reed of loop devices. Use ```loop.[0-9]``` instead ```loop```
+    - ```DSK:``` filter: remove from the list of moniitored block devices ZFS vdevs partitions and
+      corrected regexp to remove all SCSI partitions
+    - ```VOL:``` ``{#FSNAME}::total``` and ```{#FSNAME}::inodes::total``` history period changed to 1h
+      as "Discard unchanged" filter preprocessor cannot be used for now
+      https://support.zabbix.com/browse/ZBX-16456
+  - Screens:
+    - ```SWAP``` added with ```SWAP``` and ```SWAP::in/out``` graphs
+    - new ```DSK, NET``` screen added
+    - add to ```MEM``` screen ```MEM::active vs inactive``` graph
+  - Triggers:
+    - ```SYS::Host is down``` descrition corrected
+    - ```CPU::idle``` triggers change to raise alarm when idle time is less than 5% CPU
+      idle time time for at least 1 hour and alarm is cleared ehen for next hour will be no other
+      flapping anbove 5%
+    - Add proper dependency for all trigges which still does not depend on ```SYS::Host is down```
+- **OS Solaris**
+  - Applications:
+    - remove using ```DSK```, ```NET``` and ```VOL``` Applications and replace them by LLD prototypes
+      ```DSK::{#DISK}```, ```NET::{#IFNAME}``` and ```VOL::{#FSNAME}```
+  - Items:
+    - removed monitoring sshd, crond and rsyslogd as monitoring of those processes
+      is not essential and will be provided in separated template(s)
+    - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
+    - copy the same set of 6 NET item LLD prototypes as in ```OS Linux``` template
+      to cover monitoring in/out traffic in packets and bytes and errors and dropped
+      packets as well
+    - changed ```VOL:``` LLD items Application from fixed ```VOL``` to per volume ```VOL::{#FSNAME}```
+      and added LLD VOL items descriptions
+  - Triggers:
+    - Added ```SYS::Host is down```
+    - Added ```CPU::idle {ITEM.VALUE}```
+    - Add proper dependency for all trigges which still does not depend on ```SYS::Host is down```
+- **OS Windows**
+  - Iems:
+    - ```VOL:``` LLD items fixed Application ```VOL``` changed to per volume ```VOL::{#FSNAME}```
+    - ```NET:``` LLD items fixed Application ```NET``` changed to per interface ```NET::{#FSNAME}```
+  - Triggers:
+    - Added missing ```SYS::Host is down``` trigger with all necessary dependencies
+    - Add proper dependency for all trigges which still does not depend on ```SYS::Host is down```
+- **Service Apache**
+  - Macros:
+    - Rename all ```{$APACHE_SERVICE_*}``` macros to ```{$SVC_APACHE_*}```
+    - Macro ```{$SVC_APACHE_PROCESS}```: has bee nadded to allow easy use it on Debian/Ubuntu. Default value is ```http```. On Ubuntu/Debian that value needs to be changed to ```apache2```
+    - Add using ```{$SVC_APACHE_PROCESS}```, ```{$SVC_SVC_PORT}``` macros in more places in item names and triggers
+  - Items:
+    - Make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
+    - Rename ```net.tcp.service[http,,{$HTTP_SERVICE_PORT}]``` key item from ```SVC::$1``` to ```NET::$1```
+  - Macro ```{$HTTP_SERVICE_PROCESS}```: has bee nadded to allow easy use it on Debian/Ubuntu. Default value is ```http```. On Ubuntu/Debian that value needs to be changed to ```apache2```
+  - Triggers:
+    - rename ```SVC::Apache tcp/{$HTTP_SERVICE_PORT} is DOWN``` to ```NET::Apache tcp/{$HTTP_SERVICE_PORT} is DOWN```
+- **Service MySQL**
+  - Documented how to setup mysql server to allow monitor it
+  - Items:
+    - ```PROC::mysqld```
+      - change hardcoded MySQL process name to the macro ``{$SVC_MYSQL_PROC}```
+      - add missing "processes" unit
+    - ```version``` add ```Discard unchanged with hartbeat``` filter which allows
+      change sampling rate from 1d to 5min with HB preriod 7d
+  - Triggers:
+    - ```SYS::processes::{$SVC_MYSQL_PROC} is not running``` severity changed
+      to disaster
+    - change ```SVC::MySQL::version has changed to {ITEM.LASTVALUE}``` to ```Not classified```
+  - Add use md markups in template description
+- **Service Nginx**
+  - Macros:
+    - Rename ```{$NGINX_*}``` macros to ```{$SVC_NGINX_*}```
+    - Added ```{$SVC_NGINX_USER}``` macro to allow use this template on Debian/Ubuntu as well
+    - Rename ```{$SVC_NGINX_PROCESS}``` to ```{$SVC_NGINX_PROC}```
+  - Graphs:
+    - new ```SVC::Nginx::reqs_per_conn```
+  - Items:
+    - new calculated item ```reqs_per_conn``` which shows number requests in single connection (```nginx.requests")/last("nginx.requests[handled]```)
+- **Service Zabbix Agent**
+  - Graphs:
+    - new ```HOST::items``` which presents number of host items vs number of unsuppoerted item
+  - Items:
+    - new ```items``` with current counter of total host items (supported/unsupprted/enabled/disabled)
+  - Triggers:
+    - change ```SVC::zabbix_agent::Version has changed to {ITEM.LASTVALUE}``` to ```Not classified```
+- **Service Zabbix Server**
+  Presentation layer impromements:
+  - Graphs:
+    - delete SVC::zabbix_server::items/wcache::buffer::pfree graph
+    - new ```SVC::zabbix_server::hosts``` graph with number of monitored hosts
+    - new ```SVC::zabbix_server::items/triggers``` graph with total number of items vs. triggers
+    - new ```SVC::zabbix_server::items::nvps``` graphs with zabbix stack NVPS
+  - Screens:
+    - reorganized ```SVC::zabbix_server::status``` screen to put in rows:
+      - "process busy %" and "internam process busy %"
+      - "cahces usage %" and "vcache::hits/misses"
+      - "processing queue" and flame like graph with "queued items"
+      - "items totat/unsupported" and "items::nvps"
+      - "items/triggers" and "hosts"
+- **Service Zabbix Proxy**
+  - Graphs:
+    - ```SVC::zabbix_proxy::data gathering process busy %``` change the color of the ```http poller``` to bright yellow
+- All graphs in screens resolution have been changed to 1200x200 or 600x200 in case screens with two columns of graphs
 ### 1.0.4 (2018-06-11)
 - The first version tagged in git repo to stamp state of templates and tools and to provide better tracking changes by using ```git``` command
 - The development of the next versions of the templates will continue on devel branch. When all changes are ready devel branch will be merged to master one. It will be way better for those who have interested enough tested template.
@@ -45,7 +191,7 @@ If you have some changes for those templates please submit PR against **[devel](
           - ```IF-MIB::ifOctets```
     - **SNMPv2-MIB**
       - Applications:
-        - rename mib-2.system to ```SNMPv2-MIB::system``` and mib-2.system.snmp to '''SNMPv2-MIB::snmp''' to use matching MIB naming conventoion
+        - rename mib-2.system to ```SNMPv2-MIB::system``` and mib-2.system.snmp to ```SNMPv2-MIB::snmp``` to use matching MIB naming conventoion
       - Items:
         - changed units in update interval from number of seconds to number of m/h/d
       - Graphs:
@@ -86,8 +232,7 @@ If you have some changes for those templates please submit PR against **[devel](
       - new ```show_compatibility_56``` - show is MySQL engine running in MySQL 5.6 compatibility mode is ON/OFF
       - new ```Threads_cached``` - the number of threads in the thread cache
       - mew ```Threads_running``` - the number of threads that are not sleeping
-      - rewrite most of the items SQL queries to use uppercase SQL keywords and lowercase for table names and row names (this will cause problems with imprt new template b
-ut I need to standarize thuis before first officially announced release of the templates)
+      - rewrite most of the items SQL queries to use uppercase SQL keywords and lowercase for table names and row names (this will cause problems with imprt new template but I need to standarize thuis before first officially announced release of the templates)
     - Screens:
       - new ```SVC::MySQL::threads``` which combines ```SVC::MySQL::threads``` graph and ```Connections``` simple graph
     - Triggers:
@@ -198,6 +343,7 @@ ut I need to standarize thuis before first officially announced release of the t
 - [Service Apache](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Apache)
 - [Service MySQL](https://github.com/kloczek/zabbix-templates/tree/master/Service%20MySQL)
 - [Service Nginx](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Nginx)
+- [Service php-fpm](https://github.com/kloczek/zabbix-templates/tree/devel/Service%20php-fpm)
 - [Service Zabbix Agent](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Agent)
 - [Service Zabbix Proxy](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Proxy)
 - [Service Zabbix Server](https://github.com/kloczek/zabbix-templates/tree/master/Service%20Zabbix%20Server)
@@ -225,6 +371,15 @@ ut I need to standarize thuis before first officially announced release of the t
 * All zabbix agent items should be specified as ```zabbix agent (active)``` items.
 * All graphs resolution needs to be 1200x300.
 * All SNMP items should be as SNMPv2 and ```{$SNMP_COMMUNITY}``` as SNMP read community name.
+* Trigger severities:
+  * Disaster:
+  * High:
+  * Average:
+  * Warning:
+  * Information:
+  * Not classified:
+    - Version has changed
+    - Configuration parametr has changed
 
 Reason of use in all templates the same graphs resolution, item types and SNMP protocol version and community name is to provide easy way to change those settings across all templates is someone may need this.
 

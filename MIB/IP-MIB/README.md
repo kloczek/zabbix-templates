@@ -5,6 +5,9 @@ The MIB based template for managing IP and ICMP implementations.
 
 #### OIDs tree: [IP-MIB](http://www.oidview.com/mibs/0/IP-MIB.html)
 
+#### Notes:
+- so far it is only empty template.
+
 #### Changelog:
 - 1.0.4 (not released yet)
   - added Applications:
@@ -12,6 +15,3 @@ The MIB based template for managing IP and ICMP implementations.
     - IP-MIB::ip
 - 1.0.0 (2017-11-30):
   - initial version.
-
-#### Notes:
-- so far it is only empty template.

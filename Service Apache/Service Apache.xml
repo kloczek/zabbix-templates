@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-  <version>3.4</version>
-  <date>2018-06-11T11:38:49Z</date>
+  <version>4.2</version>
+  <date>2019-05-30T17:23:42Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -13,20 +13,24 @@
       <name>Service Apache</name>
       <description>Apache service monitoring template using zabbix active agent items.&#13;
 &#13;
-Version : 1.0.4 (2018-06-11)&#13;
-URL: https://github.com/kloczek/zabbix-templates/tree/master/Service%20Apache&#13;
+#### Version: 4.2.1 (2019-05-29&#13;
 &#13;
-Notes:&#13;
-- This template uses apache mod_status metrics.&#13;
-- To use this template in apache configuration needs to be added:&#13;
+#### Description:&#13;
+Apache service monitoring template using zabbix active agent items.&#13;
 &#13;
+#### Notes:&#13;
+- This template uses apache mod_status metrics&#13;
+- Macro ```{$HTTP_SERVICE_PROCESS}```: has bee nadded to allow easy use it on Debian/Ubuntu. Default value is ```http```. On Ubuntu/Debian that value needs to be changed to ```apache2```&#13;
+- To allow use this template in apache configuration must be present:&#13;
+```&#13;
 ExtendedStatus On&#13;
 &lt;Location /server-status&gt;&#13;
- SetHandler server-status&#13;
- Order deny,allow&#13;
- Deny from all&#13;
- Allow from localhost&#13;
-&lt;/Location&gt;</description>
+            SetHandler server-status&#13;
+            Order deny,allow&#13;
+            Deny from all&#13;
+            Allow from localhost&#13;
+&lt;/Location&gt;&#13;
+```</description>
       <groups>
         <group>
           <name>Templates</name>
@@ -39,11 +43,11 @@ ExtendedStatus On&#13;
       </applications>
       <items>
         <item>
-          <name>SVC::$1</name>
-          <type>7</type>
+          <name>NET::$1</name>
+          <type>3</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>net.tcp.service[http,,{$HTTP_SERVICE_PORT}]</key>
+          <key>net.tcp.service[http,,{$SVC_APACHE_PORT}]</key>
           <delay>1m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -79,14 +83,32 @@ ExtendedStatus On&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
-          <name>PROC::$1</name>
+          <name>PROC::{$SVC_APACHE_PROCESS}</name>
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>proc.num[httpd]</key>
+          <key>proc.num[{$SVC_APACHE_PROCESS}]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -120,6 +142,24 @@ ExtendedStatus On&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>1</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -127,7 +167,7 @@ ExtendedStatus On&#13;
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"BusyWorkers: ([0-9]+)",,\1]</key>
+          <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"BusyWorkers: ([0-9]+)",,\1]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -161,6 +201,24 @@ ExtendedStatus On&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -168,7 +226,7 @@ ExtendedStatus On&#13;
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"IdleWorkers: ([0-9]+)",,\1]</key>
+          <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"IdleWorkers: ([0-9]+)",,\1]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -202,6 +260,24 @@ ExtendedStatus On&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -209,7 +285,7 @@ ExtendedStatus On&#13;
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"ServerMPM: (.+)",,\1]</key>
+          <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"ServerMPM: (.+)",,\1]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>0</trends>
@@ -247,6 +323,24 @@ Possible values:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -254,7 +348,7 @@ Possible values:&#13;
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"ServerUptimeSeconds: ([0-9]+)",,\1]</key>
+          <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"ServerUptimeSeconds: ([0-9]+)",,\1]</key>
           <delay>5m</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -288,6 +382,24 @@ Possible values:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -295,7 +407,7 @@ Possible values:&#13;
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"ServerVersion: (.+)",,\1]</key>
+          <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"ServerVersion: (.+)",,\1]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>0</trends>
@@ -329,6 +441,24 @@ Possible values:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -336,7 +466,7 @@ Possible values:&#13;
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"Total Accesses: ([0-9]+)",,\1]</key>
+          <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"Total Accesses: ([0-9]+)",,\1]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -372,9 +502,29 @@ Possible values:&#13;
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -382,7 +532,7 @@ Possible values:&#13;
           <type>7</type>
           <snmp_community/>
           <snmp_oid/>
-          <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"Total kBytes: ([0-9]+)",,\1]</key>
+          <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"Total kBytes: ([0-9]+)",,\1]</key>
           <delay>30s</delay>
           <history>2w</history>
           <trends>365d</trends>
@@ -418,13 +568,35 @@ Possible values:&#13;
             <step>
               <type>10</type>
               <params/>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
             <step>
               <type>1</type>
               <params>1024</params>
+              <error_handler>0</error_handler>
+              <error_handler_params/>
             </step>
           </preprocessing>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
       </items>
@@ -432,20 +604,24 @@ Possible values:&#13;
       <httptests/>
       <macros>
         <macro>
-          <macro>{$HTTP_SERVICE_PORT}</macro>
+          <macro>{$SVC_APACHE_PORT}</macro>
           <value>80</value>
+        </macro>
+        <macro>
+          <macro>{$SVC_APACHE_PROCESS}</macro>
+          <value>httpd</value>
         </macro>
       </macros>
       <templates/>
       <screens>
         <screen>
           <name>SVC::Apache</name>
-          <hsize>1</hsize>
-          <vsize>3</vsize>
+          <hsize>2</hsize>
+          <vsize>2</vsize>
           <screen_items>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>900</width>
+              <width>600</width>
               <height>200</height>
               <x>0</x>
               <y>0</y>
@@ -467,10 +643,10 @@ Possible values:&#13;
             </screen_item>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>900</width>
+              <width>600</width>
               <height>200</height>
-              <x>0</x>
-              <y>1</y>
+              <x>1</x>
+              <y>0</y>
               <colspan>1</colspan>
               <rowspan>1</rowspan>
               <elements>0</elements>
@@ -489,10 +665,10 @@ Possible values:&#13;
             </screen_item>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>900</width>
+              <width>600</width>
               <height>200</height>
-              <x>0</x>
-              <y>2</y>
+              <x>1</x>
+              <y>1</y>
               <colspan>1</colspan>
               <rowspan>1</rowspan>
               <elements>0</elements>
@@ -512,14 +688,31 @@ Possible values:&#13;
           </screen_items>
         </screen>
       </screens>
+      <tags/>
     </template>
   </templates>
   <triggers>
     <trigger>
-      <expression>{Service Apache:proc.num[httpd].min(#3)}&gt;100</expression>
+      <expression>{Service Apache:net.tcp.service[http,,{$SVC_APACHE_PORT}].max(#3)}=0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>PROC::httpd::too many processes running ({ITEM.LASTVALUE} processes)</name>
+      <name>NET::Apache tcp/{$SVC_APACHE_PORT} is DOWN</name>
+      <correlation_mode>0</correlation_mode>
+      <correlation_tag/>
+      <url/>
+      <status>0</status>
+      <priority>3</priority>
+      <description>Nothing listens on http tcp/{$SVC_APACHE_PORT} port or traffic on this port is filtered by firewall.</description>
+      <type>0</type>
+      <manual_close>0</manual_close>
+      <dependencies/>
+      <tags/>
+    </trigger>
+    <trigger>
+      <expression>{Service Apache:proc.num[{$SVC_APACHE_PROCESS}].min(#3)}&gt;100</expression>
+      <recovery_mode>0</recovery_mode>
+      <recovery_expression/>
+      <name>PROC::{$SVC_APACHE_PROCESS}::too many processes running ({ITEM.LASTVALUE} processes)</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
@@ -532,32 +725,16 @@ Possible values:&#13;
       <tags/>
     </trigger>
     <trigger>
-      <expression>{Service Apache:proc.num[httpd].max(#8)}=0</expression>
+      <expression>{Service Apache:proc.num[{$SVC_APACHE_PROCESS}].max(#8)}=0</expression>
       <recovery_mode>0</recovery_mode>
       <recovery_expression/>
-      <name>PROC::httpd is not running</name>
+      <name>PROC::{$SVC_APACHE_PROCESS} is not running</name>
       <correlation_mode>0</correlation_mode>
       <correlation_tag/>
       <url/>
       <status>0</status>
       <priority>3</priority>
       <description/>
-      <type>0</type>
-      <manual_close>0</manual_close>
-      <dependencies/>
-      <tags/>
-    </trigger>
-    <trigger>
-      <expression>{Service Apache:net.tcp.service[http,,{$HTTP_SERVICE_PORT}].max(#3)}=0</expression>
-      <recovery_mode>0</recovery_mode>
-      <recovery_expression/>
-      <name>SVC::http tcp/{$HTTP_SERVICE_PORT} is DOWN</name>
-      <correlation_mode>0</correlation_mode>
-      <correlation_tag/>
-      <url/>
-      <status>0</status>
-      <priority>3</priority>
-      <description>Nothing listens on http tcp/{$HTTP_SERVICE_PORT} port or traffic on this port is filtered by firewall.</description>
       <type>0</type>
       <manual_close>0</manual_close>
       <dependencies/>
@@ -592,7 +769,7 @@ Possible values:&#13;
           <type>0</type>
           <item>
             <host>Service Apache</host>
-            <key>proc.num[httpd]</key>
+            <key>proc.num[{$SVC_APACHE_PROCESS}]</key>
           </item>
         </graph_item>
       </graph_items>
@@ -624,7 +801,7 @@ Possible values:&#13;
           <type>0</type>
           <item>
             <host>Service Apache</host>
-            <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"Total Accesses: ([0-9]+)",,\1]</key>
+            <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"Total Accesses: ([0-9]+)",,\1]</key>
           </item>
         </graph_item>
       </graph_items>
@@ -656,7 +833,7 @@ Possible values:&#13;
           <type>0</type>
           <item>
             <host>Service Apache</host>
-            <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"BusyWorkers: ([0-9]+)",,\1]</key>
+            <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"BusyWorkers: ([0-9]+)",,\1]</key>
           </item>
         </graph_item>
         <graph_item>
@@ -668,7 +845,7 @@ Possible values:&#13;
           <type>0</type>
           <item>
             <host>Service Apache</host>
-            <key>web.page.regexp[localhost,server-status?auto,{$HTTP_SERVICE_PORT},"IdleWorkers: ([0-9]+)",,\1]</key>
+            <key>web.page.regexp[localhost,server-status?auto,{$SVC_APACHE_PORT},"IdleWorkers: ([0-9]+)",,\1]</key>
           </item>
         </graph_item>
       </graph_items>

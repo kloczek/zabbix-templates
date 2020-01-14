@@ -3,6 +3,9 @@
 #### Description:
 Base ICMP template checking availability of the host using ICMP protocol.
 
+#### Notes:
+- This template is used by all OS and SNMP Devices templates.
+
 #### Changelog:
 - 1.0.4 (2018-06-11):
   - Screens:
@@ -12,5 +15,3 @@ Base ICMP template checking availability of the host using ICMP protocol.
 - 1.0.0:
   - initial version
 
-#### Notes:
-- This template is used by all OS and SNMP Devices templates.

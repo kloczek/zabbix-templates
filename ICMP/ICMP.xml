@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-  <version>3.4</version>
-  <date>2018-06-11T11:37:57Z</date>
+  <version>4.2</version>
+  <date>2019-05-29T15:03:45Z</date>
   <groups>
     <group>
       <name>Templates</name>
@@ -70,6 +70,24 @@ Notes:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -111,6 +129,24 @@ Notes:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
         <item>
@@ -152,6 +188,24 @@ Notes:&#13;
           <logtimefmt/>
           <preprocessing/>
           <jmx_endpoint/>
+          <timeout>3s</timeout>
+          <url/>
+          <query_fields/>
+          <posts/>
+          <status_codes>200</status_codes>
+          <follow_redirects>1</follow_redirects>
+          <post_type>0</post_type>
+          <http_proxy/>
+          <headers/>
+          <retrieve_mode>0</retrieve_mode>
+          <request_method>0</request_method>
+          <output_format>0</output_format>
+          <allow_traps>0</allow_traps>
+          <ssl_cert_file/>
+          <ssl_key_file/>
+          <ssl_key_password/>
+          <verify_peer>0</verify_peer>
+          <verify_host>0</verify_host>
           <master_item/>
         </item>
       </items>
@@ -167,7 +221,7 @@ Notes:&#13;
           <screen_items>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>900</width>
+              <width>1200</width>
               <height>200</height>
               <x>0</x>
               <y>0</y>
@@ -189,7 +243,7 @@ Notes:&#13;
             </screen_item>
             <screen_item>
               <resourcetype>0</resourcetype>
-              <width>900</width>
+              <width>1200</width>
               <height>200</height>
               <x>0</x>
               <y>1</y>
@@ -212,6 +266,7 @@ Notes:&#13;
           </screen_items>
         </screen>
       </screens>
+      <tags/>
     </template>
   </templates>
   <triggers>

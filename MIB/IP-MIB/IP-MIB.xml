@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-  <version>3.4</version>
-  <date>2018-06-11T11:38:10Z</date>
+  <version>4.2</version>
+  <date>2019-05-29T12:46:30Z</date>
   <groups>
     <group>
       <name>Templates SNMP MIB</name>
@@ -38,6 +38,7 @@ Notes:&#13;
       <macros/>
       <templates/>
       <screens/>
+      <tags/>
     </template>
   </templates>
 </zabbix_export>

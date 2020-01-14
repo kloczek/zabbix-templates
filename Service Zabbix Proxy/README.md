@@ -3,7 +3,13 @@
 #### Description:
 Base Zabbix proxy service monitoring template.
 
+#### Notes:
+Host with this template must be monitored over proxy which will be monitored.
+
 #### Changelog:
+- (devel):
+  - Items:
+    - make template zabbix 4.0.x ready by remove using $1-$9 macros in items names
 - 1.0.4 (2018-06-11):
   - Applications:
     - new ```SVC::Zabbix Proxy::proc``` 
@@ -40,6 +46,3 @@ Base Zabbix proxy service monitoring template.
       - ```SVC::zabbix_proxy::vmware collector >=75% busy```
 - 1.0.0 (2017-09-09):
   - initial version.
-
-#### Notes:
-Host with this template must be monitored over proxy which will be monitored.

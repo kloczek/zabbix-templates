@@ -1,16 +1,11 @@
+#### Device: D-Link DSL-3782
+
+#### Description:
 The DSL-3782 Wireless AC1200 Dual-Band VDSL/ADSL Modem Router is a versatile, high-performance router with integrated VDSL, supporting download speeds of up to 100 Mbps, the latest Wireless AC Wi-Fi technology, firewall protection, QoS and 4 Fast Ethernet ports.
 
-Device: D-Link DSL-3782
+#### Version: 1.0.4 (2018-06-11)
 
-Version: 1.0.4 (2018-06-11)
-
-Changelog:
-- 1.0.4 (2018-06-11)
-  - added template URL in template description
-- 1.0.0 (2017-11-24):
-  - initial version.
-
-Notes:
+#### Notes:
 - Product page: http://www.dlink.com/mk/mk/products/dsl-3782-wireless-ac1200-dual-band-vdsl-adsl-modem-router
 - Supported MIBs:
 ```
@@ -152,3 +147,9 @@ TCP-MIB::tcpOutRsts
 UDP-MIB::udpLocalAddress
 UDP-MIB::udpLocalPort
 ```
+
+##### Changelog:
+- 1.0.4 (2018-06-11)
+  - added template URL in template description
+- 1.0.0 (2017-11-24):
+  - initial version.

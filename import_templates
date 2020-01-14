@@ -21,6 +21,7 @@ for i in \
 	"Service Apache" \
 	"Service MySQL" \
 	"Service Nginx" \
+	"Service php-fpm" \
 	"Service Zabbix Agent" \
 	"Service Zabbix Proxy" \
 	"Service Zabbix Server" \
